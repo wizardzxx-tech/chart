@@ -1,337 +1,326 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="648pt" viewBox="0 0 1152 648" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
-  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <cc:work>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:description>Illustrative AI-driven investment scenarios</dc:description>
+    <dc:description>Funding-to-LST purchase sensitivity</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
-     <cc:agent>
+     <cc:Agent>
       <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
-     </cc:agent>
+     </cc:Agent>
     </dc:creator>
-   </cc:work>
-  </rdf:rdf>
+   </cc:Work>
+  </rdf:RDF>
  </metadata>
  <defs>
   <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 648 &#10;L 1152 648 &#10;L 1152 0 &#10;L 0 0 &#10;z&#10;" style="fill: #ffffff"/>
+   <path d="M 0 648 
+L 1152 648 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
   </g>
   <g id="patch_2">
-   <path d="M 956.16 65.448 &#10;L 1088.64 65.448 &#10;L 1088.64 37.584 &#10;L 956.16 37.584 &#10;z&#10;" style="fill: #F4F9FD; stroke: #F4F9FD; stroke-width: 0.7; stroke-linejoin: miter"/>
+   <path d="M 956.16 65.448 
+L 1088.64 65.448 
+L 1088.64 37.584 
+L 956.16 37.584 
+z
+" style="fill: #f4f9fd; stroke: #f4f9fd; stroke-width: 0.7; stroke-linejoin: miter"/>
   </g>
   <g id="patch_3">
-   <path d="M 838.656 473.688 &#10;L 1085.184 473.688 &#10;L 1085.184 335.016 &#10;L 838.656 335.016 &#10;z&#10;" style="fill: #F4F9FD; stroke: #F4F9FD; stroke-width: 0.7; stroke-linejoin: miter"/>
+   <path d="M 812.16 453.6 
+L 1088.64 453.6 
+L 1088.64 171.72 
+L 812.16 171.72 
+z
+" style="fill: #f4f9fd; stroke: #f4f9fd; stroke-width: 0.7; stroke-linejoin: miter"/>
   </g>
   <g id="axes_1">
    <g id="patch_4">
-    <path d="M 115.2 495.72 &#10;L 771.84 495.72 &#10;L 771.84 165.24 &#10;L 115.2 165.24 &#10;z&#10;" style="fill: #ffffff"/>
+    <path d="M 103.68 486 
+L 760.32 486 
+L 760.32 168.48 
+L 103.68 168.48 
+z
+" style="fill: #ffffff"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1"/>
      <g id="text_1">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(173.46775 514.309375)">Scenario A</text>
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(177.798063 527.00725)">US$50bn</text>
+      <text style="font-size: 11px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="208.424923" y="504.604062" transform="rotate(-0 208.424923 504.604062)">US$50bn total funding</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2"/>
      <g id="text_2">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(414.171562 514.309375)">Scenario B</text>
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(415.165312 527.00725)">US$100bn</text>
+      <text style="font-size: 11px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="432" y="504.604062" transform="rotate(-0 432 504.604062)">US$100bn total funding</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3"/>
      <g id="text_3">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(654.544437 514.309375)">Scenario C</text>
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(655.869125 527.00725)">US$200bn</text>
+      <text style="font-size: 11px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="655.575077" y="504.604062" transform="rotate(-0 655.575077 504.604062)">US$200bn total funding</text>
      </g>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_4">
-      <path d="M 115.2 495.72 &#10;L 771.84 495.72 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+      <path d="M 103.68 486 
+L 760.32 486 
+" clip-path="url(#pef25bd4279)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_5"/>
      <g id="text_4">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="500.014688" transform="rotate(-0 105.2 500.014688)">0</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="93.68" y="490.294688" transform="rotate(-0 93.68 490.294688)">0</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_6">
-      <path d="M 115.2 459 &#10;L 771.84 459 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+      <path d="M 103.68 416.973913 
+L 760.32 416.973913 
+" clip-path="url(#pef25bd4279)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_7"/>
      <g id="text_5">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="463.294688" transform="rotate(-0 105.2 463.294688)">25</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="93.68" y="421.268601" transform="rotate(-0 93.68 421.268601)">10</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_8">
-      <path d="M 115.2 422.28 &#10;L 771.84 422.28 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+      <path d="M 103.68 347.947826 
+L 760.32 347.947826 
+" clip-path="url(#pef25bd4279)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_9"/>
      <g id="text_6">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="426.574687" transform="rotate(-0 105.2 426.574687)">50</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="93.68" y="352.242514" transform="rotate(-0 93.68 352.242514)">20</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_10">
-      <path d="M 115.2 385.56 &#10;L 771.84 385.56 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+      <path d="M 103.68 278.921739 
+L 760.32 278.921739 
+" clip-path="url(#pef25bd4279)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_11"/>
      <g id="text_7">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="389.854688" transform="rotate(-0 105.2 389.854688)">75</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="93.68" y="283.216427" transform="rotate(-0 93.68 283.216427)">30</text>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_12">
-      <path d="M 115.2 348.84 &#10;L 771.84 348.84 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+      <path d="M 103.68 209.895652 
+L 760.32 209.895652 
+" clip-path="url(#pef25bd4279)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_13"/>
      <g id="text_8">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="353.134687" transform="rotate(-0 105.2 353.134687)">100</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="93.68" y="214.19034" transform="rotate(-0 93.68 214.19034)">40</text>
      </g>
     </g>
-    <g id="ytick_6">
-     <g id="line2d_14">
-      <path d="M 115.2 312.12 &#10;L 771.84 312.12 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_15"/>
-     <g id="text_9">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="316.414688" transform="rotate(-0 105.2 316.414688)">125</text>
-     </g>
-    </g>
-    <g id="ytick_7">
-     <g id="line2d_16">
-      <path d="M 115.2 275.4 &#10;L 771.84 275.4 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_17"/>
-     <g id="text_10">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="279.694687" transform="rotate(-0 105.2 279.694687)">150</text>
-     </g>
-    </g>
-    <g id="ytick_8">
-     <g id="line2d_18">
-      <path d="M 115.2 238.68 &#10;L 771.84 238.68 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_19"/>
-     <g id="text_11">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="242.974687" transform="rotate(-0 105.2 242.974687)">175</text>
-     </g>
-    </g>
-    <g id="ytick_9">
-     <g id="line2d_20">
-      <path d="M 115.2 201.96 &#10;L 771.84 201.96 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_21"/>
-     <g id="text_12">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="206.254687" transform="rotate(-0 105.2 206.254687)">200</text>
-     </g>
-    </g>
-    <g id="ytick_10">
-     <g id="line2d_22">
-      <path d="M 115.2 165.24 &#10;L 771.84 165.24 &#10;" clip-path="url(#pc88badbab3)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_23"/>
-     <g id="text_13">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="169.534688" transform="rotate(-0 105.2 169.534688)">225</text>
-     </g>
-    </g>
-    <g id="text_14">
-     <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="78.660625" y="330.48" transform="rotate(-90 78.660625 330.48)">Cumulative incremental investment (US$bn)</text>
+    <g id="text_9">
+     <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="73.81375" y="327.24" transform="rotate(-90 73.81375 327.24)">Cumulative LST purchases (US$bn)</text>
     </g>
    </g>
    <g id="patch_5">
-    <path d="M 145.047273 495.72 &#10;L 260.585103 495.72 &#10;L 260.585103 473.688 &#10;L 145.047273 473.688 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #00355F"/>
+    <path d="M 133.527273 486 
+L 180.478039 486 
+L 180.478039 468.743478 
+L 133.527273 468.743478 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #acd4f1"/>
    </g>
    <g id="patch_6">
-    <path d="M 385.751085 495.72 &#10;L 501.288915 495.72 &#10;L 501.288915 451.656 &#10;L 385.751085 451.656 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #00355F"/>
+    <path d="M 357.102349 486 
+L 404.053115 486 
+L 404.053115 451.486957 
+L 357.102349 451.486957 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #acd4f1"/>
    </g>
    <g id="patch_7">
-    <path d="M 626.454897 495.72 &#10;L 741.992727 495.72 &#10;L 741.992727 407.592 &#10;L 626.454897 407.592 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #00355F"/>
+    <path d="M 580.677426 486 
+L 627.628192 486 
+L 627.628192 416.973913 
+L 580.677426 416.973913 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #acd4f1"/>
    </g>
    <g id="patch_8">
-    <path d="M 145.047273 473.688 &#10;L 260.585103 473.688 &#10;L 260.585103 455.328 &#10;L 145.047273 455.328 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #ACD4F1"/>
+    <path d="M 184.94954 486 
+L 231.900306 486 
+L 231.900306 451.486957 
+L 184.94954 451.486957 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #00355f"/>
    </g>
    <g id="patch_9">
-    <path d="M 385.751085 451.656 &#10;L 501.288915 451.656 &#10;L 501.288915 414.936 &#10;L 385.751085 414.936 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #ACD4F1"/>
+    <path d="M 408.524617 486 
+L 455.475383 486 
+L 455.475383 416.973913 
+L 408.524617 416.973913 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #00355f"/>
    </g>
    <g id="patch_10">
-    <path d="M 626.454897 407.592 &#10;L 741.992727 407.592 &#10;L 741.992727 334.152 &#10;L 626.454897 334.152 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #ACD4F1"/>
+    <path d="M 632.099694 486 
+L 679.05046 486 
+L 679.05046 347.947826 
+L 632.099694 347.947826 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #00355f"/>
    </g>
    <g id="patch_11">
-    <path d="M 145.047273 455.328 &#10;L 260.585103 455.328 &#10;L 260.585103 440.64 &#10;L 145.047273 440.64 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #A5A5A5"/>
+    <path d="M 236.371808 486 
+L 283.322574 486 
+L 283.322574 416.973913 
+L 236.371808 416.973913 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #7399c6"/>
    </g>
    <g id="patch_12">
-    <path d="M 385.751085 414.936 &#10;L 501.288915 414.936 &#10;L 501.288915 385.56 &#10;L 385.751085 385.56 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #A5A5A5"/>
+    <path d="M 459.946885 486 
+L 506.897651 486 
+L 506.897651 347.947826 
+L 459.946885 347.947826 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #7399c6"/>
    </g>
    <g id="patch_13">
-    <path d="M 626.454897 334.152 &#10;L 741.992727 334.152 &#10;L 741.992727 275.4 &#10;L 626.454897 275.4 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #A5A5A5"/>
+    <path d="M 683.521961 486 
+L 730.472727 486 
+L 730.472727 209.895652 
+L 683.521961 209.895652 
+z
+" clip-path="url(#pef25bd4279)" style="fill: #7399c6"/>
    </g>
    <g id="patch_14">
-    <path d="M 145.047273 440.64 &#10;L 260.585103 440.64 &#10;L 260.585103 429.624 &#10;L 145.047273 429.624 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #7399C6"/>
+    <path d="M 103.68 486 
+L 103.68 168.48 
+" style="fill: none; stroke: #a5a5a5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_15">
-    <path d="M 385.751085 385.56 &#10;L 501.288915 385.56 &#10;L 501.288915 363.528 &#10;L 385.751085 363.528 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #7399C6"/>
+    <path d="M 103.68 486 
+L 760.32 486 
+" style="fill: none; stroke: #a5a5a5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="patch_16">
-    <path d="M 626.454897 275.4 &#10;L 741.992727 275.4 &#10;L 741.992727 231.336 &#10;L 626.454897 231.336 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #7399C6"/>
+   <g id="text_10">
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="157.002656" y="464.601913" transform="rotate(-0 157.002656 464.601913)">2.5</text>
    </g>
-   <g id="patch_17">
-    <path d="M 145.047273 429.624 &#10;L 260.585103 429.624 &#10;L 260.585103 422.28 &#10;L 145.047273 422.28 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #078549"/>
+   <g id="text_11">
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="380.577732" y="447.345391" transform="rotate(-0 380.577732 447.345391)">5</text>
    </g>
-   <g id="patch_18">
-    <path d="M 385.751085 363.528 &#10;L 501.288915 363.528 &#10;L 501.288915 348.84 &#10;L 385.751085 348.84 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #078549"/>
+   <g id="text_12">
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="604.152809" y="412.832348" transform="rotate(-0 604.152809 412.832348)">10</text>
    </g>
-   <g id="patch_19">
-    <path d="M 626.454897 231.336 &#10;L 741.992727 231.336 &#10;L 741.992727 201.96 &#10;L 626.454897 201.96 &#10;z&#10;" clip-path="url(#pc88badbab3)" style="fill: #078549"/>
+   <g id="text_13">
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="208.424923" y="447.345391" transform="rotate(-0 208.424923 447.345391)">5</text>
    </g>
-   <g id="patch_20">
-    <path d="M 115.2 495.72 &#10;L 115.2 165.24 &#10;" style="fill: none; stroke: #A5A5A5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_21">
-    <path d="M 115.2 495.72 &#10;L 771.84 495.72 &#10;" style="fill: none; stroke: #A5A5A5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   <g id="text_14">
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="432" y="412.832348" transform="rotate(-0 432 412.832348)">10</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #ffffff" x="202.816188" y="488.061656" transform="rotate(-0 202.816188 488.061656)">15</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="655.575077" y="343.806261" transform="rotate(-0 655.575077 343.806261)">20</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #ffffff" x="443.52" y="477.045656" transform="rotate(-0 443.52 477.045656)">30</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="259.847191" y="412.832348" transform="rotate(-0 259.847191 412.832348)">10</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #ffffff" x="684.223812" y="455.013656" transform="rotate(-0 684.223812 455.013656)">60</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="483.422268" y="343.806261" transform="rotate(-0 483.422268 343.806261)">20</text>
    </g>
    <g id="text_18">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="202.816188" y="467.865656" transform="rotate(-0 202.816188 467.865656)">12.5</text>
+    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="706.997344" y="205.754087" transform="rotate(-0 706.997344 205.754087)">40</text>
    </g>
-   <g id="text_19">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="443.52" y="436.653656" transform="rotate(-0 443.52 436.653656)">25</text>
-   </g>
-   <g id="text_20">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="684.223812" y="374.229656" transform="rotate(-0 684.223812 374.229656)">50</text>
-   </g>
-   <g id="text_21">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="202.816188" y="451.341656" transform="rotate(-0 202.816188 451.341656)">10</text>
-   </g>
-   <g id="text_22">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="443.52" y="403.605656" transform="rotate(-0 443.52 403.605656)">20</text>
-   </g>
-   <g id="text_23">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="684.223812" y="308.133656" transform="rotate(-0 684.223812 308.133656)">40</text>
-   </g>
-   <g id="patch_22">
-    <path d="M 305.169704 439.427036 &#10;Q 283.872012 437.375333 262.57432 435.32363 &#10;" style="fill: none; stroke: #7399C6; stroke-width: 0.7; stroke-linecap: round"/>
-   </g>
-   <g id="text_24">
-    <g id="patch_23">
-     <path d="M 307.165865 448.1475 &#10;L 328.355865 448.1475 &#10;L 328.355865 433.1325 &#10;L 307.165865 433.1325 &#10;z&#10;" style="fill: #ffffff"/>
+   <g id="legend_1">
+    <g id="patch_16">
+     <path d="M 112.95 185.248078 
+L 133.55 185.248078 
+L 133.55 178.038078 
+L 112.95 178.038078 
+z
+" style="fill: #acd4f1"/>
     </g>
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="308.725865" y="443.997656" transform="rotate(-0 308.725865 443.997656)">7.5</text>
-   </g>
-   <g id="text_25">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="443.52" y="377.901656" transform="rotate(-0 443.52 377.901656)">15</text>
-   </g>
-   <g id="text_26">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(0, 53, 95);" x="684.223812" y="256.725656" transform="rotate(-0 684.223812 256.725656)">30</text>
-   </g>
-   <g id="patch_24">
-    <path d="M 305.187232 418.990136 &#10;Q 283.873 422.317035 262.558769 425.643934 &#10;" style="fill: none; stroke: #078549; stroke-width: 0.7; stroke-linecap: round"/>
-   </g>
-   <g id="text_27">
-    <g id="patch_25">
-     <path d="M 307.165865 425.3811 &#10;L 317.515084 425.3811 &#10;L 317.515084 410.3661 &#10;L 307.165865 410.3661 &#10;z&#10;" style="fill: #ffffff"/>
+    <g id="text_19">
+     <text style="font-size: 10.3px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="141.79" y="185.248078" transform="rotate(-0 141.79 185.248078)">5% LST purchase capture</text>
     </g>
-    <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="308.725865" y="421.231256" transform="rotate(-0 308.725865 421.231256)">5</text>
-   </g>
-   <g id="text_28">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(255, 255, 255);" x="443.52" y="359.541656" transform="rotate(-0 443.52 359.541656)">10</text>
-   </g>
-   <g id="text_29">
-    <text style="font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: middle; fill: rgb(255, 255, 255);" x="684.223812" y="220.005656" transform="rotate(-0 684.223812 220.005656)">20</text>
-   </g>
-   <g id="text_30">
-    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="202.816188" y="416.4048" transform="rotate(-0 202.816188 416.4048)">50</text>
-   </g>
-   <g id="text_31">
-    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="443.52" y="342.9648" transform="rotate(-0 443.52 342.9648)">100</text>
-   </g>
-   <g id="text_32">
-    <text style="font-weight: 700; font-size: 18px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="684.223812" y="196.0848" transform="rotate(-0 684.223812 196.0848)">200</text>
+    <g id="patch_17">
+     <path d="M 112.95 199.948109 
+L 133.55 199.948109 
+L 133.55 192.738109 
+L 112.95 192.738109 
+z
+" style="fill: #00355f"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 10.3px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="141.79" y="199.948109" transform="rotate(-0 141.79 199.948109)">10% LST purchase capture</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 112.95 214.648141 
+L 133.55 214.648141 
+L 133.55 207.438141 
+L 112.95 207.438141 
+z
+" style="fill: #7399c6"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 10.3px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="141.79" y="214.648141" transform="rotate(-0 141.79 214.648141)">20% LST purchase capture</text>
+    </g>
    </g>
   </g>
-  <g id="line2d_24">
-   <path d="M 63.36 119.88 &#10;L 1088.64 119.88 &#10;" style="fill: none; stroke: #ACD4F1; stroke-width: 0.8; stroke-linecap: square"/>
+  <g id="line2d_14">
+   <path d="M 63.36 119.88 
+L 1088.64 119.88 
+" style="fill: none; stroke: #acd4f1; stroke-width: 0.8; stroke-linecap: square"/>
   </g>
-  <g id="text_33">
-   <text style="font-weight: 700; font-size: 22px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="54.282188" transform="rotate(-0 63.36 54.282188)">07  Illustrative AI-driven investment scenarios</text>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 22px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="54.297656" transform="rotate(-0 63.36 54.297656)">07  Funding-to-LST purchase sensitivity</text>
   </g>
-  <g id="text_34">
-   <text style="font-size: 9.5px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="1022.4" y="53.645672" transform="rotate(-0 1022.4 53.645672)">SCENARIO</text>
+  <g id="text_23">
+   <text style="font-size: 9.5px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="1022.4" y="53.645672" transform="rotate(-0 1022.4 53.645672)">SENSITIVITY</text>
   </g>
-  <g id="text_35">
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="94.217813" transform="rotate(-0 63.36 94.217813)">US$50bn / 100bn / 200bn are illustrative cumulative investment pools; no time horizon is specified.</text>
+  <g id="text_24">
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="93.827813" transform="rotate(-0 63.36 93.827813)">Hypothetical total funding pools. Only a fraction becomes purchases from LST suppliers.</text>
   </g>
-  <g id="text_36">
-   <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="596.287336" transform="rotate(-0 63.36 596.287336)">Allocations: 30% / 25% / 20% / 15% / 10%. Research and manufacturing buckets are mutually exclusive.</text>
+  <g id="text_25">
+   <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="596.287336" transform="rotate(-0 63.36 596.287336)">5% / 10% / 20% capture rates are model inputs. Cumulative scenarios, no fixed horizon; not observed funding or annual TAM.</text>
   </g>
-  <g id="text_37">
-   <text style="font-size: 8.7px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="620.445164" transform="rotate(-0 63.36 620.445164)">Source: supplied scenario and allocation assumptions. These are not realized funding, orders or annual TAMs.</text>
+  <g id="text_26">
+   <text style="font-size: 8.7px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="620.445164" transform="rotate(-0 63.36 620.445164)">Source: analyst funding-to-purchase sensitivity. No empirical budget shares or equipment/reagent split is asserted.</text>
   </g>
-  <g id="text_38">
-   <text style="font-size: 9.2px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="1088.64" y="620.568188" transform="rotate(-0 1088.64 620.568188)">2026-10-12</text>
+  <g id="text_27">
+   <text style="font-size: 9.2px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="1088.64" y="620.568188" transform="rotate(-0 1088.64 620.568188)">2026-10-13</text>
   </g>
-  <g id="text_39">
-   <text style="font-weight: 700; font-size: 14px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="857.088" y="372.327937" transform="rotate(-0 857.088 372.327937)">Build phase → installed equipment</text>
+  <g id="text_28">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="831.744" y="211.801359" transform="rotate(-0 831.744 211.801359)">Funding → tool purchases</text>
   </g>
-  <g id="text_40">
-   <text style="font-weight: 700; font-size: 13px; font-family: &quot;Arial Unicode MS&quot;; text-anchor: start; fill: rgb(0, 53, 95);" x="857.088" y="416.790797" transform="rotate(-0 857.088 416.790797)">Operate → recurring purchases</text>
+  <g id="text_29">
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(831.744 245.620688)">R&amp;D and production budgets</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(831.744 263.601563)">exclude people, trials,</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(831.744 281.716313)">software and unspent cash.</text>
   </g>
-  <g id="text_41">
-   <text style="font-size: 10.8px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="857.088" y="456.397031" transform="rotate(-0 857.088 456.397031)">Manufacturing needs drug output.</text>
+  <g id="text_30">
+   <text style="font-size: 11.5px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(831.744 336.186352)">Capture includes tool purchases</text>
+   <text style="font-size: 11.5px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(831.744 353.54632)">only. Count CRO/CDMO inputs</text>
+   <text style="font-size: 11.5px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(831.744 371.030273)">once, separate from service fees.</text>
   </g>
-  <g id="legend_1">
-   <g id="patch_26">
-    <path d="M 829.674 172.485703 &#10;L 850.674 172.485703 &#10;L 850.674 165.135703 &#10;L 829.674 165.135703 &#10;z&#10;" style="fill: #00355F"/>
-   </g>
-   <g id="text_42">
-    <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="859.074" y="172.485703" transform="rotate(-0 859.074 172.485703)">Research equipment / automation</text>
-   </g>
-   <g id="patch_27">
-    <path d="M 829.674 193.643203 &#10;L 850.674 193.643203 &#10;L 850.674 186.293203 &#10;L 829.674 186.293203 &#10;z&#10;" style="fill: #ACD4F1"/>
-   </g>
-   <g id="text_43">
-    <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="859.074" y="193.643203" transform="rotate(-0 859.074 193.643203)">Research reagents</text>
-   </g>
-   <g id="patch_28">
-    <path d="M 829.674 214.913906 &#10;L 850.674 214.913906 &#10;L 850.674 207.563906 &#10;L 829.674 207.563906 &#10;z&#10;" style="fill: #A5A5A5"/>
-   </g>
-   <g id="text_44">
-    <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="859.074" y="214.913906" transform="rotate(-0 859.074 214.913906)">Research consumables</text>
-   </g>
-   <g id="patch_29">
-    <path d="M 829.674 236.199375 &#10;L 850.674 236.199375 &#10;L 850.674 228.849375 &#10;L 829.674 228.849375 &#10;z&#10;" style="fill: #7399C6"/>
-   </g>
-   <g id="text_45">
-    <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="859.074" y="236.199375" transform="rotate(-0 859.074 236.199375)">Manufacturing bioprocess tools</text>
-   </g>
-   <g id="patch_30">
-    <path d="M 829.674 257.470078 &#10;L 850.674 257.470078 &#10;L 850.674 250.120078 &#10;L 829.674 250.120078 &#10;z&#10;" style="fill: #078549"/>
-   </g>
-   <g id="text_46">
-    <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="859.074" y="257.470078" transform="rotate(-0 859.074 257.470078)">Services / other</text>
-   </g>
+  <g id="text_31">
+   <text style="font-weight: 700; font-size: 18px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="576" y="544.433063" transform="rotate(-0 576 544.433063)">Total capital raised is not an addressable tool market.</text>
   </g>
  </g>
  <defs>
-  <clipPath id="pc88badbab3">
-   <rect x="115.2" y="165.24" width="656.64" height="330.48"/>
+  <clipPath id="pef25bd4279">
+   <rect x="103.68" y="168.48" width="656.64" height="317.52"/>
   </clipPath>
  </defs>
 </svg>

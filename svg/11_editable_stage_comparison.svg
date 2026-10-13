@@ -1,64 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="white"/>
 <rect x="72" y="54" width="9" height="85" rx="0" fill="#00355F" stroke="none" stroke-width="1"/>
-<text x="105" y="90.64" fill="#00355F" font-family="Arial,Helvetica,sans-serif" font-size="46" font-weight="700" text-anchor="start"><tspan x="105" dy="0">Design capacity expands. Validation must keep up.</tspan></text>
-<text x="106" y="139.32" fill="#00355F" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" text-anchor="start"><tspan x="106" dy="0">Illustrative stage comparison, normalized per one clinical entrant. Supplied assumptions, not cohort statistics.</tspan></text>
+<text x="105" y="90.64" fill="#00355F" font-family="Arial,Helvetica,sans-serif" font-size="46" font-weight="700" text-anchor="start"><tspan x="105" dy="0">AI discovery: workflows, evidence and sensitivities</tspan></text>
+<text x="106" y="139.32" fill="#00355F" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" text-anchor="start"><tspan x="106" dy="0">Modalities use different units. Workload sensitivities and historical clinical benchmarks are shown separately.</tspan></text>
 <line x1="72" y1="176" x2="1848" y2="176" stroke="#A5A5A5" stroke-width="1" />
-<rect x="72" y="230" width="515" height="70" fill="#00355F"/>
-<text x="94" y="272.5" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="start"><tspan x="94" dy="0">STAGE</tspan></text>
-<rect x="587" y="230" width="190" height="70" fill="#00355F"/>
-<text x="682" y="272.5" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle"><tspan x="682" dy="0">PRE-AI</tspan></text>
-<rect x="777" y="230" width="255" height="70" fill="#00355F"/>
-<text x="904.5" y="272.5" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle"><tspan x="904.5" dy="0">AI ERA</tspan></text>
-<rect x="1032" y="230" width="816" height="70" fill="#00355F"/>
-<text x="1054" y="272.5" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="start"><tspan x="1054" dy="0">WHAT CHANGES</tspan></text>
+<rect x="72" y="230" width="435" height="70" fill="#00355F"/>
+<text x="94" y="271.75" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="start"><tspan x="94" dy="0">STAGE</tspan></text>
+<rect x="507" y="230" width="310" height="70" fill="#00355F"/>
+<text x="662" y="271.75" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle"><tspan x="662" dy="0">BEFORE GEN-AI</tspan></text>
+<rect x="817" y="230" width="330" height="70" fill="#00355F"/>
+<text x="982" y="271.75" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle"><tspan x="982" dy="0">AI MECHANISMS</tspan></text>
+<rect x="1147" y="230" width="701" height="70" fill="#00355F"/>
+<text x="1169" y="271.75" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="start"><tspan x="1169" dy="0">WHAT CHANGES</tspan></text>
 <line x1="72" y1="300" x2="1848" y2="300" stroke="#A5A5A5"/>
-<rect x="72" y="300" width="515" height="116" fill="#FFFFFF"/>
-<text x="94" y="351.75" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Molecules designed</tspan><tspan x="94" dy="31.25">(virtual)</tspan></text>
-<rect x="587" y="300" width="190" height="116" fill="#FFFFFF"/>
-<text x="682" y="370" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="682" dy="0">~10³</tspan></text>
-<rect x="777" y="300" width="255" height="116" fill="#FFFFFF"/>
-<text x="904.5" y="370" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="904.5" dy="0">10⁵–10⁹</tspan></text>
-<rect x="1032" y="300" width="816" height="116" fill="#FFFFFF"/>
-<text x="1054" y="351.75" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1054" dy="0">Generative models can expand</tspan><tspan x="1054" dy="31.25">candidate enumeration at low marginal cost.</tspan></text>
+<rect x="72" y="300" width="435" height="116" fill="#FFFFFF"/>
+<text x="94" y="366.25" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Virtual search / design</tspan></text>
+<rect x="507" y="300" width="310" height="116" fill="#FFFFFF"/>
+<text x="662" y="352" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="662" dy="0">Large virtual</tspan><tspan x="662" dy="30">libraries</tspan></text>
+<rect x="817" y="300" width="330" height="116" fill="#FFFFFF"/>
+<text x="982" y="352" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="982" dy="0">Quality +</tspan><tspan x="982" dy="30">selection</tspan></text>
+<rect x="1147" y="300" width="701" height="116" fill="#FFFFFF"/>
+<text x="1169" y="352.5" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1169" dy="0">Large libraries predate generative AI.</tspan><tspan x="1169" dy="27.5">The investment mechanism is better selection and learning.</tspan></text>
 <line x1="72" y1="416" x2="1848" y2="416" stroke="#A5A5A5"/>
-<rect x="72" y="416" width="515" height="105" fill="#EEF6FC"/>
-<text x="94" y="477.875" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Molecules physically made</tspan></text>
-<rect x="587" y="416" width="190" height="105" fill="#EEF6FC"/>
-<text x="682" y="480.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="682" dy="0">~10³</tspan></text>
-<rect x="777" y="416" width="255" height="105" fill="#EEF6FC"/>
-<text x="904.5" y="480.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="904.5" dy="0">10³–10⁴</tspan></text>
-<rect x="1032" y="416" width="816" height="105" fill="#EEF6FC"/>
-<text x="1054" y="462.25" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1054" dy="0">Automated synthesis and DNA libraries</tspan><tspan x="1054" dy="31.25">can expand construction capacity.</tspan></text>
+<rect x="72" y="416" width="435" height="105" fill="#EEF6FC"/>
+<text x="94" y="476.75" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Physical samples</tspan></text>
+<rect x="507" y="416" width="310" height="105" fill="#EEF6FC"/>
+<text x="662" y="462.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="662" dy="0">Program-</tspan><tspan x="662" dy="30">specific</tspan></text>
+<rect x="817" y="416" width="330" height="105" fill="#EEF6FC"/>
+<text x="982" y="462.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="982" dy="0">Modality-</tspan><tspan x="982" dy="30">dependent</tspan></text>
+<rect x="1147" y="416" width="701" height="105" fill="#EEF6FC"/>
+<text x="1169" y="463" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1169" dy="0">Small molecules can need fewer syntheses per program.</tspan><tspan x="1169" dy="27.5">Protein libraries and individual profiling are different units.</tspan></text>
 <line x1="72" y1="521" x2="1848" y2="521" stroke="#A5A5A5"/>
-<rect x="72" y="521" width="515" height="105" fill="#EEF6FC"/>
-<text x="94" y="582.875" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Fully profiled in wet lab</tspan></text>
-<rect x="587" y="521" width="190" height="105" fill="#EEF6FC"/>
-<text x="682" y="585.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" fill="#00355F" text-anchor="middle"><tspan x="682" dy="0">~50</tspan></text>
-<rect x="777" y="521" width="255" height="105" fill="#EEF6FC"/>
-<text x="904.5" y="585.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700" fill="#00355F" text-anchor="middle"><tspan x="904.5" dy="0">50 → 500</tspan></text>
-<rect x="1032" y="521" width="816" height="105" fill="#EEF6FC"/>
-<text x="1054" y="567.25" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#00355F" text-anchor="start"><tspan x="1054" dy="0">Illustrative capacity expansion</tspan><tspan x="1054" dy="31.25">that investors would need to fund.</tspan></text>
+<rect x="72" y="521" width="435" height="105" fill="#EEF6FC"/>
+<text x="94" y="581.75" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Assay workload</tspan></text>
+<rect x="507" y="521" width="310" height="105" fill="#EEF6FC"/>
+<text x="662" y="582.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#00355F" text-anchor="middle"><tspan x="662" dy="0">1× baseline</tspan></text>
+<rect x="817" y="521" width="330" height="105" fill="#EEF6FC"/>
+<text x="982" y="567.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#00355F" text-anchor="middle"><tspan x="982" dy="0">1× / 2× /</tspan><tspan x="982" dy="30">5× / 10×</tspan></text>
+<rect x="1147" y="521" width="701" height="105" fill="#EEF6FC"/>
+<text x="1169" y="568" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#00355F" text-anchor="start"><tspan x="1169" dy="0">Analyst workload sensitivities, not predicted fully profiled</tspan><tspan x="1169" dy="27.5">candidate counts. Include an efficiency/no-growth case.</tspan></text>
 <line x1="72" y1="626" x2="1848" y2="626" stroke="#A5A5A5"/>
-<rect x="72" y="626" width="515" height="105" fill="#FFFFFF"/>
-<text x="94" y="687.875" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Clinical entry</tspan></text>
-<rect x="587" y="626" width="190" height="105" fill="#FFFFFF"/>
-<text x="682" y="690.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="682" dy="0">1</tspan></text>
-<rect x="777" y="626" width="255" height="105" fill="#FFFFFF"/>
-<text x="904.5" y="690.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="904.5" dy="0">1</tspan></text>
-<rect x="1032" y="626" width="816" height="105" fill="#FFFFFF"/>
-<text x="1054" y="672.25" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1054" dy="0">Patients, ethics, capital and time</tspan><tspan x="1054" dy="31.25">remain hard constraints.</tspan></text>
+<rect x="72" y="626" width="435" height="105" fill="#FFFFFF"/>
+<text x="94" y="686.75" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Clinical development</tspan></text>
+<rect x="507" y="626" width="310" height="105" fill="#FFFFFF"/>
+<text x="662" y="672.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="662" dy="0">Phase I</tspan><tspan x="662" dy="30">programs</tspan></text>
+<rect x="817" y="626" width="330" height="105" fill="#FFFFFF"/>
+<text x="982" y="672.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="982" dy="0">Funded clinical</tspan><tspan x="982" dy="30">programs</tspan></text>
+<rect x="1147" y="626" width="701" height="105" fill="#FFFFFF"/>
+<text x="1169" y="673" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1169" dy="0">Clinical biology, patients, capital and time remain</tspan><tspan x="1169" dy="27.5">constraints; discovery gains do not establish clinical gains.</tspan></text>
 <line x1="72" y1="731" x2="1848" y2="731" stroke="#A5A5A5"/>
-<rect x="72" y="731" width="515" height="105" fill="#FFFFFF"/>
-<text x="94" y="792.875" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Expected approvals</tspan></text>
-<rect x="587" y="731" width="190" height="105" fill="#FFFFFF"/>
-<text x="682" y="795.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="682" dy="0">~0.14</tspan></text>
-<rect x="777" y="731" width="255" height="105" fill="#FFFFFF"/>
-<text x="904.5" y="795.5" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="904.5" dy="0">Unknown</tspan></text>
-<rect x="1032" y="731" width="816" height="105" fill="#FFFFFF"/>
-<text x="1054" y="777.25" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1054" dy="0">Clinical success must be demonstrated;</tspan><tspan x="1054" dy="31.25">AI does not establish an approval rate.</tspan></text>
+<rect x="72" y="731" width="435" height="105" fill="#FFFFFF"/>
+<text x="94" y="791.75" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="94" dy="0">Phase I to approval</tspan></text>
+<rect x="507" y="731" width="310" height="105" fill="#FFFFFF"/>
+<text x="662" y="777.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="662" dy="0">7.9% / 13.8%</tspan><tspan x="662" dy="30">(study estimates)</tspan></text>
+<rect x="817" y="731" width="330" height="105" fill="#FFFFFF"/>
+<text x="982" y="777.5" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" fill="#00355F" text-anchor="middle"><tspan x="982" dy="0">AI advantage</tspan><tspan x="982" dy="30">unproven</tspan></text>
+<rect x="1147" y="731" width="701" height="105" fill="#FFFFFF"/>
+<text x="1169" y="778" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#00355F" text-anchor="start"><tspan x="1169" dy="0">BIO 2011–2020 and Wong 2000–2015 are different</tspan><tspan x="1169" dy="27.5">cohorts and methods, not an AI comparison.</tspan></text>
 <line x1="72" y1="836" x2="1848" y2="836" stroke="#A5A5A5"/>
 <rect x="72" y="877" width="1776" height="98" rx="10" fill="#00355F" stroke="none" stroke-width="1"/>
 <image x="95" y="899" width="52" height="52" preserveAspectRatio="xMidYMid meet" href="data:image/svg+xml;base64,PHN2ZwogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICB3aWR0aD0iMjQiCiAgaGVpZ2h0PSIyNCIKICB2aWV3Qm94PSIwIDAgMjQgMjQiCiAgZmlsbD0ibm9uZSIKICBzdHJva2U9IiNBQ0Q0RjEiCiAgc3Ryb2tlLXdpZHRoPSIyIgogIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICBzdHJva2UtbGluZWpvaW49InJvdW5kIgo+CiAgPHBhdGggZD0iTTE0IDJ2NmEyIDIgMCAwIDAgLjI0NS45Nmw1LjUxIDEwLjA4QTIgMiAwIDAgMSAxOCAyMkg2YTIgMiAwIDAgMS0xLjc1NS0yLjk2bDUuNTEtMTAuMDhBMiAyIDAgMCAwIDEwIDhWMiIgLz4KICA8cGF0aCBkPSJNNi40NTMgMTVoMTEuMDk0IiAvPgogIDxwYXRoIGQ9Ik04LjUgMmg3IiAvPgo8L3N2Zz4K"/>
-<text x="171" y="922.52" fill="#FFFFFF" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" text-anchor="start"><tspan x="171" dy="0">Working thesis: experimental throughput becomes a capacity gate as virtual design scales.</tspan></text>
-<text x="72" y="1022.28" fill="#00355F" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" text-anchor="start"><tspan x="72" dy="0">Source: user-supplied comparison. ~0.14 is an illustrative expected approval count per clinical entrant; the AI-era outcome is unknown.</tspan></text>
+<text x="171" y="922.52" fill="#FFFFFF" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" text-anchor="start"><tspan x="171" dy="0">Tool demand depends on funded programs, assay depth, net inputs and prices.</tspan></text>
+<text x="72" y="1022.28" fill="#00355F" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" text-anchor="start"><tspan x="72" dy="0">Sources: Lyu 2019; Sumitomo 2021; BIO 2011–2020; Wong 2000–2015. Workloads are analyst sensitivities, not empirical cohorts.</tspan></text>
 </svg>

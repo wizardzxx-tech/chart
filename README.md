@@ -140,3 +140,8 @@ Figure 12 includes 22 distinct listed suppliers or parents, with Chinese/HK and 
 [All 16 text-editable slides](editable/AI_LST_all_16_text_editable.pptx) · [All 16 figures as PDF](AI_LST_all_16_research_graphics.pdf) · [Edit the updated funnel](v2/editor.html?figure=12).
 
 The combined deck uses native editable text lines over original chart artwork. The separate decks for Figures 11–16 also contain native tables, shapes and connectors; logos and icons remain images. Figures, market data, and scenario labels outside Figure 12 retain their previous text.
+
+
+## Evidence and figure update - 13 October 2026
+
+The website now separates molecule modalities, analyst workload sensitivities, quantity/price effects and funding-to-tool purchase capture. Unavailable media/resin source figures are withheld from headline TAMs; recombinant-protein estimates are compared without combining their years/scopes. [Review notes](REVIEW_NOTES.md). Figure 13 uses synthetic numeric values with magnitude shading; all nine properties are explained in the [English label guide](https://wizardzxx-tech.github.io/chart/v2/#metric-glossary). Affected SVG/PPT/PDF downloads are synchronized.

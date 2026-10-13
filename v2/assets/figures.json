@@ -11,23 +11,29 @@
   },
   {
     "figure": 2,
-    "title": "China and global LST markets",
+    "title": "2025 LST under one F&S definition",
     "png": "png/02_china_global_market.png",
     "svg": "svg/02_china_global_market.svg",
     "type": "Historical estimate",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/02_china_global_market.pptx",
-    "pptxSlides": 1
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13",
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries"
   },
   {
     "figure": 3,
-    "title": "How downstream demand differs",
+    "title": "Customer workflows across life science tools",
     "png": "png/03_downstream_structure.png",
     "svg": "svg/03_downstream_structure.svg",
-    "type": "Illustrative scenario",
+    "type": "Framework",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/03_downstream_structure.pptx",
-    "pptxSlides": 1
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13",
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries"
   },
   {
     "figure": 4,
@@ -47,27 +53,36 @@
     "type": "Research hypothesis",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/05_demand_elasticity.pptx",
-    "pptxSlides": 1
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13",
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries"
   },
   {
     "figure": 6,
-    "title": "More experiments, less material per experiment",
+    "title": "Quantities and prices in miniaturization",
     "png": "png/06_miniaturization.png",
     "svg": "svg/06_miniaturization.svg",
     "type": "Illustrative scenario",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/06_miniaturization.pptx",
-    "pptxSlides": 1
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13",
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries"
   },
   {
     "figure": 7,
-    "title": "Illustrative AI-driven investment scenarios",
+    "title": "Funding-to-LST purchase sensitivity",
     "png": "png/07_investment_scenarios.png",
     "svg": "svg/07_investment_scenarios.svg",
     "type": "Illustrative scenario",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/07_investment_scenarios.pptx",
-    "pptxSlides": 1
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13",
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries"
   },
   {
     "figure": 8,
@@ -101,31 +116,33 @@
   },
   {
     "figure": 11,
-    "title": "Editable stage comparison",
+    "title": "Workflow comparison and clinical benchmarks",
     "png": "png/11_editable_stage_comparison.png",
     "svg": "svg/11_editable_stage_comparison.svg",
-    "type": "Illustrative scenario",
+    "type": "Framework",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/11_editable_stage_comparison.pptx",
     "pdf": "AI_LST_research_graphics.pdf",
     "pdfLabel": "Original 12 figures PDF",
-    "sources": "SOURCES.md",
-    "notesLabel": "Market scopes, supplier tickers & sources",
-    "pptxSlides": 1
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries",
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13"
   },
   {
     "figure": 12,
-    "title": "AI discovery funnel and enlarged LST ecosystem",
+    "title": "Modality-aware AI discovery and LST ecosystem",
     "png": "png/12_ai_funnel_lst_ecosystem.png",
     "svg": "svg/12_ai_funnel_lst_ecosystem.svg",
-    "type": "Illustrative scenario",
+    "type": "Research hypothesis",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptx": "editable/single/12_ai_funnel_lst_ecosystem.pptx",
     "pdf": "AI_LST_research_graphics.pdf",
     "pdfLabel": "Original 12 figures PDF",
-    "sources": "SOURCES.md",
-    "notesLabel": "Market scopes, supplier tickers & sources",
-    "pptxSlides": 1
+    "sources": "REVIEW_NOTES.md",
+    "notesLabel": "Evidence review & source boundaries",
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13"
   },
   {
     "figure": 13,
@@ -138,7 +155,9 @@
     "pdf": "AI_antibody_data_density.pdf",
     "sources": "data-density/SOURCES.md",
     "palette": "User RGB palette \u00b7 13 October 2026",
-    "pptxSlides": 1
+    "pptxSlides": 1,
+    "reviewDate": "2026-10-13",
+    "notesLabel": "Synthetic values & metric definitions"
   },
   {
     "figure": 14,

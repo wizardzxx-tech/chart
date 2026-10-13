@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "font_note": "Uses a locally installed font; font files are not redistributed.",
   "framework": [
     {
@@ -45,8 +45,8 @@
   "market": {
     "year": 2025,
     "unit": "US$bn",
-    "status": "Consultant historical estimate",
-    "scope": "Defined F&S LST scope; not a unified broad-industry TAM",
+    "status": "Issuer-commissioned consultant estimate, source verified; not independently validated industry TAM",
+    "scope": "F&S definition disclosed in ACRO HKEX application; not broad life-science tools TAM or geographic revenue exposure",
     "total_global": 41.5,
     "total_china": 7.7,
     "ruo_global": 26.4,
@@ -55,40 +55,45 @@
     "breakdown_note": "Other tools are residual instruments and consumables, not independently split."
   },
   "downstream": {
+    "status": "Qualitative product-use map; customer purchasing shares not established.",
     "categories": [
-      "Academia",
-      "Biotech / pharma R&D",
-      "CRO / CDMO",
-      "Pharma manufacturing",
-      "IVD development"
+      "Reagents",
+      "Consumables",
+      "Instruments"
     ],
     "rows": [
       [
-        "Reagents",
-        30,
-        25,
-        15,
-        10,
-        20
+        "Academia / research hospitals",
+        "Targets, enzymes,\ncell media",
+        "Plates, tips,\ncultureware",
+        "Sequencing, imaging,\nLC-MS"
       ],
       [
-        "Consumables",
-        20,
-        20,
-        15,
-        30,
-        15
+        "Biotech / pharma R&D",
+        "Proteins, assay panels,\nexpression reagents",
+        "Sensors, columns,\nfiltration",
+        "BLI / SPR, automation,\nflow cytometry"
       ],
       [
-        "Instruments",
-        25,
-        20,
-        10,
-        15,
-        30
+        "CRO / CDMO",
+        "Discovery and\nprocess reagents",
+        "Labware, resins,\nscale-specific inputs",
+        "Assay, process and\nQC platforms"
+      ],
+      [
+        "Biomanufacturing",
+        "Production media,\nfeeds and enzymes",
+        "Resins, filters,\nsingle-use assemblies",
+        "Bioreactors, chromatography,\nQC instruments"
+      ],
+      [
+        "IVD development",
+        "Antigens, antibodies,\ntool enzymes",
+        "Assay plates,\nmagnetic beads",
+        "Research and\nQC instruments"
       ]
     ],
-    "status": "Illustrative supplied assumptions; rows sum to 100%; hospitals not separately modeled."
+    "boundary": "Life-science uses only. Food, environmental and chemical-analysis demand excluded. Clinical IVD analyzers are not included in research-instrument examples."
   },
   "workflow": [
     {
@@ -267,7 +272,12 @@
       "wells": 1536,
       "tips_per_experiment": 0.1
     },
-    "status": "Illustrative calculation; full plates; excludes dead volume, controls, retests, ASP and services."
+    "status": "Illustrative quantities and plate-price sensitivity; ASP ratios are model inputs, not vendor quotes; full usable plates, zero extra volume, no controls or retests in the plotted base.",
+    "plate_price_ratios": [
+      1,
+      2,
+      4
+    ]
   },
   "investment": {
     "scenarios": [
@@ -281,21 +291,13 @@
       "Scenario C"
     ],
     "unit": "US$bn",
-    "shares": [
-      0.3,
-      0.25,
-      0.2,
-      0.15,
-      0.1
+    "capture_rates": [
+      0.05,
+      0.1,
+      0.2
     ],
-    "buckets": [
-      "Research equipment / automation",
-      "Research reagents",
-      "Research consumables",
-      "Manufacturing bioprocess tools",
-      "Services / other"
-    ],
-    "status": "Illustrative cumulative incremental investment; no fixed horizon; not realized funding or a forecast."
+    "status": "Analyst sensitivity: hypothetical total funding pools multiplied by LST purchase capture; cumulative, no specified time horizon; not observed fundraising, realized purchases or annual TAM.",
+    "excluded": "People, clinical care/trials, software/compute, overhead, service fees and cash not converted to tool purchases. Count tool vendor purchases once; do not add CRO fees and embedded tool procurement."
   },
   "bottlenecks": [
     {

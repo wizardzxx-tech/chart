@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "figures": [
     {
       "figure": 1,
@@ -9,13 +9,13 @@
     },
     {
       "figure": 2,
-      "title": "China and global LST markets",
+      "title": "2025 LST under one F&S definition",
       "png": "png/02_china_global_market.png",
       "svg": "svg/02_china_global_market.svg"
     },
     {
       "figure": 3,
-      "title": "How downstream demand differs",
+      "title": "Customer workflows across life science tools",
       "png": "png/03_downstream_structure.png",
       "svg": "svg/03_downstream_structure.svg"
     },
@@ -33,13 +33,13 @@
     },
     {
       "figure": 6,
-      "title": "More experiments, less material per experiment",
+      "title": "Quantities and prices in miniaturization",
       "png": "png/06_miniaturization.png",
       "svg": "svg/06_miniaturization.svg"
     },
     {
       "figure": 7,
-      "title": "Illustrative AI-driven investment scenarios",
+      "title": "Funding-to-LST purchase sensitivity",
       "png": "png/07_investment_scenarios.png",
       "svg": "svg/07_investment_scenarios.svg"
     },
@@ -63,13 +63,13 @@
     },
     {
       "figure": 11,
-      "title": "Editable stage comparison",
+      "title": "Workflow comparison and clinical benchmarks",
       "png": "png/11_editable_stage_comparison.png",
       "svg": "svg/11_editable_stage_comparison.svg"
     },
     {
       "figure": 12,
-      "title": "AI discovery funnel and enlarged LST ecosystem",
+      "title": "Modality-aware AI discovery and LST ecosystem",
       "png": "png/12_ai_funnel_lst_ecosystem.png",
       "svg": "svg/12_ai_funnel_lst_ecosystem.svg"
     }

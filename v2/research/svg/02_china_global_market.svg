@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:description>China and global LST markets</dc:description>
+    <dc:description>2025 LST under one F&amp;S definition</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -34,7 +34,7 @@ L 1088.64 65.448
 L 1088.64 37.584 
 L 956.16 37.584 
 z
-" style="fill: #F4F9FD; stroke: #F4F9FD; stroke-width: 0.7; stroke-linejoin: miter"/>
+" style="fill: #f4f9fd; stroke: #f4f9fd; stroke-width: 0.7; stroke-linejoin: miter"/>
   </g>
   <g id="patch_3">
    <path d="M 802.944 353.808 
@@ -42,7 +42,7 @@ L 1073.664 353.808
 L 1073.664 177.552 
 L 802.944 177.552 
 z
-" style="fill: #F4F9FD; stroke: #F4F9FD; stroke-width: 0.7; stroke-linejoin: miter"/>
+" style="fill: #f4f9fd; stroke: #f4f9fd; stroke-width: 0.7; stroke-linejoin: miter"/>
   </g>
   <g id="axes_1">
    <g id="patch_4">
@@ -57,13 +57,13 @@ z
     <g id="xtick_1">
      <g id="line2d_1"/>
      <g id="text_1">
-      <text style="font-size: 14px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="284.858182" y="515.740937" transform="rotate(-0 284.858182 515.740937)">Global LST</text>
+      <text style="font-size: 14px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="284.858182" y="515.740937" transform="rotate(-0 284.858182 515.740937)">Global LST</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2"/>
      <g id="text_2">
-      <text style="font-size: 14px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="567.621818" y="515.740937" transform="rotate(-0 567.621818 515.740937)">China LST</text>
+      <text style="font-size: 14px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="567.621818" y="515.740937" transform="rotate(-0 567.621818 515.740937)">China LST</text>
      </g>
     </g>
    </g>
@@ -72,59 +72,59 @@ z
      <g id="line2d_3">
       <path d="M 115.2 495.72 
 L 737.28 495.72 
-" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_4"/>
      <g id="text_3">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="500.014688" transform="rotate(-0 105.2 500.014688)">0</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="105.2" y="500.014688" transform="rotate(-0 105.2 500.014688)">0</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_5">
       <path d="M 115.2 421.763478 
 L 737.28 421.763478 
-" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_6"/>
      <g id="text_4">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="426.058166" transform="rotate(-0 105.2 426.058166)">10</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="105.2" y="426.058166" transform="rotate(-0 105.2 426.058166)">10</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_7">
       <path d="M 115.2 347.806957 
 L 737.28 347.806957 
-" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_8"/>
      <g id="text_5">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="352.101644" transform="rotate(-0 105.2 352.101644)">20</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="105.2" y="352.101644" transform="rotate(-0 105.2 352.101644)">20</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_9">
       <path d="M 115.2 273.850435 
 L 737.28 273.850435 
-" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_10"/>
      <g id="text_6">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="278.145122" transform="rotate(-0 105.2 278.145122)">30</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="105.2" y="278.145122" transform="rotate(-0 105.2 278.145122)">30</text>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_11">
       <path d="M 115.2 199.893913 
 L 737.28 199.893913 
-" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #ACD4F1; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: none; stroke: #acd4f1; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_12"/>
      <g id="text_7">
-      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="105.2" y="204.188601" transform="rotate(-0 105.2 204.188601)">40</text>
+      <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="105.2" y="204.188601" transform="rotate(-0 105.2 204.188601)">40</text>
      </g>
     </g>
     <g id="text_8">
-     <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="85.463125" y="325.62" transform="rotate(-90 85.463125 325.62)">US$bn</text>
+     <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="85.463125" y="325.62" transform="rotate(-90 85.463125 325.62)">US$bn</text>
     </g>
    </g>
    <g id="patch_5">
@@ -133,7 +133,7 @@ L 344.238545 495.72
 L 344.238545 300.474783 
 L 225.477818 300.474783 
 z
-" clip-path="url(#pa0dfa6e865)" style="fill: #00355F"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: #00355f"/>
    </g>
    <g id="patch_6">
     <path d="M 508.241455 495.72 
@@ -141,7 +141,7 @@ L 627.002182 495.72
 L 627.002182 461.7 
 L 508.241455 461.7 
 z
-" clip-path="url(#pa0dfa6e865)" style="fill: #00355F"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: #00355f"/>
    </g>
    <g id="patch_7">
     <path d="M 225.477818 300.474783 
@@ -149,7 +149,7 @@ L 344.238545 300.474783
 L 344.238545 188.800435 
 L 225.477818 188.800435 
 z
-" clip-path="url(#pa0dfa6e865)" style="fill: #A5A5A5"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: #a5a5a5"/>
    </g>
    <g id="patch_8">
     <path d="M 508.241455 461.7 
@@ -157,35 +157,35 @@ L 627.002182 461.7
 L 627.002182 438.773478 
 L 508.241455 438.773478 
 z
-" clip-path="url(#pa0dfa6e865)" style="fill: #A5A5A5"/>
+" clip-path="url(#pa0dfa6e865)" style="fill: #a5a5a5"/>
    </g>
    <g id="patch_9">
     <path d="M 115.2 495.72 
 L 115.2 155.52 
-" style="fill: none; stroke: #A5A5A5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+" style="fill: none; stroke: #a5a5a5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_10">
     <path d="M 115.2 495.72 
 L 737.28 495.72 
-" style="fill: none; stroke: #A5A5A5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+" style="fill: none; stroke: #a5a5a5; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_9">
     <text style="font-weight: 700; font-size: 17px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #ffffff" x="284.858182" y="402.488173" transform="rotate(-0 284.858182 402.488173)">26.4</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 15px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="284.858182" y="248.511827" transform="rotate(-0 284.858182 248.511827)">15.1</text>
+    <text style="font-size: 15px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="284.858182" y="248.511827" transform="rotate(-0 284.858182 248.511827)">15.1</text>
    </g>
    <g id="text_11">
-    <text style="font-weight: 700; font-size: 20px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="284.858182" y="177.420408" transform="rotate(-0 284.858182 177.420408)">41.5</text>
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="284.858182" y="177.420408" transform="rotate(-0 284.858182 177.420408)">41.5</text>
    </g>
    <g id="text_12">
     <text style="font-weight: 700; font-size: 17px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #ffffff" x="567.621818" y="483.100781" transform="rotate(-0 567.621818 483.100781)">4.6</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 15px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="567.621818" y="454.110958" transform="rotate(-0 567.621818 454.110958)">3.1</text>
+    <text style="font-size: 15px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="567.621818" y="454.110958" transform="rotate(-0 567.621818 454.110958)">3.1</text>
    </g>
    <g id="text_14">
-    <text style="font-weight: 700; font-size: 20px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="567.621818" y="427.393451" transform="rotate(-0 567.621818 427.393451)">7.7</text>
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="567.621818" y="427.393451" transform="rotate(-0 567.621818 427.393451)">7.7</text>
    </g>
    <g id="legend_1">
     <g id="patch_11">
@@ -194,10 +194,10 @@ L 145.65 145.269703
 L 145.65 137.919703 
 L 124.65 137.919703 
 z
-" style="fill: #00355F"/>
+" style="fill: #00355f"/>
     </g>
     <g id="text_15">
-     <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="154.05" y="145.269703" transform="rotate(-0 154.05 145.269703)">Research biological reagents</text>
+     <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="154.05" y="145.269703" transform="rotate(-0 154.05 145.269703)">Research biological reagents</text>
     </g>
     <g id="patch_12">
      <path d="M 310.454063 145.269703 
@@ -205,50 +205,50 @@ L 331.454063 145.269703
 L 331.454063 137.919703 
 L 310.454063 137.919703 
 z
-" style="fill: #A5A5A5"/>
+" style="fill: #a5a5a5"/>
     </g>
     <g id="text_16">
-     <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start" x="339.854062" y="145.269703" transform="rotate(-0 339.854062 145.269703)">Other tools: instruments + consumables</text>
+     <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="339.854062" y="145.269703" transform="rotate(-0 339.854062 145.269703)">Other tools: instruments + consumables</text>
     </g>
    </g>
   </g>
   <g id="line2d_13">
    <path d="M 63.36 119.88 
 L 1088.64 119.88 
-" style="fill: none; stroke: #ACD4F1; stroke-width: 0.8; stroke-linecap: square"/>
+" style="fill: none; stroke: #acd4f1; stroke-width: 0.8; stroke-linecap: square"/>
   </g>
   <g id="text_17">
-   <text style="font-weight: 700; font-size: 22px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="54.297656" transform="rotate(-0 63.36 54.297656)">02  China and global LST markets</text>
+   <text style="font-weight: 700; font-size: 22px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="54.282188" transform="rotate(-0 63.36 54.282188)">02  2025 LST under one F&amp;S definition</text>
   </g>
   <g id="text_18">
-   <text style="font-size: 9.5px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355F" x="1022.4" y="53.645672" transform="rotate(-0 1022.4 53.645672)">HISTORICAL</text>
+   <text style="font-size: 9.5px; font-family: 'Arial Unicode MS'; text-anchor: middle; fill: #00355f" x="1022.4" y="53.645672" transform="rotate(-0 1022.4 53.645672)">HISTORICAL</text>
   </g>
   <g id="text_19">
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="93.827813" transform="rotate(-0 63.36 93.827813)">2025 historical estimates from one F&amp;S study; this is a defined market scope, not a universal LST TAM.</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="93.827813" transform="rotate(-0 63.36 93.827813)">2025 F&amp;S estimates commissioned for ACRO’s filing. A defined scope, not a broad-industry TAM.</text>
   </g>
   <g id="text_20">
-   <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="596.287336" transform="rotate(-0 63.36 596.287336)">Other tools are the residual. Comparable instrument and consumable splits were not separately available.</text>
+   <text style="font-size: 10.5px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="596.287336" transform="rotate(-0 63.36 596.287336)">Other tools are the residual. Comparable instrument and consumable splits were not separately available.</text>
   </g>
   <g id="text_21">
-   <text style="font-size: 8.7px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="63.36" y="620.445164" transform="rotate(-0 63.36 620.445164)">Source: ACROBiosystems HKEX application, 30 Sep 2026, printed pp. 65 and 67; links in SOURCES.md.</text>
+   <text style="font-size: 8.7px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="63.36" y="620.445164" transform="rotate(-0 63.36 620.445164)">Source: ACROBiosystems HKEX application, 30 Sep 2026, printed pp. 65 and 67; links in SOURCES.md.</text>
   </g>
   <g id="text_22">
-   <text style="font-size: 9.2px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355F" x="1088.64" y="620.568188" transform="rotate(-0 1088.64 620.568188)">2026-10-12</text>
+   <text style="font-size: 9.2px; font-family: 'Arial Unicode MS'; text-anchor: end; fill: #00355f" x="1088.64" y="620.568188" transform="rotate(-0 1088.64 620.568188)">2026-10-13</text>
   </g>
   <g id="text_23">
-   <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="829.44" y="216.558797" transform="rotate(-0 829.44 216.558797)">China / global market</text>
+   <text style="font-size: 13px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="829.44" y="216.628875" transform="rotate(-0 829.44 216.628875)">China share within F&amp;S scope</text>
   </g>
   <g id="text_24">
-   <text style="font-weight: 700; font-size: 37px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355F" x="829.44" y="277.180406" transform="rotate(-0 829.44 277.180406)">18.6%</text>
+   <text style="font-weight: 700; font-size: 37px; font-family: 'Arial Unicode MS'; text-anchor: start; fill: #00355f" x="829.44" y="277.180406" transform="rotate(-0 829.44 277.180406)">18.6%</text>
   </g>
   <g id="text_25">
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(829.44 322.606688)">7.7 / 41.5</text>
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(829.44 335.480063)">Same-scope historical estimate</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(829.44 322.694437)">7.7 / 41.5</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(829.44 335.392313)">Not vendor revenue exposure</text>
   </g>
   <g id="text_26">
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(812.16 420.6735)">Broader research and</text>
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(812.16 433.371375)">production markets require</text>
-   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355F" transform="translate(812.16 446.06925)">a separate scope reconciliation.</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(812.16 420.58575)">Issuer-commissioned estimate.</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(812.16 433.283625)">Broader markets and vendor</text>
+   <text style="font-size: 12px; font-family: 'Arial Unicode MS'; fill: #00355f" transform="translate(812.16 446.157)">China revenues use other scopes.</text>
   </g>
  </g>
  <defs>

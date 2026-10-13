@@ -1,135 +1,98 @@
-{
-  "date": "2026-10-12",
-  "supporting_figures": [
-    {
-      "figure": 1,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 2,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 3,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 4,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 5,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 6,
-      "experiment_multiplier": 10.0,
-      "reagent_multiplier": 0.5,
-      "plates_before": 1042,
-      "plates_after": 652,
-      "plate_multiplier": 0.6257197696737045,
-      "tips_multiplier": 1.0
-    },
-    {
-      "figure": 6,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 7,
-      "shares_sum": 1.0,
-      "totals": [
-        50.0,
-        100.0,
-        200.0
-      ]
-    },
-    {
-      "figure": 7,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 8,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 9,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    },
-    {
-      "figure": 10,
-      "canvas": [
-        1600,
-        900
-      ],
-      "text_outside_canvas": [],
-      "marks_covered_by_labels": [],
-      "direct_label_overlap": []
-    }
-  ],
-  "presentation": {
-    "slides": 2,
-    "native_tables": 1,
-    "native_funnel_shapes": 5,
-    "editable_text_objects": 100,
-    "sha256": "3a945dee0771eabc1e412289cc58f8293dabae4edf9a526646df9b0e32140dcf",
-    "package_integrity": "pass",
-    "declared_geometry_and_font_checks": "pass",
-    "first_party_reimport": "pass",
-    "visual_review": "all twelve figures individually reviewed; final two slides reviewed after layout repairs",
-    "application_test": "PowerPoint and Google Slides application editing were not executed."
+[
+  {
+    "figure": 1,
+    "labels": 43,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 2,
+    "labels": 29,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 3,
+    "labels": 46,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 4,
+    "labels": 45,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 5,
+    "labels": 42,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 6,
+    "labels": 40,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 7,
+    "labels": 35,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 8,
+    "labels": 32,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 9,
+    "labels": 35,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 10,
+    "labels": 27,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 11,
+    "labels": 28,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 12,
+    "labels": 82,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 13,
+    "labels": 124,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 14,
+    "labels": 42,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 15,
+    "labels": 91,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
+  },
+  {
+    "figure": 16,
+    "labels": 43,
+    "contrastFixes": 0,
+    "textOutsideCanvas": 0
   }
-}
+]

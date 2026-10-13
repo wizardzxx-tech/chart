@@ -33,3 +33,8 @@ The combined deck uses native editable text lines over original chart artwork. T
 
 
 Each of the 16 figure cards has a Download PPT button. It downloads a separate one-slide editable PowerPoint. Figure dialogs and the text-editor header link to the same per-figure file. Full-deck downloads remain available.
+
+
+## Evidence review, 13 October 2026
+
+The current site and affected exports use modality-specific workflow mechanisms, 1x/2x/5x/10x workload sensitivities, a qualitative customer map, price-aware consumption math and funding-to-tool-purchase capture sensitivities. The recombinant-protein estimate is labelled issuer-commissioned/disputed; media and resin headline TAMs are withheld pending original-source recovery. Detailed decisions and source boundaries are in [REVIEW_NOTES.md](research/REVIEW_NOTES.md).

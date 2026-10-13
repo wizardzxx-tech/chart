@@ -117,3 +117,8 @@ Figure 12 includes 22 distinct listed suppliers or parents, with Chinese/HK and 
 [All 16 text-editable slides](editable/AI_LST_all_16_text_editable.pptx) · [All 16 figures as PDF](AI_LST_all_16_research_graphics.pdf) · [Edit the updated funnel](../editor.html?figure=12).
 
 The combined deck uses native editable text lines over original chart artwork. The separate decks for Figures 11–16 also contain native tables, shapes and connectors; logos and icons remain images. Figures, market data, and scenario labels outside Figure 12 retain their previous text.
+
+
+## Evidence review, 13 October 2026
+
+The current site and affected exports use modality-specific workflow mechanisms, 1x/2x/5x/10x workload sensitivities, a qualitative customer map, price-aware consumption math and funding-to-tool-purchase capture sensitivities. The recombinant-protein estimate is labelled issuer-commissioned/disputed; media and resin headline TAMs are withheld pending original-source recovery. Detailed decisions and source boundaries are in [REVIEW_NOTES.md](REVIEW_NOTES.md).

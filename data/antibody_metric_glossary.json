@@ -1,0 +1,77 @@
+{
+  "status": "Property definitions; synthetic Figure 13 values carry no assay units",
+  "metrics": [
+    {
+      "key": "KD",
+      "name": "Equilibrium dissociation constant",
+      "plainEnglish": "How tightly does the antibody bind its target?",
+      "units": "M, nM or pM",
+      "interpretation": "Lower KD means tighter binding under matched conditions. In a simple 1:1 model, KD = koff / kon.",
+      "measurement": "SPR / BLI; model, valency and temperature matter."
+    },
+    {
+      "key": "kon",
+      "name": "Association rate constant",
+      "plainEnglish": "How quickly does a binding complex form?",
+      "units": "M\u207b\u00b9 s\u207b\u00b9",
+      "interpretation": "A larger kon means faster association at the same concentration. It is not a direct measure of clinical onset.",
+      "measurement": "SPR / BLI association curves."
+    },
+    {
+      "key": "koff",
+      "name": "Dissociation rate constant",
+      "plainEnglish": "How quickly does the antibody let go?",
+      "units": "s\u207b\u00b9",
+      "interpretation": "A smaller koff means slower dissociation; ideal 1:1 residence time is 1 / koff. This is not serum half-life or a universal efficacy predictor.",
+      "measurement": "SPR / BLI dissociation curves."
+    },
+    {
+      "key": "expr",
+      "name": "Expression yield",
+      "plainEnglish": "Can the cell system make the antibody, and how much?",
+      "units": "mg/L or \u00b5g/mL",
+      "interpretation": "Yield affects sample supply and production feasibility. Host, format, culture conditions and recovery must be recorded.",
+      "measurement": "Expression cultures, titer assays and purification."
+    },
+    {
+      "key": "Tm",
+      "name": "Thermal unfolding transition",
+      "plainEnglish": "How resistant is the protein to unfolding when heated?",
+      "units": "\u00b0C",
+      "interpretation": "A higher transition temperature suggests greater thermal stability in the tested conditions. It does not directly establish shelf life or in-vivo half-life.",
+      "measurement": "nanoDSF / DSF; IgGs can show multiple transitions."
+    },
+    {
+      "key": "agg",
+      "name": "Aggregation",
+      "plainEnglish": "Do molecules form larger clusters or particles?",
+      "units": "SEC % monomer / % HMW; method-specific readouts",
+      "interpretation": "Aggregation can affect formulation and immunogenicity risk. The result depends on concentration, stress and the measurement method.",
+      "measurement": "SEC-HPLC, light scattering and particle analysis."
+    },
+    {
+      "key": "poly",
+      "name": "Polyreactivity",
+      "plainEnglish": "Does the antibody bind several unrelated non-target materials?",
+      "units": "Assay signal, ratio or score",
+      "interpretation": "Flags non-specific binding and developability risk. There is no universal score that guarantees clinical failure.",
+      "measurement": "Defined non-target binding panels and controls."
+    },
+    {
+      "key": "epi",
+      "name": "Epitope",
+      "plainEnglish": "Where on the target does the antibody bind?",
+      "units": "Competition bin, residues or structural site",
+      "interpretation": "Binding location helps interpret mechanism. A competition bin is not a precise structural epitope or proof of functional effect.",
+      "measurement": "SPR / BLI binning, mutagenesis or structural mapping."
+    },
+    {
+      "key": "cell",
+      "name": "Cell potency",
+      "plainEnglish": "Does the antibody produce the intended effect in living cells?",
+      "units": "EC50 / IC50 plus Emax and assay context",
+      "interpretation": "Measures functional activity in the chosen cell model. Target expression, timing and maximum response matter; it does not replace in-vivo or clinical evidence.",
+      "measurement": "Reporter assays, flow cytometry and functional cell readouts."
+    }
+  ]
+}

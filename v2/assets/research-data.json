@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-12",
-  "denominator": "per one clinical entrant",
-  "status": "illustrative scenario",
+  "date": "2026-10-13",
+  "denominator": "Workflow comparison. Counts are not normalized into a synthetic per-drug cohort.",
+  "status": "Evidence-backed mechanisms with analyst sensitivities",
   "stages": [
     [
-      "Molecules designed\n(virtual)",
-      "~10³",
-      "10⁵–10⁹",
-      "Generative models can expand\ncandidate enumeration at low marginal cost."
+      "Virtual search / design",
+      "Large virtual\nlibraries",
+      "Quality +\nselection",
+      "Large libraries predate generative AI.\nThe investment mechanism is better selection and learning."
     ],
     [
-      "Molecules physically made",
-      "~10³",
-      "10³–10⁴",
-      "Automated synthesis and DNA libraries\ncan expand construction capacity."
+      "Physical samples",
+      "Program-\nspecific",
+      "Modality-\ndependent",
+      "Small molecules can need fewer syntheses per program.\nProtein libraries and individual profiling are different units."
     ],
     [
-      "Fully profiled in wet lab",
-      "~50",
-      "50 → 500",
-      "Illustrative capacity expansion\nthat investors would need to fund."
+      "Assay workload",
+      "1\u00d7 baseline",
+      "1\u00d7 / 2\u00d7 /\n5\u00d7 / 10\u00d7",
+      "Analyst workload sensitivities, not predicted fully profiled\ncandidate counts. Include an efficiency/no-growth case."
     ],
     [
-      "Clinical entry",
-      "1",
-      "1",
-      "Patients, ethics, capital and time\nremain hard constraints."
+      "Clinical development",
+      "Phase I\nprograms",
+      "Funded clinical\nprograms",
+      "Clinical biology, patients, capital and time remain\nconstraints; discovery gains do not establish clinical gains."
     ],
     [
-      "Expected approvals",
-      "~0.14",
-      "Unknown",
-      "Clinical success must be demonstrated;\nAI does not establish an approval rate."
+      "Phase I to approval",
+      "7.9% / 13.8%\n(study estimates)",
+      "AI advantage\nunproven",
+      "BIO 2011\u20132020 and Wong 2000\u20132015 are different\ncohorts and methods, not an AI comparison."
     ]
   ],
   "ecosystem": [
@@ -40,8 +40,8 @@
       "icon": "dna",
       "products": "DNA / RNA synthesis, enzymes\nChemical building blocks",
       "metric": "RMB 1.33bn",
-      "scope": "China • 2025 • DNA synthesis services [1]",
-      "companies": "GenScript — 1548.HK | Vazyme — 688105.SH | Tsingke — NEEQ:874813 | Twist Bioscience — NASDAQ:TWST | Thermo Fisher — NYSE:TMO",
+      "scope": "China \u2022 2025 \u2022 DNA synthesis services [1]",
+      "companies": "GenScript \u2014 1548.HK | Vazyme \u2014 688105.SH | Tsingke \u2014 NEEQ:874813 | Twist Bioscience \u2014 NASDAQ:TWST | Thermo Fisher \u2014 NYSE:TMO",
       "logos": [
         [
           "twist-trim.png",
@@ -55,32 +55,32 @@
       "note": "Oligos + long fragments only",
       "id": "molecular",
       "global": [
-        "Twist Bioscience — NASDAQ:TWST",
-        "Thermo Fisher — NYSE:TMO"
+        "Twist Bioscience \u2014 NASDAQ:TWST",
+        "Thermo Fisher \u2014 NYSE:TMO"
       ],
       "china": [
-        "GenScript — 1548.HK",
-        "Vazyme — 688105.SH",
-        "Tsingke — NEEQ:874813"
+        "GenScript \u2014 1548.HK",
+        "Vazyme \u2014 688105.SH",
+        "Tsingke \u2014 NEEQ:874813"
       ],
       "mechanism": "More physical candidates can require more custom DNA, enzymes and chemical building blocks. Better computational triage can reduce how many candidates need to be constructed.",
       "watch": "Paid construct volumes, turnaround time, synthesis success and net price per construct.",
       "boundary": "China oligonucleotide synthesis services RMB0.53bn plus long-fragment synthesis RMB0.80bn. This excludes the broader upstream equipment and reagent market.",
-      "sourceTitle": "Tsingke IPO prospectus • June 2026",
+      "sourceTitle": "Tsingke IPO prospectus \u2022 June 2026",
       "source": "https://static.sse.com.cn/stock/disclosure/announcement/c/202606/002233_20260630_Z9LA.pdf",
-      "page": "Printed pp. 156–158",
-      "confidence": "Primary filing",
+      "page": "Printed 1-1-156 to 1-1-158; China segment chart printed 1-1-158 / PDF159",
+      "confidence": "Issuer-cited estimate",
       "filters": [
         "discovery"
       ],
       "listed_cn": [
-        "GenScript · 1548.HK",
-        "Vazyme · 688105.SH",
-        "Tsingke · NEEQ:874813"
+        "GenScript \u00b7 1548.HK",
+        "Vazyme \u00b7 688105.SH",
+        "Tsingke \u00b7 NEEQ:874813"
       ],
       "listed_us": [
-        "Twist · TWST",
-        "Thermo · TMO"
+        "Twist \u00b7 TWST",
+        "Thermo \u00b7 TMO"
       ]
     },
     {
@@ -88,88 +88,90 @@
       "icon": "flask-conical",
       "products": "Recombinant proteins, antibodies\nBinding and activity assays",
       "metric": "US$3.5bn",
-      "scope": "Global • 2025 • research proteins [2]",
-      "companies": "ACROBiosystems — 301080.SZ | Sino Biological — 301047.SZ | Bio-Techne — NASDAQ:TECH | Thermo Fisher — NYSE:TMO",
+      "scope": "Global \u00b7 2025 \u00b7 F&S RUO proteins [2]",
+      "companies": "ACROBiosystems \u2014 301080.SZ | Sino Biological \u2014 301047.SZ | Bio-Techne \u2014 NASDAQ:TECH | Thermo Fisher \u2014 NYSE:TMO",
       "logos": [
         [
           "acro-trim.png",
           145
         ]
       ],
-      "note": "China: ~US$0.4bn • RUO scope",
+      "note": "Issuer-commissioned; estimate disputed",
       "focus": true,
       "id": "protein",
       "global": [
-        "Bio-Techne — NASDAQ:TECH",
-        "Thermo Fisher — NYSE:TMO"
+        "Bio-Techne \u2014 NASDAQ:TECH",
+        "Thermo Fisher \u2014 NYSE:TMO"
       ],
       "china": [
-        "ACROBiosystems — 301080.SZ",
-        "Sino Biological — 301047.SZ"
+        "ACROBiosystems \u2014 301080.SZ",
+        "Sino Biological \u2014 301047.SZ"
       ],
       "mechanism": "Physical expression and binding or activity tests can translate designed proteins into recurring reagent demand. Experimental success, assay intensity and miniaturization determine the net effect.",
       "watch": "Non-COVID research orders, functional product mix, customer repeat purchases and overseas demand.",
-      "boundary": "Research-use recombinant proteins, not therapeutic protein manufacturing. The China estimate of ~US$0.4bn is rounded to US$0.1bn precision.",
-      "sourceTitle": "ACROBiosystems HKEX application • September 2026",
+      "boundary": "F&S estimates US$3.5bn global and ~US$0.4bn China research-grade recombinant proteins in 2025. ACRO commissioned the report for RMB530,000. M&M estimates US$1.11bn in 2026 for finished off-the-shelf RUO proteins; GMI estimates US$2.5bn in 2025 for broader inputs and outsourced services. Years and scopes are not harmonized, so this is a disagreement, not a statistical range.",
+      "sourceTitle": "ACROBiosystems HKEX application \u2022 September 2026",
       "source": "https://www1.hkexnews.hk/app/sehk/2026/108910/documents/sehk26093002651_c.pdf",
-      "page": "Printed p. 71 / PDF p. 80",
-      "confidence": "Primary filing",
+      "page": "Printed71 / PDF80; provenance printed63 / PDF72; competitive table printed72 / PDF81",
+      "confidence": "Issuer-commissioned / disputed",
       "filters": [
         "discovery"
       ],
       "listed_cn": [
-        "ACRO · 301080.SZ",
-        "Sino · 301047.SZ"
+        "ACRO \u00b7 301080.SZ",
+        "Sino \u00b7 301047.SZ"
       ],
       "listed_us": [
-        "Bio-Techne · TECH",
-        "Thermo · TMO"
-      ]
+        "Bio-Techne \u00b7 TECH",
+        "Thermo \u00b7 TMO"
+      ],
+      "comparisonNote": "M&M: US$1.11bn (2026, off-the-shelf RUO); different scope/year. See the evidence review."
     },
     {
       "title": "Cells & culture systems",
       "icon": "test-tubes",
       "products": "Cell models, media, feeds\nBioreactors and cell expansion",
-      "metric": "US$323.5m*",
-      "scope": "China • 2024 • bioprocess media [3]",
-      "companies": "OPM Biosciences — 688293.SH | ACROBiosystems — 301080.SZ | Gibco / Thermo Fisher — NYSE:TMO | Cytiva / HyClone / Danaher — NYSE:DHR",
+      "metric": "Source pending",
+      "scope": "China \u2022 2024 \u2022 bioprocess media [3, source pending]",
+      "companies": "OPM Biosciences \u2014 688293.SH | ACROBiosystems \u2014 301080.SZ | Gibco / Thermo Fisher \u2014 NYSE:TMO | Cytiva / HyClone / Danaher \u2014 NYSE:DHR",
       "logos": [],
-      "note": "Selected media anchor; not all cell tools",
+      "note": "Original filing unavailable; TAM withheld",
       "id": "cells",
       "global": [
-        "Gibco / Thermo Fisher — NYSE:TMO",
-        "Cytiva / HyClone / Danaher — NYSE:DHR"
+        "Gibco / Thermo Fisher \u2014 NYSE:TMO",
+        "Cytiva / HyClone / Danaher \u2014 NYSE:DHR"
       ],
       "china": [
-        "OPM Biosciences — 688293.SH",
-        "ACROBiosystems — 301080.SZ"
+        "OPM Biosciences \u2014 688293.SH",
+        "ACROBiosystems \u2014 301080.SZ"
       ],
       "mechanism": "Cell models validate whether a candidate works in a biological system. The displayed market anchor is bioprocess media, whose demand depends more on culture volume and drug output than virtual design counts.",
       "watch": "Culture volumes, feeds and media intensity, validated processes and manufacturing utilization.",
-      "boundary": "China bioprocess cell culture media. It does not size all research media, cell models, bioreactors or cellular tools. Filing footnote excludes the COVID impact on vaccine products.",
-      "sourceTitle": "Duoning HKEX application / F&S • January 2026",
-      "source": "https://www.hkexnews.hk/app/sehk/2026/108106/documents/sehk26011800033_c.pdf",
-      "page": "Printed p. 126",
-      "confidence": "Source access limited",
+      "boundary": "Headline market value withheld because the original Duoning filing could not be restored. Prior source notes cited US$323.5m for China in 2024; both the value and detailed scope remain unverified in this review. This selected bioprocess category does not size the entire tool family.",
+      "sourceTitle": "Duoning application index \u00b7 full filing unavailable",
+      "source": "https://www1.hkexnews.hk/app/appyearlyindex.html?lang=en&year=2026",
+      "page": "Previous citation not reverified; see REVIEW_NOTES.md",
+      "confidence": "Source pending",
       "filters": [
         "bioprocess"
       ],
       "listed_cn": [
-        "OPM · 688293.SH",
-        "ACRO · 301080.SZ"
+        "OPM \u00b7 688293.SH",
+        "ACRO \u00b7 301080.SZ"
       ],
       "listed_us": [
-        "Gibco · TMO",
-        "Cytiva · DHR"
-      ]
+        "Gibco \u00b7 TMO",
+        "Cytiva \u00b7 DHR"
+      ],
+      "priorMetric": "US$323.5m*"
     },
     {
       "title": "Labware & sample handling",
       "icon": "pipette",
       "products": "Tips, plates, tubes, filtration\nAutomation-compatible labware",
       "metric": "~RMB 23bn",
-      "scope": "China • 2024 • plastic labware [4]",
-      "companies": "JET Biofil — 688026.SH | Changhong — 300151.SZ | Corning — NYSE:GLW | BD — NYSE:BDX · specimen collection",
+      "scope": "China \u2022 2024 \u2022 plastic labware [4]",
+      "companies": "JET Biofil \u2014 688026.SH | Changhong \u2014 300151.SZ | Corning \u2014 NYSE:GLW | BD \u2014 NYSE:BDX \u00b7 specimen collection",
       "logos": [
         [
           "jet-english.png",
@@ -183,30 +185,30 @@
       "note": "Includes clinical and industrial uses",
       "id": "labware",
       "global": [
-        "Corning — NYSE:GLW",
-        "BD — NYSE:BDX · specimen collection"
+        "Corning \u2014 NYSE:GLW",
+        "BD \u2014 NYSE:BDX \u00b7 specimen collection"
       ],
       "china": [
-        "JET Biofil — 688026.SH",
-        "Changhong — 300151.SZ"
+        "JET Biofil \u2014 688026.SH",
+        "Changhong \u2014 300151.SZ"
       ],
       "mechanism": "More tests can use more plates, tips, tubes and sample-preparation products. Smaller volumes, denser plates and tip-free dispensing can offset the experiment count increase.",
       "watch": "Automation qualification, repeat orders, plate density, units per test, prices and utilization.",
       "boundary": "Disposable plastic biological laboratory consumables in China, including research, clinical and industrial applications. Company-cited approximate industry estimate. BD is shown for the adjacent clinical/preanalytical sampling workflow; its ticker BDX does not represent the former BD flow-cytometry business.",
-      "sourceTitle": "JET Biofil 2025 annual-report summary • April 2026",
+      "sourceTitle": "JET Biofil 2025 annual-report summary \u2022 April 2026",
       "source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225255989.PDF",
-      "page": "PDF p. 6",
-      "confidence": "Primary disclosure",
+      "page": "PDF6 section2.3(1)",
+      "confidence": "Issuer-cited estimate",
       "filters": [
         "discovery"
       ],
       "listed_cn": [
-        "JET · 688026.SH",
-        "Changhong · 300151.SZ"
+        "JET \u00b7 688026.SH",
+        "Changhong \u00b7 300151.SZ"
       ],
       "listed_us": [
-        "Corning · GLW",
-        "BD · BDX"
+        "Corning \u00b7 GLW",
+        "BD \u00b7 BDX"
       ]
     },
     {
@@ -214,89 +216,109 @@
       "icon": "microscope",
       "products": "Sequencing, LC / LC-MS, flow\nImaging and quality control",
       "metric": "RMB 4.3bn",
-      "scope": "China • 2024 • sequencing tools [5]",
-      "companies": "MGI — 688114.SH | NanoMicro / NanoChrom — 688690.SH | Illumina — NASDAQ:ILMN | Agilent — NYSE:A | Waters — NYSE:WAT · includes former BD flow",
+      "scope": "China \u2022 2024 \u2022 sequencing tools [5]",
+      "companies": "MGI \u2014 688114.SH | NanoMicro / NanoChrom \u2014 688690.SH | Illumina \u2014 NASDAQ:ILMN | Agilent \u2014 NYSE:A | Waters \u2014 NYSE:WAT \u00b7 includes former BD flow",
       "logos": [
         [
           "mgi-trim.png",
           78
         ]
       ],
-      "note": "Sequencers + consumables; all uses",
+      "note": "Sequencing subset; 2024 policy baseline",
       "id": "analytics",
       "global": [
-        "Illumina — NASDAQ:ILMN",
-        "Agilent — NYSE:A",
-        "Waters — NYSE:WAT · includes former BD flow"
+        "Illumina \u2014 NASDAQ:ILMN",
+        "Agilent \u2014 NYSE:A",
+        "Waters \u2014 NYSE:WAT \u00b7 includes former BD flow"
       ],
       "china": [
-        "MGI — 688114.SH",
-        "NanoMicro / NanoChrom — 688690.SH"
+        "MGI \u2014 688114.SH",
+        "NanoMicro / NanoChrom \u2014 688690.SH"
       ],
       "mechanism": "Sequencing, mass spectrometry, flow and imaging create the measurements that close the feedback loop. Equipment purchases depend on new installations, replacement cycles and throughput utilization. Former BD Biosciences/flow is now part of Waters (WAT), following the 9 February 2026 transaction.",
       "watch": "Funded installations, utilization, reagent pull-through, service attachment and application mix.",
-      "boundary": "The displayed China anchor is sequencing instruments plus consumables, including clinical uses. It is not a combined TAM for LC/MS, flow, imaging and sequencing.",
-      "sourceTitle": "MGI 2024 annual report / CIC • April 2025",
+      "boundary": "The displayed China anchor is sequencing instruments plus consumables, including clinical uses. It is not a combined TAM for LC/MS, flow, imaging and sequencing. The blanket Illumina sequencer prohibition ended 10 November 2025; UEL-related instrument purchase approvals remain in the 2026 issuer disclosure.",
+      "sourceTitle": "MGI 2024 annual report / CIC \u2022 April 2025",
       "source": "https://static.cninfo.com.cn/finalpage/2025-04-30/1223427376.PDF",
-      "page": "Printed pp. 41–42",
-      "confidence": "Primary disclosure",
+      "page": "Printed41\u201342 / PDF41\u201342",
+      "confidence": "Issuer-cited estimate",
       "filters": [
         "discovery"
       ],
       "listed_cn": [
-        "MGI · 688114.SH",
-        "NanoMicro · 688690.SH"
+        "MGI \u00b7 688114.SH",
+        "NanoMicro \u00b7 688690.SH"
       ],
       "listed_us": [
-        "Illumina · ILMN",
-        "Agilent · A",
-        "Waters · WAT"
+        "Illumina \u00b7 ILMN",
+        "Agilent \u00b7 A",
+        "Waters \u00b7 WAT"
       ]
     },
     {
       "title": "Purification & scale-up",
       "icon": "factory",
       "products": "Analytical columns, process resins\nFiltration and single-use systems",
-      "metric": "US$578.2m*",
-      "scope": "China • 2024 • bioprocess resins [3]",
-      "companies": "NanoMicro — 688690.SH | Suzhou Sepax — 688758.SH | Cytiva / Danaher — NYSE:DHR | Repligen — NASDAQ:RGEN",
+      "metric": "Source pending",
+      "scope": "China \u2022 2024 \u2022 bioprocess resins [3, source pending]",
+      "companies": "NanoMicro \u2014 688690.SH | Suzhou Sepax \u2014 688758.SH | Cytiva / Danaher \u2014 NYSE:DHR | Repligen \u2014 NASDAQ:RGEN",
       "logos": [
         [
           "nanomicro-emblem.svg",
           34
         ]
       ],
-      "note": "Manufacturing demand has a longer lag",
+      "note": "Original filing unavailable; TAM withheld",
       "focus": true,
       "id": "purification",
       "global": [
-        "Cytiva / Danaher — NYSE:DHR",
-        "Repligen — NASDAQ:RGEN"
+        "Cytiva / Danaher \u2014 NYSE:DHR",
+        "Repligen \u2014 NASDAQ:RGEN"
       ],
       "china": [
-        "NanoMicro — 688690.SH",
-        "Suzhou Sepax — 688758.SH"
+        "NanoMicro \u2014 688690.SH",
+        "Suzhou Sepax \u2014 688758.SH"
       ],
       "mechanism": "Purification and analytical chromatography support development. Manufacturing resin demand requires successful pipeline progression and physical drug output; resin reuse can weaken the relationship with batch counts.",
       "watch": "Customer qualification, commercial batch volumes, resin reuse cycles, utilization and overseas orders.",
-      "boundary": "China bioprocess chromatography resins, not all analytical columns, chemical adsorption resins or purification instruments. Filing footnote excludes the COVID impact on vaccine products.",
-      "sourceTitle": "Duoning HKEX application / F&S • January 2026",
-      "source": "https://www.hkexnews.hk/app/sehk/2026/108106/documents/sehk26011800033_c.pdf",
-      "page": "Printed p. 132",
-      "confidence": "Source access limited",
+      "boundary": "Headline market value withheld because the original Duoning filing could not be restored. Prior source notes cited US$578.2m for China in 2024; both the value and detailed scope remain unverified in this review. This selected bioprocess category does not size the entire tool family.",
+      "sourceTitle": "Duoning application index \u00b7 full filing unavailable",
+      "source": "https://www1.hkexnews.hk/app/appyearlyindex.html?lang=en&year=2026",
+      "page": "Previous citation not reverified; see REVIEW_NOTES.md",
+      "confidence": "Source pending",
       "filters": [
         "bioprocess"
       ],
       "listed_cn": [
-        "NanoMicro · 688690.SH",
-        "Sepax · 688758.SH"
+        "NanoMicro \u00b7 688690.SH",
+        "Sepax \u00b7 688758.SH"
       ],
       "listed_us": [
-        "Cytiva · DHR",
-        "Repligen · RGEN"
-      ]
+        "Cytiva \u00b7 DHR",
+        "Repligen \u00b7 RGEN"
+      ],
+      "priorMetric": "US$578.2m*"
     }
   ],
-  "sources_note": "Media and resin anchors were checked against the official filing index during the preceding research on 9–10 October 2026. Direct PDF access is currently unavailable. Values carry an asterisk and lower source-access confidence.",
-  "ticker_note": "Examples grouped by listing venues, not domicile; Gibco uses Thermo Fisher TMO, Cytiva/HyClone use Danaher DHR. BD BDX is sample collection; former BD flow maps to Waters WAT. Tsingke 874813 is NEEQ-listed."
+  "sources_note": "Media and resin headline TAMs have been withheld: the original January 2026 Duoning application is lapsed and its full PDFs remain unavailable. Prior citations are retained only in review/source history as not reverified. Agreement with derivative reports or proxy extrapolations is not independent confirmation.",
+  "ticker_note": "Examples grouped by listing venues, not domicile; Gibco uses Thermo Fisher TMO, Cytiva/HyClone use Danaher DHR. BD BDX is sample collection; former BD flow maps to Waters WAT. Tsingke 874813 is NEEQ-listed.",
+  "review_date": "2026-10-13",
+  "review_summary": "Universal discovery counts removed; workflow separated by modality; workload, funding capture and ASP treated as sensitivities; commissioning and market-scope conflicts disclosed.",
+  "market_comparisons": [
+    {
+      "provider": "MarketsandMarkets",
+      "value": "US$1.11bn",
+      "year": 2026,
+      "url": "https://www.marketsandmarkets.com/PressReleases/research-use-recombinant-protein.asp",
+      "scope_url": "https://www.marketsandmarkets.com/Market-Reports/research-use-recombinant-protein-market-156810846.html",
+      "scope": "Finished off-the-shelf RUO consumables, liquid or lyophilized; product/country scope not harmonized with F&S."
+    },
+    {
+      "provider": "Global Market Insights",
+      "value": "US$2.5bn rounded (US$2,456.08m detailed)",
+      "year": 2025,
+      "url": "https://www.gminsights.com/industry-analysis/recombinant-proteins-market",
+      "scope": "Therapeutic, research and diagnostic protein inputs plus outsourced production services."
+    }
+  ]
 }

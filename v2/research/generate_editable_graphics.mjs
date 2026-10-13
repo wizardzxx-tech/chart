@@ -33,30 +33,24 @@ async function pic(file,x,y,w,h,icon=false){const b=await fs.readFile(OUT+'/asse
 }
 function header(title,subtitle){rect(72,54,9,85,C.teal);text(105,52,1735,58,title,46,C.ink,true);text(106,120,1700,38,subtitle,23,C.muted);line(72,176,1848,176,C.line,1);}
 async function end(stem){if(SCALE!==1)svg.push('</g>');svg.push('</svg>');await fs.writeFile(OUT+'/svg/'+stem+'.svg',svg.join('\n'));await fs.writeFile(TMP+'/'+stem+'.layout.json',await (await S.export({format:'layout'})).text());const b=await P.export({slide:S,format:'png',scale:2.5});await fs.writeFile(OUT+'/png/'+stem+'.png',new Uint8Array(await b.arrayBuffer()));}
-const defaultRows=[
-['Molecules designed\n(virtual)','~10³','10⁵–10⁹','Generative models can expand\ncandidate enumeration at low marginal cost.'],
-['Molecules physically made','~10³','10³–10⁴','Automated synthesis and DNA libraries\ncan expand construction capacity.'],
-['Fully profiled in wet lab','~50','50 → 500','Illustrative capacity expansion\nthat investors would need to fund.'],
-['Clinical entry','1','1','Patients, ethics, capital and time\nremain hard constraints.'],
-['Expected approvals','~0.14','Unknown','Clinical success must be demonstrated;\nAI does not establish an approval rate.']
-];
+const defaultRows=[["Virtual search / design", "Large virtual\nlibraries", "Quality +\nselection", "Large libraries predate generative AI.\nThe investment mechanism is better selection and learning."], ["Physical samples", "Program-\nspecific", "Modality-\ndependent", "Small molecules can need fewer syntheses per program.\nProtein libraries and individual profiling are different units."], ["Assay workload", "1× baseline", "1× / 2× /\n5× / 10×", "Analyst workload sensitivities, not predicted fully profiled\ncandidate counts. Include an efficiency/no-growth case."], ["Clinical development", "Phase I\nprograms", "Funded clinical\nprograms", "Clinical biology, patients, capital and time remain\nconstraints; discovery gains do not establish clinical gains."], ["Phase I to approval", "7.9% / 13.8%\n(study estimates)", "AI advantage\nunproven", "BIO 2011–2020 and Wong 2000–2015 are different\ncohorts and methods, not an AI comparison."]];
 const INPUT=JSON.parse(await fs.readFile(OUT+'/ecosystem_data.json','utf8'));
 const rows=INPUT.stages??defaultRows;
-start();header('Design capacity expands. Validation must keep up.','Illustrative stage comparison, normalized per one clinical entrant. Supplied assumptions, not cohort statistics.');
-const table=S.tables.add({rows:6,columns:4,left:72,top:230,width:1776,height:606,columnWidths:[515,190,255,816],values:[['STAGE','PRE-AI','AI ERA','WHAT CHANGES'],...rows]});
+start();header('AI discovery: workflows, evidence and sensitivities','Modalities use different units. Workload sensitivities and historical clinical benchmarks are shown separately.');
+const table=S.tables.add({rows:6,columns:4,left:72,top:230,width:1776,height:606,columnWidths:[435,310,330,701],values:[['STAGE','BEFORE GEN-AI','AI MECHANISMS','WHAT CHANGES'],...rows]});
 table.styleOptions={headerRow:true,bandedRows:false};table.borders.assign({fill:C.white,width:0});
 const heights=[70,116,105,105,105,105];
 for(let r=0;r<6;r++){table.rows[r].height=heights[r];for(let c=0;c<4;c++){
  const cell=table.getCell(r,c);cell.fill=r===0?C.ink:r===2||r===3?C.aqua:r>=4?C.sand:C.white;
- cell.text.style={fontFamily:FONT,typeface:FONT,fontSize:r===0?20:c===1||c===2?32:25,color:r===0?C.white:r===3?C.teal:C.ink,bold:r===0||r===3,alignment:c===1||c===2?'center':'left',verticalAlignment:'center'};
- table.cells.block({row:r,column:c,rowCount:1,columnCount:1}).assign({margins:{left:22,right:18,top:16,bottom:14},anchor:'center'});
+ cell.text.style={fontFamily:FONT,typeface:FONT,fontSize:r===0?18:c===1||c===2?24:22,color:r===0?C.white:r===3?C.teal:C.ink,bold:r===0||r===3,alignment:c===1||c===2?'center':'left',verticalAlignment:'center'};
+ table.cells.block({row:r,column:c,rowCount:1,columnCount:1}).assign({margins:{left:22,right:18,top:12,bottom:10},anchor:'center'});
  }}
 // The parallel SVG is a text-editable export of the same native table values.
-let yy=230;const widths=[515,190,255,816];
-for(let r=0;r<6;r++){let xx=72;for(let c=0;c<4;c++){svg.push(`<rect x="${xx}" y="${yy}" width="${widths[c]}" height="${heights[r]}" fill="${r===0?C.ink:r===2||r===3?C.aqua:r>=4?C.sand:C.white}"/>`);const t=([['STAGE','PRE-AI','AI ERA','WHAT CHANGES'],...rows])[r][c],sz=r===0?20:c===1||c===2?32:25,ls=t.split('\n'),base=yy+(heights[r]-ls.length*sz*1.25)/2+sz;svg.push(`<text x="${c===1||c===2?xx+widths[c]/2:xx+22}" y="${base}" font-family="Arial,Helvetica,sans-serif" font-size="${sz}" font-weight="${r===0||r===3?700:400}" fill="${r===0?C.white:r===3?C.teal:C.ink}" text-anchor="${c===1||c===2?'middle':'start'}">${ls.map((l,i)=>`<tspan x="${c===1||c===2?xx+widths[c]/2:xx+22}" dy="${i?sz*1.25:0}">${esc(l)}</tspan>`).join('')}</text>`);xx+=widths[c];}yy+=heights[r];svg.push(`<line x1="72" y1="${yy}" x2="1848" y2="${yy}" stroke="${C.line}"/>`);}
-rect(72,877,1776,98,C.ink,undefined,10);await pic('icons/flask-conical.svg',95,899,52,52,'#ACD4F1');text(171,899,1645,56,'Working thesis: experimental throughput becomes a capacity gate as virtual design scales.',28,C.white,true);
-text(72,1008,1776,44,'Source: user-supplied comparison. ~0.14 is an illustrative expected approval count per clinical entrant; the AI-era outcome is unknown.',17,C.muted);
-S.speakerNotes.text='Source: user-provided stage comparison screenshot, supplied 12 October 2026. All stage counts are illustrative assumptions, not researched empirical cohort statistics. Denominator: per one clinical entrant. The separate reference funnel uses per approved drug and is used only for its visual form; its numbers are not mixed into this comparison. Virtual design is not literally free. DNA-encoded libraries are not equivalent to fully characterized discrete compounds; construction counts are conceptual. Approved ~0.14 is an expected count, not a measured probability established by this deck. Clinical benefit and approval rates in the AI era are unknown. Icon: Lucide flask-conical, ISC license, https://github.com/lucide-icons/lucide.';
+let yy=230;const widths=[435,310,330,701];
+for(let r=0;r<6;r++){let xx=72;for(let c=0;c<4;c++){svg.push(`<rect x="${xx}" y="${yy}" width="${widths[c]}" height="${heights[r]}" fill="${r===0?C.ink:r===2||r===3?C.aqua:r>=4?C.sand:C.white}"/>`);const t=([['STAGE','BEFORE GEN-AI','AI MECHANISMS','WHAT CHANGES'],...rows])[r][c],sz=r===0?18:c===1||c===2?24:22,ls=t.split('\n'),base=yy+(heights[r]-ls.length*sz*1.25)/2+sz;svg.push(`<text x="${c===1||c===2?xx+widths[c]/2:xx+22}" y="${base}" font-family="Arial,Helvetica,sans-serif" font-size="${sz}" font-weight="${r===0||r===3?700:400}" fill="${r===0?C.white:r===3?C.teal:C.ink}" text-anchor="${c===1||c===2?'middle':'start'}">${ls.map((l,i)=>`<tspan x="${c===1||c===2?xx+widths[c]/2:xx+22}" dy="${i?sz*1.25:0}">${esc(l)}</tspan>`).join('')}</text>`);xx+=widths[c];}yy+=heights[r];svg.push(`<line x1="72" y1="${yy}" x2="1848" y2="${yy}" stroke="${C.line}"/>`);}
+rect(72,877,1776,98,C.ink,undefined,10);await pic('icons/flask-conical.svg',95,899,52,52,'#ACD4F1');text(171,899,1645,56,'Tool demand depends on funded programs, assay depth, net inputs and prices.',28,C.white,true);
+text(72,1008,1776,44,'Sources: Lyu 2019; Sumitomo 2021; BIO 2011–2020; Wong 2000–2015. Workloads are analyst sensitivities, not empirical cohorts.',17,C.muted);
+S.speakerNotes.text='Reviewed 13 October 2026. Workflow units differ by modality; no synthetic per-clinical-entrant molecule counts are used. Historical Phase I-to-approval estimates are separate cohorts and methods. Measurement-workload sensitivities are inputs, not candidate-count forecasts.\n\n'+await fs.readFile(OUT+'/SOURCES.md','utf8');
 await end('11_editable_stage_comparison');
 const ecos=INPUT.ecosystem;
 const supplierRows=[
@@ -69,26 +63,28 @@ const supplierRows=[
 ];
 SCALE=.8;start();svg.push('<g transform="scale(0.8)">');
 rect(100,60,10,105,C.ink);
-text(141,57,2159,78,'AI-scale design meets finite experimental capacity',56,C.ink,true);
-text(141,137,2159,42,'Working scenario: candidate generation expands faster than physical construction and biological validation.',29,C.muted);
+text(141,57,2159,78,'AI selection and biological evidence shape tool demand',56,C.ink,true);
+text(141,137,2159,42,'Workflows vary by modality; paid demand depends on funded assays, depth, net inputs and prices.',29,C.muted);
 line(100,229,2300,229,C.line,1);
-text(100,276,680,39,'AI-ERA DISCOVERY FUNNEL',28,C.ink,true);
-text(100,323,680,35,'Illustrative counts per one clinical entrant',22,C.muted);
+text(100,276,680,39,'MODALITY-AWARE DISCOVERY WORKFLOW',28,C.ink,true);
+text(100,323,680,35,'Schematic widths; workload multipliers are sensitivities',22,C.muted);
 const bands=[
- {y:390,h:142,w1:680,w2:510,fill:'#ACD4F1',stroke:C.ink,label:'Virtual designs',n:rows[0][2],col:C.ink},
- {y:548,h:128,w1:510,w2:385,fill:'#7399C6',stroke:C.ink,label:'Physically made',n:rows[1][2],col:C.ink},
- {y:692,h:132,w1:385,w2:270,fill:C.ink,stroke:C.ink,label:'Fully profiled',n:rows[2][2],col:C.white},
- {y:840,h:107,w1:270,w2:200,fill:C.white,stroke:'#F67F26',label:'Clinical entry',n:rows[3][2],col:C.ink},
- {y:963,h:107,w1:200,w2:157,fill:C.white,stroke:'#BE3232',label:'Approvals',n:rows[4][2],col:C.ink}
+ {y:390,h:142,w1:680,w2:510,fill:'#ACD4F1',stroke:C.ink,label:'Virtual search / design',n:'Quality + selection',size:28,col:C.ink},
+ {y:548,h:128,w1:510,w2:385,fill:'#7399C6',stroke:C.ink,label:'Physical samples',n:'Modality-dependent',size:26,col:C.ink},
+ {y:692,h:132,w1:385,w2:270,fill:C.ink,stroke:C.ink,label:'Assay workload',n:'1× / 2× / 5× / 10×',size:24,col:C.white},
+ {y:840,h:107,w1:270,w2:200,fill:C.white,stroke:'#F67F26',label:'Clinical entry',n:'Funded programs',size:20,col:C.ink},
+ {y:963,h:107,w1:200,w2:157,fill:C.white,stroke:'#BE3232',label:'Approval gains',n:'Unproven',size:25,col:C.ink}
 ];const cx=440;
-for(const b of bands){poly([[cx-b.w1/2,b.y],[cx+b.w1/2,b.y],[cx+b.w2/2,b.y+b.h],[cx-b.w2/2,b.y+b.h]],b.fill,b.stroke,2.2);text(cx-b.w1/2,b.y+21,b.w1,38,b.label,b.w1<290?23:29,b.col,true,'center');text(cx-b.w1/2,b.y+68,b.w1,54,b.n,b.w1<290?28:43,b.col,true,'center');}
+for(const b of bands){poly([[cx-b.w1/2,b.y],[cx+b.w1/2,b.y],[cx+b.w2/2,b.y+b.h],[cx-b.w2/2,b.y+b.h]],b.fill,b.stroke,2.2);text(cx-b.w1/2,b.y+21,b.w1,38,b.label,b.w1<290?23:29,b.col,true,'center');text(cx-b.w1/2,b.y+68,b.w1,54,b.n,b.size||28,b.col,true,'center');}
 line(727,548,772,548,C.ink,3);line(772,548,772,824,C.ink,3);line(772,824,727,824,C.ink,3);
 poly([[782,559],[882,335],[882,1181],[782,813]],'#EEF6FC');line(772,559,882,335,'#7399C6',1.5);line(772,813,882,1181,'#7399C6',1.5);
-rect(100,1113,680,83,'#ACD4F1','none',9);await pic('icons/flask-conical.svg',122,1132,43,43,true);text(190,1137,570,43,'WET LAB = BUILD + TEST',29,C.ink,true);
-text(100,1221,680,76,'Funnel widths are schematic.\nClinical success remains unproven\nin this scenario.',21,C.muted);
+rect(100,1095,325,117,'#ACD4F1','none',9);rect(443,1095,337,117,'#EEF6FC',C.line,9);
+text(116,1112,295,29,'SMALL MOLECULES',20,C.ink,true);text(116,1150,295,51,'Fewer syntheses per\nprogram are possible.',19,C.ink);
+text(459,1112,305,29,'PROTEINS / ANTIBODIES',18.5,C.ink,true);text(459,1150,305,51,'Pooled screens scale;\nindividual profiling differs.',19,C.ink);
+text(100,1230,680,92,'WET LAB = BUILD + TEST\nNo universal molecule-count funnel.\nAI clinical advantage remains unproven.',21,C.muted);
 
 rect(885,255,1415,949,'#F4F9FD',C.line,15);text(917,276,1350,52,'The LST ecosystem behind the capacity gate',36,C.ink,true);
-text(917,330,1350,31,'Selected market anchors · different scopes and years · do not add these values',20,C.muted);
+text(917,330,1350,31,'Issuer-cited subset estimates · different scopes / years · source conflicts disclosed below',20,C.muted);
 const xs=[917,1380,1843],ys=[373,790],cw=425,ch=393;
 for(let i=0;i<ecos.length;i++){
  const d=ecos[i],r=supplierRows[i],x=xs[i%3],y=ys[Math.floor(i/3)];
@@ -96,7 +92,7 @@ for(let i=0;i<ecos.length;i++){
  await pic('icons/'+d.icon+'.svg',x+18,y+19,38,38,true);
  text(x+74,y+23,cw-91,43,d.title,26,C.ink,true);
  text(x+20,y+72,cw-40,60,d.products,21,C.muted);
- text(x+20,y+135,cw-40,47,d.metric,37,C.ink,true);
+ text(x+20,y+135,cw-40,47,d.metric,d.metric==='Source pending'?31:37,C.ink,true);
  text(x+20,y+185,cw-40,29,d.scope,17.5,C.muted);
  text(x+20,y+214,cw-40,27,d.note,16.5,C.muted);
  if(i===0){await pic('logos/twist-trim.png',x+20,y+247,127,40);await pic('logos/genscript-trim.png',x+169,y+247,150,40);}
@@ -114,10 +110,10 @@ rect(885,1220,1415,57,C.ink,'none',9);await pic('icons/bot.svg',901,1231,34,34,'
 text(949,1237,957,32,'Automation + data orchestration span every tool family',25,C.white,true);
 rect(1950,1228,319,41,C.white,'none',6);await pic('logos/tecan-trim.png',1963,1235,150,26);text(2134,1239,122,25,'SIX: TECN',19,C.ink,true);
 text(885,1293,1415,22,'† Ex-BD biosciences / flow moved to Waters on 9 Feb 2026; BD (BDX) here means specimen collection.',16.5,C.ink);
-text(885,1320,1415,23,'Groups denote listings, not incorporation; brands use parent tickers. * Source access limited. Sources and ticker register: SOURCES.md.',15.5,C.muted);
-S.speakerNotes.text='Figure 12. Updated 13 October 2026. The market anchors and illustrative stage counts retain their original units, years, geography and boundaries. The six product families are broader than the displayed anchors; the values must not be added. Company rows group listing venues, not incorporation or headquarters. GenScript is HK-listed; Gibco maps to Thermo Fisher TMO and Cytiva/HyClone to Danaher DHR. BD BDX is shown for specimen collection/preanalytics; its former Biosciences and Diagnostic Solutions business, including flow cytometry, moved to Waters WAT on 9 February 2026. These are different current equity exposures. Tsingke NEEQ:874813 is not an A-share exchange listing. Brand logos remain original; chart colors use the user-supplied eight-color palette.\n\n'+await fs.readFile(OUT+'/SOURCES.md','utf8')+'\n\n'+await fs.readFile(OUT+'/TICKER_SOURCES.md','utf8');
+text(885,1320,1415,23,'Protein TAM is issuer-commissioned / disputed. Media & resin TAMs withheld. Sources, scope and tickers: SOURCES.md.',15.5,C.muted);
+S.speakerNotes.text='Figure 12. Updated 13 October 2026. Universal stage counts removed. Workload multiples are analyst sensitivities. Supplier listing groups retain their scope. Recombinant protein estimate is commissioned/disputed; media/resin headlines withheld pending original-file verification. The six product families are broader than the displayed anchors; the values must not be added. Company rows group listing venues, not incorporation or headquarters. GenScript is HK-listed; Gibco maps to Thermo Fisher TMO and Cytiva/HyClone to Danaher DHR. BD BDX is shown for specimen collection/preanalytics; its former Biosciences and Diagnostic Solutions business, including flow cytometry, moved to Waters WAT on 9 February 2026. These are different current equity exposures. Tsingke NEEQ:874813 is not an A-share exchange listing. Brand logos remain original; chart colors use the user-supplied eight-color palette.\n\n'+await fs.readFile(OUT+'/SOURCES.md','utf8')+'\n\n'+await fs.readFile(OUT+'/TICKER_SOURCES.md','utf8');
 await end('12_ai_funnel_lst_ecosystem');
 const candidate=TMP+'/candidate.pptx';await(await PresentationFile.exportPptx(P)).save(candidate);
-const final=OUT+'/editable/AI_LST_funnel_palette_v2.pptx';
+const final=OUT+'/editable/AI_LST_funnel_review_rebuilt.pptx';
 const result=await finalizePresentation({workspaceDir:cwd,candidatePath:candidate,finalPath:final,pythonExecutable:process.env.RUNTIME_PYTHON,integrityValidatorPath:SKILL+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:SKILL+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','18288000,10287000','--validate-heading-fit','--require-native-table-slide','1'],requiredNativeTableOwnerSlides:[1],requiredNativeChartOwnerSlides:[],explicitTotalSlideCount:2,fontPolicy:{basis:'design',families:[FONT]},verifyArtifactToolImport:true,receiptPath:TMP+'/validation_'+Date.now()+'.json'});
 console.log(JSON.stringify({pptx:final,slides:2,validation:result}));

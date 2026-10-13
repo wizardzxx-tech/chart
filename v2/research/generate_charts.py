@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parent
 ap = argparse.ArgumentParser()
 ap.add_argument('--out', type=Path, default=ROOT)
 ap.add_argument('--data', type=Path, default=ROOT / 'data.json')
+ap.add_argument('--figures', default='1,2,3,4,5,6,7,8,9,10')
 
 args = ap.parse_args()
 D = json.loads(args.data.read_text())
@@ -40,7 +41,7 @@ GRAY = '#A5A5A5'
 LIGHT = '#F4F9FD'
 GRID = '#ACD4F1'
 COLORS = [BLUE, TEAL, GOLD, '#7399C6', '#078549']
-TITLES = ['The life science tools framework', 'China and global LST markets', 'How downstream demand differs', 'AI discovery and its LST touchpoints', 'Which tools have more demand elasticity?', 'More experiments, less material per experiment', 'Illustrative AI-driven investment scenarios', 'Potential supply constraints over 12–24 months', 'Mapping Chinese listed LST suppliers', 'From AI funding to LST shareholder returns']
+TITLES = ['The life science tools framework', '2025 LST under one F&S definition', 'Customer workflows across life science tools', 'AI discovery and its LST touchpoints', 'Which tools have more demand elasticity?', 'Quantities and prices in miniaturization', 'Funding-to-LST purchase sensitivity', 'Potential supply constraints over 12–24 months', 'Mapping Chinese listed LST suppliers', 'From AI funding to LST shareholder returns']
 SLUGS = ['01_lst_framework', '02_china_global_market', '03_downstream_structure', '04_ai_workflow', '05_demand_elasticity', '06_miniaturization', '07_investment_scenarios', '08_supply_bottlenecks', '09_ashare_mapping', '10_investment_logic']
 QA = []
 MANIFEST = []
@@ -112,7 +113,7 @@ def fig1():
 
 def fig2():
     m = D['market']
-    f = canvas(2, 'HISTORICAL', '2025 historical estimates from one F&S study; this is a defined market scope, not a universal LST TAM.', 'Other tools are the residual. Comparable instrument and consumable splits were not separately available.', 'Source: ACROBiosystems HKEX application, 30 Sep 2026, printed pp. 65 and 67; links in SOURCES.md.')
+    f = canvas(2, 'HISTORICAL', '2025 F&S estimates commissioned for ACRO’s filing. A defined scope, not a broad-industry TAM.', 'Other tools are the residual. Comparable instrument and consumable splits were not separately available.', 'Source: ACROBiosystems HKEX application, 30 Sep 2026, printed pp. 65 and 67; links in SOURCES.md.')
     ax = style(f.add_axes([0.1, 0.235, 0.54, 0.525]))
     tot = np.array([m['total_global'], m['total_china']])
     ruo = np.array([m['ruo_global'], m['ruo_china']])
@@ -130,35 +131,26 @@ def fig2():
         ax.text(j, tot[j] + 1, f'{tot[j]:.1f}', ha='center', va='bottom', color=INK, fontsize=20, fontweight='bold')
     ax.legend(loc='upper left', frameon=False, fontsize=10.5, bbox_to_anchor=(0, 1.08), ncol=2)
     box(f, 0.697, 0.454, 0.235, 0.272)
-    txt(f, 0.72, 0.671, 'China / global market', size=13, color=MUTE)
+    txt(f, 0.72, 0.671, 'China share within F&S scope', size=13, color=MUTE)
     txt(f, 0.72, 0.587, f"{m['total_china'] / m['total_global']:.1%}", size=37, color=BLUE, bold=True)
-    txt(f, 0.72, 0.497, '7.7 / 41.5\nSame-scope historical estimate', size=12, color=MUTE)
-    txt(f, 0.705, 0.336, 'Broader research and\nproduction markets require\na separate scope reconciliation.', size=12, color=MUTE)
+    txt(f, 0.72, 0.497, '7.7 / 41.5\nNot vendor revenue exposure', size=12, color=MUTE)
+    txt(f, 0.705, 0.336, 'Issuer-commissioned estimate.\nBroader markets and vendor\nChina revenues use other scopes.', size=12, color=MUTE)
     return f
 
 def fig3():
-    f = canvas(3, 'ILLUSTRATIVE', 'Direct purchasing differs by product basket. These supplied assumptions sum to 100% for each row.', 'CRO/CDMO purchases are separate from pharma-owned production. Hospitals are not separately modeled.', 'Source: illustrative shares in the supplied manuscript; these are not measured customer shares.')
-    ax = f.add_axes([0.12, 0.3, 0.8, 0.37])
-    style(ax)
-    ax.grid(False)
-    rows = D['downstream']['rows']
-    ys = [2, 1, 0]
-    left = np.zeros(3)
-    for j, (name, color) in enumerate(zip(D['downstream']['categories'], COLORS)):
-        v = np.array([row[j + 1] for row in rows])
-        ax.barh(ys, v, left=left, height=0.52, color=color, label=name, edgecolor='white', lw=1)
-        for y, x, width in zip(ys, left, v):
-            ax.text(x + width / 2, y, f'{width}%', ha='center', va='center', fontsize=15, color='white' if j < 4 else INK)
-        left += v
-    ax.set_xlim(0, 100)
-    ax.set_ylim(-0.65, 2.65)
-    ax.set_yticks(ys, [r[0] for r in rows], fontsize=17)
-    ax.set_xticks([0, 25, 50, 75, 100], ['0%', '25%', '50%', '75%', '100%'])
-    ax.set_xlabel('Assumed share of purchasing spend', labelpad=12)
-    ax.spines['left'].set_visible(False)
-    f.legend(*ax.get_legend_handles_labels(), loc='upper center', bbox_to_anchor=(0.52, 0.777), ncol=5, frameon=False, fontsize=10.2)
-    txt(f, 0.14, 0.188, 'Reagents: more research exposure in this scenario', size=12, color=BLUE)
-    txt(f, 0.58, 0.188, 'Consumables: more production exposure', size=12, color=TEAL)
+    f = canvas(3, 'USE MAP', 'A qualitative workflow map. Customer purchasing shares have not been established.', 'Food, environmental and chemical-analysis uses excluded. Research instruments exclude clinical IVD analyzers.', 'Source: representative supplier product uses; a role map, not an estimated customer revenue mix.')
+    widths = [0.212, 0.218, 0.218, 0.244]
+    xs = [0.055, 0.267, 0.485, 0.703]
+    heads = ['CUSTOMER', 'REAGENTS', 'CONSUMABLES', 'INSTRUMENTS']
+    for j in range(4):
+        box(f, xs[j], 0.685, widths[j], 0.064, BLUE)
+        txt(f, xs[j]+0.014, 0.716, heads[j], size=13, bold=True, color='white')
+    for r, row in enumerate(D['downstream']['rows']):
+        y = 0.585 - r*0.088
+        for j, value in enumerate(row):
+            box(f, xs[j], y, widths[j], 0.085, LIGHT if r%2==0 else 'white')
+            txt(f, xs[j]+0.014, y+0.043, value, size=12 if j else 12.5, bold=j==0, linespacing=1.35)
+    txt(f, 0.5, 0.166, 'An instrument supplier’s total China sales are not its China life-science sales.', size=16, ha='center', bold=True)
     return f
 
 def fig4():
@@ -181,7 +173,7 @@ def fig4():
     return f
 
 def fig5():
-    f = canvas(5, 'HYPOTHESIS', 'Positions and bubble areas are qualitative research judgments, not measured scores or additive TAMs.', 'Net demand also depends on consumption intensity, prices, project attrition and technical substitution.', 'Source: supplied framework and analyst assumptions. Edit positions and relative areas in data.json.')
+    f = canvas(5, 'HYPOTHESIS', 'Positions and bubble areas are qualitative research judgments, not measured scores or additive TAMs.', 'Small-molecule synthesis can fall per project. Modality, assay depth, unit use and funded projects determine orders.', 'Source: supplied framework and analyst assumptions. Edit positions and relative areas in data.json.')
     ax = quadrant(f, 'Experimental necessity →', 'Revenue elasticity to experiment volume →')
     ax.add_patch(Rectangle((5, 5), 5, 5, fc='#F4F9FD', ec='none', zorder=0))
     ax.text(0.4, 9.55, 'Project expansion and substitution both matter', fontsize=10.3, color=MUTE)
@@ -195,66 +187,38 @@ def fig5():
     return f
 
 def fig6():
-    s = D['miniaturization']
-    t = s['traditional']
-    a = s['automated']
-    plate_t = math.ceil(t['experiments'] / t['wells'])
-    plate_a = math.ceil(a['experiments'] / a['wells'])
-    ratios = [a['experiments'] / t['experiments'], a['experiments'] * a['volume_ul'] / (t['experiments'] * t['volume_ul']), plate_a / plate_t, a['experiments'] * a['tips_per_experiment'] / (t['experiments'] * t['tips_per_experiment'])]
-    f = canvas(6, 'SCENARIO', 'Traditional: 100k tests, 96 wells, 100 µL/test. Automated: 1m tests, 1,536 wells, 5 µL/test. Base = 100.', 'Y-axis scales differ. Full plates, no dead volume or control wells; tips fall from 1 to 0.1 per test. ASP excluded.', 'Source: supplied scenario and analyst calculation. Test definition and plate utilization affect the result.')
-    ax = style(f.add_axes([0.09, 0.267, 0.23, 0.39]))
-    bx = style(f.add_axes([0.425, 0.267, 0.49, 0.39]))
-    ax.bar([0, 1], [100, 100 * ratios[0]], color=[GRAY, BLUE], width=0.6)
-    ax.set_xticks([0, 1], ['Traditional', 'Automated'])
-    ax.set_ylim(0, 1200)
-    ax.set_ylabel('Experiment volume index')
-    ax.set_title('Experiment volume: 10×', fontsize=16, color=INK, pad=15)
-    for j, v in enumerate([100, 100 * ratios[0]]):
-        ax.text(j, v + 25, f'{v:,.0f}', ha='center', fontsize=17, color=INK, fontweight='bold')
-    x = np.arange(3)
-    bx.bar(x - 0.18, [100] * 3, width=0.34, color=GRAY, label='Traditional = 100')
-    bx.bar(x + 0.18, [100 * r for r in ratios[1:]], width=0.34, color=TEAL, label='Automated')
-    bx.set_xticks(x, ['Reagent volume', 'Plate count', 'Tip count'])
-    bx.set_ylim(0, 150)
-    bx.set_ylabel('Consumption index')
-    bx.set_title('Consumption can fall or remain flat', fontsize=16, color=INK, pad=15)
-    for j, r in enumerate(ratios[1:]):
-        bx.text(j + 0.18, 100 * r + 4, f'{100 * r:.1f}', ha='center', color=TEAL, fontsize=15, fontweight='bold')
-    bx.legend(frameon=False, fontsize=10.5, ncol=2, loc='upper right')
-    txt(f, 0.08, 0.744, '100k → 1m experiments', size=15, color=BLUE, bold=True)
-    txt(f, 0.4, 0.744, 'Reagents: 10 L → 5 L  ·  Plates: 1,042 → 652  ·  Tips: 100k → 100k (assumed)', size=13, color=TEAL)
-    txt(f, 0.5, 0.161, 'Experiment growth does not imply proportional purchasing growth.', size=18, ha='center', bold=True)
-    QA.append({'figure': 6, 'experiment_multiplier': ratios[0], 'reagent_multiplier': ratios[1], 'plates_before': plate_t, 'plates_after': plate_a, 'plate_multiplier': ratios[2], 'tips_multiplier': ratios[3]})
+    s = D['miniaturization']; t=s['traditional']; a=s['automated']
+    pt=math.ceil(t['experiments']/t['wells']); pa=math.ceil(a['experiments']/a['wells'])
+    vr=(a['experiments']*a['volume_ul'])/(t['experiments']*t['volume_ul']); pr=pa/pt
+    tr=(a['experiments']*a['tips_per_experiment'])/(t['experiments']*t['tips_per_experiment'])
+    f=canvas(6, 'SENSITIVITY', '10× tests: 10 L → 5 L reagent; 1,042 → 652 plates; 100k → 100k tips. Full usable plates.', 'Price ratios are analyst inputs, not quoted ASPs. Dead volume, controls, usable wells and retesting can change quantities.', 'Source: transparent arithmetic from supplied test volumes and well counts. Units and sensitivities in SOURCES.md.')
+    ax=style(f.add_axes([0.09,0.27,0.37,0.39])); bx=style(f.add_axes([0.57,0.27,0.34,0.39])); x=np.arange(3)
+    ax.bar(x-.17,[100]*3,width=.32,color=GRAY,label='Baseline = 100')
+    ax.bar(x+.17,[100*vr,100*pr,100*tr],width=.32,color=TEAL,label='10× tests')
+    ax.set_xticks(x,['Reagent volume','Plate count','Tip count']);ax.set_ylim(0,150);ax.set_ylabel('Quantity index');ax.set_title('Physical inputs',fontsize=17,pad=14);ax.legend(frameon=False,fontsize=10,loc='upper right')
+    for j,v in enumerate([vr,pr,tr]):ax.text(j+.17,100*v+4,f'{100*v:.1f}',ha='center',fontsize=15,color=INK)
+    prices=s['plate_price_ratios'];spend=[100*pr*q for q in prices]
+    bx.bar(x,spend,width=.5,color=[TEAL,BLUE,'#7399C6']);bx.axhline(100,color=GRAY,lw=1,ls='--');bx.set_xticks(x,[f'{q}× plate ASP' for q in prices]);bx.set_ylim(0,290);bx.set_ylabel('Plate spend index');bx.set_title('Fewer plates can cost more',fontsize=17,pad=14)
+    for j,v in enumerate(spend):bx.text(j,v+6,f'{v:.1f}',ha='center',fontsize=17,color=INK,fontweight='bold')
+    txt(f,.5,.743,'Quantities × net unit prices determine spending',size=18,ha='center',bold=True)
+    txt(f,.5,.164,f'Plate spending exceeds baseline if the plate ASP ratio is above {pt/pa:.2f}×.',size=17,ha='center',bold=True)
+    QA.append({'figure':6,'tests':a['experiments']/t['experiments'],'plates_before':pt,'plates_after':pa,'volume_ratio':vr,'plate_ratio':pr,'tip_ratio':tr,'plate_price_breakeven':pt/pa,'spend_at_ASP_ratios':dict(zip(prices,spend))})
     return f
 
 def fig7():
-    s = D['investment']
-    f = canvas(7, 'SCENARIO', 'US$50bn / 100bn / 200bn are illustrative cumulative investment pools; no time horizon is specified.', 'Allocations: 30% / 25% / 20% / 15% / 10%. Research and manufacturing buckets are mutually exclusive.', 'Source: supplied scenario and allocation assumptions. These are not realized funding, orders or annual TAMs.')
-    ax = style(f.add_axes([0.1, 0.235, 0.57, 0.51]))
-    bottom = np.zeros(3)
-    x = np.arange(3)
-    tot = np.array(s['scenarios'])
-    for j, (name, share, color) in enumerate(zip(s['buckets'], s['shares'], COLORS)):
-        v = tot * share
-        ax.bar(x, v, bottom=bottom, width=0.48, color=color, label=name)
-        for xi, yy, hh in zip(x, bottom, v):
-            if xi == 0 and hh < 10:
-                ay = 37.5 if j == 3 else 53
-                ax.annotate(f'{hh:g}', xy=(xi + 0.24, yy + hh / 2), xytext=(xi + 0.44, ay), fontsize=13, color=INK, ha='left', va='center', bbox={'fc': 'white', 'ec': 'none', 'pad': 1.5}, arrowprops={'arrowstyle': '-', 'color': color, 'lw': 0.7})
-            else:
-                ax.text(xi, yy + hh / 2, f'{hh:g}', ha='center', va='center', color='white' if j < 4 else INK, fontsize=13)
-        bottom += v
-    ax.set_xticks(x, [f'{name}\nUS${total:,}bn' for name, total in zip(s['labels'], s['scenarios'])], fontsize=12)
-    ax.set_ylim(0, 225)
-    ax.set_ylabel('Cumulative incremental investment (US$bn)')
-    for xi, total in zip(x, tot):
-        ax.text(xi, total + 4, f'{total:,}', ha='center', fontsize=18, color=INK, fontweight='bold')
-    f.legend(*ax.get_legend_handles_labels(), loc='upper left', bbox_to_anchor=(0.712, 0.76), frameon=False, fontsize=10.5, labelspacing=1.1)
-    box(f, 0.728, 0.269, 0.214, 0.214)
-    txt(f, 0.744, 0.431, 'Build phase → installed equipment', size=14, color=BLUE, bold=True)
-    txt(f, 0.744, 0.362, 'Operate → recurring purchases', size=13, color=TEAL, bold=True)
-    txt(f, 0.744, 0.3, 'Manufacturing needs drug output.', size=10.8, color=MUTE)
-    QA.append({'figure': 7, 'shares_sum': sum(s['shares']), 'totals': bottom.tolist()})
+    s=D['investment']; pools=np.array(s['scenarios']); rates=s['capture_rates']; x=np.arange(3)
+    f=canvas(7,'SENSITIVITY','Hypothetical total funding pools. Only a fraction becomes purchases from LST suppliers.', '5% / 10% / 20% capture rates are model inputs. Cumulative scenarios, no fixed horizon; not observed funding or annual TAM.', 'Source: analyst funding-to-purchase sensitivity. No empirical budget shares or equipment/reagent split is asserted.')
+    ax=style(f.add_axes([.09,.25,.57,.49]))
+    for j,(rate,col) in enumerate(zip(rates,[TEAL,BLUE,'#7399C6'])):
+        vals=pools*rate;xx=x+(j-1)*.23;ax.bar(xx,vals,width=.21,color=col,label=f'{rate:.0%} LST purchase capture')
+        for xi,v in zip(xx,vals):ax.text(xi,v+.6,f'{v:g}',ha='center',fontsize=13,color=INK)
+    ax.set_xticks(x,[f'US${p:g}bn total funding' for p in pools],fontsize=11);ax.set_ylim(0,46);ax.set_ylabel('Cumulative LST purchases (US$bn)');ax.legend(frameon=False,fontsize=10.3,loc='upper left')
+    box(f,.705,.30,.24,.435)
+    txt(f,.722,.679,'Funding → tool purchases',size=15,bold=True)
+    txt(f,.722,.598,'R&D and production budgets\nexclude people, trials,\nsoftware and unspent cash.',size=12,linespacing=1.8)
+    txt(f,.722,.459,'Capture includes tool purchases\nonly. Count CRO/CDMO inputs\nonce, separate from service fees.',size=11.5,linespacing=1.8)
+    txt(f,.5,.167,'Total capital raised is not an addressable tool market.',size=18,ha='center',bold=True)
+    QA.append({'figure':7,'funding_pools':pools.tolist(),'capture_rates':rates,'tool_purchases':[[float(p*r) for r in rates] for p in pools]})
     return f
 
 def fig8():
@@ -356,10 +320,10 @@ def check_figure_bounds(fig, i):
     QA[-1]['direct_label_overlap'] = pairs
     if pairs:
         raise RuntimeError(f'Figure {i} direct labels overlap: {pairs}')
-assert all((sum(r[1:]) == 100 for r in D['downstream']['rows']))
-assert abs(sum(D['investment']['shares']) - 1) < 1e-12
+assert all(len(r)==4 for r in D['downstream']['rows'])
+assert all(0 <= r <= 1 for r in D['investment']['capture_rates'])
 assert D['market']['ruo_global'] <= D['market']['total_global'] and D['market']['ruo_china'] <= D['market']['total_china']
-selection = range(1, 11)
+selection = [int(v) for v in args.figures.split(',')]
 with warnings.catch_warnings(record=True) as caught:
     warnings.simplefilter('always')
     with PdfPages(OUT / 'AI_LST_10_charts.pdf', metadata={'Title': 'AI and Life Science Tools: Ten Research Figures', 'Subject': 'Historical estimates, illustrative scenarios and research judgments', 'CreationDate': None, 'ModDate': None}) as pdf:
@@ -377,4 +341,4 @@ with warnings.catch_warnings(record=True) as caught:
         raise RuntimeError('Missing font glyphs: ' + str(sorted(set(missing))[:10]))
 (OUT / 'manifest.json').write_text(json.dumps({'date': D['date'], 'figures': MANIFEST}, ensure_ascii=False, indent=2))
 (OUT / 'qa_report.json').write_text(json.dumps(QA, ensure_ascii=False, indent=2))
-print(json.dumps({'count': len(MANIFEST), 'canvas': '4800×2700 PNG / 16:9 SVG-PDF', 'glyph_warnings': 0, 'data_checks': '100% compositions; complete labels; bounds checked'}, ensure_ascii=False))
+print(json.dumps({'count': len(MANIFEST), 'canvas': '4800×2700 PNG / 16:9 SVG-PDF', 'glyph_warnings': 0, 'data_checks': 'Source-specific estimates; sensitivities; complete labels; bounds checked'}, ensure_ascii=False))

@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-12",
-  "denominator": "per one clinical entrant",
-  "status": "illustrative scenario",
+  "date": "2026-10-13",
+  "denominator": "Workflow comparison. Counts are not normalized into a synthetic per-drug cohort.",
+  "status": "Evidence-backed mechanisms with analyst sensitivities",
   "stages": [
     [
-      "Molecules designed\n(virtual)",
-      "~10³",
-      "10⁵–10⁹",
-      "Generative models can expand\ncandidate enumeration at low marginal cost."
+      "Virtual search / design",
+      "Large virtual\nlibraries",
+      "Quality +\nselection",
+      "Large libraries predate generative AI.\nThe investment mechanism is better selection and learning."
     ],
     [
-      "Molecules physically made",
-      "~10³",
-      "10³–10⁴",
-      "Automated synthesis and DNA libraries\ncan expand construction capacity."
+      "Physical samples",
+      "Program-\nspecific",
+      "Modality-\ndependent",
+      "Small molecules can need fewer syntheses per program.\nProtein libraries and individual profiling are different units."
     ],
     [
-      "Fully profiled in wet lab",
-      "~50",
-      "50 → 500",
-      "Illustrative capacity expansion\nthat investors would need to fund."
+      "Assay workload",
+      "1\u00d7 baseline",
+      "1\u00d7 / 2\u00d7 /\n5\u00d7 / 10\u00d7",
+      "Analyst workload sensitivities, not predicted fully profiled\ncandidate counts. Include an efficiency/no-growth case."
     ],
     [
-      "Clinical entry",
-      "1",
-      "1",
-      "Patients, ethics, capital and time\nremain hard constraints."
+      "Clinical development",
+      "Phase I\nprograms",
+      "Funded clinical\nprograms",
+      "Clinical biology, patients, capital and time remain\nconstraints; discovery gains do not establish clinical gains."
     ],
     [
-      "Expected approvals",
-      "~0.14",
-      "Unknown",
-      "Clinical success must be demonstrated;\nAI does not establish an approval rate."
+      "Phase I to approval",
+      "7.9% / 13.8%\n(study estimates)",
+      "AI advantage\nunproven",
+      "BIO 2011\u20132020 and Wong 2000\u20132015 are different\ncohorts and methods, not an AI comparison."
     ]
   ],
   "ecosystem": [
@@ -40,8 +40,8 @@
       "icon": "dna",
       "products": "DNA / RNA synthesis, enzymes\nChemical building blocks",
       "metric": "RMB 1.33bn",
-      "scope": "China • 2025 • DNA synthesis services [1]",
-      "companies": "Twist • GenScript • Tsingke • Vazyme",
+      "scope": "China \u2022 2025 \u2022 DNA synthesis services [1]",
+      "companies": "Twist \u2022 GenScript \u2022 Tsingke \u2022 Vazyme",
       "logos": [
         [
           "twist-trim.png",
@@ -52,79 +52,112 @@
           123
         ]
       ],
-      "note": "Oligos + long fragments only"
+      "note": "Oligos + long fragments only",
+      "boundary": "China oligonucleotide synthesis services RMB0.53bn plus long-fragment synthesis RMB0.80bn. This excludes the broader upstream equipment and reagent market.",
+      "confidence": "Issuer-cited estimate",
+      "page": "Printed 1-1-156 to 1-1-158; China segment chart printed 1-1-158 / PDF159",
+      "source": "https://static.sse.com.cn/stock/disclosure/announcement/c/202606/002233_20260630_Z9LA.pdf",
+      "sourceTitle": "Tsingke IPO prospectus \u2022 June 2026"
     },
     {
       "title": "Protein & functional assays",
       "icon": "flask-conical",
       "products": "Recombinant proteins, antibodies\nBinding and activity assays",
       "metric": "US$3.5bn",
-      "scope": "Global • 2025 • research proteins [2]",
-      "companies": "ACROBiosystems • Bio-Techne • Sino",
+      "scope": "Global \u00b7 2025 \u00b7 F&S RUO proteins [2]",
+      "companies": "ACROBiosystems \u2022 Bio-Techne \u2022 Sino",
       "logos": [
         [
           "acro-trim.png",
           145
         ]
       ],
-      "note": "China: ~US$0.4bn • RUO scope",
-      "focus": true
+      "note": "Issuer-commissioned; estimate disputed",
+      "focus": true,
+      "boundary": "F&S estimates US$3.5bn global and ~US$0.4bn China research-grade recombinant proteins in 2025. ACRO commissioned the report for RMB530,000. M&M estimates US$1.11bn in 2026 for finished off-the-shelf RUO proteins; GMI estimates US$2.5bn in 2025 for broader inputs and outsourced services. Years and scopes are not harmonized, so this is a disagreement, not a statistical range.",
+      "confidence": "Issuer-commissioned / disputed",
+      "page": "Printed71 / PDF80; provenance printed63 / PDF72; competitive table printed72 / PDF81",
+      "source": "https://www1.hkexnews.hk/app/sehk/2026/108910/documents/sehk26093002651_c.pdf",
+      "sourceTitle": "ACROBiosystems HKEX application \u2022 September 2026"
     },
     {
       "title": "Cells & culture systems",
       "icon": "test-tubes",
       "products": "Cell models, media, feeds\nBioreactors and cell expansion",
-      "metric": "US$323.5m*",
-      "scope": "China • 2024 • bioprocess media [3]",
-      "companies": "Thermo / Gibco • OPM • Duoning",
+      "metric": "Source pending",
+      "scope": "China \u2022 2024 \u2022 bioprocess media [3]",
+      "companies": "Thermo / Gibco \u2022 OPM \u2022 Duoning",
       "logos": [],
-      "note": "Selected media anchor; not all cell tools"
+      "note": "Original filing unavailable; TAM withheld",
+      "boundary": "Headline market value withheld because the original Duoning filing could not be restored. Prior source notes cited US$323.5m for China in 2024; both the value and detailed scope remain unverified in this review. This selected bioprocess category does not size the entire tool family.",
+      "confidence": "Source pending",
+      "page": "Previous citation not reverified; see REVIEW_NOTES.md",
+      "source": "https://www1.hkexnews.hk/app/appyearlyindex.html?lang=en&year=2026",
+      "sourceTitle": "Duoning application index \u00b7 full filing unavailable"
     },
     {
       "title": "Labware & sample handling",
       "icon": "pipette",
       "products": "Tips, plates, tubes, filtration\nAutomation-compatible labware",
       "metric": "~RMB 23bn",
-      "scope": "China • 2024 • plastic labware [4]",
-      "companies": "JET Biofil • Corning • Changhong",
+      "scope": "China \u2022 2024 \u2022 plastic labware [4]",
+      "companies": "JET Biofil \u2022 Corning \u2022 Changhong",
       "logos": [
         [
           "jet-english.png",
           95
         ]
       ],
-      "note": "Includes clinical and industrial uses"
+      "note": "Includes clinical and industrial uses",
+      "boundary": "Disposable plastic biological laboratory consumables in China, including research, clinical and industrial applications. Company-cited approximate industry estimate. BD is shown for the adjacent clinical/preanalytical sampling workflow; its ticker BDX does not represent the former BD flow-cytometry business.",
+      "confidence": "Issuer-cited estimate",
+      "page": "PDF6 section2.3(1)",
+      "source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225255989.PDF",
+      "sourceTitle": "JET Biofil 2025 annual-report summary \u2022 April 2026"
     },
     {
       "title": "Measurement & analytics",
       "icon": "microscope",
       "products": "Sequencing, LC / LC-MS, flow\nImaging and quality control",
       "metric": "RMB 4.3bn",
-      "scope": "China • 2024 • sequencing tools [5]",
-      "companies": "MGI • Illumina • Agilent • Waters",
+      "scope": "China \u2022 2024 \u2022 sequencing tools [5]",
+      "companies": "MGI \u2022 Illumina \u2022 Agilent \u2022 Waters",
       "logos": [
         [
           "mgi-trim.png",
           78
         ]
       ],
-      "note": "Sequencers + consumables; all uses"
+      "note": "Sequencing subset; 2024 policy baseline",
+      "boundary": "The displayed China anchor is sequencing instruments plus consumables, including clinical uses. It is not a combined TAM for LC/MS, flow, imaging and sequencing. The blanket Illumina sequencer prohibition ended 10 November 2025; UEL-related instrument purchase approvals remain in the 2026 issuer disclosure.",
+      "confidence": "Issuer-cited estimate",
+      "page": "Printed41\u201342 / PDF41\u201342",
+      "source": "https://static.cninfo.com.cn/finalpage/2025-04-30/1223427376.PDF",
+      "sourceTitle": "MGI 2024 annual report / CIC \u2022 April 2025"
     },
     {
       "title": "Purification & scale-up",
       "icon": "factory",
       "products": "Analytical columns, process resins\nFiltration and single-use systems",
-      "metric": "US$578.2m*",
-      "scope": "China • 2024 • bioprocess resins [3]",
-      "companies": "NanoMicro • Cytiva • Sepax",
+      "metric": "Source pending",
+      "scope": "China \u2022 2024 \u2022 bioprocess resins [3]",
+      "companies": "NanoMicro \u2022 Cytiva \u2022 Sepax",
       "logos": [
         [
           "nanomicro-emblem.svg",
           34
         ]
       ],
-      "note": "Manufacturing demand has a longer lag",
-      "focus": true
+      "note": "Original filing unavailable; TAM withheld",
+      "focus": true,
+      "boundary": "Headline market value withheld because the original Duoning filing could not be restored. Prior source notes cited US$578.2m for China in 2024; both the value and detailed scope remain unverified in this review. This selected bioprocess category does not size the entire tool family.",
+      "confidence": "Source pending",
+      "page": "Previous citation not reverified; see REVIEW_NOTES.md",
+      "source": "https://www1.hkexnews.hk/app/appyearlyindex.html?lang=en&year=2026",
+      "sourceTitle": "Duoning application index \u00b7 full filing unavailable"
     }
-  ]
+  ],
+  "review_date": "2026-10-13",
+  "review_summary": "Universal discovery counts removed; workflow separated by modality; workload, funding capture and ASP treated as sensitivities; commissioning and market-scope conflicts disclosed.",
+  "sources_note": "Media and resin headline TAMs have been withheld: the original January 2026 Duoning application is lapsed and its full PDFs remain unavailable. Prior citations are retained only in review/source history as not reverified. Agreement with derivative reports or proxy extrapolations is not independent confirmation."
 }

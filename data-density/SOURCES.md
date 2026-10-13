@@ -66,4 +66,4 @@ For NanoMicro, initially watch analytical characterization, lab purification and
 
 ## Figure interpretation and assets
 
-Figure 13 is a coverage schematic: solid dot = measured label; hollow dot = KD derived from shared kinetics; dash = unmeasured. Colors do not encode performance. Figure 14 maps properties to workflows and procurement. Original Lucide SVG icons use the [ISC license](https://github.com/lucide-icons/lucide). No company logos or paper figures are reproduced.
+Figure 13 contains explicitly synthetic integer values from 1 to 10,000. A common linear color scale maps larger values to darker blue. These values have no assay units and do not describe biological quality. Epitope is generally a site/bin/category rather than a continuous score. The table demonstrates dense data records, not nine independent assays. Figure 14 maps properties to workflows and procurement. Original Lucide SVG icons use the [ISC license](https://github.com/lucide-icons/lucide). No company logos or paper figures are reproduced.

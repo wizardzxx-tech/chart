@@ -15,6 +15,7 @@ const selectedSlides=slides.filter(item=>item.figure<=count);
 const presentation=Presentation.create({slideSize:{width:1920,height:1080}});
 const hex=color=>color.startsWith('#')?color:'#'+color.match(/\d+/g).slice(0,3).map(n=>Number(n).toString(16).padStart(2,'0')).join('');
 await fs.mkdir(WORK+'/text-deck/rendered',{recursive:true});
+await fs.mkdir(OUT+'/editable',{recursive:true});
 if(!process.argv.includes('--finalize-only')) for(const item of selectedSlides){
   const slide=presentation.slides.add();slide.background.fill='#ffffff';
   const background=await fs.readFile(item.background);
@@ -37,8 +38,8 @@ if(!process.argv.includes('--finalize-only')) for(const item of selectedSlides){
   const png=await presentation.export({slide,format:'png',scale:1});
   await fs.writeFile(`${WORK}/text-deck/rendered/${String(item.figure).padStart(2,'0')}.png`,new Uint8Array(await png.arrayBuffer()));
 }
-const candidatePath=path.join(workspaceDir,`${WORK}/text-deck/candidate-${count}.pptx`);
-const finalPath=path.join(workspaceDir,`${OUT}/editable/AI_LST_all_${count}_text_editable_rebuilt.pptx`);
+const candidatePath=path.resolve(`${WORK}/text-deck/candidate-${count}.pptx`);
+const finalPath=path.resolve(`${OUT}/editable/AI_LST_all_${count}_text_editable_rebuilt.pptx`);
 if(!process.argv.includes('--finalize-only')) await(await PresentationFile.exportPptx(presentation)).save(candidatePath);
-const result=await finalizePresentation({workspaceDir,candidatePath,finalPath,pythonExecutable:runtimePython,integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','18288000,10287000','--validate-heading-fit'],requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],explicitTotalSlideCount:count,fontPolicy:{basis:'design',families:fonts},verifyArtifactToolImport:true,receiptPath:path.join(workspaceDir,`${WORK}/text-deck/validation-${count}.json`)});
+const result=await finalizePresentation({workspaceDir,candidatePath,finalPath,pythonExecutable:runtimePython,integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','18288000,10287000','--validate-heading-fit'],requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],explicitTotalSlideCount:count,fontPolicy:{basis:'design',families:fonts},verifyArtifactToolImport:true,receiptPath:path.resolve(`${WORK}/text-deck/validation-${count}.json`)});
 console.log(JSON.stringify({file:finalPath,slides:count,native_text_boxes:selectedSlides.reduce((sum,item)=>sum+item.labels.length,0),validation:result}));

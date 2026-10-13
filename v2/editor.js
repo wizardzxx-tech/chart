@@ -70,7 +70,7 @@ async function loadFigure(number) {
     figure = figures.find(item=>item.figure===Number(number)) || figures[11];
     $('#figure-picker').value = figure.figure;
     const deck=$('#deck-download'); deck.href='research/'+(figure.pptx||'editable/AI_LST_all_16_text_editable.pptx'); deck.textContent='Download PPT (1 slide) ↓';
-    const response = await fetch('research/'+figure.svg+'?v=palette-v2-20261013'); if (!response.ok) throw Error('Figure could not be loaded');
+    const response = await fetch('research/'+figure.svg+'?v=audit-v1-20261013'); if (!response.ok) throw Error('Figure could not be loaded');
     const source = await response.text();
     const documentSvg = new DOMParser().parseFromString(source,'image/svg+xml');
     if (documentSvg.querySelector('parsererror')) throw Error('Invalid SVG');
@@ -132,7 +132,7 @@ $('#export-png').addEventListener('click',async()=>{
 });
 new ResizeObserver(outline).observe($('#figure-canvas'));
 try {
-  const response = await fetch('assets/figures.json?v=single-ppt-v1-20261013'); if (!response.ok) throw Error('Figure list unavailable'); figures = await response.json();
+  const response = await fetch('assets/figures.json?v=audit-v1-20261013'); if (!response.ok) throw Error('Figure list unavailable'); figures = await response.json();
   $('#figure-picker').replaceChildren(...figures.map(item=>{const option=document.createElement('option');option.value=item.figure;option.textContent=`${String(item.figure).padStart(2,'0')} · ${item.title}`;return option;}));
   await loadFigure(new URL(location.href).searchParams.get('figure') || 12);
 } catch (error) { status(error.message); }
