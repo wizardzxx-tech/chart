@@ -1,6 +1,6 @@
 # AI wet-lab investment scenarios
 
-Model version: 2026-10-14.1. Sources reviewed: 14 October 2026.
+Model version: 2026-10-14.2. Sources reviewed: 14 October 2026.
 
 ## Scope and units
 
@@ -86,7 +86,7 @@ AI-cohort purchases     = 1 + incremental input index × q
 Whole-family dilution   = 1 + a × (AI-cohort purchases − 1)
 ```
 
-e = 1 means proportional net inputs; e < 1 can represent miniaturization, shared samples, reuse and existing instrument headroom; e > 1 represents increased readouts per unit of activity. q affects **incremental** purchases, holding existing baseline purchases unchanged. The whole-family view assumes unchanged non-AI purchases and an analyst-defined AI exposure share; it is not a verified industry growth forecast or measured market share.
+e = 1 means proportional net inputs; e < 1 can represent miniaturization, shared samples, reuse and existing instrument headroom; e > 1 represents increased readouts per unit of activity. q affects **incremental** purchases, holding existing baseline purchases unchanged. The whole-family estimate assumes unchanged non-AI purchases and an analyst-defined AI exposure share; it is not a verified industry growth forecast or measured market share. Both measures appear together on each card: the main number is AI-lab purchases; the smaller line is whole-family percentage uplift.
 
 Purification uses a separate mixture. If h is its lab/analytical share and m the manufacturing pass-through:
 
@@ -107,7 +107,26 @@ Family order: molecular construction; protein & functional assays; cells & cultu
 | Cell-data / perturbation | .80, .65, 1.05, .45, 1, .30 | .75, .05, .05, .20, .02, .45 | 12, 12, 25, 12, 20, 4 |
 | Small-molecule | .60, .45, .80, .30, .80, .40 | 1, .10, .05, .30, .10, .65 | 12, 8, 12, 8, 12, 6 |
 
-Price factors default to 1. Switching workflow resets family coefficients. Funding presets alter only total funding and years; reset restores all default assumptions. Ranking is conditional on these inputs and can reverse between cohort and diluted views. Equal outputs do not establish a winner.
+Price factors default to 1. Edits to each workflow's coefficients persist when switching workflows. Funding presets alter only total funding and years; reset restores all default assumptions. Ranking uses AI-lab purchasing multiples. Whole-family effects can rank differently because assumed AI exposures differ. Equal outputs do not establish a winner.
+
+### Total: one pool, three workflows
+
+**Total is the default**, with protein / antibody, cell-data / perturbation and small-molecule workflows each assigned one third. Editable non-negative raw weights are normalized to 100%. An all-zero mix is invalid and withholds the family results.
+
+Funding and the hypothetical reference cohort are split using the **same weights**. Total does not fund three full copies of the cohort. The baseline equipment stocks and annual operating costs are recomposed with the mix, so the common Build/Test ratios and funding backsolves are calculated once. Changing the mix changes purchasing responses; it does not independently change common engineering capacity. This is not a funding-only reallocation across three fixed, separately sized cohorts.
+
+For a family, let z_k be normalized workflow weight, a_k its assumed AI exposure and C_k its separately calculated AI-lab purchasing index:
+
+```
+Aggregate AI purchase baseline A = sum(z_k × a_k)
+Total AI-lab purchasing index    = sum(z_k × a_k × C_k) / A
+Total whole-family index        = 1 + sum(z_k × a_k × (C_k − 1))
+Whole-family percentage uplift   = (whole-family index − 1) × 100%
+```
+
+All exposures in these equations are fractions. If A is zero, the AI-lab multiple is `n.a.` and the whole-family index is 1. Each component's nonlinear response is evaluated **before** aggregation; averaged exponents are never applied to the combined driver. Any aggregate coefficients shown in Excel are descriptive summaries only.
+
+At default funding, the equal-third Total AI-lab multiples are approximately **2.08 / 2.18 / 2.55 / 1.48 / 2.40 / 1.17×**, respectively. The corresponding whole-family uplifts are **12.97 / 15.75 / 24.27 / 4.47 / 20.57 / 0.92%**. These are conditional scenario outputs, not forecasts. Multiples across tool families must not be summed.
 
 The six indices are **non-additive**. They overlap workflows and do not allocate the funding pool into six disjoint revenues. Do not multiply them by the unrelated market anchors in Figure 12. A company may serve multiple families, geographies and customer types; the page does not model revenue capture, margins, valuation or investment returns.
 
@@ -134,8 +153,12 @@ Scenario JSON includes inputs, raw and capped capacity, annual/cumulative fundin
 
 ## Formula-linked Excel workbook
 
-[Download the English Excel model](AI_LST_formula_linked_scenario.xlsx). It opens the default US$50bn / five-year scenario. Change blue numeric inputs and choose workflow 1, 2 or 3 on Inputs. The chosen workflow coefficient table is editable. Formula-linked results and native charts recalculate from those inputs. Browser slider changes are not automatically embedded in this static workbook.
+[Download the English Excel model](AI_LST_formula_linked_scenario.xlsx). It opens the default US$50bn / five-year **Total** scenario. Scenario contains both the funding panel and the live funnel / six-family dashboard, with original supplier logos and tickers. Three native Form Control scrollbars write to the funding, deployment-year and wet-lab-share inputs; no macros or ActiveX are used. The same visible numeric cells can also be edited directly.
 
-Scenario presents the results. Calculations shows stock/flow funding, Build/Test constraints, family purchasing responses, the throughput ramp and target backsolves. Inputs owns assumptions, workflow presets and source context. Checks contains one-way reconciliations and never feeds the model. All amount inputs are US$bn and percentages are stored as Excel fractions.
+The scrollbars target **desktop Excel for Windows / Mac**. Excel for the web and some previews do not display Form toolbar controls; use the numeric inputs there. Native appearance follows the installed application. Native-control package integrity, linked cells and formula recalculation have been checked; pointer dragging in Microsoft Excel was not tested on this host.
+
+On Inputs, choose workflow 1, 2, 3 or **4 = Total**. The three original coefficient tables remain editable. Total raw weights default to 1 / 1 / 1 and are editable near the bottom of Inputs. Formula-linked results and two native supporting charts recalculate from those inputs. Browser slider changes are not automatically embedded in this default download.
+
+Scenario presents the results. Calculations shows stock/flow funding, Build/Test constraints, family purchasing responses, the throughput ramp and target backsolves. Inputs owns assumptions, workflow presets and source context. Checks contains one-way reconciliations and never feeds the model. All amount inputs are US$bn. Percentage assumptions are Excel fractions except the dashboard's wet-lab scrollbar input, which uses integer percentage points (35 means 35%) and is divided by 100 in the linked assumption.
 
 The workbook preserves the web model’s fixed 2x desired floor, 10x cohort ceiling and 0.2 manufacturing response exponent. Target funding is not capped at US$200bn. Arithmetic validation does not calibrate the economic assumptions.

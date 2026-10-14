@@ -1,8 +1,9 @@
-import {VERSION, DEFAULTS, FAMILIES, PROFILES, familyDefaults, sanitize, calculate} from './model.js';
+import {VERSION, DEFAULTS, FAMILIES, PROFILES, WORKFLOWS, familyDefaults, sanitize, calculate} from './model.js?v=20261014.2';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num=(v,d=2)=>Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
-const mult=v=>`${num(v)}×`, money=v=>`US$${num(v)}bn`;
+const mult=v=>typeof v==='number'&&Number.isFinite(v)?`${num(v)}×`:'n.a.', money=v=>`US$${num(v)}bn`;
+const uplift=v=>`${v>=0?'+':''}${num(v*100,1)}%`;
 const presets={reference:[25,5],expansion:[50,5],stress:[100,3],breakout:[200,2],zero:[0,5]};
 let state=sanitize(DEFAULTS), result, evidence;
 try {const raw=new URL(location.href).searchParams.get('s');if(raw&&raw.length<12000)state=sanitize(JSON.parse(raw));}catch{}
@@ -25,15 +26,16 @@ function renderFunding(r){
  $('#funding-stack').innerHTML=[r.otherAnnual,r.annualEquipment,r.annualRuns].map(v=>`<span style="width:${r.annual?100*v/r.annual:0}%"></span>`).join('');
 }
 function renderFamilies(r){
- const whole=r.state.view==='market',scale=Math.max(3,...r.families.map(f=>Math.ceil(f.value)));
- $('#family-scope').textContent=whole?'WHOLE-FAMILY DILUTION · HYPOTHETICAL EXPOSURE':'AI-EXPOSED COHORT · PURCHASING INDEX';
+ $('#family-scope').textContent='LST PROCUREMENT RESPONSE · ONE COMBINED VIEW';
+ if(!r.valid){$('#family-cards').innerHTML='<p class="mix-error" role="alert">Set at least one positive workflow weight to calculate Total.</p>';$('#leader-note').textContent='The same funding pool is allocated once across the selected mix.';return;}
+ const scale=Math.max(3,...r.families.map(f=>Math.ceil(f.value)));
  $('#family-cards').innerHTML=FAMILIES.map(f=>{
   const p=r.families.find(x=>x.id===f.id),rank=r.ranked.findIndex(x=>x.id===f.id)+1,leader=!r.priceTie&&Math.abs(p.value-r.ranked[0].value)<.005;
-  return `<article class="family-card ${leader?'is-leader':''}" data-card="${f.id}"><span class="family-rank">${r.priceTie?'—':`#${rank}`}</span><div class="family-card-head"><svg class="family-icon" aria-hidden="true"><use href="../research/assets/icon-sprite.svg#${f.icon}"/></svg><h3>${esc(f.title)}</h3></div><p class="family-products">${esc(f.products)}</p><div class="family-multiplier" data-value="${p.value}">${mult(p.value)}</div><p class="family-index-label">${whole?'Whole-family sensitivity':'AI-cohort purchasing'} · 1× baseline</p><div class="family-meter"><i style="width:${100*(p.value-1)/(scale-1)}%"></i></div><div class="meter-labels"><span>1×</span><span>${num(scale,0)}× common scale</span></div><p class="family-driver">Activity driver ${mult(p.driver)}${whole?` · AI exposure ${num(p.exposure,0)}%`:''}</p><p class="family-reason">${esc(f.reason)}</p><div class="family-logos">${f.logos.map(file=>`<img src="../research/assets/logos/${file}" alt="${esc(file.split('-')[0])}" loading="lazy">`).join('')}${f.wordmark?`<span class="wordmark">${esc(f.wordmark)}</span>`:''}</div><div class="supplier-columns"><div><p>CHINA / HK LISTINGS</p>${f.cn.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div><p>US LISTINGS / PARENTS</p>${f.us.map(t=>`<span>${esc(t)}</span>`).join('')}</div></div></article>`;
+  return `<article class="family-card ${leader?'is-leader':''}" data-card="${f.id}"><span class="family-rank">${r.priceTie||p.cohort===null?'—':`#${rank}`}</span><div class="family-card-head"><svg class="family-icon" aria-hidden="true"><use href="../research/assets/icon-sprite.svg#${f.icon}"/></svg><h3>${esc(f.title)}</h3></div><p class="family-products">${esc(f.products)}</p><div class="family-multiplier" data-value="${p.cohort??''}">${mult(p.cohort)}</div><p class="family-index-label">AI-lab purchases · 1× baseline</p><p class="market-impact">Estimated whole-family uplift <strong>${uplift(p.market-1)}</strong><small>Assumed AI exposure ${num(p.exposure,1)}%</small></p><div class="family-meter"><i style="width:${100*(p.value-1)/(scale-1)}%"></i></div><div class="meter-labels"><span>1×</span><span>${num(scale,0)}× common scale</span></div><p class="family-driver">${r.state.profile==='total'?'Mixed workflow responses':`Activity driver ${mult(p.driver)}`}${p.cohort===null?' · no AI purchase baseline':''}</p><p class="family-reason">${esc(f.reason)}</p><div class="family-logos">${f.logos.map(file=>`<img src="../research/assets/logos/${file}" alt="${esc(file.split('-')[0])}" loading="lazy">`).join('')}${f.wordmark?`<span class="wordmark">${esc(f.wordmark)}</span>`:''}</div><div class="supplier-columns"><div><p>CHINA / HK LISTINGS</p>${f.cn.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div><p>US LISTINGS / PARENTS</p>${f.us.map(t=>`<span>${esc(t)}</span>`).join('')}</div></div></article>`;
  }).join('');
- const leading=FAMILIES.find(f=>f.id===r.ranked[0].id);
- const shared=r.families.filter(f=>Math.abs(f.value-r.ranked[0].value)<.005).map(f=>FAMILIES.find(x=>x.id===f.id).title);
- $('#leader-note').textContent=r.priceTie?'No differentiated uplift under these inputs.':`${shared.length>1?shared.join(' and '):leading.title} ${shared.length>1?'lead':'leads'} this ${whole?'whole-family dilution':'AI-cohort purchasing'} scenario. Change the workflow or coefficients to test that result.`;
+ const leading=FAMILIES.find(f=>f.id===r.ranked[0]?.id);
+ const shared=r.ranked.length?r.families.filter(f=>f.cohort!==null&&Math.abs(f.value-r.ranked[0].value)<.005).map(f=>FAMILIES.find(x=>x.id===f.id).title):[];
+ $('#leader-note').textContent=r.priceTie?'No differentiated AI-lab purchasing uplift under these inputs.':`${shared.length>1?shared.join(' and '):leading.title} ${shared.length>1?'lead':'leads'} the AI-lab purchasing response under these assumptions. The smaller line on each card shows the estimated whole-family effect.`;
 }
 function renderCapacity(r){
  $('#scenario-funnel').innerHTML=funnel(r);
@@ -54,10 +56,12 @@ function renderRamp(r){
  $('#breakpoints').innerHTML=[2,10].map(m=>{const n=r.needs[m],gap=n.both===null?null:Math.max(0,n.both-r.state.investment);return `<div class="breakpoint"><span>Both stages at ${m}×</span><strong>${n.both===null?'Infeasible':money(n.both)}</strong><small>${n.both===null?'A necessary funding share, rollout realization or commissioning fraction is zero.':`Build needs ${money(n.build)}; Test needs ${money(n.test)}. ${gap>0?`Additional total funding: ${money(gap)}${n.both>200?' (outside the slider range)':''}.`:'Current total funding meets this modeled target.'}`}</small></div>`;}).join('');
 }
 function coefficients(){
- $('#coefficient-rows').innerHTML=state.families.map(p=>`<tr><td>${FAMILIES.find(f=>f.id===p.id).title}</td>${[['buildWeight',0,1,.05],['elasticity',0,1.5,.05],['price',.1,2,.05],['exposure',0,100,1]].map(([key,min,max,step])=>`<td><input type="number" data-family="${p.id}" data-family-param="${key}" value="${p[key]}" min="${min}" max="${max}" step="${step}" aria-label="${esc(FAMILIES.find(f=>f.id===p.id).title)} ${key}"></td>`).join('')}</tr>`).join('');
+ const selected=state.profile==='total'?WORKFLOWS:[state.profile];
+ $('#coefficient-rows').innerHTML=selected.map(w=>`<tr class="workflow-coefficient-title"><td colspan="5">${esc(PROFILES[w].label)}</td></tr>`+state.workflowFamilies[w].map(p=>`<tr><td>${FAMILIES.find(f=>f.id===p.id).title}</td>${[['buildWeight',0,1,.05],['elasticity',0,1.5,.05],['price',.1,2,.05],['exposure',0,100,1]].map(([key,min,max,step])=>`<td><input type="number" data-workflow="${w}" data-family="${p.id}" data-family-param="${key}" value="${p[key]}" min="${min}" max="${max}" step="${step}" aria-label="${esc(PROFILES[w].label)} ${esc(FAMILIES.find(f=>f.id===p.id).title)} ${key}"></td>`).join('')}</tr>`).join('')).join('');
 }
 function syncControls(){
  $$('[data-global]').forEach(el=>el.value=state[el.id]);$('#profile').value=state.profile;
+ $$('[data-mix]').forEach(el=>el.value=state.workflowWeights[el.dataset.mix]);
  coefficients();
 }
 function render(){
@@ -66,18 +70,20 @@ function render(){
   $(`#${key}-value`).textContent=key==='investment'?money(state[key]):key==='years'?`${state.years} years`:`${num(state[key],0)}%`;
  }
  $$('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',String(presets[b.dataset.preset][0]===state.investment&&presets[b.dataset.preset][1]===state.years)));
- $$('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===state.view)));
+ $('#workflow-mix').hidden=state.profile!=='total';
+ $('#mix-detail').textContent=result.valid?WORKFLOWS.map(k=>`${PROFILES[k].label}: ${num(result.weights[k]*100,1)}% (${money(state.investment*result.weights[k])})`).join(' · '):'Set at least one positive weight. Weights are normalized to 100%.';
+ $('#download-svg').disabled=!result.valid;$('#download-csv').disabled=!result.valid;
  renderFunding(result);renderCapacity(result);renderFamilies(result);renderRamp(result);
 }
 $$('[data-global]').forEach(el=>{
  el.addEventListener('input',()=>{if(el.value===''||!el.validity.valid)return;state[el.id]=Number(el.value);render();});
  el.addEventListener('change',()=>{state[el.id]=el.value===''?DEFAULTS[el.id]:Number(el.value);render();el.value=state[el.id];});
 });
-$('#coefficient-rows').addEventListener('input',e=>{const el=e.target;if(!el.dataset.family||el.value===''||!el.validity.valid)return;state.families.find(f=>f.id===el.dataset.family)[el.dataset.familyParam]=Number(el.value);render();});
-$('#coefficient-rows').addEventListener('change',e=>{const el=e.target;if(!el.dataset.family)return;const key=el.dataset.familyParam,p=state.families.find(f=>f.id===el.dataset.family);p[key]=el.value===''?familyDefaults(state.profile).find(f=>f.id===p.id)[key]:Number(el.value);render();el.value=state.families.find(f=>f.id===p.id)[key];});
-$('#profile').addEventListener('change',e=>{state.profile=e.target.value;state.families=familyDefaults(state.profile);coefficients();render();});
+$('#coefficient-rows').addEventListener('input',e=>{const el=e.target;if(!el.dataset.family||el.value===''||!el.validity.valid)return;state.workflowFamilies[el.dataset.workflow].find(f=>f.id===el.dataset.family)[el.dataset.familyParam]=Number(el.value);render();});
+$('#coefficient-rows').addEventListener('change',e=>{const el=e.target;if(!el.dataset.family)return;const key=el.dataset.familyParam,w=el.dataset.workflow,p=state.workflowFamilies[w].find(f=>f.id===el.dataset.family);p[key]=el.value===''?familyDefaults(w).find(f=>f.id===p.id)[key]:Number(el.value);render();el.value=state.workflowFamilies[w].find(f=>f.id===p.id)[key];});
+$('#profile').addEventListener('change',e=>{state.profile=e.target.value;coefficients();render();});
+$$('[data-mix]').forEach(el=>{el.addEventListener('input',()=>{if(el.value===''||!el.validity.valid)return;state.workflowWeights[el.dataset.mix]=Number(el.value);render();});el.addEventListener('change',()=>{state.workflowWeights[el.dataset.mix]=el.value===''?0:Number(el.value);render();el.value=state.workflowWeights[el.dataset.mix];});});
 $$('[data-preset]').forEach(b=>b.addEventListener('click',()=>{[state.investment,state.years]=presets[b.dataset.preset];syncControls();render();}));
-$$('[data-view]').forEach(b=>b.addEventListener('click',()=>{state.view=b.dataset.view;render();}));
 $('#reset-all').addEventListener('click',()=>{state=sanitize(DEFAULTS);syncControls();render();status('Default expansion scenario restored.');});
 function updateTheme(){const dark=document.documentElement.dataset.theme!=='light';$('#theme-toggle').textContent=dark?'Light':'Dark';$('#theme-toggle').setAttribute('aria-label',`Switch to ${dark?'light':'dark'} theme`);}
 $('#theme-toggle').addEventListener('click',()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('lst-theme',document.documentElement.dataset.theme);}catch{}updateTheme();render();});
@@ -88,17 +94,17 @@ function payload(){return {model_version:VERSION,as_of:'2026-10-14',scope:'Globa
 $('#download-json').addEventListener('click',()=>download('AI_LST_scenario.json',JSON.stringify(payload(),null,2),'application/json'));
 $('#download-csv').addEventListener('click',()=>{
  const inputUnits={investment:'US$bn',years:'years',lag:'years',wetShare:'%',capexShare:'%',testShare:'%',utilization:'%',manufacturing:'%',labPurification:'%',buildCapital:'US$bn',testCapital:'US$bn',buildRunCost:'US$bn/year',testRunCost:'US$bn/year',productivity:'ratio',profile:'workflow',view:'scope'};
- const rows=[['Section','Metric','Value','Unit','Scope'],['Model','Version',VERSION,'',''],...Object.entries(state).filter(([k])=>k!=='families').map(([k,v])=>['Input',k,v,inputUnits[k]||'','Analyst assumption']),...['annual','annualWet','annualEquipment','annualRuns','otherAnnual'].map(k=>['Funding',k,result[k],'US$bn/year','Global new program']),...['build','test'].flatMap(k=>[['Capacity',`${k} funded capped`,result[k].funded,'x','AI-exposed cohort'],['Capacity',`${k} raw uncapped`,result[k].raw,'x','AI-exposed cohort']]),...result.families.flatMap(p=>[['Family',`${p.id} cohort purchasing`,p.cohort,'x','AI-exposed cohort'],['Family',`${p.id} whole-family sensitivity`,p.market,'x','Hypothetical exposure dilution'],...['buildWeight','elasticity','price','exposure'].map(k=>['Coefficient',`${p.id} ${k}`,p[k],k==='exposure'?'%':'ratio','Analyst assumption'])])];
+ const rows=[['Section','Metric','Value','Unit','Scope'],['Model','Version',VERSION,'',''],...Object.entries(state).filter(([k])=>!['families','workflowFamilies','workflowWeights'].includes(k)).map(([k,v])=>['Input',k,v,inputUnits[k]||'','Analyst assumption']),...result.allocation.map(a=>['Workflow allocation',a.workflow,a.investment,'US$bn',`${num(a.weight*100,2)}% of same pool and reference cohort`]),...['annual','annualWet','annualEquipment','annualRuns','otherAnnual'].map(k=>['Funding',k,result[k],'US$bn/year','Global new program']),...['build','test'].flatMap(k=>[['Capacity',`${k} funded capped`,result[k].funded,'x','Reference cohort'],['Capacity',`${k} raw uncapped`,result[k].raw,'x','Reference cohort']]),...result.families.flatMap(p=>[['Family',`${p.id} AI-lab purchases`,p.cohort??'n.a.','x','AI-lab purchase baseline'],['Family',`${p.id} whole-family uplift`,p.market-1,'fraction','Assumed AI exposure']]),...WORKFLOWS.flatMap(w=>result.components[w].flatMap(p=>['buildWeight','elasticity','price','exposure'].map(k=>['Component coefficient',`${w} / ${p.id} / ${k}`,p[k],k==='exposure'?'%':'ratio','Analyst assumption'])))];
  const csv=rows.map(row=>row.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\r\n');download('AI_LST_scenario_results.csv',csv,'text/csv;charset=utf-8');
 });
 function snapshot(){
  const r=result,c=colors();
  const box=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="${c.pale}" stroke="${c.line}"/>`;
- let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><title>AI wet-lab investment scenario</title><desc>Editable SVG. All dollar-to-capacity and purchasing responses are analyst assumptions.</desc><metadata>${esc(JSON.stringify(payload()))}</metadata><rect width="1920" height="1080" fill="${c.bg}"/>${text(65,72,'From investment to experimental capacity',42,c.ink,600)}${text(65,111,`${money(state.investment)} over ${state.years} years · ${money(r.annual)} / year · wet-lab share ${state.wetShare}%`,21,c.muted)}${text(65,145,`${PROFILES[state.profile].label} · ${state.view==='market'?'Whole-family dilution':'AI-exposed cohort purchasing'} · 14 Oct 2026`,18,c.muted)}<path d="M65 170H1855" stroke="${c.line}"/>`;
+ let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><title>AI wet-lab investment scenario</title><desc>Editable SVG. All dollar-to-capacity and purchasing responses are analyst assumptions.</desc><metadata>${esc(JSON.stringify(payload()))}</metadata><rect width="1920" height="1080" fill="${c.bg}"/>${text(65,72,'From investment to experimental capacity',42,c.ink,600)}${text(65,111,`${money(state.investment)} over ${state.years} years · ${money(r.annual)} / year · wet-lab share ${state.wetShare}%`,21,c.muted)}${text(65,145,`${PROFILES[state.profile].label} · Combined procurement view · 14 Oct 2026`,18,c.muted)}<path d="M65 170H1855" stroke="${c.line}"/>`;
  svg+=`<g transform="translate(55 196) scale(.97)">${funnel(r)}</g>`;
  svg+=text(65,903,`Build ${mult(r.build.funded)} · Test ${mult(r.test.funded)}`,21,c.ink,600);
  svg+=text(65,940,'2–10× target; funding support may be lower.',15,c.muted);
- FAMILIES.forEach((f,i)=>{const p=r.families.find(x=>x.id===f.id),x=490+i%3*455,y=208+Math.floor(i/3)*342;svg+=box(x,y,430,318)+text(x+23,y+39,f.title,22,c.ink,600)+text(x+23,y+98,mult(p.value),45,c.ink,600)+text(x+23,y+126,state.view==='market'?'Whole-family sensitivity':'AI-cohort purchasing index',14,c.muted)+text(x+23,y+161,`Activity ${mult(p.driver)} · response exponent ${num(p.elasticity)}`,14,c.muted)+text(x+23,y+192,'CHINA / HK LISTINGS',11,c.muted,600)+f.cn.map((v,j)=>text(x+23,y+216+j*21,v,14,c.ink)).join('')+text(x+23,y+263,'US LISTINGS / PARENTS',11,c.muted,600)+f.us.map((v,j)=>text(x+23,y+286+j*20,v,14,c.ink)).join('');});
+ FAMILIES.forEach((f,i)=>{const p=r.families.find(x=>x.id===f.id),x=490+i%3*455,y=208+Math.floor(i/3)*342;svg+=box(x,y,430,318)+text(x+23,y+39,f.title,22,c.ink,600)+text(x+23,y+98,mult(p.cohort),45,c.ink,600)+text(x+23,y+126,'AI-lab purchases (1x baseline)',14,c.muted)+text(x+23,y+161,`Estimated whole-family uplift ${uplift(p.market-1)}`,14,c.muted)+text(x+23,y+192,'CHINA / HK LISTINGS',11,c.muted,600)+f.cn.map((v,j)=>text(x+23,y+216+j*21,v,14,c.ink)).join('')+text(x+23,y+263,'US LISTINGS / PARENTS',11,c.muted,600)+f.us.map((v,j)=>text(x+23,y+286+j*20,v,14,c.ink)).join('');});
  svg+=box(490,901,1340,53)+text(513,934,'Automation + data orchestration span every family · Tecan / Hamilton / Benchling',21,c.ink,600);
  svg+=text(65,996,'Illustrative inputs. Non-additive purchasing indices; no company revenue or clinical-success forecast.',18,c.muted)+text(65,1030,`Sources and definitions: wizardzxx-tech.github.io/chart/v2/scenarios/ · Model ${VERSION}`,15,c.muted);
  return svg+'</svg>';
