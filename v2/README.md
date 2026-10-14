@@ -38,3 +38,12 @@ Each of the 16 figure cards has a Download PPT button. It downloads a separate o
 ## Evidence review, 13 October 2026
 
 The current site and affected exports use modality-specific workflow mechanisms, 1x/2x/5x/10x workload sensitivities, a qualitative customer map, price-aware consumption math and funding-to-tool-purchase capture sensitivities. The recombinant-protein estimate is labelled issuer-commissioned/disputed; media and resin headline TAMs are withheld pending original-source recovery. Detailed decisions and source boundaries are in [REVIEW_NOTES.md](research/REVIEW_NOTES.md).
+
+
+## Global AI-biology investment scenarios, 14 October 2026
+
+[Open the English scenario explorer](https://wizardzxx-tech.github.io/chart/v2/scenarios/). The page links total program funding and deployment years to annual flows, funding-supported Build/Test throughput and six differentiated tool-family purchasing indices. Chinese and overseas supplier examples retain tickers and original logos.
+
+The US$10–200bn, 2–5-year range is exploratory. Capital stocks and fully loaded annual operating costs are distinct editable baselines. The 2–10x capacity range is a target envelope: underfunded targets show shortfalls. Workflow coefficients, manufacturing pass-through and hypothetical whole-family AI exposure are assumptions rather than sourced market growth. Sources establish announced examples and time horizons, not a global aggregate forecast.
+
+Current assumptions/results export as JSON, CSV and editable SVG; share links preserve inputs. See [methodology](scenarios/methodology.md), [primary-source register](scenarios/evidence.json) and the pure [calculation module](scenarios/model.js). This page is separate from the 16-figure atlas; existing single-slide PPT downloads remain available.

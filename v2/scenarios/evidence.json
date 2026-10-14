@@ -1,0 +1,145 @@
+{
+  "as_of": "2026-10-14",
+  "scope": "Global AI-enabled biology and drug discovery infrastructure; illustrative announced programs, not a complete global funding total",
+  "announcements": [
+    {
+      "id": "biohub-april-2026",
+      "organization": "Biohub",
+      "announcement_date": "2026-04-29",
+      "amount_usd_bn": 0.5,
+      "horizon_years": 5,
+      "amount_type": "Commitment",
+      "scope": "Virtual Biology Initiative: $0.4bn for in-house data generation and measurement, imaging and biological engineering technologies; $0.1bn for external coordinated data-generation research.",
+      "url": "https://biohub.org/news/virtual-biology-initiative/",
+      "limitations": [
+        "Includes research, technologies and data generation, not a disclosed instrument-only capital budget.",
+        "Founding commitment is included within the October 2026 $1.8bn expanded initiative: do not add it again."
+      ]
+    },
+    {
+      "id": "biohub-october-2026",
+      "organization": "Biohub, DOE, NIH, Google DeepMind, Isomorphic Labs and Meta",
+      "announcement_date": "2026-10-07",
+      "amount_usd_bn": 1.8,
+      "horizon_years": null,
+      "amount_type": "Mixed commitment: funding, data, computation and measurement technology",
+      "components": [
+        {
+          "name": "Biohub founding commitment",
+          "amount_usd_bn": 0.5,
+          "horizon_years": 5,
+          "status": "Previously announced in April; included in expanded headline"
+        },
+        {
+          "name": "DOE",
+          "amount_usd_bn_lower_bound": 0.5,
+          "horizon_years": 5,
+          "status": "New investment in lab measurement, modeling and computation"
+        },
+        {
+          "name": "NIH",
+          "amount_usd_bn_lower_bound": 0.5,
+          "horizon_years": null,
+          "status": "Contribution of relevant datasets and repositories developed through prior federal investment"
+        },
+        {
+          "name": "Google DeepMind, Isomorphic Labs and Meta",
+          "amount_usd_bn": 0.3,
+          "horizon_years": null,
+          "status": "Collective investment in technologies and multimodal datasets; separate corporate allocations and schedules not disclosed"
+        }
+      ],
+      "url": "https://biohub.org/news/virtual-biology-initiative-expansion/",
+      "corroborating_primary_url": "https://www.energy.gov/science/articles/doe-nih-and-biohub-partner-build-foundational-data-predictive-biological-super",
+      "limitations": [
+        "The $1.8bn headline is not all new cash and is not all wet-lab capex.",
+        "Five years is stated for the founding Biohub and DOE commitments, not explicitly for the whole expanded headline.",
+        "NIH contribution references prior investment; it cannot be counted as a new incremental procurement flow.",
+        "Do not add April $0.5bn to October $1.8bn."
+      ]
+    },
+    {
+      "id": "lilly-nvidia-2026",
+      "organization": "Eli Lilly and NVIDIA",
+      "announcement_date": "2026-01-12",
+      "amount_usd_bn_upper_bound": 1,
+      "horizon_years": 5,
+      "amount_type": "Up to $1bn combined investment in infrastructure and research",
+      "scope": "AI co-innovation laboratory: talent, research, accelerated computing, AI infrastructure, robotics and physical AI across drug discovery and production.",
+      "url": "https://lilly.gcs-web.com/news-releases/news-release-details/nvidia-and-lilly-announce-co-innovation-ai-lab-reinvent-drug",
+      "limitations": [
+        "Maximum announced commitment, not reported actual expenditure.",
+        "No wet-lab tools, computing, staffing or capital/operating expenditure split disclosed.",
+        "Equal annualization gives at most $0.2bn/year but is a model assumption, not an announced annual schedule."
+      ]
+    },
+    {
+      "id": "isomorphic-series-b-2026",
+      "organization": "Isomorphic Labs",
+      "announcement_date": "2026-05-12",
+      "amount_usd_bn": 2.1,
+      "horizon_years": null,
+      "amount_type": "Corporate Series B fundraising",
+      "scope": "Development and deployment of AI drug design engine, therapeutic pipeline progression toward clinic, global business expansion.",
+      "url": "https://www.isomorphiclabs.com/press/isomorphic-labs-funding",
+      "limitations": [
+        "Fundraising is not infrastructure procurement, supplier revenue or capex.",
+        "No spend horizon or wet-lab share is disclosed.",
+        "Isomorphic also participates in the Biohub October initiative; overlap cannot be ruled out if corporate fundraising and announced program commitments are combined."
+      ]
+    }
+  ],
+  "lab_scale_evidence": [
+    {
+      "id": "cmu-cloud-lab-plan",
+      "organization": "Carnegie Mellon University and Emerald Cloud Lab",
+      "announcement_date": "2021-08-30",
+      "amount_usd_bn": 0.04,
+      "amount_type": "Planned project cost, announced 2021",
+      "scale": "More than 100 unique scientific instrument types; designed for more than 100 complex experiments concurrently and 24/7 operation.",
+      "url": "https://www.cmu.edu/news/stories/archives/2021/august/first-academic-cloud-lab.html",
+      "limitations": [
+        "Historical broad chemistry/life-science laboratory project cost, not a 2026 turnkey unit price.",
+        "Project cost is not an instrument-only price and does not establish cost per assay or cost per unit of productive capacity.",
+        "A separate $100m over ten years referenced in the same announcement concerns underlying ECL software development; do not add it to the $40m project budget."
+      ]
+    },
+    {
+      "id": "recursion-automated-labs",
+      "organization": "Recursion",
+      "announcement_date": "2025-12-04",
+      "scale": "Company describes capacity of up to 2.2 million cellular perturbation experiments per week, with multiple measurement layers; active learning selects informative experiments.",
+      "url": "https://www.recursion.com/news/since-its-inception-recursion-has-been-building-the-foundation-for-the-first-virtual-cell",
+      "limitations": [
+        "Company-reported peak scale, not independently measured utilization or a universal full-profile count.",
+        "No corresponding instrument procurement cost or comparable unit economics disclosed.",
+        "Each experiment is a company-specific assay unit; not equivalent to one independently constructed and fully characterized molecule."
+      ]
+    }
+  ],
+  "scenario_recommendation": {
+    "total_usd_bn_slider": {
+      "min": 10,
+      "max": 200
+    },
+    "horizon_years_slider": {
+      "min": 2,
+      "max": 5
+    },
+    "reference_case_suggestion": {
+      "total_usd_bn": 25,
+      "horizon_years": 5,
+      "annual_usd_bn": 5,
+      "status": "Analyst-selected illustration; not a forecast or estimate of current announced global investment"
+    },
+    "interpretation": "Retain the user's $10\u2013200bn range for exploration. Use $10\u201350bn as an illustrative working range and label $100\u2013200bn as a transformational stress scenario. Five years has direct precedent in two primary announcements; two years is an accelerated deployment stress case. Announcements do not establish a global actual total or probabilities.",
+    "required_distinctions": [
+      "Total funding is not supplier procurement.",
+      "Only new cash deployed within scope should feed annual spending; prior datasets and in-kind resources must be separated.",
+      "Show compute, construction, people, software/services, clinical development and wet-lab tools as distinct capture assumptions.",
+      "Funding-to-capacity conversion requires a productive baseline, stage-specific capital intensity, utilization, installation lag and efficiency assumptions. Announcements alone cannot prove a 2\u201310x capacity multiple.",
+      "A 2x minimum is a user-defined growth scenario constraint, not an evidence-supported guaranteed outcome. Include an explicitly identified no- or low-growth/efficiency case if practical.",
+      "Stage 0 cell data, multiomics and imaging have direct program relevance; commercial bioprocess purification is farther downstream and should not receive the same immediate elasticity by default."
+    ]
+  }
+}
