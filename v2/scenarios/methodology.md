@@ -130,3 +130,12 @@ No idle baseline headroom, equipment depreciation, retirement, maintenance CAPEX
 Chinese and overseas supplier names/tickers are product-exposure examples; provenance is in the existing [supplier register](../research/data/supplier_tickers.csv) and [research sources](../research/SOURCES.md). BD appears for specimen collection. Its divested biosciences / flow businesses are represented through Waters; do not interpret BDX as current ownership of those flow products.
 
 Scenario JSON includes inputs, raw and capped capacity, annual/cumulative funding, family indices and model version. CSV includes raw/capped outputs and coefficients with units. Editable SVG exports the current diagram as native text and shapes. Scenario links preserve all assumptions in the URL; no server-side storage is used.
+
+
+## Formula-linked Excel workbook
+
+[Download the English Excel model](AI_LST_formula_linked_scenario.xlsx). It opens the default US$50bn / five-year scenario. Change blue numeric inputs and choose workflow 1, 2 or 3 on Inputs. The chosen workflow coefficient table is editable. Formula-linked results and native charts recalculate from those inputs. Browser slider changes are not automatically embedded in this static workbook.
+
+Scenario presents the results. Calculations shows stock/flow funding, Build/Test constraints, family purchasing responses, the throughput ramp and target backsolves. Inputs owns assumptions, workflow presets and source context. Checks contains one-way reconciliations and never feeds the model. All amount inputs are US$bn and percentages are stored as Excel fractions.
+
+The workbook preserves the web model’s fixed 2x desired floor, 10x cohort ceiling and 0.2 manufacturing response exponent. Target funding is not capped at US$200bn. Arithmetic validation does not calibrate the economic assumptions.

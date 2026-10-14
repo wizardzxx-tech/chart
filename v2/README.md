@@ -47,3 +47,6 @@ The current site and affected exports use modality-specific workflow mechanisms,
 The US$10–200bn, 2–5-year range is exploratory. Capital stocks and fully loaded annual operating costs are distinct editable baselines. The 2–10x capacity range is a target envelope: underfunded targets show shortfalls. Workflow coefficients, manufacturing pass-through and hypothetical whole-family AI exposure are assumptions rather than sourced market growth. Sources establish announced examples and time horizons, not a global aggregate forecast.
 
 Current assumptions/results export as JSON, CSV and editable SVG; share links preserve inputs. See [methodology](scenarios/methodology.md), [primary-source register](scenarios/evidence.json) and the pure [calculation module](scenarios/model.js). This page is separate from the 16-figure atlas; existing single-slide PPT downloads remain available.
+
+
+[Formula-linked scenario Excel](scenarios/AI_LST_formula_linked_scenario.xlsx) is available from the scenario toolbar and download section. The English workbook has editable assumptions, native charts, transparent intermediate formulas and terminal reconciliations. It starts with the default scenario and recalculates independently of browser sliders.
