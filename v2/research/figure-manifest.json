@@ -174,7 +174,7 @@
   },
   {
     "figure": 15,
-    "title": "Inside a gene-building wet lab",
+    "title": "Typical protein / antibody screening workflow",
     "png": "png/15_protein_antibody_screening_workflow.png",
     "svg": "svg/15_protein_antibody_screening_workflow.svg",
     "type": "Framework",
@@ -182,11 +182,11 @@
     "pptx": "editable/single/15_protein_antibody_screening_workflow.pptx",
     "pdf": "Protein_antibody_workflow.pdf",
     "sources": "workflow/SOURCES.md",
-    "pdfLabel": "Gene-building wet lab PDF",
-    "notesLabel": "Bench items, brands & sources",
+    "pdfLabel": "Protein / antibody workflow PDF",
+    "notesLabel": "Experiment icons, brands & sources",
     "palette": "User RGB palette \u00b7 13 October 2026",
     "pptxSlides": 1,
-    "revision": "bench-20261015",
+    "revision": "flat-workflow-20261015",
     "detailPage": "wetlab/"
   },
   {

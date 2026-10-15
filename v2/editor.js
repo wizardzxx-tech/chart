@@ -132,7 +132,7 @@ $('#export-png').addEventListener('click',async()=>{
 });
 new ResizeObserver(outline).observe($('#figure-canvas'));
 try {
-  const response = await fetch('assets/figures.json?v=bench-20261015'); if (!response.ok) throw Error('Figure list unavailable'); figures = await response.json();
+  const response = await fetch('assets/figures.json?v=flat-workflow-20261015'); if (!response.ok) throw Error('Figure list unavailable'); figures = await response.json();
   $('#figure-picker').replaceChildren(...figures.map(item=>{const option=document.createElement('option');option.value=item.figure;option.textContent=`${String(item.figure).padStart(2,'0')} · ${item.title}`;return option;}));
   await loadFigure(new URL(location.href).searchParams.get('figure') || 12);
 } catch (error) { status(error.message); }

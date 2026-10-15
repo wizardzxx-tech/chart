@@ -1,0 +1,186 @@
+{
+  "title": "Typical protein / antibody screening workflow",
+  "revision": "flat-workflow-20261015",
+  "groups": [
+    {
+      "id": 1,
+      "phase": "BUILD",
+      "shortName": "DNA construction",
+      "name": "Construct design / DNA synthesis",
+      "purpose": "A robotic pipette dispenses into a multiwell plate. A PCR thermocycler supports amplification and assembly of purchased DNA fragments.",
+      "items": [
+        {
+          "category": "Reagents / services",
+          "name": "DNA fragments, vector and enzymes",
+          "use": "DNA fragments encode candidate sequences. Assembly and PCR reagents create or amplify the chosen construct. The slide does not imply PCR replaces commercial de novo DNA synthesis.",
+          "examples": "Twist, GenScript, Tsingke; Vazyme for enzymes and cloning reagents",
+          "source": "https://www.twistbioscience.com/products/genes/fragments"
+        },
+        {
+          "category": "Instrumentation",
+          "name": "Liquid handling + thermocycler",
+          "use": "The arm and dispenser represent automated transfer into wells; the PCR instrument controls temperature cycling. These are distinct tools in the same construction scene.",
+          "examples": "Tecan, Hamilton; Thermo Fisher, Bio-Rad for thermocyclers",
+          "source": "https://www.hamiltoncompany.com/applications"
+        },
+        {
+          "category": "Consumables",
+          "name": "Multiwell plate, tips and tubes",
+          "use": "Wells hold reactions; compatible tips and tubes support transfers and sample handling. Consumable format depends on the workflow.",
+          "examples": "JET Biofil, Corning, Thermo Fisher",
+          "source": "https://www.corning.com/worldwide/en/products/life-sciences.html"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "BUILD",
+      "shortName": "Expression + purification",
+      "name": "Protein expression & purification",
+      "purpose": "Culture cells express the protein. Chromatography separates it from the mixture; LC-MS is a subsequent analytical QC option.",
+      "items": [
+        {
+          "category": "Expression",
+          "name": "Culture flask + medium",
+          "use": "The flask, cell dots and medium bottle represent expression in an appropriate host. Protein yield is measured here, not created by a later assay.",
+          "examples": "GenScript; Gibco / Thermo Fisher, OPM, Duoning for culture inputs",
+          "source": "https://www.genscript.com/high-throughput-antibody-purification.html"
+        },
+        {
+          "category": "Purification",
+          "name": "Chromatography column + resin",
+          "use": "The bead-filled column represents chromatographic separation. A collected fraction contains the selected protein; resin and column chemistry depend on the sample.",
+          "examples": "Cytiva, NanoMicro, Sepax",
+          "source": "https://www.cytivalifesciences.com/en/us/support/handbooks"
+        },
+        {
+          "category": "Analytical QC",
+          "name": "LC-MS instrument",
+          "use": "LC-MS can support identity and other analytical checks after preparation. It is not shown as the device performing preparative protein purification.",
+          "examples": "Waters, Agilent, Thermo Fisher",
+          "source": "https://www.waters.com/nextgen/us/en/products/mass-spectrometry.html"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "TEST",
+      "shortName": "Binding screen",
+      "name": "Primary binding screen",
+      "purpose": "Combine target protein with antibody candidates, then read binding signals using the assay format appropriate to the program.",
+      "items": [
+        {
+          "category": "Reagents",
+          "name": "Y-shaped antibody + green target",
+          "use": "The Y shape represents an antibody and the green cluster represents a recombinant target protein. These are schematic molecules, not structural models.",
+          "examples": "ACROBiosystems, Sino Biological, Bio-Techne",
+          "source": "https://www.acrobiosystems.com/aix/aidd-ready-solutions"
+        },
+        {
+          "category": "Instrumentation",
+          "name": "Binding platform + response curve",
+          "use": "The instrument labeled BLI represents biolayer interferometry. SPR is another binding technology with different hardware. Kinetic parameters may share the same experiment and fit.",
+          "examples": "Sartorius for BLI; Cytiva for Biacore SPR",
+          "source": "https://www.sartorius.com/en/products/biolayer-interferometry"
+        },
+        {
+          "category": "Consumables",
+          "name": "Assay plate + sensors",
+          "use": "Plates hold samples and BLI sensors or SPR chips provide the appropriate assay surface. A plate-based optical screen can be an alternative initial assay.",
+          "examples": "JET Biofil / Corning for plates; Sartorius / Cytiva for platform-specific consumables",
+          "source": "https://www.sartorius.com/en/products/biolayer-interferometry"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "TEST",
+      "shortName": "Characterization",
+      "name": "Multi-property characterization",
+      "purpose": "Use complementary measurements to build linked evidence on binding, stability and developability. No single instrument measures every attribute.",
+      "items": [
+        {
+          "category": "Separation / analytics",
+          "name": "SEC column + LC-MS + peak",
+          "use": "The column and instrument represent analytical separation and mass-based analysis. SEC may assess size-related heterogeneity; LC-MS supports other compositional and identity questions.",
+          "examples": "Waters, Agilent, Thermo Fisher; NanoMicro and Sepax for separation media / columns",
+          "source": "https://www.nanomicro.com/news/company/76"
+        },
+        {
+          "category": "Stability",
+          "name": "Sample tube + thermometer + melt curve",
+          "use": "A thermal assay measures a temperature-dependent signal. A melting transition is one stability readout; aggregation and formulation behavior need appropriate additional measurements.",
+          "examples": "NanoTemper; other thermal-analysis platforms",
+          "source": "https://nanotempertech.com/prometheus-panta/"
+        },
+        {
+          "category": "Binding",
+          "name": "Association / dissociation curve",
+          "use": "The schematic curve represents a kinetic response. KD, kon and koff are related; shared assay context is needed to interpret and train on them.",
+          "examples": "Sartorius; Cytiva",
+          "source": "https://www.sartorius.com/en/products/biolayer-interferometry"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "TEST",
+      "shortName": "Cell function",
+      "name": "Cell-function validation",
+      "purpose": "Dose a relevant cell model and measure the chosen biological response. Potency is specific to the assay and does not establish clinical efficacy.",
+      "items": [
+        {
+          "category": "Reagents / consumables",
+          "name": "Pipette + cells + media",
+          "use": "The pipette delivers candidate or assay reagent to cultured cells. Culture media, cytokines and reporter reagents depend on the model.",
+          "examples": "Gibco / Thermo Fisher, Bio-Techne, Vazyme; Corning and JET Biofil for cultureware",
+          "source": "https://www.corning.com/worldwide/en/products/life-sciences.html"
+        },
+        {
+          "category": "Instrumentation",
+          "name": "Flow cytometer + dot plot",
+          "use": "Cells pass through a flow cell and are measured individually. The diagram shows a laser crossing the channel and a schematic data plot.",
+          "examples": "Waters Biosciences (formerly BD Biosciences); other flow-cytometry suppliers",
+          "source": "https://www.waters.com/nextgen/us/en/about-waters/corporate-governance/legal-and-privacy-notices/bdtransaction.html"
+        },
+        {
+          "category": "Instrumentation",
+          "name": "Microscope / cell imaging",
+          "use": "Imaging measures selected cellular features and responses. It is a complementary assay route rather than a mandatory sequential step after flow cytometry.",
+          "examples": "Molecular Devices; other cellular-imaging suppliers",
+          "source": "https://www.moleculardevices.com/products/cellular-imaging-systems"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "LEARN",
+      "shortName": "Data + feedback",
+      "name": "Data integration & feedback",
+      "purpose": "Link sample identity, assay conditions and results so data can be reused in the next model-guided design cycle.",
+      "items": [
+        {
+          "category": "Data systems",
+          "name": "Plate records \u2192 database",
+          "use": "The plate represents sample-indexed results and the cylinder represents stored, linked experimental records. Conditions and QC matter alongside the measured values.",
+          "examples": "Benchling, Genedata",
+          "source": "https://www.benchling.com/solutions/biopharmaceutical"
+        },
+        {
+          "category": "Model / analysis",
+          "name": "Laptop + model graph",
+          "use": "The node graph represents model-assisted analysis or design. It does not imply autonomous recursive improvement has been demonstrated.",
+          "examples": "Genedata and connected analysis environments; model developers vary",
+          "source": "https://www.genedata.com/platform/biologics"
+        },
+        {
+          "category": "Automation / iteration",
+          "name": "Next design + return arrow",
+          "use": "The feedback arrow returns evidence to construct selection. Automation and data orchestration support all six stages, not just the final card.",
+          "examples": "Tecan, Hamilton; Benchling and Genedata for linked data workflows",
+          "source": "https://www.hamiltoncompany.com/applications"
+        }
+      ]
+    }
+  ]
+}
