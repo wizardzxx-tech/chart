@@ -4,7 +4,7 @@ Public website: https://wizardzxx-tech.github.io/chart/v2/
 
 The atlas has 16 English figures. Figures 13–14 cover Stage 0 biological-data production, deeper characterization, and the related tool workflow. Their counts are illustrative; no incremental TAM or realized AI revenue is claimed.
 
-Figure 15 maps protein / antibody screening across reagents, instruments, consumables and selected suppliers. Its one-slide PowerPoint has native text, frames and a curved feedback arrow. Original logos remain images.
+Figure 15 shows a physical gene-construction bench with equipment, reagents, consumables and representative brands. Its single-slide PowerPoint has editable labels, markers and supplier names. The bench illustration and original logos remain images. The interactive bench guide explains individual items and product examples.
 
 Figure 16 presents a conceptual RSI loop: AI designs experiments, biology generates evidence, and the AI model/policy is updated and benchmarked before the next cycle. Closed-loop learning is distinguished from sustained autonomous RSI.
 
@@ -50,3 +50,8 @@ Current assumptions/results export as JSON, CSV and editable SVG; share links pr
 
 
 [Formula-linked scenario Excel](scenarios/AI_LST_formula_linked_scenario.xlsx) includes both live visual panels: funding / annual flows and the discovery funnel / six supplier-family cards. Three native Form Control scrollbars target desktop Excel without macros; visible numeric inputs provide a fallback in browser editions. Two supporting charts, intermediate formulas and reconciliations remain available. The default Total assigns one third to each workflow, with editable weights. The same funding pool and reference cohort are allocated once; component responses are evaluated before aggregation. Each card combines AI-lab purchases and estimated whole-family uplift, without a scope toggle. The default download recalculates independently of browser sliders.
+
+
+## Figure 15: the working wet lab, 15 October 2026
+
+[Explore the gene-building bench](wetlab/). The previous six-stage screening map is replaced with one physical laboratory scene. Seven numbered tool groups explain equipment, reagents, consumables and representative brands. Click a bench item for its purpose, product examples and manufacturer sources. The figure, editable SVG, single-slide PPT, combined 16-slide PPT and combined PDF use the same revised scene. Equipment artwork is illustrative. Labels and supplier names remain editable.

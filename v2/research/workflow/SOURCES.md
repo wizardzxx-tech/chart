@@ -1,50 +1,88 @@
-# Protein / antibody screening workflow
+# Inside a gene-building wet lab
 
-Figure 15. English infographic. Prepared 13 October 2026.
+Figure 15. English bench illustration and interactive supplier guide. Revised 15 October 2026.
 
-## Scope and interpretation
+## What the illustration shows
 
-The example follows sequence-defined antibody candidates against a protein target, from DNA constructs to physical samples, binding screens, characterization and cell function. It is a simplified logical workflow, not a mandatory six-step protocol. Target preparation and candidate expression can run in parallel; primary screens can use culture supernatant before full purification. Assays are chosen for the molecule, mechanism and program.
+This is an illustrative gene-construction bench. A lab can buy synthetic DNA fragments or oligos, assemble them into a vector, amplify selected templates, clone and expand the construct, purify plasmid DNA and check the sequence. Gene synthesis at a specialist supplier and PCR amplification in a customer laboratory are different activities. Laboratories can also order a finished, sequence-verified plasmid and skip some bench work.
 
-Stages 4–5 are highlighted as potential constraints on generating comparable, reproducible multi-property data for AI. This is an analytical hypothesis, not evidence that every program has these bottlenecks or that AI raises realized supplier revenue.
+The numbers identify tool groups and the physical layout, not seven mandatory protocol steps. For example, purification can occur during fragment preparation and again after clone growth. Transformation and colony selection precede liquid clone expansion. PCR, assembly, culture and QC choices depend on the construct and workflow. No operating parameters, experimental quantities or throughput assumptions are given.
 
-KD, kon and koff can come from the same binding experiment and appropriate kinetic model. Expression data originate during production. Epitope competition binning is not atomic-resolution epitope mapping. Stability, aggregation and polyreactivity require different assays; none is implied to be measured by SEC or LC-MS alone. Cell potency is assay-specific and does not establish clinical efficacy. The label panel is a linked record assembled across stages, not nine independent tests.
+Fluorometry estimates concentration and gel electrophoresis provides fragment-size information. Neither verifies the full base sequence. Sanger sequence reads can support construct confirmation when coverage and quality are adequate. The computer illustrates data review, not a claim that a sequencer sits in every laboratory. Sequencing can be purchased as a service. A gel-imaging system is a related item in the expanded guide, not a separate imager pictured on the bench.
 
-Instrumentation is shown separately from recurring inputs. Chromatography columns may be reused. Culture bags and bioreactors are scale-dependent. Shared sample preparation and shared assay readouts should be counted once in a procurement model. LIMS/ELN and orchestration are software systems. Data infrastructure supports the whole workflow, even though integration is shown as the sixth stage.
+Equipment, reagents and consumables are distinct procurement categories. Kits can bundle buffers with disposable columns and tubes. Supplier examples are alternatives, not one installed equipment set, an endorsement or a market-share ranking. The generated equipment is generic and is not an exact rendering of any named model. This revision intentionally focuses on physical bench work rather than repeating the AI funnel or market-size framework.
 
-Supplier lists are selected examples spanning reagents, instruments, consumables or services. A supplier listed beneath a stage is not asserted to supply every item in that stage. This is not a market-share ranking, endorsement or statement about installed systems in one laboratory.
+## Item-by-item guide and primary sources
 
-## Primary sources supporting the mappings
+### 1. DNA inputs
 
-1. [GenScript — antibody production](https://www.genscript.com/custom-antibody-production-services.html?src=home): antibody production and purification services. [Gene-to-antibody workflow](https://www.genscript.com/high-throughput-antibody-purification.html): constructs, expression and purification.
-2. [Twist — gene fragments](https://www.twistbioscience.com/products/genes/fragments): DNA fragments for construct generation. [Multiplexed gene fragments](https://investors.twistbioscience.com/news-releases/news-release-details/twist-bioscience-launches-multiplexed-gene-fragments-enable-high): applications include antibody discovery and protein engineering.
-3. [ACROBiosystems — AIDD-Ready](https://www.acrobiosystems.com/aix/aidd-ready-solutions): target proteins; gene synthesis, CHO expression, expression quantification, binding screening, optional epitope and cell assays. [Services](https://www.acrobiosystems.com/services): protein and cellular services and characterization.
-4. [Cytiva — antibody purification handbook](https://cdn.cytivalifesciences.com/api/public/content/digi-26798-pdf): antibody affinity purification and chromatography choices. [Handbooks](https://www.cytivalifesciences.com/en/us/support/handbooks): laboratory protein purification. ÄKTA is a Cytiva instrument family; FPLC denotes a chromatography technique.
-5. [Sartorius — BLI](https://www.sartorius.com/en/products/biolayer-interferometry): binding kinetics, affinity, concentration, biosensors and epitope binning. [Epitope binning](https://www.sartorius.com/en/products/biolayer-interferometry/bli-resources/octet-cross-competition-epitope-binning-assays): cross-competition assays.
-6. [NanoTemper — Prometheus Panta](https://nanotempertech.com/prometheus-panta/): nanoDSF and scattering measurements for stability and aggregation-related properties. [nanoDSF](https://nanotempertech.com/nanodsf/): thermal unfolding and the distinction between conformational and colloidal stability.
-7. [NanoMicro — company business description](https://www.nanomicro.com/news/company/76): chromatography materials and analytical separation portfolio. [NanoChrom SEC catalog](https://www.nanochrom.com.cn/products_1/?ext_fenlimoshi=SEC&show=selectproductlist): SEC products, previously inspected in the preceding research; not freshly accessible through the web reader on 13 October. NanoMicro exposure here is analytical separation and purification, not an assertion that research-scale assay growth immediately translates into manufacturing resin demand.
-8. [Molecular Devices — cellular imaging](https://www.moleculardevices.com/products/cellular-imaging-systems): cell imaging platforms. [Antibody binding with high-content imaging](https://www.moleculardevices.com/en/assets/app-note/dd/img/homogeneous-antibody-binding-assays-with-high-content-imaging): cell-surface binding as an example distinct from a complete potency assay.
-9. [Corning — life sciences](https://www.corning.com/worldwide/en/products/life-sciences.html): culture vessels and microplates.
-10. [Waters Biosciences — flow cytometers](https://www.bdbiosciences.com/en-br/products/instruments/flow-cytometers): current portfolio naming. [Waters transaction disclosure](https://www.waters.com/nextgen/us/en/about-waters/corporate-governance/legal-and-privacy-notices/bdtransaction.html): combination with BD's Biosciences & Diagnostic Solutions closed 9 February 2026. The slide therefore labels the former BD Biosciences portfolio as Waters Biosciences (ex-BD).
-11. [Hamilton — applications](https://www.hamiltoncompany.com/applications): liquid handling and protein/cell workflow automation. [Tecan](https://www.tecan.com): liquid handling and laboratory automation.
-12. [Benchling — biopharmaceutical R&D](https://www.benchling.com/solutions/biopharmaceutical): ELN, LIMS and linked data. [Genedata Biologics](https://www.genedata.com/platform/biologics): molecule/sample tracking, screening records and characterization data.
+Provide the sequence to build.
 
-Additional suppliers from the user's requested representative set are included as company-name examples consistent with their established product families: Tsingke and Vazyme (construction reagents/services); Thermo Fisher and Gibco (instruments, reagents and media); Sino Biological and Bioss (proteins/antibodies); OPM and Duoning (culture/bioprocess inputs); Waters, Agilent and Sepax (analytical separation); Bio-Techne (proteins and cellular assay reagents); JET Biofil (labware). Individual stock-keeping units are not specified.
+- **Synthetic DNA fragments / oligos** (Reagent / service): Supply designed DNA sequences for construct assembly. Examples: Twist Gene Fragments, GenScript, Tsingke Tsynth. [Primary product source](https://www.twistbioscience.com/products/genes/fragments).
+- **Vector DNA** (Reagent): Provide the plasmid backbone that receives the insert. Examples: GenScript, Tsingke custom constructs. [Primary product source](https://www.tsingke.com/products/tsynth-gene-synthesis/).
 
-## Original visual assets
+### 2. Reaction setup
 
-Original artwork is embedded without redrawing, with aspect ratios preserved. Whitespace-trimmed versions already exist in this project's asset library. Company-name text labels are editable native text; original logo artwork remains an image. Logos remain images in the PowerPoint; all diagram text, frames and arrows are native editable objects.
+Transfer and combine reagents.
 
-- Twist: https://www.twistbioscience.com/content/dam/twist-aem-migration/twist-home-logo.svg
-- GenScript: https://www.genscript.com/gsimages/logo.jpg
-- ACROBiosystems: https://console.acrobiosystems.com/public/images/LOGO-download.png
-- Cytiva: https://massbioportalimages.blob.core.windows.net/massbioportalimages/a28b10cf8e90ea11a811000d3a33b4ee/Cytiva%20-%20Copy.png (previously archived logo from MassBio).
-- NanoMicro emblem: https://www.nanomicro.com/Public/Cn/images/com_logo.svg (original emblem with a separate editable English company name).
-- Tecan: https://www.tecan.com/hubfs/page_images/logo.png
-- JET Biofil: https://image.makewebeasy.net/makeweb/m_1920x0/EtyBgz2ZO/Product_Brand/Jet_01.png?v=202012190947 (English original from distributor; previously archived).
-- Lucide icons: https://github.com/lucide-icons/lucide — ISC license. DNA, flask, test tubes, microscope, pipette, database and bot. Icons retain original paths; stroke color is teal for the slide.
+- **Micropipette** (Instrument): Transfer sample and reagent volumes. Examples: Gilson PIPETMAN, Eppendorf Research. [Primary product source](https://row.gilson.com/liquid-handling.html).
+- **Assembly mix / PCR mix** (Reagent): Join DNA fragments or amplify selected templates. These are distinct reagents and operations. Examples: NEB NEBuilder / Q5, Vazyme ClonExpress / Phanta. [Primary product source](https://www.neb.com/en-ca/tools-and-resources/usage-guidelines/guidelines-for-using-nebuilder-hifi-dna-assembly).
+- **Pipette tips and microtubes** (Consumable): Carry liquids and hold samples. Choose fit and purity for the application. Examples: Gilson, Eppendorf, JET Biofil. [Primary product source](https://www.gilson.com/default/shop-products/pipetman-diamond-tips.html).
 
-No market sizes, unit prices, empirical throughput values or company revenue forecasts are introduced in this figure.
+### 3. Thermal cycling
 
+Run PCR or assembly incubation.
 
-Palette updated to the user's eight RGB colors on 13 October 2026. Original company marks retain their brand colors.
+- **Thermocycler** (Instrument): Control temperature during PCR and compatible assembly incubations. Some incubations can use a heating block. Examples: Applied Biosystems, Bio-Rad T100. [Primary product source](https://www.bio-rad.com/en-nl/category/thermal-cyclers-for-pcr?ID=75f1b406-3746-4580-a998-74245b094f56).
+- **PCR plates, tubes and sealing film** (Consumable): Contain reactions in an instrument-compatible format. Examples: Thermo Fisher, Eppendorf, JET Biofil. [Primary product source](https://www.jetbiofil.com/news/show_94.html).
+
+### 4. DNA cleanup
+
+Recover DNA and remove impurities.
+
+- **Microcentrifuge** (Instrument): Support sample separation and spin-column workflows. Examples: Eppendorf 5425 / 5425 R. [Primary product source](https://www.eppendorf.com/us-en/Products/Centrifugation/Microcentrifuges/Centrifuge-5425-5425R-p-PF-934144).
+- **DNA cleanup kit / plasmid miniprep kit** (Reagent + consumable kit): Purify PCR products or isolate plasmid DNA after clone growth. These are different kit applications. Examples: QIAGEN QIAquick / QIAprep, TIANGEN purification / TIANprep. [Primary product source](https://www.qiagen.com/re/products/discovery-and-translational-research/dna-rna-purification/dna-purification/plasmid-dna/qiaprep-spin-miniprep-kit).
+
+### 5. DNA quality checks
+
+Check concentration and fragment size.
+
+- **Fluorometer and DNA assay kit** (Instrument + reagent): Estimate DNA concentration with an appropriate fluorescent assay and standards. Examples: Invitrogen Qubit / Thermo Fisher. [Primary product source](https://documents.thermofisher.com/TFS-Assets/BID/brochures/qubit-fluorometers-assays-brochure.pdf).
+- **Gel electrophoresis / imaging system** (Instrument): Visualize DNA fragment-size patterns. This does not read the base sequence. Examples: Bio-Rad Mini-Sub / Gel Doc. [Primary product source](https://www.bio-rad.com/en-cn/p/edu).
+- **Agarose, ladder, dye and assay tubes** (Reagent + consumable): Support size and concentration QC. Fluorometry requires compatible assay tubes and standards. Examples: Thermo Fisher / Invitrogen, Bio-Rad. [Primary product source](https://documents.thermofisher.com/TFS-Assets/LSG/manuals/MAN0017209_Qubit_4_Fluorometer_UG.pdf).
+
+### 6. Clone growth
+
+Expand cells carrying the construct.
+
+- **Shaking incubator** (Instrument): Support growth of a suitable laboratory host culture. The illustrated unit is generic. Examples: Eppendorf New Brunswick Innova. [Primary product source](https://www.eppendorf.com/de-en/Products/Lab-Shakers/Incubator-Shakers/New-Brunswick-Innova-42-42R-p-PF-11016).
+- **Cloning cells and growth medium** (Reagent): Host and expand plasmid constructs. Transformation and colony selection precede liquid clone expansion. Examples: NEB cloning cells, Thermo Fisher media. [Primary product source](https://intl.neb.com/en/-/media/nebus/files/manuals/manuale2621_e5520.pdf?hash=DBB3AAA03690BBDA4C873814C891A375&rev=120c86ac1f4f48ed95f1eb46990d9d0e).
+- **Culture tubes, flasks and plates** (Consumable): Hold cultures during clone selection and expansion. Examples: Eppendorf, Thermo Fisher, JET Biofil. [Primary product source](https://www.jetbiofil.com/product/index_100000010797627.html).
+
+### 7. Sequence confirmation
+
+Confirm the construct sequence.
+
+- **Sanger service / sequencer** (Service or instrument): Read sequence data and compare the construct with the design. An analysis screen does not imply an on-site sequencer. Examples: Tsingke / GenScript service, Applied Biosystems SeqStudio. [Primary product source](https://www.thermofisher.com/de/en/home/life-science/sequencing/sanger-sequencing/genetic-analyzers/models/seqstudio.html).
+- **Sequence trace and construct record** (Data output): Link sequence identity with the sample record before expression or assays. Examples: Analysis software and laboratory sample records. [Primary product source](https://www.tsingke.com.cn/sanger).
+
+## Additional cross-checks
+
+- [NEB assembly guidelines](https://www.neb.com/en-ca/tools-and-resources/usage-guidelines/guidelines-for-using-nebuilder-hifi-dna-assembly): assembled fragments and vectors.
+- [Vazyme ClonExpress MultiS](https://www.vazymeglobal.com/cetool/multifragment.html): multi-fragment cloning. [Phanta Max](https://www.vazymeglobal.com/product-center/high-fidelity-pcr/phanta-max-super-fidelity-dna-polymerase/): high-fidelity PCR product family.
+- [Eppendorf Research plus](https://www.eppendorf.com/gb-en/Products/Liquid-Handling/All-Pipettes-Dispensers-Automated-Liquid-Handlers/Eppendorf-Research-plus-p-PF-534798): micropipette product family.
+- [TIANGEN DNA purification](https://en.tiangen.com/content/details_69_5374.html) and [TIANprep plasmid kit](https://en.tiangen.com/content/details_69_4307.html): different purification applications.
+- [QIAGEN PCR cleanup](https://www.qiagen.com/ee/products/discovery-and-translational-research/dna-rna-purification/dna-purification/dna-clean-up/qiaquick-pcr-purification-kit): DNA clean-up product family.
+- [GenScript gene fragments](https://www.genscript.com/gene-fragments.html?src=pullmenu): synthetic fragments. Fragment delivery should not automatically be equated with a fully sequence-verified plasmid.
+- [GenScript molecular biology services](https://www.genscript.com/molecular-biology-service.html?src=footer): sequencing and other service offerings.
+- [Tsingke Sanger service](https://www.tsingke.com.cn/sanger): outsourced sequence confirmation.
+
+No market sizes, company revenue forecasts, unit prices or experimental success rates are introduced.
+
+## Visual provenance and editability
+
+The unbranded laboratory illustration was generated with the built-in imagegen tool. A focused revision replaces two culture vessels with conical shake flasks. This is a conceptual illustration, not a photograph of an actual laboratory. [Prompts](PROMPTS.md).
+
+All diagram titles, equipment labels, numbered markers, supplier names and leader lines remain editable in the SVG and PowerPoint. The bench illustration and original JET Biofil logo are embedded images. Web text and the item guide are English. The palette follows the user's navy, pale blue, gray and slate-blue priorities. Original logos retain their brand colors.
+
+Original JET Biofil logo: https://image.makewebeasy.net/makeweb/m_1920x0/EtyBgz2ZO/Product_Brand/Jet_01.png?v=202012190947 (previously archived project asset).
