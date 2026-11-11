@@ -366,6 +366,17 @@
     <a class="download-data" href="company-stores.csv" download>下载公司数据 CSV <span aria-hidden="true">↓</span></a>
   </div>
   <p class="dataset-source">来源为招股说明书、定期报告及经营数据公告。可按公司或季度查看，并切换单季与年内累计变动。</p>
+  <figure class="stores-figure company-trend" id="company-store-trend" aria-labelledby="company-trend-title" hidden>
+    <figcaption id="company-trend-title">各药房门店数（家）</figcaption>
+    <fieldset class="company-series">
+      <legend>选择公司</legend>
+    </fieldset>
+    <div class="plot-area">
+      <canvas id="company-trend-chart" tabindex="0" role="img" aria-label="各药房季度末门店数折线图。可用左右方向键查看季度数值。" aria-describedby="company-trend-note"></canvas>
+      <div class="company-trend-tooltip" role="status" hidden></div>
+    </div>
+    <p class="plot-note" id="company-trend-note">空心点和虚线表示估算。国药一致、华人健康缺失的一、三季度取相邻两季已披露门店数的平均值。</p>
+  </figure>
   <div class="company-filters" hidden>
     <label>公司<select id="store-company"><option value="all">全部公司</option></select></label>
     <label>季度<select id="store-period"></select></label>
@@ -395,6 +406,6 @@
     </ul>
   </div>
 </section>
-<script src="company-stores.js" defer></script>
+<script src="company-stores.js" type="module"></script>
 <script id="stores-series" type="application/json">[{"quarter":"2017Q4","count":457000,"label":"约 457,000","kind":"approx","basis":"披露约数"},{"quarter":"2018Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q4","count":502000,"label":"约 502,000","kind":"approx","basis":"披露约数"},{"quarter":"2019Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q4","count":530000,"label":"约 530,000","kind":"approx","basis":"披露约数"},{"quarter":"2020Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q4","count":570000,"label":"约 570,000","kind":"approx","basis":"披露约数"},{"quarter":"2021Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q4","count":591000,"label":"约 591,000","kind":"approx","basis":"披露约数"},{"quarter":"2022Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q4","count":627000,"label":"约 627,000","kind":"approx","basis":"披露约数"},{"quarter":"2023Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q4","count":685000,"label":"约 685,000","kind":"approx","basis":"披露约数"},{"quarter":"2024Q1","count":696478,"label":"696,478","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q2","count":704601,"label":"704,601","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q3","count":706051,"label":"706,051","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q4","count":702401,"label":"702,401","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q1","count":699235,"label":"699,235","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q2","count":695226,"label":"695,226","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q3","count":686426,"label":"686,426","kind":"exact","basis":"直接披露"},{"quarter":"2025Q4","count":680476,"label":"680,476","kind":"exact","basis":"直接披露"},{"quarter":"2026Q1","count":673000,"label":"约 673,000","kind":"approx","basis":"披露约数"},{"quarter":"2026Q2","count":665355,"label":"665,355","kind":"broker","basis":"券商转引"},{"quarter":"2026Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"}]</script>
 <script src="stores-chart.js" defer></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>

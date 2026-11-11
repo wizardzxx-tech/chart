@@ -89,6 +89,16 @@
 .source-detail { display: block; }
 .pharmacy-panel :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .company-panel .dataset-head { align-items: center; }
+.company-trend figcaption { font-size: 16px; font-weight: 650; }
+.company-series { display: flex; flex-wrap: wrap; gap: 4px 16px; border: 0; min-inline-size: 0; margin: 10px 0; padding: 0; }
+.company-series legend { padding: 0; margin-bottom: 5px; font-size: 12px; color: var(--muted); }
+.company-series label { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; font-size: 13px; cursor: pointer; }
+.company-series input { margin: 0; }
+.company-series-swatch { display: inline-block; width: 10px; height: 3px; border-radius: 2px; }
+#company-trend-chart { display: block; width: 100%; height: 290px; cursor: crosshair; }
+.company-trend-tooltip { position: absolute; top: 5px; z-index: 1; max-width: 100%; padding: 8px 10px; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 3px; box-shadow: 0 2px 10px #142e3a1a; font-size: 12px; pointer-events: none; }
+.company-trend-tooltip div { margin-top: 3px; padding-left: 7px; border-left: 3px solid var(--series-color); }
+.company-trend-tooltip small { display: block; color: var(--muted); font-size: 11px; }
 .company-filters { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; }
 .company-filters[hidden], .company-table-wrap[hidden] { display: none; }
 .company-filters label { color: var(--muted); font-size: 12px; font-weight: 650; }
@@ -119,6 +129,7 @@
   #china-pharmacy-stores .stores-table thead th:nth-child(3), .stores-table .change { display: none; }
   .stores-table .data-kind { padding-inline: 4px; }
   .company-panel .dataset-head .download-data { display: inline-block; margin-top: 10px; }
+  #company-trend-chart { height: 224px; }
   .company-mobile-tip { display: block; color: var(--muted); font-size: 12px; margin: -3px 0 8px; }
   .company-table { min-width: 825px; }
 }

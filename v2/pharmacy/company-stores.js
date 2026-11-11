@@ -1,3 +1,5 @@
+import { mountCompanyTrend } from './company-trend.js';
+
 (() => {
   const panel = document.querySelector('#company-stores');
   const filters = panel.querySelector('.company-filters');
@@ -113,6 +115,7 @@
     filters.hidden=false;
     table.hidden=false;
     render();
+    mountCompanyTrend(panel.querySelector('#company-store-trend'), companies, [...periods].reverse());
   }
   load().catch(()=>{
     status.textContent='门店表暂时无法加载。可下载 CSV 查看完整数据。';
