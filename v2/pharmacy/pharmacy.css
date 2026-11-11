@@ -117,6 +117,25 @@
 .company-source-detail dt { margin-top: 7px; font-weight: 700; }
 .company-source-detail dd { margin: 0; color: var(--muted); }
 .company-source-detail a { display: block; color: var(--teal); text-underline-offset: 2px; }
+.equity-panel .dataset-head { align-items: center; }
+.equity-table-wrap { max-height: 580px; }
+.equity-table { min-width: 985px; }
+.equity-table th, .equity-table td { white-space: normal; vertical-align: top; }
+.equity-table th:first-child { min-width: 140px; }
+.equity-year { min-width: 65px; }
+.equity-table td:nth-child(3) { min-width: 155px; }
+.equity-plan-name, .equity-base { display: block; color: var(--muted); font-size: 11px; font-weight: 400; }
+.equity-target, .equity-actual { min-width: 105px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.equity-table td:nth-child(6) { min-width: 240px; }
+.equity-table td p { margin: 3px 0 0; }
+.equity-table td small { color: var(--muted); font-size: 11px; line-height: 1.55; }
+.equity-badge { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 11px; background: #f0f2f2; color: var(--muted); }
+.equity-badge.met { background: #e9f0eb; color: #176d65; }
+.equity-badge.missed { background: #f7eae9; color: #923e39; }
+.equity-badge.ended { background: #f6efe1; color: #73501f; }
+.equity-links { min-width: 110px; }
+.equity-links a { display: block; color: var(--teal); text-underline-offset: 2px; font-size: 12px; }
+.equity-table tr:target > * { background: #e9f0eb; }
 @media (max-width: 640px) {
   .pharmacy-panel { padding: 16px; margin-bottom: 38px; }
   .dataset-head { display: block; }
@@ -128,7 +147,7 @@
   .stores-table th, .stores-table td { padding: 7px 6px; }
   #china-pharmacy-stores .stores-table thead th:nth-child(3), .stores-table .change { display: none; }
   .stores-table .data-kind { padding-inline: 4px; }
-  .company-panel .dataset-head .download-data { display: inline-block; margin-top: 10px; }
+  .company-panel .dataset-head .download-data, .equity-panel .dataset-head .download-data { display: inline-block; margin-top: 10px; }
   #company-trend-chart { height: 224px; }
   .company-mobile-tip { display: block; color: var(--muted); font-size: 12px; margin: -3px 0 8px; }
   .company-table { min-width: 825px; }
