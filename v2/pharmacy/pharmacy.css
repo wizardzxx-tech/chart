@@ -1,0 +1,105 @@
+.pharmacy-hero { padding-bottom: 27px; }
+.pharmacy-hero h1 { margin-top: 0; margin-bottom: 10px; }
+.pharmacy-panel {
+  margin-bottom: 58px;
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--teal);
+  border-radius: 3px;
+}
+.dataset-head, .plot-head, .table-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.dataset-head h2 { margin: 0; font-size: clamp(23px, 3vw, 30px); line-height: 1.4; }
+.dataset-meta, .dataset-source, .plot-note { color: var(--muted); font-size: 13px; }
+.dataset-meta { margin: 9px 0 0; }
+.dataset-source { margin: 18px 0; }
+.dataset-source strong { color: var(--ink); margin-right: .5em; }
+.latest-value { display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap; }
+.latest-value span, .latest-value a { font-size: 12px; color: var(--muted); }
+.latest-value strong { font-size: 27px; line-height: 1.35; font-variant-numeric: tabular-nums; color: var(--teal); }
+.latest-value small { font-size: 13px; }
+.latest-value a { text-underline-offset: 3px; }
+.stores-figure { margin: 20px 0 31px; border: 1px solid var(--line); padding: 18px 17px 12px; border-radius: 3px; }
+.plot-head, .table-head { align-items: center; }
+.plot-head figcaption { font-size: 14px; font-weight: 650; }
+.plot-range { display: flex; gap: 4px; flex-wrap: wrap; }
+.plot-range button, .download-data {
+  color: var(--teal);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+}
+.plot-range button[aria-pressed="true"], .download-data:hover { background: #e9f0eb; border-color: #abc7be; }
+.plot-area { position: relative; }
+#stores-chart { display: block; width: 100%; height: 264px; margin-top: 8px; }
+.plot-tooltip {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  padding: 5px 8px;
+  color: white;
+  background: var(--ink);
+  border-radius: 3px;
+  font-size: 12px;
+}
+.plot-legend { display: flex; flex-wrap: wrap; gap: 5px 18px; font-size: 12px; color: var(--muted); }
+.plot-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.mark { width: 8px; height: 8px; display: inline-block; background: var(--teal); }
+.mark.exact, .mark.approx { border-radius: 50%; }
+.mark.approx { border: 2px solid var(--teal); background: #fff; }
+.mark.derived { background: #99682c; }
+.mark.broker { transform: rotate(45deg); background: #506884; }
+.plot-note { margin: 6px 0 0; font-size: 12px; }
+.table-head { margin-bottom: 12px; }
+.table-head h3, .dataset-notes h3 { font-size: 17px; margin: 0; }
+.download-data { white-space: nowrap; font-weight: 650; }
+.stores-table-wrap { overflow: auto; max-height: 508px; border: 1px solid var(--line); border-radius: 3px; }
+.stores-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 555px; font-size: 13px; }
+.stores-table th, .stores-table td { padding: 8px 13px; border-bottom: 1px solid #e9eeeb; text-align: left; white-space: nowrap; }
+.stores-table thead th { position: sticky; top: 0; background: #edf3ef; z-index: 1; }
+.stores-table tbody tr:last-child > * { border-bottom: none; }
+.stores-table tbody tr:hover { background: #f6f9f7; }
+.stores-table .count, .stores-table .change { font-variant-numeric: tabular-nums; }
+.stores-table .count { font-weight: 650; }
+.stores-table tr[data-kind="missing"] { color: var(--muted); }
+.data-kind { padding: 2px 7px; border-radius: 3px; font-size: 11px; background: #e9f0eb; color: #325e50; }
+.data-kind.derived { background: #f6efe1; color: #73501f; }
+.data-kind.broker { background: #eaf0f8; color: #3e5874; }
+.data-kind.missing { background: #f0f1f1; color: #58676c; }
+.source-refs a, .dataset-notes a { color: var(--teal); text-underline-offset: 3px; }
+.dataset-notes { margin-top: 28px; color: var(--muted); font-size: 13px; }
+.dataset-notes h3 { color: var(--ink); }
+.dataset-notes ul, .source-list { padding-left: 20px; margin: 9px 0 20px; }
+.dataset-notes li { padding-left: 3px; margin: 5px 0; }
+.source-list { margin-bottom: 0; }
+.source-list li:target { background: #e9f0eb; }
+.source-page { margin-left: .5em; font-size: 12px; }
+.source-detail { display: block; }
+.pharmacy-panel :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .pharmacy-panel { padding: 16px; margin-bottom: 38px; }
+  .dataset-head { display: block; }
+  .latest-value { align-items: flex-start; margin-top: 13px; }
+  .stores-figure { padding: 10px 8px; }
+  .plot-head { flex-wrap: wrap; gap: 6px 12px; }
+  #stores-chart { height: 218px; }
+  .stores-table { min-width: 0; font-size: 12px; }
+  .stores-table th, .stores-table td { padding: 7px 6px; }
+  .stores-table thead th:nth-child(3), .stores-table .change { display: none; }
+  .stores-table .data-kind { padding-inline: 4px; }
+}
+@media print {
+  .stores-table-wrap { max-height: none; overflow: visible; }
+  .stores-table thead th { position: static; }
+  .plot-range, .download-data { display: none; }
+}

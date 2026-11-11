@@ -1,1 +1,348 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy · 零售药房公开数据</title><meta name="description" content="零售药房行业公开数据主题，整理行业与门店、公司经营、政策与支付资料。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/pharmacy/"><link rel="stylesheet" href="../assets/site.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="breadcrumbs" aria-label="面包屑"><a href="../">主页</a><span aria-hidden="true">/</span><span>Pharmacy</span></div><header class="hero topic-hero"><span class="eyebrow">RETAIL PHARMACY</span><h1>Pharmacy</h1><p>零售药房公开数据</p><div class="topic-tags" aria-label="资料范围"><span>行业与门店</span><span>公司经营</span><span>政策与支付</span></div></header><section class="empty-panel" aria-labelledby="empty-title"><span class="empty-marker" aria-hidden="true"></span><h2 id="empty-title">主题已建立，资料待补充。</h2><p>后续将在这里整理药房行业数据、上市公司经营信息与政策原文。</p></section></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy · 零售药房公开数据</title><meta name="description" content="中国零售药店季度末门店总数，主要来源为各药店企业年报转引的中康数据。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/pharmacy/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="pharmacy.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main>
+<div class="breadcrumbs" aria-label="面包屑"><a href="../">主页</a><span aria-hidden="true">/</span><span>Pharmacy</span></div>
+<header class="hero topic-hero pharmacy-hero">
+  <h1>Pharmacy</h1>
+  <p>零售药房公开数据</p>
+</header>
+<section class="pharmacy-panel" id="china-pharmacy-stores" aria-labelledby="stores-title">
+  <header class="dataset-head">
+    <div>
+      <h2 id="stores-title">中国零售药店门店总数</h2>
+      <p class="dataset-meta">2017Q4 至 2026Q3 · 季度末 · 更新于 2026-11-11</p>
+    </div>
+    <div class="latest-value">
+      <span>最新可得 · 2026Q2</span>
+      <strong>665,355 <small>家</small></strong>
+      <a href="#pharmacy-source-8">中康数据，券商转引</a>
+    </div>
+  </header>
+  <p class="dataset-source"><strong>主要数据来源</strong> 各药店企业年报转引的中康数据（中康 CMH／药店通）。部分季度由中报、公司交流纪要和券商报告补充。</p>
+  <figure class="stores-figure" id="stores-trend" hidden>
+    <div class="plot-head">
+      <figcaption>门店数量趋势（万家）</figcaption>
+      <div class="plot-range" aria-label="图表时间范围">
+        <button type="button" data-range="all" aria-pressed="true">全部</button>
+        <button type="button" data-range="recent" aria-pressed="false">2024 年以来</button>
+      </div>
+    </div>
+    <div class="plot-area">
+      <canvas id="stores-chart" tabindex="0" role="img" aria-label="中国零售药店数量趋势。用左右方向键查看各数据点，完整数值见下表。"></canvas>
+      <output class="plot-tooltip" id="plot-tooltip" aria-live="polite" hidden></output>
+    </div>
+    <div class="plot-legend" aria-label="数据性质">
+      <span><i class="mark exact"></i>直接披露</span>
+      <span><i class="mark approx"></i>披露约数</span>
+      <span><i class="mark derived"></i>净增减反推</span>
+      <span><i class="mark broker"></i>券商转引</span>
+    </div>
+    <p class="plot-note">折线仅连接相邻且有数据的季度。</p>
+  </figure>
+  <div class="table-head">
+    <h3 id="quarterly-stores-title">季度明细</h3>
+    <a class="download-data" href="china-pharmacy-stores.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="stores-table-wrap" role="region" aria-labelledby="quarterly-stores-title" tabindex="0">
+    <table class="stores-table" aria-labelledby="quarterly-stores-title">
+      <thead><tr><th scope="col">季度</th><th scope="col">门店总数（家）</th><th scope="col">净增减（家）</th><th scope="col">数据性质</th><th scope="col">来源</th></tr></thead>
+      <tbody>
+    <tr data-quarter="2026Q3" data-kind="missing">
+      <th scope="row">2026Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2026Q2" data-kind="broker">
+      <th scope="row">2026Q2</th>
+      <td class="count">665,355</td>
+      <td class="change">—</td>
+      <td><span class="data-kind broker">券商转引</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-8" aria-label="来源 8，平安证券 药店行业 26H1 中报总结">[8]</a> <a href="#pharmacy-source-7" aria-label="来源 7，老百姓 2026 年 9 月机构投资者交流纪要">[7]</a></td>
+    </tr>
+    <tr data-quarter="2026Q1" data-kind="approx">
+      <th scope="row">2026Q1</th>
+      <td class="count">约 673,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-6" aria-label="来源 6，老百姓 2026 年半年度报告">[6]</a></td>
+    </tr>
+    <tr data-quarter="2025Q4" data-kind="exact">
+      <th scope="row">2025Q4</th>
+      <td class="count">680,476</td>
+      <td class="change">−5,950</td>
+      <td><span class="data-kind exact">直接披露</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a> <a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a></td>
+    </tr>
+    <tr data-quarter="2025Q3" data-kind="exact">
+      <th scope="row">2025Q3</th>
+      <td class="count">686,426</td>
+      <td class="change">−8,800</td>
+      <td><span class="data-kind exact">直接披露</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-4" aria-label="来源 4，漱玉平民 2025 年年度报告">[4]</a> <a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a></td>
+    </tr>
+    <tr data-quarter="2025Q2" data-kind="derived">
+      <th scope="row">2025Q2</th>
+      <td class="count">695,226</td>
+      <td class="change">−4,009</td>
+      <td><span class="data-kind derived">净增减反推</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a></td>
+    </tr>
+    <tr data-quarter="2025Q1" data-kind="derived">
+      <th scope="row">2025Q1</th>
+      <td class="count">699,235</td>
+      <td class="change">−3,166</td>
+      <td><span class="data-kind derived">净增减反推</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a></td>
+    </tr>
+    <tr data-quarter="2024Q4" data-kind="derived">
+      <th scope="row">2024Q4</th>
+      <td class="count">702,401</td>
+      <td class="change">−3,650</td>
+      <td><span class="data-kind derived">净增减反推</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a></td>
+    </tr>
+    <tr data-quarter="2024Q3" data-kind="derived">
+      <th scope="row">2024Q3</th>
+      <td class="count">706,051</td>
+      <td class="change">+1,450</td>
+      <td><span class="data-kind derived">净增减反推</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a></td>
+    </tr>
+    <tr data-quarter="2024Q2" data-kind="derived">
+      <th scope="row">2024Q2</th>
+      <td class="count">704,601</td>
+      <td class="change">+8,123</td>
+      <td><span class="data-kind derived">净增减反推</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a></td>
+    </tr>
+    <tr data-quarter="2024Q1" data-kind="derived">
+      <th scope="row">2024Q1</th>
+      <td class="count">696,478</td>
+      <td class="change">+10,950</td>
+      <td><span class="data-kind derived">净增减反推</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a></td>
+    </tr>
+    <tr data-quarter="2023Q4" data-kind="approx">
+      <th scope="row">2023Q4</th>
+      <td class="count">约 685,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-1" aria-label="来源 1，第一医药 2025 年年度报告摘要">[1]</a></td>
+    </tr>
+    <tr data-quarter="2023Q3" data-kind="missing">
+      <th scope="row">2023Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2023Q2" data-kind="missing">
+      <th scope="row">2023Q2</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2023Q1" data-kind="missing">
+      <th scope="row">2023Q1</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2022Q4" data-kind="approx">
+      <th scope="row">2022Q4</th>
+      <td class="count">约 627,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-1" aria-label="来源 1，第一医药 2025 年年度报告摘要">[1]</a></td>
+    </tr>
+    <tr data-quarter="2022Q3" data-kind="missing">
+      <th scope="row">2022Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2022Q2" data-kind="missing">
+      <th scope="row">2022Q2</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2022Q1" data-kind="missing">
+      <th scope="row">2022Q1</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2021Q4" data-kind="approx">
+      <th scope="row">2021Q4</th>
+      <td class="count">约 591,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-1" aria-label="来源 1，第一医药 2025 年年度报告摘要">[1]</a></td>
+    </tr>
+    <tr data-quarter="2021Q3" data-kind="missing">
+      <th scope="row">2021Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2021Q2" data-kind="missing">
+      <th scope="row">2021Q2</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2021Q1" data-kind="missing">
+      <th scope="row">2021Q1</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2020Q4" data-kind="approx">
+      <th scope="row">2020Q4</th>
+      <td class="count">约 570,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-1" aria-label="来源 1，第一医药 2025 年年度报告摘要">[1]</a></td>
+    </tr>
+    <tr data-quarter="2020Q3" data-kind="missing">
+      <th scope="row">2020Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2020Q2" data-kind="missing">
+      <th scope="row">2020Q2</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2020Q1" data-kind="missing">
+      <th scope="row">2020Q1</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2019Q4" data-kind="approx">
+      <th scope="row">2019Q4</th>
+      <td class="count">约 530,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-1" aria-label="来源 1，第一医药 2025 年年度报告摘要">[1]</a></td>
+    </tr>
+    <tr data-quarter="2019Q3" data-kind="missing">
+      <th scope="row">2019Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2019Q2" data-kind="missing">
+      <th scope="row">2019Q2</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2019Q1" data-kind="missing">
+      <th scope="row">2019Q1</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2018Q4" data-kind="approx">
+      <th scope="row">2018Q4</th>
+      <td class="count">约 502,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-5" aria-label="来源 5，华人健康 2024 年半年度报告">[5]</a></td>
+    </tr>
+    <tr data-quarter="2018Q3" data-kind="missing">
+      <th scope="row">2018Q3</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2018Q2" data-kind="missing">
+      <th scope="row">2018Q2</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2018Q1" data-kind="missing">
+      <th scope="row">2018Q1</th>
+      <td class="count">—</td>
+      <td class="change">—</td>
+      <td><span class="data-kind missing">缺失</span></td>
+      <td class="source-refs">—</td>
+    </tr>
+    <tr data-quarter="2017Q4" data-kind="approx">
+      <th scope="row">2017Q4</th>
+      <td class="count">约 457,000</td>
+      <td class="change">—</td>
+      <td><span class="data-kind approx">披露约数</span></td>
+      <td class="source-refs"><a href="#pharmacy-source-5" aria-label="来源 5，华人健康 2024 年半年度报告">[5]</a></td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dataset-notes" id="pharmacy-method">
+    <h3>统计口径</h3>
+    <ul>
+      <li>各年年末数据列在 Q4。采用中康口径。2022 年末和 2023 年末使用第一医药 2025 年年报摘要中的修订约数。</li>
+      <li>2024Q1 至 2025Q2 以 2025Q4 的 680,476 家为基准，按老百姓 2025 年年报的季度净增减倒推。表中的净增减为年报披露值。</li>
+      <li>2026Q1 沿用老百姓中报的 67.3 万家。2026Q2 的 665,355 家由平安证券转引，老百姓交流纪要披露约 66.5 万家。</li>
+      <li>“—”表示暂未核实相应口径数据。2026Q3 仍待补充。</li>
+    </ul>
+    <h3>原始披露</h3>
+    <ol class="source-list">
+    <li id="pharmacy-source-1"><a href="https://static.cninfo.com.cn/finalpage/2026-04-09/1225085471.PDF#page=4">第一医药 2025 年年度报告摘要</a>
+      <span class="source-page">第 4 页</span>
+      <span class="source-detail">2019–2023 年末门店数，及 2024Q1–2025Q3 的季度约数。</span>
+    </li>
+    <li id="pharmacy-source-2"><a href="https://static.cninfo.com.cn/finalpage/2026-04-23/1225148953.PDF#page=16">老百姓 2025 年年度报告</a>
+      <span class="source-page">第 16 页</span>
+      <span class="source-detail">2024Q1–2025Q4 季度门店总数约数和净增减。</span>
+    </li>
+    <li id="pharmacy-source-3"><a href="https://static.cninfo.com.cn/finalpage/2026-04-24/1225163379.PDF#page=12">大参林 2025 年年度报告</a>
+      <span class="source-page">第 12 页</span>
+      <span class="source-detail">2025 年末 680,476 家及当年各季度净减门店数。</span>
+    </li>
+    <li id="pharmacy-source-4"><a href="https://static.cninfo.com.cn/finalpage/2026-04-29/1225228071.PDF#page=15">漱玉平民 2025 年年度报告</a>
+      <span class="source-page">第 15 页</span>
+      <span class="source-detail">2025Q3 期末 686,426 家，较上季度净减 8,800 家。</span>
+    </li>
+    <li id="pharmacy-source-5"><a href="https://m.cnpharm.com/upload/resources/file/2024/08/29/163013.pdf#page=12">华人健康 2024 年半年度报告</a>
+      <span class="source-page">第 12 页</span>
+      <span class="source-detail">补充 2017、2018 年末数据。2022 年及之后采用较新的披露版本。</span>
+    </li>
+    <li id="pharmacy-source-6"><a href="https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-8/2026-08-28/12559735.PDF#page=13">老百姓 2026 年半年度报告</a>
+      <span class="source-page">第 13 页</span>
+      <span class="source-detail">2026Q1 期末约 67.3 万家，并列示 2024Q1–2025Q4 的历史约数。</span>
+    </li>
+    <li id="pharmacy-source-7"><a href="https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-10/2026-10-10/12635530.PDF#page=2">老百姓 2026 年 9 月机构投资者交流纪要</a>
+      <span class="source-page">第 2 页</span>
+      <span class="source-detail">2026Q2 期末 66.5 万家，作为交叉核对。</span>
+    </li>
+    <li id="pharmacy-source-8"><a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/845134261460/index.phtml">平安证券 药店行业 26H1 中报总结</a>
+      <span class="source-page">2026-10-13</span>
+      <span class="source-detail">2026Q2 的 665,355 家来自券商转引的中康数据。</span>
+    </li></ol>
+  </div>
+</section>
+<script id="stores-series" type="application/json">[{"quarter":"2017Q4","count":457000,"label":"约 457,000","kind":"approx","basis":"披露约数"},{"quarter":"2018Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q4","count":502000,"label":"约 502,000","kind":"approx","basis":"披露约数"},{"quarter":"2019Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q4","count":530000,"label":"约 530,000","kind":"approx","basis":"披露约数"},{"quarter":"2020Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q4","count":570000,"label":"约 570,000","kind":"approx","basis":"披露约数"},{"quarter":"2021Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q4","count":591000,"label":"约 591,000","kind":"approx","basis":"披露约数"},{"quarter":"2022Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q4","count":627000,"label":"约 627,000","kind":"approx","basis":"披露约数"},{"quarter":"2023Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q4","count":685000,"label":"约 685,000","kind":"approx","basis":"披露约数"},{"quarter":"2024Q1","count":696478,"label":"696,478","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q2","count":704601,"label":"704,601","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q3","count":706051,"label":"706,051","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q4","count":702401,"label":"702,401","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q1","count":699235,"label":"699,235","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q2","count":695226,"label":"695,226","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q3","count":686426,"label":"686,426","kind":"exact","basis":"直接披露"},{"quarter":"2025Q4","count":680476,"label":"680,476","kind":"exact","basis":"直接披露"},{"quarter":"2026Q1","count":673000,"label":"约 673,000","kind":"approx","basis":"披露约数"},{"quarter":"2026Q2","count":665355,"label":"665,355","kind":"broker","basis":"券商转引"},{"quarter":"2026Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"}]</script>
+<script src="stores-chart.js" defer></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>
