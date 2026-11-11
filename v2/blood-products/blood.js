@@ -1,3 +1,5 @@
+import {mountCompanyTrend} from '../pharmacy/company-trend.js';
+
 const company = document.querySelector('#blood-company');
 const year = document.querySelector('#blood-year');
 const basis = document.querySelector('#blood-basis');
@@ -42,6 +44,73 @@ function appendSources(parent, row) {
   }
 }
 
+function initTrend(data) {
+  const figure = document.querySelector('.blood-trend');
+  const metric = document.querySelector('#blood-chart-metric');
+  const metricBasis = document.querySelector('#blood-chart-basis');
+  const caption = document.querySelector('#blood-chart-caption');
+  const canvas = figure.querySelector('canvas');
+  const companies = data.companies.map(c => ({
+    ...c,
+    name: c.code === '688765' ? c.name + '（重组）' : c.name,
+    annual: new Map((c.code === '688765' ? data.recombinant : c.rows).map(row => [row.year,row]))
+  }));
+  const years = companies.flatMap(c=>[...c.annual.keys()]);
+  const firstYear = Math.min(...years);
+  const timeline = Array.from({length:Math.max(...years)-firstYear+1},(_,i)=>String(firstYear+i));
+  const isPerTon = () => metric.value === 'revenue' || metric.value === 'profit';
+
+  function readPoint(company, year) {
+    const row = company.annual.get(Number(year));
+    if (!row) return null;
+    const field = metric.value;
+    if (company.code === '688765') {
+      if (field !== 'alb') return null;
+      const previous = company.annual.get(Number(year)-1);
+      return {count:row.revenue/1e8, detail:row.scope, breakBefore:previous?.scope!==row.scope};
+    }
+    if (field === 'volume') {
+      const {volume,volumeMark} = row.ops ?? {};
+      return Number.isFinite(volume) ? {count:volume, estimate:volumeMark} : null;
+    }
+    if (!isPerTon()) {
+      const revenue = row.pnl?.[field];
+      return Number.isFinite(revenue) ? {count:revenue/1e8} : null;
+    }
+    const {metrics,pnl} = row;
+    const key = metricBasis.value === 'reported' ? (field==='revenue'?'reportedRevenue':'reportedProfit') : field;
+    if (!Number.isFinite(metrics?.[key])) return null;
+    const scopeChanged = pnl?.note.includes('前一年采浆与收入范围不同');
+    const detail = `${metrics.priorYear} 年采浆量 ${quantity(metrics.priorVolume,metrics.priorMark)} 吨` +
+      (scopeChanged ? ' · 并表范围变化' : '');
+    return {count:metrics[key], estimate:metrics.priorMark, detail};
+  }
+
+  const chart = mountCompanyTrend(figure,companies,timeline,{
+    defaultCode:'600161',
+    getPoints:(company,periods)=>periods.map(year=>readPoint(company,year)),
+    labelTick:()=>true,
+    emptyMessage:'勾选有数据的公司后查看趋势',
+    describe(point) {
+      if (!point) return {value:'—'};
+      const amount = isPerTon() ? perTon(point.count,point.estimate) :
+        metric.value === 'volume' ? quantity(point.count,point.estimate) : moneyFormatter.format(point.count);
+      return {value:amount+' '+metric.selectedOptions[0].dataset.unit,detail:point.detail};
+    }
+  });
+  function update() {
+    const option = metric.selectedOptions[0];
+    caption.textContent = `${option.textContent}（${option.dataset.unit}）`;
+    canvas.setAttribute('aria-label', caption.textContent+'年度折线图');
+    document.querySelector('#blood-chart-basis-label').hidden = !isPerTon();
+    document.querySelector('#blood-chart-recombinant-note').hidden = metric.value !== 'alb';
+    chart?.refresh();
+  }
+  metric.addEventListener('change',update);
+  metricBasis.addEventListener('change',update);
+  update();
+}
+
 async function init() {
   const response = await fetch('data.json');
   if (!response.ok) throw Error('血制品数据不可用');
@@ -78,5 +147,7 @@ async function init() {
   controls.addEventListener('change', render);
   controls.hidden = false;
   render();
+  initTrend(data);
 }
 init().catch(() => { status.textContent='公司数据暂时无法加载，可下载 CSV。'; });
+

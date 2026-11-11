@@ -24,7 +24,24 @@ function gridStep(max) {
   return [1, 2, 2.5, 5, 10].find(step => step * magnitude >= target) * magnitude;
 }
 
-export function mountCompanyTrend(figure, companies, quarters) {
+function storePointDescription(point) {
+  if (!point) return {value:'—'};
+  const value = number.format(point.count) + ' 家';
+  if (!point.estimate) return {value};
+  const { previous, next, left, right } = point.estimate;
+  return {
+    value: value + '（估算）',
+    detail: `(${previous} 的 ${number.format(left)} + ${next} 的 ${number.format(right)}) ÷ 2`
+  };
+}
+
+export function mountCompanyTrend(figure, companies, periods, {
+  defaultCode = '603939',
+  getPoints = quarterPoints,
+  describe = storePointDescription,
+  labelTick = period => period.endsWith('Q4'),
+  emptyMessage = '勾选公司后查看门店数'
+} = {}) {
   const canvas = figure.querySelector('canvas');
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
@@ -33,14 +50,14 @@ export function mountCompanyTrend(figure, companies, quarters) {
   let active = -1;
   let visible = [];
   let first = 0;
-  let last = quarters.length - 1;
+  const last = periods.length - 1;
   let plot;
   const series = companies.map((company, i) => {
     const color = colors[i % colors.length];
     const label = document.createElement('label');
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.checked = company.code === '603939';
+    checkbox.checked = company.code === defaultCode;
     checkbox.value = company.code;
     checkbox.style.accentColor = color;
     const swatch = document.createElement('span');
@@ -49,7 +66,7 @@ export function mountCompanyTrend(figure, companies, quarters) {
     swatch.setAttribute('aria-hidden', 'true');
     label.append(checkbox, swatch, company.name);
     controls.append(label);
-    return { company, color, checkbox, points: quarterPoints(company, quarters) };
+    return { company, color, checkbox, points: [] };
   });
 
   function draw() {
@@ -65,23 +82,27 @@ export function mountCompanyTrend(figure, companies, quarters) {
     if (!visible.length) {
       plot = null;
       ctx.textAlign = 'center';
-      ctx.fillText('勾选公司后查看门店数', width / 2, height / 2);
+      ctx.fillText(emptyMessage, width / 2, height / 2);
       return;
     }
 
-    const maximum = Math.max(1, ...visible.flatMap(row => row.points.map(point => point?.count ?? 0)));
-    const step = gridStep(maximum);
+    const values = visible.flatMap(row => row.points.filter(Boolean).map(point => point.count));
+    const maximum = Math.max(0, ...values);
+    const minimum = Math.min(0, ...values);
+    const step = gridStep(maximum - minimum || 1);
     const topValue = Math.ceil(maximum / step) * step;
-    const left = Math.ceil(ctx.measureText(number.format(topValue)).width) + 13;
+    const bottomValue = Math.floor(minimum / step) * step;
+    const left = Math.ceil(Math.max(...[topValue,bottomValue].map(v=>ctx.measureText(number.format(v)).width))) + 13;
     const right = width - 26;
     const top = 14;
     const bottom = height - 32;
     const x = index => left + (index - first) * (right - left) / Math.max(1, last - first);
-    const y = count => bottom - count * (bottom - top) / topValue;
+    const y = count => bottom - (count - bottomValue) * (bottom - top) / (topValue - bottomValue || 1);
     plot = { left, right, x };
     ctx.textAlign = 'right';
     ctx.lineWidth = 1;
-    for (let value = 0; value <= topValue; value += step) {
+    for (let tick = Math.round(bottomValue / step); tick <= Math.round(topValue / step); tick++) {
+      const value = tick * step;
       const lineY = y(value);
       ctx.fillText(number.format(value), left - 8, lineY);
       ctx.strokeStyle = '#dce5e2';
@@ -91,14 +112,14 @@ export function mountCompanyTrend(figure, companies, quarters) {
       ctx.stroke();
     }
     ctx.textAlign = 'center';
-    ctx.fillText(quarters[first], x(first), bottom + 19);
+    ctx.fillText(periods[first], x(first), bottom + 19);
     let previousTick = x(first);
     for (let index = first + 1; index < last; index++) {
-      if (!quarters[index].endsWith('Q4') || x(index) - previousTick < 66 || right - x(index) < 66) continue;
-      ctx.fillText(quarters[index], x(index), bottom + 19);
+      if (!labelTick(periods[index]) || x(index) - previousTick < 66 || right - x(index) < 66) continue;
+      ctx.fillText(periods[index], x(index), bottom + 19);
       previousTick = x(index);
     }
-    if (last > first) ctx.fillText(quarters[last], x(last), bottom + 19);
+    if (last > first) ctx.fillText(periods[last], x(last), bottom + 19);
 
     if (active >= first && active <= last) {
       ctx.strokeStyle = '#9aabb1';
@@ -115,7 +136,7 @@ export function mountCompanyTrend(figure, companies, quarters) {
       for (let index = first + 1; index <= last; index++) {
         const before = points[index - 1];
         const point = points[index];
-        if (!before || !point) continue;
+        if (!before || !point || point.breakBefore) continue;
         ctx.setLineDash(before.estimate || point.estimate ? [5, 4] : []);
         ctx.beginPath();
         ctx.moveTo(x(index - 1), y(before.count));
@@ -144,19 +165,18 @@ export function mountCompanyTrend(figure, companies, quarters) {
       return;
     }
     const heading = document.createElement('strong');
-    heading.textContent = quarters[index];
+    heading.textContent = periods[index];
     tooltip.replaceChildren(heading);
     for (const { company, points, color } of visible) {
       const point = points[index];
       const line = document.createElement('div');
       line.style.setProperty('--series-color', color);
-      line.textContent = company.name + '　' + (point ? number.format(point.count) + ' 家' : '—');
-      if (point?.estimate) {
-        line.append('（估算）');
-        const { previous, next, left, right } = point.estimate;
-        const formula = document.createElement('small');
-        formula.textContent = `(${previous} 的 ${number.format(left)} + ${next} 的 ${number.format(right)}) ÷ 2`;
-        line.append(formula);
+      const {value,detail} = describe(point);
+      line.textContent = company.name + '　' + value;
+      if (detail) {
+        const caption = document.createElement('small');
+        caption.textContent = detail;
+        line.append(caption);
       }
       tooltip.append(line);
     }
@@ -192,7 +212,7 @@ export function mountCompanyTrend(figure, companies, quarters) {
     }
   });
   function updateSelection() {
-    visible = series.filter(row => row.checkbox.checked);
+    visible = series.filter(row => row.checkbox.checked && !row.checkbox.disabled);
     const start = visible.map(row => row.points.findIndex(Boolean)).filter(index => index >= 0);
     first = start.length ? Math.min(...start) : 0;
     active = -1;
@@ -207,5 +227,13 @@ export function mountCompanyTrend(figure, companies, quarters) {
     draw();
     if (index >= 0) showQuarter(index);
   }).observe(canvas);
-  updateSelection();
+  function refresh() {
+    for (const row of series) {
+      row.points = getPoints(row.company, periods);
+      row.checkbox.disabled = !row.points.some(Boolean);
+    }
+    updateSelection();
+  }
+  refresh();
+  return {refresh};
 }
