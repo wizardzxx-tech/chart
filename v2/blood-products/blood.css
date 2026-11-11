@@ -1,0 +1,67 @@
+.blood-page {
+  --blood-ink: #243f45;
+  --blood-muted: #566b70;
+  --blood-accent: #23676a;
+  --blood-rule: #dae4e2;
+  --blood-tint: #eef5f4;
+  color: var(--blood-ink);
+}
+.blood-crumb { margin: 1.65rem 0 0; color: var(--blood-muted); font-size: .84rem; }
+.blood-crumb a, .blood-source a { color: var(--blood-accent); }
+.blood-heading { padding: 2rem 0 1.7rem; }
+.blood-heading h1 { font-size: clamp(2.3rem, 6vw, 4.5rem); margin: 0; line-height: 1.12; letter-spacing: -.035em; }
+.blood-heading p { color: var(--blood-muted); margin: .7rem 0 1.2rem; }
+.blood-heading nav { display: flex; flex-wrap: wrap; gap: .55rem; }
+.blood-heading nav a, .blood-download {
+  display: inline-flex; align-items: center; min-height: 36px; border: 1px solid var(--blood-rule);
+  padding: .4rem .7rem; border-radius: .35rem; background: #fff;
+  color: var(--blood-accent); font-size: .85rem; font-weight: 650; text-decoration: none;
+}
+.blood-heading nav a:hover, .blood-download:hover { background: var(--blood-tint); }
+.blood-panel {
+  margin-bottom: 1.25rem; background: #fff; border: 1px solid var(--blood-rule);
+  border-radius: .85rem; padding: clamp(.9rem, 3vw, 1.5rem); scroll-margin-top: 1.5rem; min-width: 0;
+}
+.blood-section-heading { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; }
+.blood-section-heading h2 { font-size: clamp(1.2rem, 3vw, 1.6rem); letter-spacing: -.018em; margin: 0; }
+.blood-section-heading p { color: var(--blood-muted); font-size: .92rem; margin: .35rem 0 0; }
+.blood-note { color: var(--blood-muted); font-size: .83rem; margin: .7rem 0; line-height: 1.55; }
+.blood-volume-figure { background: #fafcfb; border: 1px solid var(--blood-rule); border-radius: .5rem; margin: 0 0 1rem; padding: .75rem; }
+.blood-volume-figure figcaption { font-size: .9rem; font-weight: 650; }
+.blood-volume-figure p { margin: .6rem 0 0; font-size: .78rem; color: var(--blood-muted); }
+.blood-chart { display: grid; grid-template-columns: 3.1rem minmax(0, 1fr); gap: .45rem; margin-top: .6rem; }
+.blood-y-axis { display: flex; flex-direction: column; justify-content: space-between; height: 9rem; text-align: right; font-variant-numeric: tabular-nums; font-size: .7rem; color: var(--blood-muted); }
+.blood-bars { display: grid; grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; gap: 2.1%; padding: 0 .3rem; height: 9rem; border-bottom: 1px solid var(--blood-rule); background: repeating-linear-gradient(to top, transparent 0 calc(100% / 3 - 1px), var(--blood-rule) calc(100% / 3 - 1px) calc(100% / 3)); }
+.blood-bar-item { position: relative; }
+.blood-bar-fill { position: absolute; inset: auto 0 0; height: var(--height); border-radius: .18rem .18rem 0 0; background: #367a78; }
+.blood-bar-qualified { background: repeating-linear-gradient(135deg,#367a78 0 4px,#71a5a0 4px 7px); }
+.blood-bar-year { position: absolute; left: 50%; top: calc(100% + .2rem); transform: translateX(-50%); color: var(--blood-muted); font-size: .7rem; }
+.blood-chart { padding-bottom: 1.2rem; }
+.blood-scroll { overflow-x: auto; border: 1px solid var(--blood-rule); border-radius: .48rem; }
+.blood-table { width: 100%; border-collapse: collapse; color: var(--blood-ink); font-size: .83rem; font-variant-numeric: tabular-nums; }
+.blood-table th, .blood-table td { text-align: right; white-space: nowrap; padding: .65rem .72rem; border-bottom: 1px solid var(--blood-rule); vertical-align: top; }
+.blood-table thead th { background: var(--blood-tint); color: var(--blood-ink); font-size: .77rem; }
+.blood-table tbody tr:nth-child(even) { background: #fafcfb; }
+.blood-table tr:last-child td, .blood-table tbody tr:last-child th { border-bottom: 0; }
+.blood-table th:first-child, .blood-table td:last-child, .blood-table th:last-child { text-align: left; }
+.blood-source { text-align: left; color: var(--blood-muted); white-space: normal; }
+.blood-source summary { cursor: pointer; color: var(--blood-accent); font-weight: 600; white-space: nowrap; }
+.blood-source p { margin: .3rem 0; }
+.blood-source a, .blood-source b { display: block; margin-top: .35rem; line-height: 1.4; }
+.blood-source[open] { min-width: 13rem; }
+.blood-controls { display: flex; flex-wrap: wrap; gap: .8rem 1rem; margin-bottom: .75rem; }
+.blood-controls[hidden] { display: none; }
+.blood-controls label { display: grid; gap: .28rem; color: var(--blood-muted); font-size: .77rem; }
+.blood-controls select {
+  background: #fff; color: var(--blood-ink); border: 1px solid #aabfbc; border-radius: .35rem;
+  padding: .42rem .55rem; min-height: 36px; font: inherit; font-size: .87rem;
+}
+#company-plasma .blood-table { min-width: 1020px; }
+#company-plasma .blood-table th:first-child { position: sticky; left: 0; background: #fff; z-index: 1; }
+#company-plasma .blood-table thead th:first-child { background: var(--blood-tint); }
+@media (max-width: 760px) {
+  .blood-bar-item:not(:first-child):not(:last-child):nth-child(even) .blood-bar-year { display: none; }
+}
+@media (max-width: 420px) {
+  .blood-bar-item:not(:last-child):not(:nth-child(1)):not(:nth-child(5)):not(:nth-child(9)) .blood-bar-year { display: none; }
+}
