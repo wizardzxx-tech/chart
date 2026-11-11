@@ -3,6 +3,10 @@
 <header class="hero topic-hero pharmacy-hero">
   <h1>Pharmacy</h1>
   <p>零售药房公开数据</p>
+  <nav class="pharmacy-jumps" aria-label="药房数据表">
+    <a href="#china-pharmacy-stores">全国门店总数</a>
+    <a href="#company-stores">上市药房门店数</a>
+  </nav>
 </header>
 <section class="pharmacy-panel" id="china-pharmacy-stores" aria-labelledby="stores-title">
   <header class="dataset-head">
@@ -64,14 +68,14 @@
       <td class="count">约 673,000</td>
       <td class="change">—</td>
       <td><span class="data-kind approx">披露约数</span></td>
-      <td class="source-refs"><a href="#pharmacy-source-6" aria-label="来源 6，老百姓 2026 年半年度报告">[6]</a></td>
+      <td class="source-refs"><a href="#pharmacy-source-6" aria-label="来源 6，老百姓 2026 年半年度报告">[6]</a> <a href="#pharmacy-source-10" aria-label="来源 10，健之佳 2026 年半年度报告">[10]</a></td>
     </tr>
     <tr data-quarter="2025Q4" data-kind="exact">
       <th scope="row">2025Q4</th>
       <td class="count">680,476</td>
       <td class="change">−5,950</td>
       <td><span class="data-kind exact">直接披露</span></td>
-      <td class="source-refs"><a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a> <a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a></td>
+      <td class="source-refs"><a href="#pharmacy-source-3" aria-label="来源 3，大参林 2025 年年度报告">[3]</a> <a href="#pharmacy-source-2" aria-label="来源 2，老百姓 2025 年年度报告">[2]</a> <a href="#pharmacy-source-9" aria-label="来源 9，漱玉平民 2026 年半年度报告">[9]</a></td>
     </tr>
     <tr data-quarter="2025Q3" data-kind="exact">
       <th scope="row">2025Q3</th>
@@ -341,8 +345,56 @@
     <li id="pharmacy-source-8"><a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/845134261460/index.phtml">平安证券 药店行业 26H1 中报总结</a>
       <span class="source-page">2026-10-13</span>
       <span class="source-detail">2026Q2 的 665,355 家来自券商转引的中康数据。</span>
+    </li>
+    <li id="pharmacy-source-9"><a href="https://pdf.dfcfw.com/pdf/H2_AN202608250006748716_1.pdf#page=9">漱玉平民 2026 年半年度报告</a>
+      <span class="source-page">第 9 页</span>
+      <span class="source-detail">再次确认中康药店通 2025Q4 全国总数为 680,476 家。</span>
+    </li>
+    <li id="pharmacy-source-10"><a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828487451_1.pdf#page=13">健之佳 2026 年半年度报告</a>
+      <span class="source-page">第 13 页</span>
+      <span class="source-detail">再次确认中康科技 2026Q1 全国总数约为 67.3 万家。</span>
     </li></ol>
   </div>
 </section>
+
+<section class="pharmacy-panel company-panel" id="company-stores" aria-labelledby="company-stores-title">
+  <div class="dataset-head">
+    <div>
+      <h2 id="company-stores-title">上市药房门店数</h2>
+      <p class="dataset-meta">9 家公司 · 季度末存量与门店变动 · 单位：家</p>
+    </div>
+    <a class="download-data" href="company-stores.csv" download>下载公司数据 CSV <span aria-hidden="true">↓</span></a>
+  </div>
+  <p class="dataset-source">来源为招股说明书、定期报告及经营数据公告。可按公司或季度查看，并切换单季与年内累计变动。</p>
+  <div class="company-filters" hidden>
+    <label>公司<select id="store-company"><option value="all">全部公司</option></select></label>
+    <label>季度<select id="store-period"></select></label>
+    <label>变动口径<select id="store-basis"><option value="quarter">单季</option><option value="ytd">年内累计</option></select></label>
+  </div>
+  <p id="company-row-status" class="company-row-status" role="status">正在加载门店数据…</p>
+  <p class="company-mobile-tip">左右滑动查看开关店、并购及来源。</p>
+  <div class="stores-table-wrap company-table-wrap" role="region" aria-label="上市药房季度门店明细" tabindex="0" hidden>
+    <table class="stores-table company-table">
+      <thead><tr>
+        <th scope="col">公司</th><th scope="col">季度</th><th scope="col">期末总数</th>
+        <th scope="col">直营</th><th scope="col">加盟</th><th scope="col">新开／新增</th>
+        <th scope="col">关闭</th><th scope="col">并购</th><th scope="col">新增加盟</th>
+        <th scope="col">搬迁</th><th scope="col">集团合计</th><th scope="col">来源</th>
+      </tr></thead>
+      <tbody id="company-store-rows"></tbody>
+    </table>
+  </div>
+  <div id="company-source-detail" class="company-source-detail" tabindex="-1" hidden></div>
+  <noscript><p>可下载 CSV 查看完整数据及逐项来源。</p></noscript>
+  <div class="dataset-notes">
+    <h3>口径说明</h3>
+    <ul>
+      <li>总数、直营和加盟均为季末存量。新开、关闭、并购、新增加盟和搬迁为期间变动。带 * 的数值由同口径累计相减或由同报告的期末分项计算。仅披露累计的期间可切换查看，缺项以“—”显示。</li>
+      <li>新开优先采用自建或新开业数。公司仅披露直营新增时沿用其口径。直营新增可能包含并购，第一医药部分期间的新开包含新增加盟。各项口径及页码见每行来源。</li>
+      <li>国药一致采用国大药房口径。健之佳采用医药零售门店小计，含便利店的集团门店数在末列另示。华人健康近期可核实的是国胜直营零售网络。</li>
+    </ul>
+  </div>
+</section>
+<script src="company-stores.js" defer></script>
 <script id="stores-series" type="application/json">[{"quarter":"2017Q4","count":457000,"label":"约 457,000","kind":"approx","basis":"披露约数"},{"quarter":"2018Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q4","count":502000,"label":"约 502,000","kind":"approx","basis":"披露约数"},{"quarter":"2019Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q4","count":530000,"label":"约 530,000","kind":"approx","basis":"披露约数"},{"quarter":"2020Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q4","count":570000,"label":"约 570,000","kind":"approx","basis":"披露约数"},{"quarter":"2021Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q4","count":591000,"label":"约 591,000","kind":"approx","basis":"披露约数"},{"quarter":"2022Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q4","count":627000,"label":"约 627,000","kind":"approx","basis":"披露约数"},{"quarter":"2023Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q4","count":685000,"label":"约 685,000","kind":"approx","basis":"披露约数"},{"quarter":"2024Q1","count":696478,"label":"696,478","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q2","count":704601,"label":"704,601","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q3","count":706051,"label":"706,051","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q4","count":702401,"label":"702,401","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q1","count":699235,"label":"699,235","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q2","count":695226,"label":"695,226","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q3","count":686426,"label":"686,426","kind":"exact","basis":"直接披露"},{"quarter":"2025Q4","count":680476,"label":"680,476","kind":"exact","basis":"直接披露"},{"quarter":"2026Q1","count":673000,"label":"约 673,000","kind":"approx","basis":"披露约数"},{"quarter":"2026Q2","count":665355,"label":"665,355","kind":"broker","basis":"券商转引"},{"quarter":"2026Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"}]</script>
 <script src="stores-chart.js" defer></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>

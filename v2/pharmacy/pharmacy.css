@@ -1,5 +1,7 @@
 .pharmacy-hero { padding-bottom: 27px; }
 .pharmacy-hero h1 { margin-top: 0; margin-bottom: 10px; }
+.pharmacy-jumps { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+.pharmacy-jumps a { color: var(--teal); border: 1px solid var(--line); background: white; border-radius: 3px; padding: 3px 10px; font-size: 13px; text-decoration: none; }
 .pharmacy-panel {
   margin-bottom: 58px;
   padding: 30px;
@@ -86,6 +88,25 @@
 .source-page { margin-left: .5em; font-size: 12px; }
 .source-detail { display: block; }
 .pharmacy-panel :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.company-panel .dataset-head { align-items: center; }
+.company-filters { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; }
+.company-filters[hidden], .company-table-wrap[hidden] { display: none; }
+.company-filters label { color: var(--muted); font-size: 12px; font-weight: 650; }
+.company-filters select { display: block; margin-top: 4px; min-width: 124px; padding: 6px 10px; border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 3px; font-family: inherit; font-size: 13px; }
+.company-row-status { color: var(--muted); font-size: 12px; margin: 14px 0 8px; }
+.company-mobile-tip { display: none; }
+.company-table { min-width: 980px; font-variant-numeric: tabular-nums; }
+.company-table th, .company-table td { padding: 8px 9px; }
+.company-table thead th:nth-child(3) { display: table-cell; }
+.company-table sup { color: #805625; margin-left: 1px; }
+.source-button, .company-source-head button { background: #edf3ef; border: 1px solid var(--line); border-radius: 3px; color: var(--teal); cursor: pointer; font-size: 12px; padding: 2px 6px; white-space: nowrap; }
+.company-source-detail { margin-top: 12px; padding: 15px; background: #f4f8f5; border: 1px solid var(--line); color: var(--ink); font-size: 13px; }
+.company-source-head { display: flex; align-items: center; gap: 10px; justify-content: space-between; }
+.company-source-head h3 { margin: 0; font-size: 16px; }
+.company-source-detail dl { margin: 0; }
+.company-source-detail dt { margin-top: 7px; font-weight: 700; }
+.company-source-detail dd { margin: 0; color: var(--muted); }
+.company-source-detail a { display: block; color: var(--teal); text-underline-offset: 2px; }
 @media (max-width: 640px) {
   .pharmacy-panel { padding: 16px; margin-bottom: 38px; }
   .dataset-head { display: block; }
@@ -95,8 +116,11 @@
   #stores-chart { height: 218px; }
   .stores-table { min-width: 0; font-size: 12px; }
   .stores-table th, .stores-table td { padding: 7px 6px; }
-  .stores-table thead th:nth-child(3), .stores-table .change { display: none; }
+  #china-pharmacy-stores .stores-table thead th:nth-child(3), .stores-table .change { display: none; }
   .stores-table .data-kind { padding-inline: 4px; }
+  .company-panel .dataset-head .download-data { display: inline-block; margin-top: 10px; }
+  .company-mobile-tip { display: block; color: var(--muted); font-size: 12px; margin: -3px 0 8px; }
+  .company-table { min-width: 825px; }
 }
 @media print {
   .stores-table-wrap { max-height: none; overflow: visible; }
