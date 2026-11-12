@@ -4,7 +4,7 @@
     <h1>血制品</h1>
     <p>中国采浆与浆站、公司产品收入及吨浆毛利</p>
     <nav aria-label="页内导航"><a href="#national-plasma">全国采浆</a><a href="#blood-company-trend">公司趋势</a>
-      <a href="#company-plasma">公司年度数据</a><a href="#recombinant-albumin">禾元生物</a></nav>
+      <a href="#company-plasma">公司年度数据</a><a href="#plasma-transactions">重组采浆数据</a><a href="#equity-incentives">股权激励</a><a href="#recombinant-albumin">禾元生物</a></nav>
   </header>
 
   <section class="blood-panel" id="national-plasma" aria-labelledby="national-title">
@@ -129,7 +129,7 @@
       <a class="blood-download" href="company-plasma.csv" download>下载 CSV</a></div>
     <form class="blood-controls" hidden>
       <label>公司<select id="blood-company"><option value="all">全部采浆公司</option><option value="002252">上海莱士</option><option value="600161">天坛生物</option><option value="002007">华兰生物</option><option value="000403">派林生物</option><option value="300294">博雅生物</option><option value="002880">卫光生物</option><option value="300318">博晖创新</option></select></label>
-      <label>财年<select id="blood-year"><option value="all">全部年份</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2007">2007</option></select></label>
+      <label>财年<select id="blood-year"><option value="all">全部年份</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option></select></label>
       <label>吨浆测算分子<select id="blood-basis"><option value="aligned">扣除单列进口业务</option><option value="reported">血制品披露合计</option></select></label>
     </form>
     <p class="blood-note">吨浆收入＝当年血制品收入 ÷ 上一年采浆量。吨浆毛利＝（当年血制品收入 − 同口径营业成本）÷ 上一年采浆量。以前一年采浆量的约数测算时加“约”，以前一年采浆下限测算时显示上限。</p>
@@ -141,6 +141,319 @@
   </div>
     <noscript><p>可下载 CSV 查看公司数据与逐年来源。</p></noscript>
   </section>
+
+  <section class="blood-panel" id="plasma-transactions" aria-labelledby="plasma-transactions-title">
+    <div class="blood-section-heading"><div><h2 id="plasma-transactions-title">重组披露的采浆量</h2>
+      <p>列示标的、参股公司或重组备考口径的实际采浆量。上方年度趋势及吨浆测算采用上市公司各年披露口径。</p></div>
+      <a class="blood-download" href="plasma-transactions.csv" download>下载 CSV</a></div>
+    <p class="blood-note">派斯菲科于 2021 年并表。2020 年重组反馈只列示该标的上半年实采 49.45 吨，派林生物当年全年采浆量暂无可核实的披露值。</p>
+    <div class="blood-scroll" role="region" aria-label="重组文件补充采浆数据" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">上市公司</th><th scope="col">披露主体</th><th scope="col">期间</th><th scope="col">采浆量（吨）</th><th scope="col">口径</th><th scope="col">原始披露</th></tr></thead>
+    <tbody><tr>
+    <th scope="row">派林生物</th><td>派斯菲科</td><td>2018</td>
+    <td>102.87</td>
+    <td>重组标的全年实际</td><td><details class="blood-source"><summary>查来源</summary><a href="https://static.cninfo.com.cn/finalpage/2020-11-18/1208757685.PDF#page=11" target="_blank" rel="noopener">派林生物重组反馈回复 · 中联资产评估核查意见 · PDF 第 11 页</a></details></td></tr><tr>
+    <th scope="row">派林生物</th><td>派斯菲科</td><td>2019</td>
+    <td>240.87</td>
+    <td>重组标的全年实际；当年披露10家运营浆站</td><td><details class="blood-source"><summary>查来源</summary><a href="https://static.cninfo.com.cn/finalpage/2020-11-18/1208757685.PDF#page=11" target="_blank" rel="noopener">派林生物重组反馈回复 · 中联资产评估核查意见 · PDF 第 11 页</a></details></td></tr><tr>
+    <th scope="row">派林生物</th><td>派斯菲科</td><td>2020 上半年</td>
+    <td>49.45</td>
+    <td>重组标的半年实际；2021年纳入合并报表</td><td><details class="blood-source"><summary>查来源</summary><a href="https://static.cninfo.com.cn/finalpage/2020-11-18/1208757685.PDF#page=11" target="_blank" rel="noopener">派林生物重组反馈回复 · 中联资产评估核查意见 · PDF 第 11 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>上海莱士（含郑州莱士）</td><td>2012</td>
+    <td>484.25</td>
+    <td>重组报告追溯两家公司实采合计</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=233" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 233 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>上海莱士（含郑州莱士）</td><td>2013</td>
+    <td>538.33</td>
+    <td>重组报告追溯两家公司实采合计</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=233" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 233 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>同路生物</td><td>2011</td>
+    <td>219.8</td>
+    <td>重组标的全年实际</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=111" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 111 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>同路生物</td><td>2012</td>
+    <td>249.24</td>
+    <td>重组标的全年实际</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=233" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 233 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>同路生物</td><td>2013</td>
+    <td>267.54</td>
+    <td>重组标的全年实际</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=233" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 233 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>上海莱士、郑州莱士及同路生物</td><td>2013</td>
+    <td>805.87</td>
+    <td>三家合计的重组备考口径</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=234" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 234 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>上海莱士（含郑州莱士）</td><td>2014 上半年</td>
+    <td>242.93</td>
+    <td>报告所列两家公司半年实际</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=233" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 233 页</a></details></td></tr><tr>
+    <th scope="row">上海莱士</th><td>同路生物</td><td>2014 上半年</td>
+    <td>129.96</td>
+    <td>重组标的半年实际</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201412190007957684_1.pdf#page=233" target="_blank" rel="noopener">发行股份购买资产并募集配套资金之重大资产重组暨关联交易报告书(修订稿) · PDF 第 233 页</a></details></td></tr><tr>
+    <th scope="row">天坛生物</th><td>成都蓉生（含贵州中泰）</td><td>2014</td>
+    <td>544.73</td>
+    <td>重组后资产口径回溯</td><td><details class="blood-source"><summary>查来源</summary><a href="https://qccdata.qichacha.com/Disclosure/dbe07e96e82cc5acedbe1aa0ecd3cba5.pdf#page=54" target="_blank" rel="noopener">天坛生物重大资产购买暨关联交易报告书 · PDF 第 54 页</a></details></td></tr><tr>
+    <th scope="row">天坛生物</th><td>成都蓉生（含贵州中泰）</td><td>2015</td>
+    <td>604.63</td>
+    <td>重组后资产口径回溯</td><td><details class="blood-source"><summary>查来源</summary><a href="https://qccdata.qichacha.com/Disclosure/dbe07e96e82cc5acedbe1aa0ecd3cba5.pdf#page=54" target="_blank" rel="noopener">天坛生物重大资产购买暨关联交易报告书 · PDF 第 54 页</a></details></td></tr><tr>
+    <th scope="row">天坛生物</th><td>成都蓉生（含贵州中泰）</td><td>2016</td>
+    <td>708.01</td>
+    <td>重组后资产口径回溯</td><td><details class="blood-source"><summary>查来源</summary><a href="https://qccdata.qichacha.com/Disclosure/dbe07e96e82cc5acedbe1aa0ecd3cba5.pdf#page=54" target="_blank" rel="noopener">天坛生物重大资产购买暨关联交易报告书 · PDF 第 54 页</a></details></td></tr><tr>
+    <th scope="row">天坛生物</th><td>成都蓉生（含贵州中泰）</td><td>2017</td>
+    <td>862.17</td>
+    <td>年报披露的成都蓉生及贵州中泰全年合计</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201804131122838715_1.pdf#page=11" target="_blank" rel="noopener">天坛生物:中国国际金融股份有限公司关于北京天坛生物制品股份有限公司重大资产出售及购买暨关联交易之2017年度持续督导报告书 · PDF 第 11 页</a></details></td></tr><tr>
+    <th scope="row">博晖创新</th><td>广东卫伦</td><td>2015</td>
+    <td>30.09</td>
+    <td>当时为参股公司；2017年开始并表</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201605100014781818_1.pdf#page=14" target="_blank" rel="noopener">国信证券股份有限公司关于公司发行股份购买资产暨关联交易之独立财务顾问持续督导意见(2015年度) · PDF 第 14 页</a></details></td></tr><tr>
+    <th scope="row">博晖创新</th><td>广东卫伦</td><td>2016</td>
+    <td>超 60</td>
+    <td>当时为参股公司；2017年开始并表</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201704270535887308_1.pdf#page=11" target="_blank" rel="noopener">国信证券股份有限公司关于公司发行股份购买资产暨关联交易之2016年度持续督导工作报告暨持续督导总结报告 · PDF 第 11 页</a></details></td></tr><tr>
+    <th scope="row">博晖创新</th><td>河北大安</td><td>2017</td>
+    <td>91.13</td>
+    <td>重组采浆承诺实际值；公告列示目标150吨</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201901301290287234_1.pdf#page=3" target="_blank" rel="noopener">关于重大资产重组中交易对方血浆采集规模承诺补偿义务履行情况及《业绩承诺与补偿协议》结算安排的公告 · PDF 第 3 页</a></details></td></tr><tr>
+    <th scope="row">博晖创新</th><td>河北大安</td><td>2018</td>
+    <td>101.8337</td>
+    <td>重组采浆承诺实际值；公告列示目标200吨</td><td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN201901301290287234_1.pdf#page=3" target="_blank" rel="noopener">关于重大资产重组中交易对方血浆采集规模承诺补偿义务履行情况及《业绩承诺与补偿协议》结算安排的公告 · PDF 第 3 页</a></details></td></tr></tbody></table>
+  </div>
+  </section>
+
+  
+<section class="blood-panel equity-panel" id="equity-incentives" aria-labelledby="equity-title">
+  <div class="dataset-head">
+    <div>
+      <h2 id="equity-title">股权激励业绩考核</h2>
+      <p class="dataset-meta">8 项方案 · 24 条年度考核记录 · 核对至 2026-11-12</p>
+    </div>
+    <a class="download-data" href="equity-incentives.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
+  </div>
+  <p class="dataset-source">目标取自公司层面的解锁或归属条款。实际值优先采用公司公布的考核口径，报表原值另行标注。</p>
+  <div class="company-filters equity-filters" hidden>
+    <label>公司<select id="equity-company"><option value="all">全部公司</option><option value="300318">博晖创新</option><option value="002252">上海莱士</option><option value="002007">华兰生物</option><option value="000403">派林生物</option></select></label>
+    <label>考核结果<select id="equity-status"><option value="all">全部状态</option><option>达标</option><option>部分达标</option><option>未达标</option><option>待考核</option><option>待确认</option></select></label>
+  </div>
+  <p id="equity-filter-status" class="company-row-status" role="status" hidden></p>
+  <p class="company-mobile-tip">左右滑动查看实际值、执行情况和公告。</p>
+  <div class="stores-table-wrap equity-table-wrap" role="region" aria-label="股权激励业绩考核明细" tabindex="0">
+    <table class="stores-table equity-table">
+      <thead><tr><th scope="col">公司／方案</th><th scope="col">考核年</th><th scope="col">考核口径</th><th scope="col">目标</th><th scope="col">实际</th><th scope="col">考核及执行</th><th scope="col">原始披露</th></tr></thead>
+      <tbody>
+    <tr data-company="002252" data-status="达标" id="equity-002252-2014">
+      <th scope="row">上海莱士<span class="equity-plan-name">2014 年股票期权及限制性股票</span></th>
+      <td class="equity-year">2014</td>
+      <td>扣非归母净利润<span class="equity-base">基期 2013 年</span></td>
+      <td class="equity-target">≥ 3.55 亿元（+150%）</td>
+      <td class="equity-actual">4.82 亿元 · +238.26%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 1 期行权及解锁条件成就。</p><small>基数为 1.42 亿元。预留限制性股票对应 2015、2016 年，沿用同年门槛。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201408130006631796_1.pdf#page=16" title="股票期权与限制性股票激励计划(草案修订稿) · PDF 第 16 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201509280010914962_1.pdf#page=4" title="关于股票期权第一个行权期可行权与限制性股票激励计划第一个解锁期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">第 1 期结果</a></td>
+    </tr>
+    <tr data-company="002252" data-status="达标">
+      <th scope="row">上海莱士<span class="equity-plan-name">2014 年股票期权及限制性股票</span></th>
+      <td class="equity-year">2015</td>
+      <td>扣非归母净利润<span class="equity-base">基期 2013 年</span></td>
+      <td class="equity-target">≥ 5.68 亿元（+300%）</td>
+      <td class="equity-actual">6.82 亿元 · +380.28%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 2 期行权及解锁条件成就。</p><small>基数为 1.42 亿元。预留限制性股票对应 2015、2016 年，沿用同年门槛。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201408130006631796_1.pdf#page=16" title="股票期权与限制性股票激励计划(草案修订稿) · PDF 第 16 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201611080074110405_1.pdf#page=5" title="关于股票期权第二个行权期可行权与限制性股票激励计划第二个解锁期解锁条件成就的公告 · PDF 第 5 页" target="_blank" rel="noopener">第 2 期结果</a></td>
+    </tr>
+    <tr data-company="002252" data-status="达标">
+      <th scope="row">上海莱士<span class="equity-plan-name">2014 年股票期权及限制性股票</span></th>
+      <td class="equity-year">2016</td>
+      <td>扣非归母净利润<span class="equity-base">基期 2013 年</span></td>
+      <td class="equity-target">≥ 7.10 亿元（+400%）</td>
+      <td class="equity-actual">8.99 亿元 · +533.10%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 3 期行权及解锁条件成就。</p><small>基数为 1.42 亿元。预留限制性股票对应 2015、2016 年，沿用同年门槛。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201408130006631796_1.pdf#page=16" title="股票期权与限制性股票激励计划(草案修订稿) · PDF 第 16 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201710240974668837_1.pdf#page=7" title="关于公司股票期权与限制性股票激励计划第三个行权期解锁期行权解锁条件成就的公告 · PDF 第 7 页" target="_blank" rel="noopener">第 3 期结果</a></td>
+    </tr>
+    <tr data-company="002252" data-status="达标" id="equity-002252-2023">
+      <th scope="row">上海莱士<span class="equity-plan-name">2023 年第一期员工持股计划</span></th>
+      <td class="equity-year">2023</td>
+      <td>合并营业收入／临床申请获批</td>
+      <td class="equity-target">当年收入 ≥ 74 亿元</td>
+      <td class="equity-actual">79.64 亿元</td>
+      <td><span class="equity-badge met">达标</span><p>第 1 个锁定期可解锁 1,197.2 万股。</p></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202307311592928428_1.pdf#page=18" title="上海莱士血液制品股份有限公司第一期员工持股计划(草案) · PDF 第 18 页" target="_blank" rel="noopener">持股方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202410161640327141_1.pdf#page=4" title="关于第一期员工持股计划第一个锁定期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">第 1 期结果</a></td>
+    </tr>
+    <tr data-company="002252" data-status="达标">
+      <th scope="row">上海莱士<span class="equity-plan-name">2023 年第一期员工持股计划</span></th>
+      <td class="equity-year">2024</td>
+      <td>合并营业收入／临床申请获批</td>
+      <td class="equity-target">两年累计 ≥ 160 亿元，或创新型／改良型生物制品临床申请获批</td>
+      <td class="equity-actual">161.40 亿元（两年累计）</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 2 批、预留及部分再分配份额合计可解锁 918.2 万股。</p></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202307311592928428_1.pdf#page=18" title="上海莱士血液制品股份有限公司第一期员工持股计划(草案) · PDF 第 18 页" target="_blank" rel="noopener">持股方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202510271770068657_1.pdf#page=4" title="第一期员工持股计划锁定期届满暨解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">考核结果</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202510271770068657_1.pdf#page=5" title="第一期员工持股计划锁定期届满暨解锁条件成就的公告 · PDF 第 5 页" target="_blank" rel="noopener">可解锁股数</a></td>
+    </tr>
+    <tr data-company="002252" data-status="待确认">
+      <th scope="row">上海莱士<span class="equity-plan-name">2023 年第一期员工持股计划</span></th>
+      <td class="equity-year">2025</td>
+      <td>合并营业收入／临床申请获批</td>
+      <td class="equity-target">三年累计 ≥ 250 亿元，或创新型／改良型生物制品临床申请获批</td>
+      <td class="equity-actual">234.89 亿元（三年累计） · SR604 新适应症临床申请获批</td>
+      <td><span class="equity-badge pending">待确认</span><p>收入门槛未达。年报披露临床获批，第三批解锁及临床指标认定以公司考核公告为准。</p></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202307311592928428_1.pdf#page=18" title="上海莱士血液制品股份有限公司第一期员工持股计划(草案) · PDF 第 18 页" target="_blank" rel="noopener">持股方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202603261820775595_1.pdf#page=7" title="2025年年度报告 · PDF 第 7 页" target="_blank" rel="noopener">年度收入</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202603261820775595_1.pdf#page=69" title="2025年年度报告 · PDF 第 69 页" target="_blank" rel="noopener">临床批件</a></td>
+    </tr>
+    <tr data-company="002252" data-status="待考核" id="equity-002252-2026">
+      <th scope="row">上海莱士<span class="equity-plan-name">2026 年第二期员工持股计划</span></th>
+      <td class="equity-year">2026</td>
+      <td>创新型生物制品研发里程碑</td>
+      <td class="equity-target">自 2026 年起累计 ≥ 2 项</td>
+      <td class="equity-actual">—</td>
+      <td><span class="equity-badge pending">待考核</span><p>首次授予第 1 期计划解锁 40%，以公司及个人考核结果为准。</p><small>计入获受理的 IND（含新适应症）、完成的 I／II 期试验及完成全部受试者入组的 III 期试验。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202610121830372706_1.pdf#page=18" title="第二期员工持股计划(修订稿) · PDF 第 18 页" target="_blank" rel="noopener">2026 年 10 月修订方案</a></td>
+    </tr>
+    <tr data-company="002252" data-status="待考核">
+      <th scope="row">上海莱士<span class="equity-plan-name">2026 年第二期员工持股计划</span></th>
+      <td class="equity-year">2027</td>
+      <td>创新型生物制品研发里程碑</td>
+      <td class="equity-target">自 2026 年起累计 ≥ 4 项</td>
+      <td class="equity-actual">—</td>
+      <td><span class="equity-badge pending">待考核</span><p>首次授予第 2 期计划解锁 30%，以公司及个人考核结果为准。</p><small>计入获受理的 IND（含新适应症）、完成的 I／II 期试验及完成全部受试者入组的 III 期试验。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202610121830372706_1.pdf#page=18" title="第二期员工持股计划(修订稿) · PDF 第 18 页" target="_blank" rel="noopener">2026 年 10 月修订方案</a></td>
+    </tr>
+    <tr data-company="002252" data-status="待考核">
+      <th scope="row">上海莱士<span class="equity-plan-name">2026 年第二期员工持股计划</span></th>
+      <td class="equity-year">2028</td>
+      <td>创新型生物制品研发里程碑</td>
+      <td class="equity-target">自 2026 年起累计 ≥ 6 项</td>
+      <td class="equity-actual">—</td>
+      <td><span class="equity-badge pending">待考核</span><p>首次授予第 3 期计划解锁 30%，以公司及个人考核结果为准。</p><small>计入获受理的 IND（含新适应症）、完成的 I／II 期试验及完成全部受试者入组的 III 期试验。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202610121830372706_1.pdf#page=18" title="第二期员工持股计划(修订稿) · PDF 第 18 页" target="_blank" rel="noopener">2026 年 10 月修订方案</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标" id="equity-002007-2013">
+      <th scope="row">华兰生物<span class="equity-plan-name">2013 年限制性股票</span></th>
+      <td class="equity-year">2013</td>
+      <td>归母净利润增长／加权 ROE<span class="equity-base">基期 2012 年</span></td>
+      <td class="equity-target">≥ +35%／≥ 10.5%</td>
+      <td class="equity-actual">+58.56%／14.66%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 1 期解锁条件成就。</p><small>ROE 列公告所报扣非值；净利润与扣非净利润还须达到授予前近三年均值。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201307220003666894_1.pdf#page=24" title="限制性股票激励计划(草案修订稿) · PDF 第 24 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201408290006836850_1.pdf#page=4" title="关于限制性股票激励计划第一个解锁期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">第 1 期结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标">
+      <th scope="row">华兰生物<span class="equity-plan-name">2013 年限制性股票</span></th>
+      <td class="equity-year">2014</td>
+      <td>归母净利润增长／加权 ROE<span class="equity-base">基期 2012 年</span></td>
+      <td class="equity-target">≥ +58%／≥ 11%</td>
+      <td class="equity-actual">+79.60%／13.84%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 2 期、预留第 1 期解锁条件成就。</p><small>ROE 列公告所报扣非值；净利润与扣非净利润还须达到授予前近三年均值。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201307220003666894_1.pdf#page=24" title="限制性股票激励计划(草案修订稿) · PDF 第 24 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201509010010687107_1.pdf#page=4" title="关于限制性股票激励计划首次授予第二个解锁期及预留授予第一个解锁期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">第 2 期结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标">
+      <th scope="row">华兰生物<span class="equity-plan-name">2013 年限制性股票</span></th>
+      <td class="equity-year">2015</td>
+      <td>归母净利润增长／加权 ROE<span class="equity-base">基期 2012 年</span></td>
+      <td class="equity-target">≥ +80%／≥ 11.5%</td>
+      <td class="equity-actual">+96.51%／14.39%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 3 期、预留第 2 期解锁条件成就。</p><small>ROE 列公告所报扣非值；净利润与扣非净利润还须达到授予前近三年均值。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201307220003666894_1.pdf#page=24" title="限制性股票激励计划(草案修订稿) · PDF 第 24 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201608310017425862_1.pdf#page=4" title="关于限制性股票激励计划首次授予第三个解锁期及预留授予第二个解锁期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">第 3 期结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标" id="equity-002007-2018">
+      <th scope="row">华兰生物<span class="equity-plan-name">2018 年限制性股票</span></th>
+      <td class="equity-year">2018</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2017 年</span></td>
+      <td class="equity-target">≥ +20%</td>
+      <td class="equity-actual">+31.74%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 1 期可解锁 792,750 股。</p><small>计划考核口径剔除本次激励股份支付影响。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201812271279981549_1.pdf#page=21" title="2018年限制性股票激励计划(草案)(修订稿) · PDF 第 21 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202002191375270987_1.pdf#page=4" title="关于2018年限制性股票激励计划首次授予的限制性股票第一个解锁期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">第 1 期结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标">
+      <th scope="row">华兰生物<span class="equity-plan-name">2018 年限制性股票</span></th>
+      <td class="equity-year">2019</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2017 年</span></td>
+      <td class="equity-target">≥ +40%</td>
+      <td class="equity-actual">+50.79%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 2 期可解锁 5,152,875 股，预留第 1 期可解锁 195,000 股。</p><small>计划考核口径剔除本次激励股份支付影响。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201812271279981549_1.pdf#page=21" title="2018年限制性股票激励计划(草案)(修订稿) · PDF 第 21 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202102191463469535_1.pdf#page=4" title="关于2018年限制性股票激励计划首次授予的限制性股票第二个解除限售期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">首次授予结果</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202104291488647751_1.pdf#page=4" title="关于2018年限制性股票激励计划预留授予的限制性股票第一个解除限售期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">预留授予结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标">
+      <th scope="row">华兰生物<span class="equity-plan-name">2018 年限制性股票</span></th>
+      <td class="equity-year">2020</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2017 年</span></td>
+      <td class="equity-target">≥ +60%</td>
+      <td class="equity-actual">+94.27%</td>
+      <td><span class="equity-badge met">达标</span><p>首次第 3 期可解锁 4,122,300 股，预留第 2 期可解锁 195,000 股。</p><small>计划考核口径剔除本次激励股份支付影响。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201812271279981549_1.pdf#page=21" title="2018年限制性股票激励计划(草案)(修订稿) · PDF 第 21 页" target="_blank" rel="noopener">修订方案</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202202141546975321_1.pdf#page=4" title="关于2018年限制性股票激励计划首次授予的限制性股票第三个解除限售期解锁条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">首次授予结果</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202204281562183197_1.pdf#page=5" title="关于2018年限制性股票激励计划预留授予的限制性股票第二个解除限售期解锁条件成就的公告 · PDF 第 5 页" target="_blank" rel="noopener">预留授予结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="达标" id="equity-002007-2023">
+      <th scope="row">华兰生物<span class="equity-plan-name">2023 年限制性股票</span></th>
+      <td class="equity-year">2023</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2022 年</span></td>
+      <td class="equity-target">触发 +24%／目标 +30%</td>
+      <td class="equity-actual">+44.17%</td>
+      <td><span class="equity-badge met">达标</span><p>公司层面解锁 100%，首次第 1 期可解锁 1,324,260 股。</p><small>考核剔除公司及子公司有效期内股权激励和员工持股计划的股份支付影响。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202309191599279788_1.pdf#page=3" title="2023年限制性股票激励计划实施考核管理办法 · PDF 第 3 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202410291640573675_1.pdf#page=3" title="关于2023年限制性股票激励计划首次授予的限制性股票第一个解除限售期解锁条件成就的公告 · PDF 第 3 页" target="_blank" rel="noopener">第 1 期结果</a></td>
+    </tr>
+    <tr data-company="002007" data-status="未达标">
+      <th scope="row">华兰生物<span class="equity-plan-name">2023 年限制性股票</span></th>
+      <td class="equity-year">2024</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2022 年</span></td>
+      <td class="equity-target">触发 +40%／目标 +50%</td>
+      <td class="equity-actual">9.92 亿元</td>
+      <td><span class="equity-badge missed">未达标</span><p>第 2 期公司层面解锁 0%，回购注销 1,324,260 股。</p><small>考核剔除公司及子公司有效期内股权激励和员工持股计划的股份支付影响。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202309191599279788_1.pdf#page=3" title="2023年限制性股票激励计划实施考核管理办法 · PDF 第 3 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202503281648697278_1.pdf#page=4" title="关于回购注销2023年限制性股票激励计划部分限制性股票暨调整回购价格的公告 · PDF 第 4 页" target="_blank" rel="noopener">考核实际值</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202505201676054788_1.pdf#page=1" title="关于部分限制性股票回购注销完成的公告 · PDF 第 1 页" target="_blank" rel="noopener">注销完成</a></td>
+    </tr>
+    <tr data-company="002007" data-status="未达标">
+      <th scope="row">华兰生物<span class="equity-plan-name">2023 年限制性股票</span></th>
+      <td class="equity-year">2025</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2022 年</span></td>
+      <td class="equity-target">触发 +72%／目标 +90%</td>
+      <td class="equity-actual">9.2004 亿元</td>
+      <td><span class="equity-badge missed">未达标</span><p>第 3 期公司层面解锁 0%，回购注销 1,765,680 股。</p><small>考核剔除公司及子公司有效期内股权激励和员工持股计划的股份支付影响。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202309191599279788_1.pdf#page=3" title="2023年限制性股票激励计划实施考核管理办法 · PDF 第 3 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202603271820804075_1.pdf#page=4" title="关于回购注销2023年限制性股票激励计划部分限制性股票暨调整回购价格的公告 · PDF 第 4 页" target="_blank" rel="noopener">考核实际值</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202605261822885775_1.pdf#page=1" title="关于部分限制性股票回购注销完成的公告 · PDF 第 1 页" target="_blank" rel="noopener">注销完成</a></td>
+    </tr>
+    <tr data-company="000403" data-status="部分达标" id="equity-000403-2020">
+      <th scope="row">派林生物<span class="equity-plan-name">2020 年股票期权及限制性股票</span></th>
+      <td class="equity-year">2020</td>
+      <td>归母净利润（考核口径）</td>
+      <td class="equity-target">触发 1.62／目标 2.00 亿元</td>
+      <td class="equity-actual">1.86 亿元</td>
+      <td><span class="equity-badge partial">部分达标</span><p>首次第 1 期，公司层面可行权及解锁 93%。</p><small>重大并购重组标的产生的净利润增加值按计划剔除。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202004271378793566_1.pdf#page=2" title="2020年股票期权与限制性股票激励计划实施考核管理办法 · PDF 第 2 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202106071496575517_1.pdf#page=5" title="派斯双林生物制药股份有限公司关于公司2020年股票期权与限制性股票激励计划首次授予部分第一个行权/解除限售期行权/解除限售条件成就的公告(2021/06/08) · PDF 第 5 页" target="_blank" rel="noopener">第 1 期更正后结果</a></td>
+    </tr>
+    <tr data-company="000403" data-status="部分达标">
+      <th scope="row">派林生物<span class="equity-plan-name">2020 年股票期权及限制性股票</span></th>
+      <td class="equity-year">2021</td>
+      <td>归母净利润（考核口径）</td>
+      <td class="equity-target">触发 3.00／目标 3.70 亿元</td>
+      <td class="equity-actual">3.0487 亿元</td>
+      <td><span class="equity-badge partial">部分达标</span><p>首次第 2 期和预留第 1 期，公司层面可行权及解锁 82.4%。</p><small>重大并购重组标的产生的净利润增加值按计划剔除。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202004271378793566_1.pdf#page=2" title="2020年股票期权与限制性股票激励计划实施考核管理办法 · PDF 第 2 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202207011575707507_1.pdf#page=5" title="关于公司2020年股票期权与限制性股票激励计划首次授予部分第二个行权解除限售期行权解除限售条件成就的公告 · PDF 第 5 页" target="_blank" rel="noopener">首次授予结果</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202207011575707505_1.pdf#page=3" title="关于公司2020年股票期权与限制性股票激励计划预留授予部分第一个行权解除限售期行权解除限售条件成就的公告 · PDF 第 3 页" target="_blank" rel="noopener">预留授予结果</a></td>
+    </tr>
+    <tr data-company="000403" data-status="部分达标">
+      <th scope="row">派林生物<span class="equity-plan-name">2020 年股票期权及限制性股票</span></th>
+      <td class="equity-year">2022</td>
+      <td>归母净利润（考核口径）</td>
+      <td class="equity-target">触发 4.00／目标 5.00 亿元</td>
+      <td class="equity-actual">4.1712 亿元</td>
+      <td><span class="equity-badge partial">部分达标</span><p>首次第 3 期和预留第 2 期，公司层面可行权及解锁 83.4242%。</p><small>重大并购重组标的产生的净利润增加值按计划剔除。</small></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN202004271378793566_1.pdf#page=2" title="2020年股票期权与限制性股票激励计划实施考核管理办法 · PDF 第 2 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202305221587058966_1.pdf#page=5" title="2023-042关于公司2020年股票期权与限制性股票激励计划首次授予部分第三个行权解除限售期行权解除限售条件成就的公告 · PDF 第 5 页" target="_blank" rel="noopener">首次授予结果</a><a href="https://pdf.dfcfw.com/pdf/H2_AN202305221587058975_1.pdf#page=4" title="2023-043关于公司2020年股票期权与限制性股票激励计划预留授予部分第二个行权解除限售期行权解除限售条件成就的公告 · PDF 第 4 页" target="_blank" rel="noopener">预留授予结果</a></td>
+    </tr>
+    <tr data-company="300318" data-status="达标" id="equity-300318-2016">
+      <th scope="row">博晖创新<span class="equity-plan-name">2016 年首期限制性股票</span></th>
+      <td class="equity-year">2016</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2015 年</span></td>
+      <td class="equity-target">≥ +20%</td>
+      <td class="equity-actual">2,152.95 万元 · +32.43%</td>
+      <td><span class="equity-badge met">达标</span><p>第 1 期可解锁 1,932,707 股。</p></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201604050014238209_1.pdf#page=2" title="股权激励计划实施考核管理办法 · PDF 第 2 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201705170586503443_1.pdf#page=2" title="关于首次限制性股票激励计划第一个解锁期解锁条件成就的公告 · PDF 第 2 页" target="_blank" rel="noopener">第 1 期结果</a></td>
+    </tr>
+    <tr data-company="300318" data-status="未达标">
+      <th scope="row">博晖创新<span class="equity-plan-name">2016 年首期限制性股票</span></th>
+      <td class="equity-year">2017</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2015 年</span></td>
+      <td class="equity-target">≥ +44%</td>
+      <td class="equity-actual">−2.81 亿元</td>
+      <td><span class="equity-badge missed">未达标</span><p>第 2 期因业绩未达标回购注销 1,897,447 股，离职人员股份另计。</p></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201604050014238209_1.pdf#page=2" title="股权激励计划实施考核管理办法 · PDF 第 2 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201804231128378689_1.pdf#page=3" title="关于回购注销首期限制性股票激励计划部分限制性股票的公告 · PDF 第 3 页" target="_blank" rel="noopener">回购股数</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201807031162299874_1.pdf#page=1" title="关于部分限制性股票回购注销完成的公告 · PDF 第 1 页" target="_blank" rel="noopener">注销完成</a></td>
+    </tr>
+    <tr data-company="300318" data-status="未达标">
+      <th scope="row">博晖创新<span class="equity-plan-name">2016 年首期限制性股票</span></th>
+      <td class="equity-year">2018</td>
+      <td>扣非归母净利润增长<span class="equity-base">基期 2015 年</span></td>
+      <td class="equity-target">≥ +73%</td>
+      <td class="equity-actual">−6,853.87 万元</td>
+      <td><span class="equity-badge missed">未达标</span><p>第 3 期回购注销剩余 2,529,930 股，方案实施完成。</p></td>
+      <td class="equity-links"><a href="https://pdf.dfcfw.com/pdf/H2_AN201604050014238209_1.pdf#page=2" title="股权激励计划实施考核管理办法 · PDF 第 2 页" target="_blank" rel="noopener">考核办法</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201904221321259274_1.pdf#page=2" title="关于回购注销剩余激励计划限制性股票的公告 · PDF 第 2 页" target="_blank" rel="noopener">第 3 期结果</a><a href="https://pdf.dfcfw.com/pdf/H2_AN201907091338233910_1.pdf#page=1" title="关于剩余限制性股票回购注销完成的公告 · PDF 第 1 页" target="_blank" rel="noopener">注销完成</a></td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dataset-notes">
+    <p>其余公司披露情况</p><ul><li>天坛生物未检得披露量化业绩门槛的公司方案。 <a href="https://pdf.dfcfw.com/pdf/H2_AN202608281828630538_1.pdf#page=22" title="天坛生物2026年半年度报告 · PDF 第 22 页" target="_blank" rel="noopener">2026 半年报</a></li><li>博雅生物有第一期员工持股计划，方案披露了个人考核条款。 <a href="https://pdf.dfcfw.com/pdf/H2_AN201603270014093047_1.pdf#page=11" title="第一期员工持股计划(草案) · PDF 第 11 页" target="_blank" rel="noopener">持股方案</a></li><li>卫光生物披露过三期员工持股计划，可核查持股期限和份额安排。 <a href="https://pdf.dfcfw.com/pdf/H2_AN202412261641439028_1.pdf#page=10" title="第三期员工持股计划(草案二次修订稿) · PDF 第 10 页" target="_blank" rel="noopener">第三期修订稿</a></li><li>禾元生物招股书披露 2021 年上市前持股平台激励，授予以员工服务期限为条件。 <a href="https://pdf.dfcfw.com/pdf/H2_AN202510191765041375_1.pdf#page=113" title="禾元生物首次公开发行股票并在科创板上市招股说明书 · PDF 第 113 页" target="_blank" rel="noopener">招股说明书</a></li></ul>
+  </div>
+</section>
+<script src="equity-incentives.js" defer></script>
 
   <section class="blood-panel" id="recombinant-albumin" aria-labelledby="recombinant-title">
     <div class="blood-section-heading"><div><h2 id="recombinant-title">禾元生物-U · 重组人白蛋白</h2>

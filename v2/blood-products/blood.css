@@ -88,3 +88,42 @@
 @media (max-width: 420px) {
   .blood-bar-item:not(:last-child):not(:nth-child(1)):not(:nth-child(5)):not(:nth-child(9)) .blood-bar-year { display: none; }
 }
+
+#plasma-transactions .blood-table td:nth-child(2),
+#plasma-transactions .blood-table td:nth-child(5),
+#plasma-transactions .blood-table th:nth-child(2),
+#plasma-transactions .blood-table th:nth-child(5) { text-align: left; }
+#plasma-transactions .blood-table td:nth-child(5) { min-width: 13rem; white-space: normal; }
+
+.blood-page .equity-panel .dataset-head { display: flex; align-items: start; justify-content: space-between; gap: .75rem; flex-wrap: wrap; }
+.blood-page .equity-panel h2 { font-size: clamp(1.2rem, 3vw, 1.6rem); letter-spacing: -.018em; margin: 0; }
+.blood-page .equity-panel :is(.dataset-meta, .dataset-source, .dataset-notes, .company-row-status, .company-mobile-tip) { color: var(--blood-muted); font-size: .83rem; }
+.blood-page .equity-panel .dataset-meta { margin: .35rem 0 0; }
+.blood-page .equity-panel .download-data { color: var(--teal); font-size: .83rem; }
+.blood-page .equity-filters { display: flex; flex-wrap: wrap; gap: .8rem 1rem; }
+.blood-page .equity-filters[hidden] { display: none; }
+.blood-page .equity-filters label { display: grid; gap: .28rem; color: var(--blood-muted); font-size: .77rem; }
+.blood-page .equity-filters select { padding: .35rem .55rem; border: 1px solid var(--blood-rule); border-radius: .3rem; background: white; color: var(--blood-ink); font: inherit; }
+.blood-page .equity-table-wrap { max-height: 34rem; overflow: auto; border: 1px solid var(--blood-rule); border-radius: .48rem; }
+.blood-page .equity-table { width: 100%; min-width: 59rem; border-collapse: separate; border-spacing: 0; font-size: .83rem; }
+.blood-page .equity-table :is(th,td) { padding: .6rem .65rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--blood-rule); }
+.blood-page .equity-table thead th { position: sticky; top: 0; z-index: 1; background: var(--blood-tint); }
+.blood-page .equity-table tbody tr:nth-child(even) { background: #fafcfb; }
+.blood-page .equity-table tbody th { min-width: 7.75rem; }
+.blood-page .equity-table td:nth-child(3) { min-width: 7.5rem; }
+.blood-page .equity-target, .blood-page .equity-actual { min-width: 6.25rem; font-weight: 650; }
+.blood-page .equity-table td:nth-child(6) { min-width: 12rem; }
+.blood-page .equity-plan-name, .blood-page .equity-base { display: block; font-size: .72rem; color: var(--blood-muted); font-weight: 400; }
+.blood-page .equity-table td p { margin: .2rem 0 0; }
+.blood-page .equity-table td small { color: var(--blood-muted); }
+.blood-page .equity-badge { padding: .15rem .35rem; border-radius: .25rem; font-size: .72rem; color: var(--blood-muted); background: #f0f2f2; }
+.blood-page .equity-badge.met { color: #176d65; background: #e9f0eb; }
+.blood-page .equity-badge.partial { color: #73501f; background: #f6efe1; }
+.blood-page .equity-badge.missed { color: #923e39; background: #f7eae9; }
+.blood-page .equity-links { min-width: 6rem; }
+.blood-page .equity-links a { display: block; }
+.blood-page .equity-panel .company-mobile-tip { display: none; }
+@media (max-width: 640px) {
+  .blood-page .equity-panel .company-mobile-tip { display: block; }
+}
+.blood-page .equity-table thead th:nth-child(2) { white-space: nowrap; }
