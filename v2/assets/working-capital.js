@@ -41,7 +41,7 @@ async function start() {
   section.querySelector('[data-capital-latest]').textContent=data.latest;
   for (const company of companies) issuer.add(new Option(company.name,company.code));
   const trend = mountCompanyTrend(figure,companies,periods,{
-    defaultCode: companies.some(c=>c.code==='603939') ? '603939' : '600161',
+    defaultCode: ['603939', '600161', '300122'].find(code => companies.some(c => c.code === code)),
     emptyMessage: '勾选公司后查看周转天数',
     getStart: dates => range.value==='all' ? 0 : Math.max(0,dates.length-Number(range.value)),
     getPoints: (company,dates) => dates.map(quarter => {

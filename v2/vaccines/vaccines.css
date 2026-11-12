@@ -1,0 +1,12 @@
+.vaccine-page .blood-heading h1 span { font-size: .52em; color: var(--blood-accent); }
+.vaccine-scroll table { min-width: 710px; }
+.vaccine-scroll td { white-space: normal; }
+.vaccine-refs a, .vaccine-status a { display: inline-block; margin-right: .55rem; color: var(--blood-accent); }
+.vaccine-status { color: var(--blood-muted); font-size: .88rem; line-height: 1.65; }
+.vaccine-filters { margin-top: 1rem; }
+.vaccine-filters[hidden] { display: none; }
+#guidance .blood-table :is(th, td) { text-align: left; }
+#guidance .blood-table td:nth-child(2), #overseas-capital .blood-table td:nth-child(2) { white-space: nowrap; }
+#guidance .blood-table :is(td:nth-child(3), td:nth-child(4)) { min-width: 13rem; }
+#guidance .blood-table :is(td:nth-child(5), td:nth-child(6)) { min-width: 7rem; }
+#overseas-capital .blood-table :is(td:nth-child(3), th:nth-child(3)) { text-align: left; white-space: nowrap; }
