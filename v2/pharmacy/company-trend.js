@@ -40,6 +40,7 @@ export function mountCompanyTrend(figure, companies, periods, {
   getPoints = quarterPoints,
   describe = storePointDescription,
   labelTick = period => period.endsWith('Q4'),
+  getStart = () => 0,
   emptyMessage = '勾选公司后查看门店数'
 } = {}) {
   const canvas = figure.querySelector('canvas');
@@ -86,7 +87,7 @@ export function mountCompanyTrend(figure, companies, periods, {
       return;
     }
 
-    const values = visible.flatMap(row => row.points.filter(Boolean).map(point => point.count));
+    const values = visible.flatMap(row => row.points.slice(first).filter(Boolean).map(point => point.count));
     const maximum = Math.max(0, ...values);
     const minimum = Math.min(0, ...values);
     const step = gridStep(maximum - minimum || 1);
@@ -212,9 +213,11 @@ export function mountCompanyTrend(figure, companies, periods, {
     }
   });
   function updateSelection() {
-    visible = series.filter(row => row.checkbox.checked && !row.checkbox.disabled);
-    const start = visible.map(row => row.points.findIndex(Boolean)).filter(index => index >= 0);
-    first = start.length ? Math.min(...start) : 0;
+    const lower = Math.max(0, Math.min(last, getStart(periods)));
+    visible = series.filter(row => row.checkbox.checked && !row.checkbox.disabled &&
+      row.points.some((point, index) => index >= lower && point));
+    const start = visible.map(row => row.points.findIndex((point, index) => index >= lower && point));
+    first = start.length ? Math.min(...start) : lower;
     active = -1;
     tooltip.hidden = true;
     draw();

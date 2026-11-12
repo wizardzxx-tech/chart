@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy · 零售药房公开数据</title><meta name="description" content="中国零售药店季度末门店总数，主要来源为各药店企业年报转引的中康数据。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/pharmacy/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="pharmacy.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy · 零售药房公开数据</title><meta name="description" content="中国零售药店季度末门店总数，主要来源为各药店企业年报转引的中康数据。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/pharmacy/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="pharmacy.css"><link rel="stylesheet" href="../assets/working-capital.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main>
 <div class="breadcrumbs" aria-label="面包屑"><a href="../">主页</a><span aria-hidden="true">/</span><span>Pharmacy</span></div>
 <header class="hero topic-hero pharmacy-hero">
   <h1>Pharmacy</h1>
@@ -6,6 +6,7 @@
   <nav class="pharmacy-jumps" aria-label="药房数据表">
     <a href="#china-pharmacy-stores">全国门店总数</a>
     <a href="#company-stores">上市药房门店数</a>
+    <a href="#working-capital">营运资金周转天数</a>
     <a href="#equity-incentives">股权激励业绩考核</a>
   </nav>
 </header>
@@ -422,6 +423,56 @@
   </div>
 </section>
 <script src="company-stores.js" type="module"></script>
+
+<section class="capital-panel" id="working-capital" aria-labelledby="capital-title">
+  <header class="capital-heading">
+    <div>
+      <h2 id="capital-title">营运资金周转天数</h2>
+      <p>上市公司合并报表 · <span data-capital-latest>最新财报期</span> · 单位为天</p>
+    </div>
+    <div class="capital-downloads"><a href="working-capital.csv" download>周转天数 CSV</a><a href="working-capital-inputs.csv" download>财报原始科目 CSV</a></div>
+  </header>
+  <details class="capital-method">
+    <summary>公式与财报口径</summary>
+    <ul>
+      <li><strong>TTM 方法 C</strong>。余额取连续五个季度末，按 1、2、2、2、1 加权后除以 8。收入和营业成本为最近四个单季合计，天数固定为 365。</li>
+      <li><strong>单季</strong>。余额取季度期初与期末的均值，收入与营业成本按同一财年累计数相减，Q1 直接取一季报。本期天数按日历天数计算。</li>
+      <li><strong>AR days</strong>＝扩展应收平均余额 ÷ 营业收入 × 天数。扩展应收包括应收账款、应收票据及应收款项融资。合同资产在原始科目 CSV 单列。</li>
+      <li><strong>AP days</strong>＝扩展应付平均余额 ÷ 营业成本 × 天数。扩展应付包括应付账款及应付票据。合并列示的票据及账款取合计数。</li>
+      <li><strong>Inventory days</strong>＝存货平均余额 ÷ 营业成本 × 天数。<strong>CCC days</strong>＝AR days ＋ Inventory days − AP days。</li>
+      <li>财报口径采用公司合并报表，来自公开定期报告及东方财富标准化报表。原始科目 CSV 保留累计和拆季数据、可定位的报表页及部分并表／重述说明。票据或应收款项融资无单列余额时按零处理，使用合计数时避免重复计入。缺少连续季度、口径无法衔接或分母不为正的指标留空。国药一致含医药分销业务，禾元生物在商业化早期的营业成本较小。</li>
+    </ul>
+  </details>
+  <div class="capital-interactive" hidden>
+    <div class="capital-controls">
+      <label>计算口径<select id="capital-mode"><option value="1">TTM · 方法 C</option><option value="2">单季</option></select></label>
+      <label>图表指标<select id="capital-metric"><option value="0">AR days</option><option value="1">AP days</option><option value="2">Inventory days</option><option value="3" selected>CCC days</option></select></label>
+      <label>图表时间<select id="capital-range"><option value="20">近五年</option><option value="all">全部历史</option></select></label>
+    </div>
+    <figure class="capital-trend" hidden>
+      <fieldset class="company-series"><legend>比较公司</legend></fieldset>
+      <figcaption id="capital-caption">CCC days · TTM · 天</figcaption>
+      <div class="capital-plot">
+        <canvas tabindex="0" role="img" aria-labelledby="capital-caption" aria-describedby="capital-chart-help"></canvas>
+        <div class="company-trend-tooltip" role="status" hidden></div>
+      </div>
+      <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失季度断线。</p>
+    </figure>
+    <div class="capital-controls capital-table-controls">
+      <label>表格季度<select id="capital-period"></select></label>
+      <label>表格公司<select id="capital-company"><option value="all">全部公司</option></select></label>
+    </div>
+    <div class="capital-scroll" role="region" aria-label="营运资金周转天数明细" tabindex="0">
+      <table class="capital-table">
+        <thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">AR days</th><th scope="col">AP days</th><th scope="col">Inventory days</th><th scope="col">CCC days</th><th scope="col">事项／来源</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <p class="capital-status" role="status">正在读取公司数据…</p>
+  <noscript><p>可下载上方 CSV 查看周转天数及原始财报科目。</p></noscript>
+</section>
+<script src="../assets/working-capital.js" type="module"></script>
 
 <section class="pharmacy-panel equity-panel" id="equity-incentives" aria-labelledby="equity-title">
   <div class="dataset-head">
