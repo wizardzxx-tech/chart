@@ -50,6 +50,7 @@ export function mountCompanyTrend(figure, companies, periods, {
   describe = storePointDescription,
   labelTick = period => period.endsWith('Q4'),
   getStart = () => 0,
+  getEnd = dates => dates.length - 1,
   emptyMessage = '勾选公司后查看门店数'
 } = {}) {
   const canvas = figure.querySelector('canvas');
@@ -60,7 +61,7 @@ export function mountCompanyTrend(figure, companies, periods, {
   let active = -1;
   let visible = [];
   let first = 0;
-  const last = periods.length - 1;
+  let last = periods.length - 1;
   let plot;
   const series = companies.map((company, i) => {
     const color = colors[i % colors.length];
@@ -96,7 +97,7 @@ export function mountCompanyTrend(figure, companies, periods, {
       return;
     }
 
-    const values = visible.flatMap(row => row.points.slice(first).filter(Boolean).map(point => point.count));
+    const values = visible.flatMap(row => row.points.slice(first,last + 1).filter(Boolean).map(point => point.count));
     const maximum = Math.max(0, ...values);
     const minimum = Math.min(0, ...values);
     const step = gridStep(maximum - minimum || 1);
@@ -222,10 +223,11 @@ export function mountCompanyTrend(figure, companies, periods, {
     }
   });
   function updateSelection() {
+    last = Math.max(0, Math.min(periods.length - 1, getEnd(periods)));
     const lower = Math.max(0, Math.min(last, getStart(periods)));
     visible = series.filter(row => row.checkbox.checked && !row.checkbox.disabled &&
-      row.points.some((point, index) => index >= lower && point));
-    const start = visible.map(row => row.points.findIndex((point, index) => index >= lower && point));
+      row.points.some((point, index) => index >= lower && index <= last && point));
+    const start = visible.map(row => row.points.findIndex((point, index) => index >= lower && index <= last && point));
     first = start.length ? Math.min(...start) : lower;
     active = -1;
     tooltip.hidden = true;

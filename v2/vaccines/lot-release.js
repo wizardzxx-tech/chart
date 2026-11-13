@@ -5,6 +5,7 @@ const get = id => section.querySelector('#lot-' + id);
 const number = new Intl.NumberFormat('zh-CN');
 const collator = new Intl.Collator('zh-CN', { numeric: true });
 const grain = get('grain');
+const year = get('year');
 const filters = [...section.querySelectorAll('[data-lot-filter]')];
 const filterColumns = {agency:3, company:4, holder:5, category:6, product:7, origin:8, program:9};
 const periodColumns = {year:0, month:1, quarter:2};
@@ -57,7 +58,7 @@ function mount(data) {
   }
 
   function updateDependentFilters() {
-    const companyRows = data.rows.filter(row=>matches(row,'company'));
+    const companyRows = data.rows.filter(row=>(!year.value || row[0]===year.value) && matches(row,'company'));
     const holders = new Set(companyRows.map(row=>row[filterColumns.holder]));
     setOptions(get('holder'), holders);
     const holderRows = companyRows.filter(row=>matches(row,'holder'));
@@ -81,6 +82,8 @@ function mount(data) {
   }
 
   const byPeriod = new Map();
+  const observedPeriods = Object.fromEntries(Object.entries(periodColumns).map(([mode,index])=>
+    [mode,new Set(data.rows.map(row=>row[index]))]));
   const charts = Object.fromEntries(['month','year','quarter'].map(mode=>{
     const figure = mode === 'quarter' ? chart : chart.cloneNode(true);
     if (figure !== chart) {
@@ -96,7 +99,10 @@ function mount(data) {
     const renderer = mountCompanyTrend(figure,[{code:'total',name:'获签批次'}],chartPeriods(data,mode),{
       defaultCode:'total',
       labelTick:()=>true,
-      getPoints:(_company, dates)=>dates.map(date=>({count:byPeriod.get(date) ?? 0})),
+      getStart:dates=>year.value ? dates.findIndex(date=>date.startsWith(year.value)) : 0,
+      getEnd:dates=>year.value ? dates.findLastIndex(date=>date.startsWith(year.value)) : dates.length - 1,
+      getPoints:(_company, dates)=>dates.map(date=>
+        observedPeriods[mode].has(date) ? {count:byPeriod.get(date) ?? 0} : null),
       describe:point=>point ? {value:number.format(point.count)+' 批'} : {value:'—'},
     });
     return [mode,{figure,renderer}];
@@ -104,7 +110,7 @@ function mount(data) {
   function render() {
     updateDependentFilters();
     const mode = grain.value;
-    const filtered = data.rows.filter(row=>filters.every(filter=>!filter.value ||
+    const filtered = data.rows.filter(row=>(!year.value || row[0]===year.value) && filters.every(filter=>!filter.value ||
       row[filterColumns[filter.dataset.lotFilter]] === filter.value));
     const totals = new Map();
     byPeriod.clear();
@@ -127,7 +133,8 @@ function mount(data) {
     get('unassigned').textContent = number.format(unassigned);
     get('caption').textContent = timeLabels[mode] + '批签发批次数';
     shown = [...totals].map(([key,n])=>[...JSON.parse(key),n])
-      .sort((a,b)=>collator.compare(a[0],b[0]) || b[3] - a[3] || collator.compare(a[2],b[2]));
+      .sort((a,b)=>Number(a[0].startsWith('跨'))-Number(b[0].startsWith('跨')) ||
+        collator.compare(b[0],a[0]) || b[3] - a[3] || collator.compare(a[2],b[2]));
     page = 0;
     renderPage();
     status.textContent = filtered.length ? `当前筛选汇总 ${shown.length} 条` : '当前筛选在本次公示中暂无匹配。';
@@ -137,9 +144,10 @@ function mount(data) {
     }
   }
 
-  for (const control of [grain,...filters]) control.addEventListener('change',render);
+  for (const control of [grain,year,...filters]) control.addEventListener('change',render);
   get('reset').addEventListener('click',()=>{
-    grain.value = 'quarter';
+    grain.value = 'year';
+    year.value = '';
     for (const filter of filters) filter.value = '';
     render();
   });
@@ -152,7 +160,11 @@ function mount(data) {
 try {
   const response = await fetch('lot-release.json');
   if (!response.ok) throw new Error('数据暂不可用');
-  mount(await response.json());
+  const data=await response.json();
+  if (data.columns) {
+    data.rows=data.rows.map(row=>data.columns.map((values,i)=>values[row[i]]).concat(row[10]));
+  }
+  mount(data);
 } catch {
   status.textContent = '交互数据暂未加载，可下载汇总 CSV 或查看官方公示。';
 }
