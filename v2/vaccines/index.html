@@ -1,13 +1,101 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vaccines · 疫苗公开数据</title><meta name="description" content="中国疫苗上市公司股权激励及考核完成情况、港美股经营目标，以及营运资金周转天数。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/vaccines/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../blood-products/blood.css"><link rel="stylesheet" href="../assets/working-capital.css"><link rel="stylesheet" href="vaccines.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="blood-page vaccine-page">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vaccines · 疫苗公开数据</title><meta name="description" content="人用疫苗批签发批次数、上市公司股权激励、港美股经营目标及营运资金周转天数。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/vaccines/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../blood-products/blood.css"><link rel="stylesheet" href="../assets/working-capital.css"><link rel="stylesheet" href="vaccines.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="blood-page vaccine-page">
   <p class="blood-crumb"><a href="../">医药行业公开数据</a> <span aria-hidden="true">/</span> 疫苗</p>
   <header class="blood-heading">
     <h1>Vaccines <span>疫苗</span></h1>
-    <p>覆盖沪深京 12 家、港股 5 家及科兴控股。康希诺采用 A 股合并报表，涵盖同一发行人的 H 股。</p>
+    <p>批签发按公开证书统计。公司财务部分覆盖沪深京 12 家、港股 5 家及科兴控股。</p>
     <nav aria-label="页面目录">
+      <a href="#lot-release">疫苗批签发</a>
       <a href="#equity-incentives">股权激励</a><a href="#guidance">港美股经营目标</a>
       <a href="#working-capital">沪深京周转天数</a><a href="#overseas-capital">港美股周转天数</a>
     </nav>
   </header>
+  <section class="blood-panel" id="lot-release" aria-labelledby="lot-release-title">
+    <div class="blood-section-heading"><div>
+      <h2 id="lot-release-title">疫苗批签发</h2>
+      <p>2025-01-01 至 2025-12-31 · 人用疫苗 · 单位为批</p>
+    </div><div class="capital-downloads">
+      <a href="lot-release-summary.csv" download>批次数汇总 CSV</a>
+      <a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs" target="_blank" rel="noopener">全国统一公示平台</a>
+    </div></div>
+    <dl class="lot-kpis">
+      <div><dt>已核对的获签批次</dt><dd id="lot-count">3,741</dd></div>
+      <div><dt>有疫苗记录的签发机构</dt><dd id="lot-agency-count">16</dd></div>
+      <div><dt id="lot-unassigned-label">跨季未归期</dt><dd id="lot-unassigned">260</dd></div>
+    </dl>
+    <p class="blood-note">统计范围为统一平台可核对的公示。批次数反映获签批数，与剂数、销售量和接种量口径各异。</p>
+    <div id="lot-controls" class="blood-controls" hidden>
+      <label>时间口径<select id="lot-grain"><option value="quarter">季度</option><option value="month">月度</option><option value="year">年度</option></select></label>
+      <label>公司／集团<select id="lot-company" data-lot-filter="company"><option value="">全部公司</option></select></label><label>持有人／生产企业<select id="lot-holder" data-lot-filter="holder"><option value="">全部持有人</option></select></label><label>品种<select id="lot-category" data-lot-filter="category"><option value="">全部品种</option></select></label><label>产品<select id="lot-product" data-lot-filter="product"><option value="">全部产品</option></select></label><label>签发机构<select id="lot-agency" data-lot-filter="agency"><option value="">全部机构</option></select></label><label>国产／进口<select id="lot-origin" data-lot-filter="origin"><option value="">全部</option></select></label><label>免疫规划目录<select id="lot-program" data-lot-filter="program"><option value="">全部</option></select></label>
+      <button type="button" id="lot-reset">重置筛选</button>
+    </div>
+    <figure class="blood-trend" id="lot-trend" hidden>
+      <figcaption id="lot-caption">季度批签发批次数</figcaption>
+      <fieldset class="company-series" hidden></fieldset>
+      <div class="blood-trend-plot"><canvas tabindex="0" role="img" aria-labelledby="lot-caption" aria-describedby="lot-chart-help"></canvas>
+        <div class="company-trend-tooltip" role="status" hidden></div></div>
+      <p class="blood-note" id="lot-chart-help">悬停、点按或使用方向键查看。跨期未归期的批次计入年度汇总。</p>
+    </figure>
+    <p id="lot-status" class="blood-note" role="status"></p>
+    <div id="lot-table-wrap" class="blood-scroll vaccine-scroll" role="region" aria-label="疫苗批签发汇总" tabindex="0" hidden>
+      <table class="blood-table"><thead><tr><th scope="col">期间</th><th scope="col">品种</th><th scope="col">公司／集团</th><th scope="col">批次数</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="lot-pagination" id="lot-pagination" hidden>
+      <button type="button" id="lot-prev">上一页</button><span id="lot-page"></span><button type="button" id="lot-next">下一页</button>
+    </div>
+    <details class="capital-method">
+      <summary>统计口径、来源与数据覆盖</summary>
+      <ul>
+        <li>按最终批签发证书去重。公司归属以持有人及已核实的子公司关系为准，代理产品归属持有人。汇总 CSV 保留产品、持有人、机构、国产／进口及免疫规划目录属性。价型和技术路线按公示品名提取，品名未明示时留空。 <a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12235997&amp;stockid=300122" target="_blank" rel="noopener">智飞生物年报</a> <a href="https://www.sec.gov/Archives/edgar/data/1084201/000119312526258534/sva-20251231.htm" target="_blank" rel="noopener">科兴控股年报</a></li>
+        <li>日期采用公示所列签发区间。跨月、跨季单列未归期；101 批跨越年度边界且无法核实具体签发日，未计入年度合计。已有 38 批的证书编号年份与公示签发区间年份不一致，因此以公示区间为准。</li>
+        <li>国产／进口以证书标记结合持有人识别，信息不足标为待核。免疫规划为国家目录品种属性，逐批用途、地方项目及采购渠道仍需结合采购资料。双价 HPV 自 2025-11-10 起按政策调整，跨生效日的区间单独标记。 <a href="https://www.nhc.gov.cn/cms-search/downFiles/7559f978e6be4ec585a9a1fe0d9224f6.pdf" target="_blank" rel="noopener">国家免疫程序</a> <a href="https://app.www.gov.cn/govdata/gov/202510/30/539322/article.html" target="_blank" rel="noopener">HPV 政策</a> <a href="https://www.nidc.org.cn/directory/web/nifdc/bshff/jyyw/jycybmgzh/jycybmgzhyp/20260708102933115.html" target="_blank" rel="noopener">批签发管理办法</a></li>
+        <li>已解析 619 份统一平台公示，去重 8 条重复记录。另有 10 条疫苗记录未明确列示签发结论，暂未计入。 <a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfQkcx" target="_blank" rel="noopener">官方历史证书查询</a> <a href="https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html" target="_blank" rel="noopener">中检院每周公告</a> <a href="https://yjj.sh.gov.cn/jn-bmfw/index.html" target="_blank" rel="noopener">上海药监局历史公示</a></li>
+        <li>另对读中检院每周公告 51 份，获签证书均可在统一平台找到。华兰疫苗三价流感 6 批、四价流感 51 批、狂犬 6 批，与公司 2025 年报一致。 <a href="https://static.cninfo.com.cn/finalpage/2026-03-28/1225045582.PDF" target="_blank" rel="noopener">华兰疫苗年报摘要</a></li>
+      </ul>
+      <div class="blood-scroll vaccine-scroll" role="region" aria-label="签发机构覆盖" tabindex="0">
+        <table class="blood-table"><thead><tr><th scope="col">目录机构</th><th scope="col">应查公示</th><th scope="col">已读</th><th scope="col">待核</th><th scope="col">已核疫苗批次</th><th scope="col">来源</th></tr></thead><tbody><tr><th scope="row">中国药品检定研究院</th>
+    <td>51</td><td>51</td><td>0</td>
+    <td>2674</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=1" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">北京市药品检验研究院</th>
+    <td>50</td><td>50</td><td>0</td>
+    <td>160</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=5b6ea8c91cf9013d011cfdfbda100041" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">辽宁省药品检验检测院</th>
+    <td>16</td><td>16</td><td>0</td>
+    <td>137</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20210315c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">福建省食品药品质量检验研究院</th>
+    <td>20</td><td>20</td><td>0</td>
+    <td>104</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20210512c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">上海市食品药品检验研究院</th>
+    <td>49</td><td>49</td><td>0</td>
+    <td>86</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d2265474b0004" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">山东省食品药品检验研究院</th>
+    <td>44</td><td>44</td><td>0</td>
+    <td>78</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20190924c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">吉林省药品检验研究院</th>
+    <td>35</td><td>35</td><td>0</td>
+    <td>76</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d226392100002" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">四川省药品检验研究院(四川省医疗器械检测中心)</th>
+    <td>47</td><td>47</td><td>0</td>
+    <td>73</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d226ba310001e" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">河北省药品医疗器械检验研究院</th>
+    <td>14</td><td>14</td><td>0</td>
+    <td>67</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20211011c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">甘肃省药品检验研究院</th>
+    <td>44</td><td>44</td><td>0</td>
+    <td>60</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d226c637d0020" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">湖北省药品监督检验研究院</th>
+    <td>48</td><td>48</td><td>0</td>
+    <td>58</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d22697942001a" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">广东省药品检验所</th>
+    <td>57</td><td>57</td><td>0</td>
+    <td>49</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d226a9159001c" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">江苏省药品监督检验研究院</th>
+    <td>11</td><td>11</td><td>0</td>
+    <td>36</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20210226c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">浙江省食品药品检验研究院</th>
+    <td>8</td><td>8</td><td>0</td>
+    <td>29</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20210210c002" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">云南省食品药品监督检验研究院</th>
+    <td>8</td><td>8</td><td>0</td>
+    <td>22</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20210926c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">新疆维吾尔自治区药品检验研究院</th>
+    <td>9</td><td>9</td><td>0</td>
+    <td>0</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20240313c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">江西省药品检验检测研究院</th>
+    <td>45</td><td>45</td><td>0</td>
+    <td>0</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20221123c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">河南省药品医疗器械检验院（河南省疫苗批签中心）</th>
+    <td>7</td><td>7</td><td>0</td>
+    <td>32</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20230523c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">湖南省药品检验检测研究院</th>
+    <td>8</td><td>8</td><td>0</td>
+    <td>0</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20230104c001" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">重庆市食品药品检验检测研究院</th>
+    <td>48</td><td>48</td><td>0</td>
+    <td>0</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20190917c001" target="_blank" rel="noopener">机构公示</a></td></tr></tbody></table>
+      </div>
+    </details>
+  </section><script src="lot-release.js" type="module"></script>
   
 <section class="blood-panel equity-panel" id="equity-incentives" aria-labelledby="equity-title">
   <div class="dataset-head">

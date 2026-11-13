@@ -10,3 +10,16 @@
 #guidance .blood-table :is(td:nth-child(3), td:nth-child(4)) { min-width: 13rem; }
 #guidance .blood-table :is(td:nth-child(5), td:nth-child(6)) { min-width: 7rem; }
 #overseas-capital .blood-table :is(td:nth-child(3), th:nth-child(3)) { text-align: left; white-space: nowrap; }
+.lot-kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:.65rem; margin:0 0 .8rem; }
+.lot-kpis div { background:var(--blood-tint); border:1px solid var(--blood-rule); border-radius:.5rem; padding:.6rem .75rem; }
+.lot-kpis dt { color:var(--blood-muted); font-size:.78rem; }
+.lot-kpis dd { margin:.15rem 0 0; font-size:1.35rem; font-weight:650; font-variant-numeric:tabular-nums; }
+#lot-controls { margin-top:1rem; align-items:end; }
+#lot-controls label { min-width:0; }
+#lot-controls select { width:100%; max-width:min(18rem,100%); }
+#lot-release [hidden] { display:none !important; }
+#lot-release .blood-table :is(th,td):nth-child(2), #lot-table-wrap .blood-table :is(th,td):nth-child(3) { text-align:left; }
+#lot-table-wrap table { min-width:490px; }
+.lot-pagination { display:flex; align-items:center; gap:.65rem; margin:.65rem 0; font-size:.8rem; }
+.lot-pagination button, #lot-reset { padding:.42rem .65rem; border:1px solid var(--blood-rule); border-radius:.35rem; background:#fff; color:var(--blood-accent); font:inherit; min-height:36px; cursor:pointer; }
+.lot-pagination button:disabled { opacity:.5; cursor:default; }
