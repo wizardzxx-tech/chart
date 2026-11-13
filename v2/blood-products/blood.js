@@ -45,7 +45,7 @@ function appendSources(parent, row) {
 }
 
 function initTrend(data) {
-  const figure = document.querySelector('.blood-trend');
+  const figure = document.querySelector('#blood-company-trend .blood-trend');
   const metric = document.querySelector('#blood-chart-metric');
   const metricBasis = document.querySelector('#blood-chart-basis');
   const caption = document.querySelector('#blood-chart-caption');
