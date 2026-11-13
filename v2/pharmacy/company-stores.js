@@ -58,7 +58,7 @@ import { mountCompanyTrend } from './company-trend.js';
         const data = row.values[key];
         if (!data) return;
         const [value,refs,method,note] = data;
-        add('dt',label+' · '+number.format(value)+' 家',shown);
+        add('dt',label+' · '+(method==='披露下限'?'≥ ':'')+number.format(value)+' 家',shown);
         const line = add('dd',method+(note ? ' · '+note : ''),shown);
         refs.forEach(index=>{
           const [title,url,page] = sources[index];
@@ -92,7 +92,7 @@ import { mountCompanyTrend } from './company-trend.js';
         add('td',row.quarter,tr);
         for (const [field] of fields) {
           const val = row.values[ytd && flows.has(field) ? field+'_ytd' : field];
-          const cell = add('td',val ? number.format(val[0]) : '—',tr);
+          const cell = add('td',val ? (val[2]==='披露下限'?'≥ ':'')+number.format(val[0]) : '—',tr);
           if (val && (val[2]==='累计相减'||val[2]==='计算')) add('sup','*',cell);
           if (val && val[3]) cell.title=val[3];
         }

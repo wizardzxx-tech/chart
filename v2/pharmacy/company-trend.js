@@ -1,19 +1,22 @@
 const interpolationCompanies = new Set(['000028', '301408']);
 const colors = ['#176d65', '#315e99', '#9b551f', '#86528f', '#64802d',
-  '#a13c51', '#176f99', '#68543f', '#4f5a9b'];
+  '#a13c51', '#176f99', '#68543f', '#4f5a9b', '#0d717e', '#ae6339', '#795b15', '#52585c', '#9e4776'];
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
 
 function quarterPoints(company, quarters) {
   const reported = new Map(company.records.flatMap(([quarter, values]) =>
-    Number.isFinite(values.total?.[0]) ? [[quarter, values.total[0]]] : []));
+    Number.isFinite(values.total?.[0]) ? [[quarter, values.total]] : []));
   return quarters.map((quarter, index) => {
-    if (reported.has(quarter)) return { count: reported.get(quarter) };
+    if (reported.has(quarter)) {
+      const [count,,method,note] = reported.get(quarter);
+      return { count, lowerBound: method === '披露下限', detail: note };
+    }
     if (!interpolationCompanies.has(company.code) || !/[13]$/.test(quarter)) return null;
     const previous = quarters[index - 1];
     const next = quarters[index + 1];
     if (!reported.has(previous) || !reported.has(next)) return null;
-    const left = reported.get(previous);
-    const right = reported.get(next);
+    const [left] = reported.get(previous);
+    const [right] = reported.get(next);
     return { count: (left + right) / 2, estimate: { previous, next, left, right } };
   });
 }
@@ -27,6 +30,7 @@ function gridStep(max) {
 function storePointDescription(point) {
   if (!point) return {value:'—'};
   const value = number.format(point.count) + ' 家';
+  if (point.lowerBound) return {value:'≥ '+value, detail:point.detail};
   if (!point.estimate) return {value};
   const { previous, next, left, right } = point.estimate;
   return {

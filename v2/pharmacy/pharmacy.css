@@ -157,3 +157,5 @@
   .stores-table thead th { position: static; }
   .plot-range, .download-data { display: none; }
 }
+
+.equity-badge.partial { background: #f7f0de; color: #73501f; }
