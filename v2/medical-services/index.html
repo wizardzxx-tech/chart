@@ -1,0 +1,1597 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Medical Services · 医疗服务量</title><meta name="description" content="中国医疗服务量、医院与基层诊疗、公立民营对比、入院出院、病床使用率及卫生资源长周期数据。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/medical-services/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../blood-products/blood.css"><link rel="stylesheet" href="medical-services.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="blood-page services-page">
+    <p class="blood-crumb"><a href="../">公开数据</a> / 医疗服务量</p>
+    <header class="blood-heading">
+      <h1>医疗服务量</h1>
+      <p>跟踪中国医院和基层医疗机构的诊疗、住院与病床使用。</p>
+      <nav aria-label="页内导航"><a href="#trend">趋势与同比</a><a href="#service-data">数据明细</a><a href="#resources">卫生资源</a></nav>
+    </header>
+    <section class="blood-panel" id="service-overview" aria-labelledby="service-overview-title">
+      <div class="blood-section-heading"><div>
+        <h2 id="service-overview-title">2026 年 1–3 月 · 全国医院</h2>
+        <p>卫健委月报累计口径，发布于 2026-09-08。 <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委披露</a>  · <a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a></p>
+      </div><a class="blood-download" href="service-activity.csv" download>服务量 CSV</a></div>
+      <dl class="services-kpis"><div><dt>医院诊疗人次</dt>
+        <dd>11.4<small>亿</small></dd><dd class="services-yoy">同比 +2.2%</dd></div><div><dt>医院出院人次</dt>
+        <dd>6,021.7<small>万</small></dd><dd class="services-yoy">同比 -2.7%</dd></div><div><dt>医院病床使用率</dt>
+        <dd>76.9<small>%</small></dd><dd class="services-yoy">同比 -0.1 个百分点</dd></div></dl>
+      <p class="blood-note">2025 年全年医院诊疗 46.7 亿人次，入院 24,814.8 万人次，病床使用率 78%。 <a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">年度公报</a></p>
+    </section>
+    <section class="blood-panel" id="trend" aria-labelledby="trend-title">
+      <div class="blood-section-heading"><h2 id="trend-title">医疗服务趋势</h2></div>
+      <div class="blood-controls" id="service-controls" hidden>
+        <label>时间口径<select id="service-period"><option value="monthly">单月</option><option value="cumulative">年内累计</option><option value="annual">年度</option></select></label>
+        <label>指标<select id="service-metric"></select></label>
+        <label id="service-year-control" hidden>累计终点<select id="service-end-month"></select></label>
+      </div>
+      <div id="service-charts">
+        <figure class="blood-trend services-trend" id="service-trend-monthly" hidden>
+          <figcaption id="service-caption-monthly">单月</figcaption>
+          <fieldset class="company-series"><legend>比较机构</legend></fieldset>
+          <div class="blood-trend-plot"><canvas tabindex="0" role="img" aria-labelledby="service-caption-monthly" aria-describedby="service-chart-help"></canvas>
+          <div class="company-trend-tooltip" role="status" hidden></div></div></figure><figure class="blood-trend services-trend" id="service-trend-cumulative" hidden>
+          <figcaption id="service-caption-cumulative">年内累计</figcaption>
+          <fieldset class="company-series"><legend>比较机构</legend></fieldset>
+          <div class="blood-trend-plot"><canvas tabindex="0" role="img" aria-labelledby="service-caption-cumulative" aria-describedby="service-chart-help"></canvas>
+          <div class="company-trend-tooltip" role="status" hidden></div></div></figure><figure class="blood-trend services-trend" id="service-trend-annual" hidden>
+          <figcaption id="service-caption-annual">年度</figcaption>
+          <fieldset class="company-series"><legend>比较机构</legend></fieldset>
+          <div class="blood-trend-plot"><canvas tabindex="0" role="img" aria-labelledby="service-caption-annual" aria-describedby="service-chart-help"></canvas>
+          <div class="company-trend-tooltip" role="status" hidden></div></div></figure>
+      </div>
+      <p class="blood-note" id="service-chart-help">勾选机构可比较。可悬停、点按或用方向键查看。缺少披露的月份留空，折线在缺失处断开。累计口径按同一截止月跨年比较。</p>
+    </section>
+    <section class="blood-panel" id="service-data" aria-labelledby="service-data-title">
+      <div class="blood-section-heading"><div><h2 id="service-data-title">医疗服务量明细</h2>
+        <p>诊疗采用卫健委发布的诊疗人次口径。年度统计列示入院人次，月报列示出院人次。月报诊疗合计和基层诊疗剔除诊所、医务室及村卫生室。</p></div></div>
+      <p class="blood-note">月报同比采用当期公告的同期口径，年度同比按公报表列数计算，诊疗量因四舍五入可能与公报文字同比略有差异。病床使用率同比用百分点。单月公告通常没有病床使用率，可在累计和年度中查看。 <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委月报目录</a></p>
+      <div class="blood-controls" id="service-table-controls" hidden>
+        <label>机构<select id="service-table-group"><option value="">全部机构</option>
+        <option value="all">医疗卫生机构合计</option><option value="hospital">医院合计</option><option value="public">公立医院</option><option value="private">民营医院</option><option value="primary">基层医疗卫生机构</option><option value="community">社区卫生服务中心</option><option value="township">乡镇卫生院</option></select></label>
+      </div>
+      <details class="services-fold" data-service-table="monthly" open><summary>单月 · 30 个期间</summary><div class="blood-scroll" role="region" aria-label="单月医疗服务量" tabindex="0">
+    <table class="blood-table"><thead><tr>
+      <th scope="col">期间</th><th scope="col">机构类型</th>
+      <th scope="col">诊疗人次（亿人次）</th><th scope="col">诊疗同比（%）</th><th scope="col">出院人次（万人次）</th><th scope="col">出院同比（%）</th>
+      <th scope="col">发布日期</th><th scope="col">来源</th>
+    </tr></thead><tbody>
+    
+      <tr data-period="2026-03" data-group="all"><th scope="row">2026-03</th><td>医疗卫生机构合计</td>
+      <td>7</td><td>+5%</td><td>2,687</td><td>-0.5%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="hospital"><th scope="row">2026-03</th><td>医院合计</td>
+      <td>4.2</td><td>+4.9%</td><td>2,256.2</td><td>+1.5%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="public"><th scope="row">2026-03</th><td>公立医院</td>
+      <td>3.6</td><td>+5.4%</td><td>1,912.7</td><td>+3.3%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="private"><th scope="row">2026-03</th><td>民营医院</td>
+      <td>0.7</td><td>+2%</td><td>343.6</td><td>-7.9%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="primary"><th scope="row">2026-03</th><td>基层医疗卫生机构</td>
+      <td>2.5</td><td>+6%</td><td>343.4</td><td>-10.5%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-02" data-group="all"><th scope="row">2026-02</th><td>医疗卫生机构合计</td>
+      <td>5.5</td><td>-7.6%</td><td>2,018.4</td><td>-10.2%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-02" data-group="hospital"><th scope="row">2026-02</th><td>医院合计</td>
+      <td>3.3</td><td>-7.9%</td><td>1,697.5</td><td>-7.3%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-02" data-group="public"><th scope="row">2026-02</th><td>公立医院</td>
+      <td>2.7</td><td>-7.3%</td><td>1,442.3</td><td>-5.7%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-02" data-group="private"><th scope="row">2026-02</th><td>民营医院</td>
+      <td>0.5</td><td>-11.2%</td><td>255.2</td><td>-15.3%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-02" data-group="primary"><th scope="row">2026-02</th><td>基层医疗卫生机构</td>
+      <td>2</td><td>-6.2%</td><td>247.6</td><td>-26.3%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="all"><th scope="row">2026-01</th><td>医疗卫生机构合计</td>
+      <td>6.5</td><td>+6.9%</td><td>2,459.1</td><td>-5.6%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="hospital"><th scope="row">2026-01</th><td>医院合计</td>
+      <td>3.9</td><td>+9.3%</td><td>2,068</td><td>-3%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="public"><th scope="row">2026-01</th><td>公立医院</td>
+      <td>3.3</td><td>+9.6%</td><td>1,756.8</td><td>-1.8%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="private"><th scope="row">2026-01</th><td>民营医院</td>
+      <td>0.6</td><td>+7.6%</td><td>311.2</td><td>-9.7%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="primary"><th scope="row">2026-01</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+3.8%</td><td>303.8</td><td>-18.3%</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="all"><th scope="row">2025-11</th><td>医疗卫生机构合计</td>
+      <td>7.1</td><td>+10.3%</td><td>2,483.7</td><td>+0.3%</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/cms-search/xxgk/getManuscriptXxgk.htm?id=fbc4967a84294501b29004fa76c31f8b" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="hospital"><th scope="row">2025-11</th><td>医院合计</td>
+      <td>4</td><td>+7.8%</td><td>2,066.2</td><td>+0.7%</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/cms-search/xxgk/getManuscriptXxgk.htm?id=fbc4967a84294501b29004fa76c31f8b" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="public"><th scope="row">2025-11</th><td>公立医院</td>
+      <td>3.4</td><td>+7.8%</td><td>1,739.1</td><td>+1.7%</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/cms-search/xxgk/getManuscriptXxgk.htm?id=fbc4967a84294501b29004fa76c31f8b" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="private"><th scope="row">2025-11</th><td>民营医院</td>
+      <td>0.7</td><td>+7.9%</td><td>327.2</td><td>-4.2%</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/cms-search/xxgk/getManuscriptXxgk.htm?id=fbc4967a84294501b29004fa76c31f8b" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="primary"><th scope="row">2025-11</th><td>基层医疗卫生机构</td>
+      <td>2.7</td><td>+14.6%</td><td>321</td><td>-2%</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/cms-search/xxgk/getManuscriptXxgk.htm?id=fbc4967a84294501b29004fa76c31f8b" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-10" data-group="all"><th scope="row">2025-10</th><td>医疗卫生机构合计</td>
+      <td>6.5</td><td>+3.9%</td><td>—</td><td>—</td>
+      <td>2026-06-04</td>
+      <td><a href="https://www.studocu.com/en-us/document/emory-university/introduction-to-sociology/2025%E5%B9%B410%E6%9C%88%E5%85%A8%E5%9B%BD%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E6%83%85%E5%86%B5-just-now/167932156" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/12955a0e33444518909a2b52b8d427cd.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-10" data-group="hospital"><th scope="row">2025-10</th><td>医院合计</td>
+      <td>3.8</td><td>+3.6%</td><td>—</td><td>—</td>
+      <td>2026-06-04</td>
+      <td><a href="https://www.studocu.com/en-us/document/emory-university/introduction-to-sociology/2025%E5%B9%B410%E6%9C%88%E5%85%A8%E5%9B%BD%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E6%83%85%E5%86%B5-just-now/167932156" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/12955a0e33444518909a2b52b8d427cd.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-10" data-group="public"><th scope="row">2025-10</th><td>公立医院</td>
+      <td>3.2</td><td>+4.2%</td><td>—</td><td>—</td>
+      <td>2026-06-04</td>
+      <td><a href="https://www.studocu.com/en-us/document/emory-university/introduction-to-sociology/2025%E5%B9%B410%E6%9C%88%E5%85%A8%E5%9B%BD%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E6%83%85%E5%86%B5-just-now/167932156" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/12955a0e33444518909a2b52b8d427cd.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-10" data-group="private"><th scope="row">2025-10</th><td>民营医院</td>
+      <td>0.6</td><td>+0.6%</td><td>—</td><td>—</td>
+      <td>2026-06-04</td>
+      <td><a href="https://www.studocu.com/en-us/document/emory-university/introduction-to-sociology/2025%E5%B9%B410%E6%9C%88%E5%85%A8%E5%9B%BD%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E6%83%85%E5%86%B5-just-now/167932156" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/12955a0e33444518909a2b52b8d427cd.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-10" data-group="primary"><th scope="row">2025-10</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+4.8%</td><td>—</td><td>—</td>
+      <td>2026-06-04</td>
+      <td><a href="https://www.studocu.com/en-us/document/emory-university/introduction-to-sociology/2025%E5%B9%B410%E6%9C%88%E5%85%A8%E5%9B%BD%E5%8C%BB%E7%96%97%E6%9C%8D%E5%8A%A1%E6%83%85%E5%86%B5-just-now/167932156" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/12955a0e33444518909a2b52b8d427cd.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-09" data-group="all"><th scope="row">2025-09</th><td>医疗卫生机构合计</td>
+      <td>6.5</td><td>+8.1%</td><td>2,359.3</td><td>+0.3%</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3549" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-09" data-group="hospital"><th scope="row">2025-09</th><td>医院合计</td>
+      <td>3.9</td><td>+8.5%</td><td>1,990</td><td>+2.3%</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3549" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-09" data-group="public"><th scope="row">2025-09</th><td>公立医院</td>
+      <td>3.3</td><td>+9.1%</td><td>1,680.3</td><td>+4.6%</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3549" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-09" data-group="private"><th scope="row">2025-09</th><td>民营医院</td>
+      <td>0.6</td><td>+5.1%</td><td>309.7</td><td>-8.6%</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3549" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-09" data-group="primary"><th scope="row">2025-09</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+8.3%</td><td>290.7</td><td>-9.8%</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3549" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-08" data-group="all"><th scope="row">2025-08</th><td>医疗卫生机构合计</td>
+      <td>6.5</td><td>+4%</td><td>2,430</td><td>-5%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8cbc2d2159b64662aa8e9cdfe8c752dc.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="hospital"><th scope="row">2025-08</th><td>医院合计</td>
+      <td>4</td><td>+4.3%</td><td>2,049.6</td><td>-3.5%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8cbc2d2159b64662aa8e9cdfe8c752dc.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="public"><th scope="row">2025-08</th><td>公立医院</td>
+      <td>3.3</td><td>+4.9%</td><td>1,728.5</td><td>-1.4%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8cbc2d2159b64662aa8e9cdfe8c752dc.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="private"><th scope="row">2025-08</th><td>民营医院</td>
+      <td>0.6</td><td>+1.6%</td><td>321.1</td><td>-13.4%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8cbc2d2159b64662aa8e9cdfe8c752dc.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="primary"><th scope="row">2025-08</th><td>基层医疗卫生机构</td>
+      <td>2.3</td><td>+4.1%</td><td>296.2</td><td>-13.6%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8cbc2d2159b64662aa8e9cdfe8c752dc.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="all"><th scope="row">2025-07</th><td>医疗卫生机构合计</td>
+      <td>6.5</td><td>+1.5%</td><td>2,500.6</td><td>-7.1%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3547" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-07" data-group="hospital"><th scope="row">2025-07</th><td>医院合计</td>
+      <td>4</td><td>+1.9%</td><td>2,109</td><td>-5.4%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3547" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-07" data-group="public"><th scope="row">2025-07</th><td>公立医院</td>
+      <td>3.3</td><td>+2.2%</td><td>1,781.7</td><td>-3.1%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3547" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-07" data-group="private"><th scope="row">2025-07</th><td>民营医院</td>
+      <td>0.6</td><td>-0.1%</td><td>327.3</td><td>-16.2%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3547" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-07" data-group="primary"><th scope="row">2025-07</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+1.9%</td><td>300.6</td><td>-16.7%</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3547" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-06" data-group="all"><th scope="row">2025-06</th><td>医疗卫生机构合计</td>
+      <td>6.3</td><td>+3.6%</td><td>2,311.3</td><td>-7%</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3546" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-06" data-group="hospital"><th scope="row">2025-06</th><td>医院合计</td>
+      <td>3.8</td><td>+3.4%</td><td>1,928.1</td><td>-5.2%</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3546" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-06" data-group="public"><th scope="row">2025-06</th><td>公立医院</td>
+      <td>3.2</td><td>+4%</td><td>1,617.2</td><td>-3%</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3546" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-06" data-group="private"><th scope="row">2025-06</th><td>民营医院</td>
+      <td>0.6</td><td>+0.7%</td><td>310.9</td><td>-15.4%</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3546" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-06" data-group="primary"><th scope="row">2025-06</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+5%</td><td>297.6</td><td>-15.4%</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3546" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-05" data-group="all"><th scope="row">2025-05</th><td>医疗卫生机构合计</td>
+      <td>6.4</td><td>+1.6%</td><td>2,468.4</td><td>-6.5%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3545" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-05" data-group="hospital"><th scope="row">2025-05</th><td>医院合计</td>
+      <td>3.9</td><td>+1.6%</td><td>2,059.4</td><td>-4.5%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3545" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-05" data-group="public"><th scope="row">2025-05</th><td>公立医院</td>
+      <td>3.3</td><td>+1.7%</td><td>1,724</td><td>-1.8%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3545" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-05" data-group="private"><th scope="row">2025-05</th><td>民营医院</td>
+      <td>0.6</td><td>+1.1%</td><td>335.4</td><td>-16.5%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3545" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-05" data-group="primary"><th scope="row">2025-05</th><td>基层医疗卫生机构</td>
+      <td>2.3</td><td>+2.6%</td><td>319.1</td><td>-16.2%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3545" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-04" data-group="all"><th scope="row">2025-04</th><td>医疗卫生机构合计</td>
+      <td>6.6</td><td>+3.8%</td><td>2,597.8</td><td>-5.4%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3544" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-04" data-group="hospital"><th scope="row">2025-04</th><td>医院合计</td>
+      <td>4</td><td>+4.1%</td><td>2,156.9</td><td>-3.7%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3544" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-04" data-group="public"><th scope="row">2025-04</th><td>公立医院</td>
+      <td>3.3</td><td>+4.5%</td><td>1,806.4</td><td>-1.4%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3544" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-04" data-group="private"><th scope="row">2025-04</th><td>民营医院</td>
+      <td>0.6</td><td>+2.3%</td><td>350.5</td><td>-14.3%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3544" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-04" data-group="primary"><th scope="row">2025-04</th><td>基层医疗卫生机构</td>
+      <td>2.3</td><td>+4.2%</td><td>348.4</td><td>-13.9%</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3544" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-03" data-group="all"><th scope="row">2025-03</th><td>医疗卫生机构合计</td>
+      <td>6.7</td><td>-0.7%</td><td>2,700.4</td><td>-8.6%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/6846e6332f0d4c8bacca6a56a7cdb073.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="hospital"><th scope="row">2025-03</th><td>医院合计</td>
+      <td>4</td><td>+0.8%</td><td>2,223.8</td><td>-6.5%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/6846e6332f0d4c8bacca6a56a7cdb073.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="public"><th scope="row">2025-03</th><td>公立医院</td>
+      <td>3.4</td><td>+1.5%</td><td>1,850.9</td><td>-4.2%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/6846e6332f0d4c8bacca6a56a7cdb073.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="private"><th scope="row">2025-03</th><td>民营医院</td>
+      <td>0.7</td><td>-2.5%</td><td>372.9</td><td>-16.4%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/6846e6332f0d4c8bacca6a56a7cdb073.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="primary"><th scope="row">2025-03</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>-2.1%</td><td>383.9</td><td>-18.2%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/6846e6332f0d4c8bacca6a56a7cdb073.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-02" data-group="all"><th scope="row">2025-02</th><td>医疗卫生机构合计</td>
+      <td>5.9</td><td>+10.4%</td><td>2,246.6</td><td>-1.2%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/ec8b57f66a364be394e485eede97bea2.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-02" data-group="hospital"><th scope="row">2025-02</th><td>医院合计</td>
+      <td>3.5</td><td>+12.9%</td><td>1,830.9</td><td>+0.6%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/ec8b57f66a364be394e485eede97bea2.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-02" data-group="public"><th scope="row">2025-02</th><td>公立医院</td>
+      <td>3</td><td>+13.3%</td><td>1,529.8</td><td>+2%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/ec8b57f66a364be394e485eede97bea2.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-02" data-group="private"><th scope="row">2025-02</th><td>民营医院</td>
+      <td>0.6</td><td>+10.8%</td><td>301.1</td><td>-5.8%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/ec8b57f66a364be394e485eede97bea2.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-02" data-group="primary"><th scope="row">2025-02</th><td>基层医疗卫生机构</td>
+      <td>2.1</td><td>+7.4%</td><td>335.8</td><td>-7%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/ec8b57f66a364be394e485eede97bea2.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="all"><th scope="row">2025-01</th><td>医疗卫生机构合计</td>
+      <td>6.1</td><td>-8%</td><td>2,605.2</td><td>-7.7%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="hospital"><th scope="row">2025-01</th><td>医院合计</td>
+      <td>3.5</td><td>-9.3%</td><td>2,133</td><td>-6.1%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="public"><th scope="row">2025-01</th><td>公立医院</td>
+      <td>3</td><td>-9.1%</td><td>1,788.3</td><td>-4.1%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="private"><th scope="row">2025-01</th><td>民营医院</td>
+      <td>0.6</td><td>-10.3%</td><td>344.7</td><td>-15.2%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="primary"><th scope="row">2025-01</th><td>基层医疗卫生机构</td>
+      <td>2.3</td><td>-5.1%</td><td>371.9</td><td>-15.4%</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="all"><th scope="row">2024-11</th><td>医疗卫生机构合计</td>
+      <td>6.4</td><td>-3.8%</td><td>2,476.7</td><td>-4.7%</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3314" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-11" data-group="hospital"><th scope="row">2024-11</th><td>医院合计</td>
+      <td>3.8</td><td>-3.3%</td><td>2,051.2</td><td>-3.3%</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3314" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-11" data-group="public"><th scope="row">2024-11</th><td>公立医院</td>
+      <td>3.1</td><td>-3.1%</td><td>1,709.6</td><td>-1.5%</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3314" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-11" data-group="private"><th scope="row">2024-11</th><td>民营医院</td>
+      <td>0.6</td><td>-4.5%</td><td>341.6</td><td>-11.6%</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3314" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-11" data-group="primary"><th scope="row">2024-11</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>-3.7%</td><td>327.6</td><td>-11.3%</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3314" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-10" data-group="all"><th scope="row">2024-10</th><td>医疗卫生机构合计</td>
+      <td>6.2</td><td>-0.9%</td><td>2,390.4</td><td>+0.1%</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/c79e9a487d8146a386497040f34563e1.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="hospital"><th scope="row">2024-10</th><td>医院合计</td>
+      <td>3.7</td><td>-1.2%</td><td>1,972.9</td><td>+1.3%</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/c79e9a487d8146a386497040f34563e1.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="public"><th scope="row">2024-10</th><td>公立医院</td>
+      <td>3.1</td><td>-1.2%</td><td>1,624.1</td><td>+2.6%</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/c79e9a487d8146a386497040f34563e1.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="private"><th scope="row">2024-10</th><td>民营医院</td>
+      <td>0.6</td><td>-1.1%</td><td>348.9</td><td>-4.4%</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/c79e9a487d8146a386497040f34563e1.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="primary"><th scope="row">2024-10</th><td>基层医疗卫生机构</td>
+      <td>2.3</td><td>+1%</td><td>328.1</td><td>-3.8%</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/c79e9a487d8146a386497040f34563e1.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="all"><th scope="row">2024-09</th><td>医疗卫生机构合计</td>
+      <td>6</td><td>+2.7%</td><td>2,351.2</td><td>-0.4%</td>
+      <td>2025-05-28</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/ccd7f56215274ebe9b59d650ddae917c.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="hospital"><th scope="row">2024-09</th><td>医院合计</td>
+      <td>3.6</td><td>+1.9%</td><td>1,944.5</td><td>-0.2%</td>
+      <td>2025-05-28</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/ccd7f56215274ebe9b59d650ddae917c.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="public"><th scope="row">2024-09</th><td>公立医院</td>
+      <td>3</td><td>+2%</td><td>1,605.8</td><td>+0.5%</td>
+      <td>2025-05-28</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/ccd7f56215274ebe9b59d650ddae917c.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="private"><th scope="row">2024-09</th><td>民营医院</td>
+      <td>0.6</td><td>+1%</td><td>338.7</td><td>-3.3%</td>
+      <td>2025-05-28</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/ccd7f56215274ebe9b59d650ddae917c.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="primary"><th scope="row">2024-09</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+5.2%</td><td>322.2</td><td>-2.1%</td>
+      <td>2025-05-28</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/ccd7f56215274ebe9b59d650ddae917c.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="all"><th scope="row">2024-08</th><td>医疗卫生机构合计</td>
+      <td>6.3</td><td>+4.6%</td><td>2,558.8</td><td>+2.3%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/be4b7e4eb32c4b80bd0e6ef95f6fa485.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="hospital"><th scope="row">2024-08</th><td>医院合计</td>
+      <td>3.8</td><td>+3.4%</td><td>2,123.9</td><td>+2.4%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/be4b7e4eb32c4b80bd0e6ef95f6fa485.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="public"><th scope="row">2024-08</th><td>公立医院</td>
+      <td>3.2</td><td>+3%</td><td>1,753</td><td>+2.8%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/be4b7e4eb32c4b80bd0e6ef95f6fa485.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="private"><th scope="row">2024-08</th><td>民营医院</td>
+      <td>0.6</td><td>+5.2%</td><td>370.9</td><td>+0.8%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/be4b7e4eb32c4b80bd0e6ef95f6fa485.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="primary"><th scope="row">2024-08</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+8.2%</td><td>343</td><td>+2.3%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/be4b7e4eb32c4b80bd0e6ef95f6fa485.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-07" data-group="all"><th scope="row">2024-07</th><td>医疗卫生机构合计</td>
+      <td>6.4</td><td>+9.2%</td><td>2,692.5</td><td>+4.9%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3127" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-07" data-group="hospital"><th scope="row">2024-07</th><td>医院合计</td>
+      <td>3.9</td><td>+8.4%</td><td>2,228.7</td><td>+5.2%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3127" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-07" data-group="public"><th scope="row">2024-07</th><td>公立医院</td>
+      <td>3.3</td><td>+8.7%</td><td>1,837.9</td><td>+5.3%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3127" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-07" data-group="private"><th scope="row">2024-07</th><td>民营医院</td>
+      <td>0.6</td><td>+6.7%</td><td>390.8</td><td>+4.4%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3127" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-07" data-group="primary"><th scope="row">2024-07</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+12%</td><td>360.8</td><td>+3.8%</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3127" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-06" data-group="all"><th scope="row">2024-06</th><td>医疗卫生机构合计</td>
+      <td>6.1</td><td>+5%</td><td>2,485.3</td><td>-2.2%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/7ff6a6b4194246258f6059eea51655a3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="hospital"><th scope="row">2024-06</th><td>医院合计</td>
+      <td>3.6</td><td>+4.7%</td><td>2,034.8</td><td>-1.4%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/7ff6a6b4194246258f6059eea51655a3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="public"><th scope="row">2024-06</th><td>公立医院</td>
+      <td>3</td><td>+4.5%</td><td>1,667.4</td><td>-1.8%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/7ff6a6b4194246258f6059eea51655a3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="private"><th scope="row">2024-06</th><td>民营医院</td>
+      <td>0.6</td><td>+5.8%</td><td>367.4</td><td>+0.7%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/7ff6a6b4194246258f6059eea51655a3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="primary"><th scope="row">2024-06</th><td>基层医疗卫生机构</td>
+      <td>2.1</td><td>+6.3%</td><td>351.9</td><td>-7%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/7ff6a6b4194246258f6059eea51655a3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="all"><th scope="row">2024-05</th><td>医疗卫生机构合计</td>
+      <td>6.3</td><td>+5.3%</td><td>2,639.2</td><td>+3.1%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3125" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-05" data-group="hospital"><th scope="row">2024-05</th><td>医院合计</td>
+      <td>3.8</td><td>+4.9%</td><td>2,157.2</td><td>+4.1%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3125" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-05" data-group="public"><th scope="row">2024-05</th><td>公立医院</td>
+      <td>3.2</td><td>+4.9%</td><td>1,755.5</td><td>+3.5%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3125" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-05" data-group="private"><th scope="row">2024-05</th><td>民营医院</td>
+      <td>0.6</td><td>+4.6%</td><td>401.7</td><td>+6.9%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3125" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-05" data-group="primary"><th scope="row">2024-05</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+6.8%</td><td>380.6</td><td>-1.6%</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3125" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-04" data-group="all"><th scope="row">2024-04</th><td>医疗卫生机构合计</td>
+      <td>6.3</td><td>+11.2%</td><td>2,745.9</td><td>+4.6%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/f0f03cfdea6d4608be671ce929610da6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="hospital"><th scope="row">2024-04</th><td>医院合计</td>
+      <td>3.8</td><td>+10.7%</td><td>2,240.1</td><td>+6.6%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/f0f03cfdea6d4608be671ce929610da6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="public"><th scope="row">2024-04</th><td>公立医院</td>
+      <td>3.2</td><td>+11.2%</td><td>1,831.2</td><td>+6.6%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/f0f03cfdea6d4608be671ce929610da6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="private"><th scope="row">2024-04</th><td>民营医院</td>
+      <td>0.6</td><td>+8.6%</td><td>409</td><td>+6.9%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/f0f03cfdea6d4608be671ce929610da6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="primary"><th scope="row">2024-04</th><td>基层医疗卫生机构</td>
+      <td>2.2</td><td>+12.8%</td><td>404.6</td><td>-5.3%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/f0f03cfdea6d4608be671ce929610da6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-03" data-group="all"><th scope="row">2024-03</th><td>医疗卫生机构合计</td>
+      <td>6.7</td><td>+6.5%</td><td>2,953.2</td><td>+7.3%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3078" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-03" data-group="hospital"><th scope="row">2024-03</th><td>医院合计</td>
+      <td>4</td><td>+4%</td><td>2,377.5</td><td>+6.6%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3078" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-03" data-group="public"><th scope="row">2024-03</th><td>公立医院</td>
+      <td>3.3</td><td>+4%</td><td>1,931.4</td><td>+6.1%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3078" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-03" data-group="private"><th scope="row">2024-03</th><td>民营医院</td>
+      <td>0.7</td><td>+4%</td><td>446.1</td><td>+8.6%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3078" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-03" data-group="primary"><th scope="row">2024-03</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+12%</td><td>469.5</td><td>+11.8%</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3078" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-02" data-group="all"><th scope="row">2024-02</th><td>医疗卫生机构合计</td>
+      <td>5.3</td><td>+7.9%</td><td>2,272.9</td><td>+5.1%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3077" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-02" data-group="hospital"><th scope="row">2024-02</th><td>医院合计</td>
+      <td>3.1</td><td>+2.5%</td><td>1,820</td><td>+0.9%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3077" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-02" data-group="public"><th scope="row">2024-02</th><td>公立医院</td>
+      <td>2.6</td><td>+2.6%</td><td>1,500.5</td><td>+1.7%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3077" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-02" data-group="private"><th scope="row">2024-02</th><td>民营医院</td>
+      <td>0.5</td><td>+1.7%</td><td>319.6</td><td>-2.6%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3077" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-02" data-group="primary"><th scope="row">2024-02</th><td>基层医疗卫生机构</td>
+      <td>2</td><td>+18.8%</td><td>361</td><td>+23.8%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3077" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="all"><th scope="row">2024-01</th><td>医疗卫生机构合计</td>
+      <td>6.6</td><td>+43.1%</td><td>2,822.6</td><td>+30.6%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="hospital"><th scope="row">2024-01</th><td>医院合计</td>
+      <td>3.9</td><td>+41.3%</td><td>2,271.8</td><td>+31.3%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="public"><th scope="row">2024-01</th><td>公立医院</td>
+      <td>3.3</td><td>+43.2%</td><td>1,865.5</td><td>+33.6%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="private"><th scope="row">2024-01</th><td>民营医院</td>
+      <td>0.6</td><td>+32.5%</td><td>406.3</td><td>+21.8%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="primary"><th scope="row">2024-01</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+44.9%</td><td>439.6</td><td>+22.4%</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2023-08" data-group="all"><th scope="row">2023-08</th><td>医疗卫生机构合计</td>
+      <td>6</td><td>+5.9%</td><td>2,500.5</td><td>+11.2%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/1ea4c7c6321a4eb3aafa1294d17a02af.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="hospital"><th scope="row">2023-08</th><td>医院合计</td>
+      <td>3.7</td><td>+4.4%</td><td>2,074.1</td><td>+11.7%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/1ea4c7c6321a4eb3aafa1294d17a02af.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="public"><th scope="row">2023-08</th><td>公立医院</td>
+      <td>3.1</td><td>+4.6%</td><td>1,706</td><td>+12.3%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/1ea4c7c6321a4eb3aafa1294d17a02af.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="private"><th scope="row">2023-08</th><td>民营医院</td>
+      <td>0.6</td><td>+3.3%</td><td>368</td><td>+9%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/1ea4c7c6321a4eb3aafa1294d17a02af.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="primary"><th scope="row">2023-08</th><td>基层医疗卫生机构</td>
+      <td>2</td><td>+10.1%</td><td>335.2</td><td>+10.2%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/1ea4c7c6321a4eb3aafa1294d17a02af.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-07" data-group="all"><th scope="row">2023-07</th><td>医疗卫生机构合计</td>
+      <td>5.8</td><td>+3.1%</td><td>2,567.4</td><td>+9.9%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/3724bc7c09e445f58097ccad3f127d21.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-07" data-group="hospital"><th scope="row">2023-07</th><td>医院合计</td>
+      <td>3.6</td><td>+1.5%</td><td>2,119.2</td><td>+11.1%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/3724bc7c09e445f58097ccad3f127d21.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-07" data-group="public"><th scope="row">2023-07</th><td>公立医院</td>
+      <td>3</td><td>+1.6%</td><td>1,744.9</td><td>+12%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/3724bc7c09e445f58097ccad3f127d21.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-07" data-group="private"><th scope="row">2023-07</th><td>民营医院</td>
+      <td>0.6</td><td>+0.8%</td><td>374.3</td><td>+7.1%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/3724bc7c09e445f58097ccad3f127d21.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-07" data-group="primary"><th scope="row">2023-07</th><td>基层医疗卫生机构</td>
+      <td>2</td><td>+7.1%</td><td>347.5</td><td>+2.9%</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/3724bc7c09e445f58097ccad3f127d21.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-06" data-group="all"><th scope="row">2023-06</th><td>医疗卫生机构合计</td>
+      <td>5.8</td><td>+4%</td><td>2,541.8</td><td>+18.2%</td>
+      <td>2024-01-08</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/e00188ac6cad4d8d8978b5423c27c75f.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-06" data-group="hospital"><th scope="row">2023-06</th><td>医院合计</td>
+      <td>3.5</td><td>+1.2%</td><td>2,062.7</td><td>+17.8%</td>
+      <td>2024-01-08</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/e00188ac6cad4d8d8978b5423c27c75f.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-06" data-group="public"><th scope="row">2023-06</th><td>公立医院</td>
+      <td>2.9</td><td>+0.8%</td><td>1,697.8</td><td>+19%</td>
+      <td>2024-01-08</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/e00188ac6cad4d8d8978b5423c27c75f.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-06" data-group="private"><th scope="row">2023-06</th><td>民营医院</td>
+      <td>0.6</td><td>+3.2%</td><td>364.8</td><td>+12.3%</td>
+      <td>2024-01-08</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/e00188ac6cad4d8d8978b5423c27c75f.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-06" data-group="primary"><th scope="row">2023-06</th><td>基层医疗卫生机构</td>
+      <td>2</td><td>+10.1%</td><td>378.4</td><td>+20.2%</td>
+      <td>2024-01-08</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/e00188ac6cad4d8d8978b5423c27c75f.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-05" data-group="all"><th scope="row">2023-05</th><td>医疗卫生机构合计</td>
+      <td>6</td><td>+15.3%</td><td>2,559</td><td>+29%</td>
+      <td>2023-09-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/81d8c077961c477a98ac621b5eb6ddc6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-05" data-group="hospital"><th scope="row">2023-05</th><td>医院合计</td>
+      <td>3.7</td><td>+12.3%</td><td>2,072.1</td><td>+28.2%</td>
+      <td>2023-09-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/81d8c077961c477a98ac621b5eb6ddc6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-05" data-group="public"><th scope="row">2023-05</th><td>公立医院</td>
+      <td>3.1</td><td>+12.5%</td><td>1,696.5</td><td>+30%</td>
+      <td>2023-09-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/81d8c077961c477a98ac621b5eb6ddc6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-05" data-group="private"><th scope="row">2023-05</th><td>民营医院</td>
+      <td>0.6</td><td>+11.2%</td><td>375.6</td><td>+20.4%</td>
+      <td>2023-09-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/81d8c077961c477a98ac621b5eb6ddc6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-05" data-group="primary"><th scope="row">2023-05</th><td>基层医疗卫生机构</td>
+      <td>2.1</td><td>+22.5%</td><td>386.8</td><td>+32.7%</td>
+      <td>2023-09-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/81d8c077961c477a98ac621b5eb6ddc6.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-04" data-group="all"><th scope="row">2023-04</th><td>医疗卫生机构合计</td>
+      <td>5.7</td><td>+16.1%</td><td>2,625.8</td><td>+39.5%</td>
+      <td>2023-09-21</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/4d4c0c90c51047a0bfdcfc966dd431ae.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-04" data-group="hospital"><th scope="row">2023-04</th><td>医院合计</td>
+      <td>3.4</td><td>+13.8%</td><td>2,100.6</td><td>+37.2%</td>
+      <td>2023-09-21</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/4d4c0c90c51047a0bfdcfc966dd431ae.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-04" data-group="public"><th scope="row">2023-04</th><td>公立医院</td>
+      <td>2.9</td><td>+13.9%</td><td>1,718</td><td>+38.4%</td>
+      <td>2023-09-21</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/4d4c0c90c51047a0bfdcfc966dd431ae.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-04" data-group="private"><th scope="row">2023-04</th><td>民营医院</td>
+      <td>0.6</td><td>+13.3%</td><td>382.6</td><td>+32.3%</td>
+      <td>2023-09-21</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/4d4c0c90c51047a0bfdcfc966dd431ae.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-04" data-group="primary"><th scope="row">2023-04</th><td>基层医疗卫生机构</td>
+      <td>2</td><td>+21.4%</td><td>427.4</td><td>+53.3%</td>
+      <td>2023-09-21</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202309/4d4c0c90c51047a0bfdcfc966dd431ae.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+    </tbody></table></div></details><details class="services-fold" data-service-table="cumulative"><summary>年内累计 · 25 个期间</summary><div class="blood-scroll" role="region" aria-label="年内累计医疗服务量" tabindex="0">
+    <table class="blood-table"><thead><tr>
+      <th scope="col">期间</th><th scope="col">机构类型</th>
+      <th scope="col">诊疗人次（亿人次）</th><th scope="col">诊疗同比（%）</th><th scope="col">出院人次（万人次）</th><th scope="col">出院同比（%）</th><th scope="col">病床使用率（%）</th><th scope="col">病床使用率同比变化（个百分点）</th>
+      <th scope="col">发布日期</th><th scope="col">来源</th>
+    </tr></thead><tbody>
+    
+      <tr data-period="2026-03" data-group="all"><th scope="row">2026 年 1–3 月</th><td>医疗卫生机构合计</td>
+      <td>19</td><td>+1.7%</td><td>7,164.6</td><td>-5.1%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="hospital"><th scope="row">2026 年 1–3 月</th><td>医院合计</td>
+      <td>11.4</td><td>+2.2%</td><td>6,021.7</td><td>-2.7%</td><td>76.9</td><td>-0.1 个百分点</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="public"><th scope="row">2026 年 1–3 月</th><td>公立医院</td>
+      <td>9.6</td><td>+2.7%</td><td>5,111.7</td><td>-1.1%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="private"><th scope="row">2026 年 1–3 月</th><td>民营医院</td>
+      <td>1.8</td><td>-0.4%</td><td>910</td><td>-10.7%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="primary"><th scope="row">2026 年 1–3 月</th><td>基层医疗卫生机构</td>
+      <td>6.9</td><td>+1.4%</td><td>894.8</td><td>-18%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="community"><th scope="row">2026 年 1–3 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>47.7</td><td>-2.6 个百分点</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-03" data-group="township"><th scope="row">2026 年 1–3 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>47.3</td><td>-4.9 个百分点</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="all"><th scope="row">2026 年 1–1 月</th><td>医疗卫生机构合计</td>
+      <td>6.5</td><td>+6.9%</td><td>2,459.1</td><td>-5.6%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="hospital"><th scope="row">2026 年 1–1 月</th><td>医院合计</td>
+      <td>3.9</td><td>+9.3%</td><td>2,068</td><td>-3%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="public"><th scope="row">2026 年 1–1 月</th><td>公立医院</td>
+      <td>3.3</td><td>+9.6%</td><td>1,756.8</td><td>-1.8%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="private"><th scope="row">2026 年 1–1 月</th><td>民营医院</td>
+      <td>0.6</td><td>+7.6%</td><td>311.2</td><td>-9.7%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2026-01" data-group="primary"><th scope="row">2026 年 1–1 月</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+3.8%</td><td>303.8</td><td>-18.3%</td><td>—</td><td>—</td>
+      <td>2026-09-08</td>
+      <td><a href="https://chyyyygl.com/jingpinwenzhang/10247.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="all"><th scope="row">2025 年 1–11 月</th><td>医疗卫生机构合计</td>
+      <td>71</td><td>+3.3%</td><td>27,002.2</td><td>-4.9%</td><td>—</td><td>—</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="hospital"><th scope="row">2025 年 1–11 月</th><td>医院合计</td>
+      <td>42.4</td><td>+3.4%</td><td>22,470.1</td><td>-3.2%</td><td>77.2</td><td>-2 个百分点</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="public"><th scope="row">2025 年 1–11 月</th><td>公立医院</td>
+      <td>35.6</td><td>+3.8%</td><td>18,862.1</td><td>-1.2%</td><td>—</td><td>—</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="private"><th scope="row">2025 年 1–11 月</th><td>民营医院</td>
+      <td>6.8</td><td>+1.3%</td><td>3,608</td><td>-12.9%</td><td>—</td><td>—</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="primary"><th scope="row">2025 年 1–11 月</th><td>基层医疗卫生机构</td>
+      <td>25.7</td><td>+4.1%</td><td>3,551.1</td><td>-13.1%</td><td>—</td><td>—</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="community"><th scope="row">2025 年 1–11 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>48.4</td><td>-3.6 个百分点</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-11" data-group="township"><th scope="row">2025 年 1–11 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>48.6</td><td>-5.1 个百分点</td>
+      <td>2026-06-08</td>
+      <td><a href="https://chyyyygl.com/hangyezhengce/9654.html" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202606/bc04005eb66547bdac28ac15626558ce.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2025-09" data-group="all"><th scope="row">2025 年 1–9 月</th><td>医疗卫生机构合计</td>
+      <td>57.5</td><td>+2.5%</td><td>22,219.6</td><td>-5.5%</td><td>—</td><td>—</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-09" data-group="hospital"><th scope="row">2025 年 1–9 月</th><td>医院合计</td>
+      <td>34.5</td><td>+2.8%</td><td>18,480.8</td><td>-3.7%</td><td>77</td><td>-2.5 个百分点</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-09" data-group="public"><th scope="row">2025 年 1–9 月</th><td>公立医院</td>
+      <td>29</td><td>+3.3%</td><td>15,507.1</td><td>-1.5%</td><td>—</td><td>—</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-09" data-group="private"><th scope="row">2025 年 1–9 月</th><td>民营医院</td>
+      <td>5.5</td><td>+0.7%</td><td>2,973.7</td><td>-13.8%</td><td>—</td><td>—</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-09" data-group="primary"><th scope="row">2025 年 1–9 月</th><td>基层医疗卫生机构</td>
+      <td>20.6</td><td>+2.7%</td><td>2,944.1</td><td>-14.2%</td><td>—</td><td>—</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-09" data-group="community"><th scope="row">2025 年 1–9 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>48.3</td><td>-4.4 个百分点</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-09" data-group="township"><th scope="row">2025 年 1–9 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>48.8</td><td>-6 个百分点</td>
+      <td>2026-03-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/0c159bb7c3ab4e2daa5ae8a07b175673.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="all"><th scope="row">2025 年 1–8 月</th><td>医疗卫生机构合计</td>
+      <td>51</td><td>+1.8%</td><td>19,860.3</td><td>-6.2%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="hospital"><th scope="row">2025 年 1–8 月</th><td>医院合计</td>
+      <td>30.6</td><td>+2.2%</td><td>16,490.8</td><td>-4.4%</td><td>77.2</td><td>-3 个百分点</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="public"><th scope="row">2025 年 1–8 月</th><td>公立医院</td>
+      <td>25.7</td><td>+2.6%</td><td>13,826.8</td><td>-2.2%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="private"><th scope="row">2025 年 1–8 月</th><td>民营医院</td>
+      <td>4.9</td><td>+0.2%</td><td>2,664</td><td>-14.4%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="primary"><th scope="row">2025 年 1–8 月</th><td>基层医疗卫生机构</td>
+      <td>18.2</td><td>+2.1%</td><td>2,653.5</td><td>-14.7%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="community"><th scope="row">2025 年 1–8 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>48.5</td><td>-4.7 个百分点</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-08" data-group="township"><th scope="row">2025 年 1–8 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>49.1</td><td>-6.4 个百分点</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/b66ecaf95791420db84372671696c883.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="all"><th scope="row">2025 年 1–7 月</th><td>医疗卫生机构合计</td>
+      <td>44.4</td><td>+1.4%</td><td>17,430.3</td><td>-6.3%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="hospital"><th scope="row">2025 年 1–7 月</th><td>医院合计</td>
+      <td>26.7</td><td>+1.9%</td><td>14,441.1</td><td>-4.6%</td><td>77.3</td><td>-3.2 个百分点</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="public"><th scope="row">2025 年 1–7 月</th><td>公立医院</td>
+      <td>22.4</td><td>+2.2%</td><td>12,098.2</td><td>-2.3%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="private"><th scope="row">2025 年 1–7 月</th><td>民营医院</td>
+      <td>4.3</td><td>-0.1%</td><td>2,342.9</td><td>-14.5%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="primary"><th scope="row">2025 年 1–7 月</th><td>基层医疗卫生机构</td>
+      <td>15.9</td><td>+1.8%</td><td>2,357.2</td><td>-14.8%</td><td>—</td><td>—</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="community"><th scope="row">2025 年 1–7 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>49</td><td>-4.8 个百分点</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-07" data-group="township"><th scope="row">2025 年 1–7 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>49.6</td><td>-6.6 个百分点</td>
+      <td>2026-03-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/39edca521ea74a51a2f94fe3f91f9ad3.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="all"><th scope="row">2025 年 1–6 月</th><td>医疗卫生机构合计</td>
+      <td>37.9</td><td>+1.4%</td><td>14,929.7</td><td>-6.2%</td><td>—</td><td>—</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="hospital"><th scope="row">2025 年 1–6 月</th><td>医院合计</td>
+      <td>22.7</td><td>+1.9%</td><td>12,332.2</td><td>-4.4%</td><td>77.1</td><td>-3.2 个百分点</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="public"><th scope="row">2025 年 1–6 月</th><td>公立医院</td>
+      <td>19.1</td><td>+2.2%</td><td>10,316.5</td><td>-2.2%</td><td>—</td><td>—</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="private"><th scope="row">2025 年 1–6 月</th><td>民营医院</td>
+      <td>3.7</td><td>基本持平</td><td>2,015.6</td><td>-14.2%</td><td>—</td><td>—</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="primary"><th scope="row">2025 年 1–6 月</th><td>基层医疗卫生机构</td>
+      <td>13.7</td><td>+1.7%</td><td>2,056.6</td><td>-14.6%</td><td>—</td><td>—</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="community"><th scope="row">2025 年 1–6 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>49.5</td><td>-4.8 个百分点</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-06" data-group="township"><th scope="row">2025 年 1–6 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>50.3</td><td>-6.7 个百分点</td>
+      <td>2026-03-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/8408d48e290d40e98691092adc8262c5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="all"><th scope="row">2025 年 1–5 月</th><td>医疗卫生机构合计</td>
+      <td>31.7</td><td>+1%</td><td>12,618.4</td><td>-6.1%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="hospital"><th scope="row">2025 年 1–5 月</th><td>医院合计</td>
+      <td>19</td><td>+1.5%</td><td>10,404</td><td>-4.3%</td><td>77.4</td><td>-3.3 个百分点</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="public"><th scope="row">2025 年 1–5 月</th><td>公立医院</td>
+      <td>15.9</td><td>+1.9%</td><td>8,699.3</td><td>-2.1%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="private"><th scope="row">2025 年 1–5 月</th><td>民营医院</td>
+      <td>3.1</td><td>-0.2%</td><td>1,704.7</td><td>-14%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="primary"><th scope="row">2025 年 1–5 月</th><td>基层医疗卫生机构</td>
+      <td>11.4</td><td>+1.1%</td><td>1,759.1</td><td>-14.4%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="community"><th scope="row">2025 年 1–5 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>50.1</td><td>-4.8 个百分点</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-05" data-group="township"><th scope="row">2025 年 1–5 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>51.1</td><td>-6.9 个百分点</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/bea05ac3ef394af9a71507e2379660ac.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="all"><th scope="row">2025 年 1–4 月</th><td>医疗卫生机构合计</td>
+      <td>25.2</td><td>+0.9%</td><td>10,150</td><td>-6%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="hospital"><th scope="row">2025 年 1–4 月</th><td>医院合计</td>
+      <td>15.1</td><td>+1.5%</td><td>8,344.6</td><td>-4.2%</td><td>77.7</td><td>-3.1 个百分点</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="public"><th scope="row">2025 年 1–4 月</th><td>公立医院</td>
+      <td>12.6</td><td>+1.9%</td><td>6,975.3</td><td>-2.1%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="private"><th scope="row">2025 年 1–4 月</th><td>民营医院</td>
+      <td>2.4</td><td>-0.5%</td><td>1,369.3</td><td>-13.4%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="primary"><th scope="row">2025 年 1–4 月</th><td>基层医疗卫生机构</td>
+      <td>9.1</td><td>+0.8%</td><td>1,440</td><td>-14%</td><td>—</td><td>—</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="community"><th scope="row">2025 年 1–4 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>50.7</td><td>-4.6 个百分点</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-04" data-group="township"><th scope="row">2025 年 1–4 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52.1</td><td>-6.7 个百分点</td>
+      <td>2026-03-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202603/f23d1dd2234141c99852e1a70851be33.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="all"><th scope="row">2025 年 1–3 月</th><td>医疗卫生机构合计</td>
+      <td>18.6</td><td>-0.1%</td><td>7,552.2</td><td>-6.2%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="hospital"><th scope="row">2025 年 1–3 月</th><td>医院合计</td>
+      <td>11.1</td><td>+0.6%</td><td>6,187.7</td><td>-4.4%</td><td>77</td><td>-3.2 个百分点</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="public"><th scope="row">2025 年 1–3 月</th><td>公立医院</td>
+      <td>9.3</td><td>+1.1%</td><td>5,168.9</td><td>-2.4%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="private"><th scope="row">2025 年 1–3 月</th><td>民营医院</td>
+      <td>1.8</td><td>-1.5%</td><td>1,018.8</td><td>-13.1%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="primary"><th scope="row">2025 年 1–3 月</th><td>基层医疗卫生机构</td>
+      <td>6.8</td><td>-0.4%</td><td>1,091.6</td><td>-14.1%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="community"><th scope="row">2025 年 1–3 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>50.3</td><td>-4.6 个百分点</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-03" data-group="township"><th scope="row">2025 年 1–3 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52.2</td><td>-6.6 个百分点</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/782e33847c7a4fc888796aa9a5d12dfe.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="all"><th scope="row">2025 年 1–1 月</th><td>医疗卫生机构合计</td>
+      <td>6.1</td><td>-8%</td><td>2,605.2</td><td>-7.7%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="hospital"><th scope="row">2025 年 1–1 月</th><td>医院合计</td>
+      <td>3.5</td><td>-9.3%</td><td>2,133</td><td>-6.1%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="public"><th scope="row">2025 年 1–1 月</th><td>公立医院</td>
+      <td>3</td><td>-9.1%</td><td>1,788.3</td><td>-4.1%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="private"><th scope="row">2025 年 1–1 月</th><td>民营医院</td>
+      <td>0.6</td><td>-10.3%</td><td>344.7</td><td>-15.2%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025-01" data-group="primary"><th scope="row">2025 年 1–1 月</th><td>基层医疗卫生机构</td>
+      <td>2.3</td><td>-5.1%</td><td>371.9</td><td>-15.4%</td><td>—</td><td>—</td>
+      <td>2025-11-18</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202511/c79048fec85e4902b780c36d9b4eae80.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="all"><th scope="row">2024 年 1–11 月</th><td>医疗卫生机构合计</td>
+      <td>68.8</td><td>+7.3%</td><td>28,388.6</td><td>+4.3%</td><td>—</td><td>—</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="hospital"><th scope="row">2024 年 1–11 月</th><td>医院合计</td>
+      <td>41</td><td>+6.2%</td><td>23,222.5</td><td>+4.6%</td><td>79.2</td><td>-1 个百分点</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="public"><th scope="row">2024 年 1–11 月</th><td>公立医院</td>
+      <td>34.3</td><td>+6.4%</td><td>19,081.7</td><td>+5%</td><td>—</td><td>—</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="private"><th scope="row">2024 年 1–11 月</th><td>民营医院</td>
+      <td>6.7</td><td>+5.3%</td><td>4,140.8</td><td>+2.5%</td><td>—</td><td>—</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="primary"><th scope="row">2024 年 1–11 月</th><td>基层医疗卫生机构</td>
+      <td>24.7</td><td>+10.2%</td><td>4,088.6</td><td>+2.6%</td><td>—</td><td>—</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="community"><th scope="row">2024 年 1–11 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52</td><td>+0.4 个百分点</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-11" data-group="township"><th scope="row">2024 年 1–11 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>53.7</td><td>-1 个百分点</td>
+      <td>2025-06-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202506/f93d05e2328f4def8bf53091ff8bbca5.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="all"><th scope="row">2024 年 1–10 月</th><td>医疗卫生机构合计</td>
+      <td>62.4</td><td>+8.6%</td><td>25,911.8</td><td>+5.3%</td><td>—</td><td>—</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="hospital"><th scope="row">2024 年 1–10 月</th><td>医院合计</td>
+      <td>37.3</td><td>+7.3%</td><td>21,171.4</td><td>+5.4%</td><td>79.2</td><td>-0.7 个百分点</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="public"><th scope="row">2024 年 1–10 月</th><td>公立医院</td>
+      <td>31.2</td><td>+7.5%</td><td>17,372.1</td><td>+5.7%</td><td>—</td><td>—</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="private"><th scope="row">2024 年 1–10 月</th><td>民营医院</td>
+      <td>6.1</td><td>+6.4%</td><td>3,799.2</td><td>+4%</td><td>—</td><td>—</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="primary"><th scope="row">2024 年 1–10 月</th><td>基层医疗卫生机构</td>
+      <td>22.4</td><td>+11.9%</td><td>3,761</td><td>+4%</td><td>—</td><td>—</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="community"><th scope="row">2024 年 1–10 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52.2</td><td>+0.9 个百分点</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-10" data-group="township"><th scope="row">2024 年 1–10 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.1</td><td>-0.5 个百分点</td>
+      <td>2025-05-30</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/db7e0483529649db825e102992df5103.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="all"><th scope="row">2024 年 1–9 月</th><td>医疗卫生机构合计</td>
+      <td>56.1</td><td>+9.8%</td><td>23,521.5</td><td>+5.8%</td><td>—</td><td>—</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="hospital"><th scope="row">2024 年 1–9 月</th><td>医院合计</td>
+      <td>33.6</td><td>+8.3%</td><td>19,198.4</td><td>+5.8%</td><td>79.5</td><td>-0.7 个百分点</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="public"><th scope="row">2024 年 1–9 月</th><td>公立医院</td>
+      <td>28.1</td><td>+8.5%</td><td>15,748.1</td><td>+6%</td><td>—</td><td>—</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="private"><th scope="row">2024 年 1–9 月</th><td>民营医院</td>
+      <td>5.5</td><td>+7.3%</td><td>3,450.4</td><td>+4.9%</td><td>—</td><td>—</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="primary"><th scope="row">2024 年 1–9 月</th><td>基层医疗卫生机构</td>
+      <td>20.1</td><td>+13.3%</td><td>3,433</td><td>+4.8%</td><td>—</td><td>—</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="community"><th scope="row">2024 年 1–9 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52.7</td><td>+1.3 个百分点</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-09" data-group="township"><th scope="row">2024 年 1–9 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.8</td><td>-0.1 个百分点</td>
+      <td>2025-05-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202505/4f57be1b2bb04098984e8c25069f1fdf.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="all"><th scope="row">2024 年 1–8 月</th><td>医疗卫生机构合计</td>
+      <td>50.1</td><td>+10.7%</td><td>21,170.3</td><td>+6.5%</td><td>—</td><td>—</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="hospital"><th scope="row">2024 年 1–8 月</th><td>医院合计</td>
+      <td>30</td><td>+9.1%</td><td>17,253.9</td><td>+6.6%</td><td>80.2</td><td>-0.6 个百分点</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="public"><th scope="row">2024 年 1–8 月</th><td>公立医院</td>
+      <td>25.1</td><td>+9.3%</td><td>14,142.3</td><td>+6.7%</td><td>—</td><td>—</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="private"><th scope="row">2024 年 1–8 月</th><td>民营医院</td>
+      <td>4.9</td><td>+8.1%</td><td>3,111.6</td><td>+5.9%</td><td>—</td><td>—</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="primary"><th scope="row">2024 年 1–8 月</th><td>基层医疗卫生机构</td>
+      <td>17.8</td><td>+14.4%</td><td>3,110.8</td><td>+5.6%</td><td>—</td><td>—</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="community"><th scope="row">2024 年 1–8 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>53.2</td><td>+1.6 个百分点</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-08" data-group="township"><th scope="row">2024 年 1–8 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>55.5</td><td>+0.1 个百分点</td>
+      <td>2025-01-06</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/8f6f94462e714086be8dcb38b3adf48a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="all"><th scope="row">2024 年 1–6 月</th><td>医疗卫生机构合计</td>
+      <td>37.4</td><td>+12.1%</td><td>15,919</td><td>+7.5%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="hospital"><th scope="row">2024 年 1–6 月</th><td>医院合计</td>
+      <td>22.3</td><td>+10.3%</td><td>12,901.4</td><td>+7.5%</td><td>80.3</td><td>-0.7 个百分点</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="public"><th scope="row">2024 年 1–6 月</th><td>公立医院</td>
+      <td>18.6</td><td>+10.6%</td><td>10,551.4</td><td>+7.6%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="private"><th scope="row">2024 年 1–6 月</th><td>民营医院</td>
+      <td>3.7</td><td>+8.9%</td><td>2,350</td><td>+7%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="primary"><th scope="row">2024 年 1–6 月</th><td>基层医疗卫生机构</td>
+      <td>13.4</td><td>+15.9%</td><td>2,407.1</td><td>+6.3%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="community"><th scope="row">2024 年 1–6 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.3</td><td>+2.1 个百分点</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-06" data-group="township"><th scope="row">2024 年 1–6 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>57</td><td>+0.5 个百分点</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/4798d5b05f1244e9be24d2ac06677bc4.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="all"><th scope="row">2024 年 1–5 月</th><td>医疗卫生机构合计</td>
+      <td>31.3</td><td>+13.6%</td><td>13,433.7</td><td>+9.6%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="hospital"><th scope="row">2024 年 1–5 月</th><td>医院合计</td>
+      <td>18.7</td><td>+11.5%</td><td>10,866.7</td><td>+9.4%</td><td>80.7</td><td>-0.2 个百分点</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="public"><th scope="row">2024 年 1–5 月</th><td>公立医院</td>
+      <td>15.6</td><td>+11.8%</td><td>8,884</td><td>+9.6%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="private"><th scope="row">2024 年 1–5 月</th><td>民营医院</td>
+      <td>3.1</td><td>+9.5%</td><td>1,982.6</td><td>+8.3%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="primary"><th scope="row">2024 年 1–5 月</th><td>基层医疗卫生机构</td>
+      <td>11.3</td><td>+17.9%</td><td>2,055.2</td><td>+9%</td><td>—</td><td>—</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="community"><th scope="row">2024 年 1–5 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.9</td><td>+2.8 个百分点</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-05" data-group="township"><th scope="row">2024 年 1–5 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>58</td><td>+1.5 个百分点</td>
+      <td>2025-01-03</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202501/1be2878326714b3d94179173768ac332.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="all"><th scope="row">2024 年 1–4 月</th><td>医疗卫生机构合计</td>
+      <td>25</td><td>+15.9%</td><td>10,794.5</td><td>+11.2%</td><td>—</td><td>—</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="hospital"><th scope="row">2024 年 1–4 月</th><td>医院合计</td>
+      <td>14.8</td><td>+13.3%</td><td>8,709.4</td><td>+10.7%</td><td>80.8</td><td>+0.2 个百分点</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="public"><th scope="row">2024 年 1–4 月</th><td>公立医院</td>
+      <td>12.4</td><td>+13.8%</td><td>7,128.5</td><td>+11.2%</td><td>—</td><td>—</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="private"><th scope="row">2024 年 1–4 月</th><td>民营医院</td>
+      <td>2.4</td><td>+10.8%</td><td>1,581</td><td>+8.6%</td><td>—</td><td>—</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="primary"><th scope="row">2024 年 1–4 月</th><td>基层医疗卫生机构</td>
+      <td>9.1</td><td>+21%</td><td>1,674.6</td><td>+11.8%</td><td>—</td><td>—</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="community"><th scope="row">2024 年 1–4 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>55.3</td><td>+3.5 个百分点</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-04" data-group="township"><th scope="row">2024 年 1–4 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>58.8</td><td>+2.4 个百分点</td>
+      <td>2024-10-29</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/5196be73ac54467287f077bf25465726.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="all"><th scope="row">2024 年 1–2 月</th><td>医疗卫生机构合计</td>
+      <td>11.9</td><td>+24.9%</td><td>5,095.4</td><td>+17.8%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="hospital"><th scope="row">2024 年 1–2 月</th><td>医院合计</td>
+      <td>7</td><td>+20.9%</td><td>4,091.8</td><td>+15.8%</td><td>76.9</td><td>0 个百分点</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="public"><th scope="row">2024 年 1–2 月</th><td>公立医院</td>
+      <td>5.9</td><td>+21.8%</td><td>3,365.9</td><td>+17.3%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="private"><th scope="row">2024 年 1–2 月</th><td>民营医院</td>
+      <td>1.1</td><td>+16.6%</td><td>725.9</td><td>+9.7%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="primary"><th scope="row">2024 年 1–2 月</th><td>基层医疗卫生机构</td>
+      <td>4.4</td><td>+31.8%</td><td>800.6</td><td>+23%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="community"><th scope="row">2024 年 1–2 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52.3</td><td>+5.1 个百分点</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-02" data-group="township"><th scope="row">2024 年 1–2 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>56.5</td><td>+4.3 个百分点</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202410/ec30c6feee0245319e808b6adc085f60.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024-01" data-group="all"><th scope="row">2024 年 1–1 月</th><td>医疗卫生机构合计</td>
+      <td>6.6</td><td>+43.1%</td><td>2,822.6</td><td>+30.6%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="hospital"><th scope="row">2024 年 1–1 月</th><td>医院合计</td>
+      <td>3.9</td><td>+41.3%</td><td>2,271.8</td><td>+31.3%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="public"><th scope="row">2024 年 1–1 月</th><td>公立医院</td>
+      <td>3.3</td><td>+43.2%</td><td>1,865.5</td><td>+33.6%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="private"><th scope="row">2024 年 1–1 月</th><td>民营医院</td>
+      <td>0.6</td><td>+32.5%</td><td>406.3</td><td>+21.8%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2024-01" data-group="primary"><th scope="row">2024 年 1–1 月</th><td>基层医疗卫生机构</td>
+      <td>2.4</td><td>+44.9%</td><td>439.6</td><td>+22.4%</td><td>—</td><td>—</td>
+      <td>2024-10-25</td>
+      <td><a href="https://www.qmjksjzx.com/synews_view.aspx?id=3076" target="_blank" rel="noopener">核对来源</a> · <a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml" target="_blank" rel="noopener">卫健委</a></td></tr>
+      <tr data-period="2023-11" data-group="all"><th scope="row">2023 年 1–11 月</th><td>医疗卫生机构合计</td>
+      <td>64.1</td><td>+9.4%</td><td>27,217.2</td><td>+20.8%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-11" data-group="hospital"><th scope="row">2023 年 1–11 月</th><td>医院合计</td>
+      <td>38.6</td><td>+7.1%</td><td>22,210.3</td><td>+20.4%</td><td>80.2</td><td>+7.3 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-11" data-group="public"><th scope="row">2023 年 1–11 月</th><td>公立医院</td>
+      <td>32.3</td><td>+6.7%</td><td>18,170.5</td><td>+21.1%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-11" data-group="private"><th scope="row">2023 年 1–11 月</th><td>民营医院</td>
+      <td>6.4</td><td>+9.3%</td><td>4,039.8</td><td>+17.6%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-11" data-group="primary"><th scope="row">2023 年 1–11 月</th><td>基层医疗卫生机构</td>
+      <td>22.4</td><td>+14.6%</td><td>3,986</td><td>+24.5%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-11" data-group="community"><th scope="row">2023 年 1–11 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>51.6</td><td>+8.3 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-11" data-group="township"><th scope="row">2023 年 1–11 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.7</td><td>+5.3 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/9d2b2354c5bc44c7a489952ab47cfe65.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="all"><th scope="row">2023 年 1–10 月</th><td>医疗卫生机构合计</td>
+      <td>57.4</td><td>+7.5%</td><td>24,618.5</td><td>+19.3%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="hospital"><th scope="row">2023 年 1–10 月</th><td>医院合计</td>
+      <td>34.7</td><td>+5.6%</td><td>20,088.1</td><td>+18.9%</td><td>79.9</td><td>+6.5 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="public"><th scope="row">2023 年 1–10 月</th><td>公立医院</td>
+      <td>29</td><td>+5.3%</td><td>16,434.8</td><td>+19.5%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="private"><th scope="row">2023 年 1–10 月</th><td>民营医院</td>
+      <td>5.7</td><td>+7%</td><td>3,653.4</td><td>+16.4%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="primary"><th scope="row">2023 年 1–10 月</th><td>基层医疗卫生机构</td>
+      <td>20</td><td>+12.1%</td><td>3,616.6</td><td>+23%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="community"><th scope="row">2023 年 1–10 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>51.3</td><td>+7.7 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-10" data-group="township"><th scope="row">2023 年 1–10 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.6</td><td>+4.9 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/1d00668290a949b5b5e757e957c913a8.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="all"><th scope="row">2023 年 1–9 月</th><td>医疗卫生机构合计</td>
+      <td>51.1</td><td>+6%</td><td>22,231.5</td><td>+18.9%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="hospital"><th scope="row">2023 年 1–9 月</th><td>医院合计</td>
+      <td>31</td><td>+3.9%</td><td>18,140.3</td><td>+18.5%</td><td>80.2</td><td>+6.4 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="public"><th scope="row">2023 年 1–9 月</th><td>公立医院</td>
+      <td>25.9</td><td>+3.5%</td><td>14,852</td><td>+19.1%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="private"><th scope="row">2023 年 1–9 月</th><td>民营医院</td>
+      <td>5.1</td><td>+5.8%</td><td>3,288.3</td><td>+16%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="primary"><th scope="row">2023 年 1–9 月</th><td>基层医疗卫生机构</td>
+      <td>17.7</td><td>+11.2%</td><td>3,275.5</td><td>+22.7%</td><td>—</td><td>—</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="community"><th scope="row">2023 年 1–9 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>51.4</td><td>+7.6 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-09" data-group="township"><th scope="row">2023 年 1–9 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>54.9</td><td>+4.8 个百分点</td>
+      <td>2024-05-10</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202405/38524773c30e4d00a70853bd3d888d00.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="all"><th scope="row">2023 年 1–8 月</th><td>医疗卫生机构合计</td>
+      <td>45.2</td><td>+5.3%</td><td>19,871.8</td><td>+19%</td><td>—</td><td>—</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="hospital"><th scope="row">2023 年 1–8 月</th><td>医院合计</td>
+      <td>27.5</td><td>+3%</td><td>16,192.4</td><td>+18.7%</td><td>80.8</td><td>+6.7 个百分点</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="public"><th scope="row">2023 年 1–8 月</th><td>公立医院</td>
+      <td>23</td><td>+2.6%</td><td>13,254.5</td><td>+19.2%</td><td>—</td><td>—</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="private"><th scope="row">2023 年 1–8 月</th><td>民营医院</td>
+      <td>4.5</td><td>+5.2%</td><td>2,938</td><td>+16.2%</td><td>—</td><td>—</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="primary"><th scope="row">2023 年 1–8 月</th><td>基层医疗卫生机构</td>
+      <td>15.6</td><td>+10.6%</td><td>2,946.3</td><td>+22.8%</td><td>—</td><td>—</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="community"><th scope="row">2023 年 1–8 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>51.6</td><td>+7.6 个百分点</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-08" data-group="township"><th scope="row">2023 年 1–8 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>55.4</td><td>+5.1 个百分点</td>
+      <td>2024-01-09</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202401/8268e538a7074e48aef0b64bcca1624a.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="all"><th scope="row">2023 年 1–2 月</th><td>医疗卫生机构合计</td>
+      <td>9.6</td><td>-7.8%</td><td>4,323.7</td><td>+12.1%</td><td>—</td><td>—</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="hospital"><th scope="row">2023 年 1–2 月</th><td>医院合计</td>
+      <td>5.8</td><td>-10%</td><td>3,532.6</td><td>+11.7%</td><td>76.9</td><td>+6.6 个百分点</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="public"><th scope="row">2023 年 1–2 月</th><td>公立医院</td>
+      <td>4.8</td><td>-11.2%</td><td>2,870.7</td><td>+11%</td><td>—</td><td>—</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="private"><th scope="row">2023 年 1–2 月</th><td>民营医院</td>
+      <td>1</td><td>-3.6%</td><td>661.9</td><td>+14.7%</td><td>—</td><td>—</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="primary"><th scope="row">2023 年 1–2 月</th><td>基层医疗卫生机构</td>
+      <td>3.3</td><td>-2.3%</td><td>650.9</td><td>+20.7%</td><td>—</td><td>—</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="community"><th scope="row">2023 年 1–2 月</th><td>社区卫生服务中心</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>47.2</td><td>+6.6 个百分点</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023-02" data-group="township"><th scope="row">2023 年 1–2 月</th><td>乡镇卫生院</td>
+      <td>—</td><td>—</td><td>—</td><td>—</td><td>52.2</td><td>+5.2 个百分点</td>
+      <td>2023-07-05</td>
+      <td><a href="https://www.nhc.gov.cn/mohwsbwstjxxzx/s7967/202307/44c510dd13c84e91ae47a3f65e9727d9.shtml" target="_blank" rel="noopener">原始披露</a></td></tr>
+    </tbody></table></div></details><details class="services-fold" data-service-table="annual"><summary>年度 · 9 个期间</summary><div class="blood-scroll" role="region" aria-label="年度医疗服务量" tabindex="0">
+    <table class="blood-table"><thead><tr>
+      <th scope="col">期间</th><th scope="col">机构类型</th>
+      <th scope="col">诊疗人次（亿人次）</th><th scope="col">诊疗同比（%）</th><th scope="col">入院人次（万人次）</th><th scope="col">入院同比（%）</th><th scope="col">病床使用率（%）</th><th scope="col">病床使用率同比变化（个百分点）</th>
+      <th scope="col">发布日期</th><th scope="col">来源</th>
+    </tr></thead><tbody>
+    
+      <tr data-period="2025" data-group="all"><th scope="row">2025</th><td>医疗卫生机构合计</td>
+      <td>106.5</td><td>+4.9%</td><td>29,910.7</td><td>-4.1%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025" data-group="hospital"><th scope="row">2025</th><td>医院合计</td>
+      <td>46.7</td><td>+3.8%</td><td>24,814.8</td><td>-2.5%</td><td>78</td><td>-0.8 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025" data-group="public"><th scope="row">2025</th><td>公立医院</td>
+      <td>39.3</td><td>+4.2%</td><td>20,826.4</td><td>-0.6%</td><td>83.7</td><td>-1.1 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025" data-group="private"><th scope="row">2025</th><td>民营医院</td>
+      <td>7.4</td><td>+1.4%</td><td>3,988.4</td><td>-11.4%</td><td>64</td><td>-0.3 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2025" data-group="primary"><th scope="row">2025</th><td>基层医疗卫生机构</td>
+      <td>56.5</td><td>+6.8%</td><td>4,006</td><td>-11.8%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024" data-group="all"><th scope="row">2024</th><td>医疗卫生机构合计</td>
+      <td>101.5</td><td>+6.3%</td><td>31,192</td><td>+3.3%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024" data-group="hospital"><th scope="row">2024</th><td>医院合计</td>
+      <td>45</td><td>+5.6%</td><td>25,462</td><td>+3.9%</td><td>78.8</td><td>-0.6 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024" data-group="public"><th scope="row">2024</th><td>公立医院</td>
+      <td>37.7</td><td>+5.9%</td><td>20,959.6</td><td>+4.8%</td><td>84.8</td><td>-1.2 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024" data-group="private"><th scope="row">2024</th><td>民营医院</td>
+      <td>7.3</td><td>+4.3%</td><td>4,502.4</td><td>+0.2%</td><td>64.3</td><td>+0.8 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2024" data-group="primary"><th scope="row">2024</th><td>基层医疗卫生机构</td>
+      <td>52.9</td><td>+7.1%</td><td>4,539.7</td><td>-0.1%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023" data-group="all"><th scope="row">2023</th><td>医疗卫生机构合计</td>
+      <td>95.5</td><td>+13.4%</td><td>30,187.3</td><td>+22.3%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023" data-group="hospital"><th scope="row">2023</th><td>医院合计</td>
+      <td>42.6</td><td>+11.5%</td><td>24,500.1</td><td>+21.9%</td><td>79.4</td><td>+8.4 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023" data-group="public"><th scope="row">2023</th><td>公立医院</td>
+      <td>35.6</td><td>+11.6%</td><td>20,006.7</td><td>+22.7%</td><td>86</td><td>+10.4 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023" data-group="private"><th scope="row">2023</th><td>民营医院</td>
+      <td>7</td><td>+11.1%</td><td>4,493.4</td><td>+18.4%</td><td>63.5</td><td>+3.8 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2023" data-group="primary"><th scope="row">2023</th><td>基层医疗卫生机构</td>
+      <td>49.4</td><td>+15.7%</td><td>4,545.1</td><td>+25.6%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2022" data-group="all"><th scope="row">2022</th><td>医疗卫生机构合计</td>
+      <td>84.2</td><td>-0.6%</td><td>24,686.2</td><td>-0.2%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2022" data-group="hospital"><th scope="row">2022</th><td>医院合计</td>
+      <td>38.2</td><td>-1.5%</td><td>20,098.6</td><td>-0.3%</td><td>71</td><td>-3.6 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2022" data-group="public"><th scope="row">2022</th><td>公立医院</td>
+      <td>31.9</td><td>-2.4%</td><td>16,304.1</td><td>-0.6%</td><td>75.6</td><td>-4.7 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2022" data-group="private"><th scope="row">2022</th><td>民营医院</td>
+      <td>6.3</td><td>+3.3%</td><td>3,794.5</td><td>+1.3%</td><td>59.7</td><td>-0.2 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2022" data-group="primary"><th scope="row">2022</th><td>基层医疗卫生机构</td>
+      <td>42.7</td><td>+0.5%</td><td>3,619.1</td><td>+0.8%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202408/P020240829729470466631.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2021" data-group="all"><th scope="row">2021</th><td>医疗卫生机构合计</td>
+      <td>84.7</td><td>+9.4%</td><td>24,732</td><td>+7.5%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202310/P020231012649046990925.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2021" data-group="hospital"><th scope="row">2021</th><td>医院合计</td>
+      <td>38.8</td><td>+16.9%</td><td>20,155</td><td>+9.8%</td><td>74.6</td><td>+2.1 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202310/P020231012649046990925.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2021" data-group="public"><th scope="row">2021</th><td>公立医院</td>
+      <td>32.7</td><td>+17.2%</td><td>16,410</td><td>+10.6%</td><td>80.3</td><td>+3.1 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202310/P020231012649046990925.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2021" data-group="private"><th scope="row">2021</th><td>民营医院</td>
+      <td>6.1</td><td>+15.1%</td><td>3,745</td><td>+6.5%</td><td>59.9</td><td>+2.6 个百分点</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202310/P020231012649046990925.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2021" data-group="primary"><th scope="row">2021</th><td>基层医疗卫生机构</td>
+      <td>42.5</td><td>+3.2%</td><td>3,592</td><td>-3.1%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://www.gov.cn/lianbo/bumen/202310/P020231012649046990925.pdf" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2020" data-group="all"><th scope="row">2020</th><td>医疗卫生机构合计</td>
+      <td>77.4</td><td>-11.2%</td><td>23,013</td><td>-13.5%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2020" data-group="hospital"><th scope="row">2020</th><td>医院合计</td>
+      <td>33.2</td><td>-13.5%</td><td>18,352</td><td>-13.4%</td><td>72.5</td><td>-11.1 个百分点</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2020" data-group="public"><th scope="row">2020</th><td>公立医院</td>
+      <td>27.9</td><td>-14.7%</td><td>14,835</td><td>-15.2%</td><td>77.2</td><td>-14 个百分点</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2020" data-group="private"><th scope="row">2020</th><td>民营医院</td>
+      <td>5.3</td><td>-7%</td><td>3,517</td><td>-4.8%</td><td>57.3</td><td>-4.1 个百分点</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2020" data-group="primary"><th scope="row">2020</th><td>基层医疗卫生机构</td>
+      <td>41.2</td><td>-9.1%</td><td>3,707</td><td>-13.7%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2019" data-group="all"><th scope="row">2019</th><td>医疗卫生机构合计</td>
+      <td>87.2</td><td>+4.9%</td><td>26,596</td><td>+4.5%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2019" data-group="hospital"><th scope="row">2019</th><td>医院合计</td>
+      <td>38.4</td><td>+7.3%</td><td>21,183</td><td>+5.8%</td><td>83.6</td><td>-0.6 个百分点</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2019" data-group="public"><th scope="row">2019</th><td>公立医院</td>
+      <td>32.7</td><td>+7.2%</td><td>17,487</td><td>+6.9%</td><td>91.2</td><td>+0.1 个百分点</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2019" data-group="private"><th scope="row">2019</th><td>民营医院</td>
+      <td>5.7</td><td>+7.5%</td><td>3,696</td><td>+0.8%</td><td>61.4</td><td>-1.8 个百分点</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2019" data-group="primary"><th scope="row">2019</th><td>基层医疗卫生机构</td>
+      <td>45.3</td><td>+2.7%</td><td>4,295</td><td>-1.8%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://wsj.yueyang.gov.cn/11129/11153/content_1864258.html" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2018" data-group="all"><th scope="row">2018</th><td>医疗卫生机构合计</td>
+      <td>83.1</td><td>+1.6%</td><td>25,453</td><td>+4.2%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2018" data-group="hospital"><th scope="row">2018</th><td>医院合计</td>
+      <td>35.8</td><td>+4.1%</td><td>20,017</td><td>+5.8%</td><td>84.2</td><td>-0.8 个百分点</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2018" data-group="public"><th scope="row">2018</th><td>公立医院</td>
+      <td>30.5</td><td>+3.4%</td><td>16,351</td><td>+4.8%</td><td>91.1</td><td>-0.2 个百分点</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2018" data-group="private"><th scope="row">2018</th><td>民营医院</td>
+      <td>5.3</td><td>+8.2%</td><td>3,666</td><td>+10.4%</td><td>63.2</td><td>-0.2 个百分点</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2018" data-group="primary"><th scope="row">2018</th><td>基层医疗卫生机构</td>
+      <td>44.1</td><td>-0.5%</td><td>4,375</td><td>-1.7%</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2017" data-group="all"><th scope="row">2017</th><td>医疗卫生机构合计</td>
+      <td>81.8</td><td>—</td><td>24,436</td><td>—</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2017" data-group="hospital"><th scope="row">2017</th><td>医院合计</td>
+      <td>34.4</td><td>—</td><td>18,915</td><td>—</td><td>85</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2017" data-group="public"><th scope="row">2017</th><td>公立医院</td>
+      <td>29.5</td><td>—</td><td>15,595</td><td>—</td><td>91.3</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2017" data-group="private"><th scope="row">2017</th><td>民营医院</td>
+      <td>4.9</td><td>—</td><td>3,321</td><td>—</td><td>63.4</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+      <tr data-period="2017" data-group="primary"><th scope="row">2017</th><td>基层医疗卫生机构</td>
+      <td>44.3</td><td>—</td><td>4,450</td><td>—</td><td>—</td><td>—</td>
+      <td>—</td>
+      <td><a href="https://caoss.org.cn/news/html?id=11932" target="_blank" rel="noopener">原始披露</a></td></tr>
+    </tbody></table></div></details>
+    </section>
+    <section class="blood-panel" id="resources" aria-labelledby="resources-title">
+      <div class="blood-section-heading"><div><h2 id="resources-title">医院、床位与卫生总费用</h2>
+        <p>1998–2025 年。2025 年医院数、床位、床位使用率和卫生总费用采用后发布的卫健委公报。</p></div>
+        <a class="blood-download" href="health-resources.csv" download>卫生资源 CSV</a></div>
+      <div class="blood-scroll" role="region" aria-label="全国卫生资源" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">年度</th>
+      <th scope="col">卫生总费用（亿元）</th><th scope="col">医院数量（家）</th><th scope="col">全国总床位数（万张）</th><th scope="col">医院床位数（万张）</th><th scope="col">三级医院床位数（万张）</th><th scope="col">千人床位数（张）</th><th scope="col">医院病床使用率（%）</th><th scope="col">年末总人口（万人）</th><th scope="col">国内生产总值（亿元）</th>
+      <th scope="col">来源</th><th scope="col">说明</th></tr></thead><tbody>
+      <tr><th scope="row">2025</th>
+        <td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">93,367.2</a></td><td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">38,159</a></td><td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">1,004</a></td><td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">796.4</a></td><td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">397.12</a></td><td>—</td><td><a href="https://www.hunan.gov.cn/zqt/zcsd/202609/34058125/files/da2b514d479c4984a3acc22e93ed7f8b.pdf" target="_blank" rel="noopener">78</a></td><td>140,489</td><td>1,401,879</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note">医院数采用卫健委公报 38,159 家；医保局长表为 38,200 家。卫生总费用为初步推算。</td></tr><tr><th scope="row">2024</th>
+        <td>90,895.5</td><td>38,710</td><td>1,029.8</td><td>812</td><td>389.47</td><td>7.32</td><td>78.8</td><td>140,828</td><td>1,348,066</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2023</th>
+        <td>90,575.8</td><td>38,355</td><td>1,017.4</td><td>800.5</td><td>371.04</td><td>7.23</td><td>79.4</td><td>140,967</td><td>1,294,272</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2022</th>
+        <td>85,327.5</td><td>36,976</td><td>975</td><td>766.3</td><td>344.54</td><td>6.92</td><td>71</td><td>141,175</td><td>1,234,029</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2021</th>
+        <td>76,845</td><td>36,570</td><td>945</td><td>741.4</td><td>323.06</td><td>6.7</td><td>74.6</td><td>141,260</td><td>1,173,823</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2020</th>
+        <td>72,175</td><td>35,394</td><td>910.1</td><td>713.1</td><td>300.25</td><td>6.46</td><td>72.3</td><td>141,212</td><td>1,034,868</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2019</th>
+        <td>65,841.4</td><td>34,354</td><td>880.7</td><td>686.7</td><td>277.79</td><td>6.3</td><td>83.6</td><td>141,008</td><td>1,005,872</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2018</th>
+        <td>59,121.9</td><td>33,009</td><td>840.4</td><td>652</td><td>256.71</td><td>6.03</td><td>84.2</td><td>140,541</td><td>936,010.1</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2017</th>
+        <td>52,598.3</td><td>31,056</td><td>794</td><td>612</td><td>235.99</td><td>5.72</td><td>85</td><td>140,011</td><td>847,382.9</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2016</th>
+        <td>46,344.9</td><td>29,140</td><td>741</td><td>568.9</td><td>221.37</td><td>5.37</td><td>85.3</td><td>139,232</td><td>761,193</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2015</th>
+        <td>40,974.6</td><td>27,587</td><td>701.5</td><td>533.1</td><td>204.78</td><td>5.11</td><td>85.4</td><td>138,326</td><td>702,511.5</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2014</th>
+        <td>35,312.4</td><td>25,860</td><td>660.1</td><td>496.1</td><td>187.83</td><td>4.83</td><td>88</td><td>137,646</td><td>655,782.9</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2013</th>
+        <td>31,669</td><td>24,709</td><td>618.2</td><td>457.9</td><td>167</td><td>4.55</td><td>89</td><td>136,726</td><td>603,660.4</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2012</th>
+        <td>28,119</td><td>23,170</td><td>572.5</td><td>416.1</td><td>146.97</td><td>4.24</td><td>90.1</td><td>135,922</td><td>547,510.6</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2011</th>
+        <td>24,345.9</td><td>21,979</td><td>516</td><td>370.5</td><td>122.36</td><td>3.84</td><td>88.5</td><td>134,916</td><td>495,707.6</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2010</th>
+        <td>19,980.4</td><td>20,918</td><td>478.7</td><td>338.7</td><td>106.5</td><td>3.56</td><td>86.7</td><td>134,091</td><td>419,253.3</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2009</th>
+        <td>17,541.9</td><td>20,291</td><td>441.7</td><td>312.1</td><td>94.63</td><td>3.31</td><td>84.7</td><td>133,450</td><td>354,521.6</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2008</th>
+        <td>14,535.4</td><td>19,712</td><td>403.9</td><td>288.3</td><td>85.73</td><td>2.83</td><td>81.5</td><td>132,802</td><td>324,317.8</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2007</th>
+        <td>11,574</td><td>19,852</td><td>370.1</td><td>267.5</td><td>78.2</td><td>2.63</td><td>78.2</td><td>132,129</td><td>274,180</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2006</th>
+        <td>9,843.3</td><td>19,246</td><td>351.2</td><td>256</td><td>66.81</td><td>2.53</td><td>72.4</td><td>131,448</td><td>222,578</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2005</th>
+        <td>8,659.9</td><td>18,703</td><td>336.8</td><td>244.5</td><td>59.71</td><td>2.45</td><td>70.3</td><td>130,756</td><td>189,908</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2004</th>
+        <td>7,590.3</td><td>18,393</td><td>326.8</td><td>236.3</td><td>—</td><td>2.4</td><td>68.4</td><td>129,988</td><td>164,228</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2003</th>
+        <td>6,584.1</td><td>17,764</td><td>316.4</td><td>227</td><td>—</td><td>2.34</td><td>65.3</td><td>129,227</td><td>139,377</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2002</th>
+        <td>5,790</td><td>17,844</td><td>313.6</td><td>222.2</td><td>—</td><td>2.32</td><td>64.6</td><td>128,453</td><td>123,312</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2001</th>
+        <td>5,025.9</td><td>16,197</td><td>320.1</td><td>215.6</td><td>—</td><td>2.39</td><td>61.1</td><td>127,627</td><td>112,157</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">2000</th>
+        <td>4,586.6</td><td>16,318</td><td>317.7</td><td>216.7</td><td>—</td><td>2.38</td><td>60.8</td><td>126,743</td><td>101,309</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">1999</th>
+        <td>4,047.5</td><td>16,678</td><td>315.9</td><td>215.1</td><td>—</td><td>2.39</td><td>—</td><td>125,786</td><td>91,378.9</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr><tr><th scope="row">1998</th>
+        <td>3,678.7</td><td>16,001</td><td>314.3</td><td>213.4</td><td>—</td><td>2.4</td><td>60</td><td>124,761</td><td>85,863.9</td>
+        <td><a href="https://www.nhsa.gov.cn/art/2026/7/6/art_285_23306.html" target="_blank" rel="noopener">原始披露</a></td><td class="services-resource-note"></td></tr>
+    </tbody></table></div>
+    </section>
+  </div><script src="medical-services.js" type="module"></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>

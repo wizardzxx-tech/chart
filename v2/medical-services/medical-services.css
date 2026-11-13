@@ -1,0 +1,25 @@
+.services-page { --blood-ink: #243d43; --blood-accent: #22645d; }
+.services-kpis {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: .7rem;
+  margin: 0;
+}
+.services-kpis div { background: var(--blood-tint); border: 1px solid var(--blood-rule); border-radius: .5rem; padding: .75rem; }
+.services-kpis dt { color: var(--blood-muted); font-size: .81rem; }
+.services-kpis dd { margin: .12rem 0 0; font-size: clamp(1.25rem,2.8vw,1.85rem); line-height: 1.3; font-weight: 700; }
+.services-kpis dd small { margin-left: .25em; font-size: .7em; font-weight: 500; }
+.services-kpis .services-yoy { font-size: .77rem; color: var(--blood-muted); margin-top: .38rem; }
+.services-fold { margin-top: .8rem; }
+.services-fold summary { color: var(--blood-accent); font-weight: 650; font-size: .9rem; cursor: pointer; padding: .25rem 0; }
+.services-fold .blood-scroll { margin-top: .45rem; max-height: 35rem; }
+.services-fold thead th { position: sticky; top: 0; }
+.services-page a:not(.blood-download) { text-underline-offset: .2em; }
+.services-page td a, .services-page .blood-note a { color: var(--blood-accent); }
+.services-page .blood-table td.services-resource-note { min-width: 12rem; white-space: normal; }
+.services-page .blood-table th:nth-child(2), .services-fold td:nth-child(2) { text-align: left; }
+.services-page [hidden] { display: none !important; }
+@media (max-width: 560px) {
+  .services-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; }
+  .services-kpis div { padding: .55rem; }
+}
