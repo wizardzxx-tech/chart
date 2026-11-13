@@ -9,6 +9,7 @@ const filters = [...section.querySelectorAll('[data-lot-filter]')];
 const filterColumns = {agency:3, company:4, holder:5, category:6, product:7, origin:8, program:9};
 const periodColumns = {year:0, month:1, quarter:2};
 const timeLabels = {year:'年度', month:'月度', quarter:'季度'};
+const dependentFilters = ['holder','category','product'];
 const status = get('status');
 const pageSize = 16;
 
@@ -37,9 +38,32 @@ function mount(data) {
   let shown = [], page = 0;
   const body = get('table-wrap').querySelector('tbody');
 
-  for (const filter of filters) {
-    const values = new Set(data.rows.map(row=>row[filterColumns[filter.dataset.lotFilter]]));
+  function setOptions(filter, values) {
+    const prior = filter.value;
+    filter.length = 1;
     for (const value of [...values].sort(collator.compare)) filter.add(new Option(value,value));
+    if (values.has(prior)) filter.value = prior;
+  }
+
+  for (const filter of filters) {
+    if (dependentFilters.includes(filter.dataset.lotFilter)) continue;
+    const values = new Set(data.rows.map(row=>row[filterColumns[filter.dataset.lotFilter]]));
+    setOptions(filter, values);
+  }
+
+  function matches(row, id) {
+    const selected = get(id).value;
+    return !selected || selected === row[filterColumns[id]];
+  }
+
+  function updateDependentFilters() {
+    const companyRows = data.rows.filter(row=>matches(row,'company'));
+    const holders = new Set(companyRows.map(row=>row[filterColumns.holder]));
+    setOptions(get('holder'), holders);
+    const holderRows = companyRows.filter(row=>matches(row,'holder'));
+    setOptions(get('category'), new Set(holderRows.map(row=>row[filterColumns.category])));
+    const categoryRows = holderRows.filter(row=>matches(row,'category'));
+    setOptions(get('product'), new Set(categoryRows.map(row=>row[filterColumns.product])));
   }
 
   function renderPage() {
@@ -78,6 +102,7 @@ function mount(data) {
     return [mode,{figure,renderer}];
   }));
   function render() {
+    updateDependentFilters();
     const mode = grain.value;
     const filtered = data.rows.filter(row=>filters.every(filter=>!filter.value ||
       row[filterColumns[filter.dataset.lotFilter]] === filter.value));
