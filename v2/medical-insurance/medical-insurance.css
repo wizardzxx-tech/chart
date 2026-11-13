@@ -1,0 +1,45 @@
+.insurance-page {
+  --blood-ink: #233b43;
+  --blood-accent: #19645d;
+}
+.insurance-kpis {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: .75rem;
+  margin: 0;
+}
+.insurance-kpis div {
+  background: var(--blood-tint);
+  border: 1px solid var(--blood-rule);
+  border-radius: .5rem;
+  padding: .75rem;
+}
+.insurance-kpis dt { color: var(--blood-muted); font-size: .79rem; }
+.insurance-kpis dd {
+  margin: .1rem 0 0;
+  font-size: clamp(1.15rem,2.4vw,1.8rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.insurance-kpis small { font-size: .72rem; font-weight: 500; }
+.insurance-fold { margin-top: .9rem; }
+.insurance-fold summary {
+  color: var(--blood-accent);
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 650;
+  padding: .25rem 0;
+}
+.insurance-fold .blood-scroll, .insurance-trend + .blood-scroll { margin-top: .75rem; }
+.insurance-trend { margin-bottom: .9rem; }
+.insurance-note-cell {
+  text-align: left !important;
+  white-space: normal !important;
+  min-width: 10rem;
+}
+.insurance-page #drg-dip .insurance-note-cell { min-width: 13rem; }
+.insurance-page .blood-note a, .insurance-page .blood-table a { color: var(--blood-accent); }
+@media (max-width: 650px) {
+  .insurance-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
