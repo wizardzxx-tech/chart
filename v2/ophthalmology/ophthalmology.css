@@ -1,0 +1,11 @@
+.eye-subpanel { border:1px solid #dfe6e0; border-radius:12px; margin:.8rem 0; padding:.65rem .85rem; }
+.eye-subpanel summary { cursor:pointer; font-weight:650; color:#214438; }
+.eye-subpanel summary small { color:#54665f; margin-left:.35rem; font-weight:500; }
+.eye-subpanel .blood-scroll { margin-top:.65rem; }
+.eye-subpanel .blood-table td small { display:block; margin-top:.2rem; color:#54665f; white-space:normal; min-width:6rem; }
+.eye-subpanel .blood-table td a { text-underline-offset:.15em; color:#245a49; }
+.eye-page #company-network .capital-trend { margin:.8rem 0; }
+.eye-page #company-network fieldset label:has(input:disabled) { opacity:.55; }
+.eye-page #company-network .blood-table td:nth-last-child(2) { min-width:13rem; white-space:normal; }
+.eye-page #industry .blood-table { min-width:39rem; }
+.eye-page #overseas-capital td:last-child { white-space:normal; min-width:10rem; }
