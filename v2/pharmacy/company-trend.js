@@ -1,4 +1,5 @@
-const interpolationCompanies = new Set(['000028', '301408']);
+const halfYearReporters = new Set(['000028', '301408']);
+const expansionCompanies = new Set(['301126', '600085', '600829', '600998', '603368']);
 const colors = ['#176d65', '#315e99', '#9b551f', '#86528f', '#64802d',
   '#a13c51', '#176f99', '#68543f', '#4f5a9b', '#0d717e', '#ae6339', '#795b15', '#52585c', '#9e4776'];
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
@@ -11,12 +12,16 @@ function quarterPoints(company, quarters) {
       const [count,,method,note] = reported.get(quarter);
       return { count, lowerBound: method === '披露下限', detail: note };
     }
-    if (!interpolationCompanies.has(company.code) || !/[13]$/.test(quarter)) return null;
+    const canEstimate = expansionCompanies.has(company.code) ||
+      (halfYearReporters.has(company.code) && /Q[13]$/.test(quarter));
+    if (!canEstimate) return null;
     const previous = quarters[index - 1];
     const next = quarters[index + 1];
-    if (!reported.has(previous) || !reported.has(next)) return null;
-    const [left] = reported.get(previous);
-    const [right] = reported.get(next);
+    const before = reported.get(previous);
+    const after = reported.get(next);
+    if (!before || !after || before[2] === '披露下限' || after[2] === '披露下限') return null;
+    const [left] = before;
+    const [right] = after;
     return { count: (left + right) / 2, estimate: { previous, next, left, right } };
   });
 }
