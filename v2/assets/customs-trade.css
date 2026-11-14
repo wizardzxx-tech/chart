@@ -43,3 +43,6 @@
 }
 .trade-rank-head { align-items: baseline; }
 button.trade-download { background: transparent; border: 0; font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; padding: 0; }
+.trade-rank-name { display: grid; gap: 5px; min-width: 80px; }
+.trade-rank-bar { display: block; width: var(--share); height: 5px; min-width: 1px; border-radius: 2px; background: #258576; }
+.trade-panel [data-trade="balance-panel"] { margin-top: 18px; }
