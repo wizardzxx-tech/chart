@@ -1,6 +1,8 @@
+import { mountCompanyTrend } from '../pharmacy/company-trend.js';
+
 const root = document.querySelector('#customs-trade');
 const select = key => root.querySelector(`[data-trade="${key}"]`);
-const controls = Object.fromEntries(['group','product','flow','partner','metric','year'].map(key=>[key,select(key)]));
+const controls = Object.fromEntries(['group','product','flow','partner','metric','year','unit'].map(key=>[key,select(key)]));
 const format = new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2});
 const display = (v,unit='') => Number.isFinite(v) ? format.format(v)+unit : '—';
 const regionNames = new Intl.DisplayNames(['zh-CN'],{type:'region'});
@@ -46,41 +48,11 @@ function original(url) {
   return link;
 }
 
-function plot(figure,points,unit,changed) {
-  const chart=select('plot');
-  const bars=points.filter(p=>p[1]!==null);
-  figure.hidden=!bars.length;
-  if (!bars.length) return;
-  const max=Math.max(...bars.map(p=>p[1]));
-  const fmt=val=>{
-    if(unit==='美元' && max >= 1e8) return display(val/1e8,' 亿美元');
-    if(unit==='美元' && max >= 1e4) return display(val/1e4,' 万美元');
-    return display(val,unit==='美元'?' 美元':' '+unit);
-  };
-  chart.replaceChildren(...points.map(([year,value,code])=>{
-    const item=document.createElement('div');
-    item.className='trade-bar-point';
-    const block=document.createElement('div');
-    block.className='trade-bar-block';
-    if (value!==null) {
-      const bar=document.createElement('div');
-      bar.className='trade-bar';
-      bar.style.setProperty('--bar-size',Math.max(0.4,(value/max)*100)+'%');
-      if(changed) bar.dataset.code=code;
-      block.append(bar);
-    }
-    const label=document.createElement('strong');
-    label.textContent=year;
-    const detail=document.createElement('span');
-    detail.textContent=fmt(value);
-    item.append(block,label,detail);
-    if(changed && code){
-      const scope=document.createElement('small');
-      scope.textContent=code;
-      item.append(scope);
-    }
-    return item;
-  }));
+function observation(row,partner) {
+  const datum=partner===0?row.world:row.partners.find(r=>r[0]===partner)?.slice(1);
+  if(!datum) return null;
+  const [amount,qty,quality,grain]=datum;
+  return {amount,qty,unit:qty?amount/qty:null,quality,grain:grain??'伙伴明细'};
 }
 
 async function start() {
@@ -89,6 +61,9 @@ async function start() {
   const {products,partners}=await response.json();
   const status = root.querySelector('.trade-status');
   const figure = root.querySelector('figure');
+  const hasDirections = root.dataset.topic==='vaccines';
+  const metricLabels = {amount:'金额',qty:'数量',unit:'单位金额'};
+  if(root.dataset.topic==='medical-devices') controls.unit.value='unit';
   const names = Object.fromEntries(Object.entries(partners).map(([code,[iso,name]])=>[code,iso?regionNames.of(iso):name]));
   const download=select('download-partners');
   download.hidden=false;
@@ -112,7 +87,53 @@ async function start() {
   const groups = [...new Set(products.map(p=>p.group))];
   setOptions(controls.group,groups.map(g=>[g,g]));
   root.querySelector('.trade-filters').hidden=false;
+  select('detail-filters').hidden=false;
   select('rank-filter').hidden=false;
+
+  const plotProducts=products.filter(p=>p.series.length);
+  const chartSeries=hasDirections
+    ? ['X','M'].map(flow=>({...plotProducts[0], fixedFlow:flow, name:flowName(flow), code:flow}))
+    : plotProducts.map(p=>({...p, name:p.chartLabel??p.label}));
+  const years=plotProducts.flatMap(p=>p.series.map(r=>r.year));
+  const periods=Array.from({length:Math.max(...years)-Math.min(...years)+1},(_,i)=>String(Math.min(...years)+i));
+  const chart = mountCompanyTrend(figure,chartSeries,periods,{
+    defaultCodes: hasDirections ? ['X','M'] : root.dataset.topic==='medical-devices'
+      ? ['90221200','90181310'] : [chartSeries[0].code],
+    labelTick:()=>true,
+    emptyMessage:'勾选有可比数据的商品',
+    getPoints:(product,dates)=>{
+      const metric=controls.metric.value;
+      if(metric!=='amount' && product.basis!==controls.unit.value) return dates.map(()=>null);
+      const flows=product.series.filter(r=>r.flow===(product.fixedFlow??controls.flow.value));
+      const series=new Map(flows.map(r=>[r.year,r]));
+      return dates.map(s=>{
+        const year=Number(s), row=series.get(year);
+        if(!row) return null;
+        const datum=observation(row,Number(controls.partner.value));
+        if(!Number.isFinite(datum?.[metric])) return null;
+        const previous=series.get(year-1);
+        const switched=previous && row.code!==previous.code;
+        const renamed=switched && row.code.slice(0,6)!==previous.code.slice(0,6);
+        const before=product.breakYear===year || renamed;
+        return {count:datum[metric]/(metric==='amount'?1e6:1),
+          value:display(datum[metric],metric==='amount'?' 美元':metric==='qty'?product.basis==='kg'?' 千克':' 计数单位':
+            product.basis==='kg'?' 美元／千克':' 美元／单位'),
+          detail:`${row.code} · ${datum.quality}`,breakBefore:before,dashedBefore:switched,estimate:datum.quality==='估算'};
+      });
+    },
+    describe:point=>point??{value:'—'}
+  });
+
+  function updateTrend() {
+    const metric=controls.metric.value;
+    const kind=controls.unit.value==='kg'?'千克':'计数单位';
+    const unit=metric==='amount'?'百万美元':metric==='qty'?kind:`美元／${controls.unit.value==='kg'?'千克':'单位'}`;
+    select('unit-label').hidden=metric==='amount';
+    const flow=hasDirections?'疫苗进出口':flowName(controls.flow.value);
+    if(hasDirections) select('unit-label').hidden=true;
+    figure.querySelector('figcaption').textContent=`${names[controls.partner.value]} · ${flow}${metricLabels[metric]}（${unit}）`;
+    chart.refresh();
+  }
 
   function chooseProducts() {
     const choices=products.filter(p=>p.group===controls.group.value);
@@ -122,11 +143,12 @@ async function start() {
   function choosePartners() {
     const product=products.find(p=>p.code===controls.product.value);
     const series=product.series.filter(r=>r.flow===controls.flow.value);
-    const ids=[...new Set(series.flatMap(r=>r.partners.map(x=>x[0])))];
+    const ids=[...new Set(plotProducts.flatMap(p=>p.series.filter(r=>hasDirections||r.flow===controls.flow.value).flatMap(r=>r.partners.map(x=>x[0]))))];
     ids.sort((a,b)=>names[a].localeCompare(names[b],'zh-CN'));
     setOptions(controls.partner,[[0,'全球'],...ids.map(id=>[id,names[id]])]);
     setOptions(controls.year,[...series].reverse().map(r=>[r.year,String(r.year)]),String(series.at(-1)?.year));
     render();
+    updateTrend();
   }
   function render() {
     const product=products.find(p=>p.code===controls.product.value);
@@ -135,24 +157,12 @@ async function start() {
     const selection=product.series.filter(r=>r.flow===flow);
     const qtyUnit=product.basis==='kg'?'千克':'计数单位';
     const unitValue='美元／'+(product.basis==='kg'?'千克':'单位');
-    const scopes=new Set(selection.map(s=>s.code));
-    const changed=scopes.size>1 || Boolean(product.breakYear);
-    const observations=selection.flatMap(r=>{
-      const datum=partner===0?r.world:r.partners.find(p=>p[0]===partner)?.slice(1);
+    const observations=selection.flatMap(row=>{
+      const datum=observation(row,partner);
       if(!datum) return [];
-      const [amount,qty,quality,grain]=datum;
-      const info=[grain ?? '伙伴原表',quality,product.breakYear===r.year?'税目调整':''].filter(Boolean).join(' · ');
-      return [{year:r.year,code:r.code,amount,qty,unit:qty?amount/qty:null,info,url:r.url}];
+      const info=[datum.grain,datum.quality,product.breakYear===row.year?'税目调整':''].filter(Boolean).join(' · ');
+      return [{...row,...datum,info}];
     });
-    const metric=controls.metric.value;
-    const metricLabels={amount:['金额','美元'],qty:['数量',qtyUnit],unit:['单位金额',unitValue]};
-    const [metricName,unit]=metricLabels[metric];
-    figure.querySelector('figcaption').textContent = `${product.label} · ${names[partner]} · ${flowName(flow)}${metricName}`;
-    const points=[...new Set(selection.map(r=>r.year))].sort().map(year=>{
-      const observation=observations.find(x=>x.year===year);
-      return [year,observation?.[metric]??null,observation?.code];
-    });
-    plot(figure,points,unit,changed);
     status.textContent=observations.length?
       `${product.label} · ${names[partner]} · ${flowName(flow)} · ${observations.length} 个年度`:
       product.mappingOnly?product.note:'该筛选下暂无已核实记录。';
@@ -167,8 +177,9 @@ async function start() {
   controls.group.addEventListener('change',chooseProducts);
   controls.product.addEventListener('change',choosePartners);
   controls.flow.addEventListener('change',choosePartners);
-  controls.partner.addEventListener('change',render);
-  controls.metric.addEventListener('change',render);
+  controls.partner.addEventListener('change',()=>{render();updateTrend();});
+  controls.metric.addEventListener('change',updateTrend);
+  controls.unit.addEventListener('change',updateTrend);
   controls.year.addEventListener('change',render);
   chooseProducts();
 }

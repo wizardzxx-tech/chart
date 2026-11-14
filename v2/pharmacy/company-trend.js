@@ -1,7 +1,7 @@
 const halfYearReporters = new Set(['000028', '301408']);
 const expansionCompanies = new Set(['301126', '600085', '600829', '600998', '603368']);
 const colors = ['#176d65', '#315e99', '#9b551f', '#86528f', '#64802d',
-  '#a13c51', '#176f99', '#68543f', '#4f5a9b', '#0d717e', '#ae6339', '#795b15', '#52585c', '#9e4776'];
+  '#a13c51', '#176f99', '#68543f', '#4f5a9b', '#0d717e', '#ae6339', '#795b15', '#52585c', '#9e4776', '#345a3c', '#8c4341'];
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
 
 function quarterPoints(company, quarters) {
@@ -46,6 +46,7 @@ function storePointDescription(point) {
 
 export function mountCompanyTrend(figure, companies, periods, {
   defaultCode = '603939',
+  defaultCodes = [defaultCode],
   getPoints = quarterPoints,
   describe = storePointDescription,
   labelTick = period => period.endsWith('Q4'),
@@ -69,7 +70,7 @@ export function mountCompanyTrend(figure, companies, periods, {
     const label = document.createElement('label');
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.checked = company.code === defaultCode;
+    checkbox.checked = defaultCodes.includes(company.code);
     checkbox.value = company.code;
     checkbox.style.accentColor = color;
     const swatch = document.createElement('span');
@@ -151,7 +152,7 @@ export function mountCompanyTrend(figure, companies, periods, {
         if (!point) continue;
         if (previous !== null && index - previous <= maxGap() && !point.breakBefore) {
           const before = points[previous];
-          ctx.setLineDash(before.estimate || point.estimate ? [5, 4] : []);
+          ctx.setLineDash(before.estimate || point.estimate || point.dashedBefore ? [5, 4] : []);
           ctx.beginPath();
           ctx.moveTo(x(previous), y(before.count));
           ctx.lineTo(x(index), y(point.count));
