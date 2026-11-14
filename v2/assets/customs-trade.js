@@ -60,10 +60,16 @@ function observation(row,partner,product) {
   return {amount,qty,unit:qty&&unitValueAllowed(product,quality)?amount/qty:null,quality,grain:grain??'伙伴明细'};
 }
 
-async function start() {
-  const response=await fetch(new URL('customs-trade.json',document.baseURI));
+async function readData(file) {
+  const response=await fetch(new URL(file,document.baseURI));
   if(!response.ok) throw new Error(`HTTP ${response.status}`);
-  const {products,partners}=await response.json();
+  return response.json();
+}
+
+async function start() {
+  const dataset=await readData('customs-trade.json');
+  const {partners}=dataset;
+  const products=dataset.parts?(await Promise.all(dataset.parts.map(readData))).flat():dataset.products;
   const status = root.querySelector('.trade-status');
   const figure = root.querySelector('figure');
   const hasDirections = root.dataset.topic==='vaccines';
