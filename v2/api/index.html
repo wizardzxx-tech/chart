@@ -1,0 +1,54 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APIs · 原料药公开数据</title><meta name="description" content="抗生素及中间体、维生素、肝素和激素的出口量价及目的地。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/api/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/customs-trade.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="breadcrumbs" aria-label="面包屑"><a href="../">主页</a><span aria-hidden="true">/</span><span>原料药</span></div>
+<header class="hero topic-hero"><h1>APIs</h1><p>原料药公开数据 · 抗生素及中间体、维生素、肝素和激素的出口量价及目的地。</p></header>
+<section class="trade-panel" id="customs-trade" aria-labelledby="trade-title" data-topic="api">
+  <header class="trade-head"><div><h2 id="trade-title">海关出口</h2><p>2022–2025 年 · 中国大陆 · 14 个有数据的商品口径</p></div>
+  <a class="trade-download" href="customs-trade.csv" download>下载全球汇总 CSV ↓</a></header>
+  <div class="trade-filters" hidden>
+    <label>品类<select data-trade="group"></select></label>
+    <label>商品<select data-trade="product"></select></label>
+    <label>贸易方向<select data-trade="flow"><option value="X">出口</option></select></label>
+    <label>贸易伙伴<select data-trade="partner"><option value="0">全球</option></select></label>
+    <label>趋势指标<select data-trade="metric"><option value="amount">金额</option><option value="qty">数量</option><option value="unit">单位金额</option></select></label>
+  </div>
+  <figure class="trade-chart" hidden>
+    <figcaption></figcaption>
+    <div data-trade="plot"></div>
+  </figure>
+  <p class="trade-status" role="status">正在读取贸易数据…</p>
+  <div data-trade="history"><div class="trade-scroll" role="region" aria-label="年度、实际编码、金额（美元）、数量、单位金额、口径、原始查询" tabindex="0">
+  <table class=""><thead><tr><th scope="col">年度</th><th scope="col">实际编码</th><th scope="col">金额（美元）</th><th scope="col">数量</th><th scope="col">单位金额</th><th scope="col">口径</th><th scope="col">原始查询</th></tr></thead><tbody></tbody></table></div></div>
+  <div class="trade-head trade-rank-head"><h3>主要贸易伙伴</h3><button type="button" class="trade-download" data-trade="download-partners" hidden>下载全部伙伴 CSV ↓</button></div>
+  <div class="trade-filters" data-trade="rank-filter" hidden><label>年度<select data-trade="year"></select></label></div>
+  <div data-trade="rank"><div class="trade-scroll" role="region" aria-label="伙伴、金额（美元）、占比、数量、单位金额" tabindex="0">
+  <table class=""><thead><tr><th scope="col">伙伴</th><th scope="col">金额（美元）</th><th scope="col">占比</th><th scope="col">数量</th><th scope="col">单位金额</th></tr></thead><tbody></tbody></table></div></div>
+  <details class="trade-details" open><summary>HS 编码映射</summary>
+  <p>8 位税号按中国税则核对。首版以 2025 年中国 8 位数据为主，部分商品补有历史 HS6 国际口径。使用的编码以明细「实际编码」为准。无可比专属数据时留空。</p>
+  <div class="trade-scroll" role="region" aria-label="品类、商品口径、编码、专属性、数量口径、范围及历史变化" tabindex="0">
+  <table class="trade-mapping"><thead><tr><th scope="col">品类</th><th scope="col">商品口径</th><th scope="col">编码</th><th scope="col">专属性</th><th scope="col">数量口径</th><th scope="col">范围及历史变化</th></tr></thead><tbody><tr><th scope="row">抗生素中间体</th><td>6-氨基青霉烷酸（6-APA）</td><td class="trade-code">29349970<small>HS6 293499</small></td><td>专属</td>
+    <td>千克</td><td>2023年转由29411093归入29349970；历史编码仅列映射。</td></tr><tr><th scope="row">抗生素中间体</th><td>7-ACA、7-ADCA 等头孢中间体</td><td class="trade-code">29349960<small>HS6 293499</small></td><td>混合</td>
+    <td>千克</td><td>同一编码同时包含三类头孢中间体；2023年调整归类。</td></tr><tr><th scope="row">抗生素原料</th><td>青霉素类及其衍生物</td><td class="trade-code">294110</td><td>混合</td>
+    <td>千克</td><td>HS6；多种青霉素与盐合计。6-APA 2023年移出，跨年断点应留意。</td></tr><tr><th scope="row">抗生素原料</th><td>其他抗生素</td><td class="trade-code">294190</td><td>混合</td>
+    <td>千克</td><td>HS6；包括多种头孢、利福平等。</td></tr><tr><th scope="row">沙坦</th><td>其他含氮杂环化合物（沙坦排查）</td><td class="trade-code">29339900<small>HS6 293399</small></td><td>待核实</td>
+    <td>千克</td><td>沙坦没有统一的可用专属编码。该编码可能包含部分沙坦申报及大量无关货物；本版仅列映射，暂不发布沙坦金额或单位金额。</td></tr><tr><th scope="row">普利</th><td>ACE 抑制剂原料</td><td class="trade-code">—</td><td>待核实</td>
+    <td>千克</td><td>不同分子需分别查验归类；暂不以宽口径化学品代表普利。</td></tr><tr><th scope="row">维生素</th><td>维生素 B1 及其衍生物</td><td class="trade-code">29362200<small>HS6 293622</small></td><td>品类专属</td>
+    <td>千克</td><td>限未混合品；含衍生物。</td></tr><tr><th scope="row">维生素</th><td>维生素 B2 及其衍生物</td><td class="trade-code">29362300<small>HS6 293623</small></td><td>品类专属</td>
+    <td>千克</td><td>限未混合品；含衍生物。</td></tr><tr><th scope="row">维生素</th><td>维生素 B5 及其衍生物</td><td class="trade-code">29362400<small>HS6 293624</small></td><td>品类专属</td>
+    <td>千克</td><td>泛酸及其衍生物，限未混合品。</td></tr><tr><th scope="row">维生素</th><td>维生素 B6 及其衍生物</td><td class="trade-code">29362500<small>HS6 293625</small></td><td>品类专属</td>
+    <td>千克</td><td>限未混合品；含衍生物。</td></tr><tr><th scope="row">维生素</th><td>维生素 C 及其衍生物</td><td class="trade-code">29362700<small>HS6 293627</small></td><td>品类专属</td>
+    <td>千克</td><td>限未混合品；含衍生物。</td></tr><tr><th scope="row">维生素</th><td>维生素 E 及其衍生物</td><td class="trade-code">29362800<small>HS6 293628</small></td><td>品类专属</td>
+    <td>千克</td><td>限未混合品；含衍生物。</td></tr><tr><th scope="row">肝素</th><td>肝素及其盐</td><td class="trade-code">30019010<small>HS6 300190</small></td><td>品类专属</td>
+    <td>千克</td><td>中国 8 位专属品类；上位 HS6 还含其他产品，故不替代。</td></tr><tr><th scope="row">激素</th><td>地塞米松</td><td class="trade-code">29372210<small>HS6 293722</small></td><td>专属</td>
+    <td>千克</td><td>中国 8 位子目。</td></tr><tr><th scope="row">激素</th><td>可的松、氢化可的松、脱氢可的松及脱氢皮质醇</td><td class="trade-code">29372100<small>HS6 293721</small></td><td>混合</td>
+    <td>千克</td><td>多种皮质激素合计。</td></tr><tr><th scope="row">激素</th><td>雌激素和孕激素</td><td class="trade-code">293723</td><td>混合</td>
+    <td>千克</td><td>HS6；同类不同分子、衍生物与规格混合。</td></tr></tbody></table></div>
+  </details>
+  <details class="trade-details"><summary>来源与计算口径</summary>
+  <ul><li>来源为 UN Comtrade 收录的中国报告方数据（156），采用年度贸易统计和中国税则号列统计。出口金额通常为 FOB，进口金额通常为 CIF，均为当年美元。</li>
+  <li>8 位原表无全球合计时，按不同国家或地区的明细汇总。金额有记录而有效数量覆盖金额不足 99.5% 时，汇总数量及单位金额留空。主表的数量采用净重或适配的法定计数单位。</li>
+  <li>单位金额＝贸易金额 ÷ 同一行有效数量。产品结构、型号、目的地和计量会影响这一指标。器械出口量与进口量不能直接用于计算国产替代率。</li>
+  <li>疫苗按净重计量，包含的品种与剂型随贸易构成变化，净重不能换算剂数。</li>
+  <li>进口伙伴、出口目的地沿用统计申报口径，可能涉及转口。历史编码发生调整时在趋势图中标出实际编码，历史税目范围以各年税则为准。</li></ul>
+  <p class="trade-links"><a href="https://stats.customs.gov.cn/" target="_blank" rel="noopener">海关统计在线查询</a> · <a href="https://comtradeplus.un.org/zh" target="_blank" rel="noopener">UN Comtrade</a> · <a href="https://gss.mof.gov.cn/gzdt/zhengcefabu/202412/P020250127378158317243.pdf" target="_blank" rel="noopener">《中华人民共和国进出口税则（2025）》</a> · <a href="https://www.gov.cn/zhengce/zhengceku/2022-12/29/5734125/files/c72ad0cb7a244c7494925f0ff67edf15.pdf" target="_blank" rel="noopener">2023 年税目调整表</a> · <a href="https://www.mofcom.gov.cn/zcfb/zgdwjjmywg/art/2022/art_e6b02c7a7481419cbae94badc432ab1e.html" target="_blank" rel="noopener">2022 年疫苗及试剂编号调整</a></p>
+  </details>
+  <noscript><p>可下载 CSV 查看完整贸易记录及原始查询。</p></noscript>
+</section><script type="module" src="../assets/customs-trade.js"></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>
