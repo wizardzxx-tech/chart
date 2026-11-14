@@ -159,3 +159,21 @@
 }
 
 .equity-badge.partial { background: #f7f0de; color: #73501f; }
+
+.research-panel h3, .research-targets h3, #capital-drivers h3 { margin: 22px 0 8px; }
+.research-panel .company-filters { margin: 12px 0; }
+.research-downloads { display: flex; gap: 8px 14px; flex-wrap: wrap; }
+.research-figure canvas, #franchise-scatter canvas { display: block; width: 100%; height: 270px; }
+.research-scroll { max-height: 420px; overflow: auto; margin: 8px 0 14px; }
+.research-scroll th, .research-scroll td { white-space: normal; }
+.research-scroll td small { color: var(--muted); }
+.research-scroll td details ol { padding-left: 18px; min-width: 142px; }
+.research-panel details summary, .research-targets details summary { cursor: pointer; }
+.research-targets { margin: 16px 0 24px; }
+#capital-drivers .capital-controls, #franchise-scatter .capital-controls { margin: 12px 0; }
+#franchise-scatter { position: relative; }
+#franchise-scatter canvas { cursor: crosshair; }
+@media (max-width: 600px) {
+  .research-figure canvas, #franchise-scatter canvas { height: 230px; }
+  .research-scroll table, #capital-drivers table { min-width: 610px; }
+}

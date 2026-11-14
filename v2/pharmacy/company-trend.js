@@ -51,6 +51,7 @@ export function mountCompanyTrend(figure, companies, periods, {
   labelTick = period => period.endsWith('Q4'),
   getStart = () => 0,
   getEnd = dates => dates.length - 1,
+  maxGap = () => 1,
   emptyMessage = '勾选公司后查看门店数'
 } = {}) {
   const canvas = figure.querySelector('canvas');
@@ -144,15 +145,19 @@ export function mountCompanyTrend(figure, companies, periods, {
     for (const { points, color } of visible) {
       ctx.strokeStyle = color;
       ctx.lineWidth = 1.9;
-      for (let index = first + 1; index <= last; index++) {
-        const before = points[index - 1];
+      let previous = null;
+      for (let index = first; index <= last; index++) {
         const point = points[index];
-        if (!before || !point || point.breakBefore) continue;
-        ctx.setLineDash(before.estimate || point.estimate ? [5, 4] : []);
-        ctx.beginPath();
-        ctx.moveTo(x(index - 1), y(before.count));
-        ctx.lineTo(x(index), y(point.count));
-        ctx.stroke();
+        if (!point) continue;
+        if (previous !== null && index - previous <= maxGap() && !point.breakBefore) {
+          const before = points[previous];
+          ctx.setLineDash(before.estimate || point.estimate ? [5, 4] : []);
+          ctx.beginPath();
+          ctx.moveTo(x(previous), y(before.count));
+          ctx.lineTo(x(index), y(point.count));
+          ctx.stroke();
+        }
+        previous = index;
       }
       ctx.setLineDash([]);
       for (let index = first; index <= last; index++) {

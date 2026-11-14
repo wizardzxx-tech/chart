@@ -27,6 +27,11 @@ async function start() {
   const companies = data.companies.map(c => ({
     name:c.name, code:c.code, periods:new Map(c.records.map(r=>[r[0],r]))
   }));
+  const peerSelect = section.querySelector('#capital-peer');
+  const pharmacy = peerSelect && await import('../pharmacy/retail-capital.js')
+    .then(module=>module.loadRetailCapital(section,companies,data.latest,section.querySelector('#capital-mode')))
+    .catch(()=>null);
+  if (peerSelect && !pharmacy) peerSelect.closest('label').hidden = true;
   const panel = section.querySelector('.capital-interactive');
   const figure = section.querySelector('.capital-trend');
   const mode = section.querySelector('#capital-mode');
@@ -34,7 +39,7 @@ async function start() {
   const range = section.querySelector('#capital-range');
   const period = section.querySelector('#capital-period');
   const issuer = section.querySelector('#capital-company');
-  const table = section.querySelector('tbody');
+  const table = section.querySelector('.capital-interactive > .capital-scroll tbody');
   const periods = Array.from(new Set(companies.flatMap(c=>[...c.periods.keys()]))).sort();
   for (const quarter of [...periods].reverse()) period.add(new Option(quarter,quarter));
   period.value = data.latest;
@@ -45,6 +50,7 @@ async function start() {
     emptyMessage: '勾选公司后查看周转天数',
     getStart: dates => range.value==='all' ? 0 : Math.max(0,dates.length-Number(range.value)),
     getPoints: (company,dates) => dates.map(quarter => {
+      if (pharmacy && !pharmacy.includes(company.code,quarter,peerSelect.value)) return null;
       const observation = company.periods.get(quarter)?.[Number(mode.value)];
       const value = observation?.[0]?.[Number(metric.value)];
       if (!Number.isFinite(value)) return null;
@@ -59,6 +65,7 @@ async function start() {
     const rows = [];
     for (const quarter of chosenPeriods) {
       for (const c of filtered) {
+        if (pharmacy && !pharmacy.includes(c.code,quarter,peerSelect.value)) continue;
         const record = c.periods.get(quarter);
         if (!record) continue;
         const [values, notes, missing] = record[Number(mode.value)];
@@ -79,6 +86,16 @@ async function start() {
           if (notes.length && missing) details.append(element('p',missing));
           source.append(details);
         }
+        if (pharmacy) {
+          const group = pharmacy.group(c.code,quarter);
+          if (group) {
+            const note = element('p',group[1]==='retail'?'零售为主 · ':'混合经营 · ');
+            const [title,url] = pharmacy.source(group[4]);
+            const label = group[3] == null ? ' 分部披露' : ' 零售 '+days(group[3])+'%';
+            note.append(sourceLink(group[2]+label,url,title));
+            source.append(note);
+          }
+        }
         if (record[3]) source.append(sourceLink('当期报告',record[3].url,record[3].title));
         else if (record[4]) source.append(sourceLink('合并报表',record[4],c.name+'财务分析'));
         tr.append(heading,element('td',quarter),...values.map(v=>element('td',days(v))),source);
@@ -97,6 +114,7 @@ async function start() {
 
   period.add(new Option('全部季度','all'));
   mode.addEventListener('change', () => {refreshChart();renderTable();});
+  if (pharmacy) peerSelect.addEventListener('change',()=>{refreshChart();renderTable();});
   metric.addEventListener('change', refreshChart);
   range.addEventListener('change', refreshChart);
   period.addEventListener('change', renderTable);

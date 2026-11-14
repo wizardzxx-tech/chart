@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy · 零售药房公开数据</title><meta name="description" content="中国零售药店季度末门店总数，主要来源为各药店企业年报转引的中康数据。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/pharmacy/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="pharmacy.css"><link rel="stylesheet" href="../assets/working-capital.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy · 零售药房公开数据</title><meta name="description" content="中国零售药店门店总数、上市公司单店经营效率、分部收入与毛利率、直营份额、营运资金周转和股权激励。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/pharmacy/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="pharmacy.css"><link rel="stylesheet" href="../assets/working-capital.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main>
 <div class="breadcrumbs" aria-label="面包屑"><a href="../">主页</a><span aria-hidden="true">/</span><span>Pharmacy</span></div>
 <header class="hero topic-hero pharmacy-hero">
   <h1>Pharmacy</h1>
@@ -7,6 +7,9 @@
     <a href="#china-pharmacy-stores">全国门店总数</a>
     <a href="#pharmacy-industry-sales">零售药品销售额</a>
     <a href="#company-stores">上市药房门店数</a>
+    <a href="#pharmacy-network-quality">门店扩张与份额</a>
+    <a href="#pharmacy-store-efficiency">单店经营效率</a>
+    <a href="#pharmacy-revenue-mix">收入与业务结构</a>
     <a href="#working-capital">营运资金周转天数</a>
     <a href="#equity-incentives">股权激励业绩考核</a>
   </nav>
@@ -442,6 +445,55 @@
   </div>
 </section>
 <script src="company-stores.js" type="module"></script>
+<section class="pharmacy-panel research-panel" id="pharmacy-network-quality">
+<header class="dataset-head"><h2>门店扩张质量与行业份额</h2><div class="research-downloads"><a class="download-data" href="store-efficiency.csv" download>门店指标 CSV ↓</a><a class="download-data" href="direct-store-share.csv" download>样本份额 CSV ↓</a></div></header>
+  <h3>上市样本直营门店占全国药店比例</h3>
+  <p class="dataset-source">每季按已核验的直营门店数排序。样本随披露范围变化。全国分母采用精确的中康转引数，门店插值、约数和仅披露下限的记录不参与计算。</p>
+  <div class="stores-table-wrap research-scroll" role="region" aria-label="上市样本直营门店份额" tabindex="0">
+<table class="stores-table"><thead><tr><th scope="col">季度</th><th scope="col">全国门店（家）</th><th scope="col">纳入公司</th><th scope="col">样本直营（家）</th><th scope="col">样本占比</th><th scope="col">样本前五</th><th scope="col">样本前十</th><th scope="col">全国分母来源</th></tr></thead><tbody><tr><th scope="row">2026Q2</th><td>665,355</td>
+      <td><details><summary>10 家</summary><ol><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828484129_1.pdf#page=10">一心堂</a> 10,872 · 1.63%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608241828365513_1.pdf#page=12">大参林</a> 10,740 · 1.61%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608271828546756_1.pdf#page=2">益丰药房</a> 10,663 · 1.60%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608271828548346_1.pdf#page=3">老百姓</a> 9,695 · 1.46%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608280006757728_1.pdf#page=16">国药一致</a> 6,562 · 0.99%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828487451_1.pdf#page=14">健之佳</a> 5,129 · 0.77%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608250006748716_1.pdf#page=12">漱玉平民</a> 4,870 · 0.73%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608270006754677_1.pdf#page=15">华人健康</a> 2,334 · 0.35%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608071827754408_1.pdf#page=8">人民同泰</a> 349 · 0.05%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202608251828405072_1.pdf#page=1">第一医药</a> 162 · 0.02%</li></ol></details></td>
+      <td>61,376</td><td>9.22%</td><td>7.29%</td><td>9.22%</td>
+      <td><a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/845134261460/index.phtml">券商转引</a></td></tr><tr><th scope="row">2025Q4</th><td>680,476</td>
+      <td><details><summary>10 家</summary><ol><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604281821673325_1.pdf#page=17">一心堂</a> 11,112 · 1.63%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604221821458731_1.pdf#page=10">益丰药房</a> 10,518 · 1.55%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604231821502768_1.pdf#page=16">大参林</a> 10,468 · 1.54%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604221821454681_1.pdf#page=35">老百姓</a> 9,732 · 1.43%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604011820959775_1.pdf#page=16">国药一致</a> 6,691 · 0.98%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604271821626119_1.pdf#page=23">健之佳</a> 5,137 · 0.75%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604281821689472_1.pdf#page=11">漱玉平民</a> 4,907 · 0.72%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604241821553479_1.pdf#page=18">华人健康</a> 2,296 · 0.34%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604101821120992_1.pdf#page=24">人民同泰</a> 357 · 0.05%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202604081821068798_1.pdf#page=21">第一医药</a> 166 · 0.02%</li></ol></details></td>
+      <td>61,384</td><td>9.02%</td><td>7.13%</td><td>9.02%</td>
+      <td><a href="https://static.cninfo.com.cn/finalpage/2026-04-24/1225163379.PDF#page=12">直接披露</a></td></tr><tr><th scope="row">2025Q3</th><td>686,426</td>
+      <td><details><summary>7 家</summary><ol><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510301771970951_1.pdf#page=6">一心堂</a> 11,230 · 1.64%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510291771270252_1.pdf#page=3">益丰药房</a> 10,569 · 1.54%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510291771327647_1.pdf#page=3">大参林</a> 10,356 · 1.51%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510281770691705_1.pdf#page=3">老百姓</a> 9,741 · 1.42%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510291771283221_1.pdf#page=16">健之佳</a> 5,162 · 0.75%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510281770645289_1.pdf#page=6">漱玉平民</a> 4,972 · 0.72%</li><li><a href="https://pdf.dfcfw.com/pdf/H2_AN202510301771898741_1.pdf#page=1">第一医药</a> 166 · 0.02%</li></ol></details></td>
+      <td>52,196</td><td>7.60%</td><td>6.86%</td><td>—</td>
+      <td><a href="https://static.cninfo.com.cn/finalpage/2026-04-29/1225228071.PDF#page=15">直接披露</a></td></tr></tbody></table></div>
+  <h3>加盟率与直营开关店</h3>
+  <div class="company-filters"><label>季度<select id="network-period"></select></label><label>公司<select id="network-company"><option value="all">全部公司</option><option value="301017">漱玉平民</option><option value="301126">达嘉维康</option><option value="301408">华人健康</option><option value="600085">同仁堂</option><option value="600829">人民同泰</option><option value="600833">第一医药</option><option value="600998">九州通</option><option value="603233">大参林</option><option value="603368">柳药集团</option><option value="603883">老百姓</option><option value="603939">益丰药房</option><option value="605266">健之佳</option><option value="000028">国药一致</option><option value="002727">一心堂</option></select></label></div>
+  <div id="network-detail"><div class="stores-table-wrap research-scroll" role="region" aria-label="加盟率及扩张明细" tabindex="0">
+<table class="stores-table"><thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">加盟率</th><th scope="col">直营店同比</th><th scope="col">开店率</th><th scope="col">关店率</th><th scope="col">净开店率</th><th scope="col">并购店率</th><th scope="col">并购占新增</th><th scope="col">来源</th></tr></thead><tbody></tbody></table></div></div>
+  <details class="dataset-notes"><summary>门店指标口径</summary><p>加盟率＝期末加盟店 ÷ 同范围期末总店数。直营门店同比用两期实际门店数。开店、关店及并购店率的分子用过去 12 个月合计，分母用同期五个季末直营门店数按 1、2、2、2、1 加权；净开店率为新开减关闭。并购占新增＝并购 ÷（新开＋并购），仅用于分项可加总的记录。老百姓按披露的直营新增计算，可能包含并购。搬迁按各公司披露处理。原始项缺失或范围不符时留空。</p></details>
+  </section>
+<section class="pharmacy-panel research-panel" id="pharmacy-store-efficiency">
+<header class="dataset-head"><h2>单店经营效率</h2><div class="research-downloads"><a class="download-data" href="unit-economics.csv" download>单店指标 CSV ↓</a></div></header>
+  <div class="company-filters"><label>图表指标<select id="unit-metric"><option value="sales">TTM 直营店均零售收入</option><option value="growth">店均收入同比</option><option value="direct">直营门店同比</option><option value="sssg">同店销售同比（SSSG）</option><option value="density">日均坪效</option></select></label></div>
+  <figure id="unit-chart" class="stores-figure company-trend research-figure" hidden>
+  <figcaption id="unit-chart-caption">TTM 直营店均零售收入 · 万元／店</figcaption><fieldset class="company-series"><legend>比较公司</legend></fieldset>
+  <div class="plot-area"><canvas tabindex="0" role="img" aria-labelledby="unit-chart-caption"></canvas><div class="company-trend-tooltip" role="status" hidden></div></div>
+</figure>
+  <div class="company-filters"><label>季度<select id="unit-period"></select></label><label>公司<select id="unit-company"><option value="all">全部公司</option><option value="301017">漱玉平民</option><option value="301126">达嘉维康</option><option value="301408">华人健康</option><option value="600085">同仁堂</option><option value="600829">人民同泰</option><option value="600833">第一医药</option><option value="600998">九州通</option><option value="603233">大参林</option><option value="603368">柳药集团</option><option value="603883">老百姓</option><option value="603939">益丰药房</option><option value="605266">健之佳</option><option value="000028">国药一致</option><option value="002727">一心堂</option></select></label></div>
+  <div id="unit-detail"><div class="stores-table-wrap research-scroll" role="region" aria-label="单店经营效率明细" tabindex="0">
+<table class="stores-table"><thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">TTM 零售收入（亿元）</th><th scope="col">平均直营店</th><th scope="col">店均收入（万元）</th><th scope="col">店均同比</th><th scope="col">平均点数</th><th scope="col">来源</th></tr></thead><tbody></tbody></table></div></div>
+  <details class="dataset-notes"><summary>公司披露的同店增长和坪效</summary>
+  <div id="unit-disclosed"><div class="stores-table-wrap research-scroll" role="region" aria-label="公司披露的同店销售及坪效" tabindex="0">
+<table class="stores-table"><thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">指标</th><th scope="col">披露值</th><th scope="col">口径</th><th scope="col">来源</th></tr></thead><tbody></tbody></table></div></div></details>
+  <details class="dataset-notes"><summary>单店指标口径</summary><p>店均收入＝过去 12 个月医药零售收入 ÷ 同期平均直营门店数。优先取五个实际季末余额加权平均，半年和年度若只有三个实际时点则用 1、2、1 加权。滚动收入＝上年全年＋本年累计−上年同期。半年披露的相邻时点可用线连接，连线中间的空白季度无数值。店均同比要求相同店数采样频率和零售口径。</p><p>零售收入按公司分部披露，可能含由直营网络履约的线上业务及公司未单列的线上零售，因此店均收入是零售分部归一化指标。一心堂 2025 年报列示的 2024 年零售比较数与原年报有差异，相关期间的跨口径同比留空。坪效按各家公司披露。SSSG 保留约数和区间；图中圆点为区间中点，提示显示原始区间。</p></details>
+  </section>
+<section class="pharmacy-panel research-panel" id="pharmacy-revenue-mix">
+<header class="dataset-head"><h2>收入与业务结构</h2><div class="research-downloads"><a class="download-data" href="retail-segments.csv" download>分部收入与毛利率 CSV ↓</a></div></header>
+  <p class="dataset-source">分部金额统一为亿元，显示当年累计。保留公司原始分部名称和报告页码。线上销售额常与零售或分销重叠。仅在公司单独列示业务分部时保留相应混合渠道，业务分类不保证加总至合并营收。第一医药 2025 年年报披露零售毛利率 20.50%，收入成本复算为 20.52%，本表保留披露值。</p>
+  <div class="company-filters"><label>业务<select id="mix-category"><option value="all">全部业务</option><option value="retail">医药零售</option><option value="franchise">加盟／联盟／分销</option><option value="wholesale">批发／分销</option><option value="convenience">便利零售</option><option value="manufacturing">制造／工业</option><option value="services">供应商服务</option><option value="omnichannel">新零售（混合渠道）</option></select></label>
+  <label>季度<select id="mix-period"></select></label><label>表格公司<select id="mix-company"><option value="all">全部公司</option><option value="301017">漱玉平民</option><option value="301126">达嘉维康</option><option value="301408">华人健康</option><option value="600085">同仁堂</option><option value="600829">人民同泰</option><option value="600833">第一医药</option><option value="600998">九州通</option><option value="603233">大参林</option><option value="603368">柳药集团</option><option value="603883">老百姓</option><option value="603939">益丰药房</option><option value="605266">健之佳</option><option value="000028">国药一致</option><option value="002727">一心堂</option></select></label>
+  <label>图表指标<select id="mix-metric"><option value="margin">毛利率</option><option value="revenue">累计收入</option></select></label></div>
+  <figure id="mix-chart" class="stores-figure company-trend research-figure" hidden>
+  <figcaption id="mix-chart-caption">业务毛利率</figcaption><fieldset class="company-series"><legend>比较公司</legend></fieldset>
+  <div class="plot-area"><canvas tabindex="0" role="img" aria-labelledby="mix-chart-caption"></canvas><div class="company-trend-tooltip" role="status" hidden></div></div>
+</figure>
+  <div id="mix-detail"><div class="stores-table-wrap research-scroll" role="region" aria-label="分业务收入与毛利率" tabindex="0">
+<table class="stores-table"><thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">业务</th><th scope="col">公司披露名称</th><th scope="col">累计收入（亿元）</th><th scope="col">累计成本（亿元）</th><th scope="col">毛利率</th><th scope="col">来源</th></tr></thead><tbody></tbody></table></div></div>
+  </section>
 
 <section class="capital-panel" id="working-capital" aria-labelledby="capital-title">
   <header class="capital-heading">
@@ -466,6 +518,7 @@
     <div class="capital-controls">
       <label>计算口径<select id="capital-mode"><option value="1">TTM · 方法 C</option><option value="2">单季</option></select></label>
       <label>图表指标<select id="capital-metric"><option value="0">AR days</option><option value="1">AP days</option><option value="2">Inventory days</option><option value="3" selected>CCC days</option></select></label>
+      <label>业务可比组<select id="capital-peer"><option value="all">全部公司</option><option value="retail">零售为主</option><option value="mixed">批发及零售混合</option></select></label>
       <label>图表时间<select id="capital-range"><option value="20">近五年</option><option value="all">全部历史</option></select></label>
     </div>
     <figure class="capital-trend" hidden>
@@ -477,6 +530,27 @@
       </div>
       <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失季度断线。</p>
     </figure>
+    <div id="capital-drivers" hidden>
+      <h3>CCC 同比变化拆解</h3>
+      <div class="capital-controls">
+        <label>季度<select id="driver-period"></select></label>
+        <label>公司 A<select id="driver-first"></select></label>
+        <label>公司 B<select id="driver-second"></select></label>
+      </div>
+      <p class="dataset-source">比较与上年同季的变化。应付贡献按 −ΔAP 计入；正值表示拉长 CCC。上方可切换 TTM 和单季。A－B 为两家公司的变化差。</p>
+      <div class="capital-scroll" role="region" aria-label="CCC 同比变化拆解" tabindex="0">
+        <table class="capital-table"><thead><tr><th>公司</th><th>上年 CCC</th><th>本期 CCC</th><th>ΔAR</th><th>Δ库存</th><th>−ΔAP</th><th>ΔCCC</th></tr></thead><tbody></tbody></table>
+      </div>
+      <details class="dataset-notes" id="capital-peer-method"><summary>业务可比组口径</summary>
+        <p>医药零售收入占合并收入至少 70% 列入零售为主。其余有证据的公司列入混合组，包括批发、制造占比较大的公司。使用当期或过去四个季度内最近一次可核实的披露。无法分组的公司仍可在全部公司中查询。组合筛选作用于上方趋势和下方明细。</p>
+      </details>
+      <details class="dataset-notes" id="franchise-scatter"><summary>加盟率与周转天数</summary>
+        <div class="capital-controls"><label>纵轴<select id="scatter-metric"><option value="3">CCC days</option><option value="2">Inventory days</option></select></label></div>
+        <p class="dataset-source">与拆解共用季度和 TTM／单季口径。仅展示同季有确切加盟率及周转天数的公司。周转天数取合并报表，业务范围可能不同。</p>
+        <canvas role="img" aria-label="横轴为加盟率，纵轴为周转天数。完整数值见下表。"></canvas>
+        <div class="capital-scroll" role="region" aria-label="加盟率与周转天数散点数据" tabindex="0"><table class="capital-table"><thead><tr><th>公司</th><th>加盟率</th><th>周转天数</th></tr></thead><tbody></tbody></table></div>
+      </details>
+    </div>
     <div class="capital-controls capital-table-controls">
       <label>表格季度<select id="capital-period"></select></label>
       <label>表格公司<select id="capital-company"><option value="all">全部公司</option></select></label>
@@ -502,6 +576,22 @@
     <a class="download-data" href="equity-incentives.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
   </div>
   <p class="dataset-source">目标取自公司层面的解锁、归属或行权条款。实际值优先采用公司公布的考核口径，报表原值另行标注。</p>
+  <div class="research-targets" id="pharmacy-active-targets"><h3>2026–2028 年待考核目标</h3><p class="dataset-source">列示已录入且状态为待考核的计划。目标按各自基期及调整口径披露。</p><div class="stores-table-wrap research-scroll" role="region" aria-label="2026 至 2028 年股权激励考核目标" tabindex="0">
+<table class="stores-table"><thead><tr><th scope="col">公司／计划</th><th scope="col">考核指标与基期</th><th scope="col">2026</th><th scope="col">2027</th><th scope="col">2028</th><th scope="col">原始条款</th></tr></thead><tbody><tr><th scope="row">益丰药房<br><small>2026 年限制性股票</small></th><td>归母净利润<br><small>基期 2025</small></td>
+    <td>≥ +10.00%</td><td>≥ +26.50%</td><td>—</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202609291830004676_1.pdf#page=2">原文</a></td></tr><tr><th scope="row">老百姓<br><small>2026 年限制性股票</small></th><td>经审计净利润（按办法调整）<br><small>基期 2025</small></td>
+    <td>—</td><td>≥ +75%</td><td>≥ +100%</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202608101827818199_1.pdf#page=2">原文</a></td></tr><tr><th scope="row">老百姓<br><small>2026 年员工持股计划</small></th><td>经审计净利润（按办法调整）<br><small>基期 2025</small></td>
+    <td>—</td><td>≥ +75%</td><td>≥ +100%</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202608101827818198_1.pdf#page=14">原文</a></td></tr><tr><th scope="row">漱玉平民<br><small>2026 年限制性股票</small></th><td>扣非归母净利润（剔除股份支付）<br><small>基期 2025</small></td>
+    <td>≥ +75%</td><td>≥ +200%</td><td>≥ +300%</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202608251828429830_1.pdf#page=3">原文</a></td></tr><tr><th scope="row">达嘉维康<br><small>2023 限制性股票及股票期权</small></th><td>扣非归母净利润增幅（剔除本计划激励成本）<br><small>基期 2023</small></td>
+    <td>≥ +45%</td><td>—</td><td>—</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202312271615025036_1.pdf#page=2">原文</a></td></tr><tr><th scope="row">柳药集团<br><small>2025 股票期权</small></th><td>调整后扣非归母净利或医药工业营收增幅<br><small>基期 2022–2024</small></td>
+    <td>目标／触发值：利润 +12%／+9%；工业营收 +30%／+25%</td><td>—</td><td>—</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202508281736120102_1.pdf#page=2">原文</a></td></tr><tr><th scope="row">柳药集团<br><small>2025 员工持股</small></th><td>调整后扣非归母净利增幅或经营现金净额／调整后扣非归母净利<br><small>基期 2022–2024</small></td>
+    <td>目标／触发值：利润 +12%／+9%；现金利润比 100%／90%</td><td>—</td><td>—</td>
+    <td><a href="https://pdf.dfcfw.com/pdf/H2_AN202508281736120137_1.pdf#page=17">原文</a></td></tr></tbody></table></div></div>
   <div class="company-filters equity-filters" hidden>
     <label>公司<select id="equity-company"><option value="all">全部公司</option><option value="301017">漱玉平民</option><option value="301126">达嘉维康</option><option value="301408">华人健康</option><option value="600085">同仁堂</option><option value="600829">人民同泰</option><option value="600833">第一医药</option><option value="600998">九州通</option><option value="603233">大参林</option><option value="603368">柳药集团</option><option value="603883">老百姓</option><option value="603939">益丰药房</option><option value="605266">健之佳</option><option value="000028">国药一致</option><option value="002727">一心堂</option></select></label>
     <label>考核结果<select id="equity-status"><option value="all">全部状态</option><option>达标</option><option>部分达标</option><option>未达标</option><option>待考核</option><option>待确认</option><option>已终止</option></select></label>
@@ -1044,4 +1134,5 @@
 </section>
 <script src="equity-incentives.js" defer></script>
 <script id="stores-series" type="application/json">[{"quarter":"2017Q4","count":457000,"label":"约 457,000","kind":"approx","basis":"披露约数"},{"quarter":"2018Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2018Q4","count":502000,"label":"约 502,000","kind":"approx","basis":"披露约数"},{"quarter":"2019Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2019Q4","count":530000,"label":"约 530,000","kind":"approx","basis":"披露约数"},{"quarter":"2020Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2020Q4","count":570000,"label":"约 570,000","kind":"approx","basis":"披露约数"},{"quarter":"2021Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2021Q4","count":591000,"label":"约 591,000","kind":"approx","basis":"披露约数"},{"quarter":"2022Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2022Q4","count":627000,"label":"约 627,000","kind":"approx","basis":"披露约数"},{"quarter":"2023Q1","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q2","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"},{"quarter":"2023Q4","count":685000,"label":"约 685,000","kind":"approx","basis":"披露约数"},{"quarter":"2024Q1","count":696478,"label":"696,478","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q2","count":704601,"label":"704,601","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q3","count":706051,"label":"706,051","kind":"derived","basis":"净增减反推"},{"quarter":"2024Q4","count":702401,"label":"702,401","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q1","count":699235,"label":"699,235","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q2","count":695226,"label":"695,226","kind":"derived","basis":"净增减反推"},{"quarter":"2025Q3","count":686426,"label":"686,426","kind":"exact","basis":"直接披露"},{"quarter":"2025Q4","count":680476,"label":"680,476","kind":"exact","basis":"直接披露"},{"quarter":"2026Q1","count":673000,"label":"约 673,000","kind":"approx","basis":"披露约数"},{"quarter":"2026Q2","count":665355,"label":"665,355","kind":"broker","basis":"券商转引"},{"quarter":"2026Q3","count":null,"label":"—","kind":"missing","basis":"缺少可核实数据"}]</script>
-<script src="stores-chart.js" defer></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>
+<script src="stores-chart.js" defer></script>
+<script src="retail-research.js" type="module"></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>
