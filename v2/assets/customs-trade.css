@@ -46,3 +46,19 @@ button.trade-download { background: transparent; border: 0; font: inherit; font-
 .trade-rank-name { display: grid; gap: 5px; min-width: 80px; }
 .trade-rank-bar { display: block; width: var(--share); height: 5px; min-width: 1px; border-radius: 2px; background: #258576; }
 .trade-panel [data-trade="balance-panel"] { margin-top: 18px; }
+.trade-filters input[type="search"] { font: inherit; color: #173039; padding: 7px 9px; border: 1px solid #cdd9d6; border-radius: 4px; max-width: 100%; }
+.trade-unflagged { display: inline-flex; align-items: center; gap: 6px; color: #52636b; font-size: 13px; }
+.trade-recent { margin-top: 20px; }
+.trade-recent h3 { margin: 0; }
+.trade-recent h4 { margin: 20px 0 8px; }
+.trade-rank-name { min-width: 96px; }
+.trade-source-meta { display: block; color: #52636b; min-width: 115px; margin-top: 4px; }
+.trade-cases { padding-left: 21px; color: #263f45; font-size: 13px; }
+.trade-cases li { margin-bottom: 15px; }
+.trade-cases p { margin: 3px 0; }
+.trade-cases a { color: #176d60; }
+.trade-matrix th small { display: block; color: #52636b; }
+.trade-matrix :is(th,td) { padding: 7px; }
+.trade-flags { display: flex; gap: 3px; }
+.trade-flag { display: inline-grid; place-items: center; min-width: 1.45em; border-radius: 3px; color: #175748; background: #e4f3ed; font-weight: 650; text-decoration: none; }
+.trade-flag[data-flag="E"], .trade-flag[data-flag="?"] { color: #82450b; background: #fcf0d9; }

@@ -49,15 +49,32 @@ function original(url, name='UN Comtrade') {
   return link;
 }
 
-function unitValueAllowed(product,quality) {
-  return !product.holdUnitValue && !(product.basis==='unit' && quality==='估算');
+function comparableQuantity(quality,includeUnflagged=false) {
+  return quality==='原表'||quality==='申报'||(includeUnflagged&&quality==='估算状态未提供');
 }
 
-function observation(row,partner,product) {
+function unitValueAllowed(product,quality,includeUnflagged=false) {
+  return !product.holdUnitValue && comparableQuantity(quality,includeUnflagged);
+}
+
+function sourceDetails(row) {
+  const box=document.createElement('div');
+  box.append(original(row.url,row.source));
+  if(!row.provenance) return box;
+  const meta=document.createElement('small');
+  meta.className='trade-source-meta';
+  const {retrieved,sha256,classifications}=row.provenance;
+  meta.textContent=[retrieved?`采集 ${retrieved}`:'采集日期未留档',classifications?.join(' / '),
+    sha256?`SHA-256 ${sha256.slice(0,12)}…`:null,row.chinaCustomsCheck].filter(Boolean).join(' · ');
+  box.append(meta);
+  return box;
+}
+
+function observation(row,partner,product,includeUnflagged) {
   const datum=partner===0?row.world:row.partners.find(r=>r[0]===partner)?.slice(1);
   if(!datum) return null;
   const [amount,qty,quality,grain]=datum;
-  return {amount,qty,unit:qty&&unitValueAllowed(product,quality)?amount/qty:null,quality,grain:grain??'伙伴明细'};
+  return {amount,qty,unit:qty&&unitValueAllowed(product,quality,includeUnflagged)?amount/qty:null,quality,grain:grain??'伙伴明细'};
 }
 
 async function readData(file) {
@@ -66,14 +83,56 @@ async function readData(file) {
   return response.json();
 }
 
+function mountRecent(recent,products) {
+  if(!recent?.monthly.length) return;
+  const picker=select('recent-series'), figure=select('recent-chart');
+  const options=recent.monthly.map(({code,flow,source},index)=>
+    [index,`${products.get(code)?.label??code} · ${flowName(flow)} · ${recent.sources[source].label}`]);
+  setOptions(picker,options);
+  select('recent-filters').hidden=false;
+  select('recent-monthly').hidden=false;
+  const periods=Array.from({length:12},(_,i)=>`${i+1} 月`);
+  const series=[2025,2026].map(year=>({code:String(year),name:`${year} 年`}));
+  const selected=()=>recent.monthly[Number(picker.value)];
+  const chart=mountCompanyTrend(figure,series,periods,{
+    defaultCodes:series.map(s=>s.code),labelTick:()=>true,
+    getEnd:()=>Math.max(...selected().points.map(p=>p[0]%100))-1,
+    getPoints:(s,dates)=>{
+      const rows=new Map(selected().points.map(([date,amount,qty])=>[date,[amount,qty]]));
+      return dates.map((_,i)=>{
+        const [amount,qty]=rows.get(Number(s.code)*100+i+1)??[];
+        return Number.isFinite(amount)?{count:amount/1e6,value:display(amount,' 美元'),
+          detail:display(qty,selected().unit?' '+selected().unit:'')}:null;
+      });
+    },
+    describe:point=>point??{value:'—'}
+  });
+  function update(){
+    const {points,unit}=selected();
+    const rows=new Map(points.map(([date,amount,qty])=>[date,[amount,qty]]));
+    const percent=(n,prior)=>display(n!=null&&prior>0?100*(n/prior-1):null,'%');
+    renderRows('recent-rows',periods.flatMap((label,i)=>{
+      const prior=rows.get(202501+i),current=rows.get(202601+i);
+      if(!prior&&!current) return [];
+      return [[label,display(prior?.[0]),display(current?.[0]),percent(current?.[0],prior?.[0]),
+        display(prior?.[1],unit?' '+unit:''),display(current?.[1],unit?' '+unit:''),percent(current?.[1],prior?.[1])]];
+    }),'暂无月度记录。',7);
+    chart.refresh();
+  }
+  picker.addEventListener('change',update);
+  update();
+}
+
 async function start() {
   const dataset=await readData('customs-trade.json');
   const {partners}=dataset;
   const products=dataset.parts?(await Promise.all(dataset.parts.map(readData))).flat():dataset.products;
-  const status = root.querySelector('.trade-status');
-  const figure = root.querySelector('figure');
+  const status = select('detail-status');
+  const figure = select('trend-chart');
   const hasDirections = root.dataset.topic==='vaccines';
   const device=root.dataset.topic==='medical-devices';
+  const includeUnflagged=()=>select('include-unflagged').checked;
+  const observe=(row,partner,product)=>observation(row,partner,product,includeUnflagged());
   const metricLabels={amount:'金额',qty:'数量',unit:'单位金额',amountYoY:'金额同比',qtyYoY:'数量同比',share:'所选伙伴占比',top5:'前五贸易伙伴占比'};
   if(root.dataset.topic==='medical-devices') controls.unit.value='unit';
   const names = Object.fromEntries(Object.entries(partners).map(([code,[iso,name]])=>[code,iso?regionNames.of(iso):name]));
@@ -98,7 +157,7 @@ async function start() {
   });
   const groups = [...new Set(products.map(p=>p.group))];
   setOptions(controls.group,groups.map(g=>[g,g]));
-  root.querySelector('.trade-filters').hidden=false;
+  select('chart-filters').hidden=false;
   select('detail-filters').hidden=false;
   select('rank-filter').hidden=false;
 
@@ -121,6 +180,7 @@ async function start() {
   const listed=series=>device?(single()?Boolean(series.fixedFlow):series.group===controls['chart-group'].value):true;
   const inLevel=row=>!device||controls.level.value==='all'||String(row.code.length)===controls.level.value;
   const sameScope=(a,b)=>a&&b&&a.code===b.code&&a.source===b.source;
+  const sameQuantity=(a,b)=>b&&a.declaredUnit===b.declaredUnit&&String(a.quantityFields)===String(b.quantityFields);
   const isPercent=metric=>['amountYoY','qtyYoY','share','top5'].includes(metric);
   const needsUnits=metric=>['qty','unit'].includes(metric);
   const units=product=>product.basis==='kg'?'千克':'个';
@@ -128,7 +188,7 @@ async function start() {
   if(device) setOptions(controls['chart-group'],groups.map(g=>[g,g]),defaultGroup);
 
   function metricValue(metric,row,last,partner,product) {
-    const d=observation(row,partner,product);
+    const d=observe(row,partner,product);
     if(!d) return null;
     if(metric==='share') return partner&&row.world?.[0]?100*d.amount/row.world[0]:null;
     if(metric==='top5'){
@@ -138,9 +198,10 @@ async function start() {
     }
     if(metric.endsWith('YoY')){
       if(!sameScope(row,last)||product.breakYear===row.year) return null;
-      const prev=observation(last,partner,product);
+      const prev=observe(last,partner,product);
       const amount=metric==='amountYoY';
-      if(!amount&&(d.quality==='估算'||prev?.quality==='估算'||row.declaredUnit!==last.declaredUnit)) return null;
+      if(!amount&&(!comparableQuantity(d.quality,includeUnflagged())||
+        !comparableQuantity(prev?.quality,includeUnflagged())||!sameQuantity(row,last))) return null;
       const field=amount?'amount':'qty';
       return prev?.[field]>0&&Number.isFinite(d[field])?100*(d[field]/prev[field]-1):null;
     }
@@ -164,13 +225,20 @@ async function start() {
         if(!row||year<firstYear()) return null;
         const value=metricValue(metric,row,previous,partner,product);
         if(!Number.isFinite(value)) return null;
-        const datum=observation(row,partner,product);
+        const datum=observe(row,partner,product);
+        const alerts=partner?[]:(row.alerts??[]).filter(a=>a.metric==='scope'||
+          (a.metric==='partner'&&['amount','amountYoY','top5'].includes(metric))||
+          (a.metric==='unit'&&metric==='qty'&&product.code==='90275010')||a.metric===metric.replace('YoY',''));
+        const flags=alerts.map(a=>[a.label,names[a.partner],a.detail].filter(Boolean).join(' '));
         return {count:value/(metric==='amount'?1e6:1),
           value:display(value,isPercent(metric)?'%':metric==='amount'?' 美元':metric==='qty'?' '+units(product):' 美元／'+units(product)),
-          detail:`${row.code} · ${row.source} · ${metric==='qty'?datum.quality:product.scope}`,
+          detail:[row.code,row.source,['qty','unit','qtyYoY'].includes(metric)?datum.quality:product.scope,...flags].join(' · '),
           breakBefore:product.breakYear===year||(previous&&!sameScope(row,previous))||
-            (metric==='qty'&&previous&&row.declaredUnit!==previous.declaredUnit),
-          estimate:metric==='qty'&&datum.quality==='估算'};
+            (needsUnits(metric)&&previous&&!sameQuantity(row,previous)),
+          warning:flags.length>0,
+          estimate:metric==='qty'&&datum.quality==='估算',
+          dashedBefore:metric==='unit'&&(datum.quality==='估算状态未提供'||
+            (previous&&observe(previous,partner,product)?.quality==='估算状态未提供'))};
       });
     },
     describe:point=>point??{value:'—'}
@@ -191,18 +259,26 @@ async function start() {
   }
   function updatePartners() {
     const metric=controls.metric.value;
-    const groups=new Map();
+    const groups=new Map(), search=select('partner-search'), previous=controls.partner.value;
+    const query=search.value.trim().toLocaleLowerCase();
     for(const row of selectedReports()){
-      for(const [id,,qty,quality] of row.partners) {
+      for(const [id,amount,qty,quality] of row.partners) {
         if((metric==='qty'||metric==='qtyYoY')&&!qty) continue;
-        if(metric==='unit'&&(!qty || (quality==='估算'&&(single()?focus()?.basis==='unit':controls.unit.value==='unit')))) continue;
-        groups.set(id,names[id]);
+        if(metric==='unit'&&(!qty||!comparableQuantity(quality,includeUnflagged()))) continue;
+        groups.set(id,(groups.get(id)??0)+amount);
       }
     }
-    const partners=metric==='top5'?[]:[...groups].sort((a,b)=>a[1].localeCompare(b[1],'zh-CN'));
-    const items=metric==='share'&&partners.length?partners:[[0,'全球'],...partners];
-    setOptions(controls.partner,items);
+    const ranked=[...groups].sort((a,b)=>b[1]-a[1]).map(([id])=>[id,names[id]]);
+    const filtered=query?ranked.filter(([id,name])=>[String(id),name,partners[id]?.[0],partners[id]?.[1]]
+      .some(t=>t?.toLocaleLowerCase().includes(query))):ranked.slice(0,10);
+    const matches=filtered.length;
+    const current=ranked.find(([id])=>String(id)===previous);
+    if(current&&!filtered.some(([id])=>String(id)===previous)) filtered.push(current);
+    const items=metric==='share'&&filtered.length?filtered:[[0,'全球'],...filtered];
+    setOptions(controls.partner,metric==='top5'?[[0,'全球']]:items,previous);
     controls.partner.disabled=metric==='top5';
+    search.disabled=metric==='top5';
+    select('partner-hint').textContent=metric==='top5'?'':query?`找到 ${matches} 个匹配伙伴`:'默认按所选系列和区间内贸易金额列出前十';
   }
 
   function updateTrend() {
@@ -229,12 +305,25 @@ async function start() {
   function chooseFocus() {
     const options=plotProducts.filter(p=>p.group===controls['chart-group'].value);
     setOptions(controls.focus,options.map(p=>[p.code,p.label]));
-    if(single()) {controls.group.value=controls['chart-group'].value;chooseProducts(controls.focus.value);}
-    else if(!options.some(p=>checked(p.code))) figure.querySelector(`input[value="${options[0].code}"]`).checked=true;
+    controls.group.value=controls['chart-group'].value;
+    if(single()) chooseProducts(controls.focus.value);
+    else {
+      const chosen=options.find(p=>p.code===controls.product.value&&checked(p.code))??options.find(p=>checked(p.code))??options[0];
+      if(chosen) {
+        figure.querySelector(`input[value="${chosen.code}"]`).checked=true;
+        chooseProducts(chosen.code);
+      }
+    }
     refresh();
   }
   function refresh() {
     if(device) select('focus-label').hidden=!single();
+    const flowLabel=select('flow-label');
+    const detailFlow=single()||hasDirections;
+    flowLabel.querySelector('span').textContent=detailFlow?'明细与伙伴榜方向':'贸易方向';
+    const holder=detailFlow?select('detail-filters'):select('chart-filters');
+    if(flowLabel.parentElement!==holder) holder.append(flowLabel);
+    select('unflagged-control').hidden=!['unit','qtyYoY'].includes(controls.metric.value);
     updatePartners();
     updateYear();
     updateTrend();
@@ -262,24 +351,24 @@ async function start() {
     const selection=product.series.filter(r=>r.flow===flow&&r.year>=firstYear()&&inLevel(r));
     const qtyUnit=units(product);
     const observations=selection.flatMap(row=>{
-      const datum=observation(row,partner,product);
+      const datum=observe(row,partner,product);
       if(!datum) return [];
       const info=[row.code.length===8?'中国税目 HS8':'国际 HS6',product.scope,datum.grain,datum.quality,
         product.holdUnitValue?'单位金额待核':null,row.quantityInputs?`原表数量单位 ${row.quantityInputs}`:null,row.method,product.breakYear===row.year?'税目调整':null].filter(Boolean).join(' · ');
-      return [{...row,...datum,info}];
+      const fields=partner===0&&row.quantityFields?.length?` · 取用 ${row.quantityFields.join('、')}`:'';
+      return [{...row,...datum,info:info+fields}];
     });
     status.textContent=observations.length?
       `${product.label} · ${names[partner]} · ${flowName(flow)} · ${observations.length} 个年度`:
       product.mappingOnly?product.note:'该筛选下暂无已核实记录。';
     renderRows('history',[...observations].reverse().map(r=>[r.year,r.code,display(r.amount),
       display(r.qty,' '+(r.declaredUnit??qtyUnit)),display(r.unit,' 美元／'+(r.declaredUnit??qtyUnit)),
-      r.info,original(r.url,r.source)]),'暂无可用记录。',7);
+      r.info,sourceDetails(r)]),'暂无可用记录。',7);
     const rank=selection.find(r=>r.year===Number(controls.year.value));
     const denominator=rank?.world?.[0];
-    const leader=rank?.partners[0]?.[1];
-    renderRows('rank',(rank?.partners??[]).slice(0,10).map(([id,amount,qty,quality])=>[rankBar(names[id],leader?amount/leader:null),display(amount),
+    renderRows('rank',(rank?.partners??[]).slice(0,10).map(([id,amount,qty,quality])=>[rankBar(names[id],denominator?amount/denominator:null),display(amount),
       display(denominator?100*amount/denominator:null,'%'),display(qty,' '+qtyUnit),
-      display(qty&&unitValueAllowed(product,quality)?amount/qty:null,' 美元／'+qtyUnit),quality]),
+      display(qty&&unitValueAllowed(product,quality,includeUnflagged())?amount/qty:null,' 美元／'+qtyUnit),quality]),
       '该年度暂无伙伴明细。',6);
     if(device){
       const balanceProduct=single()?focus():product;
@@ -310,10 +399,18 @@ async function start() {
   });
   controls.flow.addEventListener('change',refresh);
   controls.partner.addEventListener('change',()=>{render();updateTrend();});
+  select('partner-search').addEventListener('input',()=>{updatePartners();render();updateTrend();});
+  select('include-unflagged').addEventListener('change',refresh);
   controls.metric.addEventListener('change',refresh);
   controls.unit.addEventListener('change',refresh);
   controls.year.addEventListener('change',render);
-  figure.querySelector('fieldset').addEventListener('change',refresh);
+  figure.querySelector('fieldset').addEventListener('change',event=>{
+    if(device&&!single()&&event.target.checked&&byCode.has(event.target.value)){
+      controls.group.value=byCode.get(event.target.value).group;
+      chooseProducts(event.target.value);
+    }
+    refresh();
+  });
   chooseProducts();
   if(device){
     controls['chart-group'].addEventListener('change',chooseFocus);
@@ -326,9 +423,10 @@ async function start() {
       refresh();
     });
     chooseFocus();
+    mountRecent(dataset.recent,byCode);
   } else refresh();
 }
 start().catch(error=>{
   console.error(error);
-  root.querySelector('.trade-status').textContent='贸易数据暂时无法加载，可使用 CSV。';
+  select('detail-status').textContent='贸易数据暂时无法加载，可使用 CSV。';
 });

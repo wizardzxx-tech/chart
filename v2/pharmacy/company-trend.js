@@ -169,6 +169,16 @@ export function mountCompanyTrend(figure, companies, periods, {
         ctx.fillStyle = point.estimate ? '#fff' : color;
         ctx.fill();
         if (point.estimate || index === active) ctx.stroke();
+        if (point.warning) {
+          const cx=x(index), cy=y(point.count)-9;
+          ctx.beginPath();
+          ctx.moveTo(cx,cy-4);
+          ctx.lineTo(cx+4,cy+3);
+          ctx.lineTo(cx-4,cy+3);
+          ctx.closePath();
+          ctx.fillStyle='#aa5a12';
+          ctx.fill();
+        }
       }
     }
   }
