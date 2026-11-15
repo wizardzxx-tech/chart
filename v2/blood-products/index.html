@@ -2,11 +2,13 @@
   <p class="blood-crumb"><a href="../">医药行业公开数据</a> <span aria-hidden="true">/</span> 血制品</p>
   <header class="blood-heading">
     <h1>血制品</h1>
-    <p>中国采浆与浆站、公司产品收入及吨浆毛利</p>
-    <nav aria-label="页内导航"><a href="#national-plasma">全国采浆</a><a href="#lot-release">血制品批签发</a><a href="#blood-company-trend">公司趋势</a>
-      <a href="#company-plasma">公司年度数据</a><a href="#plasma-transactions">重组采浆数据</a><a href="#working-capital">营运资金周转天数</a><a href="#equity-incentives">股权激励</a><a href="#recombinant-albumin">禾元生物</a></nav>
+    <p>全国采浆与批签发、公司经营效率、浆站和产品事件</p>
+    <nav aria-label="页内导航"><a href="#national-plasma">行业供需</a><a href="#albumin-market">白蛋白批签发</a>
+      <a href="#blood-company-trend">公司经营</a><a href="#company-plasma">公司年度数据</a><a href="#working-capital">营运资金</a>
+      <a href="#lot-release">逐批公示查询</a><a href="#station-events">浆站事件</a><a href="#product-upgrades">产品升级</a><a href="#equity-incentives">股权激励</a><a href="#recombinant-albumin">禾元生物</a></nav>
   </header>
 
+  <h2 class="blood-group">行业供需</h2>
   <section class="blood-panel" id="national-plasma" aria-labelledby="national-title">
     <div class="blood-section-heading"><div><h2 id="national-title">全国采浆与浆站</h2>
       <p>2025 年采浆量 <strong>超14,000 吨</strong>，在采浆站 <strong>超300 家</strong></p></div>
@@ -94,6 +96,226 @@
     <p class="blood-note">总站数可含获批筹建站，执业／在营的认定随资料口径而异。2012–2015 年的原表仅列“采浆站”，沿用原数并在来源中标注。各年数据来自公司披露转引及研究统计，跨年口径差异见来源。</p>
   </section>
 
+  <section class="blood-panel blood-research" id="albumin-market" aria-labelledby="albumin-title">
+    <div class="blood-section-heading"><div><h2 id="albumin-title">人血白蛋白批签发</h2>
+      <p>全国公开统计、本站逐批采集与厂家份额。份额按批次数计，与瓶数、剂量和销售额的口径不同。</p></div>
+      <a class="blood-download" href="albumin-market.csv" download>下载占比及对照 CSV</a></div>
+    <dl class="blood-research-kpis">
+      <div><dt>2025 全国进口占比</dt><dd>65.4%</dd><small>3,642 批进口 · 1,923 批国产</small></div>
+      <div><dt>2026H1 全国进口占比</dt><dd>66.5%</dd><small>1,737 批进口 · 875 批国产</small></div>
+      <div><dt>2025 本站采集／行业总量</dt><dd>94.7%</dd><small>5,270 批 · 相差 295 批</small></div>
+    </dl>
+    <div class="blood-controls"><label>展示<select id="albumin-view">
+      <option value="share">进口／国产占比</option><option value="counts">进口／国产批次数</option><option value="brands">厂家份额</option>
+    </select></label>
+    <label id="albumin-series-setting">统计口径<select id="albumin-series">
+      <option value="published">行业公开统计</option><option value="observed">本站逐批采集</option>
+    </select></label></div>
+    <figure id="albumin-origin-chart" class="blood-research-figure" aria-labelledby="albumin-origin-caption">
+      <figcaption id="albumin-origin-caption"></figcaption>
+      <div class="blood-research-scale" aria-hidden="true"></div>
+      <div id="albumin-bars" class="blood-research-bars"></div>
+      <p id="albumin-series-note" class="blood-note" aria-live="polite"></p>
+    </figure>
+    <div id="albumin-brands" hidden>
+      <div class="blood-controls">
+        <label>原产地<select id="albumin-brand-origin"><option>进口</option><option>国产</option></select></label>
+        <label>期间<select id="albumin-brand-year"><option>2026YTD</option><option>2026H1</option><option selected>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option></select></label>
+        <label>统计口径<select id="albumin-brand-source"><option value="published">西南证券统计</option><option value="filing">卫光募集说明书</option><option value="observed">本站逐批采集</option></select></label>
+      </div>
+      <div id="albumin-brand-chart" class="blood-brand-bars" aria-label="白蛋白厂家份额"></div>
+      <p id="albumin-brand-note" class="blood-note" aria-live="polite"></p>
+      <p class="blood-note">本站按签发时的集团归属，收购时点证据不足时沿用公示主体。进口组对 Baxalta 在 2016 年并入 Shire、2019 年并入武田分别生效，CSL Behring 的多地持有人统一归组。行业公开表沿用披露的企业行，例如南岳、武汉中原瑞德和双林单列。 <a href="https://www.takeda.com/newsroom/shire-news-releases/2016/baxalta-now-part-of-shire/" target="_blank" rel="noopener">Shire 收购 Baxalta</a> · <a href="https://www.takeda.com/newsroom/shire-news-releases/2019/takeda-completes-acquisition/" target="_blank" rel="noopener">武田收购 Shire</a></p>
+      <a class="blood-download" href="albumin-manufacturers.csv" download>下载厂家份额 CSV</a>
+    </div>
+    <h3>行业公开统计与本站采集核对</h3>
+    <p class="blood-note">本站占比以已识别来源地的批次为分母，待核批次单列。差额为本站减行业统计，分项依次为进口、国产。2026H1 有 73 批签发区间跨 6 月底，未纳入半年汇总。图中未标出绝对数的年份只保留披露的比例。</p>
+    <div class="blood-scroll" role="region" aria-label="白蛋白年度全国统计和逐批采集差异" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">期间</th><th scope="col">行业进口（批）</th><th scope="col">行业国产（批）</th><th scope="col">行业进口占比</th><th scope="col">行业国产占比</th><th scope="col">本站进口（批）</th><th scope="col">本站国产（批）</th><th scope="col">本站待核（批）</th><th scope="col">本站进口占比</th><th scope="col">进口占比差（百分点）</th><th scope="col">进口／国产差（批）</th><th scope="col">总批次差</th><th scope="col">行业来源</th></tr></thead>
+    <tbody><tr><th scope="row">2019</th><td>—</td><td>—</td>
+      <td>58.8%</td><td>41.2%</td><td>1,815</td>
+      <td>1,207</td><td>104</td><td>60.1%</td>
+      <td>+1.3</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">2020</th><td>—</td><td>—</td>
+      <td>63.9%</td><td>36.1%</td><td>2,078</td>
+      <td>1,147</td><td>431</td><td>64.4%</td>
+      <td>+0.5</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">2021</th><td>—</td><td>—</td>
+      <td>63.8%</td><td>36.2%</td><td>2,656</td>
+      <td>1,447</td><td>78</td><td>64.7%</td>
+      <td>+0.9</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">2022</th><td>—</td><td>—</td>
+      <td>63.9%</td><td>36.1%</td><td>2,713</td>
+      <td>1,527</td><td>4</td><td>64.0%</td>
+      <td>+0.1</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">2023</th><td>—</td><td>—</td>
+      <td>66.0%</td><td>34.0%</td><td>3,144</td>
+      <td>1,557</td><td>0</td><td>66.9%</td>
+      <td>+0.9</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">2024</th><td>—</td><td>—</td>
+      <td>66.8%</td><td>33.2%</td><td>3,643</td>
+      <td>1,774</td><td>0</td><td>67.3%</td>
+      <td>+0.5</td>
+      <td>—</td>
+      <td>—</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">2025</th><td>3,642</td><td>1,923</td>
+      <td>65.4%</td><td>34.6%</td><td>3,404</td>
+      <td>1,866</td><td>0</td><td>64.6%</td>
+      <td>-0.8</td>
+      <td>-238 / -57</td>
+      <td>-295</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a><br><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=38" target="_blank" rel="noopener">绝对批次</a></td></tr><tr><th scope="row">2026H1</th><td>1,737</td><td>875</td>
+      <td>66.5%</td><td>33.5%</td><td>1,624</td>
+      <td>848</td><td>0</td><td>65.7%</td>
+      <td>-0.8</td>
+      <td>-113 / -27</td>
+      <td>-140</td>
+      <td class="blood-research-source"><a href="https://pdf.dfcfw.com/pdf/H3_AP202607301827491371_1.pdf#page=6" target="_blank" rel="noopener">西南证券 2026H1 血制品行业跟踪</a></td></tr></tbody></table>
+  </div>
+    <details class="blood-source blood-research-audit" id="albumin-audit"><summary>查看 2024 年版本、日期和去重核对</summary>
+      <div class="blood-scroll" role="region" aria-label="白蛋白2024年多个版本的统计口径" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">2024 年统计口径</th><th scope="col">进口（批）</th><th scope="col">国产（批）</th><th scope="col">合计（批）</th><th scope="col">进口占比</th><th scope="col">来源</th></tr></thead>
+    <tbody><tr><th scope="row">卫光 2026 年 4 月版</th><td>3,715</td><td>1,708</td>
+    <td>5,423</td><td>68.5%</td>
+    <td class="blood-research-source"><a href="https://pdf.dfcfw.com/pdf/H2_AN202604031821011850_1.pdf#page=38" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 4 月版）</a></td></tr><tr><th scope="row">西南证券 2024 年报统计</th><td>3,715</td><td>1,708</td>
+    <td>5,423</td><td>68.5%</td>
+    <td class="blood-research-source"><a href="https://pdf.dfcfw.com/pdf/H3_AP202502061642840298_1.pdf#page=3" target="_blank" rel="noopener">西南证券 2024 年血制品行业跟踪</a></td></tr><tr><th scope="row">卫光 2026 年 5 月版</th><td>—</td><td>—</td>
+    <td>—</td><td>66.8%</td>
+    <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 5 月版）</a></td></tr><tr><th scope="row">卫光 2026 年 8 月版</th><td>—</td><td>—</td>
+    <td>—</td><td>66.8%</td>
+    <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-08-25/1225494482.PDF#page=39" target="_blank" rel="noopener">卫光生物募集说明书（2026 年 8 月版）</a></td></tr><tr><th scope="row">西南证券 2026H1 追溯统计</th><td>3,715</td><td>1,708</td>
+    <td>5,423</td><td>68.5%</td>
+    <td class="blood-research-source"><a href="https://pdf.dfcfw.com/pdf/H3_AP202607301827491371_1.pdf#page=6" target="_blank" rel="noopener">西南证券 2026H1 血制品行业跟踪</a></td></tr><tr><th scope="row">本站 · 公示签发区间</th><td>3,643</td><td>1,774</td>
+    <td>5,417</td><td>67.3%</td>
+    <td class="blood-research-source"><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs" target="_blank" rel="noopener">中检院及各机构批签发公示</a></td></tr><tr><th scope="row">本站 · 证书年份敏感性测试</th><td>3,500</td><td>1,768</td>
+    <td>5,268</td><td>66.4%</td>
+    <td class="blood-research-source"><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs" target="_blank" rel="noopener">中检院及各机构批签发公示</a></td></tr></tbody></table>
+  </div>
+      <p>本站按证书去重，且未发现同一持有人、品名、批号重复。按签发区间计入 2024 年的记录中，471 批证书编号年份不同。本站 2024 年的进口记录均有进口证书标记，未见来源地待核批次。用于补漏的中检院每周公告没有带来本站 2024 年新增白蛋白记录。</p>
+      <p>本站 2024 年覆盖 11 家签发机构，进口来自北京、上海和广东三个机构。相较 4 月版，本站少 72 批进口、多 66 批国产。影响日期归属、机构覆盖和产品纳入范围的差异尚无法逐证对齐。集团归组只影响厂家份额。5 月版的 2024 年比例保留为独立版本。</p>
+      <p>上海专项核对读取 46 份药监局附件。在签发区间完全落入 2024 年的 802 批中，原采集覆盖 797 批，已补录其余 5 批。另有 17 批区间跨年，沿用不强制归年的规则。</p>
+      <p class="blood-note"><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs" target="_blank" rel="noopener">中检院及各机构批签发公示</a> · <a href="https://yjj.sh.gov.cn/jn-bmfw/20240110/c81b6b83d79f4e2798a3b159956112c9.html" target="_blank" rel="noopener">上海药监局 2024 年公示附件</a> · <a href="#lot-release">查看各机构覆盖及逐批汇总</a></p>
+    </details>
+  </section>
+  <h2 class="blood-group">公司经营</h2>
+  <section class="blood-panel" id="blood-company-trend" aria-labelledby="blood-trend-title">
+    <div class="blood-section-heading"><h2 id="blood-trend-title">公司历年趋势</h2></div>
+    <figure class="blood-trend" hidden>
+      <div class="blood-controls">
+        <label>指标<select id="blood-chart-metric">
+          <option value="volume" data-unit="吨">采浆量</option>
+          <option value="station" data-unit="吨／站">单站平均采浆量</option>
+          <option value="alb" data-unit="亿元">白蛋白收入</option>
+          <option value="ivig" data-unit="亿元">静丙收入</option>
+          <option value="other" data-unit="亿元">其他血制品收入</option>
+          <option value="albShare" data-unit="%">白蛋白收入占比</option>
+          <option value="ivigShare" data-unit="%">静丙收入占比</option>
+          <option value="otherShare" data-unit="%">其他血制品收入占比</option>
+          <option value="revenue" data-unit="万元／吨">吨浆收入</option>
+          <option value="profit" data-unit="万元／吨">吨浆毛利</option>
+        </select></label>
+        <label id="blood-chart-basis-label" hidden>收入计算口径<select id="blood-chart-basis">
+          <option value="aligned">扣除单列进口业务</option>
+          <option value="reported">血制品披露合计</option>
+        </select></label>
+      </div>
+      <fieldset class="company-series"><legend>选择公司</legend></fieldset>
+      <figcaption id="blood-chart-caption">采浆量（吨）</figcaption>
+      <div class="blood-trend-plot">
+        <canvas tabindex="0" role="img" aria-describedby="blood-trend-note"></canvas>
+        <div class="company-trend-tooltip" role="status" hidden></div>
+      </div>
+      <p class="blood-note" id="blood-trend-note">悬停或点按查看各年数值，也可使用左右方向键。约数和边界值用空心点和虚线，缺失年份断线。灰色公司暂无该指标数据。</p>
+      <p class="blood-note" id="blood-chart-station-note" hidden>以当年采浆量除以相邻两年披露的在营站数均值。披露日近似年末时沿用该时点并保留来源注释。任一年度缺少在营站数则留空。新站、并购及外部供浆可影响可比性。</p>
+      <p class="blood-note" id="blood-chart-mix-note" hidden>分母使用血制品收入。剔除进口时，从血制品收入和白蛋白收入同时扣除单列进口白蛋白经销收入。未单列进口收入的年份两种口径同值。其他包括凝血因子、特免等，缺失品类留空。</p>
+      <p class="blood-note" id="blood-chart-recombinant-note" hidden>禾元生物为重组白蛋白。2022–2024 年为辅料及试剂，2025 年为药品，口径变化处断线。</p>
+    </figure>
+    <noscript><p>可在下方下载公司年度数据 CSV。</p></noscript>
+  </section>
+
+  <section class="blood-panel" id="company-plasma" aria-labelledby="company-title">
+    <div class="blood-section-heading"><div><h2 id="company-title">上市公司年度数据</h2>
+      <p>收入及成本按人民币亿元列示，吨浆指标按万元／吨列示。CSV 的收入和成本保留到元。</p></div>
+      <a class="blood-download" href="company-plasma.csv" download>下载 CSV</a></div>
+    <form class="blood-controls" hidden>
+      <label>公司<select id="blood-company"><option value="all">全部采浆公司</option><option value="002252">上海莱士</option><option value="600161">天坛生物</option><option value="002007">华兰生物</option><option value="000403">派林生物</option><option value="300294">博雅生物</option><option value="002880">卫光生物</option><option value="300318">博晖创新</option></select></label>
+      <label>财年<select id="blood-year"><option value="all">全部年份</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option></select></label>
+      <label>计算口径<select id="blood-basis"><option value="aligned">扣除单列进口业务</option><option value="reported">血制品披露合计</option></select></label>
+    </form>
+    <p class="blood-note">吨浆收入＝当年血制品收入 ÷ 上一年采浆量。吨浆毛利＝（当年血制品收入 − 同口径营业成本）÷ 上一年采浆量。以前一年采浆量的约数测算时加“约”，以前一年采浆下限测算时显示上限。</p>
+    <p class="blood-note">公司浆站总数可含分站、筹建站，披露日和期末有差别时见来源。白蛋白金额栏含公司列入血制品收入的进口白蛋白，进口收入另列。计算口径用于吨浆与占比栏。† 表示并表等导致经营范围变化或不同。合作供浆口径见来源。缺项以“—”显示。</p>
+    <p id="blood-status" class="blood-note" role="status">正在加载公司数据…</p>
+    <div class="blood-scroll" role="region" aria-label="公司采浆、产品收入与吨浆指标" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">公司</th><th scope="col">财年</th><th scope="col">采浆量（吨）</th><th scope="col">浆站总数（家）</th><th scope="col">执业／在营（家）</th><th scope="col">平均在营（家）</th><th scope="col">单站采浆（吨／站）</th><th scope="col">血制品收入（亿元）</th><th scope="col">白蛋白（亿元）</th><th scope="col">其中进口（亿元）</th><th scope="col">静丙（亿元）</th><th scope="col">其他血制品收入（亿元）</th><th scope="col">血制品成本（亿元）</th><th scope="col">白蛋白占比</th><th scope="col">静丙占比</th><th scope="col">其他血制品占比</th><th scope="col">上年采浆（吨）</th><th scope="col">吨浆收入（万元／吨）</th><th scope="col">吨浆毛利（万元／吨）</th><th scope="col">来源</th></tr></thead>
+    <tbody id="blood-company-rows"></tbody></table>
+  </div>
+    <noscript><p>可下载 CSV 查看公司数据与逐年来源。</p></noscript>
+  </section>
+
+  
+<section class="capital-panel" id="working-capital" aria-labelledby="capital-title">
+  <header class="capital-heading">
+    <div>
+      <h2 id="capital-title">营运资金周转天数</h2>
+      <p>上市公司合并报表 · <span data-capital-latest>最新财报期</span> · 单位为天</p>
+    </div>
+    <div class="capital-downloads"><a href="working-capital.csv" download>周转天数 CSV</a><a href="working-capital-inputs.csv" download>财报原始科目 CSV</a></div>
+  </header>
+  <details class="capital-method">
+    <summary>公式与财报口径</summary>
+    <ul>
+      <li><strong>TTM 方法 C</strong>。余额取连续五个季度末，按 1、2、2、2、1 加权后除以 8。收入和营业成本为最近四个单季合计，天数固定为 365。</li>
+      <li><strong>单季</strong>。余额取季度期初与期末的均值，收入与营业成本按同一财年累计数相减，Q1 直接取一季报。本期天数按日历天数计算。</li>
+      <li><strong>AR days</strong>＝扩展应收平均余额 ÷ 营业收入 × 天数。扩展应收包括应收账款、应收票据及应收款项融资。合同资产在原始科目 CSV 单列。</li>
+      <li><strong>AP days</strong>＝扩展应付平均余额 ÷ 营业成本 × 天数。扩展应付包括应付账款及应付票据。合并列示的票据及账款取合计数。</li>
+      <li><strong>Inventory days</strong>＝存货平均余额 ÷ 营业成本 × 天数。<strong>CCC days</strong>＝AR days ＋ Inventory days − AP days。</li>
+      <li>数据来自公司合并财报及东方财富标准化报表。票据与账款优先采用披露或可勾稽的合计数，单列的应收款项融资仅计入一次。原始科目 CSV 保留未取得的明细、拆季数据、财报页码及重述来源。缺少连续可比余额、缺少同口径流量或分母不为正时，相关指标留空。禾元生物在商业化早期的营业成本较小。</li>
+    </ul>
+  </details>
+  <div class="capital-interactive" hidden>
+    <div class="capital-controls">
+      <label>计算口径<select id="capital-mode"><option value="1">TTM · 方法 C</option><option value="2">单季</option></select></label>
+      <label>图表指标<select id="capital-metric"><option value="0">AR days</option><option value="1">AP days</option><option value="2">Inventory days</option><option value="3" selected>CCC days</option></select></label>
+      
+      <label>图表时间<select id="capital-range"><option value="20">近五年</option><option value="all">全部历史</option></select></label>
+    </div>
+    <figure class="capital-trend" hidden>
+      <fieldset class="company-series"><legend>比较公司</legend></fieldset>
+      <figcaption id="capital-caption">CCC days · TTM · 天</figcaption>
+      <div class="capital-plot">
+        <canvas tabindex="0" role="img" aria-labelledby="capital-caption" aria-describedby="capital-chart-help"></canvas>
+        <div class="company-trend-tooltip" role="status" hidden></div>
+      </div>
+      <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失季度断线。</p>
+    </figure>
+    
+    <div class="capital-controls capital-table-controls">
+      <label>表格季度<select id="capital-period"></select></label>
+      <label>表格公司<select id="capital-company"><option value="all">全部公司</option></select></label>
+    </div>
+    <div class="capital-scroll" role="region" aria-label="营运资金周转天数明细" tabindex="0">
+      <table class="capital-table">
+        <thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">AR days</th><th scope="col">AP days</th><th scope="col">Inventory days</th><th scope="col">CCC days</th><th scope="col">事项／来源</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <p class="capital-status" role="status">正在读取公司数据…</p>
+  <noscript><p>可下载上方 CSV 查看周转天数及原始财报科目。</p></noscript>
+</section>
+<script src="../assets/working-capital.js" type="module"></script>
+
+  <h2 class="blood-group">产品与公司事件</h2>
   <section class="blood-panel" id="lot-release" aria-labelledby="lot-release-title">
     <div class="blood-section-heading"><div>
       <h2 id="lot-release-title">血制品批签发</h2>
@@ -103,7 +325,7 @@
       <a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs" target="_blank" rel="noopener">全国统一公示平台</a>
     </div></div>
     <dl class="lot-kpis">
-      <div><dt>已核对的获签批次</dt><dd id="lot-count">62,856</dd></div>
+      <div><dt>已核对的获签批次</dt><dd id="lot-count">62,861</dd></div>
       <div><dt>有血制品记录的签发机构</dt><dd id="lot-agency-count">14</dd></div>
       <div><dt id="lot-unassigned-label">跨季未归期</dt><dd id="lot-unassigned">2206</dd></div>
     </dl>
@@ -137,9 +359,9 @@
         <li>已解析 4,153 份统一平台公示，含 187 份旧版公示。目录中另有 0 份待核。2007–2009 年旧入口按号查询，当前汇总从可核验的公开档案起算。 <a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfQkcx" target="_blank" rel="noopener">官方历史证书查询</a> <a href="https://labz.nifdc.org.cn/nicpbpoa/bgsk.nsf/inputnumber?OpenForm" target="_blank" rel="noopener">2007 年起旧入口</a> <a href="https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html" target="_blank" rel="noopener">中检院每周公告</a> <a href="https://yjj.sh.gov.cn/jn-bmfw/index.html" target="_blank" rel="noopener">上海药监局历史公示</a></li>
         <li>1,016 条公示行缺少可识别的证书号或收检编号，未计入。已纳入的批次中，1,357 批未披露持有人。</li>
         <li>2025 年本页可归年的公示为 8,601 批。卫光生物募集说明书转引中检院与券商研究，列示主要血液制品批签发 9,000 批，供参考。 <a href="https://static.cninfo.com.cn/finalpage/2026-05-20/1225316065.PDF" target="_blank" rel="noopener">卫光生物募集说明书</a></li>
-        <li>另对读中检院每周公告 445 份，按证书号交叉去重后补入 225 批日期可归属的记录。</li>
+        <li>另对读中检院每周公告 445 份，按证书号交叉去重后补入 225 批日期可归属的记录。地方药监局历史公示按证书去重后补入 5 批。</li>
       </ul>
-      <p class="blood-note">逐年覆盖与早期官方年报对照 <a href="https://www.nifdc.org.cn/directory/web/nifdc/images/uL28iAyMDE3xOrJ%2Bs7v1sbGt8X6x6m3osTqsagucGRm.pdf" target="_blank" rel="noopener">中检院 2017 年批签发年报</a></p><div class="blood-scroll" role="region" aria-label="逐年覆盖" tabindex="0"><table class="blood-table"><thead><tr><th>年份</th><th>公示可归年批次</th><th>官方年报签发数</th></tr></thead><tbody><tr><th scope="row">2010</th><td>217</td><td>—</td></tr><tr><th scope="row">2011</th><td>285</td><td>—</td></tr><tr><th scope="row">2012</th><td>210</td><td>—</td></tr><tr><th scope="row">2013</th><td>157</td><td>—</td></tr><tr><th scope="row">2014</th><td>105</td><td>—</td></tr><tr><th scope="row">2015</th><td>817</td><td>—</td></tr><tr><th scope="row">2016</th><td>1,028</td><td>—</td></tr><tr><th scope="row">2017</th><td>1,005</td><td>4,387</td></tr><tr><th scope="row">2018</th><td>4,195</td><td>—</td></tr><tr><th scope="row">2019</th><td>4,660</td><td>—</td></tr><tr><th scope="row">2020</th><td>5,498</td><td>—</td></tr><tr><th scope="row">2021</th><td>6,379</td><td>—</td></tr><tr><th scope="row">2022</th><td>6,657</td><td>—</td></tr><tr><th scope="row">2023</th><td>7,525</td><td>—</td></tr><tr><th scope="row">2024</th><td>8,455</td><td>—</td></tr><tr><th scope="row">2025</th><td>8,601</td><td>—</td></tr><tr><th scope="row">2026</th><td>7,062</td><td>—</td></tr></tbody></table></div>
+      <p class="blood-note">逐年覆盖与早期官方年报对照 <a href="https://www.nifdc.org.cn/directory/web/nifdc/images/uL28iAyMDE3xOrJ%2Bs7v1sbGt8X6x6m3osTqsagucGRm.pdf" target="_blank" rel="noopener">中检院 2017 年批签发年报</a></p><div class="blood-scroll" role="region" aria-label="逐年覆盖" tabindex="0"><table class="blood-table"><thead><tr><th>年份</th><th>公示可归年批次</th><th>官方年报签发数</th></tr></thead><tbody><tr><th scope="row">2010</th><td>217</td><td>—</td></tr><tr><th scope="row">2011</th><td>285</td><td>—</td></tr><tr><th scope="row">2012</th><td>210</td><td>—</td></tr><tr><th scope="row">2013</th><td>157</td><td>—</td></tr><tr><th scope="row">2014</th><td>105</td><td>—</td></tr><tr><th scope="row">2015</th><td>817</td><td>—</td></tr><tr><th scope="row">2016</th><td>1,028</td><td>—</td></tr><tr><th scope="row">2017</th><td>1,005</td><td>4,387</td></tr><tr><th scope="row">2018</th><td>4,195</td><td>—</td></tr><tr><th scope="row">2019</th><td>4,660</td><td>—</td></tr><tr><th scope="row">2020</th><td>5,498</td><td>—</td></tr><tr><th scope="row">2021</th><td>6,379</td><td>—</td></tr><tr><th scope="row">2022</th><td>6,657</td><td>—</td></tr><tr><th scope="row">2023</th><td>7,525</td><td>—</td></tr><tr><th scope="row">2024</th><td>8,460</td><td>—</td></tr><tr><th scope="row">2025</th><td>8,601</td><td>—</td></tr><tr><th scope="row">2026</th><td>7,062</td><td>—</td></tr></tbody></table></div>
       <div class="blood-scroll vaccine-scroll" role="region" aria-label="签发机构覆盖" tabindex="0">
         <table class="blood-table"><thead><tr><th scope="col">目录机构</th><th scope="col">应查公示</th><th scope="col">已读</th><th scope="col">待核</th><th scope="col">已核血制品批次</th><th scope="col">来源</th></tr></thead><tbody><tr><th scope="row">中国药品检定研究院</th>
     <td>629</td><td>629</td><td>0</td>
@@ -149,7 +371,7 @@
     <td>496</td><td>496</td><td>0</td>
     <td>13657</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d226a9159001c" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">上海市食品药品检验研究院</th>
     <td>413</td><td>413</td><td>0</td>
-    <td>12498</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d2265474b0004" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">四川省药品检验研究院(四川省医疗器械检测中心)</th>
+    <td>12503</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d2265474b0004" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">四川省药品检验研究院(四川省医疗器械检测中心)</th>
     <td>431</td><td>431</td><td>0</td>
     <td>7381</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=4028813a1d225be5011d226ba310001e" target="_blank" rel="noopener">机构公示</a></td></tr><tr><th scope="row">湖北省药品监督检验研究院</th>
     <td>405</td><td>405</td><td>0</td>
@@ -185,52 +407,100 @@
       </div>
     </details>
   </section><script src="lot-release.js" type="module"></script>
-  <section class="blood-panel" id="blood-company-trend" aria-labelledby="blood-trend-title">
-    <div class="blood-section-heading"><h2 id="blood-trend-title">公司历年趋势</h2></div>
-    <figure class="blood-trend" hidden>
-      <div class="blood-controls">
-        <label>指标<select id="blood-chart-metric">
-          <option value="volume" data-unit="吨">采浆量</option>
-          <option value="alb" data-unit="亿元">白蛋白收入</option>
-          <option value="ivig" data-unit="亿元">静丙收入</option>
-          <option value="other" data-unit="亿元">其他血制品收入</option>
-          <option value="revenue" data-unit="万元／吨">吨浆收入</option>
-          <option value="profit" data-unit="万元／吨">吨浆毛利</option>
-        </select></label>
-        <label id="blood-chart-basis-label" hidden>吨浆测算分子<select id="blood-chart-basis">
-          <option value="aligned">扣除单列进口业务</option>
-          <option value="reported">血制品披露合计</option>
-        </select></label>
-      </div>
-      <fieldset class="company-series"><legend>选择公司</legend></fieldset>
-      <figcaption id="blood-chart-caption">采浆量（吨）</figcaption>
+  <section class="blood-panel blood-research" id="station-events" aria-labelledby="station-events-title">
+    <div class="blood-section-heading"><div><h2 id="station-events-title">浆站新建、投运与并购</h2>
+      <p>按公告记载阶段跟踪。涉及站数按事件列示，同一浆站的多个里程碑可各有一条。</p></div>
+      <a class="blood-download" href="station-events.csv" download>下载浆站事件 CSV</a></div>
+    <div class="blood-controls" data-event-controls><label>公司<select id="station-company"><option value="">全部</option><option>天坛生物</option><option>博雅生物</option><option>上海莱士</option><option>华兰生物</option><option>博晖创新</option><option>卫光生物</option><option>派林生物</option></select></label>
+      <label>阶段<select id="station-stage"><option value="">全部</option><option>取得采浆许可证</option><option>并购交割</option><option>取得营业执照</option><option>获批设置</option><option>开始采浆</option><option>复采</option><option>全年采浆披露</option></select></label></div>
+    <p class="blood-note" data-event-status></p>
+    <div class="blood-scroll" role="region" aria-label="浆站扩张事件" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">时间</th><th scope="col">公司</th><th scope="col">浆站或收购标的</th><th scope="col">省份</th><th scope="col">阶段</th><th scope="col">涉及浆站（家）</th><th scope="col">关联实采（吨）</th><th scope="col">说明</th><th scope="col">来源</th></tr></thead>
+    <tbody><tr data-company="天坛生物" data-kind="取得采浆许可证"><th scope="row">2026-09-08</th>
+      <td>天坛生物</td><td>皋兰、永登、甘谷、金塔</td><td>甘肃</td><td>取得采浆许可证</td><td>4</td><td>—</td><td>披露已获准执业，未单列首采日或当年采浆量。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-09-08/1225551333.PDF" target="_blank" rel="noopener">关于下属浆站获得单采血浆许可证的公告</a></td></tr><tr data-company="博雅生物" data-kind="取得采浆许可证"><th scope="row">2026-08</th>
+      <td>博雅生物</td><td>达拉特旗浆站</td><td>内蒙古</td><td>取得采浆许可证</td><td>1</td><td>—</td><td>三季报确认取得许可证，未单列首采日或采浆量。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-10-30/1225640490.PDF" target="_blank" rel="noopener">2026年第三季度报告</a></td></tr><tr data-company="上海莱士" data-kind="并购交割"><th scope="row">2025-06-20</th>
+      <td>上海莱士</td><td>南岳生物及其在采浆站</td><td>湖南</td><td>并购交割</td><td>9</td><td>—</td><td>完成100%股权收购及工商变更。9 家为标的在采站，协议的 305 吨为或有对价门槛。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-08-30/1224627288.PDF" target="_blank" rel="noopener">股权收购进展公告及2025年半年报</a></td></tr><tr data-company="博雅生物" data-kind="取得营业执照"><th scope="row">2025-06</th>
+      <td>博雅生物</td><td>达拉特旗浆站</td><td>内蒙古</td><td>取得营业执照</td><td>1</td><td>—</td><td>已完成工商登记，2025 年报披露时仍在建设。</td>
+      <td class="blood-research-source"><a href="https://disc.static.szse.cn/download/disc/disk03/finalpage/2025-08-23/e69d9e5e-6da1-4f45-8d0c-cd4a1a9d48ad.PDF" target="_blank" rel="noopener">2025年半年度报告</a></td></tr><tr data-company="博雅生物" data-kind="获批设置"><th scope="row">2025-01</th>
+      <td>博雅生物</td><td>达拉特旗浆站</td><td>内蒙古</td><td>获批设置</td><td>1</td><td>—</td><td>内蒙古自治区卫健委批准设置，执业许可另行跟踪。</td>
+      <td class="blood-research-source"><a href="https://disc.static.szse.cn/download/disc/disk03/finalpage/2025-08-23/e69d9e5e-6da1-4f45-8d0c-cd4a1a9d48ad.PDF" target="_blank" rel="noopener">2025年半年度报告</a></td></tr><tr data-company="华兰生物" data-kind="开始采浆"><th scope="row">2025</th>
+      <td>华兰生物</td><td>丰都县单采血浆站</td><td>重庆</td><td>开始采浆</td><td>1</td><td>—</td><td>年内建成、取得采浆许可证并开始采浆，未单列首采日或产量。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-03-28/1225041704.PDF" target="_blank" rel="noopener">2025年年度报告</a></td></tr><tr data-company="博晖创新" data-kind="获批设置"><th scope="row">2025</th>
+      <td>博晖创新</td><td>新获批单采血浆站</td><td>—</td><td>获批设置</td><td>2</td><td>—</td><td>年报披露新获批 2 家。421.85 吨为集团全年约数。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-04-25/1225184237.PDF" target="_blank" rel="noopener">2025年年度报告</a></td></tr><tr data-company="上海莱士" data-kind="全年采浆披露"><th scope="row">2025</th>
+      <td>上海莱士</td><td>南岳生物在采浆站</td><td>湖南</td><td>全年采浆披露</td><td>9</td><td>超305</td><td>审计报告确认交割标的全年实采超过305吨，并达到或有对价支付条件。该数含并表前采浆。</td>
+      <td class="blood-research-source"><a href="https://disc.static.szse.cn/disc/disk03/finalpage/2026-03-27/17dd428d-720c-475a-b5d7-5fb3cb5c977e.PDF" target="_blank" rel="noopener">2025年年度审计报告</a></td></tr><tr data-company="博雅生物" data-kind="并购交割"><th scope="row">2024-11</th>
+      <td>博雅生物</td><td>绿十字（中国）旗下在营浆站</td><td>多地</td><td>并购交割</td><td>4</td><td>108.56</td><td>108.56 吨为标的 2024 年全年采浆量，含并表前的月份。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-03-19/1222834973.PDF" target="_blank" rel="noopener">2024年年度报告</a></td></tr><tr data-company="天坛生物" data-kind="并购交割"><th scope="row">2024-10</th>
+      <td>天坛生物</td><td>武汉中原瑞德旗下在营浆站</td><td>湖北、湖南</td><td>并购交割</td><td>5</td><td>—</td><td>年报披露新增 5 家在营浆站。公司披露的年采浆增量为百余吨，未单列交割后当年实采吨数。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-05-14/1223536055.PDF" target="_blank" rel="noopener">2024年度公司披露</a></td></tr><tr data-company="博雅生物" data-kind="取得采浆许可证"><th scope="row">2024-07</th>
+      <td>博雅生物</td><td>泰和、乐平浆站</td><td>江西</td><td>取得采浆许可证</td><td>2</td><td>—</td><td>取得江西省卫健委颁发的许可证。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-03-19/1222834986.PDF" target="_blank" rel="noopener">2024年年度报告摘要</a></td></tr><tr data-company="卫光生物" data-kind="并购交割"><th scope="row">2023-12-31</th>
+      <td>卫光生物</td><td>安康浆站</td><td>陕西</td><td>并购交割</td><td>1</td><td>—</td><td>报告列示合并日为 2023 年末。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2024-04-26/1219825375.PDF" target="_blank" rel="noopener">2023年年度报告</a></td></tr><tr data-company="卫光生物" data-kind="复采"><th scope="row">2023</th>
+      <td>卫光生物</td><td>安康浆站</td><td>陕西</td><td>复采</td><td>1</td><td>—</td><td>收购后恢复采浆，年报未单列复采日。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2024-04-26/1219825375.PDF" target="_blank" rel="noopener">2023年年度报告</a></td></tr><tr data-company="派林生物" data-kind="并购交割"><th scope="row">2021-02</th>
+      <td>派林生物</td><td>哈尔滨派斯菲科</td><td>黑龙江</td><td>并购交割</td><td>—</td><td>—</td><td>标的历史在营站数与各期采浆量见重组表。此处未用交割前运营站数代替交割时站数。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2020-11-18/1208757685.PDF#page=11" target="_blank" rel="noopener">重组反馈回复及公司合并披露</a></td></tr><tr data-company="博雅生物" data-kind="开始采浆"><th scope="row">2016-05-11</th>
+      <td>博雅生物</td><td>都昌浆站</td><td>江西</td><td>开始采浆</td><td>1</td><td>—</td><td>公司披露同日取得许可证并正式营业。</td>
+      <td class="blood-research-source"><a href="https://www.china-boya.com/index.php?a=lists&amp;c=index&amp;catid=100&amp;m=content" target="_blank" rel="noopener">公司浆站介绍</a></td></tr></tbody></table>
+  </div>
+  </section>
+  <section class="blood-panel blood-research" id="product-upgrades" aria-labelledby="product-upgrades-title">
+    <div class="blood-section-heading"><div><h2 id="product-upgrades-title">静丙浓度与凝血因子升级</h2>
+      <p>产品事件按公告型号和实际阶段登记。逐批公示中的品名经常缺少浓度，静丙批次数按全部可识别规格汇总。</p></div>
+      <a class="blood-download" href="product-upgrades.csv" download>下载产品事件 CSV</a></div>
+    <div class="blood-controls" data-event-controls><label>公司<select id="product-company"><option value="">全部</option><option>天坛生物</option><option>派林生物</option><option>华兰生物</option><option>博晖创新</option><option>博雅生物</option></select></label>
+      <label>品种<select id="product-family"><option value="">全部</option><option>凝血因子</option><option>免疫球蛋白其他</option><option>10% 静丙</option><option>5% 静丙</option><option>重组凝血因子</option></select></label></div>
+    <p class="blood-note" data-event-status></p>
+    <div class="blood-scroll" role="region" aria-label="静丙浓度及凝血因子产品事件" tabindex="0">
+    <table class="blood-table"><thead><tr><th scope="col">时间</th><th scope="col">公司</th><th scope="col">产品</th><th scope="col">品种</th><th scope="col">阶段</th><th scope="col">进度与规格</th><th scope="col">来源</th></tr></thead>
+    <tbody><tr data-company="天坛生物" data-kind="凝血因子"><th scope="row">2026-10-09</th>
+      <td>天坛生物</td><td>成都蓉生 · 人凝血因子Ⅸ</td><td>凝血因子</td><td>Ⅲ期完成</td><td>取得临床试验总结报告，上市申请尚待递交。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-10-09/1225596946.PDF" target="_blank" rel="noopener">关于下属企业获得临床试验总结报告的公告</a></td></tr><tr data-company="天坛生物" data-kind="免疫球蛋白其他"><th scope="row">2026-06</th>
+      <td>天坛生物</td><td>成都蓉生 · 皮下注射人免疫球蛋白</td><td>免疫球蛋白其他</td><td>获批上市</td><td>给药途径为皮下，另列于静丙浓度分类之外。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-08-29/1225527459.PDF#page=128" target="_blank" rel="noopener">2026年半年度报告</a></td></tr><tr data-company="派林生物" data-kind="10% 静丙"><th scope="row">2026-05-11</th>
+      <td>派林生物</td><td>广东双林 · 10% 静丙</td><td>10% 静丙</td><td>注册核查</td><td>公司业绩会披露已收到注册核查通知。</td>
+      <td class="blood-research-source"><a href="https://irm.cninfo.com.cn/interview/interview/activityInfo?activityId=1441903783762620416" target="_blank" rel="noopener">2025年度业绩说明会</a></td></tr><tr data-company="派林生物" data-kind="凝血因子"><th scope="row">2026-05-11</th>
+      <td>派林生物</td><td>广东双林 · 人凝血因子Ⅸ</td><td>凝血因子</td><td>注册核查</td><td>公司业绩会披露已收到注册核查通知。</td>
+      <td class="blood-research-source"><a href="https://irm.cninfo.com.cn/interview/interview/activityInfo?activityId=1441903783762620416" target="_blank" rel="noopener">2025年度业绩说明会</a></td></tr><tr data-company="派林生物" data-kind="5% 静丙"><th scope="row">2026-05-11</th>
+      <td>派林生物</td><td>广东双林 · 新一代 5% 静丙</td><td>5% 静丙</td><td>临床</td><td>2025 年报披露该浓度项目，业绩会披露临床进展。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-04-29/1225245931.PDF" target="_blank" rel="noopener">2025年年度报告</a></td></tr><tr data-company="华兰生物" data-kind="10% 静丙"><th scope="row">2026-04-18</th>
+      <td>华兰生物</td><td>静注人免疫球蛋白</td><td>10% 静丙</td><td>规格获批</td><td>新增规格含 5g／50ml（10%）。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-04-18/1225116942.PDF" target="_blank" rel="noopener">获得药品补充申请批准通知书公告</a></td></tr><tr data-company="博雅生物" data-kind="凝血因子"><th scope="row">2026-02-24</th>
+      <td>博雅生物</td><td>人凝血因子Ⅸ</td><td>凝血因子</td><td>临床获批</td><td>取得药物临床试验批准通知书。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-02-24/1224983027.PDF" target="_blank" rel="noopener">人凝血因子Ⅸ临床试验获批公告</a></td></tr><tr data-company="博晖创新" data-kind="凝血因子"><th scope="row">2025-12-24</th>
+      <td>博晖创新</td><td>河北博晖 · 人凝血因子Ⅷ</td><td>凝血因子</td><td>获批上市</td><td>200 IU／瓶，国药准字 S20250068。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-12-24/1224893146.PDF" target="_blank" rel="noopener">获得药品注册证书公告</a></td></tr><tr data-company="博雅生物" data-kind="免疫球蛋白其他"><th scope="row">2025-11-18</th>
+      <td>博雅生物</td><td>破伤风人免疫球蛋白</td><td>免疫球蛋白其他</td><td>获批上市</td><td>公司披露获药品注册证书。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-03-21/1225021679.PDF#page=12" target="_blank" rel="noopener">2025年年度报告</a></td></tr><tr data-company="天坛生物" data-kind="10% 静丙"><th scope="row">2025-07-09</th>
+      <td>天坛生物</td><td>成都蓉生 · 静注人免疫球蛋白（pH4）</td><td>10% 静丙</td><td>规格获批</td><td>新增 2.5g／25ml（10%），原有 5g／50ml（10%）规格。</td>
+      <td class="blood-research-source"><a href="https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2025-07-09/600161_20250709_50ZT.pdf" target="_blank" rel="noopener">关于下属企业获得药品补充申请批准通知书的公告</a></td></tr><tr data-company="博雅生物" data-kind="10% 静丙"><th scope="row">2025-05-27</th>
+      <td>博雅生物</td><td>静注人免疫球蛋白（pH4）</td><td>10% 静丙</td><td>规格获批</td><td>5g／50ml（10%）。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-05-30/1223733027.PDF" target="_blank" rel="noopener">药品补充申请公告</a></td></tr><tr data-company="博晖创新" data-kind="5% 静丙"><th scope="row">2025</th>
+      <td>博晖创新</td><td>广东卫伦 · 静注人免疫球蛋白</td><td>5% 静丙</td><td>临床</td><td>2.5g／50ml（5%），年报列示临床试验批准事项。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-04-25/1225184237.PDF" target="_blank" rel="noopener">2025年年度报告</a></td></tr><tr data-company="天坛生物" data-kind="重组凝血因子"><th scope="row">2025</th>
+      <td>天坛生物</td><td>成都蓉生 · 注射用重组人凝血因子Ⅷ</td><td>重组凝血因子</td><td>生产场地变更</td><td>2025 年报披露获得补充申请批准并完成生产场地变更。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF#page=13" target="_blank" rel="noopener">2025年年度报告</a></td></tr><tr data-company="天坛生物" data-kind="凝血因子"><th scope="row">2024</th>
+      <td>天坛生物</td><td>兰州血制 · 人凝血酶原复合物（PCC）</td><td>凝血因子</td><td>获批上市</td><td>公司年报披露取得药品注册证书。</td>
+      <td class="blood-research-source"><a href="https://static.cninfo.com.cn/finalpage/2025-03-29/1222945087.PDF" target="_blank" rel="noopener">2024年年度报告</a></td></tr><tr data-company="天坛生物" data-kind="10% 静丙"><th scope="row">2023</th>
+      <td>天坛生物</td><td>成都蓉生 · 静注人免疫球蛋白（pH4）</td><td>10% 静丙</td><td>获批上市</td><td>2023 年先取得 5g／50ml（10%）规格上市许可，后续增加新规格。</td>
+      <td class="blood-research-source"><a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10232915&amp;stockid=600161" target="_blank" rel="noopener">2023年年度股东大会会议文件</a></td></tr><tr data-company="天坛生物" data-kind="重组凝血因子"><th scope="row">2023</th>
+      <td>天坛生物</td><td>成都蓉生 · 注射用重组人凝血因子Ⅷ</td><td>重组凝血因子</td><td>获批上市</td><td>公司披露取得上市许可。</td>
+      <td class="blood-research-source"><a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10232915&amp;stockid=600161" target="_blank" rel="noopener">2023年年度股东大会会议文件</a></td></tr></tbody></table>
+  </div>
+    <figure class="blood-trend blood-research-product-trend" id="blood-product-trend" hidden>
+      <fieldset class="company-series"><legend>选择批签发品种</legend></fieldset>
+      <figcaption>本站逐批公示 · 完整年度趋势（批）</figcaption>
       <div class="blood-trend-plot">
-        <canvas tabindex="0" role="img" aria-describedby="blood-trend-note"></canvas>
+        <canvas tabindex="0" role="img" aria-label="静丙和各类凝血因子的历年批签发批次" aria-describedby="blood-product-note"></canvas>
         <div class="company-trend-tooltip" role="status" hidden></div>
       </div>
-      <p class="blood-note" id="blood-trend-note">悬停或点按查看各年数值，也可使用左右方向键。约数和边界值用空心点和虚线，缺失年份断线。灰色公司暂无该指标数据。</p>
-      <p class="blood-note" id="blood-chart-recombinant-note" hidden>禾元生物为重组白蛋白。2022–2024 年为辅料及试剂，2025 年为药品，口径变化处断线。</p>
+      <p id="blood-product-note" class="blood-note">缺少记录的年份断线。重组品种未纳入血浆来源批签发汇总。半年及年内未完结数据见下载。<a href="product-lot-trends.csv" download>下载品种批次 CSV</a></p>
     </figure>
-    <noscript><p>可在下方下载公司年度数据 CSV。</p></noscript>
-  </section>
-
-  <section class="blood-panel" id="company-plasma" aria-labelledby="company-title">
-    <div class="blood-section-heading"><div><h2 id="company-title">上市公司年度数据</h2>
-      <p>收入及成本按人民币亿元列示，吨浆指标按万元／吨列示。CSV 的收入和成本保留到元。</p></div>
-      <a class="blood-download" href="company-plasma.csv" download>下载 CSV</a></div>
-    <form class="blood-controls" hidden>
-      <label>公司<select id="blood-company"><option value="all">全部采浆公司</option><option value="002252">上海莱士</option><option value="600161">天坛生物</option><option value="002007">华兰生物</option><option value="000403">派林生物</option><option value="300294">博雅生物</option><option value="002880">卫光生物</option><option value="300318">博晖创新</option></select></label>
-      <label>财年<select id="blood-year"><option value="all">全部年份</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option></select></label>
-      <label>吨浆测算分子<select id="blood-basis"><option value="aligned">扣除单列进口业务</option><option value="reported">血制品披露合计</option></select></label>
-    </form>
-    <p class="blood-note">吨浆收入＝当年血制品收入 ÷ 上一年采浆量。吨浆毛利＝（当年血制品收入 − 同口径营业成本）÷ 上一年采浆量。以前一年采浆量的约数测算时加“约”，以前一年采浆下限测算时显示上限。</p>
-    <p class="blood-note">公司浆站总数可含分站、筹建站，披露日和期末有差别时见来源。白蛋白栏含公司列入血制品收入的进口白蛋白，进口收入另列。其他包含凝血因子、特免等。† 表示并表导致当年收入和上年采浆范围不同。合作供浆口径见来源。缺项以“—”显示。</p>
-    <p id="blood-status" class="blood-note" role="status">正在加载公司数据…</p>
-    <div class="blood-scroll" role="region" aria-label="公司采浆、产品收入与吨浆指标" tabindex="0">
-    <table class="blood-table"><thead><tr><th scope="col">公司</th><th scope="col">财年</th><th scope="col">采浆量（吨）</th><th scope="col">浆站总数（家）</th><th scope="col">执业／在营（家）</th><th scope="col">血制品收入（亿元）</th><th scope="col">白蛋白（亿元）</th><th scope="col">其中进口（亿元）</th><th scope="col">静丙（亿元）</th><th scope="col">其他血制品收入（亿元）</th><th scope="col">血制品成本（亿元）</th><th scope="col">上年采浆（吨）</th><th scope="col">吨浆收入（万元／吨）</th><th scope="col">吨浆毛利（万元／吨）</th><th scope="col">来源</th></tr></thead>
-    <tbody id="blood-company-rows"></tbody></table>
-  </div>
-    <noscript><p>可下载 CSV 查看公司数据与逐年来源。</p></noscript>
   </section>
 
   <section class="blood-panel" id="plasma-transactions" aria-labelledby="plasma-transactions-title">
@@ -302,57 +572,6 @@
   </section>
 
   
-<section class="capital-panel" id="working-capital" aria-labelledby="capital-title">
-  <header class="capital-heading">
-    <div>
-      <h2 id="capital-title">营运资金周转天数</h2>
-      <p>上市公司合并报表 · <span data-capital-latest>最新财报期</span> · 单位为天</p>
-    </div>
-    <div class="capital-downloads"><a href="working-capital.csv" download>周转天数 CSV</a><a href="working-capital-inputs.csv" download>财报原始科目 CSV</a></div>
-  </header>
-  <details class="capital-method">
-    <summary>公式与财报口径</summary>
-    <ul>
-      <li><strong>TTM 方法 C</strong>。余额取连续五个季度末，按 1、2、2、2、1 加权后除以 8。收入和营业成本为最近四个单季合计，天数固定为 365。</li>
-      <li><strong>单季</strong>。余额取季度期初与期末的均值，收入与营业成本按同一财年累计数相减，Q1 直接取一季报。本期天数按日历天数计算。</li>
-      <li><strong>AR days</strong>＝扩展应收平均余额 ÷ 营业收入 × 天数。扩展应收包括应收账款、应收票据及应收款项融资。合同资产在原始科目 CSV 单列。</li>
-      <li><strong>AP days</strong>＝扩展应付平均余额 ÷ 营业成本 × 天数。扩展应付包括应付账款及应付票据。合并列示的票据及账款取合计数。</li>
-      <li><strong>Inventory days</strong>＝存货平均余额 ÷ 营业成本 × 天数。<strong>CCC days</strong>＝AR days ＋ Inventory days − AP days。</li>
-      <li>数据来自公司合并财报及东方财富标准化报表。票据与账款优先采用披露或可勾稽的合计数，单列的应收款项融资仅计入一次。原始科目 CSV 保留未取得的明细、拆季数据、财报页码及重述来源。缺少连续可比余额、缺少同口径流量或分母不为正时，相关指标留空。禾元生物在商业化早期的营业成本较小。</li>
-    </ul>
-  </details>
-  <div class="capital-interactive" hidden>
-    <div class="capital-controls">
-      <label>计算口径<select id="capital-mode"><option value="1">TTM · 方法 C</option><option value="2">单季</option></select></label>
-      <label>图表指标<select id="capital-metric"><option value="0">AR days</option><option value="1">AP days</option><option value="2">Inventory days</option><option value="3" selected>CCC days</option></select></label>
-      <label>图表时间<select id="capital-range"><option value="20">近五年</option><option value="all">全部历史</option></select></label>
-    </div>
-    <figure class="capital-trend" hidden>
-      <fieldset class="company-series"><legend>比较公司</legend></fieldset>
-      <figcaption id="capital-caption">CCC days · TTM · 天</figcaption>
-      <div class="capital-plot">
-        <canvas tabindex="0" role="img" aria-labelledby="capital-caption" aria-describedby="capital-chart-help"></canvas>
-        <div class="company-trend-tooltip" role="status" hidden></div>
-      </div>
-      <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失季度断线。</p>
-    </figure>
-    <div class="capital-controls capital-table-controls">
-      <label>表格季度<select id="capital-period"></select></label>
-      <label>表格公司<select id="capital-company"><option value="all">全部公司</option></select></label>
-    </div>
-    <div class="capital-scroll" role="region" aria-label="营运资金周转天数明细" tabindex="0">
-      <table class="capital-table">
-        <thead><tr><th scope="col">公司</th><th scope="col">季度</th><th scope="col">AR days</th><th scope="col">AP days</th><th scope="col">Inventory days</th><th scope="col">CCC days</th><th scope="col">事项／来源</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-  <p class="capital-status" role="status">正在读取公司数据…</p>
-  <noscript><p>可下载上方 CSV 查看周转天数及原始财报科目。</p></noscript>
-</section>
-<script src="../assets/working-capital.js" type="module"></script>
-
-  
 <section class="blood-panel equity-panel" id="equity-incentives" aria-labelledby="equity-title">
   <div class="dataset-head">
     <div>
@@ -362,6 +581,7 @@
     <a class="download-data" href="equity-incentives.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
   </div>
   <p class="dataset-source">目标取自公司层面的解锁或归属条款。实际值优先采用公司公布的考核口径，报表原值另行标注。</p>
+  
   <div class="company-filters equity-filters" hidden>
     <label>公司<select id="equity-company"><option value="all">全部公司</option><option value="300318">博晖创新</option><option value="002252">上海莱士</option><option value="002007">华兰生物</option><option value="000403">派林生物</option></select></label>
     <label>考核结果<select id="equity-status"><option value="all">全部状态</option><option>达标</option><option>部分达标</option><option>未达标</option><option>待考核</option><option>待确认</option></select></label>
@@ -613,4 +833,4 @@
     <td><details class="blood-source"><summary>查来源</summary><a href="https://pdf.dfcfw.com/pdf/H2_AN202604271821618956_1.pdf#page=30" target="_blank" rel="noopener">2025年年度报告 · PDF 第 30 页</a></details></td></tr></tbody></table>
   </div>
   </section>
-</div><script src="blood.js" type="module"></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>
+</div><script src="blood.js" type="module"></script><script src="blood-research.js" type="module"></script></main><footer class="site-footer"><span>医药行业公开数据</span><span>按主题持续整理</span></footer></div></body></html>

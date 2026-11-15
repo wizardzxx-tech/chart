@@ -1,4 +1,5 @@
 import {mountCompanyTrend} from '../pharmacy/company-trend.js';
+import {plasmaPerStation, productRevenueShares} from './blood-metrics.js';
 
 const company = document.querySelector('#blood-company');
 const year = document.querySelector('#blood-year');
@@ -10,6 +11,7 @@ const formatter = new Intl.NumberFormat('en-US', {maximumFractionDigits: 2});
 const moneyFormatter = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const quantity = (n, prefix = '') => n == null ? '—' : prefix + formatter.format(n);
 const money = n => n == null ? '—' : moneyFormatter.format(n / 1e8);
+const percentage = n => n == null ? '—' : n.toFixed(1)+'%';
 const perTon = (n, mark) => {
   if (n == null) return '—';
   if (mark === '超') return '＜' + moneyFormatter.format(Math.ceil(n * 100) / 100);
@@ -23,12 +25,13 @@ function child(parent, tag, text) {
   return node;
 }
 
-function appendSources(parent, row) {
+function appendSources(parent, row, prior) {
   const details = child(parent, 'details');
   details.className = 'blood-source';
   child(details, 'summary', '查来源');
   for (const [label, part] of [
     ['本年采浆与浆站', row.ops],
+    ['上年度在营浆站', prior?.ops],
     ['本年血制品收入与成本', row.pnl],
     ['上年采浆量', row.metrics]
   ]) {
@@ -59,6 +62,7 @@ function initTrend(data) {
   const firstYear = Math.min(...years);
   const timeline = Array.from({length:Math.max(...years)-firstYear+1},(_,i)=>String(firstYear+i));
   const isPerTon = () => metric.value === 'revenue' || metric.value === 'profit';
+  const isShare = () => metric.value.endsWith('Share');
 
   function readPoint(company, year) {
     const row = company.annual.get(Number(year));
@@ -72,6 +76,23 @@ function initTrend(data) {
     if (field === 'volume') {
       const {volume,volumeMark} = row.ops ?? {};
       return Number.isFinite(volume) ? {count:volume, estimate:volumeMark} : null;
+    }
+    if (field === 'station') {
+      const previous = company.annual.get(Number(year)-1);
+      const station = plasmaPerStation(row,previous);
+      if (!station) return null;
+      return {count:station.count, estimate:station.volumeMark,
+        detail:`在营站数 ${station.start} → ${station.end} 家 · ${[row.ops.note,previous.ops.note].filter(Boolean).join(' / ')}`};
+    }
+    if (isShare()) {
+      const result = productRevenueShares(row.pnl, metricBasis.value);
+      const share = result?.[field.slice(0,-5)];
+      if (!Number.isFinite(share)) return null;
+      const denominator = '血制品收入分母 '+money(result.denominator)+' 亿元';
+      const detail = metricBasis.value === 'aligned'
+        ? (result.importDisclosed ? '已扣进口 '+money(result.deduction)+' 亿元' : '未单列进口额，沿用披露口径')
+        : '按披露血制品收入';
+      return {count:share,detail:denominator+' · '+detail};
     }
     if (!isPerTon()) {
       const revenue = row.pnl?.[field];
@@ -94,16 +115,18 @@ function initTrend(data) {
     describe(point) {
       if (!point) return {value:'—'};
       const amount = isPerTon() ? perTon(point.count,point.estimate) :
-        metric.value === 'volume' ? quantity(point.count,point.estimate) : moneyFormatter.format(point.count);
-      return {value:amount+' '+metric.selectedOptions[0].dataset.unit,detail:point.detail};
+        ['volume','station'].includes(metric.value) ? quantity(point.count,point.estimate) : moneyFormatter.format(point.count);
+      return {value:isShare() ? percentage(point.count) : amount+' '+metric.selectedOptions[0].dataset.unit,detail:point.detail};
     }
   });
   function update() {
     const option = metric.selectedOptions[0];
     caption.textContent = `${option.textContent}（${option.dataset.unit}）`;
     canvas.setAttribute('aria-label', caption.textContent+'年度折线图');
-    document.querySelector('#blood-chart-basis-label').hidden = !isPerTon();
+    document.querySelector('#blood-chart-basis-label').hidden = !isPerTon() && !isShare();
     document.querySelector('#blood-chart-recombinant-note').hidden = metric.value !== 'alb';
+    document.querySelector('#blood-chart-station-note').hidden = metric.value !== 'station';
+    document.querySelector('#blood-chart-mix-note').hidden = !isShare();
     chart?.refresh();
   }
   metric.addEventListener('change',update);
@@ -116,6 +139,7 @@ async function init() {
   if (!response.ok) throw Error('血制品数据不可用');
   const data = await response.json();
   const observations = data.companies.flatMap(c => c.rows.map(row => ({...row, code:c.code, name:c.name})));
+  const annual = new Map(observations.map(row => [`${row.code}:${row.year}`,row]));
   observations.sort((a,b) => b.year - a.year);
   function render() {
     const selected = observations.filter(r => (company.value==='all'||r.code===company.value) &&
@@ -124,10 +148,15 @@ async function init() {
     const fragment = document.createDocumentFragment();
     for (const row of selected) {
       const {ops,pnl,metrics} = row;
+      const prior = annual.get(`${row.code}:${row.year-1}`);
+      const station = plasmaPerStation(row,prior);
+      const shares = productRevenueShares(pnl,basis.value);
       const tr = child(fragment, 'tr');
       child(tr, 'th', row.name).scope = 'row';
       for (const cell of [String(row.year), quantity(ops?.volume,ops?.volumeMark),quantity(ops?.stations),quantity(ops?.active),
+        quantity(station?.average),quantity(station?.count,station?.volumeMark),
         money(pnl?.total),money(pnl?.alb),money(pnl?.imported),money(pnl?.ivig),money(pnl?.other),money(pnl?.cost),
+        percentage(shares?.alb),percentage(shares?.ivig),percentage(shares?.other),
         quantity(metrics?.priorVolume,metrics?.priorMark)]) {
         child(tr, 'td', cell);
       }
@@ -139,7 +168,7 @@ async function init() {
           cell.title = pnl.note;
         }
       }
-      appendSources(child(tr, 'td'), row);
+      appendSources(child(tr, 'td'), row, station ? prior : null);
     }
     tbody.replaceChildren(fragment);
     status.textContent = selected.length ? `${selected.length} 条年度记录` : '当前筛选下无记录。';

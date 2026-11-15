@@ -140,3 +140,74 @@
 .lot-pagination { display:flex; align-items:center; gap:.65rem; margin:.65rem 0; font-size:.8rem; }
 .lot-pagination button, #lot-reset { padding:.42rem .65rem; border:1px solid var(--blood-rule); border-radius:.35rem; background:#fff; color:var(--blood-accent); font:inherit; min-height:36px; cursor:pointer; }
 .lot-pagination button:disabled { opacity:.5; cursor:default; }
+
+.blood-page .blood-group {
+  margin: 2.05rem 0 .7rem;
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  letter-spacing: -.015em;
+}
+.blood-research h3 { margin: 1.25rem 0 .45rem; }
+.blood-research-kpis {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem;
+  margin: 1rem 0;
+}
+.blood-research-kpis > div { padding: .75rem; background: var(--blood-tint); border-radius: .5rem; }
+.blood-research-kpis dt { color: var(--blood-muted); font-size: .82rem; font-weight: 650; }
+.blood-research-kpis dd { margin: .25rem 0 .1rem; font-size: clamp(1.35rem, 4vw, 2rem); font-weight: 750; font-variant-numeric: tabular-nums; }
+.blood-research-kpis small { display: block; font-size: .76rem; }
+.blood-research-figure { margin: .75rem 0 1.15rem; }
+.blood-research-figure figcaption { font-weight: 750; margin-bottom: .5rem; }
+.blood-research-scale { display: flex; flex-wrap: wrap; gap: .65rem 1rem; font-size: .8rem; }
+.albumin-import { --albumin-color: #406b91; }
+.albumin-domestic { --albumin-color: #24786e; }
+.albumin-unknown { --albumin-color: #8a775d; }
+.albumin-key::before {
+  display: inline-block; content: ""; width: .75rem; height: .75rem; margin-right: .35rem;
+  background: var(--albumin-color); border-radius: .15rem; vertical-align: -.04rem;
+}
+.blood-research-bars {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: .35rem;
+  margin-top: .6rem; padding: .75rem .25rem .1rem;
+}
+.albumin-column { position: relative; display: grid; justify-items: stretch; text-align: center; min-width: 0; }
+.albumin-half { border-left: 1px dashed var(--blood-rule); }
+.albumin-track {
+  display: flex; flex-direction: column-reverse; align-items: center; height: clamp(8rem, 21vw, 12rem);
+  background: repeating-linear-gradient(to top, var(--blood-rule) 0 1px, transparent 1px 25%);
+}
+.albumin-track:focus-visible { outline: 2px solid var(--blood-accent); outline-offset: 2px; border-radius: .2rem; }
+.albumin-segment {
+  display: grid; place-items: center; width: min(82%, 5rem); overflow: hidden; background: var(--albumin-color);
+  color: #fff; font-size: clamp(.58rem, 1.4vw, .83rem); font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.albumin-period { padding-top: .4rem; font-size: clamp(.61rem, 1.5vw, .83rem); white-space: nowrap; }
+.albumin-missing { padding-bottom: .4rem; color: var(--blood-muted); }
+.albumin-value {
+  position: absolute; z-index: 1; display: none; bottom: 2.15rem; left: 50%; transform: translateX(-50%);
+  padding: .45rem .55rem; background: var(--blood-ink); color: #fff; border-radius: .25rem; font-size: .76rem; white-space: nowrap;
+}
+.albumin-column:first-child .albumin-value, .albumin-column:nth-child(2) .albumin-value { left: 0; transform: none; }
+.albumin-column:nth-last-child(-n+2) .albumin-value { left: auto; right: 0; transform: none; }
+.albumin-column:hover .albumin-value, .albumin-column:focus-within .albumin-value { display: block; }
+.blood-brand-bars { display: grid; gap: .42rem; margin: .65rem 0; max-height: 28rem; overflow-y: auto; }
+.blood-brand-row {
+  display: grid; grid-template-columns: minmax(7rem, 1fr) minmax(2rem, 3fr) 3.35rem 4rem;
+  gap: .5rem; align-items: center; font-size: .84rem;
+}
+.blood-brand-name { overflow-wrap: anywhere; }
+.blood-brand-meter { height: .7rem; border-radius: .2rem; background: var(--blood-tint); overflow: hidden; }
+.blood-brand-meter span { display: block; height: 100%; background: var(--albumin-color); }
+.blood-brand-count, .blood-brand-value { text-align: right; font-variant-numeric: tabular-nums; }
+.blood-research .blood-table td { white-space: normal; }
+.blood-research .blood-table td:last-child { min-width: 9rem; }
+.blood-research .blood-research-source a, .blood-research p a { color: var(--blood-accent); }
+.blood-research-audit { margin-top: .9rem; }
+.blood-research-audit > p { max-width: 90ch; }
+.blood-research [hidden] { display: none !important; }
+.blood-research-product-trend { margin-top: 1.45rem; }
+@media (max-width: 565px) {
+  .blood-research-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .blood-research-kpis > div:last-child { grid-column: 1 / -1; }
+  .blood-brand-row { grid-template-columns: minmax(6rem, 1.55fr) minmax(1rem, 1fr) 2.65rem 3.15rem; gap: .32rem; }
+  .blood-research-bars { gap: .12rem; padding-inline: 0; }
+}
