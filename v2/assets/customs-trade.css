@@ -62,3 +62,14 @@ button.trade-download { background: transparent; border: 0; font: inherit; font-
 .trade-flags { display: flex; gap: 3px; }
 .trade-flag { display: inline-grid; place-items: center; min-width: 1.45em; border-radius: 3px; color: #175748; background: #e4f3ed; font-weight: 650; text-decoration: none; }
 .trade-flag[data-flag="E"], .trade-flag[data-flag="?"] { color: #82450b; background: #fcf0d9; }
+.trade-imaging { margin: 26px 0; padding: clamp(12px, 2vw, 20px); border: 1px solid #dce5e0; border-radius: 4px; background: #f9fbfa; font-size: 13px; }
+.trade-imaging h3, .trade-imaging .trade-head p { margin: 0; }
+.trade-imaging h4 { margin: 18px 0 9px; }
+.trade-imaging p { color: #405b5c; line-height: 1.55; }
+.trade-imaging a { color: #176d60; }
+.trade-imaging-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 168px),1fr)); gap: 9px; }
+.trade-imaging-stats div { display: grid; align-content: start; gap: 4px; padding: 9px 11px; background: white; border: 1px solid #dce5e0; border-radius: 4px; }
+.trade-imaging-stats div:nth-child(n+2) { background: #fffaf1; border-style: dashed; border-color: #dbc9a5; }
+.trade-imaging-stats strong { font-size: 17px; color: #173039; font-variant-numeric: tabular-nums; }
+.trade-imaging-stats small { color: #52636b; }
+.trade-imaging-sites td:nth-child(2), .trade-imaging-sites td:nth-child(3) { min-width: 112px; }
