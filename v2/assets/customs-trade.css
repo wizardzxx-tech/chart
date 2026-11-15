@@ -73,3 +73,7 @@ button.trade-download { background: transparent; border: 0; font: inherit; font-
 .trade-imaging-stats strong { font-size: 17px; color: #173039; font-variant-numeric: tabular-nums; }
 .trade-imaging-stats small { color: #52636b; }
 .trade-imaging-sites td:nth-child(2), .trade-imaging-sites td:nth-child(3) { min-width: 112px; }
+.trade-imaging .trade-mri-totals { min-width: 720px; }
+.trade-imaging .trade-imaging-sites td:last-child, #ultrasound-audit td:last-child { min-width: 240px; }
+.trade-imaging .trade-imaging-stats div:nth-child(2) { background: white; border: 1px solid #dce5e0; }
+.trade-imaging .trade-details { margin-top: 15px; }
