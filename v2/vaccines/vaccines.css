@@ -10,3 +10,33 @@
 #guidance .blood-table :is(td:nth-child(3), td:nth-child(4)) { min-width: 13rem; }
 #guidance .blood-table :is(td:nth-child(5), td:nth-child(6)) { min-width: 7rem; }
 #overseas-capital .blood-table :is(td:nth-child(3), th:nth-child(3)) { text-align: left; white-space: nowrap; }
+
+.vaccine-comparison { margin: 1.2rem 0; }
+.vaccine-comparison figcaption, .vaccine-subtitle { font-weight: 650; font-size: 1rem; }
+.vaccine-subtitle { margin: 1.3rem 0 .3rem; }
+.vaccine-legend { display: flex; flex-wrap: wrap; gap: .35rem 1rem; margin: .5rem 0 .9rem; padding: 0; list-style: none; }
+.vaccine-legend li { display: flex; align-items: center; gap: .45rem; font-size: .8rem; }
+.vaccine-swatch { width: .7rem; height: .7rem; border-radius: 2px; flex: none; }
+.vaccine-chart-scroll { overflow-x: auto; }
+.vaccine-chart { display: flex; align-items: start; gap: .5rem; min-width: 100%; }
+.vaccine-chart-axis { display: flex; flex-direction: column; justify-content: space-between; min-width: 3rem; height: 12rem; line-height: 0; text-align: right; color: var(--blood-muted); font-size: .75rem; }
+.vaccine-chart-series { flex: 1; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(2.45rem, 1fr); background: repeating-linear-gradient(to bottom, var(--blood-rule, #e2e9e5) 0 1px, transparent 1px 3rem) left top / 100% 12rem no-repeat; }
+.vaccine-chart-year { min-width: 0; text-align: center; color: var(--blood-muted); font-size: .73rem; line-height: 1.35; }
+.vaccine-chart-column { height: 12rem; display: flex; justify-content: end; flex-direction: column; align-items: center; border-bottom: 1px solid var(--blood-rule, #e2e9e5); }
+.vaccine-chart-stack { display: flex; justify-content: end; flex-direction: column; width: min(64%, 3rem); }
+.vaccine-chart-segment { display: block; }
+.vaccine-chart-year time { display: block; padding: .35rem .05rem 0; }
+.vaccine-chart-year .partial-year { font-weight: 700; color: var(--blood-accent); }
+.vaccine-chart-year .vaccine-no-data { padding-bottom: .25rem; }
+.vaccine-context { padding: .8rem 1rem; border-left: 3px solid var(--blood-accent); background: #f4f8f5; font-size: .86rem; }
+.vaccine-context a { color: var(--blood-accent); }
+.vaccine-ranking { margin-top: 1rem; }
+#competition-breakdown-wrap { margin-top: .8rem; }
+.vaccine-audit td:last-child, .vaccine-doses-table td:last-child { min-width: 9rem; }
+.vaccine-doses-table td:nth-child(3) { min-width: 8rem; }
+
+.vaccine-chart-axis { position: sticky; left: 0; z-index: 1; background: #fff; }
+#lot-competition .blood-table :is(th, td):not(:first-child) { text-align: right; }
+@media (max-width: 640px) {
+  #competition-chart-note::after { content: " 可横向滑动图表。"; }
+}

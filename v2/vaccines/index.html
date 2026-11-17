@@ -1,17 +1,142 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vaccines · 疫苗公开数据</title><meta name="description" content="人用疫苗批签发批次数、海关进出口、上市公司股权激励、港美股经营目标及营运资金周转天数。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/vaccines/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../blood-products/blood.css"><link rel="stylesheet" href="../assets/working-capital.css"><link rel="stylesheet" href="vaccines.css"><link rel="stylesheet" href="../assets/customs-trade.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="blood-page vaccine-page">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vaccines · 疫苗公开数据</title><meta name="description" content="人用疫苗批签发批次数、海关进出口、上市公司股权激励、港美股经营目标及营运资金周转天数。"><meta name="theme-color" content="#f5f7f4"><link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/vaccines/"><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../blood-products/blood.css"><link rel="stylesheet" href="../assets/working-capital.css"><link rel="stylesheet" href="vaccines.css?v=20261117"><link rel="stylesheet" href="../assets/customs-trade.css"></head><body><div class="wrap"><nav class="site-nav" aria-label="主导航"><a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a><a class="nav-link" href="../#topics">浏览主题</a></nav><main><div class="blood-page vaccine-page">
   <p class="blood-crumb"><a href="../">医药行业公开数据</a> <span aria-hidden="true">/</span> 疫苗</p>
   <header class="blood-heading">
     <h1>Vaccines <span>疫苗</span></h1>
     <p>批签发按公开证书统计。公司财务部分覆盖沪深京 12 家、港股 5 家及科兴控股。</p>
     <nav aria-label="页面目录">
-      <a href="#lot-release">疫苗批签发</a><a href="#customs-trade">海关进出口</a>
+      <a href="#lot-competition">品种竞争格局</a><a href="#lot-coverage">数据质量核验</a><a href="#lot-doses">批签发剂数</a><a href="#lot-release">批签发查询</a><a href="#customs-trade">海关进出口</a>
       <a href="#equity-incentives">股权激励</a><a href="#guidance">港美股经营目标</a>
       <a href="#working-capital">沪深京周转天数</a><a href="#overseas-capital">港美股周转天数</a>
     </nav>
   </header>
+  <section class="blood-panel" id="lot-competition" aria-labelledby="competition-title">
+    <div class="blood-section-heading"><div>
+      <h2 id="competition-title">疫苗品种竞争格局</h2>
+      <p id="competition-range"></p>
+    </div></div>
+    <p class="blood-note">份额口径为已采集批次数份额。每批剂数可能不同，销量需另查。</p>
+    <p id="competition-status" class="blood-note" role="status">正在加载批签发数据…</p>
+    <div id="competition-content" hidden>
+      <div class="blood-controls">
+        <label>品种<select id="competition-category"></select></label>
+        <label>国产／进口<select id="competition-origin"><option value="">全部来源</option></select></label>
+        <label>免疫规划目录<select id="competition-program"><option value="">全部属性</option></select></label>
+        <label>展示方式<select id="competition-mode">
+          <option value="company">按公司／集团</option><option value="total">行业总批次</option><option value="route">按价次／技术路线</option>
+          <option value="product">按产品系列</option><option value="form" hidden>按流感疫苗类型</option>
+        </select></label>
+        <label>纵轴<select id="competition-scale"><option value="count">批次数</option><option value="share">已采集批次数份额</option></select></label>
+        <label>图表起始年<select id="competition-start"></select></label>
+      </div>
+      <figure class="vaccine-comparison" aria-labelledby="competition-caption" aria-describedby="competition-chart-note">
+        <figcaption id="competition-caption"></figcaption>
+        <ul class="vaccine-legend" id="competition-legend"></ul>
+        <div class="vaccine-chart-scroll" tabindex="0" role="region" aria-label="年度堆积柱状图">
+          <div class="vaccine-chart" id="competition-chart"></div>
+        </div>
+        <p class="blood-note" id="competition-chart-note"></p>
+      </figure>
+      <p id="competition-hpv" class="vaccine-context" hidden>
+        <strong>HPV 政策时间线</strong><br>
+        2025-06-05 万泰公告国产九价疫苗获得上市许可。
+        <a href="https://static.cninfo.com.cn/finalpage/2025-06-05/1223762825.PDF" target="_blank" rel="noopener">获批公告</a><br>
+        2025-11-10 双价 HPV 疫苗纳入国家免疫规划。筛选“免疫规划目录”可看品种属性，单批采购和使用渠道需另查。
+        <a href="https://app.www.gov.cn/govdata/gov/202510/30/539322/article.html" target="_blank" rel="noopener">政策原文</a>
+      </p>
+      <p id="competition-flu" class="vaccine-context" hidden>
+        <strong>流感价次与流感季</strong><br>
+        统计按签发自然年。公示汇总缺少组分或厂家确认的流感季，暂无法分派到 2023–2024 至 2026–2027 流感季。
+        名称未标价次的记录单列，能用华兰疫苗年报核对的 2024–2025 年三价记录单列。
+        <a href="https://ivdc.chinacdc.cn/cnic/fascc/202609/t20260903_1839790.htm" target="_blank" rel="noopener">中国疾控中心 2026–2027 指南</a>
+      </p>
+      <div class="blood-controls vaccine-ranking">
+        <label>排名年份<select id="competition-year"></select></label>
+      </div>
+      <p id="competition-ranking-note" class="blood-note" role="status"></p>
+      <div class="blood-scroll" role="region" tabindex="0" aria-label="年度公司批次排名">
+        <table class="blood-table">
+          <thead><tr><th scope="col">公司／集团</th><th scope="col">批次数</th><th scope="col">已采集批次数份额</th></tr></thead>
+          <tbody id="competition-ranking"></tbody>
+        </table>
+      </div>
+      <div class="blood-scroll" id="competition-breakdown-wrap" role="region" tabindex="0" aria-label="年度价次或技术路线明细" hidden>
+        <table class="blood-table">
+          <thead><tr><th scope="col" id="competition-breakdown-label">价次／路线</th><th scope="col">批次数</th><th scope="col">已采集批次数份额</th></tr></thead>
+          <tbody id="competition-breakdown"></tbody>
+        </table>
+      </div>
+      <h3 class="vaccine-subtitle">最新年度同月比较</h3>
+      <p id="competition-yoy-note" class="blood-note"></p>
+      <div class="blood-scroll" role="region" tabindex="0" aria-label="最新年度同期批签发比较">
+        <table class="blood-table">
+          <thead><tr><th scope="col">年份</th><th scope="col">同月已采集批次</th><th scope="col">该年跨月未归期</th></tr></thead>
+          <tbody id="competition-yoy"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="blood-panel" id="lot-coverage" aria-labelledby="coverage-title">
+    <div class="blood-section-heading"><div>
+      <h2 id="coverage-title">批签发数据质量核验</h2>
+      <p>逐年归期、全国对照及品种差异</p>
+    </div></div>
+    <p id="coverage-status" class="blood-note" role="status">正在加载年度汇总…</p>
+    <div id="coverage-content" hidden>
+      <div class="blood-controls">
+        <label>覆盖核验品种<select id="coverage-category"><option value="">全部人用疫苗</option></select></label>
+      </div>
+      <div class="blood-scroll vaccine-scroll" role="region" tabindex="0" aria-label="年度及品种覆盖核验">
+        <table class="blood-table vaccine-audit">
+          <thead><tr>
+            <th scope="col">年度</th><th scope="col">已归年（批）</th><th scope="col">跨月（批）</th><th scope="col">跨季（批）</th>
+            <th scope="col">外部对照（批）</th><th scope="col">已采集减对照</th><th scope="col">官方数比值</th><th scope="col">来源／状态</th>
+          </tr></thead>
+          <tbody id="coverage-annual"></tbody>
+        </table>
+      </div>
+      <p class="blood-note">跨月、跨季批次已计入该年，两类可能重叠。官方数比值仅在完整年度且有官方对照时列示。第三方汇总用于定位差异。空白对照显示“—”。</p>
+      <details class="capital-method">
+        <summary>查看 2025 年差异排查及名称规则</summary>
+        <p class="blood-note">当前仓库和外部汇总只公布汇总数。下表把差异缩小到品种及可核对的子类。确认具体缺少哪些批次仍需两侧的证书号、签发日和公示记录。</p>
+        <div class="blood-scroll vaccine-scroll" role="region" tabindex="0" aria-label="2025 年对照差异分解">
+          <table class="blood-table vaccine-audit">
+            <thead><tr><th scope="col">核验项</th><th scope="col">已采集（批）</th><th scope="col">对照（批）</th><th scope="col">已采集减对照</th><th scope="col">来源</th></tr></thead>
+            <tbody id="coverage-checks"></tbody>
+          </table>
+        </div>
+        <p class="blood-note"><strong>已核对的跨年样本</strong> 成都生物四价 HPV（汉逊酵母）批号 20241001、证书号批签中检20253535，出现在中检院 2025-12-29 至 2026-01-04 的跨年公示。成都生物确认首批获签日为 2025-12-30，本站原汇总的 2025 年国产四价 HPV 未见可归年记录。这条证书已列为待回填，需与逐批底稿对账后更新汇总。 <a href="https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&amp;parameter1=1&amp;parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2025%25E5%25B9%25B412%25E6%259C%258829%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B41%25E6%259C%25884%25E6%2597%25A5" target="_blank" rel="noopener">中检院公示</a> <a href="https://www.cdibp.com/News/show?id=79&amp;status=46" target="_blank" rel="noopener">成都生物公告</a></p>
+        <p class="blood-note">分析标签统一价次和空格。湖北省药监局两期通告列明，厦门万泰沧海的“大肠杆菌”和“大肠埃希菌”双价 HPV 疫苗同为国药准字 S20190047，规格均为 0.5 mL／瓶或支，分析中归为同一产品系列。原始名称仍保留在查询中。 <a href="https://mpa.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/qtwj/202412/t20241227_5478219.shtml" target="_blank" rel="noopener">2024 年通告</a> <a href="https://mpa.hubei.gov.cn/zfxxgk/zc/qtzdgkwj/qtwj/202512/t20251219_5837872.shtml" target="_blank" rel="noopener">2025 年通告</a></p>
+      </details>
+    </div>
+  </section>
+
+  <section class="blood-panel" id="lot-doses" aria-labelledby="doses-title">
+    <div class="blood-section-heading"><div>
+      <h2 id="doses-title">公司披露的批签发剂数</h2>
+      <p>按产品与披露期间整理，保留公告原单位</p>
+    </div><div class="capital-downloads">
+      <a href="release-doses.json" download>剂数数据（JSON）</a>
+    </div></div>
+    <p class="blood-note">“—”表示该期未披露可用值或源表以横线列示。剂数选自公司公告。全年与上半年可能重叠，按各自披露期间使用。</p>
+    <div class="blood-controls" id="doses-controls" hidden>
+      <label>披露公司<select id="doses-company"><option value="">全部公司</option></select></label>
+      <label>疫苗品种<select id="doses-category"><option value="">全部品种</option></select></label>
+      <label>披露期间<select id="doses-period"><option value="">全部期间</option></select></label>
+    </div>
+    <p id="doses-status" class="blood-note" role="status">正在加载剂数披露…</p>
+    <div id="doses-table" class="blood-scroll vaccine-scroll" role="region" tabindex="0" aria-label="公司披露的批签发剂数" hidden>
+      <table class="blood-table vaccine-doses-table">
+        <thead><tr><th scope="col">期间</th><th scope="col">披露公司</th><th scope="col">产品</th><th scope="col">生产企业</th>
+          <th scope="col">商业关系</th><th scope="col">披露数量</th><th scope="col">单位</th><th scope="col">来源</th></tr></thead>
+        <tbody id="doses-rows"></tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="blood-panel" id="lot-release" aria-labelledby="lot-release-title">
     <div class="blood-section-heading"><div>
-      <h2 id="lot-release-title">疫苗批签发</h2>
+      <h2 id="lot-release-title">批签发查询</h2>
       <p>2010-06-03 至 2026-11-08 · 人用疫苗 · 单位为批</p>
     </div><div class="capital-downloads">
       <a href="lot-release-summary.zip" download>批次数汇总 CSV（ZIP）</a>
@@ -34,7 +159,7 @@
       <fieldset class="company-series" hidden></fieldset>
       <div class="blood-trend-plot"><canvas tabindex="0" role="img" aria-labelledby="lot-caption" aria-describedby="lot-chart-help"></canvas>
         <div class="company-trend-tooltip" role="status" hidden></div></div>
-      <p class="blood-note" id="lot-chart-help">悬停、点按或使用方向键查看。跨期未归期的批次计入年度汇总。</p>
+      <p class="blood-note" id="lot-chart-help">悬停、点按或使用方向键查看。跨期未归期的批次计入年度汇总。当前筛选下未见记录的期间留空。</p>
     </figure>
     <p id="lot-status" class="blood-note" role="status"></p>
     <div id="lot-table-wrap" class="blood-scroll vaccine-scroll" role="region" aria-label="疫苗批签发汇总" tabindex="0" hidden>
@@ -52,7 +177,7 @@
         <li>已解析 4,153 份统一平台公示，含 187 份旧版公示。目录中另有 0 份待核。2007–2009 年旧入口按号查询，当前汇总从可核验的公开档案起算。 <a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfQkcx" target="_blank" rel="noopener">官方历史证书查询</a> <a href="https://labz.nifdc.org.cn/nicpbpoa/bgsk.nsf/inputnumber?OpenForm" target="_blank" rel="noopener">2007 年起旧入口</a> <a href="https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html" target="_blank" rel="noopener">中检院每周公告</a> <a href="https://yjj.sh.gov.cn/jn-bmfw/index.html" target="_blank" rel="noopener">上海药监局历史公示</a></li>
         <li>另对读中检院每周公告 445 份，补入 14310 张统一平台未列且日期可归属的获签证书。华兰疫苗三价流感 6 批、四价流感 51 批、狂犬 6 批，与公司 2025 年报一致。 <a href="https://static.cninfo.com.cn/finalpage/2026-03-28/1225045582.PDF" target="_blank" rel="noopener">华兰疫苗年报摘要</a></li>
       </ul>
-      <p class="blood-note">逐年覆盖与早期官方年报对照 <a href="https://www.nifdc.org.cn/directory/web/nifdc/images/uL28iAyMDE3xOrJ%2Bs7v1sbGt8X6x6m3osTqsagucGRm.pdf" target="_blank" rel="noopener">中检院 2017 年批签发年报</a></p><div class="blood-scroll" role="region" aria-label="逐年覆盖" tabindex="0"><table class="blood-table"><thead><tr><th>年份</th><th>公示可归年批次</th><th>官方年报签发数</th></tr></thead><tbody><tr><th scope="row">2010</th><td>2,997</td><td>4,982</td></tr><tr><th scope="row">2011</th><td>4,758</td><td>4,779</td></tr><tr><th scope="row">2012</th><td>4,859</td><td>4,891</td></tr><tr><th scope="row">2013</th><td>5,116</td><td>5,154</td></tr><tr><th scope="row">2014</th><td>4,104</td><td>4,192</td></tr><tr><th scope="row">2015</th><td>4,032</td><td>4,146</td></tr><tr><th scope="row">2016</th><td>3,819</td><td>3,949</td></tr><tr><th scope="row">2017</th><td>4,221</td><td>4,388</td></tr><tr><th scope="row">2018</th><td>5,234</td><td>—</td></tr><tr><th scope="row">2019</th><td>4,809</td><td>—</td></tr><tr><th scope="row">2020</th><td>5,511</td><td>—</td></tr><tr><th scope="row">2021</th><td>5,452</td><td>—</td></tr><tr><th scope="row">2022</th><td>4,616</td><td>—</td></tr><tr><th scope="row">2023</th><td>4,429</td><td>—</td></tr><tr><th scope="row">2024</th><td>4,161</td><td>—</td></tr><tr><th scope="row">2025</th><td>3,741</td><td>—</td></tr><tr><th scope="row">2026</th><td>3,098</td><td>—</td></tr></tbody></table></div>
+      <p class="blood-note"><a href="#lot-coverage">查看年度及品种覆盖核验</a></p>
       <div class="blood-scroll vaccine-scroll" role="region" aria-label="签发机构覆盖" tabindex="0">
         <table class="blood-table"><thead><tr><th scope="col">目录机构</th><th scope="col">应查公示</th><th scope="col">已读</th><th scope="col">待核</th><th scope="col">已核疫苗批次</th><th scope="col">来源</th></tr></thead><tbody><tr><th scope="row">中国药品检定研究院</th>
     <td>629</td><td>629</td><td>0</td>
@@ -97,7 +222,7 @@
     <td>0</td><td><a href="https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&amp;parameter1=20190917c001" target="_blank" rel="noopener">机构公示</a></td></tr></tbody></table>
       </div>
     </details>
-  </section><script src="lot-release.js" type="module"></script>
+  </section><script src="lot-release.js?v=20261117" type="module"></script>
   <section class="trade-panel" id="customs-trade" aria-labelledby="trade-title" data-topic="vaccines">
   <header class="trade-head"><div><h2 id="trade-title">疫苗海关进出口</h2><p>2021–2025 年 · 中国大陆 · 1 个有数据的商品口径</p></div>
   <a class="trade-download" href="customs-trade.csv" download>下载全球汇总 CSV ↓</a></header>

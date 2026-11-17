@@ -1,3 +1,4 @@
+import { mountLotAnalysis, mountReleaseDoses, showLotAnalysisError } from './lot-analysis.js';
 import { mountCompanyTrend } from '../pharmacy/company-trend.js';
 
 const section = document.querySelector('#lot-release');
@@ -82,8 +83,6 @@ function mount(data) {
   }
 
   const byPeriod = new Map();
-  const observedPeriods = Object.fromEntries(Object.entries(periodColumns).map(([mode,index])=>
-    [mode,new Set(data.rows.map(row=>row[index]))]));
   const charts = Object.fromEntries(['month','year','quarter'].map(mode=>{
     const figure = mode === 'quarter' ? chart : chart.cloneNode(true);
     if (figure !== chart) {
@@ -102,7 +101,7 @@ function mount(data) {
       getStart:dates=>year.value ? dates.findIndex(date=>date.startsWith(year.value)) : 0,
       getEnd:dates=>year.value ? dates.findLastIndex(date=>date.startsWith(year.value)) : dates.length - 1,
       getPoints:(_company, dates)=>dates.map(date=>
-        observedPeriods[mode].has(date) ? {count:byPeriod.get(date) ?? 0} : null),
+        byPeriod.has(date) ? {count:byPeriod.get(date)} : null),
       describe:point=>point ? {value:number.format(point.count)+' 批'} : {value:'—'},
     });
     return [mode,{figure,renderer}];
@@ -157,6 +156,8 @@ function mount(data) {
   render();
 }
 
+mountReleaseDoses();
+
 try {
   const response = await fetch('lot-release.json');
   if (!response.ok) throw new Error('数据暂不可用');
@@ -165,6 +166,9 @@ try {
     data.rows=data.rows.map(row=>data.columns.map((values,i)=>values[row[i]]).concat(row[10]));
   }
   mount(data);
-} catch {
-  status.textContent = '交互数据暂未加载，可下载汇总 CSV 或查看官方公示。';
+  mountLotAnalysis(data);
+} catch (error) {
+  showLotAnalysisError();
+  if (get('controls').hidden) status.textContent = '交互数据暂未加载，可下载汇总 CSV 或查看官方公示。';
+  console.error(error);
 }
