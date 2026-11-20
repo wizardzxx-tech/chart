@@ -151,6 +151,14 @@ function monthDate(year, quarter) {
   return new Date(Date.UTC(year, quarter * 3, 0)).toISOString().slice(0, 10);
 }
 
+function quarterNumber(date) {
+  return Number(date.slice(0, 4)) * 4 + Number(date.slice(5, 7)) / 3 - 1;
+}
+
+function quarterEnd(number) {
+  return monthDate(Math.floor(number / 4), number % 4 + 1);
+}
+
 function daysBetween(start, end) {
   return Math.round((Date.parse(end) - Date.parse(start)) / 86_400_000);
 }
@@ -159,32 +167,39 @@ function calculate(company, mode) {
   if (!company.modes.includes(mode)) return [];
   const all = company.history;
   const dates = new Map(all.map(x => [x.date, x]));
-  return all.flatMap((end, index) => {
+  const currency = row => row.currency ?? "CNY";
+  return all.flatMap(end => {
     const year = Number(end.date.slice(0, 4));
     const q = Number(end.date.slice(5, 7)) / 3;
     if (mode === "annual" && q !== 4 || mode === "half" && q !== 2) return [];
+    const hasFlow = row => row && currency(row) === currency(end) && Number.isFinite(row.rev) && Number.isFinite(row.cost);
+    if (!hasFlow(end)) return [];
     const opening = dates.get(monthDate(year - 1, 4));
-    let balances = [opening, end];
+    const openingInCurrency = end.openingBalance ?? (opening && currency(opening) === currency(end) ? opening : null);
+    let balances = [openingInCurrency, end];
     let weights = [1, 1];
     let { rev, cost } = end;
     let days = mode === "annual" ? 365 : opening && daysBetween(opening.date, end.date);
-    let label = mode === "annual" ? `${year} FY` : mode === "half" ? `${year} H1` : period(end.date);
+    const label = mode === "annual" ? `${year} FY` : mode === "half" ? `${year} H1` : period(end.date);
 
     if (mode === "ttm") {
-      const prior = dates.get(monthDate(year - 1, q));
-      balances = all.slice(Math.max(0, index - 4), index + 1);
-      if (!prior || balances.length !== 5 || balances[0].date !== prior.date || (q !== 4 && !opening)) return [];
+      const latest = quarterNumber(end.date);
+      balances = Array.from({ length: 5 }, (_, index) => dates.get(quarterEnd(latest - 4 + index)));
+      if (!balances.every(row => row && currency(row) === currency(end))) return [];
       weights = [1, 2, 2, 2, 1];
       if (q !== 4) {
+        const prior = balances[0];
+        if (!hasFlow(opening) || !hasFlow(prior)) return [];
         rev += opening.rev - prior.rev;
         cost += opening.cost - prior.cost;
       }
       days = 365;
     } else if (mode === "quarter") {
       const prior = q === 1 ? opening : dates.get(monthDate(year, q - 1));
-      if (!prior) return [];
+      if (!prior || currency(prior) !== currency(end)) return [];
       balances = [prior, end];
       if (q > 1) {
+        if (!hasFlow(prior)) return [];
         rev -= prior.rev;
         cost -= prior.cost;
       }
@@ -198,7 +213,7 @@ function calculate(company, mode) {
     const dso = average("ar") / rev * days;
     const dio = average("inv") / cost * days;
     const dpo = average("ap") / cost * days;
-    return [{ label, date: end.date, days, dso, dio, dpo, ccc: dso + dio - dpo, source: end.source }];
+    return [{ label, date: end.date, days, dso, dio, dpo, ccc: dso + dio - dpo, source: end.source, note: end.note }];
   });
 }
 
@@ -210,8 +225,10 @@ function setupCapital() {
       mode, new Map(calculate(company, mode).map(row => [period(row.date), row]))
     ]))
   }));
-  const dates = sortedUnique(companies.flatMap(company =>
-    company.history.map(record => period(record.date))));
+  const calendar = companies.flatMap(company => company.history.map(record => quarterNumber(record.date)));
+  const earliest = Math.min(...calendar);
+  const dates = Array.from({ length: Math.max(...calendar) - earliest + 1 },
+    (_, index) => period(quarterEnd(earliest + index)));
   const mode = byId("capital-mode");
   const metric = byId("capital-metric");
   const range = byId("capital-range");
@@ -225,15 +242,17 @@ function setupCapital() {
   setupSelect("capital-mode", Object.entries(modeLabels));
   setupSelect("capital-company", [["all", "全部公司"], ...companies.map(c => [c.code, c.name])]);
   const lastPeriod = quarters => quarters.findLastIndex(quarter => companies.some(c => c.capital[mode.value].has(quarter)));
+  const rangeStart = quarters => range.value === "all" ? 0 :
+    Math.max(0, lastPeriod(quarters) + 1 - Number(range.value));
   const figure = document.querySelector(".capital-trend");
   const chart = mountCompanyTrend(figure, companies, dates, {
     defaultCode: "ganlee",
     emptyMessage: "勾选有数据的公司后查看周转天数",
     getEnd: lastPeriod,
-    getStart: quarters => range.value === "all" ? 0 : Math.max(0, lastPeriod(quarters) + 1 - Number(range.value)),
+    getStart: rangeStart,
     getPoints: (company, quarters) => quarters.map(quarter => {
       const row = company.capital[mode.value].get(quarter);
-      return row ? { count: row[metric.value], detail: row.label } : null;
+      return row ? { count: row[metric.value], detail: [row.label, row.note].filter(Boolean).join(" · ") } : null;
     }),
     describe: point => point ? { value: `${format(point.count)} 天`, detail: point.detail } : { value: dash },
     labelTick: quarter => mode.value === "half" ? quarter.endsWith("Q2") : quarter.endsWith("Q4"),
@@ -248,9 +267,9 @@ function setupCapital() {
     const rows = quarters.flatMap(quarter => selection.flatMap(company => {
       const row = company.capital[mode.value].get(quarter);
       if (!row) return [];
-      const links = [row.source].flat().map((url, index) => href(url, index ? "重列披露" : "财报披露"));
+      const links = [row.source].flat().map((url, index) => href(url, index ? "补充来源" : "财报披露"));
       return [`<tr data-company="${esc(company.code)}" data-quarter="${esc(quarter)}"><th scope="row">${esc(company.name)}</th><td>${esc(row.label)}</td>
-        ${metricKeys.map(key => wrap("td", format(row[key]))).join("")}<td>${links.join(" · ")}</td></tr>`];
+        ${metricKeys.map(key => wrap("td", format(row[key]))).join("")}<td>${links.join(" · ")}${row.note ? small(row.note) : ""}</td></tr>`];
     }));
     put("capital-rows", rows.join(""));
     const unavailable = issuer.value === "unitedlab" && ["ttm", "quarter"].includes(mode.value);
@@ -258,11 +277,26 @@ function setupCapital() {
       "联邦制药披露年报和中报。可切换到全年或上半年。" : "当前期间与公司组合无可计算的记录。";
   }
 
+  function updateChartPeriods() {
+    const checked = new Set(series.filter(box => box.checked && !box.disabled).map(box => box.value));
+    const selected = companies.filter(company => checked.has(company.code));
+    const available = dates.filter(date => selected.some(company => company.capital[mode.value].has(date)));
+    const last = lastPeriod(dates);
+    const since = dates[rangeStart(dates)];
+    const shown = available.filter(date => date >= since && date <= dates[last]);
+    const interval = shown.length ? `${periodLabel(shown[0])} 至 ${periodLabel(shown.at(-1))} · ${shown.length} 个期间` :
+      "所选公司在当前范围没有数据";
+    const omitted = available.length - shown.length;
+    byId("capital-chart-periods").textContent = range.value === "all" ? interval :
+      `${interval} · ${omitted ? `全部历史另有 ${omitted} 个期间` : "可用数据均在近五年内"}`;
+  }
+
   function refreshChart() {
     byId("capital-caption").textContent = `${metric.selectedOptions[0].text} · ${modes[mode.value]} · 天`;
     const latest = dates[lastPeriod(dates)];
     document.querySelector("[data-capital-latest]").textContent = latest ? periodLabel(latest) : "暂无数据";
     chart?.refresh();
+    updateChartPeriods();
   }
 
   function updatePeriods(preferLatest = false) {
@@ -285,22 +319,23 @@ function setupCapital() {
   });
   binding("capital-metric", refreshChart);
   binding("capital-range", refreshChart);
+  figure.querySelector("fieldset").addEventListener("change", updateChartPeriods);
   binding("capital-period", renderCapitalTable);
   binding("capital-company", () => updatePeriods());
   const metricsHeader = ["公司", "证券代码", "计算口径", "期间", "资产负债表日", "计算天数",
-    "AR days", "AP days", "Inventory days", "CCC days", "财报出处"];
+    "AR days", "AP days", "Inventory days", "CCC days", "财报出处", "口径事项"];
   const measurements = companies.flatMap(company => Object.entries(company.capital).flatMap(([key, records]) =>
     [...records.values()].map(row => [company.name, company.ticker, modeLabels[key], row.label, row.date, row.days,
-      ...metricKeys.map(metric => Number(row[metric].toFixed(4))), [row.source].flat().join(" ")])));
-  const inputsHeader = ["公司", "证券代码", "报告期", "累计营收（元）", "累计营业成本（元）", "归母净利润（元）",
+      ...metricKeys.map(metric => Number(row[metric].toFixed(4))), [row.source].flat().join(" "), row.note])));
+  const inputsHeader = ["公司", "证券代码", "报告期", "报表币种", "累计营收（元）", "累计营业成本（元）", "归母净利润（元）",
     "贸易应收合计（元）", "应收账款／贸易应收净额（元）", "应收票据净额（元）", "应收款项融资（元）",
-    "存货（元）", "贸易应付合计（元）", "应付账款／贸易应付（元）", "应付票据（元）", "供应商融资应付款（元）", "财报出处"];
-  const inputs = companies.flatMap(company => company.history.map(row => {
-    const mainland = company.modes.includes("ttm");
-    return [company.name, company.ticker, row.date, row.rev, row.cost, row.profit, row.ar,
+    "存货（元）", "贸易应付合计（元）", "应付账款／贸易应付（元）", "应付票据（元）", "供应商融资应付款（元）",
+    "重列期初贸易应收合计（元）", "重列期初存货（元）", "重列期初贸易应付合计（元）", "口径事项", "财报出处"];
+  const inputs = companies.flatMap(company => company.history.map(row =>
+    [company.name, company.ticker, row.date, row.currency ?? "CNY", row.rev, row.cost, row.profit, row.ar,
       ...row.arBreakdown.slice(0, 2), row.arBreakdown[2], row.inv, row.ap, row.apBreakdown[0],
-      mainland ? row.apBreakdown[1] : null, mainland ? null : row.apBreakdown[1], [row.source].flat().join(" ")];
-  }));
+      row.apBreakdown[1], row.apBreakdown[2], row.openingBalance?.ar, row.openingBalance?.inv,
+      row.openingBalance?.ap, row.note, [row.source].flat().join(" ")]));
   byId("capital-download").href = csvUrl([metricsHeader, ...measurements]);
   byId("capital-input-download").href = csvUrl([inputsHeader, ...inputs]);
   document.querySelector(".capital-interactive").hidden = false;
@@ -404,7 +439,7 @@ function route() {
 }
 
 try {
-  const result = await fetch("data.json");
+  const result = await fetch("data.json?v=20261120d");
   if (!result.ok) throw new Error(`Data HTTP ${result.status}`);
   data = await result.json();
   setupIndustry();

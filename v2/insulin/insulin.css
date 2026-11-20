@@ -74,3 +74,4 @@
 }
 #capital-company,#capital-mode{max-width:100%}
 #working-capital .company-series label:has(input:disabled) { opacity: .58; }
+.capital-panel .capital-chart-periods { margin: .2rem 0 .4rem; font-variant-numeric: tabular-nums; }
