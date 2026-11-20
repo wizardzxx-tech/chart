@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f7f4">
+  <title>Insulin · 胰岛素公开数据</title>
+  <meta name="description" content="胰岛素集采与监管数据，以及甘李药业、通化东宝和联邦制药的经营、营运资金及激励披露。">
+  <link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/insulin/">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="insulin.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav" aria-label="站点导航">
+    <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">h</span><span>医药公开数据</span></a>
+    <a class="nav-link" href="../biosimilars/">生物类似药专题 ↗</a>
+  </nav>
+  <main>
+    <header class="hero insulin-hero">
+      <span class="eyebrow">INSULIN</span>
+      <h1>胰岛素公开数据</h1>
+      <p>中国集采与竞争格局、美国和欧盟产品注册，以及甘李药业、通化东宝和联邦制药的公司披露。</p>
+    </header>
+    <nav class="insulin-nav" aria-label="胰岛素研究模块">
+      <a href="#industry" data-view="industry">行业数据</a>
+      <a href="#ganlee" data-view="ganlee">甘李药业</a>
+      <a href="#dongbao" data-view="dongbao">通化东宝</a>
+      <a href="#unitedlab" data-view="unitedlab">联邦制药</a>
+    </nav>
+    <p id="loading" class="small" role="status">正在读取公开数据。</p>
+    <div id="contents" hidden>
+      <section id="industry-view" aria-labelledby="industry-title">
+        <div class="heading"><div><span class="eyebrow">CHINA VOLUME-BASED PROCUREMENT</span><h2 id="industry-title">中国胰岛素集采</h2></div></div>
+        <div id="industry-kpis" class="kpi-grid"></div>
+        <section class="panel" aria-labelledby="vbp-title">
+          <div class="heading"><div><h3 id="vbp-title">中选产品与价格</h3><p class="small">报价按中选包装与规格列示。预混、笔芯和预充笔各保留原包装口径。</p></div><button id="vbp-export" class="outline" type="button">导出筛选结果 CSV</button></div>
+          <div class="controls vbp-controls">
+            <label>采购轮次<select id="vbp-round"></select></label>
+            <label>采购组<select id="vbp-group"></select></label>
+            <label>生产企业<select id="vbp-company"></select></label>
+            <label>检索<input id="vbp-query" type="search" placeholder="品种、规格或企业"></label>
+          </div>
+          <p id="vbp-summary" class="small" aria-live="polite"></p>
+          <div id="vbp-table" class="scroll" role="region" aria-label="胰岛素集采中选结果" tabindex="0"></div>
+          <p class="small" id="vbp-source"></p>
+        </section>
+        <section class="panel" aria-labelledby="landscape-title">
+          <div class="heading"><div><h3 id="landscape-title">中国公司竞争格局</h3><p class="small">按上市主体 2025 年合并报表。单项收入、较宽业务口径和未拆分项在表内标明。</p></div></div>
+          <div id="industry-companies" class="scroll" role="region" aria-label="中国胰岛素企业比较" tabindex="0"></div>
+          <div id="industry-rights" class="relationship-list"></div>
+        </section>
+        <section class="panel" aria-labelledby="products-title">
+          <div class="heading"><div><span class="eyebrow">PRODUCTS & REGULATION</span><h3 id="products-title">胰岛素注册与产品</h3><p class="small">分子类别与监管身份分别记录。甘精 U100、U300、预充笔和西林瓶按批准资料列示。</p></div></div>
+          <div class="controls">
+            <label>分子<select id="product-molecule"></select></label>
+            <label>市场<select id="product-market"></select></label>
+            <label>监管分类<select id="product-class"></select></label>
+          </div>
+          <p class="small" aria-live="polite" id="product-summary"></p>
+          <div id="product-table" class="scroll" role="region" aria-label="不同区域胰岛素监管身份" tabindex="0"></div>
+        </section>
+        <section class="panel" aria-labelledby="partd-title">
+          <div class="heading"><div><h3 id="partd-title">美国零售与处方福利</h3><p class="small">Medicare Part D 药品支出与申报。申报次数和实际剂量分别计量，支出含计划与受益人等支付，厂商返利另计。</p></div></div>
+          <div id="partd-content"></div>
+        </section>
+      </section>
+      <section id="company-view" aria-labelledby="company-name" hidden>
+        <div class="heading company-heading"><div><span class="eyebrow" id="company-ticker"></span><h2 id="company-name"></h2><p class="small" id="company-note"></p></div><a id="company-ir" class="outline" target="_blank" rel="noopener noreferrer">公司披露 ↗</a></div>
+        <nav class="section-nav" aria-label="公司数据"><a data-section="operations">经营表现</a><a data-section="working-capital">营运资金周转天数</a><a data-section="incentives">股权激励与业绩考核</a></nav>
+        <div id="company-kpis" class="kpi-grid"></div>
+        <section id="operations" class="panel" tabindex="-1" aria-labelledby="operations-title">
+          <div class="heading"><div><h3 id="operations-title">经营表现</h3><p class="small">人民币亿元 · 合并报表，分部数据沿用报告原口径。</p></div></div>
+          <div id="company-operations" class="scroll" role="region" aria-label="收入、成本与利润分期数据" tabindex="0"></div>
+          <div id="company-segments" class="scroll" role="region" aria-label="2025 财年业务拆分" tabindex="0"></div>
+          <div id="company-business"></div>
+        </section>
+        <section id="working-capital" class="panel" tabindex="-1" aria-labelledby="ccc-title">
+          <div class="heading"><div><h3 id="ccc-title">营运资金周转天数</h3><p class="small">合并报表 · 单位为天</p></div><button id="ccc-export" class="outline" type="button">导出周转数据 CSV</button></div>
+          <details class="method"><summary>公式与财报口径</summary><div id="ccc-method"></div></details>
+          <div class="controls ccc-controls">
+            <label>期间口径<select id="ccc-mode"></select></label>
+            <label>图表指标<select id="ccc-metric"><option value="ccc">CCC 现金转换周期</option><option value="dso">DSO 应收周转</option><option value="dio">DIO 存货周转</option><option value="dpo">DPO 应付周转</option></select></label>
+          </div>
+          <canvas id="ccc-chart" role="img" aria-label="营运资金周转天数趋势，数值见下表"></canvas>
+          <p id="ccc-change" class="small"></p>
+          <div id="ccc-table" class="scroll" role="region" aria-label="营运资金周转天数明细" tabindex="0"></div>
+          <details class="method"><summary>计算所用财报科目与出处</summary><div id="ccc-inputs" class="scroll" role="region" aria-label="CCC 财报科目取数" tabindex="0"></div><button id="ccc-input-export" class="outline" type="button">导出原始科目 CSV</button></details>
+        </section>
+        <section id="incentives" class="panel" tabindex="-1" aria-labelledby="incentives-title">
+          <div class="heading"><div><h3 id="incentives-title">股权激励与业绩考核</h3><p class="small">按实际计划类型列示。方案上限、实际授出和解锁／归属结果分别记录。</p></div></div>
+          <div id="incentive-plans"></div>
+        </section>
+      </section>
+      <details class="panel source-panel"><summary>数据来源与统计边界</summary><div id="sources"></div></details>
+    </div>
+  </main>
+  <footer class="site-footer"><span>医药公开数据 · 胰岛素</span><span>如有建议，欢迎邮件联系 <a href="mailto:wizardzxx@qq.com">wizardzxx@qq.com</a></span></footer>
+</div>
+<script type="module" src="insulin.js"></script>
+</body>
+</html>
