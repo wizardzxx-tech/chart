@@ -75,3 +75,10 @@
 #capital-company,#capital-mode{max-width:100%}
 #working-capital .company-series label:has(input:disabled) { opacity: .58; }
 .capital-panel .capital-chart-periods { margin: .2rem 0 .4rem; font-variant-numeric: tabular-nums; }
+.tracker-controls { width: min(100%, 42rem); margin-block: .35rem; }
+.tracker-scroll { max-height: 28rem; border-block: 1px solid var(--ins-line); }
+.tracker-scroll thead th { position: sticky; top: 0; z-index: 1; background: #eaf2ed; }
+.price-up { color: #9b4229; font-weight: 650; }
+.price-down { color: #176d65; font-weight: 650; }
+#vbp-rules { margin-block: .9rem .25rem; }
+#vbp-rules summary { cursor: pointer; color: var(--ins-green); font-size: .88rem; font-weight: 650; }

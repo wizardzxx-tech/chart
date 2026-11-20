@@ -21,6 +21,7 @@ const modes = { ttm: "TTM 方法 C", quarter: "单季", annual: "全年", half: 
 const modeLabels = { ...modes, ttm: "TTM · 方法 C" };
 
 let data;
+let tracker;
 let active = "industry";
 let selectCapitalCompany;
 let vbpRows = [];
@@ -86,12 +87,84 @@ function updateVbp() {
 function updateProducts() {
   const filters = ["product-molecule", "product-market", "product-class"].map(id => byId(id).value);
   const rows = data.products.filter(row => filters.every((value, index) => !value || value === row[index]));
-  byId("product-summary").textContent = `显示 ${rows.length} / ${data.products.length} 条代表性产品记录。同一产品在不同辖区可有独立批准记录。`;
-  put("product-table", table(["产品", "分子／类别", "市场", "监管分类", "规格／剂型", "批准日", "持有人或合作角色", "资料"],
+  byId("product-summary").textContent = `显示 ${rows.length} / ${data.products.length} 条注册与上市记录。`;
+  put("product-table", table(["产品", "分子／类别", "市场", "监管分类", "规格／剂型", "批准／上市时间", "持有人或合作角色", "资料"],
     rows.map(([molecule, market, classification, name, form, date, holder, source]) => [
-      esc(name), esc(molecule) + small("胰岛素类似物"), esc(market), esc(classification),
+      esc(name), esc(molecule), esc(market), esc(classification),
       esc(form), esc(date), esc(holder), href(source, "监管／公司资料")
     ])));
+}
+
+function filterTable(prefix, headers, rows, filters, columns, defaults = {}) {
+  const controls = Object.entries(filters);
+  for (const [name, index] of controls) {
+    const id = `${prefix}-${name}`;
+    const values = sortedUnique(rows.map(row => row[index]).filter(Boolean));
+    setupSelect(id, [["", "全部"], ...values]);
+    if (defaults[name] !== undefined) byId(id).value = defaults[name];
+    binding(id, render);
+  }
+  let filtered;
+  function render() {
+    filtered = rows.filter(row => controls.every(([name, index]) => {
+      const value = byId(`${prefix}-${name}`).value;
+      return !value || String(row[index]) === value;
+    }));
+    put(`${prefix}-table`, table(headers, filtered.map(columns)));
+    byId(`${prefix}-summary`).textContent = `显示 ${filtered.length} / ${rows.length} 条记录`;
+    byId(`${prefix}-export`).disabled = !filtered.length;
+    byId(`${prefix}-table`).scrollTop = 0;
+  }
+  binding(`${prefix}-export`, () => {
+    const exportHeaders = [...headers];
+    // This view combines the two official links in one screen column.
+    if (prefix === "compare") exportHeaders.splice(-1, 1, "2021 中选来源", "2024 中选来源");
+    download(`insulin-${prefix}.csv`, [exportHeaders, ...filtered]);
+  }, "click");
+  render();
+}
+
+function setupTracker() {
+  const { comparisons, allocation, contracts, shares, national, entities, rules } = tracker.vbp;
+  const delta = value => {
+    if (value == null) return dash;
+    const style = value > 0 ? "price-up" : value < 0 ? "price-down" : "";
+    return `<span class="${style}">${value > 0 ? "+" : ""}${pct(value)}</span>`;
+  };
+  filterTable("compare", ["企业集团", "采购组", "通用名", "规格包装", "2021 生产／分包装主体", "2024 生产／分包装主体",
+    "2021 价（元／支）", "2024 价（元／支）", "变动", "2021 分类", "2024 分类", "匹配状态", "核对事项", "来源"],
+    comparisons, { company: 0, group: 1, status: 11 }, row => row.slice(0, 13).map((value, index) =>
+      index === 8 ? delta(value) : [6, 7].includes(index) ? num(format(value)) : esc(value))
+      .concat([row.slice(13).map((url, index) => url && href(url, index ? "2024 原表" : "2021 原表")).filter(Boolean).join(" · ")]),
+    { status: "同品同规" });
+  byId("compare-summary").title = "严格按同一采购组、分子配比、代表品规和生产及分包装主体匹配。";
+  filterTable("alloc", ["轮次", "采购组", "企业集团", "报告所列主体", "产品或报价单元", "中选分类",
+    "医院报量（万支）", "基础量（万支）", "来源"],
+    allocation, { round: 0, company: 2, group: 1 }, row => row.map((value, index) =>
+      index === 8 ? href(value, "披露") : [6, 7].includes(index) ? num(format(value)) : esc(value)),
+    { round: "2024" });
+  filterTable("pipeline", ["企业", "分子／资产", "研发类别", "市场", "进度", "申请／受理", "批准",
+    "最新里程碑", "商业化", "合作方", "说明", "来源"],
+    tracker.pipeline, { company: 0, market: 3, stage: 4 }, row => row.map((value, index) =>
+      index === 11 ? href(value, "原始披露") : esc(value)));
+  put("pipeline-links", `欧美同分子竞品及生物类似药监管身份见 ${href("../biosimilars/", "Global Biosimilar Tracker")}。`);
+  filterTable("partd", ["年度", "分子", "CMS 品名／剂型", "CMS 通用名", "总支出（美元）", "处方申报次数", "受益人数", "发放计量单位"],
+    tracker.partd, { year: 0, molecule: 1, brand: 2 }, row => row.map((value, index) =>
+      index === 4 ? num(format(value)) : [5, 6, 7].includes(index) ? num(format(value, index === 7 ? 1 : 0)) : esc(value)),
+    { year: tracker.partd[0]?.[0] });
+  put("vbp-demand-share", table(["企业／范围", "2021 首年报量（万支）", "2021 份额", "2024 首年报量（万支）", "2024 份额", "原始披露"],
+    shares.map(([name, v21, s21, v24, s24, l21, l24]) => [esc(name), num(format(v21)), num(typeof s21 === "string" ? s21 : pct(s21)),
+      num(format(v24)), num(typeof s24 === "string" ? s24 : pct(s24)),
+      [l21 && href(l21, "2021"), l24 && href(l24, "2024")].filter(Boolean).join(" · ")])));
+  put("vbp-national-note", esc(national[0]) + " " + href(national[1], "国家医保局"));
+  put("vbp-contract", table(["轮次／时期", "企业／地区", "口径", "数量（万支）", "说明", "来源"],
+    contracts.map(([round, company, scope, value, note, url]) => [esc(round), esc(company), esc(scope), num(format(value)), esc(note), href(url, "披露")])));
+  put("vbp-market", table(["期间", "企业", "分子范围", "销量份额／排名", "统计口径", "来源"],
+    tracker.market.map(row => row.map((value, index) => index === 5 ? href(value, "公司披露") : esc(value)))));
+  put("vbp-rule-notes", rules.map(([description, url, title]) =>
+    `<p class="small">${esc(description)} ${href(url, title)}</p>`).join(""));
+  put("vbp-entities", table(["研究分组", "原表主体", "归属说明"],
+    entities.map(row => row.map(esc))));
 }
 
 function setupIndustry() {
@@ -121,19 +194,16 @@ function setupIndustry() {
   });
   updateProducts();
 
-  const rows = partd.rows.map(([brand, name, spending, claims, year]) => [
-    esc(brand), esc(name), num(format(spending / 1_000_000)), num(format(claims, 0)), num(year)
-  ]);
   const negotiation = partd.negotiation.map(([brand, interval, spending, people, url]) => [
     esc(brand), esc(interval), num(format(spending / 1_000_000)), num(format(people, 0)), href(url, "CMS 谈判披露")
   ]);
-  put("partd-content", (rows.length ? '<div class="scroll" role="region" tabindex="0" aria-label="Part D 品牌数据">' +
-    table(["品牌", "CMS 通用名", "总支出（百万美元）", "申报次数", "年度"], rows) + "</div>" :
-    "") +
+  put("partd-content", '<p class="small">年度表取 CMS 的 Overall 汇总行，保留品牌与剂型原名。申报包括首次及续配，每个品名的受益人数可重叠。空值沿用原表。 ' +
+    href(tracker.partdSources[0], "CMS 官方数据目录") + " · " + href(tracker.partdSources[1], "数据字典") + " · " +
+    href(tracker.partdSources[2], "原始 CSV 存档") + "</p>" +
     '<div class="scroll" role="region" tabindex="0" aria-label="CMS 药价谈判披露">' +
     table(["谈判统计产品组", "统计期", "Part D 总支出（百万美元）", "使用人数", "来源"], negotiation) + "</div>" +
     `<p class="small">两期有重叠。Fiasp／NovoLog 按 CMS 公布的六个产品名称合计。人数按原表千人取整。<br>
-      ${esc(partd.note)}<br>${href(links.partd, "CMS Medicare Part D")} · ${href(links.medicaid, "CMS Medicaid 药品支出")} ·
+      ${href(links.partd, "CMS Medicare Part D")} · ${href(links.medicaid, "CMS Medicaid 药品支出")} ·
       ${href(links.sdud, "Medicaid 州级 NDC 数据")}。</p>`);
   put("sources", data.sources.map(([title, description, url]) =>
     `<p><strong>${esc(title)}</strong>　${esc(description)} ${href(url, "资料")}</p>`).join(""));
@@ -385,7 +455,25 @@ function setupCompany(company) {
       [esc(label), num(amount(total)), num(pct(margin)), esc(scope)])));
   put("company-business", '<ul class="note-list small">' + business.map(([description, url]) =>
     `<li>${esc(description)} ${href(url, "披露")}</li>`).join("") + "</ul>");
-
+  const headers = ["期间", "披露范围", "收入（亿元）", "收入同比", "销量（万支）", "销量同比", "平均单支收入（元）", "说明", "来源"];
+  const series = tracker.business[active];
+  const observations = new Map(series.map(row => [row.slice(0, 2).join("|"), row]));
+  const rows = series.map(([period, scope, reported, volume, growth, comparable, note, link]) => {
+    const priorPeriod = String(Number(period.slice(0, 4)) - 1) + period.slice(4);
+    const prior = observations.get(`${priorPeriod}|${scope}`)?.[2];
+    const growthRevenue = reported !== null && prior > 0 ? reported / prior - 1 : null;
+    return [period, scope, reported, growthRevenue, volume, growth,
+      comparable && reported !== null && volume > 0 ? reported * 10000 / volume : null, note, link];
+  });
+  put("company-insulin", table(headers, rows.map(row => row.map((value, index) =>
+    index === 8 ? href(value, "财报／公告") : [2, 4, 6].includes(index) ? num(format(value)) :
+      [3, 5].includes(index) ? num(pct(value)) : esc(value)))));
+  byId("operating-export").onclick = () => download(`insulin-${active}-operations.csv`, [headers, ...rows]);
+  const bridge = tracker.bridge[active];
+  put("company-bridge", bridge.length ? '<h4 class="rhythm">公司披露的量价归因</h4><div class="scroll tracker-scroll" role="region" tabindex="0" aria-label="收入变动量价归因">' +
+    table(["期间", "口径", "销量贡献（亿元）", "价格贡献（亿元）", "其他（亿元）", "收入变动（亿元）", "说明", "来源"],
+      bridge.map(row => row.map((value, index) => index === 7 ? href(value, "原始披露") :
+        index >= 2 && index <= 5 ? num(format(value)) : esc(value)))) + "</div>" : "");
 }
 
 function setupEquity() {
@@ -411,7 +499,8 @@ function route() {
   const company = Object.hasOwn(data.companies, id) ? id : null;
   const capital = [id, section].includes("working-capital");
   const equity = [id, section].some(part => part === "equity-incentives" || part === "incentives");
-  const targetId = capital ? "working-capital" : equity ? "equity-incentives" : section === "operations" ? "operations" : null;
+  const industrySection = ["vbp-tracker", "pipeline", "partd"].includes(id) ? id : null;
+  const targetId = capital ? "working-capital" : equity ? "equity-incentives" : section === "operations" ? "operations" : industrySection;
   const current = targetId === "operations" ? company : targetId ?? company ?? "industry";
   const previous = active;
   active = company ?? "industry";
@@ -439,10 +528,14 @@ function route() {
 }
 
 try {
-  const result = await fetch("data.json?v=20261120d");
-  if (!result.ok) throw new Error(`Data HTTP ${result.status}`);
-  data = await result.json();
+  [data, tracker] = await Promise.all(["data.json?v=20261120d", "tracker.json?v=20261121a"].map(async path => {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`Data HTTP ${response.status}`);
+    return response.json();
+  }));
+  data.products.push(...tracker.registrations);
   setupIndustry();
+  setupTracker();
   selectCapitalCompany = setupCapital();
   setupEquity();
   window.addEventListener("hashchange", route);

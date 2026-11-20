@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../assets/site.css">
   <link rel="stylesheet" href="../assets/working-capital.css">
   <link rel="stylesheet" href="../blood-products/blood.css">
-  <link rel="stylesheet" href="insulin.css?v=20261120d">
+  <link rel="stylesheet" href="insulin.css?v=20261121a">
 </head>
 <body>
 <div class="wrap">
@@ -22,10 +22,13 @@
     <header class="hero insulin-hero">
       <span class="eyebrow">INSULIN</span>
       <h1>胰岛素公开数据</h1>
-      <p>中国集采与竞争格局、美国和欧盟产品注册，以及甘李药业、通化东宝和联邦制药的公司披露。</p>
+      <p>中国集采量价、胰岛素注册与研发、美国 Medicare Part D，以及三家核心公司的经营披露。</p>
     </header>
     <nav class="insulin-nav" aria-label="胰岛素研究模块">
       <a href="#industry" data-view="industry">行业数据</a>
+      <a href="#vbp-tracker" data-view="vbp-tracker">集采量价</a>
+      <a href="#pipeline" data-view="pipeline">研发管线</a>
+      <a href="#partd" data-view="partd">美国 Part D</a>
       <a href="#ganlee" data-view="ganlee">甘李药业</a>
       <a href="#dongbao" data-view="dongbao">通化东宝</a>
       <a href="#unitedlab" data-view="unitedlab">联邦制药</a>
@@ -37,6 +40,38 @@
       <section id="industry-view" aria-labelledby="industry-title">
         <div class="heading"><div><span class="eyebrow">CHINA VOLUME-BASED PROCUREMENT</span><h2 id="industry-title">中国胰岛素集采</h2></div></div>
         <div id="industry-kpis" class="kpi-grid"></div>
+        <section id="vbp-tracker" class="panel" tabindex="-1" aria-labelledby="tracker-title">
+          <div class="heading"><div><h3 id="tracker-title">2021 与 2024 集采量价对比</h3><p class="small">医院申报需求量、按规则获得的基础量、协议采购量和实际使用量各按原始口径列示。</p></div></div>
+          <div id="vbp-demand-share" class="scroll tracker-scroll" role="region" aria-label="两轮全国医院报量及企业份额" tabindex="0"></div>
+          <p class="small" id="vbp-national-note"></p>
+          <h4 class="rhythm">同品同规中选价</h4>
+          <div class="heading">
+            <div class="controls tracker-controls">
+              <label>企业集团<select id="compare-company"></select></label>
+              <label>采购组<select id="compare-group"></select></label>
+              <label>产品匹配<select id="compare-status"></select></label>
+            </div>
+            <button id="compare-export" class="outline" type="button">价格 CSV</button>
+          </div>
+          <p class="small" id="compare-summary" aria-live="polite"></p>
+          <div id="compare-table" class="scroll tracker-scroll" role="region" aria-label="两轮中选价格对比" tabindex="0"></div>
+          <h4 class="rhythm">分企业与产品的申报需求量、基础量</h4>
+          <div class="heading">
+            <div class="controls tracker-controls">
+              <label>轮次<select id="alloc-round"></select></label>
+              <label>企业集团<select id="alloc-company"></select></label>
+              <label>采购组<select id="alloc-group"></select></label>
+            </div>
+            <button id="alloc-export" class="outline" type="button">报量与基础量 CSV</button>
+          </div>
+          <p class="small" id="alloc-summary" aria-live="polite"></p>
+          <div id="alloc-table" class="scroll tracker-scroll" role="region" aria-label="按企业和品种的首年需求量与基础量" tabindex="0"></div>
+          <h4 class="rhythm">协议采购量和实际使用量</h4>
+          <div id="vbp-contract" class="scroll tracker-scroll" role="region" aria-label="已披露的胰岛素协议采购量和实际使用量" tabindex="0"></div>
+          <h4 class="rhythm">公司披露的终端市场份额</h4>
+          <div id="vbp-market" class="scroll tracker-scroll" role="region" aria-label="公司披露的胰岛素终端市场份额" tabindex="0"></div>
+          <details id="vbp-rules"><summary>分组、分量规则与企业名称映射</summary><div id="vbp-rule-notes"></div><div id="vbp-entities" class="scroll tracker-scroll"></div></details>
+        </section>
         <section class="panel" aria-labelledby="vbp-title">
           <div class="heading"><div><h3 id="vbp-title">中选产品与价格</h3><p class="small">报价按中选包装与规格列示。预混、笔芯和预充笔各保留原包装口径。</p></div><button id="vbp-export" class="outline" type="button">导出筛选结果 CSV</button></div>
           <div class="controls vbp-controls">
@@ -55,7 +90,7 @@
           <div id="industry-rights" class="relationship-list"></div>
         </section>
         <section class="panel" aria-labelledby="products-title">
-          <div class="heading"><div><span class="eyebrow">PRODUCTS & REGULATION</span><h3 id="products-title">胰岛素注册与产品</h3><p class="small">分子类别与监管身份分别记录。甘精 U100、U300、预充笔和西林瓶按批准资料列示。</p></div></div>
+          <div class="heading"><div><span class="eyebrow">PRODUCTS & REGULATION</span><h3 id="products-title">胰岛素注册与产品</h3><p class="small">代表性中国上市品种与美欧注册记录，覆盖人胰岛素和胰岛素类似物。批准时间按可核实的时间精度列示。</p></div></div>
           <div class="controls">
             <label>分子<select id="product-molecule"></select></label>
             <label>市场<select id="product-market"></select></label>
@@ -64,8 +99,32 @@
           <p class="small" aria-live="polite" id="product-summary"></p>
           <div id="product-table" class="scroll" role="region" aria-label="不同区域胰岛素监管身份" tabindex="0"></div>
         </section>
-        <section class="panel" aria-labelledby="partd-title">
+        <section id="pipeline" class="panel" tabindex="-1" aria-labelledby="pipeline-title">
+          <div class="heading"><div><h3 id="pipeline-title">胰岛素研发与国际化管线</h3><p class="small">按企业、分子与市场追踪申请、上市批准及商业化。里程碑日期来自监管或公司披露。</p></div></div>
+          <div class="heading">
+            <div class="controls tracker-controls">
+              <label>公司<select id="pipeline-company"></select></label>
+              <label>监管市场<select id="pipeline-market"></select></label>
+              <label>进度<select id="pipeline-stage"></select></label>
+            </div>
+            <button id="pipeline-export" class="outline" type="button">管线 CSV</button>
+          </div>
+          <p class="small" id="pipeline-summary" aria-live="polite"></p>
+          <div id="pipeline-table" class="scroll tracker-scroll" role="region" aria-label="胰岛素研发和商业化进度" tabindex="0"></div>
+          <p class="small" id="pipeline-links"></p>
+        </section>
+        <section id="partd" class="panel" tabindex="-1" aria-labelledby="partd-title">
           <div class="heading"><div><h3 id="partd-title">美国零售与处方福利</h3><p class="small">Medicare Part D 药品支出与申报。申报次数和实际剂量分别计量，支出含计划与受益人等支付，厂商返利另计。</p></div></div>
+          <div class="heading">
+            <div class="controls tracker-controls">
+              <label>年度<select id="partd-year"></select></label>
+              <label>分子<select id="partd-molecule"></select></label>
+              <label>品牌或剂型<select id="partd-brand"></select></label>
+            </div>
+            <button id="partd-export" class="outline" type="button">Part D CSV</button>
+          </div>
+          <p class="small" id="partd-summary" aria-live="polite"></p>
+          <div id="partd-table" class="scroll tracker-scroll" role="region" aria-label="Part D 品牌年度数据" tabindex="0"></div>
           <div id="partd-content"></div>
         </section>
       </section>
@@ -75,6 +134,9 @@
         <div id="company-kpis" class="kpi-grid"></div>
         <section id="operations" class="panel" tabindex="-1" aria-labelledby="operations-title">
           <div class="heading"><div><h3 id="operations-title">经营表现</h3><p class="small">人民币亿元 · 合并报表，分部数据沿用报告原口径。</p></div></div>
+          <div class="heading"><div><h4>胰岛素收入与销量</h4><p class="small">公司披露口径。仅在收入与销量覆盖范围相同时计算平均单支收入。</p></div><button id="operating-export" class="outline" type="button">经营数据 CSV</button></div>
+          <div id="company-insulin" class="scroll tracker-scroll" role="region" aria-label="胰岛素收入和销量" tabindex="0"></div>
+          <div id="company-bridge"></div>
           <div id="company-operations" class="scroll" role="region" aria-label="收入、成本与利润分期数据" tabindex="0"></div>
           <div id="company-segments" class="scroll" role="region" aria-label="2025 财年业务拆分" tabindex="0"></div>
           <div id="company-business"></div>
@@ -83,7 +145,8 @@
       <section class="capital-panel" id="working-capital" tabindex="-1" aria-labelledby="capital-title">
         <header class="capital-heading">
           <div><h2 id="capital-title">营运资金周转天数</h2>
-            <p>上市公司合并报表 · <span data-capital-latest>最新财报期</span> · 单位为天</p></div>
+            <p>上市公司合并报表 · <span data-capital-latest>最新财报期</span> · 单位为天</p>
+            <p>集团 CCC 反映合并业务。联邦制药的抗生素和原料药等业务也参与计算。</p></div>
           <div class="capital-downloads">
             <a id="capital-download" download="working-capital.csv">周转天数 CSV</a>
             <a id="capital-input-download" download="working-capital-inputs.csv">财报原始科目 CSV</a>
@@ -202,6 +265,6 @@
   <footer class="site-footer"><span>医药公开数据 · 胰岛素</span><span>如有建议，欢迎邮件联系 <a href="mailto:wizardzxx@qq.com">wizardzxx@qq.com</a></span></footer>
 </div>
 <script defer src="../vaccines/equity-incentives.js"></script>
-<script type="module" src="insulin.js?v=20261120d"></script>
+<script type="module" src="insulin.js?v=20261121a"></script>
 </body>
 </html>
