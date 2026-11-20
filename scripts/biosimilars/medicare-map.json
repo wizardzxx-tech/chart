@@ -1,0 +1,191 @@
+{
+  "sources": {
+    "annual": {
+      "link": "https://catalog.data.gov/dataset/medicare-part-b-spending-by-drug-2024-01-01",
+      "file": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv"
+    },
+    "quarterly": {
+      "link": "https://catalog.data.gov/dataset/medicare-quarterly-part-b-spending-by-drug-2026-01-01",
+      "file": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "method": "https://data.cms.gov/sites/default/files/2026-07/Medicare%20Quarterly%20Part%20B%20Spending%20by%20Drug%20Methodology_v260716_508.pdf",
+      "version": "2026-07"
+    },
+    "payment": {
+      "link": "https://www.cms.gov/medicare/payment/part-b-drugs/asp-pricing-files"
+    }
+  },
+  "quarterLabels": {
+    "2025 (Q1-Q4)": {
+      "id": "2025FY",
+      "label": "2025 全年",
+      "start": "2025-01-01",
+      "kind": "full"
+    },
+    "2026 (Q1)": {
+      "id": "2026Q1",
+      "label": "2026 Q1",
+      "start": "2026-01-01",
+      "kind": "quarter"
+    }
+  },
+  "groups": [
+    {
+      "id": "trastuzumab",
+      "label": "曲妥珠单抗",
+      "reference": "Herceptin",
+      "scope": "静脉曲妥珠单抗，统一为每 10 mg。排除皮下 Herceptin Hylecta（J9356）、偶联药物和联合制剂。",
+      "products": [
+        {
+          "code": "J9355",
+          "name": "Herceptin",
+          "reference": true,
+          "roles": "Genentech · 原研"
+        },
+        {
+          "code": "Q5112",
+          "name": "Ontruzant",
+          "roles": "Samsung Bioepis · 开发；Merck · 初始美国商业化",
+          "launch": {
+            "date": "2020-04-15",
+            "source": "https://www.merck.com/news/merck-announces-us-launch-of-ontruzant-trastuzumab-dttb-a-biosimilar-of-herceptin-trastuzumab/"
+          }
+        },
+        {
+          "code": "Q5113",
+          "name": "Herzuma",
+          "roles": "Celltrion · 开发；Teva · 美国商业化",
+          "launch": {
+            "date": "2020-03-16",
+            "source": "https://www.tevausa.com/news-and-media/press-releases/teva-and-celltrion-healthcare-announce-u.s.-availability-of-herzuma-trastuzumab-pkrb-for-injection"
+          }
+        },
+        {
+          "code": "Q5114",
+          "name": "Ogivri",
+          "roles": "Biocon 与 Mylan · 联合开发及美国上市",
+          "launch": {
+            "date": "2019-12",
+            "source": "https://www.bioconbiologics.com/biocon-and-mylan-launch-trastuzumab-biosimilar-ogivri-trastuzumab-dkst-in-the-u-s/"
+          }
+        },
+        {
+          "code": "Q5116",
+          "name": "Trazimera",
+          "roles": "Pfizer · 开发及美国商业化"
+        },
+        {
+          "code": "Q5117",
+          "name": "Kanjinti",
+          "roles": "Amgen 与 Allergan · 联合推出",
+          "launch": {
+            "date": "2019-07-18",
+            "source": "https://www.amgen.com/newsroom/press-releases/2019/07/amgen-and-allergans-mvasi-bevacizumabawwb-and-kanjinti-trastuzumabanns-now-available-in-the-united-states"
+          }
+        },
+        {
+          "code": "Q5146",
+          "name": "Hercessi",
+          "roles": "复宏汉霖 · 开发；Accord BioPharma · 美国商业化"
+        }
+      ]
+    },
+    {
+      "id": "bevacizumab",
+      "label": "贝伐珠单抗",
+      "reference": "Avastin",
+      "scope": "同分子，统一为每 10 mg。原研 J9035 可能包含眼科超说明书用药。公开表无法按适应症拆分。",
+      "additionalApprovals": [
+        "Avzivi"
+      ],
+      "products": [
+        {
+          "code": "J9035",
+          "name": "Avastin",
+          "reference": true,
+          "roles": "Genentech · 原研"
+        },
+        {
+          "code": "Q5107",
+          "name": "Mvasi",
+          "roles": "Amgen 与 Allergan · 联合推出",
+          "launch": {
+            "date": "2019-07-18",
+            "source": "https://www.amgen.com/newsroom/press-releases/2019/07/amgen-and-allergans-mvasi-bevacizumabawwb-and-kanjinti-trastuzumabanns-now-available-in-the-united-states"
+          }
+        },
+        {
+          "code": "Q5118",
+          "name": "Zirabev",
+          "roles": "Pfizer · 开发及美国商业化",
+          "launch": {
+            "date": "2019-12-31",
+            "source": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-brings-three-new-biosimilars-us-patients-substantial"
+          }
+        },
+        {
+          "code": "Q5126",
+          "name": "Alymsys",
+          "roles": "mAbxience · 开发；Amneal · 美国商业化",
+          "launch": {
+            "date": "2022-10-03",
+            "source": "https://investors.amneal.com/news/press-releases/press-release-details/2022/Amneal-Launches-First-Biosimilar-with-ALYMSYS-bevacizumab-maly-in-the-United-States/default.aspx"
+          }
+        },
+        {
+          "code": "Q5129",
+          "name": "Vegzelma",
+          "roles": "Celltrion · 开发及美国商业化"
+        },
+        {
+          "code": "Q5160",
+          "name": "Jobevne",
+          "roles": "Biocon Biologics · FDA 许可持有人"
+        }
+      ]
+    },
+    {
+      "id": "rituximab",
+      "label": "利妥昔单抗",
+      "reference": "Rituxan",
+      "scope": "静脉利妥昔单抗，统一为每 10 mg。排除皮下 Rituxan Hycela（J9311）和不同分子的抗 CD20 药物（如 Gazyva）。",
+      "additionalApprovals": [
+        "Zimrixby"
+      ],
+      "products": [
+        {
+          "code": "J9312",
+          "name": "Rituxan",
+          "reference": true,
+          "roles": "Genentech · 原研"
+        },
+        {
+          "code": "Q5115",
+          "name": "Truxima",
+          "roles": "Celltrion · 开发；Teva · 美国商业化",
+          "launch": {
+            "date": "2019-11",
+            "source": "https://www.tevausa.com/news-and-media/press-releases/teva-and-celltrion-announce-the-availability-of-truxima-rituximab-abbs-injection-the-first-biosimilar/"
+          }
+        },
+        {
+          "code": "Q5119",
+          "name": "Ruxience",
+          "roles": "Pfizer · 开发及美国商业化",
+          "launch": {
+            "date": "2020-01-23",
+            "source": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-brings-three-new-biosimilars-us-patients-substantial"
+          }
+        },
+        {
+          "code": "Q5123",
+          "name": "Riabni",
+          "roles": "Amgen · 开发及美国商业化",
+          "launch": {
+            "date": "2021-01",
+            "source": "https://investors.amgen.com/static-files/7040ab10-3c71-4789-9fec-7bc56a9e7237"
+          }
+        }
+      ]
+    }
+  ]
+}
