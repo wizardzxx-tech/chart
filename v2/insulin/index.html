@@ -8,7 +8,9 @@
   <meta name="description" content="胰岛素集采与监管数据，以及甘李药业、通化东宝和联邦制药的经营、营运资金及激励披露。">
   <link rel="canonical" href="https://wizardzxx-tech.github.io/chart/v2/insulin/">
   <link rel="stylesheet" href="../assets/site.css">
-  <link rel="stylesheet" href="insulin.css">
+  <link rel="stylesheet" href="../assets/working-capital.css">
+  <link rel="stylesheet" href="../blood-products/blood.css">
+  <link rel="stylesheet" href="insulin.css?v=20261120b">
 </head>
 <body>
 <div class="wrap">
@@ -27,6 +29,8 @@
       <a href="#ganlee" data-view="ganlee">甘李药业</a>
       <a href="#dongbao" data-view="dongbao">通化东宝</a>
       <a href="#unitedlab" data-view="unitedlab">联邦制药</a>
+      <a href="#working-capital" data-view="working-capital">营运资金</a>
+      <a href="#equity-incentives" data-view="equity-incentives">股权激励</a>
     </nav>
     <p id="loading" class="small" role="status">正在读取公开数据。</p>
     <div id="contents" hidden>
@@ -67,7 +71,7 @@
       </section>
       <section id="company-view" aria-labelledby="company-name" hidden>
         <div class="heading company-heading"><div><span class="eyebrow" id="company-ticker"></span><h2 id="company-name"></h2><p class="small" id="company-note"></p></div><a id="company-ir" class="outline" target="_blank" rel="noopener noreferrer">公司披露 ↗</a></div>
-        <nav class="section-nav" aria-label="公司数据"><a data-section="operations">经营表现</a><a data-section="working-capital">营运资金周转天数</a><a data-section="incentives">股权激励与业绩考核</a></nav>
+        <nav class="section-nav" aria-label="公司数据"><a data-section="operations">经营表现</a><a data-section="working-capital">营运资金周转天数</a><a data-section="incentives">股权激励业绩考核</a></nav>
         <div id="company-kpis" class="kpi-grid"></div>
         <section id="operations" class="panel" tabindex="-1" aria-labelledby="operations-title">
           <div class="heading"><div><h3 id="operations-title">经营表现</h3><p class="small">人民币亿元 · 合并报表，分部数据沿用报告原口径。</p></div></div>
@@ -75,28 +79,107 @@
           <div id="company-segments" class="scroll" role="region" aria-label="2025 财年业务拆分" tabindex="0"></div>
           <div id="company-business"></div>
         </section>
-        <section id="working-capital" class="panel" tabindex="-1" aria-labelledby="ccc-title">
-          <div class="heading"><div><h3 id="ccc-title">营运资金周转天数</h3><p class="small">合并报表 · 单位为天</p></div><button id="ccc-export" class="outline" type="button">导出周转数据 CSV</button></div>
-          <details class="method"><summary>公式与财报口径</summary><div id="ccc-method"></div></details>
-          <div class="controls ccc-controls">
-            <label>期间口径<select id="ccc-mode"></select></label>
-            <label>图表指标<select id="ccc-metric"><option value="ccc">CCC 现金转换周期</option><option value="dso">DSO 应收周转</option><option value="dio">DIO 存货周转</option><option value="dpo">DPO 应付周转</option></select></label>
-          </div>
-          <canvas id="ccc-chart" role="img" aria-label="营运资金周转天数趋势，数值见下表"></canvas>
-          <p id="ccc-change" class="small"></p>
-          <div id="ccc-table" class="scroll" role="region" aria-label="营运资金周转天数明细" tabindex="0"></div>
-          <details class="method"><summary>计算所用财报科目与出处</summary><div id="ccc-inputs" class="scroll" role="region" aria-label="CCC 财报科目取数" tabindex="0"></div><button id="ccc-input-export" class="outline" type="button">导出原始科目 CSV</button></details>
-        </section>
-        <section id="incentives" class="panel" tabindex="-1" aria-labelledby="incentives-title">
-          <div class="heading"><div><h3 id="incentives-title">股权激励与业绩考核</h3><p class="small">按实际计划类型列示。方案上限、实际授出和解锁／归属结果分别记录。</p></div></div>
-          <div id="incentive-plans"></div>
-        </section>
       </section>
+      <section class="capital-panel" id="working-capital" tabindex="-1" aria-labelledby="capital-title">
+        <header class="capital-heading">
+          <div><h2 id="capital-title">营运资金周转天数</h2>
+            <p>上市公司合并报表 · <span data-capital-latest>各公司最新财报期</span> · 单位为天</p></div>
+          <div class="capital-downloads">
+            <a id="capital-download" download="working-capital.csv">周转天数 CSV</a>
+            <a id="capital-input-download" download="working-capital-inputs.csv">财报原始科目 CSV</a>
+          </div>
+        </header>
+        <details class="capital-method">
+          <summary>公式与财报口径</summary>
+          <ul>
+            <li><strong>TTM 方法 C</strong>。余额取连续五个季末，按 1、2、2、2、1 加权后除以 8。收入和营业成本为最近四个单季合计，按 365 天计算。</li>
+            <li><strong>单季</strong>。余额取季初与季末均值。收入和营业成本使用同一财年累计差额，第一季度直接取一季报。天数按日历计算。</li>
+            <li><strong>全年／上半年</strong>。余额取上一年末与本期末均值，分别按 365 天和上半年实际天数计算。三家公司均有全年和半年报。联邦制药的季报口径留空。</li>
+            <li><strong>AR days</strong>＝平均贸易相关应收 ÷ 营业收入 × 天数。A 股公司取应收账款、应收票据及应收款项融资。联邦制药取减值后的贸易应收和银行承兑票据。</li>
+            <li><strong>AP days</strong>＝平均贸易相关应付 ÷ 营业成本 × 天数。A 股公司取应付账款及应付票据。联邦制药取贸易应付及列作贸易应付的供应商融资款。剔除供应商融资后，联邦制药 2025 年的 CCC 约增加 102.3 天。</li>
+            <li><strong>Inventory days</strong>＝平均存货 ÷ 营业成本 × 天数。<strong>CCC days</strong>＝AR days ＋ Inventory days − AP days。</li>
+            <li>通化东宝 2025 年部分中期流量和年末余额按 2026 年同一控制下合并披露重列。2025 年全年流量取自当年年报，跨年 TTM 使用可得披露。</li>
+          </ul>
+        </details>
+        <div class="capital-interactive" hidden>
+          <div class="capital-controls">
+            <label>计算口径<select id="capital-mode"></select></label>
+            <label>图表指标<select id="capital-metric"><option value="dso">AR days</option><option value="dpo">AP days</option><option value="dio">Inventory days</option><option value="ccc" selected>CCC days</option></select></label>
+            <label>图表时间<select id="capital-range"><option value="12">近三年</option><option value="all">全部历史</option></select></label>
+          </div>
+          <figure class="capital-trend" hidden>
+            <fieldset class="company-series"><legend>比较公司</legend></fieldset>
+            <figcaption id="capital-caption">CCC days · 全年 · 天</figcaption>
+            <div class="capital-plot">
+              <canvas tabindex="0" role="img" aria-labelledby="capital-caption" aria-describedby="capital-chart-help"></canvas>
+              <div class="company-trend-tooltip" role="status" hidden></div>
+            </div>
+            <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失期间断线。</p>
+          </figure>
+          <div class="capital-controls capital-table-controls">
+            <label>表格期间<select id="capital-period"></select></label>
+            <label>表格公司<select id="capital-company"></select></label>
+          </div>
+          <div class="capital-scroll" role="region" aria-label="营运资金周转天数明细" tabindex="0">
+            <table class="capital-table">
+              <thead><tr><th scope="col">公司</th><th scope="col">期间</th><th scope="col">AR days</th><th scope="col">AP days</th><th scope="col">Inventory days</th><th scope="col">CCC days</th><th scope="col">事项／来源</th></tr></thead>
+              <tbody id="capital-rows"></tbody>
+            </table>
+          </div>
+        </div>
+        <p class="capital-status" id="capital-status" role="status">正在读取公司数据…</p>
+      </section>
+      <div class="blood-page">
+        <section class="blood-panel equity-panel" id="equity-incentives" tabindex="-1" aria-labelledby="equity-title">
+          <div class="dataset-head">
+            <div><h2 id="equity-title">股权激励业绩考核</h2>
+              <p class="dataset-meta">6 项方案 · 14 条考核与归属记录 · 核对至 2026-11-20</p></div>
+            <a class="download-data" href="equity-incentives.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="dataset-source">目标取自公司层面的解除限售、解锁或归属条款。实际值采用公司公布的考核口径。执行列保留实际解锁或归属股数。</p>
+          <div class="research-targets">
+            <h3>2026–2028 年待考核目标</h3>
+            <div class="scroll" role="region" aria-label="待考核目标" tabindex="0">
+              <table class="stores-table"><thead><tr><th scope="col">公司／方案</th><th scope="col">考核口径</th><th scope="col">2026</th><th scope="col">2027</th><th scope="col">2028</th><th scope="col">原始条款</th></tr></thead>
+                <tbody><tr><th scope="row">甘李药业<span class="equity-plan-name">2024 年限制性股票</span></th><td>审计净利润（剔除当期股权激励成本摊销）</td><td>≥ 14.30 亿元</td><td>—</td><td>—</td><td><a href="https://www.ganlee.com.cn/uploads/files/2025/0427/MW75noY63V9WZlryN4n9SUXo8Kw5PaYf7C66KLKU.pdf" target="_blank" rel="noopener">原始条款</a></td></tr><tr><th scope="row">甘李药业<span class="equity-plan-name">2026 年限制性股票</span></th><td>审计净利润（剔除当期股权激励成本摊销）</td><td>≥ 14.30 亿元</td><td>≥ 15.73 亿元</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2026-06-11/1225363461.PDF" target="_blank" rel="noopener">原始条款</a></td></tr><tr><th scope="row">通化东宝<span class="equity-plan-name">2025 年员工持股计划</span></th><td>营收较 2024 年增幅，或剔除股份支付后的归母扣非净利润</td><td>目标／触发值：营收增幅 60%／48%；利润 7.0／5.6 亿元</td><td>目标／触发值：营收增幅 80%／64%；利润 9.0／7.2 亿元</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-09-03/1224635384.PDF#page=16" target="_blank" rel="noopener">原始条款</a></td></tr><tr><th scope="row">通化东宝<span class="equity-plan-name">研发生产系统员工持股计划</span></th><td>上市申请、临床试验申请与海外注册批件</td><td>各项合计 ≥ 6 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td>各项合计 ≥ 5 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td>各项合计 ≥ 9 个，对应 100% 公司系数；2027–2028 年创新药 IND 项目合计 ≥ 3 个。海外批件分项计划 5 个（按品规）。</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-11-29/1224834925.PDF#page=16" target="_blank" rel="noopener">原始条款</a></td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="company-filters equity-filters" hidden>
+            <label>公司<select id="equity-company"><option value="all">全部公司</option><option value="ganlee">甘李药业</option><option value="dongbao">通化东宝</option><option value="unitedlab">联邦制药</option></select></label>
+            <label>考核结果<select id="equity-status"><option value="all">全部状态</option><option>达标</option><option>已归属</option><option>待考核</option></select></label>
+          </div>
+          <p id="equity-filter-status" class="company-row-status" role="status" hidden></p>
+          <p class="company-mobile-tip">左右滑动查看实际值、执行情况和公告。</p>
+          <div class="stores-table-wrap equity-table-wrap" role="region" aria-label="股权激励业绩考核明细" tabindex="0">
+            <table class="stores-table equity-table">
+              <thead><tr><th scope="col">公司／方案</th><th scope="col">考核年</th><th scope="col">考核口径</th><th scope="col">目标</th><th scope="col">实际</th><th scope="col">考核及执行</th><th scope="col">原始披露</th></tr></thead>
+              <tbody>
+              <tr data-company="ganlee" data-status="达标"><th scope="row">甘李药业<span class="equity-plan-name">2022 年限制性股票</span></th><td class="equity-year">2025</td><td>审计净利润（剔除当期股权激励成本摊销）</td><td class="equity-target">≥ 11 亿元</td><td class="equity-actual">11.44 亿元</td><td><span class="equity-badge met">达标</span><p>第三个解除限售期，2026-06-17 已解除限售 1,398,480 股。</p><small></small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2026-06-12/1225365336.PDF" target="_blank" rel="noopener">解除限售公告</a></td></tr>
+<tr data-company="ganlee" data-status="达标"><th scope="row">甘李药业<span class="equity-plan-name">2024 年限制性股票</span></th><td class="equity-year">2025</td><td>审计净利润（剔除当期股权激励成本摊销）</td><td class="equity-target">≥ 11 亿元</td><td class="equity-actual">11.44 亿元</td><td><span class="equity-badge met">达标</span><p>第二个解除限售期，2026-06-17 已解除限售 1,900,200 股。</p><small></small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2026-06-12/1225365336.PDF" target="_blank" rel="noopener">解除限售公告</a></td></tr>
+<tr data-company="ganlee" data-status="待考核"><th scope="row">甘李药业<span class="equity-plan-name">2024 年限制性股票</span></th><td class="equity-year">2026</td><td>审计净利润（剔除当期股权激励成本摊销）</td><td class="equity-target">≥ 14.30 亿元</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>第三个解除限售期，解除限售比例 40%。</p><small></small></td><td class="equity-links"><a href="https://www.ganlee.com.cn/uploads/files/2025/0427/MW75noY63V9WZlryN4n9SUXo8Kw5PaYf7C66KLKU.pdf" target="_blank" rel="noopener">修订条款</a></td></tr>
+<tr data-company="ganlee" data-status="待考核"><th scope="row">甘李药业<span class="equity-plan-name">2026 年限制性股票</span></th><td class="equity-year">2026</td><td>审计净利润（剔除当期股权激励成本摊销）</td><td class="equity-target">≥ 14.30 亿元</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>各期解除限售比例 50%。</p><small>2026-07-15 授予 20 人、63 万股，27.80 元／股；7 月 27 日登记。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2026-06-11/1225363461.PDF" target="_blank" rel="noopener">考核条款</a><a href="https://static.cninfo.com.cn/finalpage/2026-07-29/1225444236.PDF" target="_blank" rel="noopener">授予登记</a></td></tr>
+<tr data-company="ganlee" data-status="待考核"><th scope="row">甘李药业<span class="equity-plan-name">2026 年限制性股票</span></th><td class="equity-year">2027</td><td>审计净利润（剔除当期股权激励成本摊销）</td><td class="equity-target">≥ 15.73 亿元</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>各期解除限售比例 50%。</p><small>2026-07-15 授予 20 人、63 万股，27.80 元／股；7 月 27 日登记。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2026-06-11/1225363461.PDF" target="_blank" rel="noopener">考核条款</a><a href="https://static.cninfo.com.cn/finalpage/2026-07-29/1225444236.PDF" target="_blank" rel="noopener">授予登记</a></td></tr>
+<tr data-company="dongbao" data-status="达标"><th scope="row">通化东宝<span class="equity-plan-name">2025 年员工持股计划</span></th><td class="equity-year">2025</td><td>营收较 2024 年增幅，或剔除股份支付后的归母扣非净利润</td><td class="equity-target">目标／触发值：营收增幅 40%／32%；利润 5.0／4.0 亿元</td><td class="equity-actual">营收增幅 46.66%；调整后利润 3.81 亿元</td><td><span class="equity-badge met">达标</span><p>营收达标，公司层面系数 100%。首次 69 人解锁 263.85 万股。</p><small>首次 75 人认购、929 万股、4.29 元／股。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2025-09-03/1224635384.PDF#page=16" target="_blank" rel="noopener">考核条款</a><a href="https://static.cninfo.com.cn/finalpage/2026-09-30/1225586659.PDF" target="_blank" rel="noopener">执行公告</a></td></tr>
+<tr data-company="dongbao" data-status="待考核"><th scope="row">通化东宝<span class="equity-plan-name">2025 年员工持股计划</span></th><td class="equity-year">2026</td><td>营收较 2024 年增幅，或剔除股份支付后的归母扣非净利润</td><td class="equity-target">目标／触发值：营收增幅 60%／48%；利润 7.0／5.6 亿元</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>首次与预留部分均适用该年度考核。</p><small>首次按 30%／40%／30% 解锁。预留 178.7817 万股，调整后 3.99 元／股，2026–2027 年各解锁 50%。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2025-09-03/1224635384.PDF#page=16" target="_blank" rel="noopener">考核条款</a><a href="https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600867&amp;stockCode=600867" target="_blank" rel="noopener">预留披露</a></td></tr>
+<tr data-company="dongbao" data-status="待考核"><th scope="row">通化东宝<span class="equity-plan-name">2025 年员工持股计划</span></th><td class="equity-year">2027</td><td>营收较 2024 年增幅，或剔除股份支付后的归母扣非净利润</td><td class="equity-target">目标／触发值：营收增幅 80%／64%；利润 9.0／7.2 亿元</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>首次与预留部分均适用该年度考核。</p><small>首次按 30%／40%／30% 解锁。预留 178.7817 万股，调整后 3.99 元／股，2026–2027 年各解锁 50%。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2025-09-03/1224635384.PDF#page=16" target="_blank" rel="noopener">考核条款</a><a href="https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600867&amp;stockCode=600867" target="_blank" rel="noopener">预留披露</a></td></tr>
+<tr data-company="dongbao" data-status="待考核"><th scope="row">通化东宝<span class="equity-plan-name">研发生产系统员工持股计划</span></th><td class="equity-year">2026</td><td>上市申请、临床试验申请与海外注册批件</td><td class="equity-target">各项合计 ≥ 6 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>另有 80%／0% 档及个人绩效考核。</p><small>首次 637 万股，4.39 元／股。预留 63 万股，调整后 4.09 元／股，2027–2028 年考核，各期上限 50%。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2025-11-29/1224834925.PDF#page=16" target="_blank" rel="noopener">考核条款</a><a href="https://static.cninfo.com.cn/finalpage/2026-09-01/1225536545.PDF" target="_blank" rel="noopener">预留分配</a></td></tr>
+<tr data-company="dongbao" data-status="待考核"><th scope="row">通化东宝<span class="equity-plan-name">研发生产系统员工持股计划</span></th><td class="equity-year">2027</td><td>上市申请、临床试验申请与海外注册批件</td><td class="equity-target">各项合计 ≥ 5 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>另有 80%／0% 档及个人绩效考核。</p><small>首次 637 万股，4.39 元／股。预留 63 万股，调整后 4.09 元／股，2027–2028 年考核，各期上限 50%。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2025-11-29/1224834925.PDF#page=16" target="_blank" rel="noopener">考核条款</a><a href="https://static.cninfo.com.cn/finalpage/2026-09-01/1225536545.PDF" target="_blank" rel="noopener">预留分配</a></td></tr>
+<tr data-company="dongbao" data-status="待考核"><th scope="row">通化东宝<span class="equity-plan-name">研发生产系统员工持股计划</span></th><td class="equity-year">2028</td><td>上市申请、临床试验申请与海外注册批件</td><td class="equity-target">各项合计 ≥ 9 个，对应 100% 公司系数；2027–2028 年创新药 IND 项目合计 ≥ 3 个。海外批件分项计划 5 个（按品规）。</td><td class="equity-actual">—</td><td><span class="equity-badge pending">待考核</span><p>另有 80%／0% 档及个人绩效考核。</p><small>首次 637 万股，4.39 元／股。预留 63 万股，调整后 4.09 元／股，2027–2028 年考核，各期上限 50%。</small></td><td class="equity-links"><a href="https://static.cninfo.com.cn/finalpage/2025-11-29/1224834925.PDF#page=16" target="_blank" rel="noopener">考核条款</a><a href="https://static.cninfo.com.cn/finalpage/2026-09-01/1225536545.PDF" target="_blank" rel="noopener">预留分配</a></td></tr>
+<tr data-company="unitedlab" data-status="已归属"><th scope="row">联邦制药<span class="equity-plan-name">2023 年股份奖励计划</span></th><td class="equity-year">—</td><td>公司按绩效目标达成情况办理归属</td><td class="equity-target">归属公告未列数值门槛</td><td class="equity-actual">—</td><td><span class="equity-badge met">已归属</span><p>2024-11-13 已归属 3,606,180 股。</p><small>2023-11-13 授出 12,096,900 股，均由受托人在市场买入。计划授权上限为采纳日股本的 10%。</small></td><td class="equity-links"><a href="https://doc.irasia.com/listco/hk/unitedlab/annual/2025/ar2025.pdf#page=34" target="_blank" rel="noopener">方案概况</a><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1114/2024111401019.pdf" target="_blank" rel="noopener">归属公告</a></td></tr>
+<tr data-company="unitedlab" data-status="已归属"><th scope="row">联邦制药<span class="equity-plan-name">2023 年股份奖励计划</span></th><td class="equity-year">2024</td><td>公司按绩效目标达成情况办理归属</td><td class="equity-target">归属公告未列数值门槛</td><td class="equity-actual">—</td><td><span class="equity-badge met">已归属</span><p>2025-11-13 已归属 3,369,800 股。</p><small>2023-11-13 授出 12,096,900 股，均由受托人在市场买入。计划授权上限为采纳日股本的 10%。</small></td><td class="equity-links"><a href="https://doc.irasia.com/listco/hk/unitedlab/annual/2025/ar2025.pdf#page=34" target="_blank" rel="noopener">方案概况</a><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1113/2025111301197.pdf" target="_blank" rel="noopener">归属公告</a></td></tr>
+<tr data-company="unitedlab" data-status="已归属"><th scope="row">联邦制药<span class="equity-plan-name">2023 年股份奖励计划</span></th><td class="equity-year">2025</td><td>公司按绩效目标达成情况办理归属</td><td class="equity-target">归属公告未列数值门槛</td><td class="equity-actual">—</td><td><span class="equity-badge met">已归属</span><p>2026-11-13 已归属 2,534,814 股。</p><small>2023-11-13 授出 12,096,900 股，均由受托人在市场买入。计划授权上限为采纳日股本的 10%。</small></td><td class="equity-links"><a href="https://doc.irasia.com/listco/hk/unitedlab/annual/2025/ar2025.pdf#page=34" target="_blank" rel="noopener">方案概况</a><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/1115/2026111500038_c.pdf" target="_blank" rel="noopener">归属公告</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
       <details class="panel source-panel"><summary>数据来源与统计边界</summary><div id="sources"></div></details>
     </div>
   </main>
   <footer class="site-footer"><span>医药公开数据 · 胰岛素</span><span>如有建议，欢迎邮件联系 <a href="mailto:wizardzxx@qq.com">wizardzxx@qq.com</a></span></footer>
 </div>
-<script type="module" src="insulin.js"></script>
+<script defer src="../vaccines/equity-incentives.js"></script>
+<script type="module" src="insulin.js?v=20261120b"></script>
 </body>
 </html>

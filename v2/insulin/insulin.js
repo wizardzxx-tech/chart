@@ -1,3 +1,5 @@
+import { mountCompanyTrend } from "../pharmacy/company-trend.js";
+
 const byId = id => document.getElementById(id);
 const binding = (id, handler, event = "change") => byId(id).addEventListener(event, handler);
 const dash = "—";
@@ -15,12 +17,11 @@ const wrap = (tag, value) => `<${tag}>${esc(value)}</${tag}>`;
 const small = value => wrap("small", value);
 const num = value => `<span class="numeric">${esc(value)}</span>`;
 const sortedUnique = values => [...new Set(values)].sort();
-const modes = { ttm: "滚动十二个月（TTM）", quarter: "单季度", annual: "全年", half: "上半年" };
-const metrics = { ccc: "CCC", dso: "DSO", dio: "DIO", dpo: "DPO" };
+const modes = { annual: "全年", ttm: "TTM · 方法 C", quarter: "单季", half: "上半年" };
 
 let data;
 let active = "industry";
-let cccRows = [];
+let selectCapitalCompany;
 let vbpRows = [];
 
 function put(id, html) {
@@ -47,14 +48,18 @@ function cards(rows) {
     ${wrap("strong", value)}<span>${link ? href(link, note) : esc(note)}</span></div>`).join("");
 }
 
-function download(filename, rows) {
+function csvUrl(rows) {
   const cell = value => {
     let safe = String(value ?? "");
     if (typeof value !== "number" && /^[=+\-@\t\r]/.test(safe)) safe = "'" + safe;
     return `"${safe.replaceAll('"', '""')}"`;
   };
   const body = rows.map(row => row.map(cell).join(",")).join("\r\n");
-  const url = URL.createObjectURL(new Blob(["\uFEFF", body], { type: "text/csv;charset=utf-8" }));
+  return URL.createObjectURL(new Blob(["\uFEFF", body], { type: "text/csv;charset=utf-8" }));
+}
+
+function download(filename, rows) {
+  const url = csvUrl(rows);
   const link = document.createElement("a");
   link.href = url;
   link.download = filename;
@@ -195,92 +200,113 @@ function calculate(company, mode) {
   });
 }
 
-function drawTrend(rows, metric) {
-  const canvas = byId("ccc-chart");
-  const width = canvas.clientWidth;
-  if (!width) return;
-  const height = canvas.clientHeight;
-  const scale = window.devicePixelRatio || 1;
-  canvas.width = Math.round(width * scale);
-  canvas.height = Math.round(height * scale);
-  const ctx = canvas.getContext("2d");
-  ctx.scale(scale, scale);
-  if (!rows.length) return;
+const metricKeys = ["dso", "dpo", "dio", "ccc"];
 
-  const values = rows.map(row => row[metric]);
-  const pad = { left: 49, right: 19, top: 14, bottom: 29 };
-  const plotWidth = width - pad.left - pad.right;
-  const plotHeight = height - pad.top - pad.bottom;
-  const min = Math.min(0, ...values);
-  const max = Math.max(0, ...values);
-  const step = Math.max(1, Math.ceil((max - min) / 50) * 10);
-  const lower = Math.floor(min / step) * step;
-  const upper = Math.max(lower + step, Math.ceil(max / step) * step);
-  const x = index => pad.left + plotWidth * index / Math.max(1, rows.length - 1);
-  const y = value => pad.top + plotHeight * (upper - value) / (upper - lower);
-  ctx.font = "11px system-ui, sans-serif";
-  ctx.fillStyle = "#4e6461";
-  ctx.textAlign = "right";
-  for (let tick = lower; tick <= upper; tick += step) {
-    const pos = y(tick);
-    ctx.strokeStyle = tick === 0 ? "#a9bcb3" : "#e0ebe4";
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(pad.left, pos);
-    ctx.lineTo(width - pad.right, pos);
-    ctx.stroke();
-    ctx.fillText(String(tick), pad.left - 8, pos + 4);
+function setupCapital() {
+  const companies = Object.entries(data.companies).map(([code, company]) => ({
+    code, ...company, capital: Object.fromEntries(Object.keys(modes).map(mode => [
+      mode, new Map(calculate(company, mode).map(row => [period(row.date), row]))
+    ]))
+  }));
+  const dates = sortedUnique(companies.flatMap(company =>
+    company.history.map(record => period(record.date))));
+  const mode = byId("capital-mode");
+  const metric = byId("capital-metric");
+  const range = byId("capital-range");
+  const issuer = byId("capital-company");
+  const tablePeriod = byId("capital-period");
+  const periodLabel = value => {
+    if (mode.value === "annual") return `${value.slice(0, 4)} FY`;
+    if (mode.value === "half") return `${value.slice(0, 4)} H1`;
+    return value;
+  };
+  setupSelect("capital-mode", Object.entries(modes));
+  setupSelect("capital-company", [["all", "全部公司"], ...companies.map(c => [c.code, c.name])]);
+  const lastPeriod = quarters => quarters.findLastIndex(quarter => companies.some(c => c.capital[mode.value].has(quarter)));
+  const chart = mountCompanyTrend(document.querySelector(".capital-trend"), companies, dates, {
+    defaultCodes: companies.map(c => c.code),
+    emptyMessage: "勾选有数据的公司后查看周转天数",
+    getEnd: lastPeriod,
+    getStart: quarters => range.value === "all" ? 0 : Math.max(0, lastPeriod(quarters) + 1 - Number(range.value)),
+    getPoints: (company, quarters) => quarters.map(quarter => {
+      const row = company.capital[mode.value].get(quarter);
+      return row ? { count: row[metric.value], detail: row.label } : null;
+    }),
+    describe: point => point ? { value: `${format(point.count)} 天`, detail: point.detail } : { value: dash },
+    labelTick: quarter => mode.value === "half" ? quarter.endsWith("Q2") : quarter.endsWith("Q4"),
+    maxGap: () => ["annual", "half"].includes(mode.value) ? 4 : 1
+  });
+
+  function renderCapitalTable() {
+    const selection = companies.filter(c => issuer.value === "all" || c.code === issuer.value);
+    const quarters = tablePeriod.value === "all" ? [...dates].reverse() : [tablePeriod.value];
+    const rows = quarters.flatMap(quarter => selection.flatMap(company => {
+      const row = company.capital[mode.value].get(quarter);
+      if (!row) return [];
+      const links = [row.source].flat().map((url, index) => href(url, index ? "重列披露" : "财报披露"));
+      return [`<tr data-company="${esc(company.code)}"><th scope="row">${esc(company.name)}</th><td>${esc(row.label)}</td>
+        ${metricKeys.map(key => wrap("td", format(row[key]))).join("")}<td>${links.join(" · ")}</td></tr>`];
+    }));
+    put("capital-rows", rows.join(""));
+    byId("capital-status").textContent = rows.length ? `显示 ${rows.length} 条记录` : "当前期间与公司组合无可计算的记录。";
   }
 
-  ctx.strokeStyle = "#1d6757";
-  ctx.lineWidth = 2.3;
-  ctx.beginPath();
-  values.forEach((value, i) => i ? ctx.lineTo(x(i), y(value)) : ctx.moveTo(x(i), y(value)));
-  ctx.stroke();
-  ctx.fillStyle = "#1d6757";
-  values.forEach((value, i) => {
-    ctx.beginPath();
-    ctx.arc(x(i), y(value), 3.2, 0, 2 * Math.PI);
-    ctx.fill();
+  function refreshChart() {
+    byId("capital-caption").textContent = `${metric.selectedOptions[0].text} · ${modes[mode.value]} · 天`;
+    chart?.refresh();
+  }
+
+  function updatePeriods(preferLatest = false) {
+    const old = tablePeriod.value;
+    const selected = companies.filter(c => issuer.value === "all" || issuer.value === c.code);
+    const available = dates.filter(date => selected.some(c => c.capital[mode.value].has(date))).reverse();
+    setupSelect("capital-period", [...available.map(date => [date, periodLabel(date)]), ["all", "全部期间"]]);
+    tablePeriod.value = !preferLatest && (available.includes(old) || old === "all") ? old : available[0] ?? "all";
+    renderCapitalTable();
+  }
+
+  binding("capital-mode", () => { refreshChart(); updatePeriods(true); });
+  binding("capital-metric", refreshChart);
+  binding("capital-range", refreshChart);
+  binding("capital-period", renderCapitalTable);
+  binding("capital-company", () => updatePeriods());
+  const latest = companies.map(c => {
+    const date = c.history.at(-1).date;
+    return `${c.name} ${c.modes.includes("ttm") ? period(date) : `${date.slice(0, 4)} H1`}`;
   });
-  ctx.fillStyle = "#4e6461";
-  ctx.textAlign = "center";
-  const stride = Math.max(1, Math.ceil(rows.length / Math.floor(plotWidth / 68 || 1)));
-  rows.forEach((row, i) => {
-    if (i === rows.length - 1 || (i % stride === 0 && i < rows.length - Math.max(1, stride / 2))) {
-      ctx.fillText(row.label, Math.min(width - 26, x(i)), height - 8);
+  document.querySelector("[data-capital-latest]").textContent = latest.join("／");
+
+  const metricsHeader = ["公司", "证券代码", "计算口径", "期间", "资产负债表日", "计算天数",
+    "AR days", "AP days", "Inventory days", "CCC days", "财报出处"];
+  const measurements = companies.flatMap(company => Object.entries(company.capital).flatMap(([key, records]) =>
+    [...records.values()].map(row => [company.name, company.ticker, modes[key], row.label, row.date, row.days,
+      ...metricKeys.map(metric => Number(row[metric].toFixed(4))), [row.source].flat().join(" ")])));
+  const inputsHeader = ["公司", "证券代码", "报告期", "累计营收（元）", "累计营业成本（元）", "归母净利润（元）",
+    "贸易应收合计（元）", "应收账款／贸易应收净额（元）", "应收票据净额（元）", "应收款项融资（元）",
+    "存货（元）", "贸易应付合计（元）", "应付账款／贸易应付（元）", "应付票据（元）", "供应商融资应付款（元）", "财报出处"];
+  const inputs = companies.flatMap(company => company.history.map(row => {
+    const mainland = company.modes.includes("ttm");
+    return [company.name, company.ticker, row.date, row.rev, row.cost, row.profit, row.ar,
+      ...row.arBreakdown.slice(0, 2), row.arBreakdown[2], row.inv, row.ap, row.apBreakdown[0],
+      mainland ? row.apBreakdown[1] : null, mainland ? null : row.apBreakdown[1], [row.source].flat().join(" ")];
+  }));
+  byId("capital-download").href = csvUrl([metricsHeader, ...measurements]);
+  byId("capital-input-download").href = csvUrl([inputsHeader, ...inputs]);
+  document.querySelector(".capital-interactive").hidden = false;
+  updatePeriods(true);
+  refreshChart();
+  return company => {
+    issuer.value = company;
+    if (!companies.some(c => c.code === company && c.capital[mode.value].size) && company !== "all") {
+      mode.value = "annual";
+      refreshChart();
     }
-  });
-}
-
-const metricKeys = Object.keys(metrics);
-const cccHeaders = ["期间", "计算天数", "CCC（天）", "DSO（天）", "DIO（天）", "DPO（天）", "对应期报告"];
-const inputHeaders = ["报告期", "累计营收（元）", "累计成本（元）", "贸易相关应收（元）", "存货（元）", "贸易相关应付（元）", "归母净利润（元）", "出处"];
-const fields = ["rev", "cost", "ar", "inv", "ap", "profit"];
-const breakdownHeaders = ["贸易应收／应收账款", "票据应收", "应收款项融资"];
-const inputColumns = company => [...inputHeaders.slice(0, -1), ...breakdownHeaders.slice(0, company.modes.includes("ttm") ? 3 : 2),
-  "贸易应付／应付账款", company.modes.includes("ttm") ? "应付票据" : "供应商融资应付款", "出处"];
-const inputValues = row => [...fields.map(key => row[key]), ...row.arBreakdown, ...row.apBreakdown];
-
-function updateCCC() {
-  if (active === "industry") return;
-  const company = data.companies[active];
-  const mode = byId("ccc-mode").value;
-  const metric = byId("ccc-metric").value;
-  cccRows = calculate(company, mode);
-  put("ccc-table", table(cccHeaders, [...cccRows].reverse().map(row => [
-    esc(row.label), num(row.days), ...metricKeys.map(key => num(format(row[key], 1))), source(row)
-  ])));
-  const last = cccRows.at(-1);
-  const previous = cccRows.at(-2);
-  byId("ccc-change").textContent = last ? `${last.label} ${metrics[metric]} ${format(last[metric], 1)} 天` +
-    (previous ? `，较 ${previous.label} ${last[metric] >= previous[metric] ? "增加" : "减少"} ${format(Math.abs(last[metric] - previous[metric]), 1)} 天。` : "。") : "";
-  byId("ccc-export").disabled = !cccRows.length;
-  drawTrend(cccRows, metric);
+    updatePeriods(true);
+  };
 }
 
 function setupCompany(company) {
-  const { name, ticker, note, annual, history, segments, business, ir, plans } = company;
+  const { name, ticker, note, annual, history, segments, business, ir } = company;
   byId("company-name").textContent = name;
   byId("company-ticker").textContent = ticker;
   byId("company-note").textContent = note;
@@ -313,38 +339,37 @@ function setupCompany(company) {
   put("company-business", '<ul class="note-list small">' + business.map(([description, url]) =>
     `<li>${esc(description)} ${href(url, "披露")}</li>`).join("") + "</ul>");
 
-  setupSelect("ccc-mode", company.modes.map(mode => [mode, modes[mode]]));
-  byId("ccc-metric").value = "ccc";
-  put("ccc-method", `<p>CCC＝DSO＋DIO－DPO。DSO＝平均应收÷同期营收×天数。DIO＝平均存货÷同期营业成本×天数。DPO＝平均应付÷同期营业成本×天数。</p>
-    <p>${esc(company.method)}</p>
-    <p>全年使用年初年末均值，按 365 天计算。原始科目表中的营收与成本为年初至报告期末累计数。</p>`);
-  put("ccc-inputs", table(inputColumns(company), [...history].reverse().map(row => [
-    esc(row.date), ...inputValues(row).map(value => num(format(value, 2))), source(row)
-  ])));
-  put("incentive-plans", plans.map(plan => `<article class="plan"><h4>${esc(plan.title)}</h4>
-    ${wrap("p", plan.intro)}<div class="scroll" role="region" tabindex="0" aria-label="${esc(plan.title)}">
-    ${table(plan.headers, plan.rows.map(row => row.map(esc)))}</div>
-    ${wrap("p", plan.note)}<p>${plan.sources.map(([url, label]) => href(url, label)).join(" · ")}</p></article>`).join(""));
-  updateCCC();
 }
 
 function route() {
   const [id, section] = location.hash.slice(1).split("/");
-  const next = Object.hasOwn(data.companies, id) ? id : "industry";
+  const company = Object.hasOwn(data.companies, id) ? id : null;
+  const capital = [id, section].includes("working-capital");
+  const equity = [id, section].some(part => part === "equity-incentives" || part === "incentives");
+  const targetId = capital ? "working-capital" : equity ? "equity-incentives" : section === "operations" ? "operations" : null;
+  const current = targetId === "operations" ? company : targetId ?? company ?? "industry";
   const previous = active;
-  active = next;
-  byId("industry-view").hidden = active !== "industry";
-  byId("company-view").hidden = active === "industry";
+  active = company ?? "industry";
+  byId("industry-view").hidden = Boolean(company);
+  byId("company-view").hidden = !company;
   document.querySelectorAll("[data-view]").forEach(link => {
-    if (link.dataset.view === active) link.setAttribute("aria-current", "page");
+    if (link.dataset.view === current) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
-  if (active !== "industry" && (active !== previous || !byId("company-name").textContent)) {
-    setupCompany(data.companies[active]);
+  if (company && (active !== previous || !byId("company-name").textContent)) {
+    setupCompany(data.companies[company]);
   }
-  if (active !== "industry" && ["operations", "working-capital", "incentives"].includes(section)) {
-    byId(section).focus({ preventScroll: true });
-    byId(section).scrollIntoView();
+  if (capital) selectCapitalCompany(company ?? "all");
+  if (equity) {
+    const control = byId("equity-company");
+    control.value = company ?? "all";
+    control.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+  if (targetId) {
+    byId(targetId).focus({ preventScroll: true });
+    byId(targetId).scrollIntoView();
+  } else if (company || id === "industry") {
+    byId("contents").scrollIntoView({ block: "start" });
   }
 }
 
@@ -353,21 +378,8 @@ try {
   if (!result.ok) throw new Error(`Data HTTP ${result.status}`);
   data = await result.json();
   setupIndustry();
-  binding("ccc-mode", updateCCC);
-  binding("ccc-metric", updateCCC);
-  binding("ccc-export", () => download(`insulin-${active}-${byId("ccc-mode").value}.csv`, [cccHeaders,
-    ...cccRows.map(row => [row.label, row.days, ...metricKeys.map(key => Number(row[key].toFixed(4))), [row.source].flat().join(" ")])
-  ]), "click");
-  binding("ccc-input-export", () => {
-    const company = data.companies[active];
-    download(`insulin-${active}-financial-inputs.csv`, [inputColumns(company),
-      ...company.history.map(row => [row.date, ...inputValues(row), [row.source].flat().join(" ")])
-    ]);
-  }, "click");
+  selectCapitalCompany = setupCapital();
   window.addEventListener("hashchange", route);
-  new ResizeObserver(() => {
-    if (active !== "industry") drawTrend(cccRows, byId("ccc-metric").value);
-  }).observe(byId("ccc-chart"));
   byId("contents").hidden = false;
   route();
   byId("loading").hidden = true;
