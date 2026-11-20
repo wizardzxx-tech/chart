@@ -52,7 +52,25 @@
 
 .insulin-nav a:last-child,.insulin-nav a:nth-last-child(2){border-color:#97b6a7}
 .source-panel summary{cursor:pointer;color:var(--ins-green);font-weight:700}
-#equity-incentives .research-targets{margin:1rem 0 1.2rem}
-#equity-incentives .research-targets h3{margin:0;font-size:1rem}
-#equity-incentives .research-targets .scroll{border:1px solid var(--line);border-radius:.45rem}
+.blood-page .equity-panel .research-targets {
+  margin: 1rem 0 1.25rem;
+}
+.blood-page .equity-panel :is(.research-targets h3, .equity-history-title) {
+  margin: 0 0 .5rem;
+  font-size: 1rem;
+}
+.blood-page .equity-panel .equity-history-title {
+  margin-top: 1rem;
+}
+.blood-page .equity-targets-table td:nth-child(2) {
+  min-width: 10rem;
+  white-space: normal;
+}
+.blood-page .equity-targets-table td:nth-child(6) {
+  min-width: 6rem;
+}
+.blood-page .equity-targets-table td:nth-child(n+3):nth-child(-n+5) {
+  font-variant-numeric: tabular-nums;
+}
 #capital-company,#capital-mode{max-width:100%}
+#working-capital .company-series label:has(input:disabled) { opacity: .58; }

@@ -17,7 +17,8 @@ const wrap = (tag, value) => `<${tag}>${esc(value)}</${tag}>`;
 const small = value => wrap("small", value);
 const num = value => `<span class="numeric">${esc(value)}</span>`;
 const sortedUnique = values => [...new Set(values)].sort();
-const modes = { annual: "全年", ttm: "TTM · 方法 C", quarter: "单季", half: "上半年" };
+const modes = { ttm: "TTM 方法 C", quarter: "单季", annual: "全年", half: "上半年" };
+const modeLabels = { ...modes, ttm: "TTM · 方法 C" };
 
 let data;
 let active = "industry";
@@ -155,6 +156,7 @@ function daysBetween(start, end) {
 }
 
 function calculate(company, mode) {
+  if (!company.modes.includes(mode)) return [];
   const all = company.history;
   const dates = new Map(all.map(x => [x.date, x]));
   return all.flatMap((end, index) => {
@@ -220,11 +222,12 @@ function setupCapital() {
     if (mode.value === "half") return `${value.slice(0, 4)} H1`;
     return value;
   };
-  setupSelect("capital-mode", Object.entries(modes));
+  setupSelect("capital-mode", Object.entries(modeLabels));
   setupSelect("capital-company", [["all", "全部公司"], ...companies.map(c => [c.code, c.name])]);
   const lastPeriod = quarters => quarters.findLastIndex(quarter => companies.some(c => c.capital[mode.value].has(quarter)));
-  const chart = mountCompanyTrend(document.querySelector(".capital-trend"), companies, dates, {
-    defaultCodes: companies.map(c => c.code),
+  const figure = document.querySelector(".capital-trend");
+  const chart = mountCompanyTrend(figure, companies, dates, {
+    defaultCode: "ganlee",
     emptyMessage: "勾选有数据的公司后查看周转天数",
     getEnd: lastPeriod,
     getStart: quarters => range.value === "all" ? 0 : Math.max(0, lastPeriod(quarters) + 1 - Number(range.value)),
@@ -236,6 +239,8 @@ function setupCapital() {
     labelTick: quarter => mode.value === "half" ? quarter.endsWith("Q2") : quarter.endsWith("Q4"),
     maxGap: () => ["annual", "half"].includes(mode.value) ? 4 : 1
   });
+  const series = [...figure.querySelectorAll('input[type="checkbox"]')];
+  const hasData = code => companies.some(c => c.code === code && c.capital[mode.value].size);
 
   function renderCapitalTable() {
     const selection = companies.filter(c => issuer.value === "all" || c.code === issuer.value);
@@ -244,15 +249,19 @@ function setupCapital() {
       const row = company.capital[mode.value].get(quarter);
       if (!row) return [];
       const links = [row.source].flat().map((url, index) => href(url, index ? "重列披露" : "财报披露"));
-      return [`<tr data-company="${esc(company.code)}"><th scope="row">${esc(company.name)}</th><td>${esc(row.label)}</td>
+      return [`<tr data-company="${esc(company.code)}" data-quarter="${esc(quarter)}"><th scope="row">${esc(company.name)}</th><td>${esc(row.label)}</td>
         ${metricKeys.map(key => wrap("td", format(row[key]))).join("")}<td>${links.join(" · ")}</td></tr>`];
     }));
     put("capital-rows", rows.join(""));
-    byId("capital-status").textContent = rows.length ? `显示 ${rows.length} 条记录` : "当前期间与公司组合无可计算的记录。";
+    const unavailable = issuer.value === "unitedlab" && ["ttm", "quarter"].includes(mode.value);
+    byId("capital-status").textContent = rows.length ? `显示 ${rows.length} 条记录` : unavailable ?
+      "联邦制药披露年报和中报。可切换到全年或上半年。" : "当前期间与公司组合无可计算的记录。";
   }
 
   function refreshChart() {
     byId("capital-caption").textContent = `${metric.selectedOptions[0].text} · ${modes[mode.value]} · 天`;
+    const latest = dates[lastPeriod(dates)];
+    document.querySelector("[data-capital-latest]").textContent = latest ? periodLabel(latest) : "暂无数据";
     chart?.refresh();
   }
 
@@ -265,21 +274,23 @@ function setupCapital() {
     renderCapitalTable();
   }
 
-  binding("capital-mode", () => { refreshChart(); updatePeriods(true); });
+  binding("capital-mode", () => {
+    const checked = series.filter(checkbox => checkbox.checked);
+    if (checked.length && !checked.some(checkbox => hasData(checkbox.value))) {
+      const available = series.find(checkbox => hasData(checkbox.value));
+      if (available) available.checked = true;
+    }
+    refreshChart();
+    updatePeriods(true);
+  });
   binding("capital-metric", refreshChart);
   binding("capital-range", refreshChart);
   binding("capital-period", renderCapitalTable);
   binding("capital-company", () => updatePeriods());
-  const latest = companies.map(c => {
-    const date = c.history.at(-1).date;
-    return `${c.name} ${c.modes.includes("ttm") ? period(date) : `${date.slice(0, 4)} H1`}`;
-  });
-  document.querySelector("[data-capital-latest]").textContent = latest.join("／");
-
   const metricsHeader = ["公司", "证券代码", "计算口径", "期间", "资产负债表日", "计算天数",
     "AR days", "AP days", "Inventory days", "CCC days", "财报出处"];
   const measurements = companies.flatMap(company => Object.entries(company.capital).flatMap(([key, records]) =>
-    [...records.values()].map(row => [company.name, company.ticker, modes[key], row.label, row.date, row.days,
+    [...records.values()].map(row => [company.name, company.ticker, modeLabels[key], row.label, row.date, row.days,
       ...metricKeys.map(metric => Number(row[metric].toFixed(4))), [row.source].flat().join(" ")])));
   const inputsHeader = ["公司", "证券代码", "报告期", "累计营收（元）", "累计营业成本（元）", "归母净利润（元）",
     "贸易应收合计（元）", "应收账款／贸易应收净额（元）", "应收票据净额（元）", "应收款项融资（元）",
@@ -297,10 +308,11 @@ function setupCapital() {
   refreshChart();
   return company => {
     issuer.value = company;
-    if (!companies.some(c => c.code === company && c.capital[mode.value].size) && company !== "all") {
-      mode.value = "annual";
-      refreshChart();
+    if (company !== "all") {
+      if (!hasData(company)) mode.value = "annual";
+      for (const checkbox of series) checkbox.checked = checkbox.value === company;
     }
+    refreshChart();
     updatePeriods(true);
   };
 }
@@ -341,6 +353,24 @@ function setupCompany(company) {
 
 }
 
+function setupEquity() {
+  const company = byId("equity-company");
+  const status = byId("equity-status");
+  const targets = byId("insulin-active-targets");
+  const rows = targets.querySelectorAll("tbody tr");
+  function updateTargets() {
+    let visible = 0;
+    for (const row of rows) {
+      const show = company.value === "all" || row.dataset.company === company.value;
+      row.hidden = !show;
+      if (show) visible++;
+    }
+    targets.hidden = visible === 0 || !["all", "待考核"].includes(status.value);
+  }
+  company.closest(".equity-filters").addEventListener("change", updateTargets);
+  updateTargets();
+}
+
 function route() {
   const [id, section] = location.hash.slice(1).split("/");
   const company = Object.hasOwn(data.companies, id) ? id : null;
@@ -379,6 +409,7 @@ try {
   data = await result.json();
   setupIndustry();
   selectCapitalCompany = setupCapital();
+  setupEquity();
   window.addEventListener("hashchange", route);
   byId("contents").hidden = false;
   route();

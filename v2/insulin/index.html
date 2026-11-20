@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../assets/site.css">
   <link rel="stylesheet" href="../assets/working-capital.css">
   <link rel="stylesheet" href="../blood-products/blood.css">
-  <link rel="stylesheet" href="insulin.css?v=20261120b">
+  <link rel="stylesheet" href="insulin.css?v=20261120c">
 </head>
 <body>
 <div class="wrap">
@@ -83,7 +83,7 @@
       <section class="capital-panel" id="working-capital" tabindex="-1" aria-labelledby="capital-title">
         <header class="capital-heading">
           <div><h2 id="capital-title">营运资金周转天数</h2>
-            <p>上市公司合并报表 · <span data-capital-latest>各公司最新财报期</span> · 单位为天</p></div>
+            <p>上市公司合并报表 · <span data-capital-latest>最新财报期</span> · 单位为天</p></div>
           <div class="capital-downloads">
             <a id="capital-download" download="working-capital.csv">周转天数 CSV</a>
             <a id="capital-input-download" download="working-capital-inputs.csv">财报原始科目 CSV</a>
@@ -105,16 +105,16 @@
           <div class="capital-controls">
             <label>计算口径<select id="capital-mode"></select></label>
             <label>图表指标<select id="capital-metric"><option value="dso">AR days</option><option value="dpo">AP days</option><option value="dio">Inventory days</option><option value="ccc" selected>CCC days</option></select></label>
-            <label>图表时间<select id="capital-range"><option value="12">近三年</option><option value="all">全部历史</option></select></label>
+            <label>图表时间<select id="capital-range"><option value="20">近五年</option><option value="all">全部历史</option></select></label>
           </div>
           <figure class="capital-trend" hidden>
             <fieldset class="company-series"><legend>比较公司</legend></fieldset>
-            <figcaption id="capital-caption">CCC days · 全年 · 天</figcaption>
+            <figcaption id="capital-caption">CCC days · TTM 方法 C · 天</figcaption>
             <div class="capital-plot">
               <canvas tabindex="0" role="img" aria-labelledby="capital-caption" aria-describedby="capital-chart-help"></canvas>
               <div class="company-trend-tooltip" role="status" hidden></div>
             </div>
-            <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失期间断线。</p>
+            <p id="capital-chart-help">悬停、点按或使用左右方向键查看数值。缺失期间断线。联邦制药可在全年和上半年口径下比较。</p>
           </figure>
           <div class="capital-controls capital-table-controls">
             <label>表格期间<select id="capital-period"></select></label>
@@ -137,18 +137,20 @@
             <a class="download-data" href="equity-incentives.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
           </div>
           <p class="dataset-source">目标取自公司层面的解除限售、解锁或归属条款。实际值采用公司公布的考核口径。执行列保留实际解锁或归属股数。</p>
-          <div class="research-targets">
-            <h3>2026–2028 年待考核目标</h3>
-            <div class="scroll" role="region" aria-label="待考核目标" tabindex="0">
-              <table class="stores-table"><thead><tr><th scope="col">公司／方案</th><th scope="col">考核口径</th><th scope="col">2026</th><th scope="col">2027</th><th scope="col">2028</th><th scope="col">原始条款</th></tr></thead>
-                <tbody><tr><th scope="row">甘李药业<span class="equity-plan-name">2024 年限制性股票</span></th><td>审计净利润（剔除当期股权激励成本摊销）</td><td>≥ 14.30 亿元</td><td>—</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-04-25/1223278728.PDF#page=18" target="_blank" rel="noopener">原始条款</a></td></tr><tr><th scope="row">甘李药业<span class="equity-plan-name">2026 年限制性股票</span></th><td>审计净利润（剔除当期股权激励成本摊销）</td><td>≥ 14.30 亿元</td><td>≥ 15.73 亿元</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2026-06-11/1225363461.PDF" target="_blank" rel="noopener">原始条款</a></td></tr><tr><th scope="row">通化东宝<span class="equity-plan-name">2025 年员工持股计划</span></th><td>营收较 2024 年增幅，或剔除股份支付后的归母扣非净利润</td><td>目标／触发值：营收增幅 60%／48%；利润 7.0／5.6 亿元</td><td>目标／触发值：营收增幅 80%／64%；利润 9.0／7.2 亿元</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-09-03/1224635384.PDF#page=16" target="_blank" rel="noopener">原始条款</a></td></tr><tr><th scope="row">通化东宝<span class="equity-plan-name">研发生产系统员工持股计划</span></th><td>上市申请、临床试验申请与海外注册批件</td><td>各项合计 ≥ 6 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td>各项合计 ≥ 5 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td>各项合计 ≥ 9 个，对应 100% 公司系数；2027–2028 年创新药 IND 项目合计 ≥ 3 个。海外批件分项计划 5 个（按品规）。</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-11-29/1224834925.PDF#page=16" target="_blank" rel="noopener">原始条款</a></td></tr></tbody>
-              </table>
-            </div>
-          </div>
           <div class="company-filters equity-filters" hidden>
             <label>公司<select id="equity-company"><option value="all">全部公司</option><option value="ganlee">甘李药业</option><option value="dongbao">通化东宝</option><option value="unitedlab">联邦制药</option></select></label>
             <label>考核结果<select id="equity-status"><option value="all">全部状态</option><option>达标</option><option>已归属</option><option>待考核</option></select></label>
           </div>
+          <div class="research-targets" id="insulin-active-targets">
+            <h3>2026–2028 年待考核目标</h3>
+            <p class="company-mobile-tip">左右滑动查看分年目标和原始条款。</p>
+            <div class="blood-scroll" role="region" aria-label="2026–2028 年待考核目标" tabindex="0">
+              <table class="stores-table equity-table equity-targets-table"><thead><tr><th scope="col">公司／方案</th><th scope="col">考核口径</th><th scope="col">2026</th><th scope="col">2027</th><th scope="col">2028</th><th scope="col">原始条款</th></tr></thead>
+                <tbody><tr data-company="ganlee"><th scope="row">甘李药业<span class="equity-plan-name">2024 年限制性股票</span></th><td>审计净利润（剔除当期股权激励成本摊销）</td><td>≥ 14.30 亿元</td><td>—</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-04-25/1223278728.PDF#page=18" target="_blank" rel="noopener">原始条款</a></td></tr><tr data-company="ganlee"><th scope="row">甘李药业<span class="equity-plan-name">2026 年限制性股票</span></th><td>审计净利润（剔除当期股权激励成本摊销）</td><td>≥ 14.30 亿元</td><td>≥ 15.73 亿元</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2026-06-11/1225363461.PDF" target="_blank" rel="noopener">原始条款</a></td></tr><tr data-company="dongbao"><th scope="row">通化东宝<span class="equity-plan-name">2025 年员工持股计划</span></th><td>营收较 2024 年增幅，或剔除股份支付后的归母扣非净利润</td><td>目标／触发值：营收增幅 60%／48%；利润 7.0／5.6 亿元</td><td>目标／触发值：营收增幅 80%／64%；利润 9.0／7.2 亿元</td><td>—</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-09-03/1224635384.PDF#page=16" target="_blank" rel="noopener">原始条款</a></td></tr><tr data-company="dongbao"><th scope="row">通化东宝<span class="equity-plan-name">研发生产系统员工持股计划</span></th><td>上市申请、临床试验申请与海外注册批件</td><td>各项合计 ≥ 6 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td>各项合计 ≥ 5 个，对应 100% 公司系数。海外批件分项计划 4 个（按品规）。</td><td>各项合计 ≥ 9 个，对应 100% 公司系数；2027–2028 年创新药 IND 项目合计 ≥ 3 个。海外批件分项计划 5 个（按品规）。</td><td><a href="https://static.cninfo.com.cn/finalpage/2025-11-29/1224834925.PDF#page=16" target="_blank" rel="noopener">原始条款</a></td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <h3 class="equity-history-title">年度考核与执行情况</h3>
           <p id="equity-filter-status" class="company-row-status" role="status" hidden></p>
           <p class="company-mobile-tip">左右滑动查看实际值、执行情况和公告。</p>
           <div class="stores-table-wrap equity-table-wrap" role="region" aria-label="股权激励业绩考核明细" tabindex="0">
@@ -180,6 +182,6 @@
   <footer class="site-footer"><span>医药公开数据 · 胰岛素</span><span>如有建议，欢迎邮件联系 <a href="mailto:wizardzxx@qq.com">wizardzxx@qq.com</a></span></footer>
 </div>
 <script defer src="../vaccines/equity-incentives.js"></script>
-<script type="module" src="insulin.js?v=20261120b"></script>
+<script type="module" src="insulin.js?v=20261120c"></script>
 </body>
 </html>
