@@ -1,382 +1,383 @@
-const section = document.getElementById('view-market');
-const lookup = id => document.getElementById(id);
-const metrics = {
-  units: {dataset: 'annual', field: 'units', title: '年度计费剂量份额', raw: '计费单位（10 mg）'},
-  spending: {dataset: 'annual', field: 'spending', title: '年度支出份额', raw: '支出（美元）'},
-  quarterSpending: {dataset: 'quarterly', field: 'spending', title: '近期支出份额', raw: '支出（美元）'},
-  claims: {dataset: 'quarterly', field: 'claims', title: '近期申报份额', raw: '申报次数（Claims）'},
-  price: {dataset: 'price', field: 'price', title: '季度支付限额', raw: '美元／10 mg'},
+import {drawLines,closestPeriod,colorPalette,isNumber} from './chart.js';
+
+const byId=id=>document.getElementById(id);
+const markets=byId('view-market');
+const nf=new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2});
+const cents=new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const millis=new Intl.NumberFormat('en-US',{minimumFractionDigits:3,maximumFractionDigits:3});
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const external=(url,label)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+const share=value=>isNumber(value)?(value*100).toFixed(1)+'%':'—';
+const valueFor=(value,metric)=>!isNumber(value)?'—':
+  metric==='price'?'$'+millis.format(value):metric==='spending'?'$'+cents.format(value):nf.format(value);
+const metrics={
+  units:['annual','units','年度计费剂量'],
+  spending:['annual','spending','年度支出'],
+  quarterSpending:['quarterly','spending','近期支出'],
+  claims:['quarterly','claims','近期申报次数'],
 };
-const colors = ['#303d43', '#217b69', '#b36a21', '#3965a3', '#975f88', '#6e7b27', '#23798b', '#754e32'];
-const pageNumber = new Intl.NumberFormat('zh-CN', {maximumFractionDigits: 2});
-const priceFormat = new Intl.NumberFormat('en-US', {minimumFractionDigits: 3, maximumFractionDigits: 3});
-const moneyFormat = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-const oneDecimal = new Intl.NumberFormat('zh-CN', {minimumFractionDigits: 1, maximumFractionDigits: 1});
-const hasValue = value => typeof value === 'number' && Number.isFinite(value);
-const percent = value => hasValue(value) ? oneDecimal.format(value * 100) + '%' : '—';
-const escapeHtml = value => {
-  const substitutions = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'};
-  return String(value ?? '').replace(/[&<>"']/g, character => substitutions[character]);
-};
-const outside = (url, label) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
-const rate = (value, total) => hasValue(value) && total > 0 ? value / total : null;
-const ppChange = (value, baseline) => {
-  if (!hasValue(value) || !hasValue(baseline)) return '—';
-  const points = Math.round((value - baseline) * 1000) / 10;
-  return (points > 0 ? '+' : '') + oneDecimal.format(points) + ' 个百分点';
-};
-const axisLayout = {left: 51, right: 26, top: 16, bottom: 39};
-const combined = {code: 'combined', name: '类似药合计'};
-const plotProducts = () => metric.field === 'price' ? group.products : [...group.products, combined];
+const difference=(a,b)=>isNumber(a)&&isNumber(b)?((a-b)>0?'+':'')+((a-b)*100).toFixed(1)+' 个百分点':'—';
+const ratio=(number,total)=>isNumber(number)&&total>0?number/total:null;
+const total=(rows,field)=>rows.reduce((sum,row)=>sum+(row[field]??0),0);
+const moneyAxis=n=>'$'+nf.format(n);
+const pctAxis=n=>Math.round(n*100)+'%';
+const priceAxis=series=>{const max=Math.max(1,...series.flatMap(s=>Object.values(s.values)).filter(isNumber));
+  const step=max>=100?50:max>=10?5:max>=1?1:0.1;
+  return Math.ceil(max/step)*step;};
 
-let data;
-let pending;
-let group;
-let metric;
-let currentPeriod;
-let chartPeriods = [];
-let allPeriods = [];
-let entriesByPeriod;
-let activeCodes = new Set();
-let drawFrame;
+const screen={};
+const shareState={canvas:'share-canvas',legend:'share-legend',hidden:new Set()};
+const priceState={canvas:'price-canvas',legend:'price-legend',hidden:new Set()};
+let cms,refs,groups,group,pending,mode;
+let shareRows=[],priceRows=[];
 
-function labelFor(period) {
-  return data.quarterPeriods[period]?.label || period.replace(/(\d{4})Q([1-4])/, '$1 Q$2');
+function periodLabel(period) {
+  return cms.quarterPeriods[period]?.label || period.replace(/(\d{4})Q([1-4])/,'$1 Q$2');
 }
-
-function amount(value, field) {
-  if (!hasValue(value)) return '—';
-  if (field === 'price') return '$' + priceFormat.format(value);
-  if (field === 'spending') return '$' + moneyFormat.format(value);
-  return pageNumber.format(value);
+function show(id,visible){byId(id).hidden=!visible;}
+function choices(id,options,selected){
+  byId(id).replaceChildren(...options.map(([value,label])=>new Option(label,value)));
+  if(selected) byId(id).value=selected;
 }
-
-function referenceValue(period) {
-  return entriesByPeriod.get(period).find(entry => entry.product.reference)?.value;
+function note(id,html){byId(id).innerHTML=html;}
+function linkReport(page,label){
+  return external(refs.reportUrl+'#page='+page,label);
 }
-
-function comparePeriod(period) {
-  if (metric.dataset === 'annual') return String(Number(period) - 1);
-  const match = /^(\d{4})Q([1-4])$/.exec(period);
-  if (!match) return '';
-  const [, year, quarter] = match;
-  return quarter === '1' ? (Number(year) - 1) + 'Q4' : year + 'Q' + (Number(quarter) - 1);
+function table(headers,rows){
+  return `<table><thead><tr>${headers.map(heading=>`<th scope="col">${esc(heading)}</th>`).join('')}</tr></thead>
+   <tbody>${rows.map(([head,...cells])=>`<tr><th scope="row">${head}</th>${cells.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
 }
-
-function buildSeries() {
-  const rows = data[metric.dataset];
-  const productMap = new Map(group.products.filter(product => product.code).map(product => [product.code, product]));
-  allPeriods = [...new Set(rows.filter(row => productMap.has(row.code)).map(row => row.period))].sort();
-  chartPeriods = allPeriods.filter(period => metric.dataset !== 'quarterly' || data.quarterPeriods[period].kind === 'quarter');
-  entriesByPeriod = new Map();
-  for (const period of allPeriods) {
-    const source = rows.filter(row => row.period === period && productMap.has(row.code));
-    const total = source.reduce((sum, row) => sum + (row[metric.field] ?? 0), 0);
-    entriesByPeriod.set(period, source.map(row => ({
-      product: productMap.get(row.code), value: row[metric.field],
-      share: metric.field === 'price' ? null : rate(row[metric.field], total), outlier: row.outlier,
-    })));
-  }
+function stats(entries){
+  return entries.map(([label,value])=>`<div><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`).join('');
 }
-
-function chartColors() {
-  return new Map(plotProducts().map((product, i) => [
-    product.code, product === combined ? '#155847' : colors[i % colors.length],
-  ]));
+function plot(id,spec){
+  screen[id]=spec;
+  drawLines(byId(id),spec);
 }
-
-function drawChart() {
-  const canvas = lookup('share-canvas');
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  if (!width || !height) return;
-  const scale = window.devicePixelRatio || 1;
-  canvas.width = Math.round(width * scale);
-  canvas.height = Math.round(height * scale);
-  const ctx = canvas.getContext('2d');
-  ctx.scale(scale, scale);
-  const series = chartPeriods.flatMap(period => entriesByPeriod.get(period));
-  const price = metric.field === 'price';
-  const upper = price ? Math.ceil(Math.max(25, ...series.map(row => row.value || 0)) / 25) * 25 : 1;
-  const areaWidth = width - axisLayout.left - axisLayout.right;
-  const areaHeight = height - axisLayout.top - axisLayout.bottom;
-  const x = index => chartPeriods.length === 1
-    ? axisLayout.left + areaWidth / 2
-    : axisLayout.left + areaWidth * index / Math.max(1, chartPeriods.length - 1);
-  const y = value => axisLayout.top + areaHeight * (1 - value / upper);
-  ctx.font = '11px system-ui';
-  ctx.fillStyle = '#52646a';
-  ctx.textBaseline = 'middle';
-  ctx.textAlign = 'right';
-  for (let i = 0; i <= 4; i++) {
-    const t = upper * i / 4;
-    ctx.strokeStyle = '#dce7df';
-    ctx.beginPath();
-    ctx.moveTo(axisLayout.left, y(t));
-    ctx.lineTo(width - axisLayout.right, y(t));
-    ctx.stroke();
-    ctx.fillText(price ? '$' + pageNumber.format(t) : Math.round(t * 100) + '%', axisLayout.left - 8, y(t));
-  }
-  const selected = chartPeriods.indexOf(currentPeriod);
-  if (selected >= 0) {
-    ctx.strokeStyle = '#7c9389';
-    ctx.setLineDash([3, 4]);
-    ctx.beginPath();
-    ctx.moveTo(x(selected), axisLayout.top);
-    ctx.lineTo(x(selected), height - axisLayout.bottom);
-    ctx.stroke();
-    ctx.setLineDash([]);
-  }
-  ctx.textAlign = 'center';
-  const tickEvery = Math.max(1, Math.ceil(chartPeriods.length / Math.max(2, Math.floor(areaWidth / 70))));
-  chartPeriods.forEach((period, i) => {
-    if (i !== 0 && i !== chartPeriods.length - 1 &&
-        (i % tickEvery || chartPeriods.length - 1 - i < tickEvery)) return;
-    ctx.fillText(labelFor(period), x(i), height - 15);
+function updatePlot(state){
+  if (!state.spec) return;
+  plot(state.canvas,{...state.spec,series:state.spec.series.filter(series=>!state.hidden.has(series.id))});
+}
+function useLegend(state){
+  byId(state.legend).innerHTML=state.spec.series.map(series=>`<button class="series-key" type="button" data-series="${esc(series.id)}"
+    aria-pressed="${!state.hidden.has(series.id)}"><i style="--series-color:${series.color}"></i>${esc(series.label)}</button>`).join('');
+  updatePlot(state);
+}
+for(const state of [shareState,priceState]){
+  byId(state.legend).addEventListener('click',event=>{
+    const button=event.target.closest('button[data-series]');
+    if(!button)return;
+    const key=button.dataset.series;
+    if(state.hidden.has(key))state.hidden.delete(key);else state.hidden.add(key);
+    button.setAttribute('aria-pressed',!state.hidden.has(key));
+    updatePlot(state);
   });
-  const swatches = chartColors();
-  for (const [index, product] of plotProducts().entries()) {
-    const code = product.code;
-    if (!activeCodes.has(code)) continue;
-    ctx.strokeStyle = swatches.get(code);
-    ctx.fillStyle = swatches.get(code);
-    ctx.lineWidth = product.reference || product === combined ? 2.8 : 1.9;
-    ctx.setLineDash(product === combined ? [7, 4] : index > 4 ? [3, 3] : []);
-    let connected = false;
-    const points = [];
-    ctx.beginPath();
-    chartPeriods.forEach((period, i) => {
-      const entries = entriesByPeriod.get(period);
-      const row = entries.find(entry => entry.product.code === code);
-      let value = price ? row?.value : row?.share;
-      if (product === combined && entries.some(entry => entry.product.reference && hasValue(entry.share))) {
-        value = entries.filter(entry => !entry.product.reference)
-          .reduce((sum, entry) => sum + (entry.share ?? 0), 0);
-      }
-      if (!hasValue(value)) {
-        connected = false;
-        return;
-      }
-      const point = [x(i), y(value), i];
-      points.push(point);
-      if (connected) ctx.lineTo(point[0], point[1]);
-      else ctx.moveTo(point[0], point[1]);
-      connected = true;
-    });
-    ctx.stroke();
-    ctx.setLineDash([]);
-    for (const [px, py, i] of points) {
-      ctx.beginPath();
-      ctx.arc(px, py, selected === i ? 4 : 2.35, 0, 2 * Math.PI);
-      ctx.fill();
-    }
+}
+
+function prepareRows(dataset,metric){
+  if (!group.products.length) return [];
+  const products=new Map(group.products.filter(p=>p.code).map(p=>[p.code,p]));
+  const rows=cms[dataset].filter(row=>products.has(row.code));
+  const periods=[...new Set(rows.map(row=>row.period))].sort();
+  return periods.map(period=>{
+    const items=rows.filter(record=>record.period===period && isNumber(record[metric]))
+      .map(record=>({...record,item:products.get(record.code),value:record[metric]}));
+    const sample=total(items,'value');
+    const original=items.find(row=>row.item.reference);
+    const bios=items.filter(row=>!row.item.reference);
+    const combined=original&&bios.length?ratio(total(bios,'value'),sample):null;
+    return {period,items:items.map(row=>({...row,share:ratio(row.value,sample)})),original,combined,sample};
+  }).filter(p=>p.items.length);
+}
+
+function seriesFor(periodRows,metric){
+  const output=group.products.map((product,index)=>({
+    id:product.code,
+    label:product.name+(product.reference?' · 原研':''),
+    color:colorPalette[index%colorPalette.length],
+    strong:product.reference,dash:index>4,
+    values:Object.fromEntries(periodRows.map(p=>[p.period,p.items.find(r=>r.code===product.code)?.[metric]])),
+  })).filter(s=>Object.values(s.values).some(isNumber));
+  if (metric==='share'&&periodRows.some(p=>isNumber(p.combined))){
+    output.push({id:'combined',label:'类似药合计',color:'#155847',strong:true,dash:true,
+      values:Object.fromEntries(periodRows.map(p=>[p.period,p.combined]))});
   }
+  return output;
 }
 
-function updateChart() {
-  cancelAnimationFrame(drawFrame);
-  drawFrame = requestAnimationFrame(drawChart);
-}
-
-function renderLegend() {
-  const swatches = chartColors();
-  const seen = new Set(chartPeriods.flatMap(period =>
-    entriesByPeriod.get(period).filter(row => hasValue(row.value)).map(row => row.product.code)));
-  lookup('share-legend').innerHTML = plotProducts().filter(product => product === combined || seen.has(product.code)).map(product =>
-    `<button class="series-key" type="button" data-code="${escapeHtml(product.code)}" aria-pressed="${activeCodes.has(product.code)}">
-      <i style="--series-color:${swatches.get(product.code)}"></i>${escapeHtml(product.name)}${product.reference ? ' · 原研' : ''}</button>`
-  ).join('');
-}
-
-function dataRow(entry, previous) {
-  const price = metric.field === 'price';
-  const comparison = price ? rate(entry.value, referenceValue(currentPeriod)) : entry.share;
-  let change = '—';
-  if (previous) {
-    if (price && hasValue(entry.value) && hasValue(previous.value) && previous.value > 0) {
-      const ratio = entry.value / previous.value - 1;
-      change = (ratio > 0 ? '+' : '') + percent(ratio);
-    } else if (!price) change = ppChange(entry.share, previous.share);
-  }
-  const relative = price && hasValue(comparison)
-    ? entry.product.reference ? '基准' : (comparison <= 1 ? '折价 ' : '溢价 ') + percent(Math.abs(1 - comparison))
-    : percent(comparison);
-  return [amount(entry.value, metric.field), relative, change];
-}
-
-function renderEvidence() {
-  const price = metric.field === 'price';
-  const active = [...(entriesByPeriod.get(currentPeriod) || [])];
-  if (price) active.sort((a, b) => Number(Boolean(b.product.reference)) - Number(Boolean(a.product.reference)) ||
-    (a.value ?? Infinity) - (b.value ?? Infinity));
-  const rows = active.filter(row => hasValue(row.value));
-  const original = rows.find(row => row.product.reference);
-  const summation = rows.reduce((sum, row) => sum + row.value, 0);
-  const biosimilars = rows.filter(row => !row.product.reference).reduce((sum, row) => sum + row.value, 0);
-  const previous = entriesByPeriod.get(comparePeriod(currentPeriod)) || [];
-  const changeLabel = metric.dataset === 'annual' ? '同比变化' : '环比变化';
-  const listTitle = metric.dataset === 'quarterly' ? labelFor(currentPeriod) + ' · 初步'
-    : labelFor(currentPeriod);
-  lookup('market-period-label').textContent = listTitle;
-  lookup('market-summary').innerHTML = `<div><span>参照原研</span><strong>${escapeHtml(group.reference)}</strong></div>
-    <div><span>${price ? '原研支付限额／10 mg' : '类似药合计份额'}</span><strong>${
-      price ? amount(original?.value, 'price') : percent(original ? rate(biosimilars, summation) : null)}</strong></div>
-    <div><span>本期有数据的品牌</span><strong>${rows.length}</strong></div>`;
-  const headings = price ? [metric.raw, '相对原研折溢价', changeLabel] : ['份额', changeLabel, metric.raw];
-  lookup('market-table').innerHTML = `<table>
-    <thead><tr><th scope="col">品牌</th>${headings.map(title => `<th scope="col">${title}</th>`).join('')}
-    <th scope="col">HCPCS</th></tr></thead>
-    <tbody>${active.map(entry => {
-      const {product} = entry;
-      const [raw, relative, delta] = dataRow(entry, previous.find(row => row.product.code === product.code));
-      const values = price ? [raw, relative, delta] : [relative, delta, raw];
-      return `<tr><th scope="row">${escapeHtml(product.name)}${product.reference ? '<small>原研</small>' : ''}</th>
-        ${values.map(value => `<td class="market-value">${value}</td>`).join('')}<td>${product.code}</td></tr>`;
-    }).join('')}</tbody>
-    ${price ? '' : `<tfoot><tr><th scope="row">已纳入编码合计</th>
-      <td>${summation ? '100.0%' : '—'}</td><td>—</td><td class="market-value">${amount(summation, metric.field)}</td><td>—</td></tr></tfoot>`}
-    </table>`;
-  lookup('market-codes').innerHTML = `<p>${escapeHtml(group.scope)}</p>
-    <p>本期计入 ${rows.map(row => `${escapeHtml(row.product.name)}（${row.product.code}）`).join('、') || '无可用数据'}。
-    不公开或未收录的值保留为空。隐藏曲线时，份额分母仍按以上编码计算。</p>
-    ${rows.some(row => row.outlier) ? '<p>CMS 标记本期存在每剂量单位支出异常值。计费剂量与支出仍按原表列示。</p>' : ''}
-    ${previous.length && rows.length !== previous.filter(row => hasValue(row.value)).length
-      ? '<p>与上期的可见品牌数不同，份额变化也反映统计范围的变化。</p>' : ''}`;
-  const source = metric.dataset === 'price' ? data.sources.payment : data.sources[metric.dataset];
-  const detail = metric.dataset === 'price'
-    ? outside(data.paymentPeriods[currentPeriod].url, '本期 CMS 原表')
-    : outside(source.file, 'CMS 原表 CSV');
-  lookup('market-source').innerHTML = [outside(source.link, 'CMS 数据入口'), detail,
-    ...(source.method ? [outside(source.method, '季度方法说明')] : [])].join(' · ');
-  updateChart();
-}
-
-function renderMilestones() {
-  lookup('market-status').innerHTML = `<table><thead><tr>
-    <th scope="col">品牌</th><th scope="col">FDA 获批</th><th scope="col">美国商业上市</th>
-    <th scope="col">本库最早可见医保申报</th><th scope="col">企业与权益</th>
-    </tr></thead><tbody>${group.products.map(product => {
-      const approved = product.approval ? outside(product.approval.source, product.approval.date || 'FDA 记录') : '—';
-      const launch = product.launch ? outside(product.launch.source, product.launch.date) : '待核实';
-      const observed = product.firstClaim ? labelFor(product.firstClaim) : '待核实';
-      const asset = product.assetId ? `<small><a href="#pipeline/${encodeURIComponent(group.id)}">${escapeHtml(product.assetId)} · 管线</a></small>` : '';
-      return `<tr><th scope="row">${escapeHtml(product.name)}${product.reference ? '<small>原研</small>' : ''}</th>
-        <td>${approved}${product.approval?.code ? `<small>${escapeHtml(product.approval.code)}</small>` : ''}</td>
-        <td>${launch}</td><td>${escapeHtml(observed)}</td>
-        <td>${escapeHtml(product.roles || product.approval?.holder || '—')}${asset}</td></tr>`;
-    }).join('')}</tbody></table>
-    <p class="note">首次可见申报的起点取决于本库数据覆盖。企业关系按公开披露和 FDA 许可持有人列示。</p>`;
-  lookup('market-approvals').href = '#approvals/' + group.id;
-}
-
-function renderMetric() {
-  metric = metrics[lookup('cms-metric').value];
-  buildSeries();
-  const periodSelect = lookup('market-period');
-  currentPeriod = allPeriods.at(-1);
-  periodSelect.replaceChildren(...allPeriods.map(period => new Option(labelFor(period), period)));
-  periodSelect.value = currentPeriod;
-  activeCodes = new Set(plotProducts().map(product => product.code));
-  lookup('market-chart-title').textContent = metric.title;
-  lookup('market-metric-note').textContent = {
-    annual: '传统 Medicare Part B 年度档。份额分母为同分子、同剂型范围内本期可见的计费编码。',
-    quarterly: `CMS 初步数据 · ${data.sources.quarterly.version} 版。曲线只展示单季度，可在期间选择器中查看全年初步数据。季度数据会修订。`,
-    price: '按美元／10 mg 展示各季度生效的 CMS 支付限额。明细按支付限额从低到高排列，以同季度原研为折溢价基准。',
-  }[metric.dataset];
-  lookup('market-chart-note').textContent =
-    chartPeriods.length < 2 ? '当前只有一个可单独比较的季度，先显示该期数据点。'
-      : '点击图上日期或用期间选择器查看明细。缺失值对应断点。';
-  lookup('share-canvas').setAttribute('aria-label', group.label + ' · ' + metric.title + '。精确值见期间明细表。');
-  renderLegend();
-  renderEvidence();
-}
-
-function renderGroup(id) {
-  group = data.groups.find(candidate => candidate.id === id) || data.groups[0];
-  lookup('cms-molecule').value = group.id;
-  renderMetric();
-  renderMilestones();
-}
-
-function setPeriod(period) {
-  currentPeriod = period;
-  lookup('market-period').value = period;
-  renderEvidence();
-}
-
-function marketRoute() {
-  const [view, selection] = location.hash.slice(1).split('/');
-  if (view !== 'market') return;
-  return selection || lookup('cms-molecule').value || 'trastuzumab';
-}
-
-async function showMarket() {
-  const requested = marketRoute();
-  if (!requested) return;
-  if (data) {
-    renderGroup(requested);
+function renderShare(){
+  const chosen=byId('cms-metric').value;
+  const isReference=chosen==='iqvia';
+  const quote=refs.quotes.find(q=>q.molecule===group.id);
+  const [dataset,metric,label]=metrics[chosen]||[];
+  shareRows=isReference?[]:prepareRows(dataset,metric);
+  const available=shareRows.length>0;
+  show('share-figure',!isReference&&available);
+  show('market-share-detail',!isReference&&available);
+  show('market-scope-detail',!isReference&&available);
+  show('iqvia-reference',isReference);
+  if (isReference){
+    choices('market-period',[[quote.period,quote.period]],quote.period);
+    note('market-metric-note','美国市场用量估计 · 直接引用三星报告');
+    note('market-summary',stats([['原研',group.reference],['类似药合计',quote.value+'%'],['观察期',quote.period]]));
+    note('iqvia-reference',`<p><b>直接引用 ${esc(quote.source.name)}</b></p>
+      <p>${esc(quote.source.label)} · 图 ${quote.figure} · 第 ${quote.page} 页</p>
+      <p class="note">观察期 ${esc(quote.period)}。图表未标注的历史点留空。份额按报告所覆盖渠道及品种计算。</p>${quote.note?`<p class="note">${esc(quote.note)}</p>`:''}`);
+    note('market-source',linkReport(quote.page,'三星报告原图'));
+    note('market-chart-note','');
     return;
   }
-  if (pending) return;
-  const status = lookup('market-loading');
-  status.textContent = '正在读取 CMS 数据。';
-  pending = fetch(new URL('./data/medicare.json', import.meta.url)).then(response => {
-    if (!response.ok) throw new Error('CMS snapshot HTTP ' + response.status);
-    return response.json();
-  }).then(snapshot => {
-    data = snapshot;
-    lookup('cms-molecule').replaceChildren(...data.groups.map(item => new Option(item.label, item.id)));
-    if (marketRoute()) renderGroup(marketRoute());
-    status.hidden = true;
-    lookup('market-content').hidden = false;
-    updateChart();
-  }).catch(() => {
-    data = null;
-    status.textContent = 'CMS 数据暂时无法读取。';
-    const retry = document.createElement('button');
-    retry.type = 'button';
-    retry.className = 'outline';
-    retry.textContent = '重新加载';
-    retry.addEventListener('click', showMarket, {once: true});
-    status.append(' ', retry);
-  }).finally(() => {
-    pending = null;
-  });
+  const oldPeriod=byId('market-period').value;
+  const selected=shareRows.some(r=>r.period===oldPeriod)?oldPeriod:shareRows.at(-1)?.period;
+  choices('market-period',shareRows.map(r=>[r.period,periodLabel(r.period)]),selected);
+  const text=dataset==='annual'?'传统 Medicare Part B · 年度原表':
+    `传统 Medicare Part B · CMS ${cms.sources.quarterly.version} 版初步数据，会随申报结算修订`;
+  note('market-metric-note',text);
+  note('market-source',external(cms.sources[dataset].file,'CMS 原始 CSV'));
+  if (!available){
+    note('market-summary','');
+    note('market-chart-note','此分子在该口径暂无可展示的已核对数据。');
+    return;
+  }
+  const chartRows=shareRows.filter(r=>dataset!=='quarterly'||cms.quarterPeriods[r.period]?.kind==='quarter');
+  const series=seriesFor(chartRows,'share');
+  shareState.spec={periods:chartRows.map(r=>r.period),series,selected,labels:periodLabel,formatY:pctAxis,upper:1};
+  note('market-chart-title',label+'份额');
+  note('market-chart-note',chartRows.length>1?'选择期间或点击图表查看品牌明细。':
+    '当前可独立显示单季度的数据点。全年初步数在期间选择器中查看。');
+  useLegend(shareState);
+  shareEvidence();
 }
 
-lookup('cms-molecule').addEventListener('change', event => {
-  renderGroup(event.target.value);
-  history.replaceState(null, '', '#market/' + group.id);
+function shareEvidence(){
+  const period=byId('market-period').value;
+  const record=shareRows.find(row=>row.period===period);
+  if(!record)return;
+  const [dataset,metric,label]=metrics[byId('cms-metric').value];
+  const previous=dataset==='annual'?shareRows.find(row=>Number(row.period)===Number(period)-1):null;
+  note('market-summary',stats([['原研',group.reference],['类似药合计',share(record.combined)],['可见品牌',record.items.length]]));
+  note('market-period-label',esc(periodLabel(period)));
+  const rawLabel=metric==='units'?'计费单位（'+group.unit+'）':label;
+  note('market-table',table(['品牌','份额',...(previous?['同比']:[]),rawLabel,'HCPCS'],record.items.map(row=>[
+    esc(row.item.name),share(row.share),
+    ...(previous?[difference(row.share,previous.items.find(r=>r.code===row.code)?.share)]:[]),
+    esc(valueFor(row.value,metric)),row.code,
+  ])));
+  note('market-codes',`<p>${esc(group.scope)}</p><p>本期分母包括 ${record.items.map(row=>esc(row.item.name)+'（'+row.code+'）').join('、')}。</p>
+     ${!isNumber(record.combined)?'<p>本期原研与类似药的可见数据不足以计算类似药合计份额。</p>':''}
+     ${record.items.some(row=>row.outlier)?'<p>CMS 标记本期存在每计费单位支出异常值，表内保留原始记录。</p>':''}`);
+  shareState.spec.selected=period;
+  updatePlot(shareState);
+}
+
+function renderPrices(){
+  priceRows=prepareRows('price','price');
+  const available=priceRows.length>0;
+  for (const id of ['price-figure','market-price-detail']) show(id,available);
+  show('price-missing',!available);
+  if (!available){
+    choices('market-price-period',[]);
+    note('price-note','公开 CMS Part B 支付限额观察');
+    note('price-summary','');
+    note('price-missing','本库暂未纳入该分子的可比 Part B 支付限额。');
+    note('market-price-source',external(cms.sources.payment.link,'CMS 支付限额文件'));
+    return;
+  }
+  const selected=priceRows.at(-1).period;
+  choices('market-price-period',priceRows.map(r=>[r.period,periodLabel(r.period)]),selected);
+  const series=seriesFor(priceRows,'value');
+  priceState.spec={periods:priceRows.map(r=>r.period),series,selected,labels:periodLabel,formatY:moneyAxis,upper:priceAxis(series)};
+  note('price-note',`美元／${esc(group.unit)} · 以本图所选季度的原研限额计算折溢价`);
+  useLegend(priceState);
+  priceEvidence();
+}
+
+function priceEvidence(){
+  const period=byId('market-price-period').value;
+  const record=priceRows.find(row=>row.period===period);
+  if(!record)return;
+  note('price-summary',stats([['原研',group.reference],['原研限额',valueFor(record.original?.value,'price')],['生效期',periodLabel(period)]]));
+  const sorted=[...record.items].sort((a,b)=>Number(b.item.reference)-Number(a.item.reference)||a.value-b.value);
+  note('market-price-table',table(['品牌','美元／'+group.unit,'相对原研','HCPCS'],sorted.map(row=>[
+    esc(row.item.name),valueFor(row.value,'price'),
+    row.item.reference?'基准':record.original?.value>0?
+    (row.value<=record.original.value?'折价 ':'溢价 ')+share(Math.abs(1-row.value/record.original.value)):'—',
+    row.code,
+  ])));
+  note('market-price-source',external(cms.paymentPeriods[period].url,'该季度 CMS 文件')+' · '+
+    external(refs.cmsPolicy,'支付口径')+
+    (group.id==='rituximab'&&period==='2026Q4'?'<br>Ruxience 的该季限额采用 AMP 口径。 '+linkReport(11,'三星报告第 11 页') : ''));
+  priceState.spec.selected=period;
+  updatePlot(priceState);
+}
+
+function renderMilestones(){
+  byId('market-approvals').href='#approvals/'+encodeURIComponent(group.id);
+  note('market-status',group.products.length?
+    table(['品牌','FDA 获批','美国商业上市','本库最早可见医保申报','企业与权益'],group.products.map(p=>[
+      esc(p.name)+(p.reference?'<small>原研</small>':''),
+      p.approval?external(p.approval.source,p.approval.date||'FDA 记录'):'—',
+      p.launch?external(p.launch.source,p.launch.date):'待核实',
+      p.firstClaim?esc(periodLabel(p.firstClaim)):'待核实',
+      esc(p.roles||p.approval?.holder||'—')+(p.assetId?`<small><a href="#pipeline/asset/${encodeURIComponent(p.assetId)}">${esc(p.assetId)} · 管线</a></small>`:''),
+    ])):'<p class="note">该分子的产品记录可通过上方获批入口查看。</p>');
+}
+
+function renderMolecule(id){
+  group=groups.find(item=>item.id===id)||groups[0];
+  shareState.hidden.clear();
+  priceState.hidden.clear();
+  byId('cms-molecule').value=group.id;
+  byId('market-metric-note').textContent='';
+  const quoted=refs.quotes.some(q=>q.molecule===group.id);
+  [...byId('cms-metric').options].forEach(o=>{o.disabled=o.value==='iqvia'?!quoted:!group.products.length;});
+  const hasPublicShare=prepareRows('annual','units').some(row=>isNumber(row.combined));
+  byId('cms-metric').value=quoted&&!hasPublicShare?'iqvia':'units';
+  byId('market-period').replaceChildren();
+  renderShare();
+  renderPrices();
+  renderMilestones();
+  show('market-wac',group.id==='adalimumab');
+  if(group.id==='adalimumab'){
+    const metadata=refs.wacMetadata;
+    note('market-wac-table',`<p class="note">${esc(metadata.period)} · ${esc(metadata.unit)} · ${linkReport(metadata.page,'三星报告图 27')}（转述 Buy and Bill）</p>`+
+      table(['品牌与渠道','标价策略','WAC（美元）'],refs.wac.map(item=>[esc(item.brand),esc(item.variant),'$'+nf.format(item.value)]))+
+      '<p class="note">为报告明示的标价示例。报告未列示这些比较值对应的包装 NDC。</p>');
+  }
+}
+
+function cohortPlot(cohorts,key,id,legendId) {
+  const items=cohorts.filter(c=>c[key].length);
+  const maximum=Math.max(1,...items.flatMap(c=>c[key].map(row=>row.age)));
+  const periods=Array.from({length:maximum},(_,i)=>i+1);
+  const series=items.map(item=>({
+    label:item.label,color:colorPalette[refs.cohorts.indexOf(item)%colorPalette.length],
+    values:Object.fromEntries(item[key].map(point=>[point.age,point.value])),
+    dash:refs.cohorts.indexOf(item)>3,
+  }));
+  note(legendId,series.map(s=>`<span class="series-key"><i style="--series-color:${s.color}"></i>${esc(s.label)}</span>`).join(''));
+  plot(id,{periods,series,labels:n=>'年 '+n,formatY:key==='usage'?pctAxis:n=>nf.format(n),
+    upper:key==='usage'?1:Math.max(100,Math.ceil(Math.max(0,...items.flatMap(c=>c.price.map(row=>row.value)))/25)*25)});
+}
+function renderCohorts(){
+  const category=byId('benchmark-category').value;
+  const rows=refs.cohorts.filter(c=>!category||c.category===category);
+  cohortPlot(rows,'usage','benchmark-uptake','benchmark-uptake-legend');
+  cohortPlot(rows,'price','benchmark-price','benchmark-price-legend');
+  note('benchmark-table',table(['分子','首个类似药上市年','最新公共剂量份额','原研价格基准期','最新 Q4 指数'],rows.map(c=>[
+    `<a href="#market/${c.id}">${esc(c.label)}</a>`,
+    c.launch,esc(c.usage.at(-1)?.period||'—')+' · '+share(c.usage.at(-1)?.value),
+    esc(periodLabel(c.base))+' · '+valueFor(c.price[0].limit,'price')+'／'+esc(c.unit),
+    esc(periodLabel(c.price.at(-1).period))+' · '+nf.format(c.price.at(-1).value),
+  ])));
+  note('benchmark-source',external(refs.hhs,'HHS 上市年份表')+' · '+external(cms.sources.annual.link,'CMS 年度数据')+' · '+
+    external(cms.sources.payment.link,'CMS 季度支付限额'));
+}
+function renderReportIndex(){
+  note('market-report-index',table(['报告版次','报告季度','发布日期','原始文档'],[...refs.archive].reverse().map(r=>[
+    '第 '+r.edition+' 版',esc(periodLabel(r.period)),esc(r.date||'待核对'),
+    r.url?external(r.url,r.pages?'三星 PDF':'官方 PDF 入口')+(r.release?' · '+external(r.release,'发布公告'):''):
+     r.release?external(r.release,'发布公告')+' · PDF 待核对':'待核对',
+  ])));
+  note('report-audit',`<p>品牌和分子用量份额采用 Samsung Bioepis 对 IQVIA 资料的分析。MIDAS 为标准单位，报告参考表覆盖 2017 年 1 月至 2026 年 6 月。Weekly Sales Perspectives 覆盖 2023 年 1 月至 2026 年 8 月。各图实际观察期按单项标注。</p>
+    <p>价格页区分 CMS 支付限额和报告中的 WAC。WAC 示例由三星引用 Buy and Bill。 ${linkReport(38,'参考来源，第 38 页')}</p>`);
+  note('supply-sources',`<p>供应状态请核对 FDA 原始公告和短缺登记。三星的匿名批发商访谈作为定性资料。 ${external(refs.supply.fda,'FDA 药品短缺入口')} · ${linkReport(refs.supply.interviewPage,'三星访谈')}</p>`);
+}
+
+function setupModel(){
+  const options=[['','选择参照分子'],...refs.cohorts.filter(c=>c.usage.length).map(c=>[c.id,c.label])];
+  choices('model-benchmark-select',options);
+  show('model-benchmark-box',true);
+}
+function selectedCohort(){
+  return refs.cohorts.find(c=>c.id===byId('model-benchmark-select').value);
+}
+function modelReference(){
+  const obs=selectedCohort()?.usage.at(-1);
+  byId('apply-benchmark').disabled=!obs;
+  note('model-benchmark-note',obs?`传统 Medicare Part B · ${obs.period} · 上市后第 ${obs.age} 年 · 已纳入编码剂量份额 ${share(obs.value)}`:
+    '选取成熟品种的最新公开剂量份额，可手动填入当前情景的用量渗透率。');
+}
+byId('model-benchmark-select').addEventListener('change',modelReference);
+byId('apply-benchmark').addEventListener('click',()=>{
+  const obs=selectedCohort()?.usage.at(-1);
+  if(!obs)return;
+  const input=byId('slider-1');
+  input.value=String(Math.round(obs.value*100));
+  input.dispatchEvent(new Event('input',{bubbles:true}));
 });
-lookup('cms-metric').addEventListener('change', renderMetric);
-lookup('market-period').addEventListener('change', event => setPeriod(event.target.value));
-lookup('share-legend').addEventListener('click', event => {
-  const button = event.target.closest('[data-code]');
-  if (!button) return;
-  const code = button.dataset.code;
-  if (activeCodes.has(code)) activeCodes.delete(code);
-  else activeCodes.add(code);
-  button.setAttribute('aria-pressed', activeCodes.has(code));
-  updateChart();
+
+function updateRoute(){
+  const [view,...params]=location.hash.slice(1).split('/');
+  if(view!=='market'&&view!=='model')return;
+  if(cms&&refs){ if(view==='market') showMarket(params[0]); return; }
+  if(pending)return;
+  pending=Promise.all(['medicare','market-references'].map(id=>fetch(new URL('./data/'+id+'.json',import.meta.url)).then(r=>{
+    if(!r.ok)throw new Error(id+' HTTP '+r.status);return r.json();
+  }))).then(([medicare,references])=>{
+    cms=medicare;
+    refs=references;
+    groups=[...cms.groups,...refs.quotes.filter(q=>!cms.groups.some(g=>g.id===q.molecule)).map(q=>({
+      id:q.molecule,label:q.label,reference:q.reference,products:[],
+    }))];
+    choices('cms-molecule',groups.map(g=>[g.id,g.label]));
+    choices('benchmark-category',[['','全部领域'],...[...new Set(refs.cohorts.map(c=>c.category))].map(c=>[c,c])]);
+    show('market-loading',false);
+    show('market-content',true);
+    setupModel();
+    modelReference();
+    if(location.hash.startsWith('#market'))showMarket(location.hash.split('/')[1]);
+  }).catch(()=>{
+    cms=refs=null;
+    show('market-loading',true);
+    byId('market-loading').textContent='市场数据暂时无法读取。';
+    const retry=document.createElement('button');
+    retry.className='outline';
+    retry.textContent='重新加载';
+    retry.addEventListener('click',updateRoute,{once:true});
+    byId('market-loading').append(' ',retry);
+  }).finally(()=>{pending=null;});
+}
+
+function showMarket(route){
+  mode=route==='reports'||route==='benchmark'?route:'molecule';
+  document.querySelectorAll('[data-market-tab]').forEach(tab=>{
+    if(tab.dataset.marketTab===mode)tab.setAttribute('aria-current','page');else tab.removeAttribute('aria-current');
+  });
+  for(const id of ['molecule','benchmark','reports'])show('market-'+id+'-view',mode===id);
+  if(mode==='benchmark')renderCohorts();
+  else if(mode==='reports')renderReportIndex();
+  else renderMolecule(route||byId('cms-molecule').value||groups[0].id);
+}
+
+byId('cms-molecule').addEventListener('change',event=>{
+  renderMolecule(event.target.value);
+  history.replaceState(null,'','#market/'+group.id);
 });
-lookup('share-canvas').addEventListener('click', event => {
-  if (!chartPeriods.length) return;
-  const width = event.currentTarget.clientWidth - axisLayout.left - axisLayout.right;
-  const coordinate = event.offsetX - axisLayout.left;
-  const index = Math.max(0, Math.min(chartPeriods.length - 1, Math.round(coordinate / width * (chartPeriods.length - 1))));
-  setPeriod(chartPeriods[index]);
+byId('cms-metric').addEventListener('change',renderShare);
+byId('market-period').addEventListener('change',shareEvidence);
+byId('market-price-period').addEventListener('change',priceEvidence);
+byId('benchmark-category').addEventListener('change',renderCohorts);
+for(const [state,selector,callback] of [[shareState,'market-period',shareEvidence],[priceState,'market-price-period',priceEvidence]]){
+  byId(state.canvas).addEventListener('click',event=>{
+    const spec=state.spec;
+    if(!spec)return;
+    const period=closestPeriod(event.currentTarget,event.offsetX,spec.periods);
+    if(period){byId(selector).value=period;callback();}
+  });
+}
+byId('market-export').addEventListener('click',()=>{
+  const [dataset,metric,label]=metrics[byId('cms-metric').value];
+  window.downloadCsv(group.id+'-'+metric,['分子','期间','品牌','HCPCS',label,'份额','CMS 原始来源'],
+    shareRows.flatMap(p=>p.items.map(row=>[group.label,periodLabel(p.period),row.item.name,row.code,row.value,share(row.share),cms.sources[dataset].file])));
 });
-lookup('market-export').addEventListener('click', () => {
-  const header = ['分子', '期间', '品牌', 'HCPCS', metric.raw, '本期份额或相对原研', '原始数据'];
-  const exported = allPeriods.flatMap(period => entriesByPeriod.get(period).map(entry => [
-    group.label, labelFor(period), entry.product.name, entry.product.code,
-    entry.value, metric.field === 'price' ? percent(rate(entry.value, referenceValue(period))) : percent(entry.share),
-    metric.field === 'price' ? data.paymentPeriods[period].url : data.sources[metric.dataset].file,
-  ]));
-  window.downloadCsv(group.id + '-' + metric.field, header, exported);
+byId('price-export').addEventListener('click',()=>{
+  window.downloadCsv(group.id+'-payment',['分子','生效季','品牌','HCPCS','计费单位','支付限额（美元）','CMS 原始来源'],
+    priceRows.flatMap(p=>p.items.map(row=>[group.label,periodLabel(p.period),row.item.name,row.code,group.unit,row.value,cms.paymentPeriods[p.period].url])));
 });
-new ResizeObserver(() => {
-  if (!section.hidden && group) updateChart();
-}).observe(lookup('share-canvas'));
-window.addEventListener('hashchange', showMarket);
-showMarket();
+const observer=new ResizeObserver(entries=>entries.forEach(({target})=>{
+  if(!markets.hidden&&screen[target.id])drawLines(target,screen[target.id]);
+}));
+for(const id of ['share-canvas','price-canvas','benchmark-uptake','benchmark-price'])observer.observe(byId(id));
+window.addEventListener('hashchange',updateRoute);
+updateRoute();

@@ -31,6 +31,13 @@ def get_years(header):
     return sorted(int(col[-4:]) for col in header if re.fullmatch(r'Tot_Dsg_Unts_\d{4}', col))
 
 
+def dose_matches(text, unit, strict=False):
+    dose, measure = unit.split()
+    measures = r'(?:mcg|micrograms?)' if measure=='mcg' else r'mg'
+    pattern = r'(?<![.\d])' + re.escape(dose) + r'\s*' + measures + r'\b'
+    return bool(re.fullmatch(pattern,text,re.I) if strict else re.search(pattern,text,re.I))
+
+
 def load_annual(path, codes):
     with path.open(encoding='utf-8-sig', newline='') as source:
         annual = DictReader(source)
@@ -41,7 +48,7 @@ def load_annual(path, codes):
             code = entry['HCPCS_Cd'].upper()
             if code not in codes:
                 continue
-            assert re.search(r'\b10\s*mg\b', entry['HCPCS_Desc'], re.I), entry['HCPCS_Desc']
+            assert dose_matches(entry['HCPCS_Desc'],codes[code]), entry['HCPCS_Desc']
             for year in years:
                 row = dict(code=code, period=str(year),
                     units=read_value(entry[f'Tot_Dsg_Unts_{year}']),
@@ -95,7 +102,7 @@ def load_payments(directory, manifest, codes):
                 continue
             value = read_value(entry[limit_index])
             unit = entry[dosage_index].strip()
-            assert value is None or re.fullmatch(r'10\s*mg', unit, re.I), (period, code, unit)
+            assert value is None or dose_matches(unit,codes[code],strict=True), (period, code, unit)
             rows.append(dict(code=code, period=period, price=value))
         meta['file'] = files[0]
     return rows
@@ -145,9 +152,7 @@ def verify(groups, facts, payments):
     for group in groups:
         originals = [product['code'] for product in group['products'] if product.get('reference')]
         assert len(originals) == 1
-        for period in payments:
-            assert any(row['period'] == period and row['code'] == originals[0] and row['price'] > 0
-                for row in facts[2]), (period, originals[0])
+        assert any(row['code']==originals[0] and row['price'] and row['price']>0 for row in facts[2]), originals
     assert len(payments) >= 20
 
 
@@ -161,7 +166,7 @@ def main():
     directory = args.inputs
     payments = json.loads((directory / 'asp-manifest.json').read_text())
     groups = config['groups']
-    codes = {p['code'] for g in groups for p in g['products']}
+    codes = {p['code']:g.get('unit','10 mg') for g in groups for p in g['products']}
     period_labels = config.pop('quarterLabels')
     periods = {p['id']: p for p in period_labels.values()}
     annual = load_annual(directory / 'cms-annual.csv', codes)

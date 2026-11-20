@@ -236,58 +236,113 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
     </section>
 
     <section class="view" id="view-market" aria-labelledby="market-title" hidden>
-      <div class="section-head">
-        <div><p class="eyebrow">MEDICARE PART B</p><h2 id="market-title">价格与品牌份额</h2></div>
-      </div>
-      <p class="intro">按分子比较传统 Medicare Part B 的品牌份额和支付限额。</p>
-      <p id="market-loading" class="note" aria-live="polite">正在读取 CMS 数据。</p>
+      <div class="section-head"><div><p class="eyebrow">US BIOSIMILAR MARKETS</p><h2 id="market-title">品牌份额与价格</h2></div></div>
+      <nav class="market-tabs" aria-label="市场研究">
+        <a class="outline" href="#market" data-market-tab="molecule">分子市场</a>
+        <a class="outline" href="#market/benchmark" data-market-tab="benchmark">上市后基准</a>
+        <a class="outline" href="#market/reports" data-market-tab="reports">三星报告档案</a>
+      </nav>
+      <p id="market-loading" class="note" aria-live="polite">正在读取市场数据。</p>
       <div id="market-content" hidden>
-        <div class="panel market-workspace">
-          <div class="market-toolbar">
+        <section id="market-molecule-view" aria-label="分子市场">
+          <div class="market-main-controls">
             <label>分子<select id="cms-molecule"></select></label>
-            <label>指标<select id="cms-metric">
-              <option value="units">年度计费剂量份额</option>
-              <option value="spending">年度支出份额</option>
-              <option value="quarterSpending">近期支出份额（初步）</option>
-              <option value="claims">近期申报份额（初步）</option>
-              <option value="price">季度支付限额</option>
-            </select></label>
-            <label>明细期间<select id="market-period"></select></label>
+            <a id="market-approvals" class="outline">查看获批与上市</a>
           </div>
-          <p class="note" id="market-metric-note"></p>
-          <div class="market-summary" id="market-summary" aria-live="polite"></div>
-          <figure class="market-figure" aria-labelledby="market-chart-title">
-            <figcaption id="market-chart-title"></figcaption>
-            <div class="series-legend" id="share-legend" aria-label="显示或隐藏品牌曲线"></div>
-            <canvas id="share-canvas" role="img" aria-describedby="market-chart-note"></canvas>
-            <p class="note" id="market-chart-note"></p>
-          </figure>
-          <div class="market-table-head">
-            <h3>品牌明细 <small id="market-period-label"></small></h3>
-            <button id="market-export" class="outline" type="button">下载本指标 CSV</button>
+          <div class="market-duo">
+            <article class="panel market-workspace">
+              <h3>品牌份额</h3>
+              <div class="market-toolbar">
+                <label>统计口径<select id="cms-metric">
+                  <option value="units">CMS 年度计费剂量</option>
+                  <option value="spending">CMS 年度支出</option>
+                  <option value="quarterSpending">CMS 近期支出（初步）</option>
+                  <option value="claims">CMS 近期申报（初步）</option>
+                  <option value="iqvia">三星引用 · IQVIA</option>
+                </select></label>
+                <label>明细期间<select id="market-period"></select></label>
+              </div>
+              <p class="note" id="market-metric-note"></p>
+              <div id="market-summary" class="market-summary" aria-live="polite"></div>
+              <div id="iqvia-reference" class="report-quote" hidden></div>
+              <figure class="market-figure" id="share-figure" aria-labelledby="market-chart-title">
+                <figcaption id="market-chart-title">份额趋势</figcaption>
+                <div class="series-legend" id="share-legend" aria-label="份额曲线"></div>
+                <canvas id="share-canvas" role="img" aria-label="品牌份额曲线，精确数值见明细表"></canvas>
+              </figure>
+              <p class="note" id="market-chart-note"></p>
+              <details class="market-disclosure" id="market-share-detail">
+                <summary>品牌明细与 CSV <small id="market-period-label"></small></summary>
+                <div class="scroll" id="market-table" tabindex="0" role="region" aria-label="品牌份额明细"></div>
+                <button class="outline market-export" id="market-export" type="button">下载本指标 CSV</button>
+              </details>
+              <details class="market-disclosure" id="market-scope-detail">
+                <summary>统计范围与本期计入编码</summary>
+                <div id="market-codes"></div>
+              </details>
+              <p class="note" id="market-source"></p>
+            </article>
+            <article class="panel market-workspace">
+              <h3>CMS 支付限额</h3>
+              <div class="market-toolbar">
+                <label>生效季度<select id="market-price-period"></select></label>
+              </div>
+              <p class="note" id="price-note"></p>
+              <div id="price-summary" class="market-summary" aria-live="polite"></div>
+              <div id="price-missing" class="note" hidden></div>
+              <figure class="market-figure" id="price-figure" aria-labelledby="price-chart-title">
+                <figcaption id="price-chart-title">各品牌支付限额</figcaption>
+                <div class="series-legend" id="price-legend" aria-label="支付限额曲线"></div>
+                <canvas id="price-canvas" role="img" aria-label="品牌支付限额趋势，精确数值见明细表"></canvas>
+              </figure>
+              <details class="market-disclosure" id="market-price-detail">
+                <summary>季度价格、折溢价与 CSV</summary>
+                <div class="scroll" id="market-price-table" tabindex="0" role="region" aria-label="季度品牌价格明细"></div>
+                <button class="outline market-export" id="price-export" type="button">下载支付限额 CSV</button>
+              </details>
+              <p class="note" id="market-price-source"></p>
+            </article>
           </div>
-          <div class="scroll" id="market-table" role="region" aria-label="品牌期间明细" tabindex="0"></div>
-          <details class="market-disclosure">
-            <summary>统计范围与本期计入编码</summary>
-            <div id="market-codes"></div>
+          <details id="market-wac" class="panel source-panel" hidden>
+            <summary>美国 WAC 标价策略</summary><div id="market-wac-table"></div>
           </details>
-          <p class="note" id="market-source"></p>
-        </div>
-        <details class="panel source-panel market-status-panel">
-          <summary>获批、商业上市与医保申报</summary>
-          <div class="scroll" role="region" aria-label="品牌上市日期与合作关系" tabindex="0" id="market-status"></div>
-          <p class="note"><a id="market-approvals">浏览该分子中美欧获批记录</a></p>
-        </details>
+          <details class="panel source-panel market-status-panel">
+            <summary>获批、商业上市与医保申报</summary>
+            <div class="scroll" role="region" aria-label="品牌上市日期与合作关系" tabindex="0" id="market-status"></div>
+          </details>
+          <div class="market-domestic">
+            <article class="panel market-panel"><h3>中国历史参考采购价</h3><p class="note">上海公开公告 · 人民币／原包装</p><div id="cn-prices"></div></article>
+            <article class="panel market-panel"><h3>公司披露产品收入</h3><p class="note">复宏汉霖 · 2025 年 · 人民币亿元</p><div id="company-sales"></div></article>
+          </div>
+          <details class="panel source-panel"><summary>法国和英国的公开渠道</summary><div id="eu-sources"></div></details>
+        </section>
+        <section id="market-benchmark-view" aria-label="上市后基准" hidden>
+          <div class="market-main-controls">
+            <label>治疗领域<select id="benchmark-category"></select></label>
+            <a class="outline" href="#model">进入情景模型</a>
+          </div>
+          <p class="intro">第 1 年为首次商业上市后的第一个完整日历年。图中只使用传统 Medicare Part B 的 CMS 原始数据。</p>
+          <div class="market-duo">
+            <article class="panel market-workspace">
+              <h3>上市后计费剂量份额</h3><div class="series-legend" id="benchmark-uptake-legend"></div>
+              <canvas id="benchmark-uptake" role="img" aria-label="上市后剂量份额，精确值见下表"></canvas>
+            </article>
+            <article class="panel market-workspace">
+              <h3>原研 Q4 支付限额指数</h3><div class="series-legend" id="benchmark-price-legend"></div>
+              <canvas id="benchmark-price" role="img" aria-label="上市后原研支付限额指数，精确值见下表"></canvas>
+            </article>
+          </div>
+          <p class="note">各分子首个可查的上市后 Q4 为 100。不同分子的基准期可能不同，基准期与原值见下表。</p>
+          <div id="benchmark-table" class="panel scroll" role="region" aria-label="上市后基准及样本" tabindex="0"></div>
+          <p class="note" id="benchmark-source"></p>
+        </section>
+        <section id="market-reports-view" aria-label="三星报告档案" hidden>
+          <p class="intro">按发行季度索引报告。数据观察期在引用处单列。</p>
+          <div id="market-report-index" class="panel scroll" role="region" aria-label="Samsung Bioepis 报告档案" tabindex="0"></div>
+          <details class="panel source-panel"><summary>Q4 2026 版引用口径</summary><div id="report-audit"></div></details>
+          <details class="panel source-panel"><summary>美国供应监测</summary><div id="supply-sources"></div></details>
+        </section>
       </div>
-      <div class="market-domestic">
-        <article class="panel market-panel">
-          <h3>中国历史参考采购价</h3><p class="note">上海公开公告 · 人民币／原包装</p><div id="cn-prices"></div>
-        </article>
-        <article class="panel market-panel">
-          <h3>公司披露产品收入</h3><p class="note">复宏汉霖 · 2025 年 · 人民币亿元</p><div id="company-sales"></div>
-        </article>
-      </div>
-      <details class="panel source-panel"><summary>法国和英国的公开渠道</summary><p>法国 Open Medic 提供社区药房报销金额、报销基数和盒数。英国 NHSBSA 社区处方可按产品分析，公开医院数据通常汇总至 VMP 层级。</p><div id="eu-sources"></div></details>
     </section>
 
     <section class="view" id="view-model" aria-labelledby="model-title" hidden>
@@ -300,6 +355,14 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
           </div>
           <p class="note" id="model-source"></p>
           <div id="model-inputs"></div>
+          <div id="model-benchmark-box" hidden>
+            <div class="model-bench-row">
+              <label>历史参照<select id="model-benchmark-select"></select></label>
+              <button class="outline" id="apply-benchmark" type="button" disabled>填入渗透率</button>
+            </div>
+            <p class="note" id="model-benchmark-note"></p>
+          </div>
+
         </article>
         <article class="panel model-result" aria-live="polite">
           <p class="eyebrow">静态单期情景 · 假设演示</p>

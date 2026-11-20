@@ -37,3 +37,42 @@
   .market-table-head {gap: .4rem;}
   .market-table-head .outline {white-space: normal;}
 }
+.market-tabs {display:flex; flex-wrap:wrap; gap:.45rem; margin:0 0 1rem;}
+.market-tabs a, .market-main-controls a {text-decoration:none;}
+.market-tabs [aria-current=page] {background:#e1eee5; border-color:#9fbcaf; font-weight:650;}
+.market-main-controls {display:flex; gap:.7rem; align-items:end; flex-wrap:wrap; justify-content:space-between; margin:.7rem 0 .85rem;}
+.market-main-controls label {min-width:min(280px,100%);}
+.market-duo {display:grid; min-width:0; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem;}
+.market-duo article {min-width:0;}
+.market-duo .market-toolbar {grid-template-columns:repeat(2,minmax(0,1fr));}
+.market-duo .market-toolbar > label:last-child {grid-column:auto;}
+.market-duo .market-workspace {padding:16px;}
+.market-duo .market-summary > div {padding:.52rem .58rem;}
+.market-duo .market-summary strong {font-size:1.3rem;}
+.market-duo .market-summary span {font-size:.74rem;}
+.market-duo .market-figure {margin:10px 0 8px;}
+.market-duo .market-disclosure .scroll {margin-top:.55rem;}
+.market-duo canvas {width:100%; height:245px; display:block;}
+.market-duo #share-canvas,.market-duo #price-canvas {height:245px; cursor:pointer;}
+.market-export {margin:.6rem 0 0;}
+#market-price-table table, #market-table table {min-width:445px;}
+.report-quote {background:#f3f6fa; border:1px solid #d6e2ee; padding:.68rem .78rem; border-radius:4px; margin:.6rem 0;}
+.report-quote p {margin:.26rem 0; font-size:.83rem;}
+#market-wac table {min-width:0;}
+#market-wac p {margin:.75rem 0;}
+#benchmark-table {margin-top:1rem;}
+#benchmark-table table {min-width:650px;}
+#market-report-index table {min-width:570px;}
+#model-benchmark-box {padding:.72rem .8rem; background:#edf5ee; margin:1rem 0 .2rem; border:1px solid #cdded2; border-radius:4px;}
+#model-benchmark-box .model-bench-row {display:flex; align-items:end; gap:.6rem; flex-wrap:wrap;}
+.model-bench-row label {flex:1; min-width:150px;}
+.model-bench-row button {white-space:normal;}
+@media(max-width:850px) {
+  .market-duo {grid-template-columns:1fr;}
+}
+@media(max-width:420px) {
+  .market-duo .market-workspace {padding:11px;}
+  .market-duo .market-summary strong {font-size:.95rem;}
+  .market-duo .market-summary span {font-size:.67rem;}
+  .market-main-controls label {flex-basis:100%;}
+}

@@ -87,7 +87,8 @@
           "name": "Hercessi",
           "roles": "复宏汉霖 · 开发；Accord BioPharma · 美国商业化"
         }
-      ]
+      ],
+      "unit": "10 mg"
     },
     {
       "id": "bevacizumab",
@@ -141,7 +142,8 @@
           "name": "Jobevne",
           "roles": "Biocon Biologics · FDA 许可持有人"
         }
-      ]
+      ],
+      "unit": "10 mg"
     },
     {
       "id": "rituximab",
@@ -185,6 +187,216 @@
             "source": "https://investors.amgen.com/static-files/7040ab10-3c71-4789-9fec-7bc56a9e7237"
           }
         }
+      ],
+      "unit": "10 mg"
+    },
+    {
+      "id": "infliximab",
+      "label": "英夫利西单抗",
+      "reference": "Remicade",
+      "unit": "10 mg",
+      "scope": "静脉剂型，每 10 mg。排除皮下 Zymfentra 及未能归到品牌的申报编码。",
+      "products": [
+        {
+          "code": "J1745",
+          "name": "Remicade",
+          "reference": true
+        },
+        {
+          "code": "Q5103",
+          "name": "Inflectra",
+          "reference": false
+        },
+        {
+          "code": "Q5104",
+          "name": "Renflexis",
+          "reference": false
+        },
+        {
+          "code": "Q5121",
+          "name": "Avsola",
+          "reference": false
+        }
+      ],
+      "additionalApprovals": [
+        "Ixifi"
+      ]
+    },
+    {
+      "id": "filgrastim",
+      "label": "非格司亭",
+      "reference": "Neupogen",
+      "unit": "1 mcg",
+      "scope": "每 1 微克。不同分子的 tbo-filgrastim（Granix）及未归到单一品牌的编码不纳入。",
+      "products": [
+        {
+          "code": "J1442",
+          "name": "Neupogen",
+          "reference": true
+        },
+        {
+          "code": "Q5101",
+          "name": "Zarxio",
+          "reference": false
+        },
+        {
+          "code": "Q5110",
+          "name": "Nivestym",
+          "reference": false
+        },
+        {
+          "code": "Q5125",
+          "name": "Releuko",
+          "reference": false
+        },
+        {
+          "code": "Q5148",
+          "name": "Nypozi",
+          "reference": false
+        }
+      ],
+      "additionalApprovals": [
+        "Filkri"
+      ]
+    },
+    {
+      "id": "pegfilgrastim",
+      "label": "聚乙二醇非格司亭",
+      "reference": "Neulasta",
+      "unit": "0.5 mg",
+      "scope": "每 0.5 mg。Neulasta 编码可能包含 Onpro，无法按装置拆分。同一品牌共用编码的剂型合计。",
+      "products": [
+        {
+          "code": "J2506",
+          "name": "Neulasta",
+          "reference": true
+        },
+        {
+          "code": "Q5108",
+          "name": "Fulphila",
+          "reference": false
+        },
+        {
+          "code": "Q5111",
+          "name": "Udenyca",
+          "reference": false
+        },
+        {
+          "code": "Q5120",
+          "name": "Ziextenzo",
+          "reference": false
+        },
+        {
+          "code": "Q5122",
+          "name": "Nyvepria",
+          "reference": false
+        },
+        {
+          "code": "Q5127",
+          "name": "Stimufend",
+          "reference": false
+        },
+        {
+          "code": "Q5130",
+          "name": "Fylnetra",
+          "reference": false
+        },
+        {
+          "code": "Q5169",
+          "name": "Armlupeg",
+          "reference": false
+        }
+      ],
+      "additionalApprovals": [
+        "Ennumo"
+      ]
+    },
+    {
+      "id": "ranibizumab",
+      "label": "雷珠单抗",
+      "reference": "Lucentis",
+      "unit": "0.1 mg",
+      "scope": "玻璃体腔注射，每 0.1 mg。排除 Susvimo 植入给药（J2779）。",
+      "products": [
+        {
+          "code": "J2778",
+          "name": "Lucentis",
+          "reference": true
+        },
+        {
+          "code": "Q5124",
+          "name": "Byooviz",
+          "reference": false
+        },
+        {
+          "code": "Q5128",
+          "name": "Cimerli",
+          "reference": false
+        },
+        {
+          "code": "Q5168",
+          "name": "Nufymco",
+          "reference": false
+        }
+      ],
+      "additionalApprovals": [
+        "Ranluspec",
+        "Lucamzi"
+      ]
+    },
+    {
+      "id": "tocilizumab",
+      "label": "托珠单抗",
+      "reference": "Actemra",
+      "unit": "1 mg",
+      "scope": "仅常规静脉剂型，每 1 mg。排除住院 COVID-19 专用编码及皮下剂型。",
+      "products": [
+        {
+          "code": "J3262",
+          "name": "Actemra",
+          "reference": true
+        },
+        {
+          "code": "Q5133",
+          "name": "Tofidence",
+          "reference": false
+        },
+        {
+          "code": "Q5135",
+          "name": "Tyenne",
+          "reference": false
+        },
+        {
+          "code": "Q5156",
+          "name": "Avtozma",
+          "reference": false
+        }
+      ]
+    },
+    {
+      "id": "aflibercept",
+      "label": "阿柏西普",
+      "reference": "Eylea",
+      "unit": "1 mg",
+      "scope": "常规玻璃体腔注射按 1 mg 计费。排除 Eylea HD（J0177）、不同分子 ziv-aflibercept 和未能归到品牌的编码。",
+      "products": [
+        {
+          "code": "J0178",
+          "name": "Eylea",
+          "reference": true
+        },
+        {
+          "code": "Q5147",
+          "name": "Pavblu",
+          "reference": false
+        }
+      ],
+      "additionalApprovals": [
+        "Opuviz",
+        "Enzeevu",
+        "Ahzantive",
+        "Eydenzelt",
+        "Yesafili"
       ]
     }
   ]
