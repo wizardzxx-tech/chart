@@ -1,0 +1,936 @@
+{
+  "profiles": [
+    {
+      "id": "secukinumab",
+      "issuer": "诺华",
+      "source": "https://www.sec.gov/Archives/edgar/data/1114448/000111444826000004/nvs-20251231.htm",
+      "sales": 6.668,
+      "currency": "USD",
+      "scope": "Cosentyx 全球产品净销售，含不同剂型",
+      "regionalSales": {
+        "US": 3.839,
+        "ROW": 2.829
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2029",
+          "kind": "estimate",
+          "label": "诺华预计关键专利或监管保护届满",
+          "source": "https://www.sec.gov/Archives/edgar/data/1114448/000111444826000004/nvs-20251231.htm"
+        },
+        {
+          "region": "EU",
+          "date": "2030",
+          "kind": "estimate",
+          "label": "诺华披露的欧盟市场保护届满年份",
+          "source": "https://www.sec.gov/Archives/edgar/data/1114448/000111444826000004/nvs-20251231.htm"
+        },
+        {
+          "region": "CN",
+          "date": "2019-04",
+          "kind": "approval",
+          "label": "诺华披露中国银屑病适应症批准",
+          "source": "https://www.novartis.com/news/media-releases/novartis-first-class-cosentyx-approved-china-psoriasis-patients"
+        }
+      ],
+      "note": "",
+      "period": "2025",
+      "regionNotes": {
+        "US": "年报列示 2029 年独占保护节点。静脉与皮下规格的专利范围及实际入市时间待核。",
+        "EU": "年报列示 2030 年主要欧盟市场保护节点。成员国 SPC 和个别适应症另核。",
+        "CN": "已确认银屑病原研获批。化合物、制剂专利和类似药可商业进入时间待核。"
+      },
+      "regionSources": {
+        "US": "https://www.sec.gov/Archives/edgar/data/1114448/000111444826000004/nvs-20251231.htm",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/cosentyx",
+        "CN": "https://www.novartis.com/news/media-releases/novartis-first-class-cosentyx-approved-china-psoriasis-patients"
+      }
+    },
+    {
+      "id": "vedolizumab",
+      "issuer": "武田",
+      "source": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000177/tak-20260331.htm",
+      "sales": 958.0,
+      "currency": "JPY",
+      "scope": "Entyvio 静脉与皮下制剂",
+      "regionalSales": {},
+      "events": [
+        {
+          "region": "US",
+          "date": "2014-05",
+          "kind": "approval",
+          "label": "Entyvio 静脉制剂初次获批",
+          "source": "https://purplebooksearch.fda.gov/index.cfm?blaNo=125476&event=productdetails"
+        },
+        {
+          "region": "EU",
+          "date": "2014-05",
+          "kind": "approval",
+          "label": "Entyvio 欧盟首次授权",
+          "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/entyvio"
+        },
+        {
+          "region": "CN",
+          "date": "2020-03",
+          "kind": "approval",
+          "label": "中国批准溃疡性结肠炎与克罗恩病适应症",
+          "source": "https://www.takeda.com/jp/newsroom/newsreleases/2020/20200323-8143/"
+        },
+        {
+          "region": "EU",
+          "date": "2026-02 至 2026-04",
+          "kind": "litigation",
+          "label": "英国与荷兰出现涉及静脉与皮下给药及制剂的专利撤销程序",
+          "source": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000177/tak-20260331.htm"
+        }
+      ],
+      "note": "",
+      "period": "武田 FY2025（截至 2026-03-31）",
+      "regionNotes": {
+        "US": "静脉与皮下的监管、制剂和给药权利分别核对。FDA 已受理 AVT16 的静脉类似药 BLA。",
+        "EU": "武田披露英国、荷兰有涉及静脉及皮下给药及制剂的专利撤销程序。其他成员国 SPC 待核。",
+        "CN": "公司披露原研获批。地区专利与类似药可商业进入时间待核。"
+      },
+      "regionSources": {
+        "US": "https://www.sec.gov/Archives/edgar/data/1395064/000139506426000177/tak-20260331.htm",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/entyvio",
+        "CN": "https://www.takeda.com/jp/newsroom/newsreleases/2020/20200323-8143/"
+      }
+    },
+    {
+      "id": "ocrelizumab",
+      "issuer": "罗氏",
+      "source": "https://assets.roche.com/f/176343/x/fca190f63e/fb25e.pdf",
+      "sales": 7.01,
+      "currency": "CHF",
+      "scope": "Ocrevus 财报品牌，含皮下剂型贡献",
+      "regionalSales": {
+        "US": 4.874,
+        "EU": 1.451,
+        "INTL": 0.685
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2017-03",
+          "kind": "approval",
+          "label": "静脉剂型获批",
+          "source": "https://purplebooksearch.fda.gov/index.cfm?blaNo=761053&event=productdetails"
+        },
+        {
+          "region": "EU",
+          "date": "2018-01",
+          "kind": "approval",
+          "label": "欧委会授权 Ocrevus",
+          "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/ocrevus"
+        },
+        {
+          "region": "CN",
+          "date": "2025-03-25",
+          "kind": "approval",
+          "label": "中国说明书核准日期",
+          "source": "https://assets.roche.com/f/249469/x/b0c5c7105c/aoruilizhudankangzhusheye_20250325.pdf"
+        }
+      ],
+      "note": "",
+      "period": "2025",
+      "regionNotes": {
+        "US": "需分别核对静脉 Ocrevus 和含透明质酸酶的皮下 Ocrevus Zunovo。独占期和专利到期仍待核。",
+        "EU": "已授权静脉及皮下剂型。成员国延伸保护与入市时间待核。",
+        "CN": "中国说明书记载核准日期。原研保护范围与类似药进入时间待核。"
+      },
+      "regionSources": {
+        "US": "https://purplebooksearch.fda.gov/index.cfm?blaNo=761053&event=productdetails",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/ocrevus",
+        "CN": "https://assets.roche.com/f/249469/x/b0c5c7105c/aoruilizhudankangzhusheye_20250325.pdf"
+      }
+    },
+    {
+      "id": "evolocumab",
+      "issuer": "安进",
+      "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm",
+      "sales": 3.016,
+      "currency": "USD",
+      "scope": "Repatha 净产品销售额",
+      "regionalSales": {
+        "US": 1.663,
+        "ROW": 1.353
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2029-08-27",
+          "kind": "patent",
+          "label": "安进披露抗体专利最晚到期日",
+          "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm"
+        },
+        {
+          "region": "US",
+          "date": "2032-05-10",
+          "kind": "patent",
+          "label": "安进披露治疗方法专利最晚到期日",
+          "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm"
+        },
+        {
+          "region": "EU",
+          "date": "2028-08-22",
+          "kind": "patent",
+          "label": "组合物专利到期日，个别国家存在 SPC",
+          "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm"
+        },
+        {
+          "region": "EU",
+          "date": "2032-05-10",
+          "kind": "patent",
+          "label": "治疗方法专利到期日",
+          "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm"
+        },
+        {
+          "region": "EU",
+          "date": "2033-05-03",
+          "kind": "patent",
+          "label": "制剂专利到期日",
+          "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm"
+        },
+        {
+          "region": "CN",
+          "date": "2019-01",
+          "kind": "approval",
+          "label": "心血管风险降低适应症批准",
+          "source": "https://wwwext.amgen.com/newsroom/press-releases/2019/01/amgen-receives-nmpa-approval-for-repatha-evolocumab-in-china-to-reduce-the-risk-of-cardiovascular-events"
+        }
+      ],
+      "note": "治疗方法、制剂及组合物权利适用范围存在差异。",
+      "period": "2025",
+      "regionNotes": {
+        "US": "年报分列抗体与治疗方法专利。方法权利的适用范围及商业进入时间另核。",
+        "EU": "年报分列组合物、治疗方法和制剂专利，部分国家另有 SPC。",
+        "CN": "已确认原研心血管适应症批准。中国专利与入市时间待核。"
+      },
+      "regionSources": {
+        "US": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm",
+        "EU": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm",
+        "CN": "https://wwwext.amgen.com/newsroom/press-releases/2019/01/amgen-receives-nmpa-approval-for-repatha-evolocumab-in-china-to-reduce-the-risk-of-cardiovascular-events"
+      }
+    },
+    {
+      "id": "mepolizumab",
+      "issuer": "GSK",
+      "source": "https://www.gsk.com/media/g0lnid23/fy-2025-results-announcement.pdf",
+      "sales": 2.008,
+      "currency": "GBP",
+      "scope": "Nucala 净销售额，覆盖产品各剂型",
+      "regionalSales": {
+        "US": 1.04,
+        "EU": 0.521,
+        "INTL": 0.447
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2015-11",
+          "kind": "approval",
+          "label": "FDA 初次批准 Nucala",
+          "source": "https://purplebooksearch.fda.gov/index.cfm?blaNo=125526&event=productdetails"
+        },
+        {
+          "region": "EU",
+          "date": "2015-12",
+          "kind": "approval",
+          "label": "欧盟初次授权",
+          "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/nucala"
+        },
+        {
+          "region": "CN",
+          "date": "2025-Q4",
+          "kind": "approval",
+          "label": "中国批准 COPD 适应症",
+          "source": "https://www.gsk.com/media/g0lnid23/fy-2025-results-announcement.pdf"
+        }
+      ],
+      "note": "",
+      "period": "2025",
+      "regionNotes": {
+        "US": "FDA 有小瓶和预充剂型记录。基础化合物、制剂及适应症保护期限待核。",
+        "EU": "EPAR 可查不同剂型及适应症。成员国 SPC 与商业进入时间待核。",
+        "CN": "GSK 已披露中国新增适应症。中国基础和制剂专利覆盖待核。"
+      },
+      "regionSources": {
+        "US": "https://purplebooksearch.fda.gov/index.cfm?blaNo=125526&event=productdetails",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/nucala",
+        "CN": "https://www.gsk.com/en-gb/media/press-releases/gsk-s-nucala-mepolizumab-approved-in-china-for-treatment-of-adults-with-chronic-rhinosinusitis-with-nasal-polyps/"
+      }
+    },
+    {
+      "id": "belimumab",
+      "issuer": "GSK",
+      "source": "https://www.gsk.com/media/g0lnid23/fy-2025-results-announcement.pdf",
+      "sales": 1.773,
+      "currency": "GBP",
+      "scope": "Benlysta 净销售额，静脉与皮下合计",
+      "regionalSales": {
+        "US": 1.464,
+        "EU": 0.134,
+        "INTL": 0.175
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2011-03",
+          "kind": "approval",
+          "label": "FDA 初次批准静脉剂型",
+          "source": "https://purplebooksearch.fda.gov/index.cfm?blaNo=125370&event=productdetails"
+        },
+        {
+          "region": "EU",
+          "date": "2011-07",
+          "kind": "approval",
+          "label": "欧盟初次授权",
+          "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/benlysta"
+        },
+        {
+          "region": "CN",
+          "date": "2022",
+          "kind": "approval",
+          "label": "中国批准成人活动性狼疮性肾炎适应症",
+          "source": "https://www.gsk.com/en-gb/media/press-releases/china-s-national-medical-products-administration-approves-benlysta-belimumab-for-adult-patients-with-active-lupus-nephritis/"
+        }
+      ],
+      "note": "",
+      "period": "2025",
+      "regionNotes": {
+        "US": "静脉和皮下获批时间不同。须分别核对抗体、制剂、装置及适应症权利。",
+        "EU": "EPAR 列示静脉和皮下剂型。成员国 SPC 及商业进入时间待核。",
+        "CN": "GSK 披露狼疮性肾炎适应症核准。中国专利与竞争时间待核。"
+      },
+      "regionSources": {
+        "US": "https://purplebooksearch.fda.gov/index.cfm?blaNo=125370&event=productdetails",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/benlysta",
+        "CN": "https://www.gsk.com/en-gb/media/press-releases/china-s-national-medical-products-administration-approves-benlysta-belimumab-for-adult-patients-with-active-lupus-nephritis/"
+      }
+    },
+    {
+      "id": "aflibercept-8mg",
+      "issuer": "再生元",
+      "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000008/regn-20251231.htm",
+      "sales": null,
+      "currency": "USD",
+      "scope": "Eylea HD 8 mg，美国净产品销售额",
+      "regionalSales": {
+        "US": 1.6369
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2023-08-18",
+          "kind": "approval",
+          "label": "Eylea HD 8 mg 初次 FDA 批准",
+          "source": "https://purplebooksearch.fda.gov/index.cfm?blaNo=761355&event=productdetails"
+        },
+        {
+          "region": "EU",
+          "date": "2024-01",
+          "kind": "approval",
+          "label": "欧委会批准 Eylea 8 mg 规格",
+          "source": "https://www.bayer.com/media/en-us/new-eylea-8-mg-approved-in-eu/"
+        },
+        {
+          "region": "CN",
+          "date": "2025",
+          "kind": "approval",
+          "label": "拜耳披露 Eylea 8 mg 中国获批",
+          "source": "https://www.bayer.com/media/en-us/eylea-8-mg-approved-in-china-for-wet-age-related-macular-degeneration/"
+        },
+        {
+          "region": "US",
+          "date": "2027-06-14",
+          "kind": "patent",
+          "label": "8 mg 档案中的制剂专利 11,066,458 和 11,084,865",
+          "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000008/regn-20251231.htm"
+        },
+        {
+          "region": "US",
+          "date": "2032-01-11",
+          "kind": "patent",
+          "label": "10,828,345 号治疗方法专利",
+          "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000008/regn-20251231.htm"
+        },
+        {
+          "region": "US",
+          "date": "2039-05-15",
+          "kind": "patent",
+          "label": "11,103,552 号制剂专利",
+          "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000008/regn-20251231.htm"
+        },
+        {
+          "region": "US",
+          "date": "2039-05-10",
+          "kind": "patent",
+          "label": "12,168,036 号治疗方法专利",
+          "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000008/regn-20251231.htm"
+        },
+        {
+          "region": "EU",
+          "date": "2042-05-16",
+          "kind": "patent",
+          "label": "再生元列示欧洲 4,185,318 号治疗方法专利",
+          "source": "https://www.sec.gov/Archives/edgar/data/872589/000087258926000008/regn-20251231.htm"
+        }
+      ],
+      "note": "2 mg 品牌的 HCPCS、获批和商业上市数据在阿柏西普 2 mg 视图查看。",
+      "period": "2025",
+      "regionNotes": {
+        "US": "独立 FDA 许可 BLA 761355。再生元 10-K 单列 8 mg 制剂与用途专利。实际竞争窗口待核。",
+        "EU": "EMA 在 Eylea 档案列示 8 mg，10-K 单列欧洲用途专利。各成员国范围和市场进入时间待核。",
+        "CN": "拜耳披露中国湿性年龄相关性黄斑变性获批。8 mg 专利状态待核。"
+      },
+      "regionSources": {
+        "US": "https://purplebooksearch.fda.gov/index.cfm?blaNo=761355&event=productdetails",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/eylea",
+        "CN": "https://www.bayer.com/media/en-us/eylea-8-mg-approved-in-china-for-wet-age-related-macular-degeneration/"
+      },
+      "molecule": {
+        "name": "Aflibercept 8 mg",
+        "cn": "阿柏西普 8 mg",
+        "reference": "Eylea HD",
+        "parent": "aflibercept"
+      }
+    },
+    {
+      "id": "adalimumab",
+      "issuer": "艾伯维",
+      "source": "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm",
+      "sales": 4.54,
+      "currency": "USD",
+      "scope": "Humira 净销售额",
+      "regionalSales": {
+        "US": 3.062,
+        "ROW": 1.478
+      },
+      "events": [
+        {
+          "region": "EU",
+          "date": "2018-10-16",
+          "kind": "estimate",
+          "label": "和解允许 Amgevita 在多数欧盟市场商业化的最早日期",
+          "source": "https://www.amgen.com/newsroom/press-releases/2017/09/amgen-and-abbvie-agree-to-settlement-allowing-commercialization-of-amgevita"
+        },
+        {
+          "region": "US",
+          "date": "2023-01-31",
+          "kind": "launch",
+          "label": "Amjevita 在美国商业上市",
+          "source": "https://investors.amgen.com/news-releases/news-release-details/amjevitatm-adalimumab-atto-first-biosimilar-humirar-now"
+        },
+        {
+          "region": "CN",
+          "date": "2019",
+          "kind": "approval",
+          "label": "百奥泰 BAT1406 获批",
+          "source": "https://www.bio-thera.com/pipeline.html"
+        }
+      ],
+      "note": "",
+      "period": "2025",
+      "regionNotes": {
+        "US": "Amgen 和解许可已兑现。浓度、注射装置及其他品牌和解条款分别核对。",
+        "EU": "和解允许 Amgevita 自 2018 年 10 月进入，多国市场准入时间各异。",
+        "CN": "已确认本地获批竞品。按各品牌核查商业化和准入。"
+      },
+      "regionSources": {
+        "US": "https://www.amgen.com/newsroom/press-releases/2017/09/amgen-and-abbvie-agree-to-settlement-allowing-commercialization-of-amgevita",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/humira",
+        "CN": "https://www.bio-thera.com/pipeline.html"
+      }
+    },
+    {
+      "id": "ustekinumab",
+      "issuer": "强生",
+      "source": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/R50.htm",
+      "sales": 6.078,
+      "currency": "USD",
+      "scope": "Stelara 净销售额，静脉与皮下合计",
+      "regionalSales": {
+        "US": 3.847,
+        "INTL": 2.23
+      },
+      "events": [
+        {
+          "region": "US",
+          "date": "2023-10-31",
+          "kind": "approval",
+          "label": "FDA 批准首个类似药 Wezlana",
+          "source": "https://purplebooksearch.fda.gov/index.cfm?blaNo=761285&event=productdetails"
+        },
+        {
+          "region": "EU",
+          "date": "2024-07-22",
+          "kind": "launch",
+          "label": "STADA 与 Alvotech 公布 Uzpruvo 在欧洲多数市场商业上市",
+          "source": "https://www.alvotech.com/newsroom/stada-and-alvotech-launch-uzpruvo-the-first-approved-ustekinumab-biosimilar-to-stelara-across-europe"
+        },
+        {
+          "region": "US",
+          "date": "2025-02-21",
+          "kind": "launch",
+          "label": "Teva 与 Alvotech 公布 Selarsdi 商业上市",
+          "source": "https://www.alvotech.com/newsroom/teva-and-alvotech-announce-selarsdi-ustekinumab-aekn-injection-now-available-in-the-u-s"
+        },
+        {
+          "region": "US",
+          "date": "2023-09-25",
+          "kind": "patent",
+          "label": "FDA Purple Book 列示的 6,902,734 号专利届满",
+          "source": "https://purplebooksearch.fda.gov/patent-list"
+        },
+        {
+          "region": "US",
+          "date": "2032-07-06",
+          "kind": "patent",
+          "label": "FDA Purple Book 列示两项权利节点（8,852,889、9,475,858）",
+          "source": "https://purplebooksearch.fda.gov/patent-list"
+        },
+        {
+          "region": "US",
+          "date": "2033-03-14",
+          "kind": "patent",
+          "label": "FDA Purple Book 列示两项权利节点（9,217,168、9,663,810）",
+          "source": "https://purplebooksearch.fda.gov/patent-list"
+        },
+        {
+          "region": "US",
+          "date": "2039-09-24",
+          "kind": "patent",
+          "label": "FDA Purple Book 列示 10,961,307 号专利到期",
+          "source": "https://purplebooksearch.fda.gov/patent-list"
+        }
+      ],
+      "note": "",
+      "period": "2025",
+      "regionNotes": {
+        "US": "不同类似药依各自授权和和解条款进入。皮下与静脉逐品牌核查。",
+        "EU": "首个皮下类似药在欧洲多数市场商业上市，准入与适应症排他分市场核对。",
+        "CN": "原研、在研产品和本地商业准入按披露核实。地区专利届满待核。"
+      },
+      "regionSources": {
+        "US": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/jnj-20251228.htm",
+        "EU": "https://www.ema.europa.eu/en/medicines/human/EPAR/stelara",
+        "CN": "https://www.nmpa.gov.cn/datasearch/home-index.html"
+      }
+    },
+    {
+      "id": "guselkumab",
+      "source": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/R50.htm",
+      "regionalSales": {
+        "US": 3.529,
+        "INTL": 1.626
+      }
+    },
+    {
+      "id": "pembrolizumab",
+      "source": "https://www.sec.gov/Archives/edgar/data/310158/000031015826000063/R47.htm",
+      "regionalSales": {
+        "US": 18.867,
+        "INTL": 12.814
+      }
+    },
+    {
+      "id": "daratumumab",
+      "source": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/R50.htm",
+      "regionalSales": {
+        "US": 8.266,
+        "INTL": 6.085
+      }
+    },
+    {
+      "id": "nivolumab",
+      "source": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000002/a2025q4ex991.htm",
+      "regionalSales": {
+        "US": 5.904,
+        "INTL": 4.145
+      }
+    },
+    {
+      "id": "risankizumab",
+      "source": "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm",
+      "regionalSales": {
+        "US": 15.202,
+        "INTL": 2.36
+      }
+    }
+  ],
+  "firstLaunch": {
+    "tocilizumab": {
+      "date": "2024-04",
+      "source": "https://www.fresenius-kabi.com/us/news-and-events/fresenius-accelerates-momentum-in-its--bio--pharma-business-and-"
+    },
+    "infliximab": {
+      "date": "2016-11",
+      "source": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer_announces_the_u_s_availability_of_biosimilar_inflectra_infliximab_dyyb"
+    },
+    "filgrastim": {
+      "date": "2015-09",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    "pegfilgrastim": {
+      "date": "2018-07",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    "trastuzumab": {
+      "date": "2019-07-18",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    "bevacizumab": {
+      "date": "2019-07-18",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    "rituximab": {
+      "date": "2019-11",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    "ranibizumab": {
+      "date": "2022-07-01",
+      "source": "https://investors.biogen.com/node/25931/html"
+    },
+    "aflibercept": {
+      "date": "2024Q4",
+      "source": "https://investors.amgen.com/node/36186/ixbrl-viewer"
+    }
+  },
+  "brandLaunches": [
+    {
+      "molecule": "adalimumab",
+      "region": "US",
+      "brand": "Amjevita",
+      "date": "2023-01-31",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amjevitatm-adalimumab-atto-first-biosimilar-humirar-now"
+    },
+    {
+      "molecule": "ustekinumab",
+      "region": "EU",
+      "brand": "Uzpruvo",
+      "date": "2024-07-22",
+      "source": "https://www.alvotech.com/newsroom/stada-and-alvotech-launch-uzpruvo-the-first-approved-ustekinumab-biosimilar-to-stelara-across-europe"
+    },
+    {
+      "molecule": "ustekinumab",
+      "region": "US",
+      "brand": "Selarsdi",
+      "date": "2025-02-21",
+      "source": "https://www.alvotech.com/newsroom/teva-and-alvotech-announce-selarsdi-ustekinumab-aekn-injection-now-available-in-the-u-s"
+    },
+    {
+      "molecule": "ustekinumab",
+      "region": "US",
+      "brand": "Yesintek",
+      "date": "2025-02",
+      "source": "https://www.bioconbiologics.com/biocon-biologics-launches-yesintek-ustekinumab-kfce-biosimilar-to-stelara-in-the-united-states/"
+    },
+    {
+      "molecule": "tocilizumab",
+      "region": "US",
+      "brand": "Tyenne",
+      "date": "2024-04",
+      "source": "https://www.fresenius-kabi.com/us/news-and-events/fresenius-accelerates-momentum-in-its--bio--pharma-business-and-"
+    },
+    {
+      "molecule": "infliximab",
+      "region": "US",
+      "brand": "Inflectra",
+      "date": "2016-11",
+      "source": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer_announces_the_u_s_availability_of_biosimilar_inflectra_infliximab_dyyb"
+    },
+    {
+      "molecule": "filgrastim",
+      "region": "US",
+      "brand": "Zarxio",
+      "date": "2015-09",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    {
+      "molecule": "pegfilgrastim",
+      "region": "US",
+      "brand": "Fulphila",
+      "date": "2018-07",
+      "source": "https://aspe.hhs.gov/sites/default/files/documents/2d5c0a194c180b52d1c760d3bb09f70a/Biosimilars%20Final%20Report_250825_v508.pdf"
+    },
+    {
+      "molecule": "ustekinumab",
+      "region": "US",
+      "brand": "Wezlana",
+      "date": "2025Q1",
+      "source": "https://investors.amgen.com/node/36186/ixbrl-viewer"
+    },
+    {
+      "molecule": "adalimumab",
+      "region": "US",
+      "brand": "Hadlima",
+      "date": "2023-07",
+      "source": "https://www.organon.com/news/organon-samsung-bioepis-announce-us-launch-of-humira-biosimilar-hadlima-adalimumab-bwwd-in-multiple-presentations-consistent-with-originator/"
+    },
+    {
+      "molecule": "aflibercept",
+      "region": "US",
+      "brand": "Pavblu",
+      "date": "2024Q4",
+      "source": "https://investors.amgen.com/node/36186/ixbrl-viewer"
+    },
+    {
+      "molecule": "ranibizumab",
+      "region": "US",
+      "brand": "Byooviz",
+      "date": "2022-07-01",
+      "source": "https://investors.biogen.com/node/25931/html"
+    }
+  ],
+  "brandSales": [
+    {
+      "molecule": "adalimumab",
+      "brand": "Amjevita",
+      "value": 0.048,
+      "region": "US",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "adalimumab",
+      "brand": "Amgevita",
+      "value": 0.549,
+      "region": "ROW",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "ustekinumab",
+      "brand": "Wezlana",
+      "value": 0.123,
+      "region": "US",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "ustekinumab",
+      "brand": "Wezenla",
+      "value": 0.15,
+      "region": "ROW",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "aflibercept",
+      "brand": "Pavblu",
+      "value": 0.691,
+      "region": "US",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "aflibercept",
+      "brand": "Pavblu",
+      "value": 0.009,
+      "region": "ROW",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "bevacizumab",
+      "brand": "Mvasi",
+      "value": 0.573,
+      "region": "US",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    },
+    {
+      "molecule": "bevacizumab",
+      "brand": "Mvasi",
+      "value": 0.198,
+      "region": "ROW",
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "scope": "净产品销售",
+      "period": "2025",
+      "currency": "USD"
+    }
+  ],
+  "assets": [
+    {
+      "id": "安曲妥",
+      "company": "qilu",
+      "molecule": "trastuzumab",
+      "names": [
+        "安曲妥"
+      ],
+      "source": "https://www.qilu-pharma.com/news_details/374.html",
+      "stage": "获批",
+      "region": "CN",
+      "date": null,
+      "description": "齐鲁自研曲妥珠单抗类似药。",
+      "note": "",
+      "approvalKeys": [
+        [
+          "安曲妥",
+          "CN"
+        ]
+      ]
+    },
+    {
+      "id": "Pavblu",
+      "company": "amgen",
+      "molecule": "aflibercept",
+      "names": [
+        "Pavblu"
+      ],
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "stage": "已商业化",
+      "region": "US",
+      "date": null,
+      "description": "阿柏西普 2 mg 类似药。",
+      "note": "",
+      "approvalKeys": [
+        [
+          "Pavblu",
+          "US"
+        ]
+      ]
+    },
+    {
+      "id": "Avsola",
+      "company": "amgen",
+      "molecule": "infliximab",
+      "names": [
+        "Avsola"
+      ],
+      "source": "https://investors.amgen.com/news-releases/news-release-details/amgen-reports-fourth-quarter-and-full-year-2025-financial/",
+      "stage": "已商业化",
+      "region": "US",
+      "date": null,
+      "description": "英夫利西单抗类似药。",
+      "note": "",
+      "approvalKeys": [
+        [
+          "Avsola",
+          "US"
+        ]
+      ]
+    },
+    {
+      "id": "Bekemv",
+      "company": "amgen",
+      "molecule": "eculizumab",
+      "names": [
+        "Bekemv"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm",
+      "stage": "获批",
+      "region": "US／EU",
+      "date": null,
+      "description": "依库珠单抗类似药。",
+      "note": "",
+      "approvalKeys": [
+        [
+          "Bekemv",
+          "EU"
+        ],
+        [
+          "Bekemv",
+          "US"
+        ]
+      ]
+    }
+  ],
+  "development": [
+    {
+      "asset": "HLX15",
+      "region": "CN",
+      "stage": "I 期",
+      "date": "2023",
+      "source": "https://clinicaltrials.gov/study/NCT05679258",
+      "description": "HLX15 静脉制剂 I 期研究登记。皮下关键 PK 研究另列。"
+    },
+    {
+      "asset": "HLX17",
+      "region": "US",
+      "stage": "I 期",
+      "date": "2026-06",
+      "source": "https://www.henlius.com/en/newsd/0/31394.html",
+      "description": "美国首例受试者给药。"
+    },
+    {
+      "asset": "安曲妥",
+      "region": "CN",
+      "stage": "获批",
+      "date": "2024-07-05",
+      "source": "https://www.qilu-pharma.com/news_details/374.html",
+      "description": "公司公告确认中国上市许可。",
+      "setCurrent": true
+    },
+    {
+      "asset": "安曲妥",
+      "region": "CN",
+      "stage": "III 期",
+      "date": "2020-04",
+      "source": "https://www.qilu-pharma.com/news_details/374.html",
+      "description": "公司披露中国 III 期启动月份。"
+    },
+    {
+      "asset": "HLX15",
+      "region": "CN",
+      "stage": "I 期完成",
+      "date": "2024-06",
+      "source": "https://www.henlius.com/en/newsd/0/24650.html",
+      "description": "静脉制剂关键 PK 研究完成。研究使用多地来源的原研对照。",
+      "setCurrent": true
+    },
+    {
+      "asset": "HLX15",
+      "region": "US",
+      "stage": "授权合作",
+      "date": "2025-02-06",
+      "source": "https://www.henlius.com/en/newsd/0/24865.html",
+      "description": "Dr. Reddy’s 获得美国静脉和皮下商业化权益。"
+    },
+    {
+      "asset": "AVT16",
+      "region": "US",
+      "stage": "BLA 已受理",
+      "date": "2026-06-08",
+      "source": "https://www.alvotech.com/newsroom/alvotech-announces-fda-acceptance-of-biologics-license-application-for-avt16-a-proposed-interchangeable-biosimilar-to-entyvio",
+      "description": "FDA 接受静脉冻干制剂 BLA 审查，皮下 AVT80 为另一项目。",
+      "setCurrent": true
+    }
+  ],
+  "partners": [
+    {
+      "asset": "HLX15",
+      "name": "Dr. Reddy’s",
+      "role": "静脉与皮下制剂独家商业化",
+      "territories": "美国及 42 个欧洲国家和地区",
+      "source": "https://www.henlius.com/en/newsd/0/24865.html"
+    }
+  ],
+  "quarterlyAudit": {
+    "verifiedVersion": "2026-07",
+    "latestChecked": "2026-11-19",
+    "link": "https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/medicare-quarterly-part-b-spending-by-drug",
+    "note": "当前可复核的 CMS 7 月版含 2025 全年与 2026Q1。11 月 19 日版原始文件尚未取得，未纳入季度计算。"
+  },
+  "patentResources": {
+    "US": "https://purplebooksearch.fda.gov/patent-list",
+    "EU": "https://www.ema.europa.eu/en/medicines",
+    "CN": "https://www.nmpa.gov.cn/datasearch/home-index.html"
+  }
+}

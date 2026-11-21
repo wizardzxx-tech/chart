@@ -1,4 +1,5 @@
 import {drawLines,closestPeriod,colorPalette,isNumber} from './chart.js';
+import {drawIndex} from './research.js';
 
 const byId=id=>document.getElementById(id);
 const markets=byId('view-market');
@@ -15,9 +16,16 @@ const metrics={
   spending:['annual','spending','年度支出'],
   quarterSpending:['quarterly','spending','近期支出'],
   claims:['quarterly','claims','近期申报次数'],
+  annualClaims:['annual','claims','年度申报次数'],
 };
 const difference=(a,b)=>isNumber(a)&&isNumber(b)?((a-b)>0?'+':'')+((a-b)*100).toFixed(1)+' 个百分点':'—';
 const ratio=(number,total)=>isNumber(number)&&total>0?number/total:null;
+const quarterNumber=period=>/^\d{4}Q[1-4]$/.test(period)?Number(period.slice(0,4))*4+Number(period.at(-1)):null;
+function priorPeriod(rows, period, dataset){
+  if(dataset==='annual')return rows.find(row=>Number(row.period)===Number(period)-1);
+  const quarter=quarterNumber(period);
+  return quarter===null?undefined:rows.find(row=>quarterNumber(row.period)===quarter-1);
+}
 const total=(rows,field)=>rows.reduce((sum,row)=>sum+(row[field]??0),0);
 const moneyAxis=n=>'$'+nf.format(n);
 const pctAxis=n=>Math.round(n*100)+'%';
@@ -28,7 +36,7 @@ const priceAxis=series=>{const max=Math.max(1,...series.flatMap(s=>Object.values
 const screen={};
 const shareState={canvas:'share-canvas',legend:'share-legend',hidden:new Set()};
 const priceState={canvas:'price-canvas',legend:'price-legend',hidden:new Set()};
-let cms,refs,groups,group,pending,mode;
+let cms,refs,research,groups,group,pending,mode;
 let shareRows=[],priceRows=[];
 
 function periodLabel(period) {
@@ -85,7 +93,7 @@ function prepareRows(dataset,metric){
     const sample=total(items,'value');
     const original=items.find(row=>row.item.reference);
     const bios=items.filter(row=>!row.item.reference);
-    const combined=original&&bios.length?ratio(total(bios,'value'),sample):null;
+    const combined=original?ratio(total(bios,'value'),sample):null;
     return {period,items:items.map(row=>({...row,share:ratio(row.value,sample)})),original,combined,sample};
   }).filter(p=>p.items.length);
 }
@@ -131,7 +139,7 @@ function renderShare(){
   const selected=shareRows.some(r=>r.period===oldPeriod)?oldPeriod:shareRows.at(-1)?.period;
   choices('market-period',shareRows.map(r=>[r.period,periodLabel(r.period)]),selected);
   const text=dataset==='annual'?'传统 Medicare Part B · 年度原表':
-    `传统 Medicare Part B · CMS ${cms.sources.quarterly.version} 版初步数据，会随申报结算修订`;
+    `传统 Medicare Part B · ${esc(research.quarterlyAudit.note)} ${external(research.quarterlyAudit.link,'CMS 更新入口')}`;
   note('market-metric-note',text);
   note('market-source',external(cms.sources[dataset].file,'CMS 原始 CSV'));
   if (!available){
@@ -139,12 +147,14 @@ function renderShare(){
     note('market-chart-note','此分子在该口径暂无可展示的已核对数据。');
     return;
   }
-  const chartRows=shareRows.filter(r=>dataset!=='quarterly'||cms.quarterPeriods[r.period]?.kind==='quarter');
+  const chartRows=dataset==='annual'?shareRows:Object.values(cms.quarterPeriods)
+    .filter(p=>p.kind==='quarter').sort((a,b)=>a.id.localeCompare(b.id))
+    .map(p=>shareRows.find(row=>row.period===p.id)||{period:p.id,items:[]});
   const series=seriesFor(chartRows,'share');
   shareState.spec={periods:chartRows.map(r=>r.period),series,selected,labels:periodLabel,formatY:pctAxis,upper:1};
   note('market-chart-title',label+'份额');
-  note('market-chart-note',chartRows.length>1?'选择期间或点击图表查看品牌明细。':
-    '当前可独立显示单季度的数据点。全年初步数在期间选择器中查看。');
+  note('market-chart-note',dataset==='annual'?'选择期间或点击图表查看品牌明细。':
+    '折线仅显示可独立核对的单季度。全年和累计初步值可在期间选择器查看。');
   useLegend(shareState);
   shareEvidence();
 }
@@ -154,11 +164,14 @@ function shareEvidence(){
   const record=shareRows.find(row=>row.period===period);
   if(!record)return;
   const [dataset,metric,label]=metrics[byId('cms-metric').value];
-  const previous=dataset==='annual'?shareRows.find(row=>Number(row.period)===Number(period)-1):null;
-  note('market-summary',stats([['原研',group.reference],['类似药合计',share(record.combined)],['可见品牌',record.items.length]]));
+  const previous=priorPeriod(shareRows,period,dataset);
+  const original=record.items.find(row=>row.item.reference)?.share;
+  note('market-summary',stats([['原研份额',share(original)],['类似药合计',share(record.combined)],
+    ...(previous?[[dataset==='annual'?'类似药份额同比':'类似药份额环比',difference(record.combined,previous.combined)]]:[]),
+    ['可见品牌',record.items.length]]));
   note('market-period-label',esc(periodLabel(period)));
   const rawLabel=metric==='units'?'计费单位（'+group.unit+'）':label;
-  note('market-table',table(['品牌','份额',...(previous?['同比']:[]),rawLabel,'HCPCS'],record.items.map(row=>[
+  note('market-table',table(['品牌','份额',...(previous?[dataset==='annual'?'同比':'环比']:[]),rawLabel,'HCPCS'],record.items.map(row=>[
     esc(row.item.name),share(row.share),
     ...(previous?[difference(row.share,previous.items.find(r=>r.code===row.code)?.share)]:[]),
     esc(valueFor(row.value,metric)),row.code,
@@ -213,6 +226,7 @@ function priceEvidence(){
 
 function renderMilestones(){
   byId('market-approvals').href='#approvals/'+encodeURIComponent(group.id);
+  byId('market-dashboard').href='#dashboard/'+encodeURIComponent(group.id);
   note('market-status',group.products.length?
     table(['品牌','FDA 获批','美国商业上市','本库最早可见医保申报','企业与权益'],group.products.map(p=>[
       esc(p.name)+(p.reference?'<small>原研</small>':''),
@@ -251,9 +265,9 @@ function cohortPlot(cohorts,key,id,legendId) {
   const maximum=Math.max(1,...items.flatMap(c=>c[key].map(row=>row.age)));
   const periods=Array.from({length:maximum},(_,i)=>i+1);
   const series=items.map(item=>({
-    label:item.label,color:colorPalette[refs.cohorts.indexOf(item)%colorPalette.length],
+    label:item.label,color:colorPalette[refs.cohorts.findIndex(c=>c.id===item.id)%colorPalette.length],
     values:Object.fromEntries(item[key].map(point=>[point.age,point.value])),
-    dash:refs.cohorts.indexOf(item)>3,
+    dash:refs.cohorts.findIndex(c=>c.id===item.id)>3,
   }));
   note(legendId,series.map(s=>`<span class="series-key"><i style="--series-color:${s.color}"></i>${esc(s.label)}</span>`).join(''));
   plot(id,{periods,series,labels:n=>'年 '+n,formatY:key==='usage'?pctAxis:n=>nf.format(n),
@@ -263,15 +277,31 @@ function renderCohorts(){
   const category=byId('benchmark-category').value;
   const rows=refs.cohorts.filter(c=>!category||c.category===category);
   cohortPlot(rows,'usage','benchmark-uptake','benchmark-uptake-legend');
-  cohortPlot(rows,'price','benchmark-price','benchmark-price-legend');
-  note('benchmark-table',table(['分子','首个类似药上市年','最新公共剂量份额','原研价格基准期','最新 Q4 指数'],rows.map(c=>[
+  const priceRows=rows.map(cohort=>{
+    const observed=research.indexes[cohort.id].originator;
+    const price=observed.rows.filter(row=>row.period.endsWith('Q4')&&Number(row.period.slice(0,4))>cohort.launch)
+      .map(row=>({age:Number(row.period.slice(0,4))-cohort.launch,period:row.period,value:row.index,limit:row.value}));
+    return {...cohort,base:observed.base,baseLimit:observed.rows[0].value,
+      baseType:observed.preCompetition?'竞争前一期':'最早观察期',price};
+  });
+  cohortPlot(priceRows,'price','benchmark-price','benchmark-price-legend');
+  note('benchmark-table',table(['分子','首个类似药上市年','最新公共剂量份额','原研价格基准期','最新 Q4 指数'],priceRows.map(c=>[
     `<a href="#market/${c.id}">${esc(c.label)}</a>`,
     c.launch,esc(c.usage.at(-1)?.period||'—')+' · '+share(c.usage.at(-1)?.value),
-    esc(periodLabel(c.base))+' · '+valueFor(c.price[0].limit,'price')+'／'+esc(c.unit),
-    esc(periodLabel(c.price.at(-1).period))+' · '+nf.format(c.price.at(-1).value),
+    esc(periodLabel(c.base))+' · '+esc(c.baseType)+' · '+valueFor(c.baseLimit,'price')+'／'+esc(c.unit),
+    c.price.length?esc(periodLabel(c.price.at(-1).period))+' · '+nf.format(c.price.at(-1).value):'—',
   ])));
   note('benchmark-source',external(refs.hhs,'HHS 上市年份表')+' · '+external(cms.sources.annual.link,'CMS 年度数据')+' · '+
     external(cms.sources.payment.link,'CMS 季度支付限额'));
+  const select=byId('benchmark-molecule');
+  choices(select.id,rows.map(item=>[item.id,item.label]),select.value);
+  if(!select.value&&rows.length)select.selectedIndex=0;
+  renderIndexDetail();
+}
+function renderIndexDetail(){
+  const item=research.indexes[byId('benchmark-molecule').value];
+  drawIndex(byId('benchmark-payment-detail'),item,cms,'originator');
+  drawIndex(byId('benchmark-weighted-detail'),item,cms,'weighted');
 }
 function renderReportIndex(){
   note('market-report-index',table(['报告版次','报告季度','发布日期','原始文档'],[...refs.archive].reverse().map(r=>[
@@ -312,11 +342,12 @@ function updateRoute(){
   if(view!=='market'&&view!=='model')return;
   if(cms&&refs){ if(view==='market') showMarket(params[0]); return; }
   if(pending)return;
-  pending=Promise.all(['medicare','market-references'].map(id=>fetch(new URL('./data/'+id+'.json',import.meta.url)).then(r=>{
+  pending=Promise.all(['medicare','market-references','market-research'].map(id=>fetch(new URL('./data/'+id+'.json',import.meta.url)).then(r=>{
     if(!r.ok)throw new Error(id+' HTTP '+r.status);return r.json();
-  }))).then(([medicare,references])=>{
+  }))).then(([medicare,references,updated])=>{
     cms=medicare;
     refs=references;
+    research=updated;
     groups=[...cms.groups,...refs.quotes.filter(q=>!cms.groups.some(g=>g.id===q.molecule)).map(q=>({
       id:q.molecule,label:q.label,reference:q.reference,products:[],
     }))];
@@ -358,6 +389,7 @@ byId('cms-metric').addEventListener('change',renderShare);
 byId('market-period').addEventListener('change',shareEvidence);
 byId('market-price-period').addEventListener('change',priceEvidence);
 byId('benchmark-category').addEventListener('change',renderCohorts);
+byId('benchmark-molecule').addEventListener('change',renderIndexDetail);
 for(const [state,selector,callback] of [[shareState,'market-period',shareEvidence],[priceState,'market-price-period',priceEvidence]]){
   byId(state.canvas).addEventListener('click',event=>{
     const spec=state.spec;
@@ -368,8 +400,14 @@ for(const [state,selector,callback] of [[shareState,'market-period',shareEvidenc
 }
 byId('market-export').addEventListener('click',()=>{
   const [dataset,metric,label]=metrics[byId('cms-metric').value];
-  window.downloadCsv(group.id+'-'+metric,['分子','期间','品牌','HCPCS',label,'份额','CMS 原始来源'],
-    shareRows.flatMap(p=>p.items.map(row=>[group.label,periodLabel(p.period),row.item.name,row.code,row.value,share(row.share),cms.sources[dataset].file])));
+  window.downloadCsv(group.id+'-'+metric,['分子','期间','品牌','HCPCS',label,'本期分母','份额',
+      dataset==='annual'?'同比':'环比','CMS 原始来源'],
+    shareRows.flatMap(p=>{
+      const prior=priorPeriod(shareRows,p.period,dataset);
+      return p.items.map(row=>[group.label,periodLabel(p.period),row.item.name,row.code,row.value,p.sample,share(row.share),
+        difference(row.share,prior?.items.find(r=>r.code===row.code)?.share),
+        cms.quarterPeriods[p.period]?.file||cms.sources[dataset].file]);
+    }));
 });
 byId('price-export').addEventListener('click',()=>{
   window.downloadCsv(group.id+'-payment',['分子','生效季','品牌','HCPCS','计费单位','支付限额（美元）','CMS 原始来源'],

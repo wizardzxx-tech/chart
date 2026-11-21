@@ -76,3 +76,15 @@
   .market-duo .market-summary span {font-size:.67rem;}
   .market-main-controls label {flex-basis:100%;}
 }
+
+.research-canvas{display:block;width:100%;height:248px}
+.research-canvas[hidden]{display:none}
+.research-controls label{min-width:min(15rem,100%)}
+.research-block{min-width:0}
+.research-block table small{display:block;margin-top:.18rem;color:var(--muted)}
+.research-row{margin-block:1rem}
+.research-patent-links{display:flex;gap:.8rem;flex-wrap:wrap}
+.nav{flex-wrap:wrap}
+.mark.approval{background:#3e7899}
+.mark.launch{background:#a2535a}
+.mark.litigation{background:#5a437d}
