@@ -67,6 +67,13 @@ function sourceDetails(row) {
   meta.textContent=[retrieved?`采集 ${retrieved}`:'采集日期未留档',classifications?.join(' / '),
     sha256?`SHA-256 ${sha256.slice(0,12)}…`:null,row.chinaCustomsCheck].filter(Boolean).join(' · ');
   box.append(meta);
+  if(row.reconciliation) {
+    const evidence=document.createElement('small');
+    evidence.className='trade-source-meta';
+    evidence.append(original(row.reconciliation.url,row.reconciliation.label),
+      ' · '+row.reconciliation.fields.join(' / '));
+    box.append(evidence);
+  }
   return box;
 }
 
@@ -135,7 +142,8 @@ async function start() {
   const observe=(row,partner,product)=>observation(row,partner,product,includeUnflagged());
   const metricLabels={amount:'金额',qty:'数量',unit:'单位金额',amountYoY:'金额同比',qtyYoY:'数量同比',share:'所选伙伴占比',top5:'前五贸易伙伴占比'};
   if(root.dataset.topic==='medical-devices') controls.unit.value='unit';
-  const names = Object.fromEntries(Object.entries(partners).map(([code,[iso,name]])=>[code,iso?regionNames.of(iso):name]));
+  const names = Object.fromEntries(Object.entries(partners).map(([code,[iso,name]])=>
+    [code,dataset.partnerLabels?.[code]||(iso?regionNames.of(iso):name)]));
   const download=select('download-partners');
   download.hidden=false;
   download.addEventListener('click',()=>{

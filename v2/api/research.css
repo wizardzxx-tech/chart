@@ -1,0 +1,13 @@
+.api-nav{display:flex;flex-wrap:wrap;gap:.65rem;padding:0 0 1.15rem}
+.api-nav a{border:1px solid #d1ded4;border-radius:5px;background:#fff;padding:.48rem .75rem;color:#215949;font-weight:600;text-decoration:none}
+.api-nav a:hover,.api-nav a:focus-visible{background:#eaf3ee;text-decoration:underline}
+.api-panel{margin-bottom:1rem;min-width:0}
+.api-panel h3{margin-top:1.2rem}
+.api-note{font-size:.88rem;color:#50646a;line-height:1.55}
+.api-analysis{border-left:3px solid #538170;padding:.1rem .85rem;background:#f1f6f2;margin:1rem 0}
+.api-table th small,.api-table td small{display:block;margin-top:.2rem;font-weight:400;color:#50646a}
+.api-table td{min-width:5rem}
+#company-table .api-table td,#focus-company .api-table td{min-width:9rem}
+#company-table .api-table th,#focus-company .api-table th{min-width:6rem}
+.api-panel[data-loading] [hidden]{display:none}
+.api-scenario input{font:inherit;color:#173039;padding:7px 9px;border:1px solid #cdd9d6;border-radius:4px;max-width:100%}
