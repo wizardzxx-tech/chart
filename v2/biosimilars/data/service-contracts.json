@@ -1,0 +1,743 @@
+{
+  "last_verified": "2026-11-23",
+  "providers": [
+    {
+      "id": "wuxi",
+      "name": "药明生物",
+      "scope": "生物药开发与制造。H1 2026 公司披露新签及在做的类似药项目。",
+      "source": "https://www.wuxibiologics.com/press-release/wuxi-biologics-reports-strong-profitable-growth-in-h1-2026/",
+      "financial": "未单列生物类似药确认收入或占集团收入比重。",
+      "basis": "2269.HK"
+    },
+    {
+      "id": "evotec",
+      "name": "Evotec / Just–Evotec Biologics",
+      "scope": "开发、技术授权与生产服务。图卢兹厂交割后由 Sandoz 控制。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm",
+      "financial": "Sandoz 已确认许可收入和处置对价见财务表，类似药服务费全年合计未披露。",
+      "basis": "EVO / EVT"
+    },
+    {
+      "id": "lotte",
+      "name": "LOTTE Biologics",
+      "scope": "美国纽约州 Syracuse 原料生产基地。合作安排覆盖多款 Alvotech 类似药。",
+      "source": "https://www.alvotech.com/newsroom/alvotech-and-lotte-biologics-announce-us-based-manufacturing-agreement-to-increase-global-supply",
+      "financial": "项目金额、验证与供货收入均待披露。",
+      "basis": null
+    },
+    {
+      "id": "iqvia",
+      "name": "IQVIA",
+      "scope": "公司设类似药临床、实验室及注册支持团队。",
+      "source": "https://www.iqvia.com/solutions/therapeutics/biosimilars",
+      "financial": "类似药 CRO 合同收入、单项目金额未单列。",
+      "basis": "IQV"
+    },
+    {
+      "id": "samsung-biologics",
+      "name": "Samsung Biologics",
+      "scope": "2025-11-03 宣布完成分拆，CDMO 与 Samsung Bioepis 开发业务分别追踪。",
+      "source": "https://samsungbiologics.com/media/company-news/samsung-biologics-completes-spin-off-to-strengthen-its-focus-as-a-pure-play-cdmo",
+      "financial": "仅关联监管原文具名的生产角色，分子收入未单列。",
+      "basis": "207940.KS"
+    },
+    {
+      "id": "lonza",
+      "name": "Lonza",
+      "scope": "生物药 CDMO。以 EMA 列名确认产品和生产主体。",
+      "source": "https://www.lonza.com/annualreport/2025",
+      "financial": "产品分项供货收入未见披露。",
+      "basis": "LONN"
+    },
+    {
+      "id": "fujifilm",
+      "name": "FUJIFILM Biotechnologies",
+      "scope": "原 Fujifilm Diosynth Biotechnologies。以丹麦和英国法律实体核对授权生产。",
+      "source": "https://www.fujifilm.com/us/en/healthcare/life-sciences/about/life-sciences-business/cdmo-services",
+      "financial": "相关产品批次数及收入未见披露。",
+      "basis": null
+    },
+    {
+      "id": "mabxience",
+      "name": "mAbxience",
+      "scope": "Fresenius 旗下开发及制造平台。公司对外合作与集团内部潜在转产分别记录。",
+      "source": "https://www.fresenius.com/node/7424",
+      "financial": "外部 Sandoz 合作财务条款未见披露。",
+      "basis": null
+    },
+    {
+      "id": "boehringer",
+      "name": "Boehringer Ingelheim",
+      "scope": "生物药合同制造及自研并行，项目按监管文件确认。",
+      "source": "https://www.boehringer-ingelheim.com/biopharmaceutical-contract-manufacturing",
+      "financial": null,
+      "basis": null
+    },
+    {
+      "id": "kbi",
+      "name": "KBI Biopharma",
+      "scope": "以监管文件核对具名原液制造角色。",
+      "source": "https://www.kbibiopharma.com/",
+      "financial": null,
+      "basis": null
+    },
+    {
+      "id": "agc",
+      "name": "AGC Biologics",
+      "scope": "以监管文件核对具名原液制造角色。",
+      "source": "https://www.agcbio.com/",
+      "financial": null,
+      "basis": null
+    },
+    {
+      "id": "swift",
+      "name": "SwiftPharma",
+      "scope": "比利时合同开发与生产商，已公告 PlantForm 项目。",
+      "source": "https://www.plantformcorp.com/news-detail.aspx?id=0efbe60e-55c1-4bcd-83e4-4426c983ba39",
+      "financial": null,
+      "basis": null
+    },
+    {
+      "id": "chime",
+      "name": "Chime Biologics",
+      "scope": "中国 CDMO，已公告与 Daewoong 合作。",
+      "source": "https://chimebiologics.com/daewoong-pharmaceutical-press-release-26/",
+      "financial": null,
+      "basis": null
+    }
+  ],
+  "clients": [
+    {
+      "id": "fresenius",
+      "name": "Fresenius / Fresenius Kabi"
+    },
+    {
+      "id": "kexing",
+      "name": "科兴制药（688136.SH）"
+    },
+    {
+      "id": "plantform",
+      "name": "PlantForm"
+    },
+    {
+      "id": "daewoong",
+      "name": "Daewoong Pharmaceutical"
+    },
+    {
+      "id": "sandoz",
+      "name": "Sandoz"
+    },
+    {
+      "id": "alvotech",
+      "name": "Alvotech"
+    }
+  ],
+  "service_contracts": [
+    {
+      "contract_id": "wuxi-fresenius",
+      "provider_id": "wuxi",
+      "client_id": "fresenius",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "独家开发选择权",
+      "date": "2026-11-02",
+      "service_type": [
+        "CDO"
+      ],
+      "contract_status": "已签框架 · 行权数未披露",
+      "scope": "未来十年最多 37 个可选候选项目。Fresenius 已上市及在研 29 个分子，全面推进后组合上限为 66 个。",
+      "economic_terms": "Fresenius 对实际选择开发的候选项目逐项按服务付费（FFS）。单项目收费、已执行金额及确认收入未披露。",
+      "manufacturing_rights": "长线生产方案由 Fresenius 逐项目决定，可能转入其 mAbxience 网络。Fresenius 持有独家全球商业化权。",
+      "sources": [
+        {
+          "url": "https://www.fresenius.com/Biopharma_Development_Agreement",
+          "label": "Fresenius 合作公告"
+        },
+        {
+          "url": "https://www.fresenius.com/sites/default/files/2026-11/fre_de_q326_rslts_prsn_2.pdf#page=51",
+          "label": "Fresenius 三季报演示 · 第 51 页"
+        }
+      ],
+      "revenue_disclosed": false,
+      "last_verified": "2026-11-23",
+      "pipeline_leads": [
+        "polatuzumab-vedotin",
+        "teprotumumab"
+      ],
+      "events": [
+        {
+          "date": "2026-11-02",
+          "label": "签订框架；Polivy、Tepezza 为公开拟优先开发对象，未披露逐项行权或启动情况。",
+          "url": "https://www.fresenius.com/Biopharma_Development_Agreement"
+        },
+        {
+          "date": "2026-11-04",
+          "label": "Fresenius 将两款分子列入早期开发组合并标注来自该协议，未披露逐项行权、服务里程碑或已支付费用。",
+          "url": "https://www.fresenius.com/sites/default/files/2026-11/fre_de_q326_rslts_prsn_2.pdf#page=51"
+        }
+      ]
+    },
+    {
+      "contract_id": "evotec-sandoz",
+      "provider_id": "evotec",
+      "client_id": "sandoz",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "开发、工艺许可及图卢兹交易",
+      "date": "2025-12-05",
+      "service_type": [
+        "CDO",
+        "CMO",
+        "许可",
+        "资产交易"
+      ],
+      "contract_status": "工厂已交割 · 开发与分成按项目",
+      "scope": "合作始于 2023 年，2024 年扩展。2025 年交割时披露最多 10 个潜在分成分子，其中 6 项已启动，具体分子未公开。",
+      "economic_terms": "整个交易的潜在付款可超过 US$650m，另有分成潜力。20-F 同时披露未来潜在许可与开发款（含里程碑）超过 US$300m，属于同一交易安排。",
+      "manufacturing_rights": "图卢兹厂已转给 Sandoz。Evotec 保留披露的技术许可、开发和潜在分成权益。",
+      "sources": [
+        {
+          "url": "https://www.evotec.com/news/in-a-landmark-industry-transaction-evotec-signs-agreement-with-sandoz-resulting-in-payments-potentially-over-us-650-m-plus-royalties-on-portfolio-of-up-to-10-biosimilar-molecules",
+          "label": "交易条款"
+        },
+        {
+          "url": "https://www.evotec.com/uploads/download-files/PR_2025-12-08_Evotec_Sandoz-Closing_e.pdf",
+          "label": "交割公告"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm",
+          "label": "2025 年 Form 20-F"
+        }
+      ],
+      "revenue_disclosed": true,
+      "last_verified": "2026-11-23",
+      "events": [
+        {
+          "date": "2023",
+          "label": "双方启动开发与制造合作。",
+          "url": "https://www.evotec.com/news/just-evotec-biologics-expands-tech-partnership-for-biosimilars-with-sandoz"
+        },
+        {
+          "date": "2024-07",
+          "label": "扩大技术合作。",
+          "url": "https://www.evotec.com/news/just-evotec-biologics-expands-tech-partnership-for-biosimilars-with-sandoz"
+        },
+        {
+          "date": "2025-03",
+          "label": "早期技术许可收入 US$25m 已确认。",
+          "url": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+        },
+        {
+          "date": "2025-12-05",
+          "label": "图卢兹厂与扩大后的技术许可交易交割。",
+          "url": "https://www.evotec.com/uploads/download-files/PR_2025-12-08_Evotec_Sandoz-Closing_e.pdf"
+        }
+      ]
+    },
+    {
+      "contract_id": "lotte-alvotech",
+      "provider_id": "lotte",
+      "client_id": "alvotech",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "纽约州 Syracuse 多产品生产协议",
+      "date": "2026-10-06",
+      "service_type": [
+        "CMO"
+      ],
+      "contract_status": "已签生产合作 · 商业供货有条件",
+      "scope": "多款抗体生物类似药原液，计划面向全球供应。厂区生物反应器产能 40,000 L。",
+      "economic_terms": "最低批次、单价、合同总值与确认收入未披露。",
+      "manufacturing_rights": "商业供货以成功完成技术转移、生产验证及监管批准为条件。具体分子和产能占用未披露。",
+      "sources": [
+        {
+          "url": "https://www.alvotech.com/newsroom/alvotech-and-lotte-biologics-announce-us-based-manufacturing-agreement-to-increase-global-supply",
+          "label": "Alvotech 合作公告"
+        }
+      ],
+      "revenue_disclosed": false,
+      "last_verified": "2026-11-23",
+      "events": []
+    },
+    {
+      "contract_id": "mabxience-sandoz",
+      "provider_id": "mabxience",
+      "client_id": "sandoz",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "Emicizumab 类似药开发与生产合作",
+      "date": "2026-09-18",
+      "service_type": [
+        "CDO",
+        "CMO",
+        "许可"
+      ],
+      "contract_status": "合作已公告 · 候选药在研",
+      "scope": "合作明确对应 Hemlibra 的类似药。公告未给出候选代号。",
+      "economic_terms": "双方约定的经济条款保密。未披露阶段付款或实际收入。",
+      "manufacturing_rights": "mAbxience 负责开发及生产，拟利用其西班牙和阿根廷的生产网络。Sandoz 取得除阿根廷、乌拉圭和巴拉圭外的独家商业化权。",
+      "sources": [
+        {
+          "url": "https://mabxience.com/es/mabxience-y-sandoz-firman-un-acuerdo-de-colaboracion-para-ampliar-el-acceso-a-biosimilares-en-todo-el-mundo/",
+          "label": "mAbxience 合作公告"
+        }
+      ],
+      "revenue_disclosed": false,
+      "last_verified": "2026-11-23",
+      "molecule": "emicizumab",
+      "events": []
+    },
+    {
+      "contract_id": "iqvia-kexing",
+      "provider_id": "iqvia",
+      "client_id": "kexing",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "多产品全球临床与注册战略合作",
+      "date": "2026-05-13",
+      "service_type": [
+        "CRO"
+      ],
+      "contract_status": "扩大合作已公告 · 单项订单待披露",
+      "scope": "IQVIA 公告扩大与科兴制药的战略合作，范围包括临床开发、监管策略、数据分析及商业化支持。具体分子和项目数量未披露。",
+      "economic_terms": "未披露服务费、执行金额或确认收入。",
+      "manufacturing_rights": "公告涉及临床和注册等服务，未披露制造安排。",
+      "sources": [
+        {
+          "url": "https://www.iqvia.com/newsroom/2026/05/iqvia-and-kexing-biopharm-expand-strategic-collaboration",
+          "label": "IQVIA 合作公告"
+        }
+      ],
+      "revenue_disclosed": false,
+      "last_verified": "2026-11-23",
+      "events": []
+    },
+    {
+      "contract_id": "swift-plantform",
+      "provider_id": "swift",
+      "client_id": "plantform",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "Pembrolizumab 类似药生产协议",
+      "date": "2023-11-14",
+      "service_type": [
+        "CMO"
+      ],
+      "contract_status": "已公告签约 · 近期执行进度待更新",
+      "scope": "PlantForm 公告签署生产协议，明确包含其与巴西 Bio-Manguinhos 合作的 Keytruda 类似药。",
+      "economic_terms": "未披露承诺批数、近期订单价值或确认收入。",
+      "manufacturing_rights": "非独家合作。公告先计划支持临床前及临床用药，商业生产为后续计划，未披露商业规模供货实绩。",
+      "sources": [
+        {
+          "url": "https://www.plantformcorp.com/news-detail.aspx?id=0efbe60e-55c1-4bcd-83e4-4426c983ba39",
+          "label": "PlantForm 合同公告"
+        }
+      ],
+      "revenue_disclosed": false,
+      "last_verified": "2026-11-23",
+      "molecule": "pembrolizumab",
+      "events": []
+    },
+    {
+      "contract_id": "chime-daewoong",
+      "provider_id": "chime",
+      "client_id": "daewoong",
+      "asset_id": null,
+      "evidence": "confirmed",
+      "title": "Dupilumab 类似药开发与生产合作",
+      "date": "2026-06-02",
+      "service_type": [
+        "CDO",
+        "CMO"
+      ],
+      "contract_status": "合作已签 · 具体执行里程碑待披露",
+      "scope": "公开合作明确覆盖 Dupixent 类似药的开发与生产。公告未公布候选代码。",
+      "economic_terms": "未披露订单价值、保底批数或确认收入。",
+      "manufacturing_rights": "公告确认开发与生产合作，商业供货批次、排他性及逐市场权利有待披露。",
+      "sources": [
+        {
+          "url": "https://chimebiologics.com/daewoong-pharmaceutical-press-release-26/",
+          "label": "Chime 合作公告"
+        }
+      ],
+      "revenue_disclosed": false,
+      "last_verified": "2026-11-23",
+      "molecule": "dupilumab",
+      "events": []
+    }
+  ],
+  "exposure": [
+    {
+      "provider_id": "wuxi",
+      "label": "2026H1 在做项目",
+      "value": "期末支持 17 个类似药项目",
+      "scope": "公司另报未来三年已有承诺 20 项及讨论中 10 项。不同统计范围独立显示。",
+      "source": "https://www.wuxibiologics.com/four-drivers-power-wuxi-biologics-next-phase-of-commercial-manufacturing-growth/"
+    },
+    {
+      "provider_id": "wuxi",
+      "label": "2026H1 新签 WtM",
+      "value": "16 个 IND 后 WtM 中有 2 个类似药",
+      "scope": "公司另外披露后期与商业化阶段的 WtM 项目中有 2 个类似药，公开资料未给出两个口径的重合关系。",
+      "source": "https://www.wuxibiologics.com/press-release/wuxi-biologics-reports-strong-profitable-growth-in-h1-2026/"
+    },
+    {
+      "provider_id": "iqvia",
+      "label": "CRO 服务",
+      "value": "临床开发及注册能力已披露",
+      "scope": "客户、合同金额、项目数及对应收入未逐项披露。",
+      "source": "https://www.iqvia.com/solutions/therapeutics/biosimilars"
+    },
+    {
+      "provider_id": "samsung-biologics",
+      "label": "公司分拆",
+      "value": "Samsung Bioepis 与 Samsung Biologics 分开归属",
+      "scope": "具名产品的监管列名只反映获准厂址与工序。生产订单、批次与合同条款另核。",
+      "source": "https://samsungbiologics.com/media/company-news/samsung-biologics-completes-spin-off-to-strengthen-its-focus-as-a-pure-play-cdmo"
+    }
+  ],
+  "roles": [
+    {
+      "id": "aybintio-fujifilm",
+      "provider_id": "fujifilm",
+      "asset_id": "SB8",
+      "molecule": "bevacizumab",
+      "name": "Aybintio",
+      "holder": "Samsung Bioepis NL B.V.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "FUJIFILM Diosynth Biotechnologies Denmark ApS · 丹麦 Hillerød",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/aybintio-epar-product-information_en.pdf#page=54",
+      "source_label": "EMA 附件 II · PDF 第 54 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "flixabi-fujifilm",
+      "provider_id": "fujifilm",
+      "asset_id": "SB2",
+      "molecule": "infliximab",
+      "name": "Flixabi",
+      "holder": "Samsung Bioepis NL B.V.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "FUJIFILM Diosynth Biotechnologies Denmark ApS · 丹麦 Hillerød",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/flixabi-epar-product-information_en.pdf#page=39",
+      "source_label": "EMA 附件 II · PDF 第 39 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "flixabi-samsung-biologics",
+      "provider_id": "samsung-biologics",
+      "asset_id": "SB2",
+      "molecule": "infliximab",
+      "name": "Flixabi",
+      "holder": "Samsung Bioepis NL B.V.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Samsung Biologics Co., Ltd. · 韩国仁川",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/flixabi-epar-product-information_en.pdf#page=39",
+      "source_label": "EMA 附件 II · PDF 第 39 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "imraldi-fujifilm",
+      "provider_id": "fujifilm",
+      "asset_id": "SB5",
+      "molecule": "adalimumab",
+      "name": "Imraldi",
+      "holder": "Samsung Bioepis NL B.V.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "FUJIFILM Diosynth Biotechnologies Denmark ApS · 丹麦 Hillerød",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/imraldi-epar-product-information_en.pdf#page=158",
+      "source_label": "EMA 附件 II · PDF 第 158 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "imraldi-samsung-biologics",
+      "provider_id": "samsung-biologics",
+      "asset_id": "SB5",
+      "molecule": "adalimumab",
+      "name": "Imraldi",
+      "holder": "Samsung Bioepis NL B.V.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Samsung Biologics Co., Ltd. · 韩国仁川",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/imraldi-epar-product-information_en.pdf#page=158",
+      "source_label": "EMA 附件 II · PDF 第 158 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "xbryk-samsung-biologics",
+      "provider_id": "samsung-biologics",
+      "asset_id": "SB16",
+      "molecule": "denosumab",
+      "name": "Xbryk",
+      "holder": "Samsung Bioepis NL B.V.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Samsung Biologics Co., Ltd. · 韩国仁川",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/xbryk-epar-product-information_en.pdf#page=21",
+      "source_label": "EMA 附件 II · PDF 第 21 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "remsima-lonza",
+      "provider_id": "lonza",
+      "asset_id": "CT-P13",
+      "molecule": "infliximab",
+      "name": "Remsima",
+      "holder": "Celltrion Healthcare Hungary Kft.",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Lonza Biologics Tuas Pte Ltd · 新加坡 Tuas",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/remsima-epar-product-information_en.pdf#page=117",
+      "source_label": "EMA 附件 II · PDF 第 117 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "zessly-boehringer",
+      "provider_id": "boehringer",
+      "asset_id": "GP1111",
+      "molecule": "infliximab",
+      "name": "Zessly",
+      "holder": "Sandoz GmbH",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Boehringer Ingelheim Pharma GmbH & Co. KG · 德国 Biberach",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/zessly-epar-product-information_en.pdf#page=43",
+      "source_label": "EMA 附件 II · PDF 第 43 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "bomyntra-wuxi",
+      "provider_id": "wuxi",
+      "asset_id": null,
+      "molecule": "denosumab",
+      "name": "Bomyntra",
+      "holder": "Fresenius Kabi Deutschland GmbH",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "WuXi Biologics Co., Ltd. · 江苏无锡",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/bomyntra-epar-product-information_en.pdf#page=23",
+      "source_label": "EMA 附件 II · PDF 第 23 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "stimufend-fujifilm",
+      "provider_id": "fujifilm",
+      "asset_id": null,
+      "molecule": "pegfilgrastim",
+      "name": "Stimufend",
+      "holder": "Fresenius Kabi Deutschland GmbH",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "FUJIFILM Diosynth Biotechnologies UK Ltd · 英国 Billingham",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/stimufend-epar-product-information_en.pdf#page=15",
+      "source_label": "EMA 附件 II · PDF 第 15 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "baiama-agc",
+      "provider_id": "agc",
+      "asset_id": null,
+      "molecule": "aflibercept",
+      "name": "Baiama",
+      "holder": "Formycon AG",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "AGC Biologics, Inc. · 美国 Bothell",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/baiama-epar-product-information_en.pdf#page=59",
+      "source_label": "EMA 附件 II · PDF 第 59 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "trazimera-boehringer",
+      "provider_id": "boehringer",
+      "asset_id": null,
+      "molecule": "trastuzumab",
+      "name": "Trazimera",
+      "holder": "Pfizer Europe MA EEIG",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Boehringer Ingelheim Pharma GmbH & Co. KG · 德国 Biberach",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/trazimera-epar-product-information_en.pdf#page=34",
+      "source_label": "EMA 附件 II · PDF 第 34 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "trazimera-samsung-biologics",
+      "provider_id": "samsung-biologics",
+      "asset_id": null,
+      "molecule": "trastuzumab",
+      "name": "Trazimera",
+      "holder": "Pfizer Europe MA EEIG",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Samsung Biologics Co., Ltd. · 韩国仁川",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/trazimera-epar-product-information_en.pdf#page=34",
+      "source_label": "EMA 附件 II · PDF 第 34 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "zirabev-samsung-biologics",
+      "provider_id": "samsung-biologics",
+      "asset_id": null,
+      "molecule": "bevacizumab",
+      "name": "Zirabev",
+      "holder": "Pfizer Europe MA EEIG",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "Samsung Biologics Co., Ltd. · 韩国仁川",
+      "status": "许可有效",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/zirabev-epar-product-information_en.pdf#page=54",
+      "source_label": "EMA 附件 II · PDF 第 54 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "udenyca-kbi",
+      "provider_id": "kbi",
+      "asset_id": null,
+      "molecule": "pegfilgrastim",
+      "name": "Udenyca",
+      "holder": "ERA Consulting GmbH",
+      "service_type": "CMO",
+      "role": "欧盟批准原液制造",
+      "site": "KBI Biopharma, Inc. · 美国 Boulder",
+      "status": "许可撤回",
+      "source": "https://www.ema.europa.eu/en/documents/product-information/udenyca-epar-product-information_en.pdf#page=14",
+      "source_label": "EMA 附件 II · PDF 第 14 页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "sb17-iqvia",
+      "provider_id": "iqvia",
+      "asset_id": "SB17",
+      "molecule": "ustekinumab",
+      "name": "SB17",
+      "holder": "Samsung Bioepis（试验申办方）",
+      "service_type": "CRO",
+      "role": "III 期研究统计分析计划",
+      "site": "NCT04967508 · SB17-3001",
+      "status": "公开试验文件具名",
+      "source": "https://cdn.clinicaltrials.gov/large-docs/08/NCT04967508/SAP_001.pdf#page=49",
+      "source_label": "ClinicalTrials.gov · 签署页",
+      "last_verified": "2026-11-23"
+    },
+    {
+      "id": "fyb206-unnamed",
+      "provider_id": null,
+      "asset_id": null,
+      "molecule": "pembrolizumab",
+      "name": "FYB206",
+      "holder": "Formycon（开发商）",
+      "service_type": "CMO",
+      "role": "已取得外部 GMP 生产能力",
+      "site": "承包商、厂址和订单金额均未披露",
+      "status": "开发商公告",
+      "source": "https://www.formycon.com/en/blog/press-release/formycon-publishes-details-of-a-previously-undisclosed-pipeline-project-fyb206-is-a-biosimilar-candidate-for-keytruda-pembrolizumab/",
+      "source_label": "Formycon 项目公告",
+      "last_verified": "2026-11-23"
+    }
+  ],
+  "economics": [
+    {
+      "contract_id": "evotec-sandoz",
+      "period": "2025-03",
+      "kind": "确认许可收入",
+      "amount": 25,
+      "currency": "USD",
+      "note": "早期技术许可。2025 年 3 月确认，2026 年前三季度业绩再次说明该比较基数。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+    },
+    {
+      "contract_id": "evotec-sandoz",
+      "period": "2025-12",
+      "kind": "确认许可收入",
+      "amount": 108,
+      "currency": "USD",
+      "note": "扩大的技术许可在交割月确认。与 3 月的 US$25m 合计，2025 年可归因许可收入为 US$133m。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+    },
+    {
+      "contract_id": "evotec-sandoz",
+      "period": "2025-12",
+      "kind": "交割日许可现金",
+      "amount": 58,
+      "currency": "USD",
+      "note": "同一项扩大许可的部分回款，包含在对应许可安排的现金流中。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+    },
+    {
+      "contract_id": "evotec-sandoz",
+      "period": "2025-12",
+      "kind": "工厂股权购买价",
+      "amount": 152.959,
+      "currency": "EUR",
+      "note": "20-F 披露的图卢兹工厂股权购买价。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+    },
+    {
+      "contract_id": "evotec-sandoz",
+      "period": "2025-12",
+      "kind": "集团内贷款结算",
+      "amount": 84,
+      "currency": "EUR",
+      "note": "交割相关的集团内贷款结算。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+    },
+    {
+      "contract_id": "evotec-sandoz",
+      "period": "2025-12",
+      "kind": "处置损失（其他经营费用）",
+      "amount": -3.75,
+      "currency": "EUR",
+      "note": "20-F 披露的处置损失，计入其他经营费用。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1412558/000110465926040767/evo-20251231x20f.htm"
+    }
+  ],
+  "extra_molecules": {
+    "polatuzumab-vedotin": {
+      "name": "Polatuzumab vedotin",
+      "reference": "Polivy"
+    },
+    "teprotumumab": {
+      "name": "Teprotumumab",
+      "cn": "替妥尤单抗",
+      "reference": "Tepezza"
+    }
+  },
+  "policy": [
+    {
+      "name": "FDA · 比较性疗效试验",
+      "stage": "2025-10 指南草案",
+      "detail": "在其他证据能够充分解决剩余不确定性的情况下，比较性疗效研究的需求可能下降。大型疗效试验的单项目 CRO 支出可能下降。",
+      "source": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/scientific-considerations-demonstrating-biosimilarity-reference-product-updated-recommendations"
+    },
+    {
+      "name": "FDA · 比较性 PK",
+      "stage": "更新版问答草案",
+      "detail": "适用情形下，非美国获准参照药可用于比较，部分三方桥接研究可能减少。PK 与分析检测的工作量仍按具体项目评估。",
+      "source": "https://www.fda.gov/news-events/press-announcements/fda-takes-further-steps-streamline-biosimilar-development-and-make-medicines-more-affordable"
+    },
+    {
+      "name": "EMA · 按产品定制临床路径",
+      "stage": "2026-03 正式反思文件",
+      "detail": "比较分析和其余证据能够消除部分不确定性时，可减少大型疗效试验。CMC、分析和工艺验证的预算份额可能变化。",
+      "source": "https://www.ema.europa.eu/en/scientific-guidelines/reflection-paper-tailored-clinical-approach-biosimilar-development"
+    }
+  ]
+}

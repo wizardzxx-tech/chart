@@ -120,6 +120,7 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
 </style>
 <link rel="stylesheet" href="market.css">
 <link rel="stylesheet" href="pipeline.css">
+<link rel="stylesheet" href="cxo.css">
 </head>
 <body>
 <a class="skip" href="#main">跳至内容</a>
@@ -147,6 +148,7 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
       <a href="#approvals" data-tab="approvals">全球获批</a>
       <a href="#pipeline" data-tab="pipeline">公司与管线</a>
       <a href="#market" data-tab="market">价格与用量</a>
+      <a href="#cxo" data-tab="cxo">CXO 敞口</a>
       <a href="#model" data-tab="model">情景模型</a>
       <a href="../insulin/#vbp-tracker">胰岛素量价</a>
     </nav>
@@ -168,6 +170,7 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
         <article class="panel market-workspace research-block" id="dash-patent"></article>
         <article class="panel market-workspace research-block" id="dash-competition"></article>
       </div>
+      <article id="dash-cxo" class="panel market-workspace cxo-context research-row"></article>
       <div id="dash-us">
         <article class="panel market-workspace research-block research-row" id="dash-share"></article>
         <div class="market-duo research-row">
@@ -384,6 +387,45 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
       </div>
     </section>
 
+    <section class="view" id="view-cxo" aria-labelledby="cxo-title" hidden>
+      <div class="section-head"><div><p class="eyebrow">BIOSIMILAR CXO EXPOSURE TRACKER</p>
+        <h2 id="cxo-title">CXO 合同与收入敞口</h2></div>
+        <button type="button" id="cxo-download" class="outline" disabled>导出合同及敞口 CSV</button>
+      </div>
+      <p class="intro">按公开证据追踪开发服务、商业化供货、技术许可和交易收入。</p>
+      <div class="filters panel cxo-filters">
+        <label>服务商<select id="cxo-provider"></select></label>
+        <label>原研分子<select id="cxo-molecule"></select></label>
+        <label>研发资产<select id="cxo-asset"></select></label>
+        <label>服务类型<select id="cxo-service"></select></label>
+      </div>
+      <p class="note" id="cxo-loading" role="status">正在读取 CXO 合作数据。</p>
+      <div id="cxo-content" hidden>
+        <div id="cxo-scope" class="summary" aria-live="polite"></div>
+        <section aria-labelledby="cxo-contract-heading">
+          <div class="section-head"><div><h3 id="cxo-contract-heading">已确认合同</h3></div></div>
+          <div id="cxo-contracts" class="cxo-cards"></div>
+        </section>
+        <section aria-labelledby="cxo-econ-heading" class="research-row">
+          <div class="section-head"><div><h3 id="cxo-econ-heading">已确认收入与交易款</h3></div></div>
+          <p class="note">按披露期间和币种列示。收入、现金收款和一次性资产处置按各自会计口径展示。</p>
+          <div id="cxo-economics"></div>
+        </section>
+        <section aria-labelledby="cxo-company-heading" class="research-row">
+          <div class="section-head"><div><h3 id="cxo-company-heading">公司敞口与供应角色</h3></div></div>
+          <div id="cxo-exposure"></div>
+        </section>
+        <section aria-labelledby="cxo-opportunity-heading" class="research-row">
+          <div class="section-head"><div><h3 id="cxo-opportunity-heading">专利到期后的潜在机会</h3></div></div>
+          <div class="panel market-workspace" id="cxo-opportunity"></div>
+        </section>
+        <details class="panel source-panel" id="cxo-policy">
+          <summary>临床开发要求变化与收入影响</summary>
+          <div id="cxo-regulatory"></div>
+        </details>
+      </div>
+    </section>
+
     <section class="view" id="view-model" aria-labelledby="model-title" hidden>
       <div class="section-head"><div><p class="eyebrow">BIOSIMILAR OPPORTUNITY MODEL</p><h2 id="model-title">可竞争市场情景</h2></div><button id="model-reset" class="outline">恢复示例假设</button></div>
       <div class="model-layout">
@@ -411,6 +453,33 @@ footer{display:flex;justify-content:space-between;gap:.7rem;padding:14px 0 24px;
         </article>
       </div>
       <p class="intro">基数来自原研公司 2025 年销售披露。模型固定用量基数，参数可调整。企业实际确认收入受授权、供货与特许权协议影响。</p>
+      <section class="panel model-panel cxo-model" aria-labelledby="cxo-model-title">
+        <div class="section-head"><div><h3 id="cxo-model-title">CXO 收入敏感性</h3></div>
+          <button type="button" id="cxo-model-example" class="outline">填入假设示例</button>
+        </div>
+        <p class="note" id="cxo-model-context"></p>
+        <p class="note">所有金额为同一情景期间、同一币种的百万金额。项目与批次数可用预期值。示例用于演示公式，与披露合同金额独立。</p>
+        <form class="cxo-inputs" id="cxo-model-form">
+          <label>币种<select id="cxo-currency"><option value="USD">美元</option><option value="EUR">欧元</option><option value="CNY">人民币</option></select></label>
+          <fieldset><legend>开发服务</legend>
+            <label>候选项目数<input type="number" min="0" step="any" name="projects"></label>
+            <label>行权并外包率（%）<input type="number" min="0" max="100" step="any" name="exercise"></label>
+            <label>每个行权项目当期服务费<input type="number" min="0" step="any" name="developmentFee"></label>
+          </fieldset>
+          <fieldset><legend>商业生产</legend>
+            <label>符合条件的生产批次数<input type="number" min="0" step="any" name="batches"></label>
+            <label>外包率（%）<input type="number" min="0" max="100" step="any" name="outsourcing"></label>
+            <label>每个外包批次合同收入<input type="number" min="0" step="any" name="batchFee"></label>
+          </fieldset>
+          <fieldset><legend>许可、分成与处置</legend>
+            <label>可确认的许可及里程碑<input type="number" min="0" step="any" name="milestones"></label>
+            <label>可计提分成的销售额<input type="number" min="0" step="any" name="royaltySales"></label>
+            <label>销售分成比例（%）<input type="number" min="0" max="100" step="any" name="royaltyRate"></label>
+            <label>一次性资产处置收款<input type="number" min="0" step="any" name="saleProceeds"></label>
+          </fieldset>
+        </form>
+        <div id="cxo-model-result" class="cxo-model-result" aria-live="polite"></div>
+      </section>
     </section>
 
     <details class="panel source-panel" id="sources"><summary>数据来源与口径</summary><div id="sources-list"></div></details>
@@ -428,7 +497,7 @@ const stages = {
   Divested: '已转让', Unspecified: '未单独披露',
 };
 const eventKinds = {patent: '专利', exclusivity: '监管独占期', estimate: '公司估计', approval: '监管批准', launch: '商业上市', litigation: '诉讼'};
-const views = ['dashboard', 'cliff', 'approvals', 'pipeline', 'market', 'model'];
+const views = ['dashboard', 'cliff', 'approvals', 'pipeline', 'market', 'cxo', 'model'];
 const companyById = Object.fromEntries(snapshot.companies.map((company) => [company.id, company]));
 const assetById = Object.fromEntries(snapshot.assets.map((asset) => [asset.id, asset]));
 const cliffById = Object.fromEntries(snapshot.cliffs.map((cliff) => [cliff.id, cliff]));
@@ -517,6 +586,7 @@ function renderCliff(focusedEvent) {
     ${Object.entries(current.regionNotes || {}).filter(([key]) => !region || key === region).map(([key, value]) =>
       `<p class="note"><b>${regionLabel(key)}</b> ${escape(value)} ${link(current.regionSources[key], '依据')}</p>`).join('')}
     <div class="research-patent-links">${routeLink('dashboard', current.id, '分子总览')}
+      ${routeLink('cxo', 'molecule/' + current.id, 'CXO 合同与机会')}
       ${name.parent ? routeLink('dashboard', name.parent, '阿柏西普 2 mg') : ''}</div>
     <div class="detail-links">${routeLink('pipeline', current.id, `相关资产（${related.length}）`)}
     ${routeLink('pipeline','matrix','竞争者矩阵')}
@@ -633,7 +703,8 @@ function renderAssetDetail(asset) {
       <p class="note">${originTarget} · ${escape(asset.developer || companyById[asset.company].name)} · 最近核对 ${escape(asset.lastVerifiedAt)}</p></div>
       <a class="outline" href="#pipeline">回到资产目录</a></div>
     ${asset.description ? `<p class="note">${escape(asset.description)}</p>` : ''}
-    <p class="note">${commercial} · ${link(asset.source, '项目出处')}</p>
+    <p class="note">${commercial} · ${link(asset.source, '项目出处')} ·
+      ${routeLink('cxo', 'asset/' + asset.id, '外包服务证据')}</p>
     <h4>监管、研发及商业里程碑</h4>
     <div class="scroll" tabindex="0" role="region" aria-label="资产里程碑"><table>
       <thead><tr><th scope="col">地区</th><th scope="col">进展</th><th scope="col">事件日期</th>
@@ -819,7 +890,7 @@ function renderModel() {
 
 function readRoute() {
   let hash;
-  try { hash = decodeURIComponent(location.hash.slice(1)); }
+  try { hash = decodeURIComponent(location.hash.slice(1).split('?')[0]); }
   catch { hash = ''; }
   const [view, param, company] = hash.split('/');
   if (activeView && (view === 'main' || view === 'sources')) return;

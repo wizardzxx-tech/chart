@@ -1,3 +1,4 @@
+import {renderCxoContext} from './cxo.js';
 import {drawLines, colorPalette, isNumber} from './chart.js';
 
 const byId = id => document.getElementById(id);
@@ -296,6 +297,7 @@ function updateDashboard() {
   showDossier(byId('dash-patent'), profile, region, research);
   showCompetition(byId('dash-competition'), snapshot.approvals, snapshot.assets,
     research.brandSales, region, id, companies);
+  renderCxoContext(byId('dash-cxo'), id);
   const showUs = !region || region === 'US';
   const showFr = !region || region === 'EU';
   byId('dash-us').hidden = !showUs || !group;
