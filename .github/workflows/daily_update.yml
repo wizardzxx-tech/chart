@@ -1,0 +1,15 @@
+name: Daily data update
+on:
+  schedule:
+    - cron: '23 23 * * *' # 07:23 Asia/Shanghai
+permissions: {}
+jobs:
+  update:
+    uses: ./.github/workflows/run_data_update.yml
+    with:
+      schedule: daily
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+      id-token: write
