@@ -38,9 +38,15 @@ def approved_receipt(r,url):
     http=HTTP()
     try:
         if r.get("receipt_version")==2 and "approved_revision" not in expected and "id" in expected:
-            for evidence in r["files"]:
-                if evidence["url"]==url and sha256(http.get(url)).hexdigest()!=evidence["sha256"]:
-                    raise ValueError("Structured official original has changed")
+            originals=[item for item in r["files"] if item["url"]==url]
+            if not originals:
+                raise SourceUnavailable("Receipt requires the authenticated official source to replay")
+            if sha256(http.get(url,limit=32_000_000)).hexdigest()!=originals[0]["sha256"]:
+                raise ValueError("Structured official original has changed")
+            from data_update import load_registry
+            from validators.data import validate_records
+            spec=next(x for x in load_registry() if x["dataset_id"]==r["dataset_id"])
+            validate_records(spec,[expected],[],expected["period"])
             return expected["period"]
         data=http.get(url)
         approved=expected.get("image_sha256") or expected["sha256"]

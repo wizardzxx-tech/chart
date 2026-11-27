@@ -9,7 +9,6 @@ from importlib import import_module
 import io
 from pathlib import Path
 import os
-from getpass import getuser
 
 from data_update import ROOT, REVIEW, STATE, TODAY, dump_json, load_registry, read_json, save
 from updaters.http import HTTP
@@ -160,7 +159,7 @@ def apply(receipt, task):
     timestamp = utc()
     digest = sha256(dump_json(receipt)).hexdigest()
     approval={"task_id":receipt["task_id"],"receipt_sha256":digest,
-              "reviewed_at":timestamp,"reviewed_by":os.environ.get("GITHUB_ACTOR") or getuser(),
+              "reviewed_at":timestamp,"reviewed_by":os.environ.get("GITHUB_ACTOR") or "local-reviewer",
               "source":receipt["source"],"source_sha256":[x["sha256"] for x in receipt["files"]]}
     if structured:
         value["approved_revision"]=approval
@@ -202,7 +201,6 @@ def apply(receipt, task):
                              source_versions=receipt["files"],approval=approval,write_targets=receipt["write_targets"])
     # Generate and validate the complete transaction before writing any files.
     for output, contents in updates:
-        import os
         from tempfile import NamedTemporaryFile
         with NamedTemporaryFile(dir=output.parent, delete=False) as stream:
             stream.write(contents)

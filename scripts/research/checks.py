@@ -16,6 +16,7 @@ def unit(key, kind, period, status, *, latest=None, detail=None, count=0, attemp
 def summarize(checks):
     return {"configured":len(checks), "checked":sum(x["attempted"] for x in checks),
             "successful":sum(x["status"] in GOOD and x["attempted"] for x in checks),
+            "previously_verified":sum(x["status"] in GOOD and not x["attempted"] for x in checks),
             "failed":sum(x["status"]=="failed" for x in checks),
             "uncovered":sum(x["status"]=="uncovered" for x in checks),
             "pending_revision":sum(x["status"]=="pending_revision" for x in checks),
