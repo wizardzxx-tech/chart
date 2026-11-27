@@ -146,6 +146,10 @@ async function start() {
       product.series.sort((a,b)=>a.year-b.year||a.flow.localeCompare(b.flow));
     }
   }
+  if(root.dataset.topic==='api' && products.some(p=>p.series.some(row=>row.flow==='M'))){
+    controls.flow.add(new Option('进口','M'));
+    root.querySelector('h2').textContent='海关进出口';
+  }
   const status = select('detail-status');
   const figure = select('trend-chart');
   const hasDirections = root.dataset.topic==='vaccines';
