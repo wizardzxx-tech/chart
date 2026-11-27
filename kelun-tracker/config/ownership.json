@@ -1,0 +1,325 @@
+[
+  {
+    "asset": "cisen",
+    "effective": "2023-06-30",
+    "disclosed": "2023-08-25",
+    "source": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9442606&stockid=603367",
+    "note": "发行人半年报。只加入科伦直接持股，石四药所持辰欣权益已包含在石四药持股价值中。",
+    "shares": 453263000,
+    "capital_status": "snapshot",
+    "economic_shares": 45335300,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "cisen",
+    "effective": "2023-08-01",
+    "disclosed": "2024-03-29",
+    "source": "https://static.cninfo.com.cn/finalpage/2024-03-29/1219446905.PDF",
+    "note": "注销 9,000 股限制性股票。",
+    "shares": 453254000,
+    "capital_status": "event"
+  },
+  {
+    "asset": "cisen",
+    "effective": "2023-12-20",
+    "disclosed": "2023-12-29",
+    "source": "https://static.cninfo.com.cn/finalpage/2023-12-29/1218748364.PDF",
+    "note": "注销 478,871 股。",
+    "shares": 452775129,
+    "capital_status": "event"
+  },
+  {
+    "asset": "cisen",
+    "effective": "2024-12-31",
+    "disclosed": "2025-04-22",
+    "source": "https://static.cninfo.com.cn/finalpage/2025-04-22/1223190252.PDF",
+    "note": "年报期末总股本与母公司持有股数。",
+    "shares": 452754129,
+    "capital_status": "snapshot",
+    "economic_shares": 45335300,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "cisen",
+    "effective": "2026-06-30",
+    "disclosed": "2026-08-25",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225495177.PDF",
+    "note": "半年报确认总股本和科伦直接持股，约 10.01%。",
+    "shares": 452754129,
+    "capital_status": "snapshot",
+    "economic_shares": 45335300,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "cn",
+    "effective": "2023-06-30",
+    "disclosed": "2023-08-22",
+    "source": "https://static.cninfo.com.cn/finalpage/2023-08-22/1217593431.PDF",
+    "note": "半年报前十大股东及上市股本。员工平台的受控权益另列。",
+    "shares": 2222800000,
+    "capital_status": "snapshot",
+    "economic_shares": 1569887643,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "cn",
+    "effective": "2024-12-31",
+    "disclosed": "2025-04-24",
+    "source": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223240022.PDF",
+    "note": "母公司直接持有约 70.49%。受控员工平台的 4,000 万股另列。",
+    "shares": 2227160000,
+    "capital_status": "snapshot",
+    "economic_shares": 1569887643,
+    "ownership_status": "snapshot",
+    "platform_shares": 40000000
+  },
+  {
+    "asset": "cn",
+    "effective": "2025-12-31",
+    "disclosed": "2026-03-31",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058714.PDF",
+    "note": "母公司直接持股 70.40%。",
+    "shares": 2230085000,
+    "capital_status": "snapshot",
+    "economic_shares": 1569887643,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "cn",
+    "effective": "2026-09-30",
+    "disclosed": "2026-10-23",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-10-23/1225615578.PDF",
+    "note": "母公司直接持股 70.33%。包含员工平台受控权益的比例约为 72.12%。",
+    "shares": 2232293000,
+    "capital_status": "snapshot",
+    "economic_shares": 1569887643,
+    "ownership_status": "snapshot",
+    "platform_shares": 40000000
+  },
+  {
+    "asset": "kelun",
+    "effective": "2023-06-30",
+    "disclosed": "2023-08-30",
+    "source": "https://static.cninfo.com.cn/finalpage/2023-08-30/1217694565.PDF",
+    "note": "半年报资产负债表股本。可转债转股会在财报披露之间改变总股本。",
+    "shares": 1475047235,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "kelun",
+    "effective": "2023-12-31",
+    "disclosed": "2024-04-11",
+    "source": "https://static.cninfo.com.cn/finalpage/2024-04-11/1219566835.PDF",
+    "note": "期末已发行股份数，与年报一致。",
+    "shares": 1499102945,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "kelun",
+    "effective": "2024-12-31",
+    "disclosed": "2025-04-24",
+    "source": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223239994.PDF",
+    "note": "合并资产负债表期末股本。",
+    "shares": 1601497373,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "kelun",
+    "effective": "2025-12-31",
+    "disclosed": "2026-04-03",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-04-03/1225077697.PDF",
+    "note": "合并资产负债表期末股本。",
+    "shares": 1598053372,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "kelun",
+    "effective": "2026-06-30",
+    "disclosed": "2026-08-27",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512872.PDF",
+    "note": "注销 7,272,164 股后的半年报股本。分红基数另有口径。",
+    "shares": 1590781208,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "kelun",
+    "effective": "2026-09-30",
+    "disclosed": "2026-10-29",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225636308.PDF",
+    "note": "三季报期末股本。",
+    "shares": 1590781208,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "skb",
+    "effective": "2023-07-11",
+    "disclosed": "2023-07-11",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0710/10810765/2023071000010.pdf",
+    "note": "上市初始股本。直接持有 115,555,685 股，科伦国际持有 3,782,700 股。员工平台的 3,000 万股另列。",
+    "shares": 215828599,
+    "capital_status": "event",
+    "economic_shares": 119338385,
+    "ownership_status": "event",
+    "platform_shares": 30000000
+  },
+  {
+    "asset": "skb",
+    "effective": "2023-08-08",
+    "disclosed": "2023-09-19",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0919/2023091900283.pdf",
+    "note": "超额配售全部行使。法定视同权益另含员工平台的 3,000 万股。",
+    "shares": 219195499,
+    "capital_status": "event",
+    "economic_shares": 119338385,
+    "ownership_status": "event",
+    "platform_shares": 30000000
+  },
+  {
+    "asset": "skb",
+    "effective": "2024-05-16",
+    "disclosed": "2024-05-16",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0516/2024051600532.pdf",
+    "note": "配售新股 3,648,600 股，科伦国际认购其中 785,000 股。",
+    "shares": 222844099,
+    "capital_status": "event",
+    "economic_shares": 120123385,
+    "ownership_status": "event"
+  },
+  {
+    "asset": "skb",
+    "effective": "2024-12-18",
+    "disclosed": "2024-12-18",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1218/2024121800822.pdf",
+    "note": "母公司完成认购 4,423,870 股内资股。",
+    "shares": 227267969,
+    "capital_status": "event",
+    "economic_shares": 124547255,
+    "ownership_status": "event"
+  },
+  {
+    "asset": "skb",
+    "effective": "2025-06-12",
+    "disclosed": "2025-06-12",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0612/2025061200269.pdf",
+    "note": "完成配售 5,918,000 股。经济持股沿用配售前股数，剔除员工平台权益。",
+    "shares": 233185969,
+    "capital_status": "event",
+    "economic_shares": 124547255,
+    "ownership_status": "event",
+    "platform_shares": 30000000
+  },
+  {
+    "asset": "skb",
+    "effective": "2026-06-30",
+    "disclosed": "2026-09-17",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225570973.PDF",
+    "note": "母公司直接持有 57,777,843 股 H 股和 62,201,712 股内资股，科伦国际持有 4,567,700 股 H 股。另有 24,916,100 股 H 股为平台视同权益。",
+    "shares": 233185969,
+    "capital_status": "snapshot",
+    "economic_shares": 124547255,
+    "ownership_status": "snapshot",
+    "platform_shares": 24916100
+  },
+  {
+    "asset": "skb",
+    "effective": "2026-07-10",
+    "disclosed": "2026-07-11",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-07-11/1225418645.PDF",
+    "note": "新增配售 5,838,000 股。经济持股 124,547,255 股与母公司公告披露的 52.11% 四舍五入一致。",
+    "shares": 239023969,
+    "capital_status": "event",
+    "economic_shares": 124547255,
+    "ownership_status": "event"
+  },
+  {
+    "asset": "skb",
+    "effective": "2026-10-31",
+    "disclosed": "2026-11-04",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1104/2026110400530.pdf",
+    "note": "联交所十月月报。已发行股数保持不变。",
+    "shares": 239023969,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2023-06-30",
+    "disclosed": "2023-09-14",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0914/2023091400526.pdf",
+    "note": "母公司直接持有 159,870,000 股，科伦国际持有 446,852,000 股。经济持股可独立用于计算归属价值。",
+    "economic_shares": 606722000,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2023-09-14",
+    "disclosed": "2023-09-14",
+    "shares": 2970043385,
+    "capital_status": "snapshot",
+    "source": "https://www.hkexnews.hk/listedco/listconews/sehk/2023/0914/2023091400526.pdf",
+    "note": "以 2023 年中报刊发日载明的已发行股数作为当日股本快照。"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2024-06-30",
+    "disclosed": "2024-09-12",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0912/2024091200375.pdf",
+    "note": "半年报所列直接及全资子公司持有股数保持不变。",
+    "economic_shares": 606722000,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2024-12-31",
+    "disclosed": "2025-09-16",
+    "source": "https://doc.irasia.com/listco/hk/ssygroup/interim/ir324438-ew_2005_20250916a.pdf",
+    "note": "后续中期报告列示的年末股本对照数。",
+    "shares": 2957959385,
+    "capital_status": "snapshot"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2025-06-30",
+    "disclosed": "2025-09-16",
+    "source": "https://doc.irasia.com/listco/hk/ssygroup/interim/ir324438-ew_2005_20250916a.pdf",
+    "note": "母公司直接持有 196,532,000 股，科伦国际持有 453,600,000 股。期末总股本含库存股 16,600,000 股。",
+    "shares": 2951113385,
+    "capital_status": "snapshot",
+    "economic_shares": 650132000,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2025-12-31",
+    "disclosed": "2026-04-21",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0421/2026042100426.pdf",
+    "note": "母公司直接持有 212,390,000 股，科伦国际持有 467,168,000 股。总股本含库存股。",
+    "shares": 2951113385,
+    "capital_status": "snapshot",
+    "economic_shares": 679558000,
+    "ownership_status": "snapshot"
+  },
+  {
+    "asset": "ssy",
+    "effective": "2026-06-30",
+    "disclosed": "2026-09-14",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0914/2026091400478.pdf",
+    "note": "发行人股东名册显示科伦直接持有 212,390,000 股、全资科伦新加坡持有 468,296,000 股。母公司同期另披露直接 7.53% 及间接 15.87%，与名册口径的差异待确认。",
+    "shares": 2951113385,
+    "capital_status": "snapshot",
+    "economic_shares": 680686000,
+    "ownership_status": "snapshot",
+    "alternate_pct": 0.234,
+    "alternate_source": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512872.PDF",
+    "treasury_shares": 59670000
+  },
+  {
+    "asset": "ssy",
+    "effective": "2026-10-31",
+    "disclosed": "2026-11-02",
+    "shares": 2951113385,
+    "treasury_shares": 66220000,
+    "capital_status": "snapshot",
+    "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1102/2026110201838.pdf",
+    "note": "联交所十月月报。总股本包含 66,220,000 股库存股，扣除库存股后为 2,884,893,385 股。"
+  }
+]
