@@ -127,11 +127,13 @@ def collect(spec,http,start,end):
                 checks.append(unit(check_id,"HS / flow",end,"uncovered",attempted=False,
                                    detail="缺少可单独查询且匹配本品类的申报编码"))
                 continue
-            if wanted and wanted[-1] in available and wanted[-1] not in eligible and not spec.get("review_unit"):
+            if wanted and wanted[-1] not in eligible and not spec.get("review_unit"):
                 last=wanted[-1]
-                due=period_start(last)
-                checks.append(unit(f"{code}/{last}/{flow}","HS / flow",due,"unpublished",
-                                   detail="官方可用性目录尚无该期中国原始 HS 数据"))
+                queried=last in available
+                checks.append(unit(f"{code}/{last}/{flow}","HS / flow",period_start(last),
+                    "unpublished" if queried else "uncovered",attempted=queried,
+                    detail=("官方可用性目录尚无该期中国原始 HS 数据" if queried else
+                            "官方可用性查询失败，本编码与方向的最新期无法确认")))
             for period in published:
                 identifier=f"{code}/{period}/{flow}"
                 if spec.get("review_unit") not in (None,identifier):

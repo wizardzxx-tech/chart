@@ -244,6 +244,14 @@ def main():
         selected.extend(row for row in specs if row["dataset_id"] not in names
                         and row.get("adapter") in ("finance","filings","cms_values")
                         and known.get(row["dataset_id"],{}).get("coverage",{}).get("failed"))
+    trade = [row for row in selected if row.get("adapter")=="trade_values"]
+    if trade:
+        # These datasets share the provider's request limit. Give unfilled
+        # series and those with the oldest last success a chance to run first.
+        positions=(i for i,row in enumerate(selected) if row.get("adapter")=="trade_values")
+        priority=sorted(trade,key=lambda item: known.get(item["dataset_id"],{}).get("last_success") or "")
+        for i,row in zip(positions,priority):
+            selected[i]=row
     for spec in selected:
         name = spec["dataset_id"]
         state = states[name]
