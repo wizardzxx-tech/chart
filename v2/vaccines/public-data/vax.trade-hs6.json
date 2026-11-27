@@ -1,0 +1,57 @@
+{
+  "dataset_id": "vax.trade-hs6",
+  "updated_at": "2026-11-27T18:43:42+00:00",
+  "source_files": [
+    {
+      "url": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS?reporterCode=156&period=202412%2C202501%2C202502%2C202503%2C202504%2C202505%2C202506%2C202507%2C202508%2C202509%2C202510%2C202511",
+      "sha256": "d406cbd13f0bf0a39679693dc60544413b3f809b21073b824b3489be88e0e83e",
+      "bytes": 592
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS?reporterCode=156&period=202512%2C202601%2C202602%2C202603%2C202604%2C202605%2C202606%2C202607%2C202608%2C202609%2C202610",
+      "sha256": "521c3442c33af89e73ffef06a0e06631bf52944cd98740a2e527c04641939e08",
+      "bytes": 58
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=300241&partnerCode=0&flowCode=X%2CM&maxRecords=500",
+      "sha256": "60d52c775cc9fa26b96945b3d9769e779d3847482561abdbb86a02f55d996b7c",
+      "bytes": 1867
+    }
+  ],
+  "records": [
+    {
+      "id": "comtrade-standard-hs6/300241/2024-12-01/M",
+      "period": "2024-12-01",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=300241&partnerCode=0&flowCode=X%2CM&maxRecords=500",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "300241",
+      "code": "300241",
+      "flow": "M",
+      "series": "comtrade-standard-hs6",
+      "amount": 96702458.0,
+      "qty": 26495.0,
+      "unit": "kg",
+      "quality": "原表",
+      "asp": 3649.8380071711645,
+      "version": "60d52c775cc9fa26b96945b3d9769e779d3847482561abdbb86a02f55d996b7c"
+    },
+    {
+      "id": "comtrade-standard-hs6/300241/2024-12-01/X",
+      "period": "2024-12-01",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=300241&partnerCode=0&flowCode=X%2CM&maxRecords=500",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "300241",
+      "code": "300241",
+      "flow": "X",
+      "series": "comtrade-standard-hs6",
+      "amount": 32116628.0,
+      "qty": 25106.445,
+      "unit": "kg",
+      "quality": "估算",
+      "asp": null,
+      "version": "60d52c775cc9fa26b96945b3d9769e779d3847482561abdbb86a02f55d996b7c"
+    }
+  ]
+}
