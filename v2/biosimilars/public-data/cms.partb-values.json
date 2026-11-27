@@ -1,0 +1,3154 @@
+{
+  "dataset_id": "cms.partb-values",
+  "updated_at": "2026-11-27T07:54:37+00:00",
+  "source_files": [
+    {
+      "url": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "sha256": "986deefa094dca8f4e50abde43263910eeb667de305366f397f7af04d8a8734e",
+      "bytes": 319191,
+      "last_modified": "Tue, 09 Jun 2026 15:57:58 GMT"
+    },
+    {
+      "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514",
+      "bytes": 207992,
+      "last_modified": "Wed, 22 Jul 2026 19:21:09 GMT"
+    },
+    {
+      "url": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "sha256": "aed57f4e71e53117b4e2c75aa63ffb1542f9e73da3cf0d1dda1216a0808a2aff",
+      "bytes": 73117,
+      "last_modified": "Thu, 08 Oct 2026 12:44:21 GMT"
+    },
+    {
+      "url": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "sha256": "fffcdab8446743d29a1a0c7fd51b43bd0279774a17f3f5cbbdadb8911b52e856",
+      "bytes": 82622,
+      "last_modified": "Thu, 08 Oct 2026 12:43:20 GMT"
+    },
+    {
+      "url": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "sha256": "738beb1108697798faaa2ea166ca0bfc05a2adf80ce0b3abf49c91edce3eba6d",
+      "bytes": 83048,
+      "last_modified": "Thu, 08 Oct 2026 12:42:11 GMT"
+    },
+    {
+      "url": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "sha256": "a9b7afa80aae96c43cf84bf0b18648f1974429de2913e2e29d8342747174c417",
+      "bytes": 85594,
+      "last_modified": "Thu, 17 Sep 2026 14:51:57 GMT"
+    }
+  ],
+  "records": [
+    {
+      "id": "quarterly/2025FY/J0178",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J0178",
+        "period": "2025FY",
+        "spending": 1537858048.5,
+        "claims": 857976,
+        "beneficiaries": 222280
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J1442",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J1442",
+        "period": "2025FY",
+        "spending": 7376341.32,
+        "claims": 15805,
+        "beneficiaries": 3162
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J1745",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J1745",
+        "period": "2025FY",
+        "spending": 345756127.35,
+        "claims": 212872,
+        "beneficiaries": 35860
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J2506",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J2506",
+        "period": "2025FY",
+        "spending": 53394178.96,
+        "claims": 94469,
+        "beneficiaries": 26681
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J2778",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J2778",
+        "period": "2025FY",
+        "spending": 44798421.18,
+        "claims": 82587,
+        "beneficiaries": 21507
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J3262",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J3262",
+        "period": "2025FY",
+        "spending": 458896264.05,
+        "claims": 159816,
+        "beneficiaries": 20558
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J9035",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9035",
+        "period": "2025FY",
+        "spending": 131788780.51,
+        "claims": 331234,
+        "beneficiaries": 97130
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J9312",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9312",
+        "period": "2025FY",
+        "spending": 447593857.46,
+        "claims": 69618,
+        "beneficiaries": 23475
+      }
+    },
+    {
+      "id": "quarterly/2025FY/J9355",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9355",
+        "period": "2025FY",
+        "spending": 69607008.02,
+        "claims": 19299,
+        "beneficiaries": 2357
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5101",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5101",
+        "period": "2025FY",
+        "spending": 8880806.65,
+        "claims": 48127,
+        "beneficiaries": 11130
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5103",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5103",
+        "period": "2025FY",
+        "spending": 29768895.12,
+        "claims": 32771,
+        "beneficiaries": 6228
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5104",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5104",
+        "period": "2025FY",
+        "spending": 53525686.08,
+        "claims": 40147,
+        "beneficiaries": 7550
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5107",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5107",
+        "period": "2025FY",
+        "spending": 137086290.47,
+        "claims": 65297,
+        "beneficiaries": 11267
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5108",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5108",
+        "period": "2025FY",
+        "spending": 85000354.59,
+        "claims": 61952,
+        "beneficiaries": 17635
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5110",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5110",
+        "period": "2025FY",
+        "spending": 4673475.18,
+        "claims": 36481,
+        "beneficiaries": 6139
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5111",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5111",
+        "period": "2025FY",
+        "spending": 110388620.56,
+        "claims": 67643,
+        "beneficiaries": 19580
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5112",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5112",
+        "period": "2025FY",
+        "spending": 6995844.71,
+        "claims": 6696,
+        "beneficiaries": 960
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5113",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5113",
+        "period": "2025FY",
+        "spending": 11502095.52,
+        "claims": 3599,
+        "beneficiaries": 661
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5114",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5114",
+        "period": "2025FY",
+        "spending": 78123051.24,
+        "claims": 38655,
+        "beneficiaries": 5355
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5115",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5115",
+        "period": "2025FY",
+        "spending": 128242613.11,
+        "claims": 50007,
+        "beneficiaries": 16417
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5116",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5116",
+        "period": "2025FY",
+        "spending": 24598553.28,
+        "claims": 22877,
+        "beneficiaries": 3067
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5117",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5117",
+        "period": "2025FY",
+        "spending": 38649065.34,
+        "claims": 22701,
+        "beneficiaries": 3067
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5118",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5118",
+        "period": "2025FY",
+        "spending": 62517209.08,
+        "claims": 36252,
+        "beneficiaries": 6267
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5119",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5119",
+        "period": "2025FY",
+        "spending": 106543935.43,
+        "claims": 52097,
+        "beneficiaries": 16634
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5120",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5120",
+        "period": "2025FY",
+        "spending": 53002.73,
+        "claims": 160,
+        "beneficiaries": 75
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5121",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5121",
+        "period": "2025FY",
+        "spending": 10281543.26,
+        "claims": 9247,
+        "beneficiaries": 1863
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5122",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5122",
+        "period": "2025FY",
+        "spending": 13748628.78,
+        "claims": 9414,
+        "beneficiaries": 2697
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5123",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5123",
+        "period": "2025FY",
+        "spending": 58016214.62,
+        "claims": 23312,
+        "beneficiaries": 7386
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5124",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5124",
+        "period": "2025FY",
+        "spending": 4244844.27,
+        "claims": 6009,
+        "beneficiaries": 2334
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5125",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5125",
+        "period": "2025FY",
+        "spending": 6104123.22,
+        "claims": 32250,
+        "beneficiaries": 5590
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5126",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5126",
+        "period": "2025FY",
+        "spending": 100735174.69,
+        "claims": 31641,
+        "beneficiaries": 5144
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5127",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5127",
+        "period": "2025FY",
+        "spending": 53447197.11,
+        "claims": 18126,
+        "beneficiaries": 4896
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5128",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5128",
+        "period": "2025FY",
+        "spending": 30172535.31,
+        "claims": 34255,
+        "beneficiaries": 19257
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5129",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5129",
+        "period": "2025FY",
+        "spending": 128788404.08,
+        "claims": 41914,
+        "beneficiaries": 6419
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5130",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5130",
+        "period": "2025FY",
+        "spending": 26941262.22,
+        "claims": 14200,
+        "beneficiaries": 4171
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5133",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5133",
+        "period": "2025FY",
+        "spending": 5680050.28,
+        "claims": 2124,
+        "beneficiaries": 672
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5135",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5135",
+        "period": "2025FY",
+        "spending": 21396329.1,
+        "claims": 10595,
+        "beneficiaries": 2260
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5146",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5146",
+        "period": "2025FY",
+        "spending": 28674172.73,
+        "claims": 10170,
+        "beneficiaries": 1526
+      }
+    },
+    {
+      "id": "quarterly/2025FY/Q5147",
+      "period": "2025-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5147",
+        "period": "2025FY",
+        "spending": 522266026.53,
+        "claims": 259747,
+        "beneficiaries": 80140
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J0178",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J0178",
+        "period": "2026Q1",
+        "price": 763.901
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J1442",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J1442",
+        "period": "2026Q1",
+        "price": 0.997
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J1745",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J1745",
+        "period": "2026Q1",
+        "price": 32.423
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J2506",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J2506",
+        "period": "2026Q1",
+        "price": 122.837
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J2778",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J2778",
+        "period": "2026Q1",
+        "price": 65.443
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J3262",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J3262",
+        "period": "2026Q1",
+        "price": 5.609
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J9035",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J9035",
+        "period": "2026Q1",
+        "price": 73.632
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J9312",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J9312",
+        "period": "2026Q1",
+        "price": 74.765
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/J9355",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "J9355",
+        "period": "2026Q1",
+        "price": 73.483
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5101",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5101",
+        "period": "2026Q1",
+        "price": 0.349
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5103",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5103",
+        "period": "2026Q1",
+        "price": 24.22
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5104",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5104",
+        "period": "2026Q1",
+        "price": 27.754
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5107",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5107",
+        "period": "2026Q1",
+        "price": 23.84
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5108",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5108",
+        "period": "2026Q1",
+        "price": 98.871
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5110",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5110",
+        "period": "2026Q1",
+        "price": 0.275
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5111",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5111",
+        "period": "2026Q1",
+        "price": 161.989
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5112",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5112",
+        "period": "2026Q1",
+        "price": 27.272
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5113",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5113",
+        "period": "2026Q1",
+        "price": 55.431
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5114",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5114",
+        "period": "2026Q1",
+        "price": 37.709
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5115",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5115",
+        "period": "2026Q1",
+        "price": 30.145
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5116",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5116",
+        "period": "2026Q1",
+        "price": 8.205
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5117",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5117",
+        "period": "2026Q1",
+        "price": 51.439
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5118",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5118",
+        "period": "2026Q1",
+        "price": 25.799
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5119",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5119",
+        "period": "2026Q1",
+        "price": 13.27
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5120",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5120",
+        "period": "2026Q1",
+        "price": 119.294
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5121",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5121",
+        "period": "2026Q1",
+        "price": 23.811
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5122",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5122",
+        "period": "2026Q1",
+        "price": 133.054
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5123",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5123",
+        "period": "2026Q1",
+        "price": 20.896
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5124",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5124",
+        "period": "2026Q1",
+        "price": 60.215
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5125",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5125",
+        "period": "2026Q1",
+        "price": 0.338
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5126",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5126",
+        "period": "2026Q1",
+        "price": 33.012
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5127",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5127",
+        "period": "2026Q1",
+        "price": 147.236
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5128",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5128",
+        "period": "2026Q1",
+        "price": 83.34
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5129",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5129",
+        "period": "2026Q1",
+        "price": 38.158
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5130",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5130",
+        "period": "2026Q1",
+        "price": 127.227
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5133",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5133",
+        "period": "2026Q1",
+        "price": 5.585
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5135",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5135",
+        "period": "2026Q1",
+        "price": 4.194
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5146",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5146",
+        "period": "2026Q1",
+        "price": 37.151
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5147",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5147",
+        "period": "2026Q1",
+        "price": 866.203
+      }
+    },
+    {
+      "id": "asp-2026Q1/2026Q1/Q5148",
+      "period": "2026-01-01",
+      "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q1",
+      "item": {
+        "code": "Q5148",
+        "period": "2026Q1",
+        "price": 0.997
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J0178",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J0178",
+        "period": "2026Q1",
+        "spending": 249968952.13,
+        "claims": 144294,
+        "beneficiaries": 100653
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J1442",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J1442",
+        "period": "2026Q1",
+        "spending": 1772792.66,
+        "claims": 3828,
+        "beneficiaries": 1100
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J1745",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J1745",
+        "period": "2026Q1",
+        "spending": 82560561.3,
+        "claims": 48117,
+        "beneficiaries": 27424
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J2506",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J2506",
+        "period": "2026Q1",
+        "spending": 31452185.51,
+        "claims": 20607,
+        "beneficiaries": 9601
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J2778",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J2778",
+        "period": "2026Q1",
+        "spending": 4780597.29,
+        "claims": 13447,
+        "beneficiaries": 9206
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J3262",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J3262",
+        "period": "2026Q1",
+        "spending": 99701280.47,
+        "claims": 36246,
+        "beneficiaries": 15087
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J9035",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9035",
+        "period": "2026Q1",
+        "spending": 27113548.36,
+        "claims": 74904,
+        "beneficiaries": 49833
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J9312",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9312",
+        "period": "2026Q1",
+        "spending": 119675662.8,
+        "claims": 19253,
+        "beneficiaries": 11296
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/J9355",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9355",
+        "period": "2026Q1",
+        "spending": 13837272.65,
+        "claims": 4057,
+        "beneficiaries": 1303
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5101",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5101",
+        "period": "2026Q1",
+        "spending": 1761734.49,
+        "claims": 10231,
+        "beneficiaries": 3472
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5103",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5103",
+        "period": "2026Q1",
+        "spending": 9976560.94,
+        "claims": 7654,
+        "beneficiaries": 4381
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5104",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5104",
+        "period": "2026Q1",
+        "spending": 12686650.85,
+        "claims": 9046,
+        "beneficiaries": 5285
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5107",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5107",
+        "period": "2026Q1",
+        "spending": 23528409.8,
+        "claims": 13685,
+        "beneficiaries": 5082
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5108",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5108",
+        "period": "2026Q1",
+        "spending": 15024470.72,
+        "claims": 12305,
+        "beneficiaries": 5794
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5110",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5110",
+        "period": "2026Q1",
+        "spending": 835160,
+        "claims": 6956,
+        "beneficiaries": 1807
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5111",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5111",
+        "period": "2026Q1",
+        "spending": 39488897.61,
+        "claims": 19977,
+        "beneficiaries": 9402
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5112",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5112",
+        "period": "2026Q1",
+        "spending": 1650490.42,
+        "claims": 1447,
+        "beneficiaries": 470
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5113",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5113",
+        "period": "2026Q1",
+        "spending": 4426657.77,
+        "claims": 1968,
+        "beneficiaries": 652
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5114",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5114",
+        "period": "2026Q1",
+        "spending": 11514624.87,
+        "claims": 6950,
+        "beneficiaries": 2290
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5115",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5115",
+        "period": "2026Q1",
+        "spending": 32812391.38,
+        "claims": 13822,
+        "beneficiaries": 7690
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5116",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5116",
+        "period": "2026Q1",
+        "spending": 1517118.18,
+        "claims": 4194,
+        "beneficiaries": 1467
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5117",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5117",
+        "period": "2026Q1",
+        "spending": 12448963.5,
+        "claims": 5430,
+        "beneficiaries": 1805
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5118",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5118",
+        "period": "2026Q1",
+        "spending": 15941516.37,
+        "claims": 8636,
+        "beneficiaries": 3116
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5119",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5119",
+        "period": "2026Q1",
+        "spending": 11729961.03,
+        "claims": 11016,
+        "beneficiaries": 6312
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5120",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5120",
+        "period": "2026Q1",
+        "spending": 35215.79,
+        "claims": 29,
+        "beneficiaries": 13
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5121",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5121",
+        "period": "2026Q1",
+        "spending": 2894907.02,
+        "claims": 2176,
+        "beneficiaries": 1241
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5122",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5122",
+        "period": "2026Q1",
+        "spending": 3098776.81,
+        "claims": 2011,
+        "beneficiaries": 1030
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5123",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5123",
+        "period": "2026Q1",
+        "spending": 3845712.23,
+        "claims": 2340,
+        "beneficiaries": 1330
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5124",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5124",
+        "period": "2026Q1",
+        "spending": 34511.39,
+        "claims": 109,
+        "beneficiaries": 93
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5125",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5125",
+        "period": "2026Q1",
+        "spending": 1188553.06,
+        "claims": 7637,
+        "beneficiaries": 2066
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5126",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5126",
+        "period": "2026Q1",
+        "spending": 16721621.17,
+        "claims": 7293,
+        "beneficiaries": 2587
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5127",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5127",
+        "period": "2026Q1",
+        "spending": 5417086.14,
+        "claims": 3002,
+        "beneficiaries": 1432
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5128",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5128",
+        "period": "2026Q1",
+        "spending": 331811.75,
+        "claims": 759,
+        "beneficiaries": 621
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5129",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5129",
+        "period": "2026Q1",
+        "spending": 30156307.08,
+        "claims": 12004,
+        "beneficiaries": 4213
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5130",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5130",
+        "period": "2026Q1",
+        "spending": 6833371.53,
+        "claims": 4408,
+        "beneficiaries": 2054
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5133",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5133",
+        "period": "2026Q1",
+        "spending": 4449690.2,
+        "claims": 1736,
+        "beneficiaries": 855
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5135",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5135",
+        "period": "2026Q1",
+        "spending": 8365121.1,
+        "claims": 4349,
+        "beneficiaries": 1945
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5146",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5146",
+        "period": "2026Q1",
+        "spending": 5849369.03,
+        "claims": 3957,
+        "beneficiaries": 1236
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5147",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5147",
+        "period": "2026Q1",
+        "spending": 222650755.97,
+        "claims": 107941,
+        "beneficiaries": 70926
+      }
+    },
+    {
+      "id": "quarterly/2026Q1/Q5160",
+      "period": "2026-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5160",
+        "period": "2026Q1",
+        "spending": 87897.63,
+        "claims": 15,
+        "beneficiaries": 11
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J0178",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J0178",
+        "period": "2026Q2",
+        "price": 731.885
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J1442",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J1442",
+        "period": "2026Q2",
+        "price": 1.016
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J1745",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J1745",
+        "period": "2026Q2",
+        "price": 31.041
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J2506",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J2506",
+        "period": "2026Q2",
+        "price": 127.379
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J2778",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J2778",
+        "period": "2026Q2",
+        "price": 67.853
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J3262",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J3262",
+        "period": "2026Q2",
+        "price": 5.53
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J9035",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J9035",
+        "period": "2026Q2",
+        "price": 74.355
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J9312",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J9312",
+        "period": "2026Q2",
+        "price": 74.158
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/J9355",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "J9355",
+        "period": "2026Q2",
+        "price": 73.425
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5101",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5101",
+        "period": "2026Q2",
+        "price": 0.354
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5103",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5103",
+        "period": "2026Q2",
+        "price": 26.035
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5104",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5104",
+        "period": "2026Q2",
+        "price": 26.803
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5107",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5107",
+        "period": "2026Q2",
+        "price": 23.735
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5108",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5108",
+        "period": "2026Q2",
+        "price": 79.498
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5110",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5110",
+        "period": "2026Q2",
+        "price": 0.284
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5111",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5111",
+        "period": "2026Q2",
+        "price": 135.889
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5112",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5112",
+        "period": "2026Q2",
+        "price": 29.808
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5113",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5113",
+        "period": "2026Q2",
+        "price": 56.019
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5114",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5114",
+        "period": "2026Q2",
+        "price": 35.783
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5115",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5115",
+        "period": "2026Q2",
+        "price": 31.278
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5116",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5116",
+        "period": "2026Q2",
+        "price": 10.425
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5117",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5117",
+        "period": "2026Q2",
+        "price": 56.379
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5118",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5118",
+        "period": "2026Q2",
+        "price": 25.854
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5119",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5119",
+        "period": "2026Q2",
+        "price": 13.686
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5120",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5120",
+        "period": "2026Q2",
+        "price": 119.637
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5121",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5121",
+        "period": "2026Q2",
+        "price": 28.04
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5122",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5122",
+        "period": "2026Q2",
+        "price": 133.311
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5123",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5123",
+        "period": "2026Q2",
+        "price": 20.257
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5124",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5124",
+        "period": "2026Q2",
+        "price": 70.904
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5125",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5125",
+        "period": "2026Q2",
+        "price": 0.32
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5126",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5126",
+        "period": "2026Q2",
+        "price": 51.589
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5127",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5127",
+        "period": "2026Q2",
+        "price": 158.257
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5128",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5128",
+        "period": "2026Q2",
+        "price": 83.477
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5129",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5129",
+        "period": "2026Q2",
+        "price": 34.654
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5130",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5130",
+        "period": "2026Q2",
+        "price": 112.133
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5133",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5133",
+        "period": "2026Q2",
+        "price": 5.259
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5135",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5135",
+        "period": "2026Q2",
+        "price": 4.436
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5146",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5146",
+        "period": "2026Q2",
+        "price": 37.865
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5147",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5147",
+        "period": "2026Q2",
+        "price": 821.396
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5148",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5148",
+        "period": "2026Q2",
+        "price": 1.028
+      }
+    },
+    {
+      "id": "asp-2026Q2/2026Q2/Q5156",
+      "period": "2026-04-01",
+      "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q2",
+      "item": {
+        "code": "Q5156",
+        "period": "2026Q2",
+        "price": 4.635
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J0178",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J0178",
+        "period": "2026Q3",
+        "price": 743.605
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J1442",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J1442",
+        "period": "2026Q3",
+        "price": 1.006
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J1745",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J1745",
+        "period": "2026Q3",
+        "price": 31.479
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J2506",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J2506",
+        "period": "2026Q3",
+        "price": 143.233
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J2778",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J2778",
+        "period": "2026Q3",
+        "price": 51.09
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J3262",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J3262",
+        "period": "2026Q3",
+        "price": 5.408
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J9035",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J9035",
+        "period": "2026Q3",
+        "price": 74.823
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J9312",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J9312",
+        "period": "2026Q3",
+        "price": 73.278
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/J9355",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "J9355",
+        "period": "2026Q3",
+        "price": 70.243
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5101",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5101",
+        "period": "2026Q3",
+        "price": 0.353
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5103",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5103",
+        "period": "2026Q3",
+        "price": 27.71
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5104",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5104",
+        "period": "2026Q3",
+        "price": 26.615
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5107",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5107",
+        "period": "2026Q3",
+        "price": 24.533
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5108",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5108",
+        "period": "2026Q3",
+        "price": 67.024
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5110",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5110",
+        "period": "2026Q3",
+        "price": 0.322
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5111",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5111",
+        "period": "2026Q3",
+        "price": 149.133
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5112",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5112",
+        "period": "2026Q3",
+        "price": 20.989
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5113",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5113",
+        "period": "2026Q3",
+        "price": 54.942
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5114",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5114",
+        "period": "2026Q3",
+        "price": 31.945
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5115",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5115",
+        "period": "2026Q3",
+        "price": 34.563
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5116",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5116",
+        "period": "2026Q3",
+        "price": 13.033
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5117",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5117",
+        "period": "2026Q3",
+        "price": 60.522
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5118",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5118",
+        "period": "2026Q3",
+        "price": 25.889
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5119",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5119",
+        "period": "2026Q3",
+        "price": 16.16
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5120",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5120",
+        "period": "2026Q3",
+        "price": 132.096
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5121",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5121",
+        "period": "2026Q3",
+        "price": 30.83
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5122",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5122",
+        "period": "2026Q3",
+        "price": 136.911
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5123",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5123",
+        "period": "2026Q3",
+        "price": 18.533
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5124",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5124",
+        "period": "2026Q3",
+        "price": 240.972
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5125",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5125",
+        "period": "2026Q3",
+        "price": 0.311
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5126",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5126",
+        "period": "2026Q3",
+        "price": 79.944
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5127",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5127",
+        "period": "2026Q3",
+        "price": 143.673
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5128",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5128",
+        "period": "2026Q3",
+        "price": 82.528
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5129",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5129",
+        "period": "2026Q3",
+        "price": 23.647
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5130",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5130",
+        "period": "2026Q3",
+        "price": 105.109
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5133",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5133",
+        "period": "2026Q3",
+        "price": 5.013
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5135",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5135",
+        "period": "2026Q3",
+        "price": 4.056
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5146",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5146",
+        "period": "2026Q3",
+        "price": 32.46
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5147",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5147",
+        "period": "2026Q3",
+        "price": 803.255
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5148",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5148",
+        "period": "2026Q3",
+        "price": 1.034
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5156",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5156",
+        "period": "2026Q3",
+        "price": 4.692
+      }
+    },
+    {
+      "id": "asp-2026Q3/2026Q3/Q5160",
+      "period": "2026-07-01",
+      "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q3",
+      "item": {
+        "code": "Q5160",
+        "period": "2026Q3",
+        "price": 82.236
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J0178",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J0178",
+        "period": "2026Q4",
+        "price": 722.251
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J1442",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J1442",
+        "period": "2026Q4",
+        "price": 0.994
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J1745",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J1745",
+        "period": "2026Q4",
+        "price": 29.856
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J2506",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J2506",
+        "period": "2026Q4",
+        "price": 201.241
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J2778",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J2778",
+        "period": "2026Q4",
+        "price": 26.384
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J3262",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J3262",
+        "period": "2026Q4",
+        "price": 5.325
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J9035",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J9035",
+        "period": "2026Q4",
+        "price": 75.492
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J9312",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J9312",
+        "period": "2026Q4",
+        "price": 72.094
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/J9355",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "J9355",
+        "period": "2026Q4",
+        "price": 68.871
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5101",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5101",
+        "period": "2026Q4",
+        "price": 0.338
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5103",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5103",
+        "period": "2026Q4",
+        "price": 28.456
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5104",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5104",
+        "period": "2026Q4",
+        "price": 25.649
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5107",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5107",
+        "period": "2026Q4",
+        "price": 28.294
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5108",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5108",
+        "period": "2026Q4",
+        "price": 55.964
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5110",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5110",
+        "period": "2026Q4",
+        "price": 0.329
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5111",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5111",
+        "period": "2026Q4",
+        "price": 128.967
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5112",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5112",
+        "period": "2026Q4",
+        "price": 32.791
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5113",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5113",
+        "period": "2026Q4",
+        "price": 55.295
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5114",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5114",
+        "period": "2026Q4",
+        "price": 29.507
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5115",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5115",
+        "period": "2026Q4",
+        "price": 35.988
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5116",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5116",
+        "period": "2026Q4",
+        "price": 11.271
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5117",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5117",
+        "period": "2026Q4",
+        "price": 63.871
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5118",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5118",
+        "period": "2026Q4",
+        "price": 25.939
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5119",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5119",
+        "period": "2026Q4",
+        "price": 5.792
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5120",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5120",
+        "period": "2026Q4",
+        "price": 302.247
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5121",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5121",
+        "period": "2026Q4",
+        "price": 34.686
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5122",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5122",
+        "period": "2026Q4",
+        "price": 141.289
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5123",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5123",
+        "period": "2026Q4",
+        "price": 21.083
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5124",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5124",
+        "period": "2026Q4",
+        "price": 249.493
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5125",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5125",
+        "period": "2026Q4",
+        "price": 0.308
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5126",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5126",
+        "period": "2026Q4",
+        "price": 79.982
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5127",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5127",
+        "period": "2026Q4",
+        "price": 163.948
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5128",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5128",
+        "period": "2026Q4",
+        "price": 81.13
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5129",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5129",
+        "period": "2026Q4",
+        "price": 21.139
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5130",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5130",
+        "period": "2026Q4",
+        "price": 94.292
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5133",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5133",
+        "period": "2026Q4",
+        "price": 4.706
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5135",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5135",
+        "period": "2026Q4",
+        "price": 4.37
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5146",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5146",
+        "period": "2026Q4",
+        "price": 30.255
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5147",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5147",
+        "period": "2026Q4",
+        "price": 763.376
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5148",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5148",
+        "period": "2026Q4",
+        "price": 1.026
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5156",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5156",
+        "period": "2026Q4",
+        "price": 3.098
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5160",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5160",
+        "period": "2026Q4",
+        "price": 82.139
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5168",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5168",
+        "period": "2026Q4",
+        "price": 26.384
+      }
+    },
+    {
+      "id": "asp-2026Q4/2026Q4/Q5169",
+      "period": "2026-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2026Q4",
+      "item": {
+        "code": "Q5169",
+        "period": "2026Q4",
+        "price": 519.481
+      }
+    }
+  ]
+}

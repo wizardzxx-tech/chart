@@ -1,7 +1,13 @@
 {
   "dataset_id": "nih.clinical-trials",
-  "updated_at": "2026-11-27T05:53:01+00:00",
+  "updated_at": "2026-11-27T07:54:37+00:00",
   "source_files": [
+    {
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04967508",
+      "sha256": "943f41fefe0dc5ca2aa9f6f7f657d767eb12903257abcb36406bdfc6ac58caf9",
+      "bytes": 31964,
+      "etag": "\"0/0.34.1/mwvycwaw\""
+    },
     {
       "url": "https://clinicaltrials.gov/api/v2/studies/NCT05679258",
       "sha256": "b1bbbfbaccc71cc72c0ec2164bd8c696d319967800ec59e11d747b8baa96d932",
@@ -18,6 +24,16 @@
       "status": "COMPLETED",
       "results_posted": null,
       "source": "https://clinicaltrials.gov/study/NCT05679258",
+      "basis": "NCT registry posting"
+    },
+    {
+      "id": "NCT04967508/2025-05-25",
+      "period": "2025-05-25",
+      "nct": "NCT04967508",
+      "title": "A Study to Compare SB17 (Proposed Ustekinumab Biosimilar) to Stelara® in Subject With Moderate to Severe Plaque Psoriasis",
+      "status": "COMPLETED",
+      "results_posted": "2025-05-25",
+      "source": "https://clinicaltrials.gov/study/NCT04967508",
       "basis": "NCT registry posting"
     }
   ]

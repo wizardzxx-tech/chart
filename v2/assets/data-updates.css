@@ -24,3 +24,5 @@
 .update-provenance{margin:.7rem 0;padding:.5rem .75rem;background:#f2f7f5;border-left:2px solid #88b6ab;color:#365257}
 .update-provenance p{margin:.2rem 0;font-size:.875rem;line-height:1.5}
 .update-provenance a,.update-center-panel>a,.update-topic-status a{color:#126157}
+
+.update-coverage{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem 1rem;max-width:38rem;margin:1rem 0}.update-coverage dd{margin:0;font-weight:650}.research-line{margin:1rem 0}.research-line figcaption{font-weight:650}

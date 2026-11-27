@@ -1,0 +1,107 @@
+{
+  "receipt_sha256": "e3008c937927c5b698d76ae0aeeed4f13654cff243e358b5f74957711a41873e",
+  "reviewed_at": "2026-11-27T07:59:08+00:00",
+  "task_id": "7105e282b02fe52f5c3e8ea2",
+  "dataset_id": "insurance.monthly",
+  "source": "https://www.nhsa.gov.cn/art/2026/11/24/art_7_23509.html",
+  "files": [
+    {
+      "url": "https://www.nhsa.gov.cn/picture/0/9cf80d7b6514490f826ff62e83df737e.png",
+      "sha256": "ef82a109aadf8c4c1178bdb31a60a65a213b04d1d251e16d5eb9a9da336f124a",
+      "bytes": 108974
+    },
+    {
+      "url": "https://www.nhsa.gov.cn/art/2026/11/24/art_7_23509.html",
+      "sha256": "531b1e04755d0689980d11f61c7c03ac86669a3a17b51c010ae021a7413a51d6",
+      "bytes": 9884
+    },
+    {
+      "url": "https://www.nhsa.gov.cn/picture/0/4c9b9da54bb4436a83d4491a9c90d155.png",
+      "sha256": "443296059eab1cf8713dd173387835958a1df4144bd4d47f5caff92bf142c142",
+      "bytes": 110787
+    }
+  ],
+  "old": null,
+  "comparison_base": {
+    "total_income": "23028.33",
+    "employee_income": "14473.64",
+    "resident_income": "8554.69",
+    "total_spending": "17515.19",
+    "employee_spending": "10044.28",
+    "maternity_spending": "1010.10",
+    "resident_spending": "7470.91"
+  },
+  "candidate": {
+    "period": "2026-10",
+    "source": "https://www.nhsa.gov.cn/art/2026/11/24/art_7_23509.html",
+    "image": "https://www.nhsa.gov.cn/picture/0/4c9b9da54bb4436a83d4491a9c90d155.png",
+    "image_sha256": "443296059eab1cf8713dd173387835958a1df4144bd4d47f5caff92bf142c142",
+    "basis": "YTD pooled fund including maternity; excluding employee personal accounts",
+    "unit": "亿元",
+    "total_income": "25254.31",
+    "employee_income": "16068.86",
+    "resident_income": "9185.44",
+    "total_spending": "19357.74",
+    "employee_spending": "11166.52",
+    "maternity_spending": "1112.54",
+    "resident_spending": "8191.22"
+  },
+  "diff": {
+    "period": {
+      "before": null,
+      "after": "2026-10"
+    },
+    "source": {
+      "before": null,
+      "after": "https://www.nhsa.gov.cn/art/2026/11/24/art_7_23509.html"
+    },
+    "image": {
+      "before": null,
+      "after": "https://www.nhsa.gov.cn/picture/0/4c9b9da54bb4436a83d4491a9c90d155.png"
+    },
+    "image_sha256": {
+      "before": null,
+      "after": "443296059eab1cf8713dd173387835958a1df4144bd4d47f5caff92bf142c142"
+    },
+    "basis": {
+      "before": null,
+      "after": "YTD pooled fund including maternity; excluding employee personal accounts"
+    },
+    "unit": {
+      "before": null,
+      "after": "亿元"
+    },
+    "total_income": {
+      "before": null,
+      "after": "25254.31"
+    },
+    "employee_income": {
+      "before": null,
+      "after": "16068.86"
+    },
+    "resident_income": {
+      "before": null,
+      "after": "9185.44"
+    },
+    "total_spending": {
+      "before": null,
+      "after": "19357.74"
+    },
+    "employee_spending": {
+      "before": null,
+      "after": "11166.52"
+    },
+    "maternity_spending": {
+      "before": null,
+      "after": "1112.54"
+    },
+    "resident_spending": {
+      "before": null,
+      "after": "8191.22"
+    }
+  },
+  "validation": {
+    "passed": true,
+    "adapter": "nhsa"
+  }
+}

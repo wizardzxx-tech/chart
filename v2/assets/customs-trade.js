@@ -134,6 +134,18 @@ async function start() {
   const dataset=await readData('customs-trade.json');
   const {partners}=dataset;
   const products=dataset.parts?(await Promise.all(dataset.parts.map(readData))).flat():dataset.products;
+  const feeds={api:'api.trade-values','medical-devices':'devices.trade-values',vaccines:'vax.trade-values'};
+  const feed=feeds[root.dataset.topic];
+  if(feed){
+    const supplemental=await readData('public-data/'+feed+'.json').catch(()=>null);
+    for(const row of supplemental?.records||[]){
+      const product=products.find(p=>p.code===row.product);
+      if(!product||product.series.some(x=>x.year===row.year&&x.flow===row.flow))continue;
+      const {source,...rest}=row;
+      product.series.push({...rest,source:'UN Comtrade'});
+      product.series.sort((a,b)=>a.year-b.year||a.flow.localeCompare(b.flow));
+    }
+  }
   const status = select('detail-status');
   const figure = select('trend-chart');
   const hasDirections = root.dataset.topic==='vaccines';

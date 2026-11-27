@@ -533,6 +533,14 @@ try {
     if (!response.ok) throw new Error(`Data HTTP ${response.status}`);
     return response.json();
   }));
+  const partdUpdate = await fetch("public-data/cms.partd-values.json").then(r=>r.ok?r.json():null).catch(()=>null);
+  const current = new Set(tracker.partd.map(r=>[r[0],r[2],r[3]].join("/")));
+  for (const row of partdUpdate?.records||[]) {
+    if (current.has(row.id)) continue;
+    tracker.partd.push([row.year,row.molecule,row.brand,row.generic,row.spending,row.claims,row.beneficiaries,row.doses]);
+    current.add(row.id);
+  }
+  tracker.partd.sort((a,b)=>Number(b[0])-Number(a[0]));
   data.products.push(...tracker.registrations);
   setupIndustry();
   setupTracker();

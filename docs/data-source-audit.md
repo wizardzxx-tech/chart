@@ -1,7 +1,7 @@
 # 数据源审计与自动化可行性矩阵
 
 注册表区分可用的结构化适配器、公告发现与人工处理。实际运行结果以网站更新中心为准。
-覆盖 10 个专题、60 个逻辑数据集。自动提取候选 4 项。 人工／AI辅助审核 44 项。 公告发现＋审核 12 项。
+覆盖 10 个专题、68 个逻辑数据集。自动提取候选 11 项。 人工／AI辅助审核 44 项。 公告发现＋审核 13 项。
 
 保留数据统计期与网站原有单位。共享文件可承载多项数据；仅将已校验的新结构化结果另行补充。
 历史脚本路径以本地历史工作区 work/ 为基准。已有 scripts/ 路径对应本仓库可重建代码。
@@ -67,7 +67,15 @@
 | cms.catalog · CMS Part B 文件发布清单 | — | [CMS / Data.gov 官方目录](https://catalog.data.gov/) | 自动提取候选 · monthly | 只更新官方数据发布清单；年度、季度和支付限额金额不混用。 | — |
 | insulin.nmpa-notices · 药监局注册公告检查 | — | [国家药监局](https://www.nmpa.gov.cn/xxgk/ggtg/ypggtg/index.html) | 公告发现＋审核 · weekly | 公告链接进入待审核；无结构化胰岛素产品匹配证据时不更新。 | `insulin_tracker/products.py` |
 | pharmacy.policy-notices · 医保政策原文检查 | — | [国家医保局](https://www.nhsa.gov.cn/col/col104/index.html) | 公告发现＋审核 · weekly | 仅发现新政策文档，匹配指标后审核。 | `pharmacy_efficiency/collect.py` |
-| filings.exchange-notices · 上市公司定期报告发现 | — | [上市公司公告／东方财富转引](https://np-anotice-stock.eastmoney.com/api/security/ann) | 公告发现＋审核 · weekly | 样本公司最新公告发现。按原始公告日期与原文复核；历史采集脚本另覆盖完整上市公司样本。 | `working_capital_20261112/collect_statements.py` |
+| filings.exchange-notices · 上市公司定期报告发现 | — | [巨潮／港交所公告转引及美国 SEC EDGAR](https://np-anotice-stock.eastmoney.com/api/security/ann) | 公告发现＋审核 · weekly | 全公司注册表轮询；逐证券匹配公告；独立记录不可达样本。 | `working_capital_20261112/collect_statements.py` |
+| financials.standard · 上市公司财务与 CCC | — | [上市公司财务与 CCC](https://datacenter-web.eastmoney.com/api/data/v1/get) | 自动提取候选 · weekly | 年度累计差分、五季平均余额、现金流／资本开支原币、票据合并列示、缺失不补零 | — |
+| devices.trade-values · 器械 Comtrade 实际年度量价 | — | [器械 Comtrade 实际年度量价](https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS) | 自动提取候选 · monthly | 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值 | — |
+| api.trade-values · 原料药 Comtrade 实际年度量价 | — | [原料药 Comtrade 实际年度量价](https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS) | 自动提取候选 · monthly | 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值 | — |
+| vax.trade-values · 人用疫苗 Comtrade 实际年度量价 | — | [人用疫苗 Comtrade 实际年度量价](https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS) | 自动提取候选 · monthly | 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值 | — |
+| cms.partb-values · CMS Part B 实际用量和支付文件 | — | [CMS Part B 实际用量和支付文件](https://data.cms.gov/) | 自动提取候选 · monthly | 原始资料、统计期、唯一主键和统计口径 | — |
+| cms.partd-values · CMS Part D 胰岛素实际开支 | — | [CMS Part D 胰岛素实际开支](https://raw.githubusercontent.com/Savannahwilcox/drug-pricing-analysis/main/data/raw/DSD_PTD_RY26_P04_V10_DY24_BGM.csv) | 自动提取候选 · monthly | 原始资料、统计期、唯一主键和统计口径 | — |
+| nih.trial-discovery · 分子及申办方新试验 | — | [分子及申办方新试验](https://clinicaltrials.gov/api/v2) | 公告发现＋审核 · weekly | 原始资料、统计期、唯一主键和统计口径 | — |
+| fda.research-actions · FDA 网站覆盖分子批准及参照药 | — | [openFDA / 已核实的 FDA 对照资料](https://api.fda.gov/drug/drugsfda.json) | 自动提取候选 · weekly | 分页数量和申请编号；区分首次批准、补充批准与参照药；无经核实分类保留未确定 | — |
 
 ## 基线文件指纹与结构
 
@@ -80,6 +88,7 @@
 | `v2/api/customs-trade-3.json` | 7 条 | `2a88f5f177a9` |
 | `v2/api/customs-trade.csv` | 144 行，29 列，0 条完全重复 | `70564cb6a0ff` |
 | `v2/api/customs-trade.json` | partners(189)、parts(3)、partnerLabels(8) | `eac50d77498e` |
+| `v2/api/public-data/api.trade-values.json` | dataset_id、updated_at、source_files(5)、records(4) | `8ce8b81e7312` |
 | `v2/api/research.json` | focus(6)、recent(13)、recentNote、monthly(0)、companies(20)、registry(3) | `7ed6f4b6b166` |
 | `v2/biosimilars/data/market-references.json` | quotes(11)、archive(15)、cohorts(7)、hhs、cmsPolicy、reportUrl、wac(4)、wacMetadata(5)、supply(2) | `94cbe06eb5c6` |
 | `v2/biosimilars/data/market-research.json` | indexes(9)、partD(3)、brandSales(8)、france(4)、patentResources(3)、evidenceDate、quarterlyAudit(4) | `c2e48c363330` |
@@ -87,11 +96,14 @@
 | `v2/biosimilars/data/service-contracts.json` | last_verified、providers(13)、clients(6)、service_contracts(7)、exposure(4)、roles(17)、economics(6)、extra_molecules(2)、policy(3) | `cb70e8d6dd3c` |
 | `v2/biosimilars/index.html` | HTML 内嵌表格/数据。脚本 ../assets/data-updates.js、market.js、research.js、snapshot | `8696fc6f0cd5` |
 | `v2/biosimilars/public-data/cms.catalog.json` | dataset_id、updated_at、source_files(2)、records(1) | `4fa412dd3351` |
+| `v2/biosimilars/public-data/cms.partb-values.json` | dataset_id、updated_at、source_files(6)、records(246) | `11a544ae80e6` |
 | `v2/biosimilars/public-data/fda.drugsfda.json` | dataset_id、updated_at、source_files(6)、records(215) | `868c598f791c` |
-| `v2/biosimilars/public-data/nih.clinical-trials.json` | dataset_id、updated_at、source_files(1)、records(1) | `52a154881d1d` |
+| `v2/biosimilars/public-data/fda.research-actions.json` | dataset_id、updated_at、source_files(12)、records(1290) | `b02f481d6749` |
+| `v2/biosimilars/public-data/nih.clinical-trials.json` | dataset_id、updated_at、source_files(2)、records(2) | `96350958c0f6` |
 | `v2/blood-products/albumin-manufacturers.csv` | 486 行，7 列，0 条完全重复 | `cbc706166c33` |
 | `v2/blood-products/albumin-market.csv` | 13 行，17 列，0 条完全重复 | `41adce152613` |
 | `v2/blood-products/blood-research-data.json` | asOf、reconciliation(8)、rankings(18)、audit(2)、versions(5)、brandSources(2)、filingBrands(2)、shanghaiAudit(11)、mappingSources(2)、lotSource(2)、products(2) | `c625f4173fc6` |
+| `v2/blood-products/center-updates.json` | reports(2) | `64f675b8a4fc` |
 | `v2/blood-products/company-plasma.csv` | 100 行，34 列，0 条完全重复 | `34abaf816f16` |
 | `v2/blood-products/data.json` | national(14)、companies(8)、recombinant(4)、transactions(19) | `389c66113b07` |
 | `v2/blood-products/equity-incentives.csv` | 24 行，12 列，0 条完全重复 | `908050837ae7` |
@@ -107,6 +119,7 @@
 | `v2/blood-products/working-capital.json` | companies(8)、first、latest、updated | `27c0acbb2b1f` |
 | `v2/insulin/data.json` | links(5)、industryKpis(3)、vbp(91)、products(19)、landscape(11)、rights(2)、partd(3)、sources(4)、companies(3) | `32b5094b5116` |
 | `v2/insulin/equity-incentives.csv` | 33 行，11 列，0 条完全重复 | `cd3c098cb84d` |
+| `v2/insulin/public-data/cms.partd-values.json` | dataset_id、updated_at、source_files(1)、records(325) | `73dbe9d32aa0` |
 | `v2/insulin/public-data/fda.insulins.json` | dataset_id、updated_at、source_files(5)、records(57) | `0e2714b1e343` |
 | `v2/insulin/tracker.json` | vbp(7)、market(9)、business(3)、bridge(3)、partd(325)、partdSources(3)、pipeline(39)、registrations(60) | `0fbbfc0eb7d5` |
 | `v2/medical-devices/customs-trade-1.json` | 2 条 | `9ebc899c2f5c` |
@@ -122,9 +135,10 @@
 | `v2/medical-devices/imaging-exports.csv` | 33 行，20 列，0 条完全重复 | `4137b2626e21` |
 | `v2/medical-devices/index.html` | HTML 内嵌表格/数据。脚本 ../assets/data-updates.js、../assets/customs-trade.js | `ceee9ea45dd1` |
 | `v2/medical-devices/manufacturer-sites.csv` | 24 行，8 列，0 条完全重复 | `905c791dfd53` |
-| `v2/medical-insurance/data.csv` | 387 行，8 列，0 条完全重复 | `55fb1225be6b` |
+| `v2/medical-devices/public-data/devices.trade-values.json` | dataset_id、updated_at、source_files(5)、records(4) | `b437b9bc5623` |
+| `v2/medical-insurance/data.csv` | 397 行，8 列，0 条完全重复 | `842f9130da7b` |
 | `v2/medical-insurance/index.html` | HTML 内嵌表格/数据。脚本 ../assets/data-updates.js、medical-insurance.js | `ffad165fc203` |
-| `v2/medical-insurance/trends.json` | fund(2)、channels(2)、employeeInpatient(2)、residentInpatient(2)、procurement(2) | `9e9720f888ce` |
+| `v2/medical-insurance/trends.json` | fund(2)、channels(2)、employeeInpatient(2)、residentInpatient(2)、procurement(2)、pooled(1) | `25ecbff15cb2` |
 | `v2/medical-services/activity.json` | annual(9)、monthly(30)、cumulative(25)、monthlyIndex、groups(7)、periods(3)、metrics(8)、fields(3) | `feee731ddd81` |
 | `v2/medical-services/health-resources.csv` | 252 行，6 列，0 条完全重复 | `d4a0eccffcf8` |
 | `v2/medical-services/index.html` | HTML 内嵌表格/数据。脚本 ../assets/data-updates.js、medical-services.js | `0ad741024688` |
@@ -150,6 +164,7 @@
 | `v2/pharmacy/equity-incentives.csv` | 58 行，12 列，0 条完全重复 | `bc80e282358a` |
 | `v2/pharmacy/index.html` | HTML 内嵌表格/数据。脚本 ../assets/data-updates.js、company-stores.js、../assets/working-capital.js、equity-incentives.js、stores-chart.js、retail-research.js、stores-series | `7299e99a5bb4` |
 | `v2/pharmacy/industry-retail-sales.csv` | 14 行，6 列，0 条完全重复 | `4c0c4c084281` |
+| `v2/pharmacy/public-data/financials.standard.json` | dataset_id、updated_at、source_files(20)、records(88) | `b87de538f72e` |
 | `v2/pharmacy/retail-peers.json` | peer(14)、sources(675)、franchise(190) | `e1a8ece229b8` |
 | `v2/pharmacy/retail-research.json` | companies(14)、segments(387)、efficiency(88)、network(319)、disclosed(31)、sources(675) | `f99ca47152e2` |
 | `v2/pharmacy/retail-segments.csv` | 387 行，10 列，0 条完全重复 | `a47b840508a5` |
@@ -158,6 +173,7 @@
 | `v2/pharmacy/working-capital-inputs.csv` | 781 行，27 列，0 条完全重复 | `bb998c95fb59` |
 | `v2/pharmacy/working-capital.csv` | 1552 行，22 列，0 条完全重复 | `76f7b367a872` |
 | `v2/pharmacy/working-capital.json` | companies(14)、first、latest、updated | `24214e468856` |
+| `v2/vaccines/center-updates.json` | reports(2) | `97cf8612e430` |
 | `v2/vaccines/customs-trade.csv` | 10 行，25 列，0 条完全重复 | `23ed6251fa61` |
 | `v2/vaccines/customs-trade.json` | products(1)、partners(162) | `045ce8228231` |
 | `v2/vaccines/equity-incentives.csv` | 46 行，12 列，0 条完全重复 | `1f88e9db8b89` |
@@ -167,6 +183,7 @@
 | `v2/vaccines/overseas-inputs.csv` | 70 行，10 列，0 条完全重复 | `fbc73e42c402` |
 | `v2/vaccines/overseas-working-capital.csv` | 105 行，16 列，0 条完全重复 | `447891d7af1a` |
 | `v2/vaccines/overseas.json` | companies(6)、rows(105)、modes(3) | `625b9967daab` |
+| `v2/vaccines/public-data/vax.trade-values.json` | dataset_id、updated_at、source_files(3)、records(2) | `b4c2cad8c68c` |
 | `v2/vaccines/release-doses.json` | sources(6)、records(80) | `d85ec9ebc992` |
 | `v2/vaccines/working-capital-inputs.csv` | 514 行，27 列，0 条完全重复 | `15ef1fdbba81` |
 | `v2/vaccines/working-capital.csv` | 1024 行，22 列，0 条完全重复 | `990dd98fb056` |

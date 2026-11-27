@@ -233,6 +233,7 @@ datasets:
   related_paths:
   - v2/blood-products/lot-release-summary.zip
   - v2/blood-products/product-lot-trends.csv
+  - v2/blood-products/center-updates.json
   historical_scripts:
   - blood_lot_release/build_data.py
   - vaccine_lot_release/collect.py
@@ -241,6 +242,8 @@ datasets:
   review_since: '2026-11-08'
   alternate_sources:
   - https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs
+  chart_binding: true
+  review_processor: lot
 - dataset_id: blood.events
   topic: blood-products
   label: 浆站事件、并购与产品升级
@@ -343,6 +346,7 @@ datasets:
   related_paths:
   - v2/vaccines/lot-release-summary.csv
   - v2/vaccines/lot-release-summary.zip
+  - v2/vaccines/center-updates.json
   historical_scripts:
   - vaccine_lot_release/collect.py
   - vaccine_lot_release/aggregate.py
@@ -352,6 +356,8 @@ datasets:
   review_since: '2026-11-08'
   alternate_sources:
   - https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs
+  chart_binding: true
+  review_processor: lot
 - dataset_id: vax.doses
   topic: vaccines
   label: 公司披露的批签发剂数
@@ -635,6 +641,8 @@ datasets:
   adapter: notices
   title_pattern: ^(?:202[6-9]|20[3-9]\d)年[0-9-]+月基本医疗保险统筹基金和生育保险主要指标
   review_since: '2026-09-30'
+  chart_binding: true
+  review_processor: nhsa
 - dataset_id: insurance.channels
   topic: medical-insurance
   label: 医疗机构与药店费用
@@ -1228,7 +1236,8 @@ datasets:
   section: view-pipeline
   adapter: trials
   view: records
-  trial_ids:
+  trial_ids: &id001
+  - NCT04967508
   - NCT05679258
 - dataset_id: cms.catalog
   topic: biosimilars
@@ -1295,7 +1304,7 @@ datasets:
 - dataset_id: filings.exchange-notices
   topic: pharmacy
   label: 上市公司定期报告发现
-  source_name: 上市公司公告／东方财富转引
+  source_name: 巨潮／港交所公告转引及美国 SEC EDGAR
   source_url: https://np-anotice-stock.eastmoney.com/api/security/ann
   source_format: JSON 公告索引
   data_frequency: quarterly
@@ -1305,7 +1314,7 @@ datasets:
   updater_script: scripts/updaters/filings.py
   automation_level: rule_based
   validation_rules:
-  - 样本公司最新公告发现。按原始公告日期与原文复核；历史采集脚本另覆盖完整上市公司样本。
+  - 全公司注册表轮询；逐证券匹配公告；独立记录不可达样本。
   review_required: true
   section: company-stores
   historical_scripts:
@@ -1313,19 +1322,256 @@ datasets:
   adapter: filings
   title_pattern: 季度报告|半年度报告|年度报告
   review_since: '2026-11-01'
-  company_codes:
-  - '603939'
-  - '603233'
-  - '603883'
-  - '600161'
-  - '002007'
-  - '300122'
-  - '300015'
-  - '603259'
-  - 002294
-  - '600276'
-  - '603392'
-  - '300760'
   alternate_sources:
   - https://www.cninfo.com.cn/
   - https://www.sse.com.cn/disclosure/
+- dataset_id: financials.standard
+  topic: pharmacy
+  label: 上市公司财务与 CCC
+  source_name: 上市公司财务与 CCC
+  source_url: https://datacenter-web.eastmoney.com/api/data/v1/get
+  source_format: JSON
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: v2/pharmacy/public-data/financials.standard.json
+  updater_script: scripts/updaters/finance.py
+  adapter: finance
+  automation_level: fully_automated
+  validation_rules:
+  - 年度累计差分、五季平均余额、现金流／资本开支原币、票据合并列示、缺失不补零
+  review_required: false
+  section: working-capital
+  view: records
+  chart_binding: true
+  incremental_start: '2024-01-01'
+  financial_sample:
+  - 603939.SH
+  - 603233.SH
+  - 600161.SH
+  - 300122.SZ
+  - 300015.SZ
+  - 603087.SH
+  - AMGN.US
+  - LLY.US
+  contract:
+    min:
+      revenue: 0
+      cost: 0
+      inventory: 0
+      capex: 0
+- dataset_id: devices.trade-values
+  topic: medical-devices
+  label: 器械 Comtrade 实际年度量价
+  source_name: 器械 Comtrade 实际年度量价
+  source_url: https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS
+  source_format: JSON
+  data_frequency: annual
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/medical-devices/public-data/devices.trade-values.json
+  updater_script: scripts/updaters/trade_values.py
+  adapter: trade_values
+  automation_level: fully_automated
+  validation_rules:
+  - 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值
+  review_required: false
+  section: customs-trade
+  view: records
+  chart_binding: true
+  incremental_start: '2025-01-01'
+  products:
+  - '90221200'
+  - '90181310'
+  flows:
+  - X
+  - M
+  availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  contract:
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+    allowed:
+      unit:
+      - kg
+      - number
+- dataset_id: api.trade-values
+  topic: api
+  label: 原料药 Comtrade 实际年度量价
+  source_name: 原料药 Comtrade 实际年度量价
+  source_url: https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS
+  source_format: JSON
+  data_frequency: annual
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/api/public-data/api.trade-values.json
+  updater_script: scripts/updaters/trade_values.py
+  adapter: trade_values
+  automation_level: fully_automated
+  validation_rules:
+  - 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值
+  review_required: false
+  section: customs-trade
+  view: records
+  chart_binding: true
+  incremental_start: '2025-01-01'
+  products:
+  - '29349970'
+  - '29362800'
+  flows:
+  - X
+  - M
+  availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  contract:
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+    allowed:
+      unit:
+      - kg
+      - number
+- dataset_id: vax.trade-values
+  topic: vaccines
+  label: 人用疫苗 Comtrade 实际年度量价
+  source_name: 人用疫苗 Comtrade 实际年度量价
+  source_url: https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS
+  source_format: JSON
+  data_frequency: annual
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/vaccines/public-data/vax.trade-values.json
+  updater_script: scripts/updaters/trade_values.py
+  adapter: trade_values
+  automation_level: fully_automated
+  validation_rules:
+  - 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值
+  review_required: false
+  section: customs-trade
+  view: records
+  chart_binding: true
+  incremental_start: '2025-01-01'
+  products:
+  - '30024100'
+  flows:
+  - X
+  - M
+  availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  contract:
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+    allowed:
+      unit:
+      - kg
+      - number
+- dataset_id: cms.partb-values
+  topic: biosimilars
+  label: CMS Part B 实际用量和支付文件
+  source_name: CMS Part B 实际用量和支付文件
+  source_url: https://data.cms.gov/
+  source_format: CSV／ZIP
+  data_frequency: irregular
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/biosimilars/public-data/cms.partb-values.json
+  updater_script: scripts/updaters/cms_values.py
+  adapter: cms_values
+  automation_level: fully_automated
+  validation_rules:
+  - 原始资料、统计期、唯一主键和统计口径
+  review_required: false
+  section: view-market
+  view: records
+  incremental_start: '2025-01-01'
+  chart_binding: true
+- dataset_id: cms.partd-values
+  topic: insulin
+  label: CMS Part D 胰岛素实际开支
+  source_name: CMS Part D 胰岛素实际开支
+  source_url: https://raw.githubusercontent.com/Savannahwilcox/drug-pricing-analysis/main/data/raw/DSD_PTD_RY26_P04_V10_DY24_BGM.csv
+  source_format: CMS 原表镜像 CSV
+  data_frequency: irregular
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/insulin/public-data/cms.partd-values.json
+  updater_script: scripts/updaters/cms_values.py
+  adapter: cms_values
+  automation_level: fully_automated
+  validation_rules:
+  - 原始资料、统计期、唯一主键和统计口径
+  review_required: false
+  section: partd
+  view: records
+  part_d: true
+  chart_binding: true
+  alternate_sources:
+  - https://catalog.data.gov/dataset/medicare-part-d-spending-by-drug-2024-01-01
+  contract:
+    min:
+      spending: 0
+      claims: 0
+      beneficiaries: 0
+      doses: 0
+- dataset_id: nih.trial-discovery
+  topic: biosimilars
+  label: 分子及申办方新试验
+  source_name: 分子及申办方新试验
+  source_url: https://clinicaltrials.gov/api/v2
+  source_format: JSON
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: null
+  updater_script: scripts/updaters/trial_discovery.py
+  adapter: trial_discovery
+  automation_level: rule_based
+  validation_rules:
+  - 原始资料、统计期、唯一主键和统计口径
+  review_required: true
+  section: view-pipeline
+  view: notices
+  trial_ids: *id001
+  queries:
+  - - ustekinumab
+    - Samsung Bioepis
+  - - adalimumab
+    - Amgen
+  - - insulin glargine
+    - Gan & Lee
+  review_since: '2026-11-01'
+- dataset_id: fda.research-actions
+  topic: biosimilars
+  label: FDA 网站覆盖分子批准及参照药
+  source_name: openFDA / 已核实的 FDA 对照资料
+  source_url: https://api.fda.gov/drug/drugsfda.json
+  source_format: JSON
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: v2/biosimilars/public-data/fda.research-actions.json
+  updater_script: scripts/updaters/fda_research.py
+  automation_level: fully_automated
+  validation_rules:
+  - 分页数量和申请编号；区分首次批准、补充批准与参照药；无经核实分类保留未确定
+  review_required: false
+  section: view-approvals
+  view: records
+  adapter: fda_research
+  additional_molecules:
+  - insulin degludec
+  - insulin glulisine
+  - insulin detemir
+  - insulin icodec
+  contract:
+    allowed:
+      action_kind:
+      - initial
+      - supplement
+      - other
+      category:
+      - reference
+      - biosimilar
+      - unverified

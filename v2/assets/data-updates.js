@@ -32,6 +32,16 @@ function formatted(value) {
 
 function renderCenter(root, datasets) {
   root.replaceChildren();
+  const total = datasets.length;
+  const counts = [
+    ['Source monitoring coverage', datasets.filter(row => row.monitoring_enabled).length],
+    ['Extraction coverage', datasets.filter(row => row.last_extracted && row.dataset_id !== 'cms.catalog').length],
+    ['Review coverage', datasets.filter(row => row.review_required).length],
+    ['End-to-end automation coverage', datasets.filter(row => row.chart_binding && row.chart_applied_at && row.eligible_cloud_check && !row.review_required).length]
+  ];
+  const coverage = node('dl','','update-coverage');
+  for (const [label,value] of counts) coverage.append(node('dt',label),node('dd',`${value} / ${total} · ${Math.round(1000*value/total)/10}%`));
+  root.append(coverage);
   const bar = node('div', '', 'update-controls');
   const topic = node('select'); const status = node('select'); const query = node('input');
   query.type = 'search'; query.placeholder = '数据集、来源或主题';
@@ -135,3 +145,5 @@ if (center || document.body.dataset.updateTopic) {
     if (center) center.textContent = '暂时无法读取数据更新记录，请稍后刷新。';
   });
 }
+
+if (document.body.dataset.updateTopic) import('./research-updates.js');

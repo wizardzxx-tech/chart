@@ -15,6 +15,7 @@ import yaml
 
 from build.audit import generate, verify_inventory
 from updaters.http import HTTP, SourceUnavailable
+from research.chart_binding import applies
 from validators.data import validate_notices, validate_records
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -73,10 +74,12 @@ def base_status(spec, previous):
     entry = {key: spec[key] for key in ("dataset_id", "topic", "label", "source_name", "source_url", "data_frequency",
                                        "check_frequency", "automation_level", "review_required", "section")}
     entry["topic_label"] = LABELS.get(spec["topic"], spec["topic"])
+    entry["monitoring_enabled"] = bool(spec["updater_script"])
+    entry["chart_binding"] = bool(spec.get("chart_binding"))
     if spec.get("view") == "records":
         entry["data_url"] = "../" + spec["local_data_path"].removeprefix("v2/")
     entry |= {key: previous[key] for key in ("latest_data_period", "last_checked", "last_success",
-              "last_source_success", "recent_log", "status", "detail", "eligible_cloud_check") if key in previous}
+              "last_source_success", "recent_log", "status", "detail", "eligible_cloud_check", "partial_source_period", "chart_applied_at", "last_extracted") if key in previous}
     entry.setdefault("latest_data_period", spec["latest_data_period"])
     entry["source"] = previous.get("source", spec["source_url"])
     entry.setdefault("status", "Manual update required" if not spec["updater_script"] else None)
@@ -95,11 +98,24 @@ def check_one(spec, state, http, args, tasks, now):
     end = args.end or TODAY
     response = adapter.collect(spec, http, start, end)
     state["last_source_success"] = now
+    if response.get("warnings"):
+        state["quality_notes"] = response["warnings"]
     if spec["review_required"]:
         found = response["notices"]
         validate_notices(found)
         for notice in found:
-            key = sha256(f"{name}/{notice['url']}".encode()).hexdigest()[:24]
+            base = f"{name}/{notice['url']}"
+            key = sha256(base.encode()).hexdigest()[:24]
+            if notice.get("dataset_checksum"):
+                key = sha256((base+"/"+notice["dataset_checksum"]).encode()).hexdigest()[:24]
+            resolved = tasks.get(key,{})
+            if resolved.get("status")=="resolved" and spec.get("review_processor"):
+                primary=[item for item in resolved.get("source_versions",[])
+                         if item["url"]==notice["url"] or "/picture/" in item["url"]]
+                hashes=[sha256(http.get(item["url"])).hexdigest() for item in primary]
+                if hashes!=[item["sha256"] for item in primary]:
+                    key=sha256((base+"/"+"/".join(hashes)).encode()).hexdigest()[:24]
+                    notice={**notice,"revision":True,"supersedes":resolved["receipt_sha256"]}
             tasks.setdefault(key, {**notice, "dataset_id": name, "topic": spec["topic"],
                                    "first_seen": now, "status": "open"})
         count = sum(task["dataset_id"] == name and task["status"] == "open" for task in tasks.values())
@@ -115,6 +131,7 @@ def check_one(spec, state, http, args, tasks, now):
     latest = max(combined, key=lambda row: row["period"])
     state["source"] = latest["source"]
     state["latest_data_period"] = latest.get("edition", latest["period"])
+    state["last_extracted"] = now
     if changed:
         before = {(x["url"], x["sha256"]) for x in old["source_files"]}
         after = {(x["url"], x["sha256"]) for x in http.evidence}
@@ -123,6 +140,8 @@ def check_one(spec, state, http, args, tasks, now):
         output = (path, {"dataset_id": name, "updated_at": now, "source_files": http.evidence,
                          "records": combined})
         state["last_success"] = now
+        if spec.get("chart_binding") and applies(spec, changed):
+            state["chart_applied_at"] = now
         return "Updated", f"新增或经核验修订 {len(changed)} 条。", output, archive
     return "No new data", "已核对来源与已发布记录。", output, archive
 
@@ -189,7 +208,8 @@ def main():
         if os.environ.get("GITHUB_ACTIONS") == "true" and status in ("Updated", "No new data", "Pending review"):
             state["eligible_cloud_check"] = True
         event = {"dataset_id": name, "time": now, "status": status, "detail": detail,
-                 "period": state["latest_data_period"], "source_files": http.evidence}
+                 "period": state["latest_data_period"], "source_files": http.evidence,
+                 "quality_notes":state.get("quality_notes", [])}
         if archive:
             event["revisions"] = archive
         max_age = spec.get("max_age_days")

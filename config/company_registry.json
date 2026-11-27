@@ -1,0 +1,896 @@
+{
+  "companies": [
+    {
+      "ticker": "000028.SZ",
+      "name": "国药一致",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=000028",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "000403.SZ",
+      "name": "派林生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=000403",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "000739.SZ",
+      "name": "普洛药业",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=000739",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "002001.SZ",
+      "name": "新和成",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002001",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "002007.SZ",
+      "name": "华兰生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002007",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "002252.SZ",
+      "name": "上海莱士",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002252",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "002332.SZ",
+      "name": "仙琚制药",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002332",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "002399.SZ",
+      "name": "海普瑞",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002399",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "002524.SZ",
+      "name": "光正眼科",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002524",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "002550.SZ",
+      "name": "千红制药",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002550",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "002562.SZ",
+      "name": "兄弟科技",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002562",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "002727.SZ",
+      "name": "一心堂",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002727",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "002880.SZ",
+      "name": "卫光生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=002880",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "01093.HK",
+      "name": "石药集团",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "01801.HK",
+      "name": "信达生物",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "01846.HK",
+      "name": "德视佳",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "02179.HK",
+      "name": "瑞科生物-B",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "02197.HK",
+      "name": "三叶草生物-B",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "02219.HK",
+      "name": "朝聚眼科",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "02480.HK",
+      "name": "绿竹生物-B",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "02627.HK",
+      "name": "中慧生物-B",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "02696.HK",
+      "name": "复宏汉霖",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "03309.HK",
+      "name": "希玛医疗",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "03933.HK",
+      "name": "联邦制药",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "api",
+        "insulin"
+      ]
+    },
+    {
+      "ticker": "06660.HK",
+      "name": "艾美疫苗",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "06955.HK",
+      "name": "博安生物",
+      "market": "HK",
+      "disclosure_url": "https://www.hkexnews.hk/",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "300015.SZ",
+      "name": "爱尔眼科",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300015",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "300122.SZ",
+      "name": "智飞生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300122",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "300142.SZ",
+      "name": "沃森生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300142",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "300294.SZ",
+      "name": "博雅生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300294",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "300318.SZ",
+      "name": "博晖创新",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300318",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "300583.SZ",
+      "name": "赛托生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300583",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "300601.SZ",
+      "name": "康泰生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300601",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "300633.SZ",
+      "name": "开立医疗",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300633",
+      "topics": [
+        "medical-devices"
+      ]
+    },
+    {
+      "ticker": "300702.SZ",
+      "name": "天宇股份",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300702",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "300760.SZ",
+      "name": "迈瑞医疗",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300760",
+      "topics": [
+        "medical-devices"
+      ]
+    },
+    {
+      "ticker": "300841.SZ",
+      "name": "康华生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300841",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "301017.SZ",
+      "name": "漱玉平民",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301017",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "301103.SZ",
+      "name": "何氏眼科",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301103",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "301126.SZ",
+      "name": "达嘉维康",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301126",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "301207.SZ",
+      "name": "华兰疫苗",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301207",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "301239.SZ",
+      "name": "普瑞眼科",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301239",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "301267.SZ",
+      "name": "华厦眼科",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301267",
+      "topics": [
+        "ophthalmology"
+      ]
+    },
+    {
+      "ticker": "301301.SZ",
+      "name": "川宁生物",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301301",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "301408.SZ",
+      "name": "华人健康",
+      "market": "SZ",
+      "disclosure_url": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=301408",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "600085.SH",
+      "name": "同仁堂",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600085",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "600161.SH",
+      "name": "天坛生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600161",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "600216.SH",
+      "name": "浙江医药",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600216",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "600267.SH",
+      "name": "海正药业",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600267",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "600276.SH",
+      "name": "恒瑞医药",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600276",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "600488.SH",
+      "name": "津药药业",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600488",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "600521.SH",
+      "name": "华海药业",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600521",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "600789.SH",
+      "name": "鲁抗医药",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600789",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "600829.SH",
+      "name": "人民同泰",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600829",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "600833.SH",
+      "name": "第一医药",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600833",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "600867.SH",
+      "name": "通化东宝",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600867",
+      "topics": [
+        "insulin"
+      ]
+    },
+    {
+      "ticker": "600998.SH",
+      "name": "九州通",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600998",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "603079.SH",
+      "name": "圣达生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603079",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "603087.SH",
+      "name": "甘李药业",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603087",
+      "topics": [
+        "insulin"
+      ]
+    },
+    {
+      "ticker": "603233.SH",
+      "name": "大参林",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603233",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "603235.SH",
+      "name": "天新药业",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603235",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "603368.SH",
+      "name": "柳药集团",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603368",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "603392.SH",
+      "name": "万泰生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603392",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "603538.SH",
+      "name": "美诺华",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603538",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "603707.SH",
+      "name": "健友股份",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603707",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "603883.SH",
+      "name": "老百姓",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603883",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "603939.SH",
+      "name": "益丰药房",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603939",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "605266.SH",
+      "name": "健之佳",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=605266",
+      "topics": [
+        "pharmacy"
+      ]
+    },
+    {
+      "ticker": "605507.SH",
+      "name": "国邦医药",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=605507",
+      "topics": [
+        "api"
+      ]
+    },
+    {
+      "ticker": "688062.SH",
+      "name": "迈威生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688062",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "688177.SH",
+      "name": "百奥泰",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688177",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "688185.SH",
+      "name": "康希诺",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688185",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "688271.SH",
+      "name": "联影医疗",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688271",
+      "topics": [
+        "medical-devices"
+      ]
+    },
+    {
+      "ticker": "688276.SH",
+      "name": "百克生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688276",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "688319.SH",
+      "name": "欧林生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688319",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "688336.SH",
+      "name": "三生国健",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688336",
+      "topics": [
+        "biosimilars"
+      ]
+    },
+    {
+      "ticker": "688670.SH",
+      "name": "金迪克",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688670",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "688739.SH",
+      "name": "成大生物",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688739",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "688765.SH",
+      "name": "禾元生物-U",
+      "market": "SH",
+      "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=688765",
+      "topics": [
+        "blood-products"
+      ]
+    },
+    {
+      "ticker": "920575.BJ",
+      "name": "*ST康乐",
+      "market": "BJ",
+      "disclosure_url": "https://www.bse.cn/disclosure/announcement.html",
+      "topics": [
+        "vaccines"
+      ]
+    },
+    {
+      "ticker": "ABBV.US",
+      "name": "AbbVie",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1551152",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 1551152
+    },
+    {
+      "ticker": "AMGN.US",
+      "name": "Amgen",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=318154",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 318154
+    },
+    {
+      "ticker": "BIIB.US",
+      "name": "Biogen",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=875045",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 875045
+    },
+    {
+      "ticker": "BMY.US",
+      "name": "Bristol Myers Squibb",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=14272",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 14272
+    },
+    {
+      "ticker": "GEHC.US",
+      "name": "GE HealthCare",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1932393",
+      "topics": [
+        "medical-devices"
+      ],
+      "cik": 1932393
+    },
+    {
+      "ticker": "GSK.US",
+      "name": "GSK",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1131399",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 1131399
+    },
+    {
+      "ticker": "JNJ.US",
+      "name": "Johnson & Johnson",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=200406",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 200406
+    },
+    {
+      "ticker": "LLY.US",
+      "name": "Eli Lilly",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=59478",
+      "topics": [
+        "insulin"
+      ],
+      "cik": 59478
+    },
+    {
+      "ticker": "MRK.US",
+      "name": "Merck & Co.",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=310158",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 310158
+    },
+    {
+      "ticker": "NVO.US",
+      "name": "Novo Nordisk",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=353278",
+      "topics": [
+        "insulin"
+      ],
+      "cik": 353278
+    },
+    {
+      "ticker": "NVS.US",
+      "name": "Novartis",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1114448",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 1114448
+    },
+    {
+      "ticker": "PFE.US",
+      "name": "Pfizer",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=78003",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 78003
+    },
+    {
+      "ticker": "PHG.US",
+      "name": "飞利浦",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=313216",
+      "topics": [
+        "medical-devices"
+      ],
+      "cik": 313216
+    },
+    {
+      "ticker": "REGN.US",
+      "name": "Regeneron",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=872589",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 872589
+    },
+    {
+      "ticker": "SNY.US",
+      "name": "Sanofi",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1121404",
+      "topics": [
+        "biosimilars",
+        "insulin"
+      ],
+      "cik": 1121404
+    },
+    {
+      "ticker": "SVA.US",
+      "name": "科兴控股",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1084201",
+      "topics": [
+        "vaccines"
+      ],
+      "cik": 1084201
+    },
+    {
+      "ticker": "VTRS.US",
+      "name": "Viatris",
+      "market": "US",
+      "disclosure_url": "https://www.sec.gov/edgar/browse/?CIK=1792044",
+      "topics": [
+        "biosimilars"
+      ],
+      "cik": 1792044
+    }
+  ]
+}
