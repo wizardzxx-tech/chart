@@ -1388,6 +1388,8 @@ datasets:
   - M
   availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
   contract:
+    comparison_metadata:
+    - provenance
     min:
       amount: 0
       qty: 0
@@ -1424,6 +1426,8 @@ datasets:
   - M
   availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
   contract:
+    comparison_metadata:
+    - provenance
     min:
       amount: 0
       qty: 0
@@ -1459,6 +1463,8 @@ datasets:
   - M
   availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
   contract:
+    comparison_metadata:
+    - provenance
     min:
       amount: 0
       qty: 0

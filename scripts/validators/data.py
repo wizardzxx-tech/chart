@@ -39,6 +39,7 @@ def validate_records(spec, rows, previous, end):
     changed = []
     revisions = []
     rules = spec.get("contract", {})
+    metadata_fields = set(rules.get("comparison_metadata", []))
     for item in rows:
         require(isinstance(item["id"], str) and bool(item["id"]), "Missing record ID")
         require(date.fromisoformat(item["period"]) <= date.fromisoformat(end), "Future period")
@@ -57,6 +58,11 @@ def validate_records(spec, rows, previous, end):
         old = existing.get(item["id"])
         if old == item:
             continue
+        if old is not None and metadata_fields:
+            values = {k:v for k,v in item.items() if k not in metadata_fields}
+            prior_values = {k:v for k,v in old.items() if k not in metadata_fields}
+            if values == prior_values:
+                continue
         if old is not None:
             # A dataset-specific adapter must supply the actual official correction link.
             # No pilot enables in-place corrections without a reviewed provider contract.

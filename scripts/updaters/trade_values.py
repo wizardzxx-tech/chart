@@ -122,4 +122,6 @@ def collect(spec,http,start,end):
                                     "checksum":source_info.get("datasetChecksum")}, **result})
     if not rows and errors:
         raise SourceUnavailable("; ".join(errors)[:300])
+    # The API puts request timing and formatting in the JSON envelope.
+    # Record its hash in HTTP receipts while comparing substantive statistics.
     return {"records":rows,"warnings":errors}
