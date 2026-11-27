@@ -253,8 +253,10 @@ def main():
             status, detail, output, archive = check_one(spec, state, http, args, tasks, now)
         except SourceUnavailable as error:
             status, detail = "Source unavailable", str(error)
-        except (ValueError, KeyError, TypeError, IndexError) as error:
-            status, detail = "Validation failed", str(error)[:300]
+        except Exception as error:
+            status, detail = "Validation failed", f"{type(error).__name__}: {error}"[:300]
+            state["subtasks"] = []
+            state.pop("coverage",None)
         finally:
             http.session.close()
         checks = state.get("subtasks",[])

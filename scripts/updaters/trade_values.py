@@ -113,14 +113,14 @@ def collect(spec,http,start,end):
             continue
         for flow in spec.get("flows",["X","M"]):
             check_id=f"{code}/{frequency}/{flow}"
-            if not code.isdigit() or len(code) not in (6,8):
+            if product.get("mappingOnly") or not code.isdigit() or len(code) not in (6,8):
                 checks.append(unit(check_id,"HS / flow",end,"uncovered",attempted=False,
                                    detail="缺少可单独查询且匹配本品类的申报编码"))
                 continue
             if wanted and wanted[-1] not in eligible and not spec.get("review_unit"):
                 last=wanted[-1]
-                date=period_start(last)
-                checks.append(unit(f"{code}/{last}/{flow}","HS / flow",date,"unpublished",
+                due=period_start(last)
+                checks.append(unit(f"{code}/{last}/{flow}","HS / flow",due,"unpublished",
                                    detail="官方可用性目录尚无该期中国原始 HS 数据"))
             for period in published:
                 identifier=f"{code}/{period}/{flow}"
@@ -152,6 +152,8 @@ def collect(spec,http,start,end):
                         continue
                     if frequency=="M":
                         result.pop("partners")
+                        if product.get("holdUnitValue") or result["world"][2] not in ("原表","申报"):
+                            result["asp"]=None
                     rows.append({"id":f"{original}/{period}/{flow}","period":stamp,
                         "year":int(period[:4]),"flow":flow,"code":original,"product":code,"url":url,"source":url,
                         "unit":"kg" if product["basis"]=="kg" else "number",
