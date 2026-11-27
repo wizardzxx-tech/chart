@@ -46,11 +46,13 @@ agency=rows("vaccines/public-data/vax.agency-coverage.json")
 known=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
 item=next((r["item"] for r in rows("biosimilars/public-data/cms.partb-values.json")
            if r["item"]["period"]==max(cms,default=None) and r["item"]["code"]=="J0178"),None)
+cms_full=next((r["item"] for r in rows("biosimilars/public-data/cms.partb-values.json")
+               if r["item"]["period"]=="2025FY" and r["item"]["code"]=="J0178" and r.get("approved_revision")),None)
 approved_op=rows("update-center/operating-metrics.json")
 data={"commit":known,"hashes":hashes,
       "finance":{**{k:finance[-1][k] for k in ("ticker","period")},
                  "quarter_revenue":finance[-1]["quarter"]["revenue"]} if finance else None,
-      "cms":max(cms,default=None),"cms_value":item,"monthly":monthly,"fresh_trade":fresh_trade,
+      "cms":max(cms,default=None),"cms_value":item,"cms_full_year":cms_full,"monthly":monthly,"fresh_trade":fresh_trade,
       "operating":next((r for r in reversed(approved_op) if r["metric"]=="plasma_collection"),None),
       "agency":{"period":agency[-1]["period"],"total":agency[-1]["registered_agencies"]} if agency else None}
 output.write_text(json.dumps(data,indent=2)+"\n")

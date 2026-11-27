@@ -54,7 +54,7 @@ try {
     await panel.getByRole('combobox',{name:'财务口径'}).selectOption('ttm');
     assert(await panel.locator('svg circle').count()>1,'CCC history and TTM switch unavailable');
     return manifest.finance.period;
-  });
+  },true);
   await check('cms.partb-values',async()=>{
     if(!manifest.cms)return {skip:'No automatically sourced current CMS cumulative period'};
     await load('biosimilars/#market');
@@ -73,8 +73,16 @@ try {
       const decimal=new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
       assert((await value.textContent()).includes('$'+decimal.format(manifest.cms_value.spending)),'Part B rendered spending differs');
     }
+    const annual=manifest.cms_full_year;
+    if(annual){
+      await period.selectOption('2025FY');
+      const code=page.locator('#market-table tbody tr').filter({hasText:annual.code});
+      const dollars=new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+      assert((await period.locator('option:checked').textContent()).includes('全年'),'Full-year Part B scope mislabeled');
+      assert((await code.textContent()).includes('$'+dollars.format(annual.spending)),'Approved full-year values did not replace the old version');
+    }
     return manifest.cms;
-  });
+  },true);
   for(const [topic,feed] of Object.entries({api:'api','medical-devices':'devices',vaccines:'vax'})){
     await check(feed+'.trade-monthly',async()=>{
       await load(topic+'/');
@@ -119,7 +127,7 @@ try {
     assert(cells[3]===printed(manifest.operating.value)&&cells[4]==='吨'&&cells[5]==='全年',
       'Approved collection volume or its scope differs');
     return manifest.operating.period;
-  });
+  },true);
   await check('vax.agency-coverage',async()=>{
     if(!manifest.agency)return {skip:'Agency disclosure monitor has no snapshot'};
     await load('vaccines/');

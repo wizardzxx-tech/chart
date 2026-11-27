@@ -179,7 +179,7 @@ async function monthlyTrade(topic,feed) {
   section.dataset.monthlyTrade=topic;
   section.append(elem('p','全国单月美元值。各来源和税号分别展示。同比、年内累计和滚动额要求同来源、同编码及可比月份齐备。'));
   const vintage=elem('select');vintage.setAttribute('aria-label','月度数据来源');
-  const names={original:'UN Comtrade 原申报码',summary:'2026 海关公开摘要 · 国贸通',
+  const names={original:'UN Comtrade 原申报码',summary:'国贸通公开月报 · HS8',
     hs6:'UN Comtrade 标准 HS6',history:'HS10 历史金额 · HS归类通',manual:'历史人工核验 · 海关转引'};
   for(const [key,label] of Object.entries(names)){
     if(feeds[key].length||key==='original')vintage.add(new Option(label,key));
@@ -265,10 +265,14 @@ async function agencyCoverage() {
     result.append(elem('p',`${latest.verified_agencies}/${latest.registered_agencies} 家机构已核对完整周公告。各机构可能采用不同签发区间，暂无公告的机构记为覆盖待确认。`));
     const national=latest.national?.[scope];
     if(national) result.append(elem('p',`可用于本专题全国汇总的覆盖为 ${national.verified_agencies}/${national.required_agencies} 家 · ${national.complete?'全国批数 '+national.batches:'全国批数待核'}`));
-    table(result,['签发机构','所选周覆盖','公告数','缺失日期','跨周待归属批数','目录最新周','官方入口'],rows.map(r=>[
-      r.agency,r.status==='records'?'已核对完整周':r.status==='failed'?'原表读取失败':'待核对',
-      r.reports.length,r.uncovered_days?.join('、')||'—',format(r.unassigned?.[scope]),
-      r.registry_latest||'—',source(r.source)]));
+    table(result,['签发机构','所选周覆盖','公告数','缺失日期','跨周待归属批数','已核授权','目录最新周','官方入口'],rows.map(r=>{
+      const authority=r.authorized_scope;
+      const scopeConfirmed=authority?.verified_included?.includes(scope);
+      return [r.agency,r.status==='records'?'已核对完整周':r.status==='failed'?'原表读取失败':'待核对',
+        r.reports.length,r.uncovered_days?.join('、')||'—',format(r.unassigned?.[scope]),
+        scopeConfirmed?source(authority.source,'官方授权依据'):'待补证',
+        r.registry_latest||'—',source(r.source)];
+    }));
     result.append(source(latest.authorization_source,'机构及授权调整公告'));
   };
   picker.addEventListener('change',render);render();

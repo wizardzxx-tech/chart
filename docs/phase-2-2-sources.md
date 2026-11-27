@@ -34,3 +34,7 @@
 ## 特色指标审核
 
 定期报告发现和规则提取在 Actions 执行。更新中心展示只读审核依据。审核者可使用 `python scripts/review_data.py <任务编号>` 取得收执，在 Manual data update 工作流以同一任务编号和收执哈希提交审核。批准时重新获取原件并核对内容哈希。未匹配到稳定规则的披露保留在人工取值队列。
+
+人工或 AI 辅助候选可保存到 `config/operating-review-inputs/<任务编号>.json`，由同一审核流程确认。文件包含原件 `pdf_sha256` 和 `records` 列表。每条候选提供 `metric`、`page`、`excerpt`、`printed_value`、`printed_unit`、`period_kind`、`scope`。收执会从原件复查版本、页码、片段和报表单位。人工审核仍确认业务口径与原文一致。
+
+上海市药监局 2026 年 11 月的原表可独立复核公告区间。11 月 17–22 日的 XLS 提供证书号及持有人，未给出逐批签发日期和单列生产企业。在缺少逐批日期的跨周公告中继续保留待归属证书。 [上海药监局原始附件目录](https://yjj.sh.gov.cn/jn-bmfw/20260121/c230f5de33a94926b0976618acc1a80c.html)

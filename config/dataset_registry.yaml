@@ -1702,7 +1702,14 @@ datasets:
   local_data_path: v2/vaccines/public-data/vax.agency-coverage.json
   updater_script: scripts/updaters/lot_coverage.py
   adapter: lot_coverage
-  processing_version: interval-union-and-exact-issuance-v2
+  processing_version: interval-union-exact-issuance-and-authorization-v3
+  authorized_scope:
+    '20190924c001':
+      verified_included: [blood]
+      source: https://bio.nidc.org.cn/pqf/file_path/help/pqf_sqqfjg_sd_20200416.pdf
+    '20240313c001':
+      verified_included: [blood]
+      source: https://www.nmpa.gov.cn/xxgk/fgwj/gzwj/gzwjyp/20250313144719136.html
   automation_level: fully_automated
   validation_rules:
   - 机构目录、公告覆盖区间、签发证书去重和产品分类。公示缺失保持未知。

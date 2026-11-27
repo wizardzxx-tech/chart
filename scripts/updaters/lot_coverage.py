@@ -113,7 +113,7 @@ def collect(spec,http,start,end):
             inventory=agency["links"]
             issues,reported=[],[]
             observed=Counter()
-            unknown=Counter()
+            unassigned={kind:set() for kind in by_type}
             missing=Counter()
             for span,(url,published) in sorted(inventory.items()):
                 if span[0]>week[1] or span[1]<week[0]:
@@ -139,7 +139,7 @@ def collect(spec,http,start,end):
                         if not passed or kind not in by_type:
                             continue
                         if issue is None and not (week[0]<=span[0] and span[1]<=week[1]):
-                            unknown[kind]+=1
+                            unassigned[kind].add(ref)
                             continue
                         if issue and not week[0]<=issue<=week[1]:
                             continue
@@ -155,6 +155,8 @@ def collect(spec,http,start,end):
                     reported.append(proof)
                 except (SourceUnavailable,ValueError,KeyError,TypeError,OSError) as error:
                     issues.append(str(error))
+            known={ref for ref,identity in week_records.items() if identity[0]==code}
+            unknown={kind:len(refs-known) for kind,refs in unassigned.items()}
             uncovered=coverage_week(week,reported)
             status="failed" if issues else "uncovered" if uncovered else "records"
             if status=="records":
@@ -172,7 +174,7 @@ def collect(spec,http,start,end):
                 "scope_observed":sorted(observed),"authorized_scope":scope.get(code),
                 "registry_latest":max((x[1] for x in inventory),default=None),
                 "status":status,"reports":reported,"missing_fields":dict(missing),
-                "uncovered_days":uncovered,"unassigned":dict(unknown),
+                "uncovered_days":uncovered,"unassigned":unknown,
                 "verified_week_counts":dict(observed)})
         national={}
         for kind,passed in by_type.items():

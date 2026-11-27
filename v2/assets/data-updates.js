@@ -220,6 +220,11 @@ async function financeEvidence() {
     const modes={quarterly_cn:'A 股财政报告期',quarterly_us:'SEC 报告期',native_verified_history:'历史披露原生报告期'};
     body.append(node('p',`${row.period} · ${modes[row.mode]} · ${row.currency} · 公告日 ${row.announced||'待补'} · ${row.fields.length}/${row.eligible.length} 个有值字段`));
     const accounting={ar:'balance',ap:'balance',inventory:'balance',revenue:'income',cost:'income',net_profit:'income',selling:'income',sga:'income',rd:'income',admin:'income',finance:'income'};
+    if(row.versions&&Object.keys(row.versions).length){
+      const proof=node('details');proof.append(node('summary','公告版本与报表时间'));
+      for(const [label,version] of Object.entries(row.versions)) proof.append(node('p',label+' · '+version));
+      body.append(proof);
+    }
     body.append(evidenceTable(['财务字段','覆盖','原件或申报码'],Object.entries(fields).map(([field,label])=>{
       const page=row.pages[accounting[field]];
       const evidence=node('span',row.tags[field]||'');
@@ -250,10 +255,11 @@ async function operatingEvidence() {
     const doc=data.documents.find(x=>x.id===select.value);
     if(!doc){body.append(node('p','暂无待核对公告。'));return;}
     body.append(node('p',doc.period+' · '+(doc.status==='resolved'?'已审核':'待审')+' · '+doc.id),link('原始公告',doc.url));
-    body.append(evidenceTable(['指标','旧值','提取值','单位','同比 %','原文证据'],doc.candidates.map(r=>{
+    body.append(evidenceTable(['指标','旧值','提取值','单位','上年同期','同比 %','原文证据'],doc.candidates.map(r=>{
       const proof=node('span',r.excerpt);
       proof.append(' ',link('PDF 第 '+r.page+' 页',r.source+'#page='+r.page));
-      return [r.label,num(r.before),num(r.after),r.unit,num(r.yoy_pct),proof];
+      const prior=r.prior_source?link(num(r.year_ago),r.prior_source):num(r.year_ago);
+      return [r.label,num(r.before),num(r.after),r.unit,prior,num(r.yoy_pct),proof];
     })));
   }
   select.addEventListener('change',render);render();
