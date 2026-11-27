@@ -267,7 +267,7 @@ def main():
                     f'{item["id"]}: {item.get("detail",item["status"])}'
                     for item in checks if item["status"] in PROBLEM]]
                 if status in ("Updated","No new data","Pending review"):
-                    status = "Partial success" if coverage["successful"] else "Source unavailable"
+                    status = "Partial success" if coverage["successful"] or coverage["previously_verified"] else "Source unavailable"
                     detail = f'{detail} 成功 {coverage["successful"]}/{coverage["configured"]}，失败 {coverage["failed"]}，未覆盖 {coverage["uncovered"]}，修订待审 {coverage["pending_revision"]}。'
         state |= {"status": status, "detail": detail, "last_checked": now}
         if os.environ.get("GITHUB_ACTIONS") == "true" and status in ("Updated", "No new data", "Pending review", "Partial success"):

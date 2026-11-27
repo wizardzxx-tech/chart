@@ -106,7 +106,7 @@ function renderCenter(root, datasets) {
           if(task.source)entry.append(' ',link('原始出处',task.source));
           list.append(entry);
         }
-        more.append(node('p',`暂无新增 ${c.no_new} · 失败 ${c.failed} · 未覆盖 ${c.uncovered} · 修订待审 ${c.pending_revision}`),list);
+        more.append(node('p',`暂无新增 ${c.no_new} · 沿用已核对 ${c.previously_verified??0} · 失败 ${c.failed} · 未覆盖 ${c.uncovered} · 修订待审 ${c.pending_revision}`),list);
         cell.append(more);
       } else if(item.quality_notes?.length) {
         const more=node('details');more.append(node('summary','检查提示'));

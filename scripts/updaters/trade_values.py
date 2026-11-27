@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from urllib.parse import urlencode
 
-from research.checks import unit
+from research.checks import GOOD,unit
 from research.trade_units import metric, quantity_quality
 from updaters.comtrade import periods
 from updaters.http import SourceUnavailable
@@ -83,26 +83,36 @@ def collect(spec,http,start,end):
         end=(date.fromisoformat(end).replace(day=1)-timedelta(days=1)).isoformat()
     wanted=periods(start,end,frequency)
     eligible={}
-    for offset in range(0,len(wanted),12):
-        payload=json.loads(http.get(spec["availability_source"],
-            params={"reporterCode":156,"period":",".join(wanted[offset:offset+12])}))
-        if payload.get("error") or payload["count"]!=len(payload["data"]):
-            raise ValueError("Cannot verify availability for the requested scope")
-        for row in payload["data"]:
-            if row.get("isOriginalClassification") and row["freqCode"]==frequency:
-                if row["reporterCode"]!=156 or str(row["period"]) not in wanted or row["totalRecords"]<1:
-                    raise ValueError("Availability catalog has an inconsistent scope")
-                eligible[str(row["period"])]=row
-    previous=spec.get("previous_checks",{})
-    published=sorted(eligible)
-    if frequency=="M" and not spec.get("backfill"):
-        # Revisit failed windows and changed release versions independently.
-        changed={key.split("/")[-2] for key,check in previous.items()
-                 if check["status"] in ("failed","pending_revision") or (
-                     key.split("/")[-2] in eligible and check.get("version") and
-                     check["version"]!=eligible[key.split("/")[-2]].get("lastReleased"))}
-        published=sorted(set(published[-3:])|changed.intersection(eligible))
     checks=[]
+    available=set()
+    for offset in range(0,len(wanted),12):
+        window=wanted[offset:offset+12]
+        identifier=f"availability/{window[0]}–{window[-1]}"
+        try:
+            payload=json.loads(http.get(spec["availability_source"],
+                params={"reporterCode":156,"period":",".join(window)}))
+            if payload.get("error") or payload["count"]!=len(payload["data"]):
+                raise ValueError("Cannot verify availability for the requested scope")
+            releases={}
+            for row in payload["data"]:
+                if row.get("isOriginalClassification") and row["freqCode"]==frequency:
+                    if row["reporterCode"]!=156 or str(row["period"]) not in window or row["totalRecords"]<1:
+                        raise ValueError("Availability catalog has an inconsistent scope")
+                    releases[str(row["period"])]=row
+            eligible.update(releases)
+            available.update(window)
+        except (SourceUnavailable,ValueError,KeyError,TypeError) as error:
+            checks.append(unit(identifier,"catalog",period_start(window[-1]),"failed",detail=error))
+    previous=spec.get("previous_checks",{})
+    published=sorted(eligible,reverse=True)
+    if frequency=="M" and not spec.get("backfill"):
+        known={key.split("/")[-2] for key in previous if key.count("/")==2}
+        known=known.intersection(eligible)
+        newest=published[:3]
+        backlog=[period for period in published[3:] if period not in known]
+        # Widen the window one month per run while revisiting every unfinished
+        # check and any edition whose official digest or release has changed.
+        published=sorted(set(newest)|known|set(backlog[:1] if known else []),reverse=True)
     rows=[]
     units={}
     exhausted=False
@@ -117,7 +127,7 @@ def collect(spec,http,start,end):
                 checks.append(unit(check_id,"HS / flow",end,"uncovered",attempted=False,
                                    detail="缺少可单独查询且匹配本品类的申报编码"))
                 continue
-            if wanted and wanted[-1] not in eligible and not spec.get("review_unit"):
+            if wanted and wanted[-1] in available and wanted[-1] not in eligible and not spec.get("review_unit"):
                 last=wanted[-1]
                 due=period_start(last)
                 checks.append(unit(f"{code}/{last}/{flow}","HS / flow",due,"unpublished",
@@ -132,6 +142,14 @@ def collect(spec,http,start,end):
                 params={"reporterCode":156,"period":period,"cmdCode":original,"flowCode":flow,"maxRecords":500}
                 url=PREVIEW.replace("previewTariffline",api).format(frequency=frequency)+"?"+urlencode(params)
                 info=eligible[period]
+                past=previous.get(identifier,{})
+                if (not spec.get("backfill") and past.get("status") in GOOD and past.get("last_ok")
+                        and past.get("version")==info.get("lastReleased")
+                        and past.get("dataset_checksum") is not None
+                        and past["dataset_checksum"]==info.get("datasetChecksum")):
+                    checks.append({**past,"status":"unchanged","attempted":False,
+                                   "detail":"官方版本与校验值未变，沿用上次通过校验的记录"})
+                    continue
                 if exhausted:
                     checks.append(unit(identifier,"HS / flow",stamp,"failed",attempted=False,detail="本次 Comtrade 配额已用尽，延后重试"))
                     continue
@@ -163,14 +181,14 @@ def collect(spec,http,start,end):
                                       "checksum":info.get("datasetChecksum")},**result})
                     units[rows[-1]["id"]]=identifier
                     checks.append(unit(identifier,"HS / flow",stamp,"records",latest=stamp,count=1))
-                    checks[-1].update(version=info.get("lastReleased"),source=url)
+                    checks[-1].update(version=info.get("lastReleased"),source=url,dataset_checksum=info.get("datasetChecksum"))
                 except (ValueError, SourceUnavailable, KeyError, TypeError) as error:
                     exhausted=str(error).startswith("HTTP 429")
                     checks.append(unit(identifier,"HS / flow",stamp,"failed",detail=error))
                     checks[-1]["source"]=url
-    if frequency=="M" and published and wanted and wanted[-1]!=published[-1]:
+    if frequency=="M" and published and wanted and wanted[-1]!=published[0]:
         checks.append(unit("latest-release","report",period_start(wanted[-1]),"uncovered",
-            latest=period_start(published[-1]),detail="官方月度目录尚未覆盖最近应查月份；可展示较早已取得的月份"))
+            latest=period_start(published[0]),detail="最近应查月份的官方数据尚未核实；保留较早已取得的月份"))
     return {"records":rows,"checks":checks,"record_units":units}
 
 
