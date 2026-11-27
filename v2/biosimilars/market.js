@@ -344,7 +344,15 @@ function updateRoute(){
   if(pending)return;
   pending=Promise.all(['medicare','market-references','market-research'].map(id=>fetch(new URL('./data/'+id+'.json',import.meta.url)).then(r=>{
     if(!r.ok)throw new Error(id+' HTTP '+r.status);return r.json();
-  }))).then(([medicare,references,updated])=>{
+  }))).then(async ([medicare,references,updated])=>{
+    const supplement=await fetch(new URL('./public-data/cms.partb-values.json',import.meta.url))
+      .then(r=>r.ok?r.json():null).catch(()=>null);
+    for(const row of supplement?.records||[]){
+      const key=row.kind.startsWith('asp-')?'price':row.kind;
+      if(!['price','annual','quarterly'].includes(key))continue;
+      if(!medicare[key].some(item=>item.code===row.item.code&&item.period===row.item.period))
+        medicare[key].push(row.item);
+    }
     cms=medicare;
     refs=references;
     research=updated;

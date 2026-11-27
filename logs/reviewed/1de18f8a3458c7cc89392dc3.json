@@ -1,0 +1,154 @@
+{
+  "receipt_sha256": "96d47a3987dd1e1437aa34040a3517ab8d36113eb6c895a2091cbaad9e381da2",
+  "reviewed_at": "2026-11-27T07:59:09+00:00",
+  "task_id": "1de18f8a3458c7cc89392dc3",
+  "dataset_id": "blood.lot-release",
+  "source": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+  "files": [
+    {
+      "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+      "sha256": "4403a40b614e3fa00ab870638d2da961a3ac78318097c34abfbfcb53d6b1f86e",
+      "bytes": 172775
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+      "sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+      "bytes": 67730
+    }
+  ],
+  "old": null,
+  "comparison_base": null,
+  "candidate": {
+    "period": "2026-11-15",
+    "start": "2026-11-09",
+    "source": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+    "sha256": "4403a40b614e3fa00ab870638d2da961a3ac78318097c34abfbfcb53d6b1f86e",
+    "basis": "center-issued certificates",
+    "unit": "批",
+    "agency": "中国药品检定研究院",
+    "national": {
+      "official_index": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+      "index_sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+      "agencies_indexed": 20,
+      "agencies_with_overlapping_links": 14,
+      "agencies": {
+        "中国药品检定研究院": 1,
+        "北京市药品检验研究院": 1,
+        "上海市食品药品检验研究院": 1,
+        "广东省药品检验所": 1,
+        "四川省药品检验研究院(四川省医疗器械检测中心)": 1,
+        "湖北省药品监督检验研究院": 1,
+        "吉林省药品检验研究院": 1,
+        "甘肃省药品检验研究院": 1,
+        "重庆市食品药品检验检测研究院": 1,
+        "山东省食品药品检验研究院": 0,
+        "辽宁省药品检验检测院": 0,
+        "云南省食品药品监督检验研究院": 0,
+        "河北省药品医疗器械检验研究院": 1,
+        "浙江省食品药品检验研究院": 1,
+        "江苏省药品监督检验研究院": 0,
+        "江西省药品检验检测研究院": 1,
+        "河南省药品医疗器械检验院(河南省疫苗批签中心)": 1,
+        "福建省食品药品质量检验研究院": 0,
+        "湖南省药品检验检测研究院": 1,
+        "新疆维吾尔自治区药品检验研究院": 0
+      },
+      "national_reconciled": false
+    },
+    "total": 0,
+    "aggregates": [],
+    "audited_batches": 58,
+    "duplicate_rows": 0,
+    "exclusions": {
+      "other_biologics": 23
+    }
+  },
+  "diff": {
+    "period": {
+      "before": null,
+      "after": "2026-11-15"
+    },
+    "start": {
+      "before": null,
+      "after": "2026-11-09"
+    },
+    "source": {
+      "before": null,
+      "after": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html"
+    },
+    "sha256": {
+      "before": null,
+      "after": "4403a40b614e3fa00ab870638d2da961a3ac78318097c34abfbfcb53d6b1f86e"
+    },
+    "basis": {
+      "before": null,
+      "after": "center-issued certificates"
+    },
+    "unit": {
+      "before": null,
+      "after": "批"
+    },
+    "agency": {
+      "before": null,
+      "after": "中国药品检定研究院"
+    },
+    "national": {
+      "before": null,
+      "after": {
+        "official_index": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+        "index_sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+        "agencies_indexed": 20,
+        "agencies_with_overlapping_links": 14,
+        "agencies": {
+          "中国药品检定研究院": 1,
+          "北京市药品检验研究院": 1,
+          "上海市食品药品检验研究院": 1,
+          "广东省药品检验所": 1,
+          "四川省药品检验研究院(四川省医疗器械检测中心)": 1,
+          "湖北省药品监督检验研究院": 1,
+          "吉林省药品检验研究院": 1,
+          "甘肃省药品检验研究院": 1,
+          "重庆市食品药品检验检测研究院": 1,
+          "山东省食品药品检验研究院": 0,
+          "辽宁省药品检验检测院": 0,
+          "云南省食品药品监督检验研究院": 0,
+          "河北省药品医疗器械检验研究院": 1,
+          "浙江省食品药品检验研究院": 1,
+          "江苏省药品监督检验研究院": 0,
+          "江西省药品检验检测研究院": 1,
+          "河南省药品医疗器械检验院(河南省疫苗批签中心)": 1,
+          "福建省食品药品质量检验研究院": 0,
+          "湖南省药品检验检测研究院": 1,
+          "新疆维吾尔自治区药品检验研究院": 0
+        },
+        "national_reconciled": false
+      }
+    },
+    "total": {
+      "before": null,
+      "after": 0
+    },
+    "aggregates": {
+      "before": null,
+      "after": []
+    },
+    "audited_batches": {
+      "before": null,
+      "after": 58
+    },
+    "duplicate_rows": {
+      "before": null,
+      "after": 0
+    },
+    "exclusions": {
+      "before": null,
+      "after": {
+        "other_biologics": 23
+      }
+    }
+  },
+  "validation": {
+    "passed": true,
+    "adapter": "lot"
+  }
+}

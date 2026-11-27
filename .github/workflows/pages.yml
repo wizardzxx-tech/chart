@@ -1,7 +1,7 @@
 name: Validate and publish healthcare database
 on:
   push:
-    branches: [main, codex/data-update-system]
+    branches: [main, codex/data-update-system, codex/phase-2]
   workflow_dispatch:
 permissions: {}
 jobs:
@@ -9,6 +9,8 @@ jobs:
     uses: ./.github/workflows/run_data_update.yml
     with:
       schedule: all
+      replay_research: ${{ github.ref_name == 'codex/phase-2' }}
+      datasets: ${{ github.ref_name == 'codex/phase-2' && 'financials.standard,devices.trade-values,vax.trade-values,cms.partd-values,nih.clinical-trials,fda.research-actions' || '' }}
       apply: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       contents: write

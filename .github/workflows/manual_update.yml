@@ -27,6 +27,12 @@ on:
       end:
         description: 'Optional backfill end (YYYY-MM-DD)'
         type: string
+      review_task:
+        description: 'Optional approved review task ID'
+        type: string
+      review_sha:
+        description: 'SHA-256 of the exact reviewed receipt'
+        type: string
       dry_run:
         description: 'Check without saving or deploying'
         type: boolean
@@ -37,6 +43,8 @@ jobs:
     uses: ./.github/workflows/run_data_update.yml
     with:
       schedule: manual
+      review_task: ${{ inputs.review_task }}
+      review_sha: ${{ inputs.review_sha }}
       topic: ${{ inputs.topic }}
       datasets: ${{ inputs.datasets }}
       start: ${{ inputs.start }}

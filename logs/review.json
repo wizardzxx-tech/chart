@@ -10,7 +10,21 @@
       "dataset_id": "blood.lot-release",
       "topic": "blood-products",
       "first_seen": "2026-11-27T05:53:01+00:00",
-      "status": "open"
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T07:59:09+00:00",
+      "receipt_sha256": "06cfe3523f84be383bdaebd1de244c59671cd7965571c3092535550311a8ea47",
+      "source_versions": [
+        {
+          "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611231746182297600.html",
+          "sha256": "53c369870727ead14789a73917f55ded685d3d983f7fcfa9c06a6b6071c026fe",
+          "bytes": 331423
+        },
+        {
+          "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+          "sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+          "bytes": 67730
+        }
+      ]
     },
     "1de18f8a3458c7cc89392dc3": {
       "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月9日至2026年11月15日)",
@@ -22,7 +36,21 @@
       "dataset_id": "blood.lot-release",
       "topic": "blood-products",
       "first_seen": "2026-11-27T05:53:01+00:00",
-      "status": "open"
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T07:59:09+00:00",
+      "receipt_sha256": "96d47a3987dd1e1437aa34040a3517ab8d36113eb6c895a2091cbaad9e381da2",
+      "source_versions": [
+        {
+          "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+          "sha256": "4403a40b614e3fa00ab870638d2da961a3ac78318097c34abfbfcb53d6b1f86e",
+          "bytes": 172775
+        },
+        {
+          "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+          "sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+          "bytes": 67730
+        }
+      ]
     },
     "c6208c541548c08171d87a7b": {
       "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月16日至2026年11月22日)",
@@ -34,7 +62,21 @@
       "dataset_id": "vax.lot-release",
       "topic": "vaccines",
       "first_seen": "2026-11-27T05:53:01+00:00",
-      "status": "open"
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T07:59:09+00:00",
+      "receipt_sha256": "59db0a879689bfa707fa57a07b3631830d29f3e6bab26c33b73d5203a2c4fb9c",
+      "source_versions": [
+        {
+          "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611231746182297600.html",
+          "sha256": "53c369870727ead14789a73917f55ded685d3d983f7fcfa9c06a6b6071c026fe",
+          "bytes": 331423
+        },
+        {
+          "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+          "sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+          "bytes": 67730
+        }
+      ]
     },
     "a2faf16b4746f13361570b94": {
       "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月9日至2026年11月15日)",
@@ -46,7 +88,21 @@
       "dataset_id": "vax.lot-release",
       "topic": "vaccines",
       "first_seen": "2026-11-27T05:53:01+00:00",
-      "status": "open"
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T07:59:08+00:00",
+      "receipt_sha256": "cfc6d336ecf796bec3190a91f144d1b62af535ec61ca2e44844b2bc064c58c6a",
+      "source_versions": [
+        {
+          "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+          "sha256": "4403a40b614e3fa00ab870638d2da961a3ac78318097c34abfbfcb53d6b1f86e",
+          "bytes": 172775
+        },
+        {
+          "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+          "sha256": "d7728f9fef0f60832e91e62f7078b96e05f6f14296701869aa29285b3f7cebf1",
+          "bytes": 67730
+        }
+      ]
     },
     "7105e282b02fe52f5c3e8ea2": {
       "title": "2026年1-10月基本医疗保险统筹基金和生育保险主要指标",
@@ -58,6 +114,36 @@
       "dataset_id": "insurance.monthly",
       "topic": "medical-insurance",
       "first_seen": "2026-11-27T05:53:01+00:00",
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T07:59:08+00:00",
+      "receipt_sha256": "e3008c937927c5b698d76ae0aeeed4f13654cff243e358b5f74957711a41873e",
+      "source_versions": [
+        {
+          "url": "https://www.nhsa.gov.cn/picture/0/9cf80d7b6514490f826ff62e83df737e.png",
+          "sha256": "ef82a109aadf8c4c1178bdb31a60a65a213b04d1d251e16d5eb9a9da336f124a",
+          "bytes": 108974
+        },
+        {
+          "url": "https://www.nhsa.gov.cn/art/2026/11/24/art_7_23509.html",
+          "sha256": "531b1e04755d0689980d11f61c7c03ac86669a3a17b51c010ae021a7413a51d6",
+          "bytes": 9884
+        },
+        {
+          "url": "https://www.nhsa.gov.cn/picture/0/4c9b9da54bb4436a83d4491a9c90d155.png",
+          "sha256": "443296059eab1cf8713dd173387835958a1df4144bd4d47f5caff92bf142c142",
+          "bytes": 110787
+        }
+      ]
+    },
+    "6980e55d170d92a8b46c57a7": {
+      "url": "https://clinicaltrials.gov/study/NCT06767761",
+      "title": "A Phase III Clinical Study to Assess the Efficacy and Safety of GZR4 in Type 2 Diabetes Mellitus Subjects (T2DM) Treated With Basal + Prandial Insulin",
+      "published": "2026-11-23",
+      "period": "2026-11-23",
+      "indicators": "insulin glargine / Gan & Lee",
+      "dataset_id": "nih.trial-discovery",
+      "topic": "biosimilars",
+      "first_seen": "2026-11-27T07:54:37+00:00",
       "status": "open"
     }
   }

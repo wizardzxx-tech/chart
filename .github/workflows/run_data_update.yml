@@ -11,6 +11,13 @@ on:
       month_end_only:
         type: boolean
         default: false
+      replay_research:
+        type: boolean
+        default: false
+      review_task:
+        type: string
+      review_sha:
+        type: string
       topic:
         type: string
       datasets:
@@ -26,7 +33,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     permissions:
       contents: write
     outputs:
@@ -45,6 +52,16 @@ jobs:
       - run: pip install -r requirements-updates.txt
       - name: Validate pipeline
         run: python -m unittest discover -s scripts/validators -p 'test_*.py'
+      - name: Install the review OCR engine
+        if: inputs.replay_research || inputs.review_task != ''
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-chi-tra
+      - name: Replay approved source files
+        if: inputs.replay_research
+        run: |
+          python scripts/research/legacy_ccc_audit.py
+          python scripts/build/replay_research.py
       - name: Run data checks
         id: check
         env:
@@ -54,10 +71,21 @@ jobs:
           START: ${{ inputs.start }}
           END: ${{ inputs.end }}
           APPLY: ${{ inputs.apply }}
+          REVIEW_TASK: ${{ inputs.review_task }}
+          REVIEW_SHA: ${{ inputs.review_sha }}
           MONTH_END_ONLY: ${{ inputs.month_end_only }}
         run: |
           if [[ "$MONTH_END_ONLY" == true ]] && [[ "$(TZ=Asia/Shanghai date +%m)" == "$(TZ=Asia/Shanghai date -d tomorrow +%m)" ]]; then
             echo 'Not a month-end day.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [[ -n "$REVIEW_TASK" && "$APPLY" == true ]]; then
+            if [[ ! "$REVIEW_SHA" =~ ^[a-f0-9]{64}$ ]]; then
+              echo 'Enter the approved receipt SHA-256.' >&2
+              exit 1
+            fi
+            python scripts/review_data.py "$REVIEW_TASK" --approve-sha256 "$REVIEW_SHA" --report "$RUNNER_TEMP/chart-report.json"
+            python scripts/build/run_summary.py "$RUNNER_TEMP/chart-report.json"
             exit 0
           fi
           args=(--schedule "$SCHEDULE" --report "$RUNNER_TEMP/chart-report.json")
