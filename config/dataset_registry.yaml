@@ -1718,9 +1718,9 @@ datasets:
   incremental_start: '2026-11-08'
   view: records
   contract:
-    optional_fields: [authorized_scope, uncovered_days, unassigned, verified_week_counts, national]
-    comparison_metadata: [registry_latest, status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed, authorized_scope, uncovered_days, unassigned, verified_week_counts, national]
-    refresh_metadata: [status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed, authorized_scope, uncovered_days, unassigned, verified_week_counts, national]
+    optional_fields: [authorized_scope, uncovered_days, open_publication_days, unassigned, verified_week_counts, national]
+    comparison_metadata: [registry_latest, status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed, authorized_scope, uncovered_days, open_publication_days, unassigned, verified_week_counts, national]
+    refresh_metadata: [status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed, authorized_scope, uncovered_days, open_publication_days, unassigned, verified_week_counts, national]
 
 - dataset_id: api.trade-summary
   topic: api

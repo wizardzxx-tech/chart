@@ -30,7 +30,8 @@ def agencies(body):
         for link in td.select('a[href*="listGsxq"]'):
             span=interval(link.get_text(" ",strip=True))
             if span:
-                links[span]=urljoin(NATIONAL,link["href"].replace("¶meter","&parameter"))
+                url=urljoin(NATIONAL,link["href"].replace("¶meter","&parameter"))
+                links[span,url]=set()
         registry[code]={"name":normalize(heading.get_text(" ",strip=True)),
             "history":history_url,"links":links,"authorization_source":AUTHORIZATION}
     if len(registry)<20:
@@ -38,15 +39,17 @@ def agencies(body):
     return registry
 
 
-def notice_links(tree,base):
+def notice_links(tree,base,first,last):
     links={}
     for link in tree.select('a[href*="listGsxq"]'):
         title=link.get_text(" ",strip=True)
         span=interval(title)
-        if span:
+        if span and span[0]<=last and span[1]>=first:
             published=re.search(r"\((20\d{2}-\d{2}-\d{2})\)\s*$",title)
-            links[span]=(urljoin(base,link["href"].replace("¶meter","&parameter")),
-                         published[1] if published else None)
+            url=urljoin(base,link["href"].replace("¶meter","&parameter"))
+            dates=links.setdefault((span,url),set())
+            if published:
+                dates.add(published[1])
     return links
 
 
@@ -94,14 +97,13 @@ def collect(spec,http,start,end):
     count=max(1,min(16,(last-date.fromisoformat(start)).days//7+1)) if spec.get("backfill") else 2
     weeks=[((last-timedelta(days=n*7+6)).isoformat(),(last-timedelta(days=n*7)).isoformat())
            for n in reversed(range(count))]
-    for code,agency in catalog.items():
-        agency["links"]={s:(url,None) for s,url in agency["links"].items()}
-        if spec.get("backfill") and not any(s[0]<=weeks[0][1] and s[1]>=weeks[0][0] for s in agency["links"]):
-            try:
-                ship=BeautifulSoup(http.get(agency["history"]),"html.parser")
-                agency["links"].update(notice_links(ship,agency["history"]))
-            except SourceUnavailable:
-                pass
+    for agency in catalog.values():
+        try:
+            ship=BeautifulSoup(http.get(agency["history"]),"html.parser")
+            for key,dates in notice_links(ship,agency["history"],weeks[0][0],weeks[-1][1]).items():
+                agency["links"].setdefault(key,set()).update(dates)
+        except SourceUnavailable as error:
+            agency["history_error"]=str(error)
     groups,checks=[],[]
     for week in weeks:
         week_records={}
@@ -115,14 +117,15 @@ def collect(spec,http,start,end):
             observed=Counter()
             unassigned={kind:set() for kind in by_type}
             missing=Counter()
-            for span,(url,published) in sorted(inventory.items()):
+            for (span,url),dates in sorted(inventory.items()):
                 if span[0]>week[1] or span[1]<week[0]:
                     continue
                 try:
                     raw=http.get(url)
                     table=parse_tables(BeautifulSoup(raw,"html.parser"))
                     facts=summarize(table,span,"national")
-                    proof={"start":span[0],"end":span[1],"source":url,"published":published,
+                    proof={"start":span[0],"end":span[1],"source":url,"published":max(dates,default=None),
+                           "publication_dates":sorted(dates),
                            "certificate_count":facts["audited_batches"]}
                     evidence=[]
                     for row in table:
@@ -158,23 +161,25 @@ def collect(spec,http,start,end):
             known={ref for ref,identity in week_records.items() if identity[0]==code}
             unknown={kind:len(refs-known) for kind,refs in unassigned.items()}
             uncovered=coverage_week(week,reported)
+            open_days=coverage_week(week,[r for r in reported if r["published"] and r["published"]>=min(r["end"],week[1])])
             status="failed" if issues else "uncovered" if uncovered else "records"
             if status=="records":
                 verified.append(code)
                 for kind in by_type:
-                    if not unknown[kind]:
+                    if not unknown[kind] and not open_days and not agency.get("history_error"):
                         by_type[kind].append(code)
             identifier=f"{code}/{week[1]}"
             checks.append(unit(identifier,"agency / week",week[1],status,
               latest=week[1] if status=="records" else None,count=len(reported),
-              detail="; ".join(issues) or ("公告未覆盖 "+", ".join(uncovered) if uncovered else None)))
+              detail="; ".join(issues) or ("公告未覆盖 "+", ".join(uncovered) if uncovered else None)
+                     or agency.get("history_error") or ("待完整发布日期核验 "+", ".join(open_days) if open_days else None)))
             week_groups.append({"id":identifier,"period":week[1],"week_start":week[0],
                 "source":agency["history"],"basis":"report coverage, not national totals",
                 "agency":agency["name"],"agency_id":code,"authorization_source":AUTHORIZATION,
                 "scope_observed":sorted(observed),"authorized_scope":scope.get(code),
-                "registry_latest":max((x[1] for x in inventory),default=None),
+                "registry_latest":max((span[1] for span,_ in inventory),default=None),
                 "status":status,"reports":reported,"missing_fields":dict(missing),
-                "uncovered_days":uncovered,"unassigned":unknown,
+                "uncovered_days":uncovered,"open_publication_days":open_days,"unassigned":unknown,
                 "verified_week_counts":dict(observed)})
         national={}
         for kind,passed in by_type.items():

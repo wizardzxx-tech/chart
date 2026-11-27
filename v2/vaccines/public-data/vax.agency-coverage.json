@@ -1,11 +1,111 @@
 {
   "dataset_id": "vax.agency-coverage",
-  "updated_at": "2026-11-27T18:03:15+00:00",
+  "updated_at": "2026-11-27T18:34:16+00:00",
   "source_files": [
     {
       "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
       "sha256": "8a630e0466d764a77650b63da4b0b10744412a523916b13af113e23d610c6053",
       "bytes": 67730
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=1",
+      "sha256": "81821f95bdacba2fb1d3c73ce05b0878f071a5b1d15e831b6584fd2ff115e39b",
+      "bytes": 317193
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=5b6ea8c91cf9013d011cfdfbda100041",
+      "sha256": "e1c1db4f5faedb04823d49ae662045f2c238a8aa7fc72b5ea49622e8da3fc59c",
+      "bytes": 182337
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d2265474b0004",
+      "sha256": "84b3a30905b6c049ce26b24906129bd2ce9219903f551e8908c6b831aac3a024",
+      "bytes": 256552
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226a9159001c",
+      "sha256": "68a12289a8c796fc14e975fa9a61b3378f55c6299cf876c2e49814013d131aa6",
+      "bytes": 357396
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226ba310001e",
+      "sha256": "c5261ad1eda055ad00e51eb61a69d6d689fce1045db9ebc5328a73ddc978e8a9",
+      "bytes": 272047
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d22697942001a",
+      "sha256": "119c47405662d0b19cd83ba6d04efbee119060c88227e454f62bb37c56c8fd10",
+      "bytes": 280809
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226392100002",
+      "sha256": "9842b60a3c5aae0c6fbf840db60d8676ccedc7866f72f0dacc866d1607eb91b8",
+      "bytes": 188785
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226c637d0020",
+      "sha256": "aa5326d442a5d75fe995ed3f99ef1ca3324f868f9e5d6236764ae47093286106",
+      "bytes": 139530
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20190917c001",
+      "sha256": "9af651a0ea084816ea799a060352f5344598cca39a4803e014118c6f7774ef0e",
+      "bytes": 175797
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20190924c001",
+      "sha256": "2b45c8bd16a6374152b967ee924ae2f40e376b8db9c3b221622f76139a260dde",
+      "bytes": 181482
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210315c001",
+      "sha256": "29a7ff22c972ee91fd0a29008808508aa7dc227864cf8329719f00d5ac6b3afa",
+      "bytes": 26733
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210926c001",
+      "sha256": "f4e57e05f18c45144b8fc2931573c6a19d25d0728ede477e044f925f28bbe784",
+      "bytes": 27193
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20211011c001",
+      "sha256": "9c2b2d4dc97e742f1206e1bac2b40f21c139d404ea5e50d243156eb2bd993e3b",
+      "bytes": 21309
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210210c002",
+      "sha256": "ae363ca37ac316bf199d4c77a5f8f5ca353b078dc2411b20a9573b97cdd13729",
+      "bytes": 21307
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210226c001",
+      "sha256": "5fa4fc5a9097d863157a372053beaf271626e36922f36fb815332674ed0b9123",
+      "bytes": 16861
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20221123c001",
+      "sha256": "d097afae59169042d820e3d47c2f3fc1f3ca7553f1affb0cdfab515277b06196",
+      "bytes": 60342
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20230523c001",
+      "sha256": "2f49d1bb91dcfbe02aa38de68b92826ec348eb47f679b5ac2e09552b817df96b",
+      "bytes": 18870
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210512c001",
+      "sha256": "122cfcb9bc9a221760ee5fcfd725e8e0ad9315e6cea4472b337080ee9a20c955",
+      "bytes": 26747
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20230104c001",
+      "sha256": "2c0a9009ac014f4c7db52a9a230cbb8351d63164da79c9f98d3fe73b33880085",
+      "bytes": 18267
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20240313c001",
+      "sha256": "ff769a7647154ea5d2aa4bad40c2120a4e3fe02922178c4d39cb338e64c783b1",
+      "bytes": 18846
     },
     {
       "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
@@ -144,7 +244,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-17",
+          "publication_dates": [
+            "2026-11-17"
+          ],
           "certificate_count": 58,
           "sha256": "23e7638e5926ab5d7520f9ada828e607320426c4b35fa7f561dd3e6489108c9e"
         }
@@ -154,7 +257,11 @@
         "manufacturer": 58
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "vax": 35
       },
@@ -163,13 +270,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -195,7 +302,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190917c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-16",
+          "publication_dates": [
+            "2026-11-16"
+          ],
           "certificate_count": 2,
           "sha256": "200d11a4cf1bbffa70e1711d9a6b1a859eb716da7c779440f3e1e1c5d85135e6"
         }
@@ -205,7 +315,11 @@
         "manufacturer": 2
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 2
       },
@@ -214,13 +328,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -236,7 +350,12 @@
       "agency_id": "20190924c001",
       "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
       "scope_observed": [],
-      "authorized_scope": null,
+      "authorized_scope": {
+        "verified_included": [
+          "blood"
+        ],
+        "source": "https://bio.nidc.org.cn/pqf/file_path/help/pqf_sqqfjg_sd_20200416.pdf"
+      },
       "registry_latest": "2026-11-22",
       "status": "uncovered",
       "reports": [],
@@ -250,20 +369,32 @@
         "2026-11-14",
         "2026-11-15"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 14,
       "registered_agencies": 20,
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -289,7 +420,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20210210c002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-16",
+          "publication_dates": [
+            "2026-11-16"
+          ],
           "certificate_count": 6,
           "sha256": "7277389e966a3b0dc61011ec826a6f1c78d244348047c64f98fb1a3eea173342"
         }
@@ -299,7 +433,11 @@
         "manufacturer": 6
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 6
       },
@@ -308,13 +446,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -344,20 +482,32 @@
         "2026-11-14",
         "2026-11-15"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 14,
       "registered_agencies": 20,
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -387,20 +537,32 @@
         "2026-11-14",
         "2026-11-15"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 14,
       "registered_agencies": 20,
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -430,20 +592,32 @@
         "2026-11-14",
         "2026-11-15"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 14,
       "registered_agencies": 20,
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -473,20 +647,32 @@
         "2026-11-14",
         "2026-11-15"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 14,
       "registered_agencies": 20,
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -510,7 +696,10 @@
           "start": "2026-11-04",
           "end": "2026-11-18",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20211011c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258804%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258818%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-18",
+          "publication_dates": [
+            "2026-11-18"
+          ],
           "certificate_count": 4,
           "sha256": "3c08a0ee3679292b119bb30047e36fd2c9f6e6be2c8d751d713a6a12140968fe"
         }
@@ -520,8 +709,10 @@
         "manufacturer": 4
       },
       "uncovered_days": [],
+      "open_publication_days": [],
       "unassigned": {
-        "vax": 4
+        "vax": 4,
+        "blood": 0
       },
       "verified_week_counts": {},
       "verified_agencies": 14,
@@ -529,13 +720,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -561,7 +752,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20221123c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-18",
+          "publication_dates": [
+            "2026-11-18"
+          ],
           "certificate_count": 8,
           "sha256": "8de4b16cafae4d9ef5b362ed42cb01c467750f8de1f02198c3b928a5db3ab82b"
         }
@@ -571,7 +765,11 @@
         "manufacturer": 8
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 8
       },
@@ -580,13 +778,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -612,7 +810,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20230104c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-25",
+          "publication_dates": [
+            "2026-11-25"
+          ],
           "certificate_count": 6,
           "sha256": "da2d0bd090caf8e2a9c3cbc3278e78e6efbd343095fe4b332e4a215baf78076d"
         }
@@ -622,7 +823,11 @@
         "manufacturer": 6
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 6
       },
@@ -631,13 +836,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -663,7 +868,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20230523c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-17",
+          "publication_dates": [
+            "2026-11-17"
+          ],
           "certificate_count": 7,
           "sha256": "9209daf0b0effe05947064f9c4c07beb8474b42fb97b88d095842e9c4b3cf768"
         }
@@ -673,7 +881,11 @@
         "manufacturer": 7
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "vax": 7
       },
@@ -682,13 +894,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -704,7 +916,12 @@
       "agency_id": "20240313c001",
       "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
       "scope_observed": [],
-      "authorized_scope": null,
+      "authorized_scope": {
+        "verified_included": [
+          "blood"
+        ],
+        "source": "https://www.nmpa.gov.cn/xxgk/fgwj/gzwj/gzwjyp/20250313144719136.html"
+      },
       "registry_latest": "2026-11-08",
       "status": "uncovered",
       "reports": [],
@@ -718,20 +935,32 @@
         "2026-11-14",
         "2026-11-15"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 14,
       "registered_agencies": 20,
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -757,7 +986,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226392100002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-16",
+          "publication_dates": [
+            "2026-11-16"
+          ],
           "certificate_count": 2,
           "sha256": "c2973b88293e94b1267818f0a02807a29985197af250d4b2b243a028b2df1dc4"
         }
@@ -767,7 +999,11 @@
         "manufacturer": 2
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 2
       },
@@ -776,13 +1012,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -806,7 +1042,10 @@
           "start": "2026-11-09",
           "end": "2026-11-16",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258816%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-18",
+          "publication_dates": [
+            "2026-11-18"
+          ],
           "certificate_count": 43,
           "sha256": "e46a31502ed319d084af01ee6bacb9d483dd192b40d7a4f933ad7243a804354e"
         }
@@ -816,9 +1055,10 @@
         "manufacturer": 43
       },
       "uncovered_days": [],
+      "open_publication_days": [],
       "unassigned": {
-        "blood": 42,
-        "vax": 1
+        "vax": 1,
+        "blood": 42
       },
       "verified_week_counts": {},
       "verified_agencies": 14,
@@ -826,13 +1066,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -858,7 +1098,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d22697942001a&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-13",
+          "publication_dates": [
+            "2026-11-13"
+          ],
           "certificate_count": 16,
           "sha256": "6c625511a5fb2cc28805dc8b2e4daab61ac6a3752303c1f7c8cc384cf512f235"
         }
@@ -868,7 +1111,19 @@
         "manufacturer": 16
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 16
       },
@@ -877,13 +1132,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -909,7 +1164,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226a9159001c&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-11",
+          "publication_dates": [
+            "2026-11-11"
+          ],
           "certificate_count": 8,
           "sha256": "eddce9e3cf19c53e9e8c5a8bd651a34f76242b6f39f538f0e9d0b2086ee46720"
         }
@@ -919,7 +1177,19 @@
         "manufacturer": 8
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 8
       },
@@ -928,13 +1198,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -960,7 +1230,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226ba310001e&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-17",
+          "publication_dates": [
+            "2026-11-17"
+          ],
           "certificate_count": 9,
           "sha256": "0e79062155e7e26e866029910b119ce1b06e35664ebdd473645918d3cf45bf2e"
         }
@@ -970,7 +1243,11 @@
         "manufacturer": 9
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 9
       },
@@ -979,13 +1256,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -1012,7 +1289,10 @@
           "start": "2026-11-09",
           "end": "2026-11-15",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226c637d0020&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-17",
+          "publication_dates": [
+            "2026-11-17"
+          ],
           "certificate_count": 9,
           "sha256": "4fbdaa618a53be3d6abe4ca816a1c9987174e1787caeff21cde44fb740c23c17"
         }
@@ -1022,7 +1302,11 @@
         "manufacturer": 9
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 4,
         "vax": 5
@@ -1032,13 +1316,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -1062,7 +1346,10 @@
           "start": "2026-11-08",
           "end": "2026-11-14",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25888%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258814%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-19",
+          "publication_dates": [
+            "2026-11-19"
+          ],
           "certificate_count": 22,
           "sha256": "ed85a12f1e418ca0c36ad961744232e5e6e76f1212042047841ce4c55a134df7"
         },
@@ -1070,7 +1357,10 @@
           "start": "2026-11-15",
           "end": "2026-11-21",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258821%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-27",
+          "publication_dates": [
+            "2026-11-27"
+          ],
           "certificate_count": 23,
           "sha256": "34df76c73d5d61efc3e29c89a1622b87966ef62ff1d745d36a07fb17912b579e"
         }
@@ -1080,6 +1370,7 @@
         "manufacturer": 45
       },
       "uncovered_days": [],
+      "open_publication_days": [],
       "unassigned": {
         "vax": 11,
         "blood": 34
@@ -1090,13 +1381,13 @@
       "national": {
         "vax": {
           "required_agencies": 20,
-          "verified_agencies": 11,
+          "verified_agencies": 9,
           "complete": false,
           "batches": null
         },
         "blood": {
           "required_agencies": 20,
-          "verified_agencies": 12,
+          "verified_agencies": 10,
           "complete": false,
           "batches": null
         }
@@ -1122,7 +1413,10 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-27",
+          "publication_dates": [
+            "2026-11-27"
+          ],
           "certificate_count": 109,
           "sha256": "c44462adf07cec1093bb75ff35399f1abf8803f314acbe6f3a4176869ce5177a"
         }
@@ -1132,7 +1426,11 @@
         "manufacturer": 109
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "vax": 97
       },
@@ -1173,7 +1471,10 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190917c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-23",
+          "publication_dates": [
+            "2026-11-23"
+          ],
           "certificate_count": 8,
           "sha256": "4281dcfc6d5590a5307c89a9246cf0c98a742ec5ce2dd3d8bc3a6d86163769de"
         }
@@ -1183,7 +1484,11 @@
         "manufacturer": 8
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 8
       },
@@ -1216,7 +1521,12 @@
       "scope_observed": [
         "blood"
       ],
-      "authorized_scope": null,
+      "authorized_scope": {
+        "verified_included": [
+          "blood"
+        ],
+        "source": "https://bio.nidc.org.cn/pqf/file_path/help/pqf_sqqfjg_sd_20200416.pdf"
+      },
       "registry_latest": "2026-11-22",
       "status": "records",
       "reports": [
@@ -1224,7 +1534,10 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190924c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-23",
+          "publication_dates": [
+            "2026-11-23"
+          ],
           "certificate_count": 3,
           "sha256": "37de0fa878733e5a2ea3fb96fb3f0c8775aec5c0d9cec15b53bfbad1fea3268a"
         }
@@ -1234,7 +1547,11 @@
         "manufacturer": 3
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 3
       },
@@ -1279,7 +1596,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1322,7 +1651,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1365,7 +1706,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1408,7 +1761,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1451,7 +1816,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1488,7 +1865,10 @@
           "start": "2026-11-04",
           "end": "2026-11-18",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20211011c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258804%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258818%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-18",
+          "publication_dates": [
+            "2026-11-18"
+          ],
           "certificate_count": 4,
           "sha256": "3c08a0ee3679292b119bb30047e36fd2c9f6e6be2c8d751d713a6a12140968fe"
         }
@@ -1503,8 +1883,15 @@
         "2026-11-21",
         "2026-11-22"
       ],
+      "open_publication_days": [
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
       "unassigned": {
-        "vax": 4
+        "vax": 4,
+        "blood": 0
       },
       "verified_week_counts": {},
       "verified_agencies": 8,
@@ -1544,7 +1931,10 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20221123c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-25",
+          "publication_dates": [
+            "2026-11-25"
+          ],
           "certificate_count": 2,
           "sha256": "4b19ea2e850375a99d58f6fcefd51a5ed721018947c12754399e61da56488829"
         }
@@ -1554,7 +1944,11 @@
         "manufacturer": 2
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 2
       },
@@ -1599,7 +1993,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1642,7 +2048,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1671,7 +2089,12 @@
       "agency_id": "20240313c001",
       "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
       "scope_observed": [],
-      "authorized_scope": null,
+      "authorized_scope": {
+        "verified_included": [
+          "blood"
+        ],
+        "source": "https://www.nmpa.gov.cn/xxgk/fgwj/gzwj/gzwjyp/20250313144719136.html"
+      },
       "registry_latest": "2026-11-08",
       "status": "uncovered",
       "reports": [],
@@ -1685,7 +2108,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1725,7 +2160,10 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226392100002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-23",
+          "publication_dates": [
+            "2026-11-23"
+          ],
           "certificate_count": 10,
           "sha256": "091324448dbc0711d92d323ee63782116e4c4f11fc0189a3ce436ab742467d93"
         }
@@ -1735,7 +2173,11 @@
         "manufacturer": 10
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 8,
         "vax": 2
@@ -1777,7 +2219,10 @@
           "start": "2026-11-09",
           "end": "2026-11-16",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258816%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-18",
+          "publication_dates": [
+            "2026-11-18"
+          ],
           "certificate_count": 43,
           "sha256": "e46a31502ed319d084af01ee6bacb9d483dd192b40d7a4f933ad7243a804354e"
         },
@@ -1785,7 +2230,10 @@
           "start": "2026-11-17",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258817%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-25",
+          "publication_dates": [
+            "2026-11-25"
+          ],
           "certificate_count": 7,
           "sha256": "2d5f35d5b0a6c55e72bf4686ca0b48eb4dc66da74ebc71da283ce87628a2e174"
         }
@@ -1795,9 +2243,10 @@
         "manufacturer": 50
       },
       "uncovered_days": [],
+      "open_publication_days": [],
       "unassigned": {
-        "blood": 42,
-        "vax": 1
+        "vax": 1,
+        "blood": 42
       },
       "verified_week_counts": {
         "blood": 7
@@ -1843,7 +2292,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -1882,7 +2343,11 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226a9159001c&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-23",
+          "publication_dates": [
+            "2026-11-21",
+            "2026-11-23"
+          ],
           "certificate_count": 55,
           "sha256": "525cb4662e8178faf307e43e2cc3ae1212a2debe23a466dc69f4045df69dcac5"
         }
@@ -1892,7 +2357,11 @@
         "manufacturer": 55
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "blood": 55
       },
@@ -1934,7 +2403,10 @@
           "start": "2026-11-16",
           "end": "2026-11-22",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226ba310001e&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-24",
+          "publication_dates": [
+            "2026-11-24"
+          ],
           "certificate_count": 31,
           "sha256": "39c0e8c2d011a105ff827178560190574f849bae5173401cbfd77d2977a526a4"
         }
@@ -1944,7 +2416,11 @@
         "manufacturer": 31
       },
       "uncovered_days": [],
-      "unassigned": {},
+      "open_publication_days": [],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {
         "vax": 6,
         "blood": 25
@@ -1990,7 +2466,19 @@
         "2026-11-21",
         "2026-11-22"
       ],
-      "unassigned": {},
+      "open_publication_days": [
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "unassigned": {
+        "vax": 0,
+        "blood": 0
+      },
       "verified_week_counts": {},
       "verified_agencies": 8,
       "registered_agencies": 20,
@@ -2027,7 +2515,10 @@
           "start": "2026-11-15",
           "end": "2026-11-21",
           "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258821%25E6%2597%25A5",
-          "published": null,
+          "published": "2026-11-27",
+          "publication_dates": [
+            "2026-11-27"
+          ],
           "certificate_count": 23,
           "sha256": "34df76c73d5d61efc3e29c89a1622b87966ef62ff1d745d36a07fb17912b579e"
         }
@@ -2037,6 +2528,9 @@
         "manufacturer": 23
       },
       "uncovered_days": [
+        "2026-11-22"
+      ],
+      "open_publication_days": [
         "2026-11-22"
       ],
       "unassigned": {
@@ -2062,5 +2556,5 @@
       }
     }
   ],
-  "processing_version": "interval-union-and-exact-issuance-v2"
+  "processing_version": "interval-union-exact-issuance-and-authorization-v3"
 }

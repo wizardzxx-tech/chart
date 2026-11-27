@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:03:15+00:00",
+  "generated_at": "2026-11-27T18:34:16+00:00",
   "datasets": [
     {
       "dataset_id": "pharmacy.stores",
@@ -13361,9 +13361,9 @@
       "chart_binding": false,
       "data_url": "../vaccines/public-data/vax.agency-coverage.json",
       "latest_data_period": "2026-11-22",
-      "last_checked": "2026-11-27T18:03:15+00:00",
-      "last_success": "2026-11-27T18:03:15+00:00",
-      "last_source_success": "2026-11-27T18:03:15+00:00",
+      "last_checked": "2026-11-27T18:34:16+00:00",
+      "last_success": "2026-11-27T18:34:16+00:00",
+      "last_source_success": "2026-11-27T18:34:16+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T12:45:31+00:00",
@@ -13394,12 +13394,18 @@
           "status": "Partial success",
           "detail": "新增或经核验修订 40 条。 成功 22/40，失败 0，未覆盖 18，修订待审 0。",
           "period": "2026-11-22"
+        },
+        {
+          "time": "2026-11-27T18:34:16+00:00",
+          "status": "Partial success",
+          "detail": "新增或经核验修订 40 条。 成功 22/40，失败 0，未覆盖 18，修订待审 0。",
+          "period": "2026-11-22"
         }
       ],
       "status": "Partial success",
       "detail": "新增或经核验修订 40 条。 成功 22/40，失败 0，未覆盖 18，修订待审 0。",
       "eligible_cloud_check": true,
-      "last_extracted": "2026-11-27T18:03:15+00:00",
+      "last_extracted": "2026-11-27T18:34:16+00:00",
       "quality_notes": [
         "20190924c001/2026-11-15: 公告未覆盖 2026-11-09, 2026-11-10, 2026-11-11, 2026-11-12, 2026-11-13, 2026-11-14, 2026-11-15",
         "20210315c001/2026-11-15: 公告未覆盖 2026-11-09, 2026-11-10, 2026-11-11, 2026-11-12, 2026-11-13, 2026-11-14, 2026-11-15",
@@ -13429,7 +13435,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "5b6ea8c91cf9013d011cfdfbda100041/2026-11-15",
@@ -13439,7 +13445,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d2265474b0004/2026-11-15",
@@ -13449,7 +13455,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226a9159001c/2026-11-15",
@@ -13459,7 +13465,8 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "detail": "待完整发布日期核验 2026-11-09, 2026-11-10, 2026-11-11, 2026-11-12, 2026-11-13, 2026-11-14, 2026-11-15",
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226ba310001e/2026-11-15",
@@ -13469,7 +13476,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d22697942001a/2026-11-15",
@@ -13479,7 +13486,8 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "detail": "待完整发布日期核验 2026-11-09, 2026-11-10, 2026-11-11, 2026-11-12, 2026-11-13, 2026-11-14, 2026-11-15",
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226392100002/2026-11-15",
@@ -13489,7 +13497,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226c637d0020/2026-11-15",
@@ -13499,7 +13507,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20190917c001/2026-11-15",
@@ -13509,7 +13517,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20190924c001/2026-11-15",
@@ -13546,7 +13554,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20210210c002/2026-11-15",
@@ -13556,7 +13564,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20210226c001/2026-11-15",
@@ -13575,7 +13583,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20230523c001/2026-11-15",
@@ -13585,7 +13593,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20210512c001/2026-11-15",
@@ -13604,7 +13612,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-15",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20240313c001/2026-11-15",
@@ -13623,7 +13631,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "5b6ea8c91cf9013d011cfdfbda100041/2026-11-22",
@@ -13642,7 +13650,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226a9159001c/2026-11-22",
@@ -13652,7 +13660,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226ba310001e/2026-11-22",
@@ -13662,7 +13670,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d22697942001a/2026-11-22",
@@ -13681,7 +13689,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "4028813a1d225be5011d226c637d0020/2026-11-22",
@@ -13700,7 +13708,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20190924c001/2026-11-22",
@@ -13710,7 +13718,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20210315c001/2026-11-22",
@@ -13765,7 +13773,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-11-22",
-          "last_ok": "2026-11-27T18:03:15+00:00"
+          "last_ok": "2026-11-27T18:34:16+00:00"
         },
         {
           "id": "20230523c001/2026-11-22",
@@ -13834,8 +13842,9 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-summary.json",
       "latest_data_period": "2026-10-01",
-      "source": "https://www.gtradedata.com/report/29349960.html",
-      "status": "Partial success",
+      "last_checked": "2026-11-27T18:03:15+00:00",
+      "last_success": "2026-11-27T18:03:15+00:00",
+      "last_source_success": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -13844,11 +13853,15 @@
           "period": "2026-10-01"
         }
       ],
+      "status": "Partial success",
+      "detail": "新增或经核验修订 28 条。 成功 15/17，失败 0，未覆盖 2，修订待审 0。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:03:15+00:00",
+      "last_extracted": "2026-11-27T18:03:15+00:00",
       "quality_notes": [
         "29369010/M: 未披露该方向的独立全国月报",
         "29415000/M: 未披露该方向的独立全国月报"
       ],
-      "last_source_success": "2026-11-27T18:03:15+00:00",
       "subtasks": [
         {
           "id": "29349970",
@@ -14019,9 +14032,6 @@
           "detail": "未披露该方向的独立全国月报"
         }
       ],
-      "last_extracted": "2026-11-27T18:03:15+00:00",
-      "last_success": "2026-11-27T18:03:15+00:00",
-      "chart_applied_at": "2026-11-27T18:03:15+00:00",
       "coverage": {
         "configured": 17,
         "checked": 17,
@@ -14034,9 +14044,7 @@
         "actual_data": 15,
         "latest": 15
       },
-      "detail": "新增或经核验修订 28 条。 成功 15/17，失败 0，未覆盖 2，修订待审 0。",
-      "last_checked": "2026-11-27T18:03:15+00:00",
-      "eligible_cloud_check": true
+      "source": "https://www.gtradedata.com/report/29349960.html"
     },
     {
       "dataset_id": "api.trade-hs6",
@@ -14054,8 +14062,7 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-hs6.json",
       "latest_data_period": "—",
-      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS",
-      "status": "Source unavailable",
+      "last_checked": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14064,6 +14071,8 @@
           "period": "—"
         }
       ],
+      "status": "Source unavailable",
+      "detail": "所选期间未发现新记录。 成功 0/2，失败 2，未覆盖 0，修订待审 0。",
       "quality_notes": [
         "directory/202412: HTTP 403 · comtradeapi.un.org",
         "directory/202512: HTTP 403 · comtradeapi.un.org"
@@ -14100,8 +14109,7 @@
         "actual_data": 0,
         "latest": 0
       },
-      "detail": "所选期间未发现新记录。 成功 0/2，失败 2，未覆盖 0，修订待审 0。",
-      "last_checked": "2026-11-27T18:03:15+00:00"
+      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS"
     },
     {
       "dataset_id": "devices.trade-summary",
@@ -14119,8 +14127,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-summary.json",
       "latest_data_period": "2026-10-01",
-      "source": "https://www.gtradedata.com/report/38221300.html",
-      "status": "Updated",
+      "last_checked": "2026-11-27T18:03:15+00:00",
+      "last_success": "2026-11-27T18:03:15+00:00",
+      "last_source_success": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14129,8 +14138,12 @@
           "period": "2026-10-01"
         }
       ],
+      "status": "Updated",
+      "detail": "新增或经核验修订 16 条。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:03:15+00:00",
+      "last_extracted": "2026-11-27T18:03:15+00:00",
       "quality_notes": [],
-      "last_source_success": "2026-11-27T18:03:15+00:00",
       "subtasks": [
         {
           "id": "90221200",
@@ -14213,9 +14226,6 @@
           "last_ok": "2026-11-27T18:03:15+00:00"
         }
       ],
-      "last_extracted": "2026-11-27T18:03:15+00:00",
-      "last_success": "2026-11-27T18:03:15+00:00",
-      "chart_applied_at": "2026-11-27T18:03:15+00:00",
       "coverage": {
         "configured": 8,
         "checked": 8,
@@ -14228,9 +14238,7 @@
         "actual_data": 8,
         "latest": 8
       },
-      "detail": "新增或经核验修订 16 条。",
-      "last_checked": "2026-11-27T18:03:15+00:00",
-      "eligible_cloud_check": true
+      "source": "https://www.gtradedata.com/report/38221300.html"
     },
     {
       "dataset_id": "devices.trade-hs6",
@@ -14248,8 +14256,7 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-hs6.json",
       "latest_data_period": "—",
-      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS",
-      "status": "Source unavailable",
+      "last_checked": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14258,6 +14265,8 @@
           "period": "—"
         }
       ],
+      "status": "Source unavailable",
+      "detail": "所选期间未发现新记录。 成功 0/2，失败 2，未覆盖 0，修订待审 0。",
       "quality_notes": [
         "directory/202412: HTTP 403 · comtradeapi.un.org",
         "directory/202512: HTTP 403 · comtradeapi.un.org"
@@ -14294,8 +14303,7 @@
         "actual_data": 0,
         "latest": 0
       },
-      "detail": "所选期间未发现新记录。 成功 0/2，失败 2，未覆盖 0，修订待审 0。",
-      "last_checked": "2026-11-27T18:03:15+00:00"
+      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS"
     },
     {
       "dataset_id": "vax.trade-summary",
@@ -14313,8 +14321,9 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-summary.json",
       "latest_data_period": "2026-10-01",
-      "source": "https://www.gtradedata.com/report/30024100.html",
-      "status": "Updated",
+      "last_checked": "2026-11-27T18:03:15+00:00",
+      "last_success": "2026-11-27T18:03:15+00:00",
+      "last_source_success": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14323,8 +14332,12 @@
           "period": "2026-10-01"
         }
       ],
+      "status": "Updated",
+      "detail": "新增或经核验修订 2 条。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:03:15+00:00",
+      "last_extracted": "2026-11-27T18:03:15+00:00",
       "quality_notes": [],
-      "last_source_success": "2026-11-27T18:03:15+00:00",
       "subtasks": [
         {
           "id": "30024100",
@@ -14337,9 +14350,6 @@
           "last_ok": "2026-11-27T18:03:15+00:00"
         }
       ],
-      "last_extracted": "2026-11-27T18:03:15+00:00",
-      "last_success": "2026-11-27T18:03:15+00:00",
-      "chart_applied_at": "2026-11-27T18:03:15+00:00",
       "coverage": {
         "configured": 1,
         "checked": 1,
@@ -14352,9 +14362,7 @@
         "actual_data": 1,
         "latest": 1
       },
-      "detail": "新增或经核验修订 2 条。",
-      "last_checked": "2026-11-27T18:03:15+00:00",
-      "eligible_cloud_check": true
+      "source": "https://www.gtradedata.com/report/30024100.html"
     },
     {
       "dataset_id": "vax.trade-hs6",
@@ -14372,8 +14380,7 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-hs6.json",
       "latest_data_period": "—",
-      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS",
-      "status": "Source unavailable",
+      "last_checked": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14382,6 +14389,8 @@
           "period": "—"
         }
       ],
+      "status": "Source unavailable",
+      "detail": "所选期间未发现新记录。 成功 0/2，失败 2，未覆盖 0，修订待审 0。",
       "quality_notes": [
         "directory/202412: HTTP 403 · comtradeapi.un.org",
         "directory/202512: HTTP 403 · comtradeapi.un.org"
@@ -14418,8 +14427,7 @@
         "actual_data": 0,
         "latest": 0
       },
-      "detail": "所选期间未发现新记录。 成功 0/2，失败 2，未覆盖 0，修订待审 0。",
-      "last_checked": "2026-11-27T18:03:15+00:00"
+      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS"
     },
     {
       "dataset_id": "devices.trade-reference-history",
@@ -14437,8 +14445,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-reference-history.json",
       "latest_data_period": "2026-09-01",
-      "source": "https://hsguilei.com/hs/9018129110",
-      "status": "Updated",
+      "last_checked": "2026-11-27T18:03:15+00:00",
+      "last_success": "2026-11-27T18:03:15+00:00",
+      "last_source_success": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14447,8 +14456,12 @@
           "period": "2026-09-01"
         }
       ],
+      "status": "Updated",
+      "detail": "新增或经核验修订 72 条。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:03:15+00:00",
+      "last_extracted": "2026-11-27T18:03:15+00:00",
       "quality_notes": [],
-      "last_source_success": "2026-11-27T18:03:15+00:00",
       "subtasks": [
         {
           "id": "9022120000",
@@ -14481,9 +14494,6 @@
           "last_ok": "2026-11-27T18:03:15+00:00"
         }
       ],
-      "last_extracted": "2026-11-27T18:03:15+00:00",
-      "last_success": "2026-11-27T18:03:15+00:00",
-      "chart_applied_at": "2026-11-27T18:03:15+00:00",
       "coverage": {
         "configured": 3,
         "checked": 3,
@@ -14496,9 +14506,7 @@
         "actual_data": 3,
         "latest": 3
       },
-      "detail": "新增或经核验修订 72 条。",
-      "last_checked": "2026-11-27T18:03:15+00:00",
-      "eligible_cloud_check": true
+      "source": "https://hsguilei.com/hs/9018129110"
     },
     {
       "dataset_id": "operating.metrics",
@@ -14515,8 +14523,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "—",
-      "source": "https://www.cninfo.com.cn/",
-      "status": "Pending review",
+      "last_checked": "2026-11-27T18:03:15+00:00",
+      "last_source_success": "2026-11-27T18:03:15+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -14525,8 +14533,10 @@
           "period": "—"
         }
       ],
+      "status": "Pending review",
+      "detail": "3 份来源文件待审核。",
+      "eligible_cloud_check": true,
       "quality_notes": [],
-      "last_source_success": "2026-11-27T18:03:15+00:00",
       "subtasks": [
         {
           "id": "300015.SZ",
@@ -14580,9 +14590,7 @@
         "actual_data": 0,
         "latest": 0
       },
-      "detail": "3 份来源文件待审核。",
-      "last_checked": "2026-11-27T18:03:15+00:00",
-      "eligible_cloud_check": true
+      "source": "https://www.cninfo.com.cn/"
     }
   ]
 }
