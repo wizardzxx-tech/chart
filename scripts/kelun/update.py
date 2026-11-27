@@ -21,7 +21,8 @@ SHANGHAI = ZoneInfo("Asia/Shanghai")
 UNIVERSE = json.loads((SITE / "config/universe.json").read_text())
 HISTORY = SITE / "config/ownership.json"
 FX_URL = "https://data-api.ecb.europa.eu/service/data/EXR/D.CNY+HKD.EUR.SP00.A"
-LOCAL_SOURCES = {"AKShare / Eastmoney": "https://quote.eastmoney.com/",
+SSE_SOURCE = "https://www.sse.com.cn/"
+LOCAL_SOURCES = {"上海证券交易所": SSE_SOURCE, "AKShare / Eastmoney": "https://quote.eastmoney.com/",
                  "Yahoo Finance": "https://finance.yahoo.com/"}
 FX_SOURCE = "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
 YAHOO = "https://query1.finance.yahoo.com/v8/finance/chart/"
@@ -31,10 +32,10 @@ TRACKED = [a["id"] for a in UNIVERSE if a["kind"] in ("parent", "investee")]
 INVESTEES = TRACKED[1:]
 
 
-def request(url, **kwargs):
+def request(url, headers=None, **kwargs):
     for attempt in range(3):
         try:
-            response = requests.get(url, timeout=(5, 18), headers={"User-Agent": "Mozilla/5.0"}, **kwargs)
+            response = requests.get(url, timeout=(5, 18), headers={"User-Agent": "Mozilla/5.0", **(headers or {})}, **kwargs)
             response.raise_for_status()
             return response
         except requests.RequestException:
@@ -135,7 +136,10 @@ def local_history(end, sessions, start=START):
         expected = expected[expected >= start]
         chosen = None
         try:
-            candidate = akshare_prices(a, start, end)
+            if a["id"] == "cisen":
+                candidate = sse_cisen_prices().set_index("date").loc[start.strftime("%Y-%m-%d"):end.strftime("%Y-%m-%d")]
+            else:
+                candidate = akshare_prices(a, start, end)
             # Treat an incomplete series as a source error. Fall back for the entire instrument.
             if len(candidate.dropna()) >= len(expected) * .94 and candidate.index.max() >= expected[-1].strftime("%Y-%m-%d"):
                 chosen = candidate
@@ -311,6 +315,55 @@ def write_output(out, dataset, inputs=None):
         fx.to_csv(raw_dir / "fx-reference.csv", index_label="date")
 
 
+def sse_cisen_prices():
+    url = "https://yunhq.sse.com.cn:32042/v1/sh1/dayk/603367?begin=-900&end=-1&select=date,close"
+    payload = request(url, headers={"Referer": SSE_SOURCE}).json()
+    if payload["code"] != "603367":
+        raise ValueError("Unexpected SSE ticker")
+    points = pd.DataFrame(payload["kline"], columns=["date", "close"])
+    points["date"] = pd.to_datetime(points["date"].astype(str), format="%Y%m%d").dt.strftime("%Y-%m-%d")
+    return points.assign(provider="上海证券交易所")
+
+
+def refresh_cisen(out, now, end):
+    """Use SSE closing-price facts only after the subsequent Shanghai midnight."""
+    closed_by_midnight = min(pd.Timestamp(now.date()) - pd.Timedelta(days=1), end)
+    sessions = calendars.get_calendar("XSHG", start=START, end=closed_by_midnight).sessions
+    latest = sessions[-1]
+    out.mkdir(parents=True, exist_ok=True)
+    target = out / "cisen.json"
+    previous = json.loads(target.read_text())["rows"] if target.exists() else []
+    if previous and previous[-1]["date"] >= latest.date().isoformat():
+        print("Cisen eligible EOD data is already published", flush=True)
+        return
+    points = sse_cisen_prices()
+    if previous:
+        old = pd.DataFrame(previous)[["date", "close"]]
+        points = pd.concat([old.loc[old["date"] < points["date"].min()], points], ignore_index=True)
+    points = validate_prices(points.assign(asset="cisen", provider="上海证券交易所"), latest)
+    actual = pd.DatetimeIndex(points["date"])
+    if actual[-1] != latest or len(sessions.difference(actual)) > 4:
+        raise ValueError("SSE Cisen source is stale or has missing trading dates; prior data preserved")
+    history = sorted((r for r in read_history() if r["asset"] == "cisen"), key=lambda r: r["effective"])
+    rows = []
+    for point in points.itertuples():
+        cap = asof_record(history, point.date, "shares")
+        ownership = asof_record(history, point.date, "economic_shares")
+        date = point.date.date().isoformat()
+        rows.append({"date":date, "close":point.close, "shares":cap["shares"],
+                     "economic_shares":ownership["economic_shares"], "capital_date":cap["effective"],
+                     "ownership_date":ownership["effective"], "market_cap":cny_cap(point.close, cap["shares"]),
+                     "stake":cny_cap(point.close, ownership["economic_shares"]),
+                     "provisional": cap["effective"] != date or ownership["effective"] != date})
+    with tempfile.TemporaryDirectory(dir=out) as directory:
+        stage = Path(directory)
+        save_json(stage / target.name, {"source":SSE_SOURCE, "updated_at":now.isoformat(), "rows":rows})
+        pd.DataFrame(rows).assign(source=SSE_SOURCE).to_csv(stage / "cisen-daily.csv", index=False)
+        for filename in (target.name, "cisen-daily.csv"):
+            (stage / filename).replace(out / filename)
+    print(f"Cisen SSE: {len(rows)} daily closes through {latest:%Y-%m-%d}", flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
@@ -318,10 +371,14 @@ def main():
     parser.add_argument("--end", type=pd.Timestamp)
     parser.add_argument("--smoke", action="store_true", help="Test providers without saving the fetched quotes")
     parser.add_argument("--publish", action="store_true", help="Use only the licensed market feed supplied to CI")
+    parser.add_argument("--public-cisen", action="store_true", help="Refresh eligible SSE Cisen EOD rows")
     parser.add_argument("--public-reference", action="store_true", help="Refresh the openly reusable ECB reference FX series")
     args = parser.parse_args()
     now = datetime.now(SHANGHAI)
     end = args.end if args.end is not None else eligible_end(now)
+    if args.public_cisen:
+        refresh_cisen(args.output or SITE / "data", now, end)
+        return
     if args.public_reference:
         fx = fetch_fx(end)
         if fx.empty or (end - fx.index[-1]).days > 5:

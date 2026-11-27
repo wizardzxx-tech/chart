@@ -18,6 +18,7 @@ const plots = {displaylogo:false, responsive:true, scrollZoom:false, modeBarButt
 let assets = [];
 let ownership = [];
 let fx = [];
+let cisen = null;
 let published = null;
 let imported = null;
 let feedStatus = 'pending';
@@ -122,7 +123,9 @@ function renderFeed(data) {
   if (!data) {
     badge.textContent = '持股及参考汇率';
     message.textContent = feedStatus === 'error' ? '已发布行情暂时无法读取。' :
-      feedStatus === 'checking' ? '正在读取已发布行情。' : '公开收盘行情等待授权数据源接入。';
+      feedStatus === 'checking' ? '正在读取已发布行情。' : cisen?.rows?.length ?
+      `已接入辰欣药业的上交所日终收盘价，最新 ${cisen.rows.at(-1).date}。其余四家等待接入。` :
+      '公开收盘行情等待授权数据源接入。';
     warning.hidden = true;
     status.textContent = '行情接入后可逐项核对最近交易日、缺失交易日及异常波动。';
     return;
@@ -165,6 +168,21 @@ function renderMainCharts() {
 }
 
 function renderCompanyCaps() {
+  const partial = !(imported || published) && Boolean(cisen?.rows?.length);
+  const note = byId('partial-market');
+  note.hidden = !partial;
+  byId('companies').hidden = partial;
+  if (partial) {
+    const rows = cisen.rows.filter(row=>row.date>=since(cisen.rows.at(-1).date));
+    const last = cisen.rows.at(-1);
+    note.innerHTML = `公开日终行情覆盖 1 / 5 家。辰欣药业 ${esc(last.date)} 收盘 ${n(last.close)} 元，市值
+      ${n(last.market_cap)} 十亿元，科伦所持权益 ${n(last.stake)} 十亿元。
+      ${last.provisional ? '使用最近的股本及持股快照。' : ''}
+      ${link(cisen.source,'上海证券交易所')} · <a href="data/cisen-daily.csv" download>辰欣药业逐日 CSV</a>`;
+    chart('company-caps', [line('辰欣药业市值',rows.map(r=>[r.date,r.market_cap]),'#985578',' 十亿元'),
+      line('科伦所持辰欣权益',rows.map(r=>[r.date,r.stake]),'#007c74',' 十亿元')]);
+    return;
+  }
   const selected=new Set([...byId('companies').querySelectorAll('input:checked')].map(input=>input.value));
   const traces=assets.filter(a=>selected.has(a.id) && viewRows.some(r=>Number.isFinite(r.assets[a.id].cap)))
     .map(a=>line(assetNames[a.id],viewRows.map(r=>[r.date,r.assets[a.id].cap]),a.color,' 十亿元'));
@@ -267,7 +285,7 @@ function validate(data) {
 
 async function init() {
   renderMetrics(null);
-  const items=await Promise.allSettled([json('config/universe.json'),json('config/ownership.json'),json('data/fx.json')]);
+  const items=await Promise.allSettled([json('config/universe.json'),json('config/ownership.json'),json('data/fx.json'),json('data/cisen.json')]);
   if (items[0].status!=='fulfilled' || items[1].status!=='fulfilled') {
     byId('feed-copy').textContent='基础配置读取失败，请刷新页面。';
     return;
@@ -275,6 +293,7 @@ async function init() {
   assets=items[0].value;
   ownership=items[1].value;
   fx=items[2].status==='fulfilled' ? items[2].value.observations : [];
+  cisen=items[3].status==='fulfilled' ? items[3].value : null;
   renderOwnership();
   byId('companies').insertAdjacentHTML('beforeend',assets.map((a,i)=>`<label><input type="checkbox" value="${esc(a.id)}" ${i<2 ? 'checked' : ''}>${esc(assetNames[a.id])}</label>`).join(''));
   feedStatus='checking';

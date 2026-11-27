@@ -44,6 +44,9 @@ jobs:
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         continue-on-error: true
         run: python scripts/kelun/update.py --smoke
+      - name: Refresh SSE end-of-day data for Cisen
+        continue-on-error: true
+        run: python scripts/kelun/update.py --public-cisen
       - name: Refresh the public data
         env:
           KELUN_LICENSED_FEED_URL: ${{ secrets.KELUN_LICENSED_FEED_URL }}

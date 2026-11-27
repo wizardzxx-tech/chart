@@ -28,6 +28,6 @@
 | [HKEX 历史行情](https://data.hkex.com.hk/catalog/dataset/0a05f55287014916ab0ea3cff1c26000?lang=en) · [SSE／CIIS](https://english.sse.com.cn/markets/dataservice/products/) · [深交所](https://www.szse.cn/market/trend/index.html) | 直接交易所来源。香港及内地可能需要分开接入 | HKEX 所列全市场历史产品标价 HKD 78,000；适用本项目的公开展示及分发权限需要另核。沪深由各市场确认范围与报价 |
 | [欧洲央行](https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html) | 已验证历史序列与可下载 API | 免费公开参考统计，注明来源 |
 
-[CIIS《市场数据业务指南》](https://www.ciis.com.hk/hongkong/en/uploadfiles/202407/22/2024072210065182863681.pdf#page=11) 指出，沪市及相关指数的日终信息自港时午夜起可免另办转发许可，更新频率每天最多一次。这是辰欣药业可核实的交易所层面路径，仍需取得条款允许的上游接口。该规则明确针对沪市及相关指数，不能据此处理深交所和港交所的收盘价。若通过日终规则接入部分证券，任务应在次日使用该类报价。
+[CIIS《市场数据业务指南》](https://www.ciis.com.hk/hongkong/en/uploadfiles/202407/22/2024072210065182863681.pdf#page=11) 指出，沪市及相关指数的日终信息自港时午夜起可免另办转发许可，更新频率每天最多一次。辰欣药业直接接入上交所日终数据，以次日刷新方式列出历史收盘价、公司市值和科伦持股价值。首次回填与备用供应商重合的记录中，2024-07-05 的收盘价存在差异，采用上交所原值。该规则明确针对沪市及相关指数，不能据此处理深交所和港交所的收盘价。辰欣药业可独立展示。集团合计需要四项上市持股与母公司市值齐备。
 
 自动任务的行情输入由仓库设置的授权接口提供。公开程序和数据层不打包第三方行情站内容。
