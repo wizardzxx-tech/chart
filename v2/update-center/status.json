@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T05:55:43+00:00",
+  "generated_at": "2026-11-27T06:02:12+00:00",
   "datasets": [
     {
       "dataset_id": "pharmacy.stores",
@@ -184,11 +184,17 @@
       "section": "lot-release",
       "topic_label": "血制品",
       "latest_data_period": "2026-11-08",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "Pending review",
+          "detail": "2 份来源文件待审核。",
+          "period": "2026-11-08"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "Pending review",
           "detail": "2 份来源文件待审核。",
           "period": "2026-11-08"
@@ -196,7 +202,8 @@
       ],
       "status": "Pending review",
       "detail": "2 份来源文件待审核。",
-      "source": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html"
+      "source": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "blood.events",
@@ -279,11 +286,17 @@
       "section": "lot-release",
       "topic_label": "疫苗",
       "latest_data_period": "2026-11-08",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "Pending review",
+          "detail": "2 份来源文件待审核。",
+          "period": "2026-11-08"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "Pending review",
           "detail": "2 份来源文件待审核。",
           "period": "2026-11-08"
@@ -291,7 +304,8 @@
       ],
       "status": "Pending review",
       "detail": "2 份来源文件待审核。",
-      "source": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html"
+      "source": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "vax.doses",
@@ -323,11 +337,17 @@
       "section": "customs-trade",
       "topic_label": "疫苗",
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -335,7 +355,8 @@
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
-      "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS"
+      "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "vax.ccc",
@@ -503,11 +524,17 @@
       "section": "fund",
       "topic_label": "医保基金",
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -515,7 +542,8 @@
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
-      "source": "https://www.nhsa.gov.cn/col/col7/index.html"
+      "source": "https://www.nhsa.gov.cn/col/col7/index.html",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "insurance.monthly",
@@ -530,11 +558,17 @@
       "section": "pooled",
       "topic_label": "医保基金",
       "latest_data_period": "2026-09",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "Pending review",
+          "detail": "1 份来源文件待审核。",
+          "period": "2026-09"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "Pending review",
           "detail": "1 份来源文件待审核。",
           "period": "2026-09"
@@ -542,7 +576,8 @@
       ],
       "status": "Pending review",
       "detail": "1 份来源文件待审核。",
-      "source": "https://www.nhsa.gov.cn/col/col7/index.html"
+      "source": "https://www.nhsa.gov.cn/col/col7/index.html",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "insurance.channels",
@@ -642,10 +677,16 @@
       "section": "service-charts",
       "topic_label": "医疗服务量",
       "latest_data_period": "2026-03",
-      "last_checked": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "Source unavailable",
+          "detail": "HTTP 412 · www.nhc.gov.cn",
+          "period": "2026-03"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "Source unavailable",
           "detail": "HTTP 412 · www.nhc.gov.cn",
           "period": "2026-03"
@@ -685,11 +726,17 @@
       "section": "customs-trade",
       "topic_label": "原料药",
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -697,7 +744,8 @@
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
-      "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS"
+      "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "api.focus",
@@ -746,11 +794,17 @@
       "section": "customs-trade",
       "topic_label": "医疗器械",
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -758,7 +812,8 @@
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
-      "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS"
+      "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "devices.recent",
@@ -773,11 +828,17 @@
       "section": "customs-trade",
       "topic_label": "医疗器械",
       "latest_data_period": "2026-09（以品种为准）",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2026-09（以品种为准）"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2026-09（以品种为准）"
@@ -785,7 +846,8 @@
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
-      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS"
+      "source": "https://comtradeapi.un.org/public/v1/getDa/C/M/HS",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "devices.attribution",
@@ -1005,20 +1067,27 @@
       "topic_label": "生物类似药",
       "data_url": "../biosimilars/public-data/fda.drugsfda.json",
       "latest_data_period": "2026-10-16",
-      "last_checked": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
           "status": "Updated",
           "detail": "新增或经核验修订 215 条。",
           "period": "2026-10-16"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-16"
         }
       ],
-      "status": "Updated",
-      "detail": "新增或经核验修订 215 条。",
-      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514"
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "fda.insulins",
@@ -1034,20 +1103,27 @@
       "topic_label": "胰岛素",
       "data_url": "../insulin/public-data/fda.insulins.json",
       "latest_data_period": "2026-10-23",
-      "last_checked": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
           "status": "Updated",
           "detail": "新增或经核验修订 57 条。",
           "period": "2026-10-23"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-23"
         }
       ],
-      "status": "Updated",
-      "detail": "新增或经核验修订 57 条。",
-      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761326"
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761326",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "nih.clinical-trials",
@@ -1063,20 +1139,27 @@
       "topic_label": "生物类似药",
       "data_url": "../biosimilars/public-data/nih.clinical-trials.json",
       "latest_data_period": "2024-06-28",
-      "last_checked": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
           "status": "Updated",
           "detail": "新增或经核验修订 1 条。",
           "period": "2024-06-28"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2024-06-28"
         }
       ],
-      "status": "Updated",
-      "detail": "新增或经核验修订 1 条。",
-      "source": "https://clinicaltrials.gov/study/NCT05679258"
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
+      "source": "https://clinicaltrials.gov/study/NCT05679258",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "cms.catalog",
@@ -1092,20 +1175,27 @@
       "topic_label": "生物类似药",
       "data_url": "../biosimilars/public-data/cms.catalog.json",
       "latest_data_period": "2026-07",
-      "last_checked": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
           "status": "Updated",
           "detail": "新增或经核验修订 1 条。",
           "period": "2026-07"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-07"
         }
       ],
-      "status": "Updated",
-      "detail": "新增或经核验修订 1 条。",
-      "source": "https://catalog.data.gov/dataset/medicare-quarterly-part-b-spending-by-drug-2026-01-01"
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
+      "source": "https://catalog.data.gov/dataset/medicare-quarterly-part-b-spending-by-drug-2026-01-01",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "insulin.nmpa-notices",
@@ -1120,10 +1210,16 @@
       "section": "pipeline",
       "topic_label": "胰岛素",
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "Source unavailable",
+          "detail": "HTTP 412 · www.nmpa.gov.cn",
+          "period": "—"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "Source unavailable",
           "detail": "HTTP 412 · www.nmpa.gov.cn",
           "period": "—"
@@ -1146,11 +1242,17 @@
       "section": "working-capital",
       "topic_label": "零售药房",
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T05:53:01+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "—"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "—"
@@ -1158,7 +1260,8 @@
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
-      "source": "https://www.nhsa.gov.cn/col/col104/index.html"
+      "source": "https://www.nhsa.gov.cn/col/col104/index.html",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "filings.exchange-notices",
@@ -1173,7 +1276,8 @@
       "section": "company-stores",
       "topic_label": "零售药房",
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T05:55:43+00:00",
+      "last_checked": "2026-11-27T06:02:12+00:00",
+      "last_source_success": "2026-11-27T06:02:12+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1186,12 +1290,18 @@
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "—"
+        },
+        {
+          "time": "2026-11-27T06:02:12+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "—"
         }
       ],
       "status": "No new data",
       "detail": "已检查官方目录。",
       "source": "https://www.sse.com.cn/disclosure/listedinfo/regular/",
-      "last_source_success": "2026-11-27T05:55:43+00:00"
+      "eligible_cloud_check": true
     }
   ]
 }
