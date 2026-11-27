@@ -1,0 +1,56 @@
+{
+  "dataset_id": "vax.trade-summary",
+  "updated_at": "2026-11-27T18:03:15+00:00",
+  "source_files": [
+    {
+      "url": "https://www.gtradedata.com/robots.txt",
+      "sha256": "32e64599bb8f4abc3449024b31da446185c6c9e78bd85d4aa8bae01b46e8080b",
+      "bytes": 1310,
+      "etag": "W/\"f7b8922e7d24dd1:0\"",
+      "last_modified": "Wed, 05 Aug 2026 01:53:16 GMT"
+    },
+    {
+      "url": "https://www.gtradedata.com/report/30024100.html",
+      "sha256": "ae3ec7e28d8d096532fd1329fa49ebc7a5ea42a82dd9edd8a2744bcd2874fb43",
+      "bytes": 51399,
+      "etag": "W/\"46399ebcd7cdd1:0\"",
+      "last_modified": "Tue, 24 Nov 2026 12:17:13 GMT"
+    }
+  ],
+  "records": [
+    {
+      "id": "customs-summary/30024100/2026-10-01/M",
+      "period": "2026-10-01",
+      "source": "https://www.gtradedata.com/report/30024100.html",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "30024100",
+      "code": "30024100",
+      "flow": "M",
+      "series": "customs-summary",
+      "amount": 66827609.0,
+      "qty": 29962.0,
+      "unit": "kg",
+      "quality": "第三方公开摘要",
+      "asp": 2230.412155396836,
+      "version": "ae3ec7e28d8d096532fd1329fa49ebc7a5ea42a82dd9edd8a2744bcd2874fb43"
+    },
+    {
+      "id": "customs-summary/30024100/2026-10-01/X",
+      "period": "2026-10-01",
+      "source": "https://www.gtradedata.com/report/30024100.html",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "30024100",
+      "code": "30024100",
+      "flow": "X",
+      "series": "customs-summary",
+      "amount": 22359970.0,
+      "qty": 51919.0,
+      "unit": "kg",
+      "quality": "第三方公开摘要",
+      "asp": 430.67027485121054,
+      "version": "ae3ec7e28d8d096532fd1329fa49ebc7a5ea42a82dd9edd8a2744bcd2874fb43"
+    }
+  ]
+}

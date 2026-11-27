@@ -1,20 +1,20 @@
 {
   "dataset_id": "cms.partb-values",
-  "updated_at": "2026-11-27T12:45:31+00:00",
+  "updated_at": "2026-11-27T18:03:15+00:00",
   "source_files": [
     {
       "url": "https://data.cms.gov/data.json",
-      "sha256": "fbb09c6987ab914f1529c06fd3631e4f9b263d275b9d1946e644995d38d0ef93",
-      "bytes": 18311307,
-      "etag": "\"1795642347-gzip\"",
-      "last_modified": "Wed, 25 Nov 2026 21:32:27 GMT"
+      "sha256": "db7086f1f024a361cb551a490aeeee1f52e798436d946f415b3d3dec175cac5d",
+      "bytes": 18330229,
+      "etag": "\"1795801361-gzip\"",
+      "last_modified": "Fri, 27 Nov 2026 17:42:41 GMT"
     },
     {
       "url": "https://www.cms.gov/medicare/payment/part-b-drugs/asp-pricing-files",
       "sha256": "7d484ab68170a3d7faf1601e0bb634bdbc964e9ab5df460f0840a3315f9c9e80",
       "bytes": 258844,
-      "etag": "\"1795780469-gzip\"",
-      "last_modified": "Fri, 27 Nov 2026 11:54:29 GMT"
+      "etag": "\"1795799884-gzip\"",
+      "last_modified": "Fri, 27 Nov 2026 17:18:04 GMT"
     },
     {
       "url": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
@@ -2109,239 +2109,647 @@
     {
       "id": "quarterly/2025FY/J0178",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J0178",
         "period": "2025FY",
-        "spending": 1537858048.5,
-        "claims": 857976,
-        "beneficiaries": 222280
+        "spending": 1537096523.4,
+        "claims": 857557,
+        "beneficiaries": 222243
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "4645040a10c91e778e10e851",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J1442",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J1442",
         "period": "2025FY",
-        "spending": 7376341.32,
-        "claims": 15805,
+        "spending": 7372465.45,
+        "claims": 15801,
         "beneficiaries": 3162
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "4aff4174c0b938058ea72d6c",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J1745",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J1745",
         "period": "2025FY",
-        "spending": 345756127.35,
-        "claims": 212872,
-        "beneficiaries": 35860
+        "spending": 345476743.09,
+        "claims": 212706,
+        "beneficiaries": 35855
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "0586a324b9d0ef45132d8430",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J2506",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J2506",
         "period": "2025FY",
-        "spending": 53394178.96,
-        "claims": 94469,
-        "beneficiaries": 26681
+        "spending": 53354495.5,
+        "claims": 94428,
+        "beneficiaries": 26673
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "a2cbf01f5a1997b016600298",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J2778",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J2778",
         "period": "2025FY",
-        "spending": 44798421.18,
-        "claims": 82587,
-        "beneficiaries": 21507
+        "spending": 44790443.52,
+        "claims": 82570,
+        "beneficiaries": 21504
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "0d9f8bed426ea124e850e172",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J3262",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J3262",
         "period": "2025FY",
-        "spending": 458896264.05,
-        "claims": 159816,
-        "beneficiaries": 20558
+        "spending": 458653779.34,
+        "claims": 159728,
+        "beneficiaries": 20560
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "dacbb1be514524c6e67bff3e",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J9035",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J9035",
         "period": "2025FY",
-        "spending": 131788780.51,
-        "claims": 331234,
-        "beneficiaries": 97130
+        "spending": 131715536.33,
+        "claims": 331098,
+        "beneficiaries": 97086
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "88fe24d9d5247bdb5eac2efd",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J9312",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J9312",
         "period": "2025FY",
-        "spending": 447593857.46,
-        "claims": 69618,
-        "beneficiaries": 23475
+        "spending": 447410585.15,
+        "claims": 69595,
+        "beneficiaries": 23471
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "bfcf5543bd562bf521235fb9",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/J9355",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "J9355",
         "period": "2025FY",
-        "spending": 69607008.02,
-        "claims": 19299,
-        "beneficiaries": 2357
+        "spending": 69602578.73,
+        "claims": 19297,
+        "beneficiaries": 2356
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "94eb9bab070522f1ff79347f",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5101",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5101",
         "period": "2025FY",
-        "spending": 8880806.65,
-        "claims": 48127,
-        "beneficiaries": 11130
+        "spending": 8878982.78,
+        "claims": 48119,
+        "beneficiaries": 11127
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "db23aa38801b39b5485701ea",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5103",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5103",
         "period": "2025FY",
-        "spending": 29768895.12,
-        "claims": 32771,
+        "spending": 29759308.77,
+        "claims": 32767,
         "beneficiaries": 6228
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "d0a1a1b86cdcc710ad17b23f",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5104",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5104",
         "period": "2025FY",
-        "spending": 53525686.08,
-        "claims": 40147,
-        "beneficiaries": 7550
+        "spending": 53509839.31,
+        "claims": 40140,
+        "beneficiaries": 7551
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "845def22c92d31adf00906cd",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5107",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5107",
         "period": "2025FY",
-        "spending": 137086290.47,
-        "claims": 65297,
-        "beneficiaries": 11267
+        "spending": 137041375.95,
+        "claims": 65278,
+        "beneficiaries": 11265
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "9f840ac21254ab71c3092253",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5108",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5108",
         "period": "2025FY",
-        "spending": 85000354.59,
-        "claims": 61952,
-        "beneficiaries": 17635
+        "spending": 84985260.37,
+        "claims": 61939,
+        "beneficiaries": 17633
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "a495d4923e401e9fba2d41df",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5110",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5110",
         "period": "2025FY",
-        "spending": 4673475.18,
-        "claims": 36481,
-        "beneficiaries": 6139
+        "spending": 4670988.87,
+        "claims": 36463,
+        "beneficiaries": 6135
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "343f389315d9e598f3d06f29",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5111",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5111",
         "period": "2025FY",
-        "spending": 110388620.56,
-        "claims": 67643,
-        "beneficiaries": 19580
+        "spending": 110340836.5,
+        "claims": 67610,
+        "beneficiaries": 19576
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "a99cf540bb5b6beef5814e24",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5112",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5112",
         "period": "2025FY",
-        "spending": 6995844.71,
+        "spending": 6995831.3,
         "claims": 6696,
         "beneficiaries": 960
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "0e20b8654d606e025393067e",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
@@ -2361,85 +2769,229 @@
     {
       "id": "quarterly/2025FY/Q5114",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5114",
         "period": "2025FY",
-        "spending": 78123051.24,
-        "claims": 38655,
+        "spending": 78113862.98,
+        "claims": 38650,
         "beneficiaries": 5355
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "81871c10dd00b6120ea23f4d",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5115",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5115",
         "period": "2025FY",
-        "spending": 128242613.11,
-        "claims": 50007,
-        "beneficiaries": 16417
+        "spending": 128178365.11,
+        "claims": 49988,
+        "beneficiaries": 16411
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "a012719f65885f81972c0e9d",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5116",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5116",
         "period": "2025FY",
-        "spending": 24598553.28,
-        "claims": 22877,
+        "spending": 24597350.83,
+        "claims": 22876,
         "beneficiaries": 3067
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "b3c7960f8b694766287e7084",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5117",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5117",
         "period": "2025FY",
-        "spending": 38649065.34,
-        "claims": 22701,
+        "spending": 38647245.94,
+        "claims": 22698,
         "beneficiaries": 3067
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "5b2033a0789adca021a2a314",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5118",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5118",
         "period": "2025FY",
-        "spending": 62517209.08,
-        "claims": 36252,
-        "beneficiaries": 6267
+        "spending": 62544077.08,
+        "claims": 36280,
+        "beneficiaries": 6268
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "8a43812e23a35d321d81f1d5",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5119",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5119",
         "period": "2025FY",
-        "spending": 106543935.43,
-        "claims": 52097,
-        "beneficiaries": 16634
+        "spending": 106498002.29,
+        "claims": 52082,
+        "beneficiaries": 16631
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "de0106532dee35e4da14f321",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
@@ -2459,43 +3011,115 @@
     {
       "id": "quarterly/2025FY/Q5121",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5121",
         "period": "2025FY",
-        "spending": 10281543.26,
-        "claims": 9247,
-        "beneficiaries": 1863
+        "spending": 10279114.9,
+        "claims": 9243,
+        "beneficiaries": 1862
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "b7ff587bf5f9811f28579ddf",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5122",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5122",
         "period": "2025FY",
-        "spending": 13748628.78,
-        "claims": 9414,
+        "spending": 13745494.82,
+        "claims": 9412,
         "beneficiaries": 2697
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "554b325f037fedcc26f9afea",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5123",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5123",
         "period": "2025FY",
-        "spending": 58016214.62,
-        "claims": 23312,
-        "beneficiaries": 7386
+        "spending": 58014824.64,
+        "claims": 23310,
+        "beneficiaries": 7385
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "030199f8cf3b5a3f650daec7",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
@@ -2515,141 +3139,381 @@
     {
       "id": "quarterly/2025FY/Q5125",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5125",
         "period": "2025FY",
-        "spending": 6104123.22,
-        "claims": 32250,
-        "beneficiaries": 5590
+        "spending": 6101734.23,
+        "claims": 32242,
+        "beneficiaries": 5589
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "46c0651dbeb32bfac23515a4",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5126",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5126",
         "period": "2025FY",
-        "spending": 100735174.69,
-        "claims": 31641,
-        "beneficiaries": 5144
+        "spending": 100712100.43,
+        "claims": 31632,
+        "beneficiaries": 5143
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "7138d0e21d9e563c41ca8d1c",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5127",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5127",
         "period": "2025FY",
-        "spending": 53447197.11,
-        "claims": 18126,
-        "beneficiaries": 4896
+        "spending": 53412262.71,
+        "claims": 18110,
+        "beneficiaries": 4892
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "d2f671131038d902abcfd56f",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5128",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5128",
         "period": "2025FY",
-        "spending": 30172535.31,
-        "claims": 34255,
-        "beneficiaries": 19257
+        "spending": 30173863.66,
+        "claims": 34256,
+        "beneficiaries": 19258
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "477d8df5f8a2cd9051fec79f",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5129",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5129",
         "period": "2025FY",
-        "spending": 128788404.08,
-        "claims": 41914,
-        "beneficiaries": 6419
+        "spending": 128748051,
+        "claims": 41896,
+        "beneficiaries": 6418
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "acb42ecbdfab00328e5be394",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5130",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5130",
         "period": "2025FY",
-        "spending": 26941262.22,
-        "claims": 14200,
+        "spending": 26935405.78,
+        "claims": 14199,
         "beneficiaries": 4171
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "2f8c321e7d7645521a142568",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5133",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5133",
         "period": "2025FY",
-        "spending": 5680050.28,
-        "claims": 2124,
-        "beneficiaries": 672
+        "spending": 5670411.24,
+        "claims": 2119,
+        "beneficiaries": 670
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "d6df4cef8bb0de230143402c",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5135",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5135",
         "period": "2025FY",
-        "spending": 21396329.1,
-        "claims": 10595,
+        "spending": 21377088.16,
+        "claims": 10590,
         "beneficiaries": 2260
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "1d845c813e00bbd856fba4c6",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5146",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5146",
         "period": "2025FY",
-        "spending": 28674172.73,
-        "claims": 10170,
+        "spending": 28669798.57,
+        "claims": 10169,
         "beneficiaries": 1526
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "4a269ac1993adc98a365f3e4",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
       "id": "quarterly/2025FY/Q5147",
       "period": "2025-01-01",
-      "source": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
       "basis": "CMS distinct metrics per original file",
       "kind": "quarterly",
       "item": {
         "code": "Q5147",
         "period": "2025FY",
-        "spending": 522266026.53,
-        "claims": 259747,
-        "beneficiaries": 80140
+        "spending": 522220152.91,
+        "claims": 259728,
+        "beneficiaries": 80134
+      },
+      "period_meta": {
+        "id": "2025FY",
+        "label": "2025 全年",
+        "start": "2025-01-01",
+        "observed": "2025-10-01",
+        "kind": "full"
+      },
+      "approved_revision": {
+        "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+        "source_versions": [
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
+            "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514"
+          },
+          {
+            "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+            "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe"
+          }
+        ],
+        "task_id": "9decf433cf7b1aad9e708a0e",
+        "reviewed_by": "Codex source reconciliation",
+        "scope": "Same calendar-year 2025 preliminary Part B full-year aggregates. Values independently matched both CMS originals.",
+        "manifest_sha256": "06f324dd221a5513b10201bfc7a9df31e64c4bc7469b421a8d72d40faf7e6dd1"
       }
     },
     {
