@@ -1,10 +1,10 @@
 {
   "dataset_id": "devices.trade-monthly",
-  "updated_at": "2026-11-27T18:43:42+00:00",
+  "updated_at": "2026-11-27T19:03:17+00:00",
   "source_files": [
     {
       "url": "https://comtradeapi.un.org/public/v1/getDATariffline/C/M/HS?reporterCode=156&period=202401%2C202402%2C202403%2C202404%2C202405%2C202406%2C202407%2C202408%2C202409%2C202410%2C202411%2C202412",
-      "sha256": "3ff6e37ddb775ba88adcf3e4e14c0c73759558bb9ad42605f94840b88a0e281f",
+      "sha256": "f187c358c55cc4cc4d1bb113ef01ba1dc8ce1fc73506de44adadd4a0e75047d4",
       "bytes": 6044
     },
     {
@@ -14,7 +14,7 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/getDATariffline/C/M/HS?reporterCode=156&period=202601%2C202602%2C202603%2C202604%2C202605%2C202606%2C202607%2C202608%2C202609%2C202610",
-      "sha256": "d5b6bec2ca12c01d3de898153073fea5196e40f417bf4617352282e5478ee1bd",
+      "sha256": "13944f0913a7ae5d580a502d0adfc321de13c11098628b0a072530a743ec7bd6",
       "bytes": 58
     },
     {
@@ -23,93 +23,103 @@
       "bytes": 29148
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90221200&flowCode=M&maxRecords=500",
-      "sha256": "4fa0ec85d9b03ba88d37771ad920843548df5085c35c6eea661c505d601e86c3",
-      "bytes": 4308
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=X&maxRecords=500",
+      "sha256": "744fe38b1b619b1f1f5108d94c1f171e8e674227eeb58f9a58d289f2d304f3c4",
+      "bytes": 27324
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90181310&flowCode=X&maxRecords=500",
-      "sha256": "8f5976a8f6764412587dd439a81bb6bc026c0400ac6289a8d1dee3fb25090b98",
-      "bytes": 12788
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=M&maxRecords=500",
+      "sha256": "df216094dfc7e6b6f0d2aa69b339e01bb8551ea2f8c4596dc22ef1bce6d3f872",
+      "bytes": 5524
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90181310&flowCode=M&maxRecords=500",
-      "sha256": "2735ce9e8578cc86d87c2ad759fb7c23d2a514e99d81a90bd77d80d355c25a2d",
-      "bytes": 2487
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=X&maxRecords=500",
+      "sha256": "4156a42ea49b50817a16f2fd568c577fc98a6007186242aed41e2c4a26b159b2",
+      "bytes": 9756
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=M&maxRecords=500",
+      "sha256": "3ac20c2964348064b95fc0a32dacfcb93a4a42c59cfb6e76103052eed133883f",
+      "bytes": 2484
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=90181210&flowCode=X&maxRecords=500",
-      "sha256": "b21d9468dc1e849721fd475cf8e533790102d4225398bce3ee305224e712eba5",
+      "sha256": "8cff49b537aead08d21b8c90396c072b28b3a6f9f448ec9fab3d66bc40bd8d49",
       "bytes": 64490
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90181210&flowCode=X&maxRecords=500",
-      "sha256": "f5d2046933b421d0f9156baf2da5e72fb269e0a6805d65bbde1ed5bd42aee943",
-      "bytes": 63868
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=X&maxRecords=500",
+      "sha256": "efbbffef01e4c37928c0c6e50dc15eaea4228484066483f9afb4c622bc0cdf70",
+      "bytes": 60871
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90181210&flowCode=M&maxRecords=500",
-      "sha256": "b4190f143c8258ee8b5e5741a14a1c0c8b8ba8f8b8257f3e9c1adbff28f865ee",
-      "bytes": 4282
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=M&maxRecords=500",
+      "sha256": "d381ef4a32d62d66588f7ad906f27817f87fc75d09b0388034fd3555e77e0272",
+      "bytes": 4877
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "4100924b7ee6f76e13cdbbfbb1ba11dd798d013cf033f816d62ffc6a44cee60c",
-      "bytes": 89142
+      "sha256": "397b03f293d722ddc0b2043612271e607e381a5dccf86b38977d1f6fe2be983c",
+      "bytes": 89141
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "9e35ba18510d46adbe6670c4eeb42cbf57b57d8b9619ec1ba41f387b6f5eb4b5",
+      "sha256": "25cb25b3e2202c1ce625d7df38e2629ff87b507792c2cf18b4234e0f0a910498",
       "bytes": 88418
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "7d8b6ed9d34278887b54e2afc257b521fe8ea0d0a1572d14781201c64fc533e8",
+      "sha256": "778e98cc3ad7ce0e4a62333f39d620bd829a30bdc5c1f3d26197681723be3cf1",
       "bytes": 81717
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "6a2bfdf289dbf54703d5f74ec697697c894a9f14136fce79ac921ba31ab05f1e",
-      "bytes": 85427
+      "sha256": "2c70f6107dca09e20d26e141f03f6032dd4fe6bc5456fde235568e9ab4b2955e",
+      "bytes": 85428
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202408&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "f58f0119edb4016f6dc68188aeb9793a0063749adad48cf574d1bd0615f808cc",
+      "sha256": "6330b56cdd5d7714006be4fa4ca27d7202042516f71d89f33339ea19b3968fb8",
       "bytes": 84743
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "998d5866184eae65f392dbef9e9db651d577ba2146a47cb1a542ae236b7942b2",
+      "sha256": "4933ed018c249a3ff0205b2e183e5e2635a3105160e691135ae7dab3c225b6fd",
       "bytes": 84745
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "18182671e31fc0595fad69cb323ed4f22ed4d16747ce3cc7729633c28f173c25",
-      "bytes": 81860
+      "sha256": "61cfdee0e7833a1ed8592d3a8dcc420dd6d546821d65e2adcf33f4de8dd6a3b1",
+      "bytes": 81859
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90181291&flowCode=X&maxRecords=500",
-      "sha256": "a35c15829cb12cc45183a743135a315a56dd59e0bc1daf8323be365e990ab0a1",
+      "sha256": "0d357109ca59c5fede1addbd32d71f97bb2b2ad703adfc4745daf988476fc9f9",
       "bytes": 83581
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90181291&flowCode=M&maxRecords=500",
-      "sha256": "e433a8d6c771051918fdcffea117fe704b16de79488b5ff2817a2a381138e641",
-      "bytes": 15220
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181291&flowCode=X&maxRecords=500",
+      "sha256": "1ad819cbb69799b6c5860fd5cdb48a6422b4e743344c2f438d41e280c5e7cbdf",
+      "bytes": 84168
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181291&flowCode=M&maxRecords=500",
+      "sha256": "0d1a5eb04b05c786bf1a92ea62f20192ae0067a8657ec9766c4a1313cb13ef62",
+      "bytes": 17654
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "520cbc6fdbd015e2b3d3d4a3c6aa191202a2265f3a097200de2bc651386e16c0",
+      "sha256": "a88760c84691357a963dba4150e21e1ac240c3eef3625b6c75424aea57184bc0",
       "bytes": 109972
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "9e3f65591f30362ece9771d9b39a14a71758d840e8c1252908b473e63cb6934c",
+      "sha256": "f907500ad5a2c2b8226360cc1432bc3a4778292da88263a2ec6fddbf742bbd6f",
       "bytes": 109869
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "a72153658cc1698d92d0ca1fbaa2be9300707780d37feaa3281c2e83ef61e7e2",
+      "sha256": "8780b250cb2ae53c5669fb699d280bf927d64836fd78560d6261cf0859c5ebea",
       "bytes": 109205
     },
     {
@@ -119,72 +129,82 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202408&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "12ca282c9e2949507356ad19cdddf94e0c39b42d08a8bd9f3112b9e6e8f1180f",
+      "sha256": "a24ec3bbc1d3a059baa05139022cdf5389912c4d3c2293c85c0da78dc095c8e9",
       "bytes": 111728
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "ea82448afe8f910ee9ad81cd10198ead7ca7b53c16eaedfb2a4d0dbe0d6d7b40",
+      "sha256": "edf59e46e6b54a51f6537f88282353e3f1ec11b3013225e4bc8380e35af15deb",
       "bytes": 110440
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "0e616cf95d0c0f9128c00b4e80efc5fe637e6a83d0ee8c57b3d6c032f13c51bc",
+      "sha256": "1b68c88becd2b5ed4ce090d88cbe6e8ece4807fc424597182af391bd4348dd42",
       "bytes": 108626
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=38221900&flowCode=X&maxRecords=500",
-      "sha256": "b934f32af05253f29d185d74372841c54af91e68013f1b329b8deeb01beb8404",
+      "sha256": "627ea4b9f6e6c6c6201fa42bbcf3b734648738629f6421b60ae4b570b0cf4a6a",
       "bytes": 106150
     },
     {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221900&flowCode=X&maxRecords=500",
+      "sha256": "d20085a32f38afefe37cc0029f24e26276b3c56748a019a2a12002d3180afb2f",
+      "bytes": 109777
+    },
+    {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=38221900&flowCode=M&maxRecords=500",
-      "sha256": "cdcad4ed33aa691bcf5b9ae89fa2fb069459a8efeae86a02b2df388bfc192843",
+      "sha256": "128a7b9c96658f4b8ea62ea6479494e65b63092e9ce06fda19e2eff7a3e0fa57",
       "bytes": 31680
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=38221900&flowCode=M&maxRecords=500",
-      "sha256": "3edf1adb50c2daa415cc99d0cd3ea9a09df9ec4866dbbdc62cd333d9ed1fafa8",
+      "sha256": "a7c8c8fe8185a2ba41aa41ffbadb6407f788c640019ff7315efc923eb68f655d",
       "bytes": 29273
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=38221300&flowCode=X&maxRecords=500",
-      "sha256": "cb9006178372f3dc4af4bb3c2e19896d14b10a156737ff1cfe469d19e1a71792",
-      "bytes": 5417
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221900&flowCode=M&maxRecords=500",
+      "sha256": "a4f658bf053479c6b190786981e24f25f1f3b41240ef74caa261c08dd9c7111e",
+      "bytes": 30470
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=38221300&flowCode=M&maxRecords=500",
-      "sha256": "c1b5989e13f3b3c1aabef68d741e0556d010d05a6ca3d3ca71ff29f34a4ae772",
-      "bytes": 4907
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=X&maxRecords=500",
+      "sha256": "a94ad5b0dd0ffcea1727b3881e7f0f4d81ff724eb017f6acee4cd0b3c85fb05d",
+      "bytes": 10228
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90275010&flowCode=X&maxRecords=500",
-      "sha256": "a3f8973e6a2922aeb53a54b9b0b75c577e66ca957a55dc6627f74f78e0e5e26b",
-      "bytes": 7905
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=M&maxRecords=500",
+      "sha256": "874ea25d79d231d378c56cbde00c9149d896083e71217325509330acf3acef98",
+      "bytes": 3707
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90275010&flowCode=M&maxRecords=500",
-      "sha256": "bb97693e2259cb515d2ede293fa752586a2863a70b7456d3c5dbc2ae22aa5586",
-      "bytes": 1868
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=X&maxRecords=500",
+      "sha256": "6d4c09d73f3a03e57cf0f2289567da41b89b5ad7e3864ea394483b66fdb80e2f",
+      "bytes": 9708
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=M&maxRecords=500",
+      "sha256": "a1dc98db6bf56f2974e28bb594d8a24901a9e6bcf89454597f5e623a50922f02",
+      "bytes": 2480
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "a70f277e99465873a05684a6023485212618a8fa469453d112e92e9c08a7407b",
+      "sha256": "6e93ccf72550e61111faef76174dd13996428bb96eaeba3a77ec35686bfa29b5",
       "bytes": 100973
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "78a8bff704459c63a6459544968f8f716baefdc88f3fc4fb1ba6066d2f12ad98",
+      "sha256": "0251e322b6fa35971ff3db8f3cf8ea5e2369741ce0cfdb281d2a4c279ca89784",
       "bytes": 99663
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "cb692691ed1ebe232bd2f83ef62ca7c069cd35a18de1d8bf840d1e63e8b342ac",
+      "sha256": "ee06d514a8babd09eaf3742cabefcb97add73d833012b0c3547363d0cc69fb39",
       "bytes": 98387
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "0861afe02dde67828854bae6c3e352f8a7511d39f1a7aa5f0624cbb52c95d95c",
+      "sha256": "ff16e71ac8fad5a5e6df56cfee63416be15b7074d2dce7a2df5f9fa47a6aebc1",
       "bytes": 103745
     },
     {
@@ -194,23 +214,28 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "677884cf14ffdfe76d0638de1617bdf4daa9c3f8bbcc9560cf7743da49b927f4",
+      "sha256": "add9135cc4b7222593af20fa3fc741ec8878027d83c26f5151fc1a3728e6680e",
       "bytes": 103812
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "754a9a7a0e4211fa132c2472468269d210da24245733a2f3b455525fdb464b14",
+      "sha256": "c434ea44956a37adbee906dccc8e4d141e3b4f225a3e68a1e9c39214020bbc2c",
       "bytes": 102052
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90278990&flowCode=X&maxRecords=500",
-      "sha256": "f11759231300acf90b905ac72de703b8624777b47dfbce6701d5e92f2343c4ac",
+      "sha256": "3d388b1c30976fd7bc348db64c70bc4bc9c4f16c2f85ba10d98279ae9b076e9d",
       "bytes": 98949
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90278990&flowCode=M&maxRecords=500",
-      "sha256": "c5eb61a3e2866ce7a4211c06d6c291e8016bd928bec05e6ec7b7e6a4b3776856",
-      "bytes": 25608
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90278990&flowCode=X&maxRecords=500",
+      "sha256": "dd4414c594cd502a62b865897845a5384ed9a36c389d96a599c04a5d4db30789",
+      "bytes": 103781
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90278990&flowCode=M&maxRecords=500",
+      "sha256": "2805fefd85eb5e3f8376c79a48bce7c0c5600092e3132e9209c9714b0133dc91",
+      "bytes": 26831
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=90219011&flowCode=X&maxRecords=500",
@@ -224,8 +249,8 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=90219011&flowCode=X&maxRecords=500",
-      "sha256": "9f1db83a0241abc1eba531f657b0737009c2d02c411636a55548ec88526010c2",
-      "bytes": 24255
+      "sha256": "645b26e509d26dc4e89b2c2b49ee4e353a32ba06ec1fa9609715f865f43948b9",
+      "bytes": 24256
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202408&cmdCode=90219011&flowCode=X&maxRecords=500",
@@ -234,13 +259,13 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=90219011&flowCode=X&maxRecords=500",
-      "sha256": "660fde82dca1a889ba84da9d992e9e945688640363d3dd623a07741c15bd9b23",
+      "sha256": "f579f20ae1fb1196b1cd5b8ed36e71df1158225b075c2c66af8fc4c9ea70e326",
       "bytes": 24848
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=90219011&flowCode=X&maxRecords=500",
-      "sha256": "369889996169d48593e57c47799c9dd5ba4aba7d41aefdb45e4c513f2c6de861",
-      "bytes": 21863
+      "sha256": "05797fc7926f462116b8156bed5bbbfd74129354c0c07f0c1d227ce13463e84c",
+      "bytes": 21862
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90219011&flowCode=X&maxRecords=500",
@@ -248,33 +273,43 @@
       "bytes": 23623
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90219011&flowCode=M&maxRecords=500",
-      "sha256": "8dff1902b723532e402d8695b23ffc6672f652540e0bfc24aaf0fdae642d7629",
-      "bytes": 5560
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=X&maxRecords=500",
+      "sha256": "95d912c9052b8d7f5144b3118f6e1e06a76116b1cc3b473780fea1571e4bb54f",
+      "bytes": 20027
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=M&maxRecords=500",
+      "sha256": "8cd66b9dc3fdb5c4f8d786f1edeb1d9b625cd69689fef03d2778b56848c13026",
+      "bytes": 5561
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=90213900&flowCode=X&maxRecords=500",
-      "sha256": "96cb69729abc07b52c708bbdc8c02dd4aa9c1ad367a9a9591f40247a51d619c8",
+      "sha256": "11db0dbf602608c0ba8363ca555eb37b4e95f7b87e52b1724bae26e767d546f5",
       "bytes": 42388
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=90213900&flowCode=X&maxRecords=500",
-      "sha256": "75025d3098ac2e92e9ed61eebbb212988b7e6338f37b240f790fd759cd29be4a",
+      "sha256": "571f36ce56a3019730bfc8f188d490f0674bc414af9f1540ee9193522b1745eb",
       "bytes": 41724
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90213900&flowCode=X&maxRecords=500",
-      "sha256": "339f45aa1f9dede6e16408df471fe9fc89467f02edb973930099ded0a2c19a98",
+      "sha256": "19574805e6a8a2bcaf75187bf0801290cf6386a7e126cc4b206a453d626366f5",
       "bytes": 38664
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90213900&flowCode=M&maxRecords=500",
-      "sha256": "c99dac9e09ad9027f1ada7fcbedc420cf465241f534bf7416fe85920d151c843",
-      "bytes": 18347
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=X&maxRecords=500",
+      "sha256": "6dab186b55c3b6731985ecbd4cf4db4c807e37ed2c48cd73199dd2a6cad0a5a8",
+      "bytes": 38721
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=M&maxRecords=500",
+      "sha256": "6b9a3608a4b8988ee33322947d87e6256d85a072915af6f6d069d57d0404df52",
+      "bytes": 19542
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=90183900&flowCode=X&maxRecords=500",
-      "sha256": "eaf66a56aba3bdc2d3a2c88d17d76593414360a3bcdd9b580cb4cdc8c1bda3e6",
+      "sha256": "8be108d6eb6ef9f1b68a6544079f5a8d932ba92d9b1d649245f81b3de713f544",
       "bytes": 104844
     },
     {
@@ -284,17 +319,17 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=90183900&flowCode=X&maxRecords=500",
-      "sha256": "c604712d29320796323e49dcf9d6c677fa7c52505a677aebb80eb5fca54a7552",
-      "bytes": 102949
+      "sha256": "ee960df63a28a0083b11ae5ddaa46b2358a23e65380978cdc742abd66f38b5d4",
+      "bytes": 102950
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=90183900&flowCode=X&maxRecords=500",
-      "sha256": "40b82a82071952d3a71c00799ef01e59c4e1386961d7ae3c665f30b25582e357",
+      "sha256": "8090e49f18aa2be3ca9821299db76986c601bab200ad0d63128a08337f429846",
       "bytes": 103488
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202408&cmdCode=90183900&flowCode=X&maxRecords=500",
-      "sha256": "239f440adf04bbd9ac0528b937f34cf9ed381e65f24893f658f23925ede58f2c",
+      "sha256": "9eb65044f325d35efe2c2a1693afb41480912c661f0dbc2e6c39cf12e0a22e55",
       "bytes": 104191
     },
     {
@@ -304,7 +339,7 @@
     },
     {
       "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=90183900&flowCode=X&maxRecords=500",
-      "sha256": "fca1b3372ef766ce137e47789167e2d18fd28440ccae764a065b602691d1cd17",
+      "sha256": "f83442402ad56baf34b828e35bbeda480a41226f05cefa579581246881c3e675",
       "bytes": 98054
     },
     {
@@ -313,62 +348,851 @@
       "bytes": 102264
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=90183900&flowCode=M&maxRecords=500",
-      "sha256": "e5ff3f9da83cea4739de388ab221974b9f50c1cac43ea741b82cfbf7c8f2e601",
-      "bytes": 25834
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90183900&flowCode=X&maxRecords=500",
+      "sha256": "631f2a6a4ff26aca035fe6cbc1cafe3c2660ba7ed866516fcec641af8b5ac761",
+      "bytes": 101052
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=901813&flowCode=X&maxRecords=500",
-      "sha256": "22f77cf2e29a3f55d22dc462d3071f1bb1da5874980460d3751e4fe90125c3dc",
-      "bytes": 39448
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90183900&flowCode=M&maxRecords=500",
+      "sha256": "ce1dd62666c569ffc601ff0fa96957e3036d9b1b0d81bf5d5bd5433baf64a7e6",
+      "bytes": 27037
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=901813&flowCode=M&maxRecords=500",
-      "sha256": "074b1c73cf203fa815a47b501a323271a8e5b0ea8c88d98a01b57866fc206a0d",
-      "bytes": 12598
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=X&maxRecords=500",
+      "sha256": "e241a54ee0e02971ae5e14554b1c82765ebb32b34a77066afb3404f61686675f",
+      "bytes": 37621
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=901812&flowCode=X&maxRecords=500",
-      "sha256": "5b31251d1587e831d0ad0ac1d21a891a6c0c1e265214919f0c618512d5a97fd8",
-      "bytes": 125948
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=M&maxRecords=500",
+      "sha256": "dc976151e354c13a36993bf1e18a0f324d706b43378998138091b6a951a188b9",
+      "bytes": 17040
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=901812&flowCode=M&maxRecords=500",
-      "sha256": "c7da65da99684b607f122282d49040c21582634130c61d185da50c8ccdf8346c",
-      "bytes": 25974
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=X&maxRecords=500",
+      "sha256": "46f2bf4d1d966485ec5ed3ca82b754cbe21e466c8390c9e4931d403df2d22237",
+      "bytes": 128596
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=902750&flowCode=X&maxRecords=500",
-      "sha256": "40d847ffbcf76196413622232e1fece0390d13abcafa36f45766dc454c2299ab",
-      "bytes": 110745
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=M&maxRecords=500",
+      "sha256": "06120cf34f2866f1009aaa53b6b470fb5248f7574950dc47cdde90e4f75c238a",
+      "bytes": 26892
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=902750&flowCode=M&maxRecords=500",
-      "sha256": "37ea70a58370b24bc8e5d26bb519e5047267657acfeebbd4d49dbd68712d4b70",
-      "bytes": 37684
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=X&maxRecords=500",
+      "sha256": "f32e0c13a6398b2fcc332c6c03bc707be851a7da5ad9859648f7b28608ae2327",
+      "bytes": 119676
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=902789&flowCode=X&maxRecords=500",
-      "sha256": "af7b6c1710c5a7abd36a543072526c58fce2b7a6aa5d9989f10e9d291d111c6a",
-      "bytes": 141324
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=M&maxRecords=500",
+      "sha256": "6e3573ef1912d63f4944805af8306435084391cf010d94a171c72290b66f042b",
+      "bytes": 36818
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=902789&flowCode=M&maxRecords=500",
-      "sha256": "62558eac73b8ee848e5cb906c988ff37a83242321244cfd94ca12e3d67491ae6",
-      "bytes": 38572
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=X&maxRecords=500",
+      "sha256": "65760da956525741a3b2b7d48daaf515686e9b3c9a842d9840d4a4326fd57d8d",
+      "bytes": 149343
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=902190&flowCode=X&maxRecords=500",
-      "sha256": "503526fcd5c89eb07c0792bdf4159bf467d8b2b0b05410938c153b2a0d7ff55f",
-      "bytes": 74171
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=M&maxRecords=500",
+      "sha256": "0ffe693bf9d5453f81e8dbec74661ee72cb370d85565667b0fc8bbd4f60e2884",
+      "bytes": 40371
     },
     {
-      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=902190&flowCode=M&maxRecords=500",
-      "sha256": "3898e32bba6a0b4449889c5fa61d249287aab8737cf34242ae18aacb70201759",
-      "bytes": 25998
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=X&maxRecords=500",
+      "sha256": "b884d999bdecfb623ede7d3ab8f94b71ac68cb07028310651cf92ba655a99917",
+      "bytes": 77729
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=M&maxRecords=500",
+      "sha256": "8b1ae0c8fbc020239ba93dc3bc332502badf874e7190ac3a85f8400c9dcb9007",
+      "bytes": 28703
     }
   ],
   "records": [
+    {
+      "id": "38221300/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "38221300",
+      "product": "38221300",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 2209956.0,
+      "qty": 13359.0,
+      "provenance": {
+        "sha256": "874ea25d79d231d378c56cbde00c9149d896083e71217325509330acf3acef98",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        2209956.0,
+        13359.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "38221300/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "38221300",
+      "product": "38221300",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 24689.0,
+      "qty": 10073.0,
+      "provenance": {
+        "sha256": "a94ad5b0dd0ffcea1727b3881e7f0f4d81ff724eb017f6acee4cd0b3c85fb05d",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        24689.0,
+        10073.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        0.9983
+      ],
+      "asp": null
+    },
+    {
+      "id": "38221900/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "38221900",
+      "product": "38221900",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221900&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221900&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 482951878.0,
+      "qty": 1750496.0,
+      "provenance": {
+        "sha256": "a4f658bf053479c6b190786981e24f25f1f3b41240ef74caa261c08dd9c7111e",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        482951878.0,
+        1750496.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        0.99981
+      ],
+      "asp": null
+    },
+    {
+      "id": "901812/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "901812",
+      "product": "901812",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 35833897.0,
+      "qty": 67592.02,
+      "provenance": {
+        "sha256": "06120cf34f2866f1009aaa53b6b470fb5248f7574950dc47cdde90e4f75c238a",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        35833897.0,
+        67592.02,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "901812/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "901812",
+      "product": "901812",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 92148294.0,
+      "qty": 471969.732,
+      "provenance": {
+        "sha256": "46f2bf4d1d966485ec5ed3ca82b754cbe21e466c8390c9e4931d403df2d22237",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        92148294.0,
+        471969.732,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "90181210/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90181210",
+      "product": "90181210",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=M&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 719846.0,
+      "qty": 28444.0,
+      "provenance": {
+        "sha256": "d381ef4a32d62d66588f7ad906f27817f87fc75d09b0388034fd3555e77e0272",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        719846.0,
+        28444.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90181210/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "90181210",
+      "product": "90181210",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=X&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 7083573.0,
+      "qty": 23104.0,
+      "provenance": {
+        "sha256": "efbbffef01e4c37928c0c6e50dc15eaea4228484066483f9afb4c622bc0cdf70",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        7083573.0,
+        23104.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90181291/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90181291",
+      "product": "90181291",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181291&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181291&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 34577837.0,
+      "qty": 53154.0,
+      "provenance": {
+        "sha256": "0d1a5eb04b05c786bf1a92ea62f20192ae0067a8657ec9766c4a1313cb13ef62",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        34577837.0,
+        53154.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        0.99999
+      ],
+      "asp": null
+    },
+    {
+      "id": "901813/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "901813",
+      "product": "901813",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 42206679.0,
+      "qty": 401675.327,
+      "provenance": {
+        "sha256": "dc976151e354c13a36993bf1e18a0f324d706b43378998138091b6a951a188b9",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        42206679.0,
+        401675.327,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "901813/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "901813",
+      "product": "901813",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 55658576.0,
+      "qty": 917630.0,
+      "provenance": {
+        "sha256": "e241a54ee0e02971ae5e14554b1c82765ebb32b34a77066afb3404f61686675f",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        55658576.0,
+        917630.0,
+        "原表",
+        "全球原表",
+        1
+      ],
+      "asp": 60.65470396565065
+    },
+    {
+      "id": "90181310/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90181310",
+      "product": "90181310",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=M&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 12838776.0,
+      "qty": 10.0,
+      "provenance": {
+        "sha256": "3ac20c2964348064b95fc0a32dacfcb93a4a42c59cfb6e76103052eed133883f",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        12838776.0,
+        10.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90181310/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "90181310",
+      "product": "90181310",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=X&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 19664062.0,
+      "qty": 49.0,
+      "provenance": {
+        "sha256": "4156a42ea49b50817a16f2fd568c577fc98a6007186242aed41e2c4a26b159b2",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        19664062.0,
+        49.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90183900/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90183900",
+      "product": "90183900",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90183900&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90183900&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 158007636.0,
+      "qty": 2035042.0,
+      "provenance": {
+        "sha256": "ce1dd62666c569ffc601ff0fa96957e3036d9b1b0d81bf5d5bd5433baf64a7e6",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        158007636.0,
+        2035042.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90213900/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90213900",
+      "product": "90213900",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 77417541.0,
+      "qty": 56275.0,
+      "provenance": {
+        "sha256": "6b9a3608a4b8988ee33322947d87e6256d85a072915af6f6d069d57d0404df52",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        77417541.0,
+        56275.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90213900/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "90213900",
+      "product": "90213900",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 5297486.0,
+      "qty": null,
+      "provenance": {
+        "sha256": "6dab186b55c3b6731985ecbd4cf4db4c807e37ed2c48cd73199dd2a6cad0a5a8",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        5297486.0,
+        null,
+        "缺有效数量",
+        "逐伙伴合计",
+        0.9912
+      ],
+      "asp": null
+    },
+    {
+      "id": "902190/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "902190",
+      "product": "902190",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 125617970.0,
+      "qty": 82339.263,
+      "provenance": {
+        "sha256": "8b1ae0c8fbc020239ba93dc3bc332502badf874e7190ac3a85f8400c9dcb9007",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        125617970.0,
+        82339.263,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "902190/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "902190",
+      "product": "902190",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 28861320.0,
+      "qty": 850562.163,
+      "provenance": {
+        "sha256": "b884d999bdecfb623ede7d3ab8f94b71ac68cb07028310651cf92ba655a99917",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        28861320.0,
+        850562.163,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "90219011/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90219011",
+      "product": "90219011",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=M&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 45071510.0,
+      "qty": 402944.0,
+      "provenance": {
+        "sha256": "8cd66b9dc3fdb5c4f8d786f1edeb1d9b625cd69689fef03d2778b56848c13026",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        45071510.0,
+        402944.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90219011/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "90219011",
+      "product": "90219011",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=X&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 6888858.0,
+      "qty": 55661.0,
+      "provenance": {
+        "sha256": "95d912c9052b8d7f5144b3118f6e1e06a76116b1cc3b473780fea1571e4bb54f",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        6888858.0,
+        55661.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90221200/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90221200",
+      "product": "90221200",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=M&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 18633641.0,
+      "qty": 150.0,
+      "provenance": {
+        "sha256": "df216094dfc7e6b6f0d2aa69b339e01bb8551ea2f8c4596dc22ef1bce6d3f872",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        18633641.0,
+        150.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90221200/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "90221200",
+      "product": "90221200",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=X&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 42083241.0,
+      "qty": 285.0,
+      "provenance": {
+        "sha256": "744fe38b1b619b1f1f5108d94c1f171e8e674227eeb58f9a58d289f2d304f3c4",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        42083241.0,
+        285.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "902750/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "902750",
+      "product": "902750",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 152161118.0,
+      "qty": 307390.0,
+      "provenance": {
+        "sha256": "6e3573ef1912d63f4944805af8306435084391cf010d94a171c72290b66f042b",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        152161118.0,
+        307390.0,
+        "原表",
+        "全球原表",
+        1
+      ],
+      "asp": 495.00998080614204
+    },
+    {
+      "id": "902750/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "902750",
+      "product": "902750",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 47985851.0,
+      "qty": 433154.101,
+      "provenance": {
+        "sha256": "f32e0c13a6398b2fcc332c6c03bc707be851a7da5ad9859648f7b28608ae2327",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        47985851.0,
+        433154.101,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "90275010/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90275010",
+      "product": "90275010",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=M&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 6928825.0,
+      "qty": 43.0,
+      "provenance": {
+        "sha256": "a1dc98db6bf56f2974e28bb594d8a24901a9e6bcf89454597f5e623a50922f02",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        6928825.0,
+        43.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "90275010/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "90275010",
+      "product": "90275010",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=X&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 5389204.0,
+      "qty": 51.0,
+      "provenance": {
+        "sha256": "6d4c09d73f3a03e57cf0f2289567da41b89b5ad7e3864ea394483b66fdb80e2f",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        5389204.0,
+        51.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
+    {
+      "id": "902789/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "902789",
+      "product": "902789",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=M&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 130595653.0,
+      "qty": 297770.201,
+      "provenance": {
+        "sha256": "0ffe693bf9d5453f81e8dbec74661ee72cb370d85565667b0fc8bbd4f60e2884",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        130595653.0,
+        297770.201,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "902789/202404/X",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "X",
+      "code": "902789",
+      "product": "902789",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=X&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=X&maxRecords=500",
+      "unit": "kg",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 80648976.0,
+      "qty": 1056974.744,
+      "provenance": {
+        "sha256": "65760da956525741a3b2b7d48daaf515686e9b3c9a842d9840d4a4326fd57d8d",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        80648976.0,
+        1056974.744,
+        "估算",
+        "全球原表",
+        1
+      ],
+      "asp": null
+    },
+    {
+      "id": "90278990/202404/M",
+      "period": "2024-04-01",
+      "year": 2024,
+      "flow": "M",
+      "code": "90278990",
+      "product": "90278990",
+      "url": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90278990&flowCode=M&maxRecords=500",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90278990&flowCode=M&maxRecords=500",
+      "unit": "number",
+      "basis": "monthly original HS",
+      "method": "UN Comtrade 官方公开预览",
+      "amount": 130595653.0,
+      "qty": 1327889.0,
+      "provenance": {
+        "sha256": "2805fefd85eb5e3f8376c79a48bce7c0c5600092e3132e9209c9714b0133dc91",
+        "revision": "2025-06-12T14:41:10.24",
+        "checksum": -1813940835
+      },
+      "world": [
+        130595653.0,
+        1327889.0,
+        "估算状态未提供",
+        "逐伙伴合计",
+        1.0
+      ],
+      "asp": null
+    },
     {
       "id": "38221300/202405/M",
       "period": "2024-05-01",

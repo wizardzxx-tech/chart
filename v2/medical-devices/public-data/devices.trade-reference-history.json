@@ -1,6 +1,6 @@
 {
   "dataset_id": "devices.trade-reference-history",
-  "updated_at": "2026-11-27T19:02:01+00:00",
+  "updated_at": "2026-11-27T19:03:17+00:00",
   "source_files": [
     {
       "url": "https://hsguilei.com/robots.txt",
@@ -11,83 +11,119 @@
     },
     {
       "url": "https://hsguilei.com/hs/9022120000",
-      "sha256": "fc73decb94487db7502a09a73ed15696405e8bffbf4f980813b372df41359aab",
-      "bytes": 127905,
-      "etag": "W/\"6ae44729-1f3a1\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:41 GMT"
+      "sha256": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "bytes": 137636,
+      "etag": "W/\"6ae4452f-219a4\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:15 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9018131000",
-      "sha256": "0755f59fba9c8f3f2fa51819fa7ababbf895f9c784c82ec7718d3e54797ab49a",
-      "bytes": 131565,
-      "etag": "W/\"6ae44726-201ed\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:38 GMT"
+      "sha256": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "bytes": 126118,
+      "etag": "W/\"6ae4452b-1eca6\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:11 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9018121000",
-      "sha256": "09bcd811248f2eafc50077b0a199712aaf29a365eea3f411caa64ddc93f0fa54",
-      "bytes": 133649,
-      "etag": "W/\"6ae44726-20a11\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:38 GMT"
+      "sha256": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "bytes": 133402,
+      "etag": "W/\"6ae4452b-2091a\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:11 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9018129110",
-      "sha256": "fe2104317c46232692f542e537f0132cb3344cac12a0a82ea421ea18b4df9183",
-      "bytes": 138389,
-      "etag": "W/\"6ae44726-21c95\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:38 GMT"
+      "sha256": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "bytes": 138832,
+      "etag": "W/\"6ae4452b-21e50\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:11 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9018129190",
-      "sha256": "065cf3f4a7b77ea68d2b35f4bdedde54c9e88448bb18da9ad70f3a6a1890d40c",
-      "bytes": 138884,
-      "etag": "W/\"6ae44726-21e84\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:38 GMT"
+      "sha256": "b591d00ce5690794ad84c541105506929ab3f7d90a6a4faa8bc3039ddf52b22d",
+      "bytes": 137458,
+      "etag": "W/\"6ae4452b-218f2\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:11 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/3822190090",
-      "sha256": "dd750753cba01a75e0436e2e0e1a78403736e2faa1e7e279e4b1bade8bb33e85",
-      "bytes": 158878,
-      "etag": "W/\"6ae445ee-26c9e\"",
-      "last_modified": "Fri, 30 Oct 2026 07:23:26 GMT"
+      "sha256": "2d29c7cefe4eb34ed718d9581aa132d60fd749e5696cf82aab2d21b1819ddb97",
+      "bytes": 167202,
+      "etag": "W/\"6ae4440a-28d22\"",
+      "last_modified": "Fri, 30 Oct 2026 07:15:22 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/3822130000",
-      "sha256": "e4d3796607b3d13839348f1a3e9619a85facd94304b9ccb2b65faa6d3b0b94b0",
-      "bytes": 136000,
-      "etag": "W/\"6ae445ee-21340\"",
-      "last_modified": "Fri, 30 Oct 2026 07:23:26 GMT"
+      "sha256": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "bytes": 137968,
+      "etag": "W/\"6ae4440a-21af0\"",
+      "last_modified": "Fri, 30 Oct 2026 07:15:22 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9027501000",
-      "sha256": "cf6aa70516abb8c44bd9f100ff7437fce50282b78ad53aab0de2013f8a5c7db5",
-      "bytes": 125649,
-      "etag": "W/\"6ae4472c-1ead1\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:44 GMT"
+      "sha256": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "bytes": 126292,
+      "etag": "W/\"6ae44532-1ed54\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:18 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9027899090",
-      "sha256": "afffaccc878d52cc7b7ea91559f63e45b8ee5e7ede99f2e98d44a21259a5b07e",
-      "bytes": 131666,
-      "etag": "W/\"6ae4472d-20252\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:45 GMT"
+      "sha256": "9d7d14aef65ba68966e4d7b2aeba54d9ec25da4b7bae79a981ed5ecd5f90fe60",
+      "bytes": 140888,
+      "etag": "W/\"6ae44532-22658\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:18 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9021901100",
-      "sha256": "7db9ee26d372208466f70e6c1a4e659f8a1ebc1036f1ee65c4a7f0973485f11f",
-      "bytes": 131276,
-      "etag": "W/\"6ae44729-200cc\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:41 GMT"
+      "sha256": "4f35ae6b6e714ed18052fc3eb3a308c5d10d5281e262ede4ea80c3197fef1a3b",
+      "bytes": 131643,
+      "etag": "W/\"6ae4452f-2023b\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:15 GMT"
     },
     {
       "url": "https://hsguilei.com/hs/9018390000",
-      "sha256": "2112d3374539cb197160ec08449128a2359146a365e6ab62ea174540ccb3e0ea",
-      "bytes": 126116,
-      "etag": "W/\"6ae44726-1eca4\"",
-      "last_modified": "Fri, 30 Oct 2026 07:28:38 GMT"
+      "sha256": "ebb00188deac6264ca9f7b1b48619d1a892e659b9b3d6ef6241f23721d283deb",
+      "bytes": 138812,
+      "etag": "W/\"6ae4452c-21e3c\"",
+      "last_modified": "Fri, 30 Oct 2026 07:20:12 GMT"
     }
   ],
   "records": [
+    {
+      "id": "hs-reference-archive/3822130000/2025-10-01/M",
+      "period": "2025-10-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 4300000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2025-10-01/X",
+      "period": "2025-10-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 64600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
     {
       "id": "hs-reference-archive/3822190090/2025-10-01/M",
       "period": "2025-10-01",
@@ -125,6 +161,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2025-10-01/M",
+      "period": "2025-10-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 14469000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2025-10-01/X",
+      "period": "2025-10-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 6794100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2025-10-01/M",
       "period": "2025-10-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -139,7 +211,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2025-10-01/X",
@@ -156,7 +229,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2025-10-01/M",
@@ -209,7 +283,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2025-10-01/X",
@@ -226,7 +301,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2025-10-01/M",
@@ -315,7 +391,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2025-10-01/X",
@@ -332,7 +409,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2025-10-01/M",
+      "period": "2025-10-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 3819100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2025-10-01/X",
+      "period": "2025-10-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 2109600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2025-10-01/M",
@@ -371,6 +485,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2025-11-01/M",
+      "period": "2025-11-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 4640000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2025-11-01/X",
+      "period": "2025-11-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 112000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2025-11-01/M",
       "period": "2025-11-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -407,6 +557,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2025-11-01/M",
+      "period": "2025-11-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 10103800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2025-11-01/X",
+      "period": "2025-11-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 6590600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2025-11-01/M",
       "period": "2025-11-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -421,7 +607,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2025-11-01/X",
@@ -438,7 +625,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2025-11-01/M",
@@ -491,7 +679,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2025-11-01/X",
@@ -508,7 +697,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2025-11-01/M",
@@ -597,7 +787,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2025-11-01/X",
@@ -614,7 +805,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2025-11-01/M",
+      "period": "2025-11-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2125600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2025-11-01/X",
+      "period": "2025-11-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 8183700.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2025-11-01/M",
@@ -653,6 +881,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2025-12-01/M",
+      "period": "2025-12-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 3522200.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2025-12-01/X",
+      "period": "2025-12-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 216700.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2025-12-01/M",
       "period": "2025-12-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -689,6 +953,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2025-12-01/M",
+      "period": "2025-12-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 22945000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2025-12-01/X",
+      "period": "2025-12-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 9066300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2025-12-01/M",
       "period": "2025-12-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -703,7 +1003,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2025-12-01/X",
@@ -720,7 +1021,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2025-12-01/M",
@@ -773,7 +1075,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2025-12-01/X",
@@ -790,7 +1093,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2025-12-01/M",
@@ -879,7 +1183,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2025-12-01/X",
@@ -896,7 +1201,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2025-12-01/M",
+      "period": "2025-12-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 5056600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2025-12-01/X",
+      "period": "2025-12-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 11750200.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2025-12-01/M",
@@ -935,6 +1277,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-01-01/M",
+      "period": "2026-01-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 5628000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-01-01/X",
+      "period": "2026-01-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 79300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-01-01/M",
       "period": "2026-01-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -971,6 +1349,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-01-01/M",
+      "period": "2026-01-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 9576500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-01-01/X",
+      "period": "2026-01-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 7723300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-01-01/M",
       "period": "2026-01-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -985,7 +1399,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-01-01/X",
@@ -1002,7 +1417,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-01-01/M",
@@ -1055,7 +1471,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-01-01/X",
@@ -1072,7 +1489,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-01-01/M",
@@ -1161,7 +1579,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-01-01/X",
@@ -1178,7 +1597,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-01-01/M",
+      "period": "2026-01-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 1268800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-01-01/X",
+      "period": "2026-01-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 3350000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-01-01/M",
@@ -1217,6 +1673,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-02-01/M",
+      "period": "2026-02-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2267400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-02-01/X",
+      "period": "2026-02-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 472300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-02-01/M",
       "period": "2026-02-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -1253,6 +1745,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-02-01/M",
+      "period": "2026-02-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 21424800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-02-01/X",
+      "period": "2026-02-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 7080100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-02-01/M",
       "period": "2026-02-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -1267,7 +1795,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-02-01/X",
@@ -1284,7 +1813,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-02-01/M",
@@ -1337,7 +1867,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-02-01/X",
@@ -1354,7 +1885,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-02-01/M",
@@ -1443,7 +1975,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-02-01/X",
@@ -1460,7 +1993,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-02-01/M",
+      "period": "2026-02-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 60300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-02-01/X",
+      "period": "2026-02-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 2600300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-02-01/M",
@@ -1499,6 +2069,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-03-01/M",
+      "period": "2026-03-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 3503800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-03-01/X",
+      "period": "2026-03-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 92400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-03-01/M",
       "period": "2026-03-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -1535,6 +2141,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-03-01/M",
+      "period": "2026-03-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 11060700.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-03-01/X",
+      "period": "2026-03-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 8213400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-03-01/M",
       "period": "2026-03-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -1549,7 +2191,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-03-01/X",
@@ -1566,7 +2209,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-03-01/M",
@@ -1619,7 +2263,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-03-01/X",
@@ -1636,7 +2281,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-03-01/M",
@@ -1725,7 +2371,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-03-01/X",
@@ -1742,7 +2389,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-03-01/M",
+      "period": "2026-03-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2240700.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-03-01/X",
+      "period": "2026-03-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 4761800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-03-01/M",
@@ -1781,6 +2465,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-04-01/M",
+      "period": "2026-04-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 1613400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-04-01/X",
+      "period": "2026-04-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 79500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-04-01/M",
       "period": "2026-04-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -1817,6 +2537,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-04-01/M",
+      "period": "2026-04-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 10251800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-04-01/X",
+      "period": "2026-04-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 7499500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-04-01/M",
       "period": "2026-04-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -1831,7 +2587,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-04-01/X",
@@ -1848,7 +2605,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-04-01/M",
@@ -1901,7 +2659,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-04-01/X",
@@ -1918,7 +2677,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-04-01/M",
@@ -2007,7 +2767,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-04-01/X",
@@ -2024,7 +2785,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-04-01/M",
+      "period": "2026-04-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 1500000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-04-01/X",
+      "period": "2026-04-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 3577600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-04-01/M",
@@ -2063,6 +2861,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-05-01/M",
+      "period": "2026-05-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2518400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-05-01/X",
+      "period": "2026-05-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 156700.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-05-01/M",
       "period": "2026-05-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -2099,6 +2933,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-05-01/M",
+      "period": "2026-05-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 21592600.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-05-01/X",
+      "period": "2026-05-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 6755800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-05-01/M",
       "period": "2026-05-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -2113,7 +2983,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-05-01/X",
@@ -2130,7 +3001,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-05-01/M",
@@ -2183,7 +3055,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-05-01/X",
@@ -2200,7 +3073,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-05-01/M",
@@ -2289,7 +3163,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-05-01/X",
@@ -2306,7 +3181,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-05-01/M",
+      "period": "2026-05-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 205500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-05-01/X",
+      "period": "2026-05-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 7172800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-05-01/M",
@@ -2345,6 +3257,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-06-01/M",
+      "period": "2026-06-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 5132100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-06-01/X",
+      "period": "2026-06-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 118400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-06-01/M",
       "period": "2026-06-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -2381,6 +3329,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-06-01/M",
+      "period": "2026-06-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 21198000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-06-01/X",
+      "period": "2026-06-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 7126800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-06-01/M",
       "period": "2026-06-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -2395,7 +3379,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-06-01/X",
@@ -2412,7 +3397,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-06-01/M",
@@ -2465,7 +3451,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-06-01/X",
@@ -2482,7 +3469,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-06-01/M",
@@ -2571,7 +3559,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-06-01/X",
@@ -2588,7 +3577,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-06-01/M",
+      "period": "2026-06-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2556400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-06-01/X",
+      "period": "2026-06-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 5465300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-06-01/M",
@@ -2627,6 +3653,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-07-01/M",
+      "period": "2026-07-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 3540100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-07-01/X",
+      "period": "2026-07-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 131200.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-07-01/M",
       "period": "2026-07-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -2663,6 +3725,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-07-01/M",
+      "period": "2026-07-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 17977700.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-07-01/X",
+      "period": "2026-07-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 7423500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-07-01/M",
       "period": "2026-07-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -2677,7 +3775,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-07-01/X",
@@ -2694,7 +3793,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-07-01/M",
@@ -2747,7 +3847,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-07-01/X",
@@ -2764,7 +3865,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-07-01/M",
@@ -2853,7 +3955,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-07-01/X",
@@ -2870,7 +3973,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-07-01/M",
+      "period": "2026-07-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2028100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-07-01/X",
+      "period": "2026-07-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 2657800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-07-01/M",
@@ -2909,6 +4049,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-08-01/M",
+      "period": "2026-08-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 3998000.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-08-01/X",
+      "period": "2026-08-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 257800.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-08-01/M",
       "period": "2026-08-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -2945,6 +4121,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-08-01/M",
+      "period": "2026-08-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 14296300.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-08-01/X",
+      "period": "2026-08-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 8921200.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-08-01/M",
       "period": "2026-08-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -2959,7 +4171,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-08-01/X",
@@ -2976,7 +4189,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-08-01/M",
@@ -3029,7 +4243,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-08-01/X",
@@ -3046,7 +4261,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-08-01/M",
@@ -3135,7 +4351,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-08-01/X",
@@ -3152,7 +4369,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-08-01/M",
+      "period": "2026-08-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2119500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-08-01/X",
+      "period": "2026-08-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 5849200.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-08-01/M",
@@ -3191,6 +4445,42 @@
       "product_label": "其他理化分析仪器及装置"
     },
     {
+      "id": "hs-reference-archive/3822130000/2026-09-01/M",
+      "period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 3782400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
+      "id": "hs-reference-archive/3822130000/2026-09-01/X",
+      "period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/3822130000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "3822130000",
+      "code": "3822130000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 113500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "4d85730e711eb6a292d8c2b65263bbfba42c4a65fe04128033c4ad2bddb21a1b",
+      "product_label": "血型鉴定用的附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
+    },
+    {
       "id": "hs-reference-archive/3822190090/2026-09-01/M",
       "period": "2026-09-01",
       "source": "https://hsguilei.com/hs/3822190090",
@@ -3227,6 +4517,42 @@
       "product_label": "其他附于衬背上的诊断或实验用试剂及不论是否附于衬背上的诊断或实验用配制试剂,不论是否制成试剂盒形式,但税目30.06的货品除外"
     },
     {
+      "id": "hs-reference-archive/9018121000/2026-09-01/M",
+      "period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 8699500.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
+      "id": "hs-reference-archive/9018121000/2026-09-01/X",
+      "period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/9018121000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9018121000",
+      "code": "9018121000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 8884100.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "8ce72ac5b8f4482962bafad1f299552c36f4ec931c122d6c1360c6cdcc546ef5",
+      "product_label": "Ｂ型超声波诊断仪"
+    },
+    {
       "id": "hs-reference-archive/9018129110/2026-09-01/M",
       "period": "2026-09-01",
       "source": "https://hsguilei.com/hs/9018129110",
@@ -3241,7 +4567,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129110/2026-09-01/X",
@@ -3258,7 +4585,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5"
+      "version": "f99c4ce7359be77d001ffc6ee078062c35a7675a1e574366947b134633abade5",
+      "product_label": "彩色超声波诊断仪"
     },
     {
       "id": "hs-reference-archive/9018129190/2026-09-01/M",
@@ -3311,7 +4639,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018131000/2026-09-01/X",
@@ -3328,7 +4657,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70"
+      "version": "df456534d0a0d64b0c6608d8c9d11aa40b873fd0c75595cf924d6129d34e5f70",
+      "product_label": "成套的核磁共振成像装置"
     },
     {
       "id": "hs-reference-archive/9018390000/2026-09-01/M",
@@ -3417,7 +4747,8 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
     },
     {
       "id": "hs-reference-archive/9022120000/2026-09-01/X",
@@ -3434,7 +4765,44 @@
       "unit": null,
       "quality": "公开表四舍五入展示；无申报数量",
       "asp": null,
-      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e"
+      "version": "70b8ae254729f1784e815283ea1c19a9d451747eb5d482ab9639aa51879fa30e",
+      "product_label": "X射线断层检查仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-09-01/M",
+      "period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "M",
+      "series": "hs-reference-archive",
+      "amount": 2018900.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
+    },
+    {
+      "id": "hs-reference-archive/9027501000/2026-09-01/X",
+      "period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/9027501000",
+      "basis": "China national single month USD, provider series preserved",
+      "period_kind": "single_month",
+      "product": "9027501000",
+      "code": "9027501000",
+      "flow": "X",
+      "series": "hs-reference-archive",
+      "amount": 10654400.0,
+      "qty": null,
+      "unit": null,
+      "quality": "公开表四舍五入展示；无申报数量",
+      "asp": null,
+      "version": "f05e7d81b86b8955d36ab272c394162340ee43a5a5365c53622a7dff790b386c",
+      "product_label": "基因测序仪"
     },
     {
       "id": "hs-reference-archive/9027899090/2026-09-01/M",
