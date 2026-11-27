@@ -1,7 +1,21 @@
 {
   "dataset_id": "cms.partb-values",
-  "updated_at": "2026-11-27T07:54:37+00:00",
+  "updated_at": "2026-11-27T12:45:31+00:00",
   "source_files": [
+    {
+      "url": "https://data.cms.gov/data.json",
+      "sha256": "fbb09c6987ab914f1529c06fd3631e4f9b263d275b9d1946e644995d38d0ef93",
+      "bytes": 18311307,
+      "etag": "\"1795642347-gzip\"",
+      "last_modified": "Wed, 25 Nov 2026 21:32:27 GMT"
+    },
+    {
+      "url": "https://www.cms.gov/medicare/payment/part-b-drugs/asp-pricing-files",
+      "sha256": "7d484ab68170a3d7faf1601e0bb634bdbc964e9ab5df460f0840a3315f9c9e80",
+      "bytes": 258844,
+      "etag": "\"1795780469-gzip\"",
+      "last_modified": "Fri, 27 Nov 2026 11:54:29 GMT"
+    },
     {
       "url": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
       "sha256": "986deefa094dca8f4e50abde43263910eeb667de305366f397f7af04d8a8734e",
@@ -9,10 +23,16 @@
       "last_modified": "Tue, 09 Jun 2026 15:57:58 GMT"
     },
     {
-      "url": "https://data.cms.gov/sites/default/files/2026-07/6d9e955a-d199-42cf-9f73-7e0d93c33b3e/qddptb_r2603_p06_v10_dqt2601_260722.csv",
-      "sha256": "f4fef83c4a4ea2ba54e23aa330162f520b75c597584e697f5648b1662ac68514",
-      "bytes": 207992,
-      "last_modified": "Wed, 22 Jul 2026 19:21:09 GMT"
+      "url": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe",
+      "bytes": 207025,
+      "last_modified": "Wed, 18 Nov 2026 18:27:16 GMT"
+    },
+    {
+      "url": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "sha256": "c2a2ed4f0de34bd5d3dec890408626a52b54f99a208cdf65e5392e28f4f16c97",
+      "bytes": 81360,
+      "last_modified": "Tue, 08 Sep 2026 14:42:30 GMT"
     },
     {
       "url": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
@@ -40,6 +60,2052 @@
     }
   ],
   "records": [
+    {
+      "id": "annual/2020/J0178",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J0178",
+        "period": "2020",
+        "units": 3269515,
+        "spending": 3013346116,
+        "claims": 1435471
+      }
+    },
+    {
+      "id": "annual/2020/J1442",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1442",
+        "period": "2020",
+        "units": 26060493,
+        "spending": 21674065.33,
+        "claims": 50518
+      }
+    },
+    {
+      "id": "annual/2020/J1745",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1745",
+        "period": "2020",
+        "units": 13433751.5,
+        "spending": 663503635.1,
+        "claims": 257344
+      }
+    },
+    {
+      "id": "annual/2020/J2778",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2778",
+        "period": "2020",
+        "units": 3337233,
+        "spending": 1113124781,
+        "claims": 611466
+      }
+    },
+    {
+      "id": "annual/2020/J3262",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J3262",
+        "period": "2020",
+        "units": 56792764.4,
+        "spending": 282175319.7,
+        "claims": 104501
+      }
+    },
+    {
+      "id": "annual/2020/J9035",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9035",
+        "period": "2020",
+        "units": 9605853.8,
+        "spending": 680666967.4,
+        "claims": 679670,
+        "outlier": true
+      }
+    },
+    {
+      "id": "annual/2020/J9312",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9312",
+        "period": "2020",
+        "units": 15170453.8,
+        "spending": 1295906200,
+        "claims": 180723
+      }
+    },
+    {
+      "id": "annual/2020/J9355",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9355",
+        "period": "2020",
+        "units": 5030672,
+        "spending": 461739444.5,
+        "claims": 103691
+      }
+    },
+    {
+      "id": "annual/2020/Q5101",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5101",
+        "period": "2020",
+        "units": 61153416,
+        "spending": 28723237.26,
+        "claims": 128156
+      }
+    },
+    {
+      "id": "annual/2020/Q5103",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5103",
+        "period": "2020",
+        "units": 1603884,
+        "spending": 71265191.26,
+        "claims": 32298
+      }
+    },
+    {
+      "id": "annual/2020/Q5104",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5104",
+        "period": "2020",
+        "units": 1025372,
+        "spending": 49286216.29,
+        "claims": 20796
+      }
+    },
+    {
+      "id": "annual/2020/Q5107",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5107",
+        "period": "2020",
+        "units": 4933668,
+        "spending": 308006313.1,
+        "claims": 72175
+      }
+    },
+    {
+      "id": "annual/2020/Q5108",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5108",
+        "period": "2020",
+        "units": 254665,
+        "spending": 74247739.7,
+        "claims": 20538
+      }
+    },
+    {
+      "id": "annual/2020/Q5110",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5110",
+        "period": "2020",
+        "units": 7354373,
+        "spending": 4560248.87,
+        "claims": 15087
+      }
+    },
+    {
+      "id": "annual/2020/Q5111",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5111",
+        "period": "2020",
+        "units": 740575,
+        "spending": 228110103.2,
+        "claims": 58394
+      }
+    },
+    {
+      "id": "annual/2020/Q5112",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5112",
+        "period": "2020",
+        "units": 5925,
+        "spending": 552290.37,
+        "claims": 149
+      }
+    },
+    {
+      "id": "annual/2020/Q5113",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5113",
+        "period": "2020",
+        "units": 26442,
+        "spending": 2536974.73,
+        "claims": 604
+      }
+    },
+    {
+      "id": "annual/2020/Q5114",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5114",
+        "period": "2020",
+        "units": 340194,
+        "spending": 28856143.52,
+        "claims": 7515
+      }
+    },
+    {
+      "id": "annual/2020/Q5115",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5115",
+        "period": "2020",
+        "units": 2497697.3,
+        "spending": 185685185.8,
+        "claims": 32139
+      }
+    },
+    {
+      "id": "annual/2020/Q5116",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5116",
+        "period": "2020",
+        "units": 134772,
+        "spending": 11199931.43,
+        "claims": 3127
+      }
+    },
+    {
+      "id": "annual/2020/Q5117",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5117",
+        "period": "2020",
+        "units": 2164270.8,
+        "spending": 176494796.5,
+        "claims": 49982
+      }
+    },
+    {
+      "id": "annual/2020/Q5118",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5118",
+        "period": "2020",
+        "units": 534913,
+        "spending": 33154600.8,
+        "claims": 7284
+      }
+    },
+    {
+      "id": "annual/2020/Q5119",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5119",
+        "period": "2020",
+        "units": 1088268,
+        "spending": 78149514.75,
+        "claims": 14478
+      }
+    },
+    {
+      "id": "annual/2020/Q5121",
+      "period": "2020-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5121",
+        "period": "2020",
+        "units": 3495,
+        "spending": 180052.5,
+        "claims": 84
+      }
+    },
+    {
+      "id": "annual/2021/J0178",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J0178",
+        "period": "2021",
+        "units": 3758278,
+        "spending": 3415890772,
+        "claims": 1635603
+      }
+    },
+    {
+      "id": "annual/2021/J1442",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1442",
+        "period": "2021",
+        "units": 18942594,
+        "spending": 16004307.51,
+        "claims": 37153
+      }
+    },
+    {
+      "id": "annual/2021/J1745",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1745",
+        "period": "2021",
+        "units": 13002343.6,
+        "spending": 512621924.3,
+        "claims": 246483
+      }
+    },
+    {
+      "id": "annual/2021/J2778",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2778",
+        "period": "2021",
+        "units": 3331899,
+        "spending": 1044929993,
+        "claims": 604786
+      }
+    },
+    {
+      "id": "annual/2021/J3262",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J3262",
+        "period": "2021",
+        "units": 54827761.3,
+        "spending": 288597502.6,
+        "claims": 102379
+      }
+    },
+    {
+      "id": "annual/2021/J9035",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9035",
+        "period": "2021",
+        "units": 5719432.9,
+        "spending": 369311857.9,
+        "claims": 608841,
+        "outlier": true
+      }
+    },
+    {
+      "id": "annual/2021/J9312",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9312",
+        "period": "2021",
+        "units": 9456541.3,
+        "spending": 765560205.6,
+        "claims": 110130
+      }
+    },
+    {
+      "id": "annual/2021/J9355",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9355",
+        "period": "2021",
+        "units": 2734506,
+        "spending": 223709770.9,
+        "claims": 56471
+      }
+    },
+    {
+      "id": "annual/2021/Q5101",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5101",
+        "period": "2021",
+        "units": 55355864,
+        "spending": 18684232.2,
+        "claims": 119042
+      }
+    },
+    {
+      "id": "annual/2021/Q5103",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5103",
+        "period": "2021",
+        "units": 1914283.9,
+        "spending": 71993954.76,
+        "claims": 37215
+      }
+    },
+    {
+      "id": "annual/2021/Q5104",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5104",
+        "period": "2021",
+        "units": 1351258.3,
+        "spending": 51022399.51,
+        "claims": 26972
+      }
+    },
+    {
+      "id": "annual/2021/Q5107",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5107",
+        "period": "2021",
+        "units": 6625430.8,
+        "spending": 336344276,
+        "claims": 95180
+      }
+    },
+    {
+      "id": "annual/2021/Q5108",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5108",
+        "period": "2021",
+        "units": 330735,
+        "spending": 75403320.91,
+        "claims": 26371
+      }
+    },
+    {
+      "id": "annual/2021/Q5110",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5110",
+        "period": "2021",
+        "units": 11608156,
+        "spending": 4915196.03,
+        "claims": 22230
+      }
+    },
+    {
+      "id": "annual/2021/Q5111",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5111",
+        "period": "2021",
+        "units": 642976.2,
+        "spending": 160042879.7,
+        "claims": 50751
+      }
+    },
+    {
+      "id": "annual/2021/Q5112",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5112",
+        "period": "2021",
+        "units": 153408,
+        "spending": 11340522.38,
+        "claims": 3825
+      }
+    },
+    {
+      "id": "annual/2021/Q5113",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5113",
+        "period": "2021",
+        "units": 111749,
+        "spending": 7706641.68,
+        "claims": 2232
+      }
+    },
+    {
+      "id": "annual/2021/Q5114",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5114",
+        "period": "2021",
+        "units": 732464,
+        "spending": 46807920.04,
+        "claims": 15700
+      }
+    },
+    {
+      "id": "annual/2021/Q5115",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5115",
+        "period": "2021",
+        "units": 3718242,
+        "spending": 233566050.9,
+        "claims": 46036
+      }
+    },
+    {
+      "id": "annual/2021/Q5116",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5116",
+        "period": "2021",
+        "units": 921566.5,
+        "spending": 59996201.53,
+        "claims": 21326
+      }
+    },
+    {
+      "id": "annual/2021/Q5117",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5117",
+        "period": "2021",
+        "units": 2528609,
+        "spending": 159309828.7,
+        "claims": 58327
+      }
+    },
+    {
+      "id": "annual/2021/Q5118",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5118",
+        "period": "2021",
+        "units": 3124306,
+        "spending": 172471886.3,
+        "claims": 41679
+      }
+    },
+    {
+      "id": "annual/2021/Q5119",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5119",
+        "period": "2021",
+        "units": 4590345,
+        "spending": 288501210.7,
+        "claims": 61221
+      }
+    },
+    {
+      "id": "annual/2021/Q5121",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5121",
+        "period": "2021",
+        "units": 203951.5,
+        "spending": 9946500.22,
+        "claims": 4313
+      }
+    },
+    {
+      "id": "annual/2021/Q5122",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5122",
+        "period": "2021",
+        "units": 87098,
+        "spending": 26671090.62,
+        "claims": 7266
+      }
+    },
+    {
+      "id": "annual/2021/Q5123",
+      "period": "2021-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5123",
+        "period": "2021",
+        "units": 164384,
+        "spending": 11960083.07,
+        "claims": 2226
+      }
+    },
+    {
+      "id": "annual/2022/J0178",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J0178",
+        "period": "2022",
+        "units": 3933700.1,
+        "spending": 3541909704,
+        "claims": 1698624
+      }
+    },
+    {
+      "id": "annual/2022/J1442",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1442",
+        "period": "2022",
+        "units": 15032112,
+        "spending": 14520472.74,
+        "claims": 30705
+      }
+    },
+    {
+      "id": "annual/2022/J1745",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1745",
+        "period": "2022",
+        "units": 12335096.2,
+        "spending": 439364164.7,
+        "claims": 232563
+      }
+    },
+    {
+      "id": "annual/2022/J2506",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2506",
+        "period": "2022",
+        "units": 2184614.1,
+        "spending": 341605921.4,
+        "claims": 177805
+      }
+    },
+    {
+      "id": "annual/2022/J2778",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2778",
+        "period": "2022",
+        "units": 2844896,
+        "spending": 795501258.5,
+        "claims": 513440
+      }
+    },
+    {
+      "id": "annual/2022/J3262",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J3262",
+        "period": "2022",
+        "units": 59552938.1,
+        "spending": 344023635.3,
+        "claims": 113890
+      }
+    },
+    {
+      "id": "annual/2022/J9035",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9035",
+        "period": "2022",
+        "units": 3780271.9,
+        "spending": 252453961.6,
+        "claims": 537232
+      }
+    },
+    {
+      "id": "annual/2022/J9312",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9312",
+        "period": "2022",
+        "units": 7044601.3,
+        "spending": 579169245.2,
+        "claims": 80946
+      }
+    },
+    {
+      "id": "annual/2022/J9355",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9355",
+        "period": "2022",
+        "units": 1839770.5,
+        "spending": 155340135,
+        "claims": 37518
+      }
+    },
+    {
+      "id": "annual/2022/Q5101",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5101",
+        "period": "2022",
+        "units": 51378653,
+        "spending": 13756899.02,
+        "claims": 110126
+      }
+    },
+    {
+      "id": "annual/2022/Q5103",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5103",
+        "period": "2022",
+        "units": 2094344.3,
+        "spending": 73696298.3,
+        "claims": 39913
+      }
+    },
+    {
+      "id": "annual/2022/Q5104",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5104",
+        "period": "2022",
+        "units": 1792822.5,
+        "spending": 88546140.65,
+        "claims": 35469
+      }
+    },
+    {
+      "id": "annual/2022/Q5107",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5107",
+        "period": "2022",
+        "units": 5960833,
+        "spending": 205032451.1,
+        "claims": 82976
+      }
+    },
+    {
+      "id": "annual/2022/Q5108",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5108",
+        "period": "2022",
+        "units": 394087,
+        "spending": 66298444.38,
+        "claims": 31263
+      }
+    },
+    {
+      "id": "annual/2022/Q5110",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5110",
+        "period": "2022",
+        "units": 11722165,
+        "spending": 4194131.48,
+        "claims": 22498
+      }
+    },
+    {
+      "id": "annual/2022/Q5111",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5111",
+        "period": "2022",
+        "units": 494544,
+        "spending": 88617866.06,
+        "claims": 39533
+      }
+    },
+    {
+      "id": "annual/2022/Q5112",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5112",
+        "period": "2022",
+        "units": 478482,
+        "spending": 31856450.36,
+        "claims": 11553
+      }
+    },
+    {
+      "id": "annual/2022/Q5113",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5113",
+        "period": "2022",
+        "units": 139978,
+        "spending": 6903289.31,
+        "claims": 2913
+      }
+    },
+    {
+      "id": "annual/2022/Q5114",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5114",
+        "period": "2022",
+        "units": 762924,
+        "spending": 37635757.49,
+        "claims": 16239
+      }
+    },
+    {
+      "id": "annual/2022/Q5115",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5115",
+        "period": "2022",
+        "units": 3725428,
+        "spending": 195508049.2,
+        "claims": 45878
+      }
+    },
+    {
+      "id": "annual/2022/Q5116",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5116",
+        "period": "2022",
+        "units": 1345070,
+        "spending": 63971431.2,
+        "claims": 31066
+      }
+    },
+    {
+      "id": "annual/2022/Q5117",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5117",
+        "period": "2022",
+        "units": 2095457,
+        "spending": 84560974.15,
+        "claims": 47827
+      }
+    },
+    {
+      "id": "annual/2022/Q5118",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5118",
+        "period": "2022",
+        "units": 5556513,
+        "spending": 240472910.7,
+        "claims": 74278
+      }
+    },
+    {
+      "id": "annual/2022/Q5119",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5119",
+        "period": "2022",
+        "units": 5177229.1,
+        "spending": 241495185.5,
+        "claims": 67269
+      }
+    },
+    {
+      "id": "annual/2022/Q5121",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5121",
+        "period": "2022",
+        "units": 420204.5,
+        "spending": 16848656.7,
+        "claims": 8439
+      }
+    },
+    {
+      "id": "annual/2022/Q5122",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5122",
+        "period": "2022",
+        "units": 247806,
+        "spending": 52314801.35,
+        "claims": 20652
+      }
+    },
+    {
+      "id": "annual/2022/Q5123",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5123",
+        "period": "2022",
+        "units": 521203,
+        "spending": 28084382.74,
+        "claims": 6988
+      }
+    },
+    {
+      "id": "annual/2022/Q5124",
+      "period": "2022-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5124",
+        "period": "2022",
+        "units": 4797,
+        "spending": 1094710.83,
+        "claims": 854
+      }
+    },
+    {
+      "id": "annual/2023/J0178",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J0178",
+        "period": "2023",
+        "units": 3626517.1,
+        "spending": 3148337301,
+        "claims": 1561204
+      }
+    },
+    {
+      "id": "annual/2023/J1442",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1442",
+        "period": "2023",
+        "units": 12721805,
+        "spending": 12277217.85,
+        "claims": 26712
+      }
+    },
+    {
+      "id": "annual/2023/J1745",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1745",
+        "period": "2023",
+        "units": 11831066.8,
+        "spending": 389681976.7,
+        "claims": 221413
+      }
+    },
+    {
+      "id": "annual/2023/J2506",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2506",
+        "period": "2023",
+        "units": 1952676,
+        "spending": 196458289,
+        "claims": 156950
+      }
+    },
+    {
+      "id": "annual/2023/J2778",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2778",
+        "period": "2023",
+        "units": 1687121.5,
+        "spending": 386040635.3,
+        "claims": 304178
+      }
+    },
+    {
+      "id": "annual/2023/J3262",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J3262",
+        "period": "2023",
+        "units": 70950147.5,
+        "spending": 415957927.2,
+        "claims": 138597
+      }
+    },
+    {
+      "id": "annual/2023/J9035",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9035",
+        "period": "2023",
+        "units": 2988685.9,
+        "spending": 210023838,
+        "claims": 438704
+      }
+    },
+    {
+      "id": "annual/2023/J9312",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9312",
+        "period": "2023",
+        "units": 6126555.7,
+        "spending": 483730046.5,
+        "claims": 70219
+      }
+    },
+    {
+      "id": "annual/2023/J9355",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9355",
+        "period": "2023",
+        "units": 1368264.3,
+        "spending": 108679973.3,
+        "claims": 27795
+      }
+    },
+    {
+      "id": "annual/2023/Q5101",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5101",
+        "period": "2023",
+        "units": 15875121.5,
+        "spending": 3244055.23,
+        "claims": 39831
+      }
+    },
+    {
+      "id": "annual/2023/Q5103",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5103",
+        "period": "2023",
+        "units": 1819643.2,
+        "spending": 34946163.04,
+        "claims": 33538
+      }
+    },
+    {
+      "id": "annual/2023/Q5104",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5104",
+        "period": "2023",
+        "units": 2365175.8,
+        "spending": 87091963.03,
+        "claims": 46367
+      }
+    },
+    {
+      "id": "annual/2023/Q5107",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5107",
+        "period": "2023",
+        "units": 5691540,
+        "spending": 163203025.1,
+        "claims": 78131
+      }
+    },
+    {
+      "id": "annual/2023/Q5108",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5108",
+        "period": "2023",
+        "units": 562867,
+        "spending": 65795869.48,
+        "claims": 44580
+      }
+    },
+    {
+      "id": "annual/2023/Q5110",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5110",
+        "period": "2023",
+        "units": 18755682,
+        "spending": 6067934.65,
+        "claims": 40172
+      }
+    },
+    {
+      "id": "annual/2023/Q5111",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5111",
+        "period": "2023",
+        "units": 490936,
+        "spending": 67282230.34,
+        "claims": 39251
+      }
+    },
+    {
+      "id": "annual/2023/Q5112",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5112",
+        "period": "2023",
+        "units": 733495,
+        "spending": 35649012.17,
+        "claims": 17352
+      }
+    },
+    {
+      "id": "annual/2023/Q5113",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5113",
+        "period": "2023",
+        "units": 157258,
+        "spending": 4533609.22,
+        "claims": 3224
+      }
+    },
+    {
+      "id": "annual/2023/Q5114",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5114",
+        "period": "2023",
+        "units": 910546,
+        "spending": 38003212.92,
+        "claims": 19968
+      }
+    },
+    {
+      "id": "annual/2023/Q5115",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5115",
+        "period": "2023",
+        "units": 4070627,
+        "spending": 174633265.2,
+        "claims": 49409
+      }
+    },
+    {
+      "id": "annual/2023/Q5116",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5116",
+        "period": "2023",
+        "units": 1563044,
+        "spending": 39207374.28,
+        "claims": 36797
+      }
+    },
+    {
+      "id": "annual/2023/Q5117",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5117",
+        "period": "2023",
+        "units": 1445860,
+        "spending": 39011484.34,
+        "claims": 32436
+      }
+    },
+    {
+      "id": "annual/2023/Q5118",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5118",
+        "period": "2023",
+        "units": 5414774,
+        "spending": 157233199.3,
+        "claims": 73919
+      }
+    },
+    {
+      "id": "annual/2023/Q5119",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5119",
+        "period": "2023",
+        "units": 4792651,
+        "spending": 132776021.5,
+        "claims": 61325
+      }
+    },
+    {
+      "id": "annual/2023/Q5121",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5121",
+        "period": "2023",
+        "units": 630524.8,
+        "spending": 17980956.28,
+        "claims": 12098
+      }
+    },
+    {
+      "id": "annual/2023/Q5122",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5122",
+        "period": "2023",
+        "units": 289185,
+        "spending": 33412195.6,
+        "claims": 24089
+      }
+    },
+    {
+      "id": "annual/2023/Q5123",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5123",
+        "period": "2023",
+        "units": 968152,
+        "spending": 42878561.61,
+        "claims": 12878
+      }
+    },
+    {
+      "id": "annual/2023/Q5124",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5124",
+        "period": "2023",
+        "units": 149368,
+        "spending": 32189351.27,
+        "claims": 26009
+      }
+    },
+    {
+      "id": "annual/2023/Q5125",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5125",
+        "period": "2023",
+        "units": 3281211,
+        "spending": 1794577.13,
+        "claims": 7736
+      }
+    },
+    {
+      "id": "annual/2023/Q5126",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5126",
+        "period": "2023",
+        "units": 880196,
+        "spending": 59629047.93,
+        "claims": 12413
+      }
+    },
+    {
+      "id": "annual/2023/Q5127",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5127",
+        "period": "2023",
+        "units": 29269,
+        "spending": 10023908.39,
+        "claims": 2393
+      }
+    },
+    {
+      "id": "annual/2023/Q5128",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5128",
+        "period": "2023",
+        "units": 448845,
+        "spending": 122397266.8,
+        "claims": 80538
+      }
+    },
+    {
+      "id": "annual/2023/Q5129",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5129",
+        "period": "2023",
+        "units": 152682,
+        "spending": 10481899.17,
+        "claims": 2153
+      }
+    },
+    {
+      "id": "annual/2023/Q5130",
+      "period": "2023-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5130",
+        "period": "2023",
+        "units": 11044,
+        "spending": 2346354.48,
+        "claims": 899
+      }
+    },
+    {
+      "id": "annual/2024/J0178",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J0178",
+        "period": "2024",
+        "units": 2863990,
+        "spending": 2365369089,
+        "claims": 1233027
+      }
+    },
+    {
+      "id": "annual/2024/J1442",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1442",
+        "period": "2024",
+        "units": 10169143,
+        "spending": 9906866.85,
+        "claims": 21259
+      }
+    },
+    {
+      "id": "annual/2024/J1745",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J1745",
+        "period": "2024",
+        "units": 11714137.1,
+        "spending": 366670413.5,
+        "claims": 218160
+      }
+    },
+    {
+      "id": "annual/2024/J2506",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2506",
+        "period": "2024",
+        "units": 1511460,
+        "spending": 92382519.28,
+        "claims": 120210
+      }
+    },
+    {
+      "id": "annual/2024/J2778",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J2778",
+        "period": "2024",
+        "units": 808761,
+        "spending": 128919304.6,
+        "claims": 144995
+      }
+    },
+    {
+      "id": "annual/2024/J3262",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J3262",
+        "period": "2024",
+        "units": 78590858.9,
+        "spending": 463211739,
+        "claims": 155513
+      }
+    },
+    {
+      "id": "annual/2024/J9035",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9035",
+        "period": "2024",
+        "units": 2264771.9,
+        "spending": 161538584.4,
+        "claims": 342609
+      }
+    },
+    {
+      "id": "annual/2024/J9312",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9312",
+        "period": "2024",
+        "units": 5729504.8,
+        "spending": 436980635.1,
+        "claims": 65209
+      }
+    },
+    {
+      "id": "annual/2024/J9355",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "J9355",
+        "period": "2024",
+        "units": 1195617,
+        "spending": 92619459.81,
+        "claims": 24605
+      }
+    },
+    {
+      "id": "annual/2024/Q5101",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5101",
+        "period": "2024",
+        "units": 28261942.5,
+        "spending": 9367244.84,
+        "claims": 57172
+      }
+    },
+    {
+      "id": "annual/2024/Q5103",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5103",
+        "period": "2024",
+        "units": 1733604,
+        "spending": 21096944.8,
+        "claims": 31609
+      }
+    },
+    {
+      "id": "annual/2024/Q5104",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5104",
+        "period": "2024",
+        "units": 2183943,
+        "spending": 63867860.21,
+        "claims": 42914
+      }
+    },
+    {
+      "id": "annual/2024/Q5107",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5107",
+        "period": "2024",
+        "units": 5471400,
+        "spending": 141325402.3,
+        "claims": 75604
+      }
+    },
+    {
+      "id": "annual/2024/Q5108",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5108",
+        "period": "2024",
+        "units": 755715,
+        "spending": 105480640,
+        "claims": 59960
+      }
+    },
+    {
+      "id": "annual/2024/Q5110",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5110",
+        "period": "2024",
+        "units": 19114535,
+        "spending": 5271910.09,
+        "claims": 41523
+      }
+    },
+    {
+      "id": "annual/2024/Q5111",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5111",
+        "period": "2024",
+        "units": 649449,
+        "spending": 91015072.16,
+        "claims": 52151
+      }
+    },
+    {
+      "id": "annual/2024/Q5112",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5112",
+        "period": "2024",
+        "units": 546170.8,
+        "spending": 18977485.54,
+        "claims": 12594
+      }
+    },
+    {
+      "id": "annual/2024/Q5113",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5113",
+        "period": "2024",
+        "units": 146258,
+        "spending": 7819988.84,
+        "claims": 3056
+      }
+    },
+    {
+      "id": "annual/2024/Q5114",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5114",
+        "period": "2024",
+        "units": 1686570,
+        "spending": 90770180.71,
+        "claims": 38452
+      }
+    },
+    {
+      "id": "annual/2024/Q5115",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5115",
+        "period": "2024",
+        "units": 3852743.2,
+        "spending": 126751026.8,
+        "claims": 46174
+      }
+    },
+    {
+      "id": "annual/2024/Q5116",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5116",
+        "period": "2024",
+        "units": 1248857,
+        "spending": 18608785.53,
+        "claims": 28753
+      }
+    },
+    {
+      "id": "annual/2024/Q5117",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5117",
+        "period": "2024",
+        "units": 1135333,
+        "spending": 20532125.76,
+        "claims": 25008
+      }
+    },
+    {
+      "id": "annual/2024/Q5118",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5118",
+        "period": "2024",
+        "units": 3617000,
+        "spending": 75813626.66,
+        "claims": 50618
+      }
+    },
+    {
+      "id": "annual/2024/Q5119",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5119",
+        "period": "2024",
+        "units": 4005524,
+        "spending": 80703615.33,
+        "claims": 50211
+      }
+    },
+    {
+      "id": "annual/2024/Q5121",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5121",
+        "period": "2024",
+        "units": 546388.8,
+        "spending": 12486086.61,
+        "claims": 10016
+      }
+    },
+    {
+      "id": "annual/2024/Q5122",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5122",
+        "period": "2024",
+        "units": 131516,
+        "spending": 9511522.38,
+        "claims": 10928
+      }
+    },
+    {
+      "id": "annual/2024/Q5123",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5123",
+        "period": "2024",
+        "units": 2331225,
+        "spending": 92447259.69,
+        "claims": 31075
+      }
+    },
+    {
+      "id": "annual/2024/Q5124",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5124",
+        "period": "2024",
+        "units": 172686,
+        "spending": 29305816.68,
+        "claims": 29810
+      }
+    },
+    {
+      "id": "annual/2024/Q5125",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5125",
+        "period": "2024",
+        "units": 9929626,
+        "spending": 4697487.73,
+        "claims": 22408
+      }
+    },
+    {
+      "id": "annual/2024/Q5126",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5126",
+        "period": "2024",
+        "units": 1900473.5,
+        "spending": 108437929.8,
+        "claims": 27165
+      }
+    },
+    {
+      "id": "annual/2024/Q5127",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5127",
+        "period": "2024",
+        "units": 193046,
+        "spending": 62256489.51,
+        "claims": 15865
+      }
+    },
+    {
+      "id": "annual/2024/Q5128",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5128",
+        "period": "2024",
+        "units": 950268,
+        "spending": 216885671.1,
+        "claims": 169956
+      }
+    },
+    {
+      "id": "annual/2024/Q5129",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5129",
+        "period": "2024",
+        "units": 1568807,
+        "spending": 98273819.47,
+        "claims": 22193
+      }
+    },
+    {
+      "id": "annual/2024/Q5130",
+      "period": "2024-01-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "annual",
+      "item": {
+        "code": "Q5130",
+        "period": "2024",
+        "units": 102574,
+        "spending": 19665731.95,
+        "claims": 8318
+      }
+    },
     {
       "id": "quarterly/2025FY/J0178",
       "period": "2025-01-01",
@@ -584,6 +2650,474 @@
         "spending": 522266026.53,
         "claims": 259747,
         "beneficiaries": 80140
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J0178",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J0178",
+        "period": "2025Q4",
+        "price": 771.558
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J1442",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J1442",
+        "period": "2025Q4",
+        "price": 0.996
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J1745",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J1745",
+        "period": "2025Q4",
+        "price": 31.09
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J2506",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J2506",
+        "period": "2025Q4",
+        "price": 89.344
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J2778",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J2778",
+        "period": "2025Q4",
+        "price": 86.384
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J3262",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J3262",
+        "period": "2025Q4",
+        "price": 5.708
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J9035",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J9035",
+        "period": "2025Q4",
+        "price": 73.201
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J9312",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J9312",
+        "period": "2025Q4",
+        "price": 75.22
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/J9355",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "J9355",
+        "period": "2025Q4",
+        "price": 75.025
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5101",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5101",
+        "period": "2025Q4",
+        "price": 0.458
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5103",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5103",
+        "period": "2025Q4",
+        "price": 19.99
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5104",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5104",
+        "period": "2025Q4",
+        "price": 26.999
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5107",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5107",
+        "period": "2025Q4",
+        "price": 27.862
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5108",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5108",
+        "period": "2025Q4",
+        "price": 99.128
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5110",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5110",
+        "period": "2025Q4",
+        "price": 0.304
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5111",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5111",
+        "period": "2025Q4",
+        "price": 106.334
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5112",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5112",
+        "period": "2025Q4",
+        "price": 19.001
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5113",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5113",
+        "period": "2025Q4",
+        "price": 69.368
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5114",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5114",
+        "period": "2025Q4",
+        "price": 40.294
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5115",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5115",
+        "period": "2025Q4",
+        "price": 29.379
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5116",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5116",
+        "period": "2025Q4",
+        "price": 27.991
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5117",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5117",
+        "period": "2025Q4",
+        "price": 47.547
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5118",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5118",
+        "period": "2025Q4",
+        "price": 25.766
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5119",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5119",
+        "period": "2025Q4",
+        "price": 27.845
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5120",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5120",
+        "period": "2025Q4",
+        "price": 30.323
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5121",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5121",
+        "period": "2025Q4",
+        "price": 20.405
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5122",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5122",
+        "period": "2025Q4",
+        "price": 131.158
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5123",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5123",
+        "period": "2025Q4",
+        "price": 26.509
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5124",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5124",
+        "period": "2025Q4",
+        "price": 61.796
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5125",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5125",
+        "period": "2025Q4",
+        "price": 0.375
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5126",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5126",
+        "period": "2025Q4",
+        "price": 37.818
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5127",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5127",
+        "period": "2025Q4",
+        "price": 184.908
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5128",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5128",
+        "period": "2025Q4",
+        "price": 86.156
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5129",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5129",
+        "period": "2025Q4",
+        "price": 39.964
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5130",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5130",
+        "period": "2025Q4",
+        "price": 137.965
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5133",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5133",
+        "period": "2025Q4",
+        "price": 5.536
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5135",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5135",
+        "period": "2025Q4",
+        "price": 4.415
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5146",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5146",
+        "period": "2025Q4",
+        "price": 40.025
+      }
+    },
+    {
+      "id": "asp-2025Q4/2025Q4/Q5147",
+      "period": "2025-10-01",
+      "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "asp-2025Q4",
+      "item": {
+        "code": "Q5147",
+        "period": "2025Q4",
+        "price": 859.363
       }
     },
     {
@@ -2116,6 +4650,867 @@
         "code": "Q5156",
         "period": "2026Q2",
         "price": 4.635
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J0178",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J0178",
+        "period": "2026YTDQ2",
+        "spending": 477859092.28,
+        "claims": 281511,
+        "beneficiaries": 121613
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J1442",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J1442",
+        "period": "2026YTDQ2",
+        "spending": 3753049.21,
+        "claims": 8090,
+        "beneficiaries": 1909
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J1745",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J1745",
+        "period": "2026YTDQ2",
+        "spending": 167748254.61,
+        "claims": 100180,
+        "beneficiaries": 30877
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J2506",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J2506",
+        "period": "2026YTDQ2",
+        "spending": 67193086.76,
+        "claims": 43070,
+        "beneficiaries": 14567
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J2778",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J2778",
+        "period": "2026YTDQ2",
+        "spending": 9095517.23,
+        "claims": 25228,
+        "beneficiaries": 10830
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J3262",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J3262",
+        "period": "2026YTDQ2",
+        "spending": 207217940.78,
+        "claims": 75875,
+        "beneficiaries": 17149
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J9035",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9035",
+        "period": "2026YTDQ2",
+        "spending": 56727084.45,
+        "claims": 153433,
+        "beneficiaries": 67557
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J9312",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9312",
+        "period": "2026YTDQ2",
+        "spending": 254231202.14,
+        "claims": 40983,
+        "beneficiaries": 19539
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/J9355",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "J9355",
+        "period": "2026YTDQ2",
+        "spending": 29276780.11,
+        "claims": 8530,
+        "beneficiaries": 1590
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5101",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5101",
+        "period": "2026YTDQ2",
+        "spending": 3699289.21,
+        "claims": 21448,
+        "beneficiaries": 6032
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5103",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5103",
+        "period": "2026YTDQ2",
+        "spending": 21791210.08,
+        "claims": 16125,
+        "beneficiaries": 5254
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5104",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5104",
+        "period": "2026YTDQ2",
+        "spending": 25958612.17,
+        "claims": 18807,
+        "beneficiaries": 6173
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5107",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5107",
+        "period": "2026YTDQ2",
+        "spending": 48551726.99,
+        "claims": 28374,
+        "beneficiaries": 6780
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5108",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5108",
+        "period": "2026YTDQ2",
+        "spending": 27673560.4,
+        "claims": 25099,
+        "beneficiaries": 8832
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5110",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5110",
+        "period": "2026YTDQ2",
+        "spending": 1744006.95,
+        "claims": 14399,
+        "beneficiaries": 3001
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5111",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5111",
+        "period": "2026YTDQ2",
+        "spending": 79738521.76,
+        "claims": 44119,
+        "beneficiaries": 15202
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5112",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5112",
+        "period": "2026YTDQ2",
+        "spending": 3680784.07,
+        "claims": 3043,
+        "beneficiaries": 586
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5113",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5113",
+        "period": "2026YTDQ2",
+        "spending": 9057018.65,
+        "claims": 4055,
+        "beneficiaries": 905
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5114",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5114",
+        "period": "2026YTDQ2",
+        "spending": 23233319.4,
+        "claims": 14320,
+        "beneficiaries": 2844
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5115",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5115",
+        "period": "2026YTDQ2",
+        "spending": 72488578.82,
+        "claims": 29884,
+        "beneficiaries": 12991
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5116",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5116",
+        "period": "2026YTDQ2",
+        "spending": 3359530.81,
+        "claims": 8074,
+        "beneficiaries": 1746
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5117",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5117",
+        "period": "2026YTDQ2",
+        "spending": 28263264.57,
+        "claims": 11721,
+        "beneficiaries": 2398
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5118",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5118",
+        "period": "2026YTDQ2",
+        "spending": 32915548.59,
+        "claims": 17933,
+        "beneficiaries": 4219
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5119",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5119",
+        "period": "2026YTDQ2",
+        "spending": 24269107.34,
+        "claims": 22315,
+        "beneficiaries": 10201
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5120",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5120",
+        "period": "2026YTDQ2",
+        "spending": 163108.22,
+        "claims": 119,
+        "beneficiaries": 56
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5121",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5121",
+        "period": "2026YTDQ2",
+        "spending": 6705811.01,
+        "claims": 4639,
+        "beneficiaries": 1531
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5122",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5122",
+        "period": "2026YTDQ2",
+        "spending": 7831838.51,
+        "claims": 5020,
+        "beneficiaries": 1871
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5123",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5123",
+        "period": "2026YTDQ2",
+        "spending": 7226543.81,
+        "claims": 4440,
+        "beneficiaries": 2081
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5124",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5124",
+        "period": "2026YTDQ2",
+        "spending": 62795.19,
+        "claims": 183,
+        "beneficiaries": 140
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5125",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5125",
+        "period": "2026YTDQ2",
+        "spending": 2526417.8,
+        "claims": 16688,
+        "beneficiaries": 3602
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5126",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5126",
+        "period": "2026YTDQ2",
+        "spending": 46868517.56,
+        "claims": 15789,
+        "beneficiaries": 3878
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5127",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5127",
+        "period": "2026YTDQ2",
+        "spending": 10313303.92,
+        "claims": 5582,
+        "beneficiaries": 2088
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5128",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5128",
+        "period": "2026YTDQ2",
+        "spending": 1279440.79,
+        "claims": 2982,
+        "beneficiaries": 1424
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5129",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5129",
+        "period": "2026YTDQ2",
+        "spending": 60293723.85,
+        "claims": 25146,
+        "beneficiaries": 5523
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5130",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5130",
+        "period": "2026YTDQ2",
+        "spending": 13612181.89,
+        "claims": 9379,
+        "beneficiaries": 3256
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5133",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5133",
+        "period": "2026YTDQ2",
+        "spending": 9749189.64,
+        "claims": 3909,
+        "beneficiaries": 1304
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5135",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5135",
+        "period": "2026YTDQ2",
+        "spending": 19266156.29,
+        "claims": 9633,
+        "beneficiaries": 2679
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5146",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5146",
+        "period": "2026YTDQ2",
+        "spending": 12776746.91,
+        "claims": 8521,
+        "beneficiaries": 1609
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5147",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5147",
+        "period": "2026YTDQ2",
+        "spending": 461278720.13,
+        "claims": 229885,
+        "beneficiaries": 90307
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5156",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5156",
+        "period": "2026YTDQ2",
+        "spending": 310116.23,
+        "claims": 144,
+        "beneficiaries": 102
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
+      }
+    },
+    {
+      "id": "quarterly/2026YTDQ2/Q5160",
+      "period": "2026-04-01",
+      "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
+      "basis": "CMS distinct metrics per original file",
+      "kind": "quarterly",
+      "item": {
+        "code": "Q5160",
+        "period": "2026YTDQ2",
+        "spending": 762347.99,
+        "claims": 139,
+        "beneficiaries": 52
+      },
+      "period_meta": {
+        "id": "2026YTDQ2",
+        "label": "2026 Q1–Q2 累计",
+        "start": "2026-01-01",
+        "observed": "2026-04-01",
+        "kind": "cumulative"
       }
     },
     {

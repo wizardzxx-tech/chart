@@ -1,0 +1,1115 @@
+{
+  "dataset_id": "vax.agency-coverage",
+  "updated_at": "2026-11-27T12:45:31+00:00",
+  "source_files": [
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs",
+      "sha256": "8a630e0466d764a77650b63da4b0b10744412a523916b13af113e23d610c6053",
+      "bytes": 67730
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "23e7638e5926ab5d7520f9ada828e607320426c4b35fa7f561dd3e6489108c9e",
+      "bytes": 57875
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25888%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258814%25E6%2597%25A5",
+      "sha256": "ed85a12f1e418ca0c36ad961744232e5e6e76f1212042047841ce4c55a134df7",
+      "bytes": 25201
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258821%25E6%2597%25A5",
+      "sha256": "34df76c73d5d61efc3e29c89a1622b87966ef62ff1d745d36a07fb17912b579e",
+      "bytes": 25919
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258816%25E6%2597%25A5",
+      "sha256": "e46a31502ed319d084af01ee6bacb9d483dd192b40d7a4f933ad7243a804354e",
+      "bytes": 42789
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226a9159001c&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "eddce9e3cf19c53e9e8c5a8bd651a34f76242b6f39f538f0e9d0b2086ee46720",
+      "bytes": 12842
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226ba310001e&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "0e79062155e7e26e866029910b119ce1b06e35664ebdd473645918d3cf45bf2e",
+      "bytes": 14253
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d22697942001a&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "6c625511a5fb2cc28805dc8b2e4daab61ac6a3752303c1f7c8cc384cf512f235",
+      "bytes": 20133
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226392100002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "c2973b88293e94b1267818f0a02807a29985197af250d4b2b243a028b2df1dc4",
+      "bytes": 7783
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226c637d0020&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "4fbdaa618a53be3d6abe4ca816a1c9987174e1787caeff21cde44fb740c23c17",
+      "bytes": 13989
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190917c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "200d11a4cf1bbffa70e1711d9a6b1a859eb716da7c779440f3e1e1c5d85135e6",
+      "bytes": 7787
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20211011c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258804%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258818%25E6%2597%25A5",
+      "sha256": "3c08a0ee3679292b119bb30047e36fd2c9f6e6be2c8d751d713a6a12140968fe",
+      "bytes": 9676
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20210210c002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "7277389e966a3b0dc61011ec826a6f1c78d244348047c64f98fb1a3eea173342",
+      "bytes": 11310
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20221123c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "8de4b16cafae4d9ef5b362ed42cb01c467750f8de1f02198c3b928a5db3ab82b",
+      "bytes": 13084
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20230523c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "9209daf0b0effe05947064f9c4c07beb8474b42fb97b88d095842e9c4b3cf768",
+      "bytes": 12391
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20230104c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+      "sha256": "da2d0bd090caf8e2a9c3cbc3278e78e6efbd343095fe4b332e4a215baf78076d",
+      "bytes": 11202
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "c44462adf07cec1093bb75ff35399f1abf8803f314acbe6f3a4176869ce5177a",
+      "bytes": 106520
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258817%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "2d5f35d5b0a6c55e72bf4686ca0b48eb4dc66da74ebc71da283ce87628a2e174",
+      "bytes": 12178
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226a9159001c&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "525cb4662e8178faf307e43e2cc3ae1212a2debe23a466dc69f4045df69dcac5",
+      "bytes": 52824
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226ba310001e&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "39c0e8c2d011a105ff827178560190574f849bae5173401cbfd77d2977a526a4",
+      "bytes": 34143
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226392100002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "091324448dbc0711d92d323ee63782116e4c4f11fc0189a3ce436ab742467d93",
+      "bytes": 14745
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190917c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "4281dcfc6d5590a5307c89a9246cf0c98a742ec5ce2dd3d8bc3a6d86163769de",
+      "bytes": 13017
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190924c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "37de0fa878733e5a2ea3fb96fb3f0c8775aec5c0d9cec15b53bfbad1fea3268a",
+      "bytes": 8656
+    },
+    {
+      "url": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20221123c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+      "sha256": "4b19ea2e850375a99d58f6fcefd51a5ed721018947c12754399e61da56488829",
+      "bytes": 7804
+    }
+  ],
+  "records": [
+    {
+      "id": "1/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=1",
+      "basis": "report coverage, not national totals",
+      "agency": "中国药品检定研究院",
+      "agency_id": "1",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "vax"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 58
+        }
+      ],
+      "missing_fields": {
+        "issued": 58,
+        "manufacturer": 58
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20190917c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20190917c001",
+      "basis": "report coverage, not national totals",
+      "agency": "重庆市食品药品检验检测研究院",
+      "agency_id": "20190917c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-29",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190917c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 2
+        }
+      ],
+      "missing_fields": {
+        "issued": 2,
+        "manufacturer": 2
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20190924c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20190924c001",
+      "basis": "report coverage, not national totals",
+      "agency": "山东省食品药品检验研究院",
+      "agency_id": "20190924c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-22",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210210c002/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210210c002",
+      "basis": "report coverage, not national totals",
+      "agency": "浙江省食品药品检验研究院",
+      "agency_id": "20210210c002",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-15",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20210210c002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 6
+        }
+      ],
+      "missing_fields": {
+        "issued": 6,
+        "manufacturer": 6
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210226c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210226c001",
+      "basis": "report coverage, not national totals",
+      "agency": "江苏省药品监督检验研究院",
+      "agency_id": "20210226c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-29",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210315c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210315c001",
+      "basis": "report coverage, not national totals",
+      "agency": "辽宁省药品检验检测院",
+      "agency_id": "20210315c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-01",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210512c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210512c001",
+      "basis": "report coverage, not national totals",
+      "agency": "福建省食品药品质量检验研究院",
+      "agency_id": "20210512c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-08-02",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210926c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210926c001",
+      "basis": "report coverage, not national totals",
+      "agency": "云南省食品药品监督检验研究院",
+      "agency_id": "20210926c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-06",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20211011c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20211011c001",
+      "basis": "report coverage, not national totals",
+      "agency": "河北省药品医疗器械检验研究院",
+      "agency_id": "20211011c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "vax"
+      ],
+      "registry_latest": "2026-11-18",
+      "status": "uncovered",
+      "reports": [
+        {
+          "start": "2026-11-04",
+          "end": "2026-11-18",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20211011c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258804%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258818%25E6%2597%25A5",
+          "certificate_count": 4
+        }
+      ],
+      "missing_fields": {
+        "issued": 4,
+        "manufacturer": 4
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20221123c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20221123c001",
+      "basis": "report coverage, not national totals",
+      "agency": "江西省药品检验检测研究院",
+      "agency_id": "20221123c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20221123c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 8
+        }
+      ],
+      "missing_fields": {
+        "issued": 8,
+        "manufacturer": 8
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20230104c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20230104c001",
+      "basis": "report coverage, not national totals",
+      "agency": "湖南省药品检验检测研究院",
+      "agency_id": "20230104c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-15",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20230104c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25889%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 6
+        }
+      ],
+      "missing_fields": {
+        "issued": 6,
+        "manufacturer": 6
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20230523c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20230523c001",
+      "basis": "report coverage, not national totals",
+      "agency": "河南省药品医疗器械检验院(河南省疫苗批签中心)",
+      "agency_id": "20230523c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "vax"
+      ],
+      "registry_latest": "2026-11-15",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20230523c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 7
+        }
+      ],
+      "missing_fields": {
+        "issued": 7,
+        "manufacturer": 7
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20240313c001/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20240313c001",
+      "basis": "report coverage, not national totals",
+      "agency": "新疆维吾尔自治区药品检验研究院",
+      "agency_id": "20240313c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-08",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226392100002/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226392100002",
+      "basis": "report coverage, not national totals",
+      "agency": "吉林省药品检验研究院",
+      "agency_id": "4028813a1d225be5011d226392100002",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226392100002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 2
+        }
+      ],
+      "missing_fields": {
+        "issued": 2,
+        "manufacturer": 2
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d2265474b0004/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d2265474b0004",
+      "basis": "report coverage, not national totals",
+      "agency": "上海市食品药品检验研究院",
+      "agency_id": "4028813a1d225be5011d2265474b0004",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "uncovered",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-16",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258816%25E6%2597%25A5",
+          "certificate_count": 43
+        }
+      ],
+      "missing_fields": {
+        "issued": 43,
+        "manufacturer": 43
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d22697942001a/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d22697942001a",
+      "basis": "report coverage, not national totals",
+      "agency": "湖北省药品监督检验研究院",
+      "agency_id": "4028813a1d225be5011d22697942001a",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-29",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d22697942001a&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 16
+        }
+      ],
+      "missing_fields": {
+        "issued": 16,
+        "manufacturer": 16
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226a9159001c/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226a9159001c",
+      "basis": "report coverage, not national totals",
+      "agency": "广东省药品检验所",
+      "agency_id": "4028813a1d225be5011d226a9159001c",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-29",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226a9159001c&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 8
+        }
+      ],
+      "missing_fields": {
+        "issued": 8,
+        "manufacturer": 8
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226ba310001e/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226ba310001e",
+      "basis": "report coverage, not national totals",
+      "agency": "四川省药品检验研究院(四川省医疗器械检测中心)",
+      "agency_id": "4028813a1d225be5011d226ba310001e",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226ba310001e&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 9
+        }
+      ],
+      "missing_fields": {
+        "issued": 9,
+        "manufacturer": 9
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226c637d0020/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226c637d0020",
+      "basis": "report coverage, not national totals",
+      "agency": "甘肃省药品检验研究院",
+      "agency_id": "4028813a1d225be5011d226c637d0020",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-15",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-15",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226c637d0020&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5",
+          "certificate_count": 9
+        }
+      ],
+      "missing_fields": {
+        "issued": 9,
+        "manufacturer": 9
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "5b6ea8c91cf9013d011cfdfbda100041/2026-11-15",
+      "period": "2026-11-15",
+      "week_start": "2026-11-09",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=5b6ea8c91cf9013d011cfdfbda100041",
+      "basis": "report coverage, not national totals",
+      "agency": "北京市药品检验研究院",
+      "agency_id": "5b6ea8c91cf9013d011cfdfbda100041",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-21",
+      "status": "uncovered",
+      "reports": [
+        {
+          "start": "2026-11-08",
+          "end": "2026-11-14",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%25888%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258814%25E6%2597%25A5",
+          "certificate_count": 22
+        },
+        {
+          "start": "2026-11-15",
+          "end": "2026-11-21",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258821%25E6%2597%25A5",
+          "certificate_count": 23
+        }
+      ],
+      "missing_fields": {
+        "issued": 45,
+        "manufacturer": 45
+      },
+      "verified_agencies": 11,
+      "registered_agencies": 20
+    },
+    {
+      "id": "1/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=1",
+      "basis": "report coverage, not national totals",
+      "agency": "中国药品检定研究院",
+      "agency_id": "1",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "vax"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=1&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 109
+        }
+      ],
+      "missing_fields": {
+        "issued": 109,
+        "manufacturer": 109
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20190917c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20190917c001",
+      "basis": "report coverage, not national totals",
+      "agency": "重庆市食品药品检验检测研究院",
+      "agency_id": "20190917c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-29",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190917c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 8
+        }
+      ],
+      "missing_fields": {
+        "issued": 8,
+        "manufacturer": 8
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20190924c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20190924c001",
+      "basis": "report coverage, not national totals",
+      "agency": "山东省食品药品检验研究院",
+      "agency_id": "20190924c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20190924c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 3
+        }
+      ],
+      "missing_fields": {
+        "issued": 3,
+        "manufacturer": 3
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210210c002/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210210c002",
+      "basis": "report coverage, not national totals",
+      "agency": "浙江省食品药品检验研究院",
+      "agency_id": "20210210c002",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-15",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210226c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210226c001",
+      "basis": "report coverage, not national totals",
+      "agency": "江苏省药品监督检验研究院",
+      "agency_id": "20210226c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-29",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210315c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210315c001",
+      "basis": "report coverage, not national totals",
+      "agency": "辽宁省药品检验检测院",
+      "agency_id": "20210315c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-01",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210512c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210512c001",
+      "basis": "report coverage, not national totals",
+      "agency": "福建省食品药品质量检验研究院",
+      "agency_id": "20210512c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-08-02",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20210926c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20210926c001",
+      "basis": "report coverage, not national totals",
+      "agency": "云南省食品药品监督检验研究院",
+      "agency_id": "20210926c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-06",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20211011c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20211011c001",
+      "basis": "report coverage, not national totals",
+      "agency": "河北省药品医疗器械检验研究院",
+      "agency_id": "20211011c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "vax"
+      ],
+      "registry_latest": "2026-11-18",
+      "status": "uncovered",
+      "reports": [
+        {
+          "start": "2026-11-04",
+          "end": "2026-11-18",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20211011c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258804%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258818%25E6%2597%25A5",
+          "certificate_count": 4
+        }
+      ],
+      "missing_fields": {
+        "issued": 4,
+        "manufacturer": 4
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20221123c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20221123c001",
+      "basis": "report coverage, not national totals",
+      "agency": "江西省药品检验检测研究院",
+      "agency_id": "20221123c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=20221123c001&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 2
+        }
+      ],
+      "missing_fields": {
+        "issued": 2,
+        "manufacturer": 2
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20230104c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20230104c001",
+      "basis": "report coverage, not national totals",
+      "agency": "湖南省药品检验检测研究院",
+      "agency_id": "20230104c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-15",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20230523c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20230523c001",
+      "basis": "report coverage, not national totals",
+      "agency": "河南省药品医疗器械检验院(河南省疫苗批签中心)",
+      "agency_id": "20230523c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-15",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "20240313c001/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=20240313c001",
+      "basis": "report coverage, not national totals",
+      "agency": "新疆维吾尔自治区药品检验研究院",
+      "agency_id": "20240313c001",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-08",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226392100002/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226392100002",
+      "basis": "report coverage, not national totals",
+      "agency": "吉林省药品检验研究院",
+      "agency_id": "4028813a1d225be5011d226392100002",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226392100002&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 10
+        }
+      ],
+      "missing_fields": {
+        "issued": 10,
+        "manufacturer": 10
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d2265474b0004/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d2265474b0004",
+      "basis": "report coverage, not national totals",
+      "agency": "上海市食品药品检验研究院",
+      "agency_id": "4028813a1d225be5011d2265474b0004",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "uncovered",
+      "reports": [
+        {
+          "start": "2026-11-09",
+          "end": "2026-11-16",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258809%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258816%25E6%2597%25A5",
+          "certificate_count": 43
+        },
+        {
+          "start": "2026-11-17",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d2265474b0004&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258817%25E6%2597%25A5%25E8%2587%25B311%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 7
+        }
+      ],
+      "missing_fields": {
+        "issued": 50,
+        "manufacturer": 50
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d22697942001a/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d22697942001a",
+      "basis": "report coverage, not national totals",
+      "agency": "湖北省药品监督检验研究院",
+      "agency_id": "4028813a1d225be5011d22697942001a",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-29",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226a9159001c/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226a9159001c",
+      "basis": "report coverage, not national totals",
+      "agency": "广东省药品检验所",
+      "agency_id": "4028813a1d225be5011d226a9159001c",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood"
+      ],
+      "registry_latest": "2026-11-29",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226a9159001c&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 55
+        }
+      ],
+      "missing_fields": {
+        "issued": 55,
+        "manufacturer": 55
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226ba310001e/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226ba310001e",
+      "basis": "report coverage, not national totals",
+      "agency": "四川省药品检验研究院(四川省医疗器械检测中心)",
+      "agency_id": "4028813a1d225be5011d226ba310001e",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-22",
+      "status": "records",
+      "reports": [
+        {
+          "start": "2026-11-16",
+          "end": "2026-11-22",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=4028813a1d225be5011d226ba310001e&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258816%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258822%25E6%2597%25A5",
+          "certificate_count": 31
+        }
+      ],
+      "missing_fields": {
+        "issued": 31,
+        "manufacturer": 31
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "4028813a1d225be5011d226c637d0020/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=4028813a1d225be5011d226c637d0020",
+      "basis": "report coverage, not national totals",
+      "agency": "甘肃省药品检验研究院",
+      "agency_id": "4028813a1d225be5011d226c637d0020",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [],
+      "registry_latest": "2026-11-15",
+      "status": "uncovered",
+      "reports": [],
+      "missing_fields": {},
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    },
+    {
+      "id": "5b6ea8c91cf9013d011cfdfbda100041/2026-11-22",
+      "period": "2026-11-22",
+      "week_start": "2026-11-16",
+      "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGsByJG&parameter1=5b6ea8c91cf9013d011cfdfbda100041",
+      "basis": "report coverage, not national totals",
+      "agency": "北京市药品检验研究院",
+      "agency_id": "5b6ea8c91cf9013d011cfdfbda100041",
+      "authorization_source": "https://bio.nidc.org.cn/pqf/search.do?formAction=pqfJgtz",
+      "scope_observed": [
+        "blood",
+        "vax"
+      ],
+      "registry_latest": "2026-11-21",
+      "status": "uncovered",
+      "reports": [
+        {
+          "start": "2026-11-15",
+          "end": "2026-11-21",
+          "source": "https://bio.nidc.org.cn/pqf/search.do?formAction=listGsxq&parameter1=5b6ea8c91cf9013d011cfdfbda100041&parameter2=%25E7%25AD%25BE%25E5%258F%2591%25E6%2597%25A5%25E6%259C%259F%25EF%25BC%259A2026%25E5%25B9%25B411%25E6%259C%258815%25E6%2597%25A5%25E8%2587%25B32026%25E5%25B9%25B411%25E6%259C%258821%25E6%2597%25A5",
+          "certificate_count": 23
+        }
+      ],
+      "missing_fields": {
+        "issued": 23,
+        "manufacturer": 23
+      },
+      "verified_agencies": 7,
+      "registered_agencies": 20
+    }
+  ]
+}
