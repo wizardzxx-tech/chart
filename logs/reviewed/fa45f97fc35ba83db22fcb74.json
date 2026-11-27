@@ -1,0 +1,111 @@
+{
+  "task_id": "fa45f97fc35ba83db22fcb74",
+  "receipt_sha256": "9a40f6cbdbc033824f4450f827d87292fb62242a76c9b37d6ec4ea641baddcfc",
+  "reviewed_at": "2026-11-27T17:58:11+00:00",
+  "reviewed_by": "local-reviewer",
+  "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+  "source_sha256": [
+    "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88"
+  ],
+  "receipt_version": 2,
+  "dataset_id": "operating.metrics",
+  "write_targets": [
+    "v2/update-center/operating-metrics.json"
+  ],
+  "old": {
+    "300015.SZ/2026-06-30/eye_hospitals/point": null,
+    "300015.SZ/2026-06-30/eye_surgeries/half": null,
+    "300015.SZ/2026-06-30/eye_visits/half": null
+  },
+  "candidate": {
+    "period": "2026-06-30",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+    "records": [
+      {
+        "id": "300015.SZ/2026-06-30/eye_hospitals/point",
+        "period": "2026-06-30",
+        "topic": "ophthalmology",
+        "ticker": "300015.SZ",
+        "metric": "eye_hospitals",
+        "label": "境内医院数",
+        "unit": "家",
+        "period_kind": "point",
+        "scope": "境内上市公司合并医院网络",
+        "value": 390.0,
+        "page": 29,
+        "excerpt": "公司境内医院 390 家， 门诊部",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+        "published": "2026-08-28",
+        "pdf_sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+        "extraction": "rule"
+      },
+      {
+        "id": "300015.SZ/2026-06-30/eye_surgeries/half",
+        "period": "2026-06-30",
+        "topic": "ophthalmology",
+        "ticker": "300015.SZ",
+        "metric": "eye_surgeries",
+        "label": "手术量",
+        "unit": "例",
+        "period_kind": "half",
+        "scope": "公司披露的集团手术量，留存境内外范围",
+        "value": 888700.0,
+        "page": 21,
+        "excerpt": "万人次， 同比增长 8.34%； 手术量 88.87 万例",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+        "published": "2026-08-28",
+        "pdf_sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+        "extraction": "rule"
+      },
+      {
+        "id": "300015.SZ/2026-06-30/eye_visits/half",
+        "period": "2026-06-30",
+        "topic": "ophthalmology",
+        "ticker": "300015.SZ",
+        "metric": "eye_visits",
+        "label": "门诊量",
+        "unit": "人次",
+        "period_kind": "half",
+        "scope": "公司披露的集团门诊量，留存境内外范围",
+        "value": 10019500.0,
+        "page": 21,
+        "excerpt": "公司实现门诊量 1,001.95 万人次， 同比",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+        "published": "2026-08-28",
+        "pdf_sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+        "extraction": "rule"
+      }
+    ]
+  },
+  "diff": {
+    "300015.SZ/2026-06-30/eye_hospitals/point": {
+      "before": null,
+      "after": 390.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "300015.SZ/2026-06-30/eye_surgeries/half": {
+      "before": null,
+      "after": 888700.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "300015.SZ/2026-06-30/eye_visits/half": {
+      "before": null,
+      "after": 10019500.0,
+      "year_ago": null,
+      "yoy_pct": null
+    }
+  },
+  "files": [
+    {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+      "sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+      "bytes": 1691228
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "adapter": "operating_metrics"
+  }
+}

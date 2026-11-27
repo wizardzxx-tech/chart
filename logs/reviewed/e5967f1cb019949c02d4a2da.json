@@ -1,0 +1,111 @@
+{
+  "task_id": "e5967f1cb019949c02d4a2da",
+  "receipt_sha256": "849ca2ec98f5b3e5ef81570f26516fff09e5f65ec8aeb4c0f96b36d2f6cbd650",
+  "reviewed_at": "2026-11-27T17:58:11+00:00",
+  "reviewed_by": "local-reviewer",
+  "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+  "source_sha256": [
+    "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f"
+  ],
+  "receipt_version": 2,
+  "dataset_id": "operating.metrics",
+  "write_targets": [
+    "v2/update-center/operating-metrics.json"
+  ],
+  "old": {
+    "600161.SH/2025-12-31/plasma_active_stations/point": null,
+    "600161.SH/2025-12-31/plasma_all_stations/point": null,
+    "600161.SH/2025-12-31/plasma_collection/annual": null
+  },
+  "candidate": {
+    "period": "2025-12-31",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+    "records": [
+      {
+        "id": "600161.SH/2025-12-31/plasma_active_stations/point",
+        "period": "2025-12-31",
+        "topic": "blood-products",
+        "ticker": "600161.SH",
+        "metric": "plasma_active_stations",
+        "label": "在营浆站",
+        "unit": "家",
+        "period_kind": "point",
+        "scope": "已投入采浆的站点",
+        "value": 85.0,
+        "page": 10,
+        "excerpt": "在营单采血浆站数量达 85 家",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+        "published": "2026-03-28",
+        "pdf_sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+        "extraction": "rule"
+      },
+      {
+        "id": "600161.SH/2025-12-31/plasma_all_stations/point",
+        "period": "2025-12-31",
+        "topic": "blood-products",
+        "ticker": "600161.SH",
+        "metric": "plasma_all_stations",
+        "label": "浆站总数",
+        "unit": "家",
+        "period_kind": "point",
+        "scope": "按公司披露含获批筹建站点",
+        "value": 107.0,
+        "page": 10,
+        "excerpt": "单采血浆站总数达 107 家， 其中在营",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+        "published": "2026-03-28",
+        "pdf_sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+        "extraction": "rule"
+      },
+      {
+        "id": "600161.SH/2025-12-31/plasma_collection/annual",
+        "period": "2025-12-31",
+        "topic": "blood-products",
+        "ticker": "600161.SH",
+        "metric": "plasma_collection",
+        "label": "采浆量",
+        "unit": "吨",
+        "period_kind": "annual",
+        "scope": "公司合并范围实际采集量",
+        "value": 2801.0,
+        "page": 10,
+        "excerpt": "血浆采集 2,801 吨",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+        "published": "2026-03-28",
+        "pdf_sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+        "extraction": "rule"
+      }
+    ]
+  },
+  "diff": {
+    "600161.SH/2025-12-31/plasma_active_stations/point": {
+      "before": null,
+      "after": 85.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "600161.SH/2025-12-31/plasma_all_stations/point": {
+      "before": null,
+      "after": 107.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "600161.SH/2025-12-31/plasma_collection/annual": {
+      "before": null,
+      "after": 2801.0,
+      "year_ago": null,
+      "yoy_pct": null
+    }
+  },
+  "files": [
+    {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+      "sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+      "bytes": 1531397
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "adapter": "operating_metrics"
+  }
+}

@@ -9,6 +9,8 @@ def applies(spec, changed):
     adapter=spec.get("adapter")
     if adapter=="finance":
         return bool(changed)
+    if adapter=="trade_monthly_sources":
+        return bool(changed)
     if adapter=="trade_values":
         if spec.get("upstream_frequency")=="M":
             return bool(changed)

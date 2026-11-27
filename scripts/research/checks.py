@@ -21,5 +21,7 @@ def summarize(checks):
             "uncovered":sum(x["status"]=="uncovered" for x in checks),
             "pending_revision":sum(x["status"]=="pending_revision" for x in checks),
             "no_new":sum(x["status"] in ("unchanged","no_new","unpublished") for x in checks),
+            "actual_data":sum(x.get("latest_period") is not None and x["status"] in ("records","unchanged")
+                              and "catalog" not in x["kind"] for x in checks),
             "latest":sum(x.get("latest_period") is not None and x.get("latest_period")==x.get("period")
-                         for x in checks if x["status"] in GOOD)}
+                         for x in checks if x["status"] in ("records","unchanged") and "catalog" not in x["kind"])}

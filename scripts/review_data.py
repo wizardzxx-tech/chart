@@ -90,6 +90,14 @@ def prepare(task_id, task, cache, *, offline=False):
         if offline:
             raise ValueError("Structured review must recollect the official source")
         return prepare_structured(task_id,task)
+    if task.get("review_type")=="operating":
+        from research.operating_review import prepare as operating
+        http=HTTP()
+        read,checked=evidence(cache,http,offline=offline)
+        try:
+            return operating(task_id,task,read,checked)
+        finally:
+            http.session.close()
     name = PROCESSORS.get(task["dataset_id"])
     if not name:
         raise ValueError("This task has no validated research-data writer")
@@ -144,7 +152,11 @@ def append_nhsa_csv(value):
 
 def apply(receipt, task):
     structured=bool(task.get("row_id"))
-    if structured:
+    operating=task.get("review_type")=="operating"
+    if operating:
+        from updaters.operating_metrics import TARGET
+        path,field=ROOT/TARGET,"records"
+    elif structured:
         spec=review_spec(task)
         path,field=ROOT/spec["local_data_path"],"records"
     else:
@@ -153,7 +165,9 @@ def apply(receipt, task):
     data = deepcopy(old_data)
     value = deepcopy(receipt["candidate"])
     key="id" if structured else "period"
-    prev = next((x for x in data.get(field,[]) if x[key]==value[key]),None)
+    current={row["id"]:row for row in data[field]} if operating else None
+    prev=({r["id"]:current.get(r["id"]) for r in value["records"]} if operating else
+          next((x for x in data.get(field,[]) if x[key]==value[key]),None))
     if prev != receipt["old"]:
         raise ValueError("Published data changed after the review receipt was prepared")
     timestamp = utc()
@@ -161,7 +175,12 @@ def apply(receipt, task):
     approval={"task_id":receipt["task_id"],"receipt_sha256":digest,
               "reviewed_at":timestamp,"reviewed_by":os.environ.get("GITHUB_ACTOR") or "local-reviewer",
               "source":receipt["source"],"source_sha256":[x["sha256"] for x in receipt["files"]]}
-    if structured:
+    if operating:
+        for item in value["records"]:
+            current[item["id"]]={**item,"approval":approval}
+        data[field]=sorted(current.values(),key=lambda r:(r["period"],r["id"]))
+        data.update(updated_at=timestamp)
+    elif structured:
         value["approved_revision"]=approval
         remaining=[v for v in data[field] if v[key]!=value[key]]
         data[field],_,_=validate_records(spec,[value],remaining,TODAY)
@@ -176,7 +195,7 @@ def apply(receipt, task):
     for row in state["datasets"]:
         if row["dataset_id"] != task["dataset_id"]:
             continue
-        if structured:
+        if structured or operating:
             row["latest_data_period"] = data[field][-1]["period"]
             row["source"] = data[field][-1]["source"]
         elif receipt["dataset_id"] == "insurance.monthly":
@@ -187,7 +206,7 @@ def apply(receipt, task):
             # independently verified official-center period separately.
             row["partial_source_period"] = data[field][-1]["period"]
         row.update(last_checked=timestamp,last_success=timestamp,last_extracted=timestamp,chart_applied_at=timestamp,status="Updated",
-                   detail="审核通过，已写入研究图表。" if structured or receipt["dataset_id"]=="insurance.monthly" else
+                   detail="审核通过，已写入研究图表。" if structured or operating or receipt["dataset_id"]=="insurance.monthly" else
                    "审核通过，已更新中检院单机构视图。")
         row["recent_log"] = [*row.get("recent_log",[]),{"time":timestamp,"status":"Updated",
             "detail":row["detail"],"period":value["period"]}][-12:]

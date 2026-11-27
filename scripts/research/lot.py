@@ -36,7 +36,7 @@ def summarize(rows, span, scope):
         cert = cert.replace("批簽","批签").removesuffix("号")
         if not re.fullmatch(r"批签[^0-9]*20\d{2}[A-Z0-9-]{4,10}", cert):
             raise ValueError("Notice contains an unverified certificate ID")
-        identity = names.batch_identity(item)
+        identity = names.batch_identity({**item,"mah":item["mah"] or item.get("manufacturer","")})
         code = names.normalize(item["outcome"])
         if cert in evidence:
             if evidence[cert] != (identity, code):

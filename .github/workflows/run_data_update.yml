@@ -55,6 +55,12 @@ jobs:
       - run: pip install -r requirements-updates.txt
       - name: Validate pipeline
         run: python -m unittest discover -s scripts/validators -p 'test_*.py'
+      - name: Ensure filing text extraction is available
+        run: |
+          if ! command -v pdftotext >/dev/null; then
+            sudo apt-get update -q
+            sudo apt-get install -y poppler-utils
+          fi
       - name: Install the review OCR engine
         if: inputs.replay_research || inputs.review_task != ''
         run: |

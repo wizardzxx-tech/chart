@@ -42,9 +42,10 @@ def ratios(flow, balances, days):
     dio = days*inventory/cost if inventory is not None and cost and cost>0 else None
     dpo = days*ap/cost if ap is not None and cost and cost>0 else None
     ccc = dso+dio-dpo if None not in (dso,dio,dpo) else None
+    expense_fields=[k for k in ("selling","admin","rd","finance","sga") if k in flow]
     return {"gross_margin":(rev-cost)/rev if rev and rev>0 and cost is not None else None,
             "expenses":{k:flow[k]/rev if rev and rev>0 and flow[k] is not None else None
-                        for k in ("selling","admin","rd","finance")},
+                        for k in expense_fields},
             "dso":dso,"dio":dio,"dpo":dpo,"ccc":ccc}
 
 
@@ -57,10 +58,11 @@ def quarterly(rows):
         if end != quarter_end(i) or i in lookup:
             raise ValueError("Non-calendar or duplicate quarter in calendar reporting series")
         lookup[i] = item
+    fields=FLOWS+("sga",) if any("sga" in row for row in rows) else FLOWS
     flows={}
     for i,row in sorted(lookup.items()):
         prior=lookup.get(i-1,{})
-        flows[i]={key: row.get(key) if i%4 == 0 else subtract(row.get(key),prior.get(key)) for key in FLOWS}
+        flows[i]={key: row.get(key) if i%4 == 0 else subtract(row.get(key),prior.get(key)) for key in fields}
     out=[]
     for i,row in sorted(lookup.items()):
         modes={}
@@ -70,7 +72,7 @@ def quarterly(rows):
             for key in BALANCES:
                 values=[snapshot.get(key) for snapshot in window]
                 balances[key] = None if None in values else sum((a+b)/2 for a,b in zip(values,values[1:]))/width
-            flow={field:sum_complete([flows.get(j,{}).get(field) for j in range(i-width+1,i+1)]) for field in FLOWS}
+            flow={field:sum_complete([flows.get(j,{}).get(field) for j in range(i-width+1,i+1)]) for field in fields}
             days=365 if width==4 else (quarter_end(i)-quarter_end(i-1)).days
             modes[name]={**flow,"days":days,**ratios(flow,balances,days)}
         out.append({**row,**modes})

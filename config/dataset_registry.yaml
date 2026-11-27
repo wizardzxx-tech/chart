@@ -1355,7 +1355,7 @@ datasets:
   - AMGN.US
   - LLY.US
   contract:
-    optional_fields: [filing]
+    optional_fields: [filing, sga]
     comparison_metadata: [filing]
     refresh_metadata: [filing]
     min:
@@ -1702,6 +1702,7 @@ datasets:
   local_data_path: v2/vaccines/public-data/vax.agency-coverage.json
   updater_script: scripts/updaters/lot_coverage.py
   adapter: lot_coverage
+  processing_version: interval-union-and-exact-issuance-v2
   automation_level: fully_automated
   validation_rules:
   - 机构目录、公告覆盖区间、签发证书去重和产品分类。公示缺失保持未知。
@@ -1710,5 +1711,277 @@ datasets:
   incremental_start: '2026-11-08'
   view: records
   contract:
-    comparison_metadata: [registry_latest, status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed]
-    refresh_metadata: [status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed]
+    optional_fields: [authorized_scope, uncovered_days, unassigned, verified_week_counts, national]
+    comparison_metadata: [registry_latest, status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed, authorized_scope, uncovered_days, unassigned, verified_week_counts, national]
+    refresh_metadata: [status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed, authorized_scope, uncovered_days, unassigned, verified_week_counts, national]
+
+- dataset_id: api.trade-summary
+  topic: api
+  label: 海关月度公开摘要
+  source_name: 海关月度公开摘要
+  source_url: https://www.gtradedata.com/report/
+  source_format: HTML
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/api/public-data/api.trade-summary.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 报告期、币种、全国统计、HS 粒度、方向及申报单位单独校验
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2025-01-01'
+  upstream: public_summary
+  products:
+  - '29349970'
+  - '29349960'
+  - '29362100'
+  - '29362200'
+  - '29362300'
+  - '29362400'
+  - '29362500'
+  - '29362700'
+  - '29362800'
+  - '29362900'
+  - '29369010'
+  - '30019010'
+  - '29372210'
+  - '29372100'
+  - '29415000'
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: api.trade-hs6
+  topic: api
+  label: 联合国标准 HS6 月度全国合计
+  source_name: 联合国标准 HS6 月度全国合计
+  source_url: https://comtradeapi.un.org/public/v1/getDa/C/M/HS
+  source_format: JSON
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/api/public-data/api.trade-hs6.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 报告期、币种、全国统计、HS 粒度、方向及申报单位单独校验
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2024-12-01'
+  upstream: standard
+  products:
+  - '293499'
+  - '293621'
+  - '293622'
+  - '293623'
+  - '293624'
+  - '293625'
+  - '293627'
+  - '293628'
+  - '293629'
+  - '293690'
+  - '300190'
+  - '293721'
+  - '293722'
+  - '293723'
+  - '294110'
+  - '294150'
+  - '294190'
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: devices.trade-summary
+  topic: medical-devices
+  label: 海关月度公开摘要
+  source_name: 海关月度公开摘要
+  source_url: https://www.gtradedata.com/report/
+  source_format: HTML
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/medical-devices/public-data/devices.trade-summary.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 报告期、币种、全国统计、HS 粒度、方向及申报单位单独校验
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2025-01-01'
+  upstream: public_summary
+  products:
+  - '90221200'
+  - '90181310'
+  - '90181210'
+  - '90181291'
+  - '38221900'
+  - '38221300'
+  - '90275010'
+  - '90278990'
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: devices.trade-hs6
+  topic: medical-devices
+  label: 联合国标准 HS6 月度全国合计
+  source_name: 联合国标准 HS6 月度全国合计
+  source_url: https://comtradeapi.un.org/public/v1/getDa/C/M/HS
+  source_format: JSON
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/medical-devices/public-data/devices.trade-hs6.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 报告期、币种、全国统计、HS 粒度、方向及申报单位单独校验
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2024-12-01'
+  upstream: standard
+  products:
+  - '902212'
+  - '901813'
+  - '901812'
+  - '382219'
+  - '382213'
+  - '902750'
+  - '902789'
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: vax.trade-summary
+  topic: vaccines
+  label: 海关月度公开摘要
+  source_name: 海关月度公开摘要
+  source_url: https://www.gtradedata.com/report/
+  source_format: HTML
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/vaccines/public-data/vax.trade-summary.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 报告期、币种、全国统计、HS 粒度、方向及申报单位单独校验
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2025-01-01'
+  upstream: public_summary
+  products:
+  - '30024100'
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: vax.trade-hs6
+  topic: vaccines
+  label: 联合国标准 HS6 月度全国合计
+  source_name: 联合国标准 HS6 月度全国合计
+  source_url: https://comtradeapi.un.org/public/v1/getDa/C/M/HS
+  source_format: JSON
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/vaccines/public-data/vax.trade-hs6.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 报告期、币种、全国统计、HS 粒度、方向及申报单位单独校验
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2024-12-01'
+  upstream: standard
+  products:
+  - '300241'
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: devices.trade-reference-history
+  topic: medical-devices
+  label: CT、MRI 与彩超整机月度金额对照
+  source_name: HS归类通 · 公开HS10金额月表
+  source_url: https://hsguilei.com/
+  source_format: HTML
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/medical-devices/public-data/devices.trade-reference-history.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 逐期核对明确标注的HS10、美元金额及方向，保留公开表精度
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2025-01-01'
+  upstream: public_history
+  products: ['9022120000', '9018131000', '9018129110']
+  contract:
+    comparison_metadata: [version]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: operating.metrics
+  topic: pharmacy
+  label: 上市公司特色经营指标
+  source_name: 上市公司定期报告及主要经营数据公告
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公开公告
+  data_frequency: quarterly
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: v2/update-center/operating-metrics.json
+  updater_script: scripts/updaters/operating_metrics.py
+  adapter: operating_metrics
+  automation_level: rule_based
+  validation_rules:
+  - 公司、报告期、指标定义、单位、PDF 页码、证据和原文件版本
+  review_required: true
+  section: company-stores
+  incremental_start: '2025-01-01'

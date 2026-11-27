@@ -3,6 +3,10 @@ from argparse import ArgumentParser
 from pathlib import Path
 from shutil import copy2, copytree
 import json
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from build.financial_coverage import build as financial_coverage
+from build.operating_coverage import build as operating_coverage
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -18,6 +22,8 @@ def build(destination):
     copy2(ROOT / "index.html", destination)
     copy2(ROOT / ".nojekyll", destination)
     copytree(ROOT / "v2", destination / "v2", dirs_exist_ok=True)
+    financial_coverage(ROOT,destination)
+    operating_coverage(ROOT,destination)
 
 
 if __name__ == "__main__":

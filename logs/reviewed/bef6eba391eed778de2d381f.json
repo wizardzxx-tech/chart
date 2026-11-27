@@ -1,0 +1,136 @@
+{
+  "task_id": "bef6eba391eed778de2d381f",
+  "receipt_sha256": "7e12ca1927afd09aa45abb6e2f4e25d995b1fe5698b126e294f084d3dfbc3eed",
+  "reviewed_at": "2026-11-27T17:58:12+00:00",
+  "reviewed_by": "local-reviewer",
+  "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+  "source_sha256": [
+    "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e"
+  ],
+  "receipt_version": 2,
+  "dataset_id": "operating.metrics",
+  "write_targets": [
+    "v2/update-center/operating-metrics.json"
+  ],
+  "old": {
+    "603939.SH/2026-09-30/closed_stores/quarter": null,
+    "603939.SH/2026-09-30/direct_stores/point": null,
+    "603939.SH/2026-09-30/franchise_stores/point": null,
+    "603939.SH/2026-09-30/open_stores/quarter": null
+  },
+  "candidate": {
+    "period": "2026-09-30",
+    "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+    "records": [
+      {
+        "id": "603939.SH/2026-09-30/closed_stores/quarter",
+        "period": "2026-09-30",
+        "topic": "pharmacy",
+        "ticker": "603939.SH",
+        "metric": "closed_stores",
+        "label": "关闭门店",
+        "unit": "家",
+        "period_kind": "quarter",
+        "scope": "公司披露的关闭门店",
+        "value": 60.0,
+        "page": 7,
+        "excerpt": "年第三季度， 公司新开门店 158 家， 关闭门店 60 家",
+        "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+        "published": "2026-10-30",
+        "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+        "extraction": "rule"
+      },
+      {
+        "id": "603939.SH/2026-09-30/direct_stores/point",
+        "period": "2026-09-30",
+        "topic": "pharmacy",
+        "ticker": "603939.SH",
+        "metric": "direct_stores",
+        "label": "期末直营门店",
+        "unit": "家",
+        "period_kind": "point",
+        "scope": "公司披露的期末直营药房",
+        "value": 10761.0,
+        "page": 7,
+        "excerpt": "门店总数 15,452 家（ 其中， 直营门店 10,761 家",
+        "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+        "published": "2026-10-30",
+        "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+        "extraction": "rule"
+      },
+      {
+        "id": "603939.SH/2026-09-30/franchise_stores/point",
+        "period": "2026-09-30",
+        "topic": "pharmacy",
+        "ticker": "603939.SH",
+        "metric": "franchise_stores",
+        "label": "期末加盟门店",
+        "unit": "家",
+        "period_kind": "point",
+        "scope": "公司披露的期末加盟网络",
+        "value": 4691.0,
+        "page": 7,
+        "excerpt": "直营门店 10,761 家， 加盟店 4,691 家",
+        "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+        "published": "2026-10-30",
+        "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+        "extraction": "rule"
+      },
+      {
+        "id": "603939.SH/2026-09-30/open_stores/quarter",
+        "period": "2026-09-30",
+        "topic": "pharmacy",
+        "ticker": "603939.SH",
+        "metric": "open_stores",
+        "label": "新开门店",
+        "unit": "家",
+        "period_kind": "quarter",
+        "scope": "公司披露的自建新开，加盟和并购另列",
+        "value": 158.0,
+        "page": 7,
+        "excerpt": "年第三季度， 公司新开门店 158 家",
+        "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+        "published": "2026-10-30",
+        "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+        "extraction": "rule"
+      }
+    ]
+  },
+  "diff": {
+    "603939.SH/2026-09-30/closed_stores/quarter": {
+      "before": null,
+      "after": 60.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "603939.SH/2026-09-30/direct_stores/point": {
+      "before": null,
+      "after": 10761.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "603939.SH/2026-09-30/franchise_stores/point": {
+      "before": null,
+      "after": 4691.0,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "603939.SH/2026-09-30/open_stores/quarter": {
+      "before": null,
+      "after": 158.0,
+      "year_ago": null,
+      "yoy_pct": null
+    }
+  },
+  "files": [
+    {
+      "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+      "sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+      "bytes": 225647
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "adapter": "operating_metrics"
+  }
+}

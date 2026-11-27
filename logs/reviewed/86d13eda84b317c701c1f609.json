@@ -1,0 +1,136 @@
+{
+  "task_id": "86d13eda84b317c701c1f609",
+  "receipt_sha256": "9b718c0eee946c10f0085d397ad1fe9e3b1dddf6b344a34bfad34c8cf5270af8",
+  "reviewed_at": "2026-11-27T17:58:11+00:00",
+  "reviewed_by": "local-reviewer",
+  "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+  "source_sha256": [
+    "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b"
+  ],
+  "receipt_version": 2,
+  "dataset_id": "operating.metrics",
+  "write_targets": [
+    "v2/update-center/operating-metrics.json"
+  ],
+  "old": {
+    "603087.SH/2025-12-31/insulin_domestic_sales/annual": null,
+    "603087.SH/2025-12-31/insulin_overseas_sales/annual": null,
+    "603087.SH/2025-12-31/insulin_product_revenue/annual": null,
+    "603087.SH/2025-12-31/insulin_units_sold/annual": null
+  },
+  "candidate": {
+    "period": "2025-12-31",
+    "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+    "records": [
+      {
+        "id": "603087.SH/2025-12-31/insulin_domestic_sales/annual",
+        "period": "2025-12-31",
+        "topic": "insulin",
+        "ticker": "603087.SH",
+        "metric": "insulin_domestic_sales",
+        "label": "国内销售收入",
+        "unit": "元",
+        "period_kind": "annual",
+        "scope": "公司主营业务分地区销售",
+        "value": 3505973062.68,
+        "page": 31,
+        "excerpt": "国内-销售收入 3,505,973,062.68 676,190,660.33 80.71",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+        "published": "2026-04-23",
+        "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+        "extraction": "rule"
+      },
+      {
+        "id": "603087.SH/2025-12-31/insulin_overseas_sales/annual",
+        "period": "2025-12-31",
+        "topic": "insulin",
+        "ticker": "603087.SH",
+        "metric": "insulin_overseas_sales",
+        "label": "国际销售收入",
+        "unit": "元",
+        "period_kind": "annual",
+        "scope": "排除另列的特许权服务收入",
+        "value": 529266794.43,
+        "page": 31,
+        "excerpt": "国际-销售收入 529,266,794.43 299,978,192.45 43.32",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+        "published": "2026-04-23",
+        "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+        "extraction": "rule"
+      },
+      {
+        "id": "603087.SH/2025-12-31/insulin_product_revenue/annual",
+        "period": "2025-12-31",
+        "topic": "insulin",
+        "ticker": "603087.SH",
+        "metric": "insulin_product_revenue",
+        "label": "原料药及制剂产品收入",
+        "unit": "元",
+        "period_kind": "annual",
+        "scope": "按公司披露的生物制品分部",
+        "value": 3801634792.58,
+        "page": 31,
+        "excerpt": "生物制品( 原料 3,801,634,792.58 817,891,679.21 78.49 41.14",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+        "published": "2026-04-23",
+        "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+        "extraction": "rule"
+      },
+      {
+        "id": "603087.SH/2025-12-31/insulin_units_sold/annual",
+        "period": "2025-12-31",
+        "topic": "insulin",
+        "ticker": "603087.SH",
+        "metric": "insulin_units_sold",
+        "label": "胰岛素制剂销量",
+        "unit": "支",
+        "period_kind": "annual",
+        "scope": "公司产销表，不将剂量单位和支数混用",
+        "value": 97630500.0,
+        "page": 32,
+        "excerpt": "胰岛素制剂 万支 8,788.76 9,763.05 683.66",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+        "published": "2026-04-23",
+        "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+        "extraction": "rule"
+      }
+    ]
+  },
+  "diff": {
+    "603087.SH/2025-12-31/insulin_domestic_sales/annual": {
+      "before": null,
+      "after": 3505973062.68,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "603087.SH/2025-12-31/insulin_overseas_sales/annual": {
+      "before": null,
+      "after": 529266794.43,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "603087.SH/2025-12-31/insulin_product_revenue/annual": {
+      "before": null,
+      "after": 3801634792.58,
+      "year_ago": null,
+      "yoy_pct": null
+    },
+    "603087.SH/2025-12-31/insulin_units_sold/annual": {
+      "before": null,
+      "after": 97630500.0,
+      "year_ago": null,
+      "yoy_pct": null
+    }
+  },
+  "files": [
+    {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+      "sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+      "bytes": 1603593
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "adapter": "operating_metrics"
+  }
+}

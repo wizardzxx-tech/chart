@@ -90,6 +90,23 @@ def base_status(spec, previous):
     return entry
 
 
+def confirmed_cms_revision(spec,row,old,stamp,evidence):
+    if spec["dataset_id"]!="cms.partb-values":
+        return None
+    path=ROOT/"config/cms-2025-full-year-review.json"
+    if not path.exists():
+        return None
+    approved=read_json(path,{})
+    rule=approved["rows"].get(row["id"])
+    if (not rule or rule["after"]!=stamp or rule["before"]!=sha256(dump_json(material(old,spec))).hexdigest()
+            or row["source"]!=approved["replacement"]["url"]
+            or not any(x["url"]==row["source"] and x["sha256"]==approved["replacement"]["sha256"] for x in evidence)):
+        return None
+    return {"source":row["source"],"source_versions":[approved["prior"],approved["replacement"]],
+            "task_id":rule["task"],"reviewed_by":approved["reviewed_by"],
+            "scope":approved["scope"],"manifest_sha256":sha256(path.read_bytes()).hexdigest()}
+
+
 def check_one(spec, state, http, args, tasks, now):
     name = spec["dataset_id"]
     output = None
@@ -138,6 +155,19 @@ def check_one(spec, state, http, args, tasks, now):
     path = ROOT / spec["local_data_path"]
     old = read_json(path, {"records": [], "source_files": []})
     candidates = response["records"]
+    definition_migrations=[]
+    if spec.get("adapter")=="finance" and candidates:
+        from updaters.finance import migrate_legacy_sga
+        for i,record in enumerate(old["records"]):
+            corrected=migrate_legacy_sga(record)
+            if corrected is record:
+                continue
+            definition_migrations.append({"id":record["id"],"source":record["source"],
+                "reason":"The legacy SEC selling field used the combined US GAAP SG&A tag.",
+                "before":{k:record[k] for k in ("selling","quarter","ttm")},
+                "after":{k:corrected[k] for k in ("selling","sga","quarter","ttm")}})
+            old["records"][i]=corrected
+    reviewed_revisions=[]
     if "checks" in response:
         existing = {row["id"]:row for row in old["records"]}
         shortlisted = []
@@ -153,6 +183,11 @@ def check_one(spec, state, http, args, tasks, now):
                 if published is not None and material(row,spec) != material(published,spec):
                     stamp = sha256(dump_json(material(row,spec))).hexdigest()
                     key = sha256((name+"/"+row["id"]+"/"+stamp).encode()).hexdigest()[:24]
+                    proof=confirmed_cms_revision(spec,row,published,stamp,http.evidence)
+                    if proof:
+                        accepted.append({**row,"approved_revision":proof})
+                        reviewed_revisions.append({"before":published,"after":row,"evidence":proof})
+                        continue
                     tasks.setdefault(key, {"title":f'{name} · {row["id"]} 历史修订',
                         "dataset_id":name,"topic":spec["topic"],"url":row["source"],"period":row["period"],
                         "first_seen":now,"status":"open","revision":True,"row_id":row["id"],
@@ -162,7 +197,8 @@ def check_one(spec, state, http, args, tasks, now):
                 else:
                     accepted.append(row)
             try:
-                validate_records(spec,accepted,[existing[r["id"]] for r in accepted if r["id"] in existing],end)
+                validate_records(spec,accepted,[existing[r["id"]] for r in accepted if r["id"] in existing
+                                                and "approved_revision" not in r],end)
             except (ValueError, KeyError, TypeError, IndexError) as error:
                 if task:
                     task.update(status="failed",detail=str(error)[:250])
@@ -171,20 +207,30 @@ def check_one(spec, state, http, args, tasks, now):
                 task["status"]="unchanged"
             shortlisted.extend(accepted)
         candidates=shortlisted
-    combined, changed, archive = validate_records(spec, candidates, old["records"], end)
+    corrected={r["id"] for r in candidates if "approved_revision" in r}
+    combined, changed, archive = validate_records(spec,candidates,
+         [r for r in old["records"] if r["id"] not in corrected],end)
+    archive.extend(revision for revision in reviewed_revisions if revision["after"]["id"] in corrected)
+    for revision in reviewed_revisions:
+        proof=revision["evidence"]
+        if revision["after"]["id"] in corrected and proof["task_id"] in tasks:
+            tasks[proof["task_id"]].update(status="resolved",reviewed_at=now,approval=proof)
     if not combined:
         return "No new data", "所选期间未发现新记录。", output, archive
     latest = max(combined, key=lambda row: row["period"])
     state["source"] = latest["source"]
     state["latest_data_period"] = latest.get("edition", latest["period"])
     state["last_extracted"] = now
-    if changed:
+    if changed or definition_migrations:
+        archive.extend(definition_migrations)
         before = {(x["url"], x["sha256"]) for x in old["source_files"]}
         after = {(x["url"], x["sha256"]) for x in http.evidence}
-        if before and before == after:
+        processor=spec.get("processing_version")
+        method_changed=processor and old.get("processing_version")!=processor
+        if changed and before and before == after and not (definition_migrations or reviewed_revisions or method_changed):
             raise ValueError("Source fingerprints unchanged while normalized records changed")
         output = (path, {"dataset_id": name, "updated_at": now, "source_files": http.evidence,
-                         "records": combined})
+                         "records": combined, **({"processing_version":processor} if processor else {})})
         state["last_success"] = now
         if spec.get("chart_binding") and applies(spec, changed):
             state["chart_applied_at"] = now

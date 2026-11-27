@@ -921,6 +921,459 @@
       "row_id": "quarterly/2025FY/Q5147",
       "candidate_sha256": "14b9cefc045e21f0fa3fb322fdb6542be04a46281e8e2da77dbfbe34a2483dc7",
       "unit_id": "quarterly"
+    },
+    "fa45f97fc35ba83db22fcb74": {
+      "title": "300015.SZ · 2026年半年度报告 · 经营指标",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+      "period": "2026-06-30",
+      "published": "2026-08-28",
+      "indicators": "境内医院数 / 手术量 / 门诊量",
+      "dataset_checksum": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+      "ticker": "300015.SZ",
+      "document_title": "2026年半年度报告",
+      "candidates": [
+        {
+          "id": "300015.SZ/2026-06-30/eye_hospitals/point",
+          "period": "2026-06-30",
+          "topic": "ophthalmology",
+          "ticker": "300015.SZ",
+          "metric": "eye_hospitals",
+          "label": "境内医院数",
+          "unit": "家",
+          "period_kind": "point",
+          "scope": "境内上市公司合并医院网络",
+          "value": 390.0,
+          "page": 29,
+          "excerpt": "公司境内医院 390 家， 门诊部",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+          "published": "2026-08-28",
+          "pdf_sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+          "extraction": "rule"
+        },
+        {
+          "id": "300015.SZ/2026-06-30/eye_surgeries/half",
+          "period": "2026-06-30",
+          "topic": "ophthalmology",
+          "ticker": "300015.SZ",
+          "metric": "eye_surgeries",
+          "label": "手术量",
+          "unit": "例",
+          "period_kind": "half",
+          "scope": "公司披露的集团手术量，留存境内外范围",
+          "value": 888700.0,
+          "page": 21,
+          "excerpt": "万人次， 同比增长 8.34%； 手术量 88.87 万例",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+          "published": "2026-08-28",
+          "pdf_sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+          "extraction": "rule"
+        },
+        {
+          "id": "300015.SZ/2026-06-30/eye_visits/half",
+          "period": "2026-06-30",
+          "topic": "ophthalmology",
+          "ticker": "300015.SZ",
+          "metric": "eye_visits",
+          "label": "门诊量",
+          "unit": "人次",
+          "period_kind": "half",
+          "scope": "公司披露的集团门诊量，留存境内外范围",
+          "value": 10019500.0,
+          "page": 21,
+          "excerpt": "公司实现门诊量 1,001.95 万人次， 同比",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+          "published": "2026-08-28",
+          "pdf_sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+          "extraction": "rule"
+        }
+      ],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T17:58:11+00:00",
+      "receipt_sha256": "9a40f6cbdbc033824f4450f827d87292fb62242a76c9b37d6ec4ea641baddcfc",
+      "source_versions": [
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+          "sha256": "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88",
+          "bytes": 1691228
+        }
+      ],
+      "approval": {
+        "task_id": "fa45f97fc35ba83db22fcb74",
+        "receipt_sha256": "9a40f6cbdbc033824f4450f827d87292fb62242a76c9b37d6ec4ea641baddcfc",
+        "reviewed_at": "2026-11-27T17:58:11+00:00",
+        "reviewed_by": "local-reviewer",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+        "source_sha256": [
+          "f02d042ee936c910dfaaced7164bda49e403f504dda9bd8924b8a144f824fb88"
+        ]
+      },
+      "write_targets": [
+        "v2/update-center/operating-metrics.json"
+      ]
+    },
+    "29913597a803697c3be974d8": {
+      "title": "300015.SZ · 2026年三季度报告 · 经营指标待人工取值",
+      "url": "https://pdf.dfcfw.com/pdf/H2_AN202610291831173536_1.pdf",
+      "period": "2026-09-30",
+      "published": "2026-10-30",
+      "indicators": "经营披露 · 定义与页码待核",
+      "ticker": "300015.SZ",
+      "document_title": "2026年三季度报告",
+      "candidates": [],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "open"
+    },
+    "e5967f1cb019949c02d4a2da": {
+      "title": "600161.SH · 2025年年度报告 · 经营指标",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+      "period": "2025-12-31",
+      "published": "2026-03-28",
+      "indicators": "在营浆站 / 浆站总数 / 采浆量",
+      "dataset_checksum": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+      "ticker": "600161.SH",
+      "document_title": "2025年年度报告",
+      "candidates": [
+        {
+          "id": "600161.SH/2025-12-31/plasma_active_stations/point",
+          "period": "2025-12-31",
+          "topic": "blood-products",
+          "ticker": "600161.SH",
+          "metric": "plasma_active_stations",
+          "label": "在营浆站",
+          "unit": "家",
+          "period_kind": "point",
+          "scope": "已投入采浆的站点",
+          "value": 85.0,
+          "page": 10,
+          "excerpt": "在营单采血浆站数量达 85 家",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+          "published": "2026-03-28",
+          "pdf_sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+          "extraction": "rule"
+        },
+        {
+          "id": "600161.SH/2025-12-31/plasma_all_stations/point",
+          "period": "2025-12-31",
+          "topic": "blood-products",
+          "ticker": "600161.SH",
+          "metric": "plasma_all_stations",
+          "label": "浆站总数",
+          "unit": "家",
+          "period_kind": "point",
+          "scope": "按公司披露含获批筹建站点",
+          "value": 107.0,
+          "page": 10,
+          "excerpt": "单采血浆站总数达 107 家， 其中在营",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+          "published": "2026-03-28",
+          "pdf_sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+          "extraction": "rule"
+        },
+        {
+          "id": "600161.SH/2025-12-31/plasma_collection/annual",
+          "period": "2025-12-31",
+          "topic": "blood-products",
+          "ticker": "600161.SH",
+          "metric": "plasma_collection",
+          "label": "采浆量",
+          "unit": "吨",
+          "period_kind": "annual",
+          "scope": "公司合并范围实际采集量",
+          "value": 2801.0,
+          "page": 10,
+          "excerpt": "血浆采集 2,801 吨",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+          "published": "2026-03-28",
+          "pdf_sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+          "extraction": "rule"
+        }
+      ],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T17:58:11+00:00",
+      "receipt_sha256": "849ca2ec98f5b3e5ef81570f26516fff09e5f65ec8aeb4c0f96b36d2f6cbd650",
+      "source_versions": [
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+          "sha256": "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f",
+          "bytes": 1531397
+        }
+      ],
+      "approval": {
+        "task_id": "e5967f1cb019949c02d4a2da",
+        "receipt_sha256": "849ca2ec98f5b3e5ef81570f26516fff09e5f65ec8aeb4c0f96b36d2f6cbd650",
+        "reviewed_at": "2026-11-27T17:58:11+00:00",
+        "reviewed_by": "local-reviewer",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF",
+        "source_sha256": [
+          "775a7d6f736aec5e42f5caa8fa139a9d6c39bcdd78c93d57570cab5a550f669f"
+        ]
+      },
+      "write_targets": [
+        "v2/update-center/operating-metrics.json"
+      ]
+    },
+    "9b756dff559f4ca2cb3ee979": {
+      "title": "600161.SH · 天坛生物2026年第三季度报告 · 经营指标待人工取值",
+      "url": "https://pdf.dfcfw.com/pdf/H2_AN202610291831174909_1.pdf",
+      "period": "2026-09-30",
+      "published": "2026-10-30",
+      "indicators": "经营披露 · 定义与页码待核",
+      "ticker": "600161.SH",
+      "document_title": "天坛生物2026年第三季度报告",
+      "candidates": [],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "open"
+    },
+    "86d13eda84b317c701c1f609": {
+      "title": "603087.SH · 2025年年度报告 · 经营指标",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+      "period": "2025-12-31",
+      "published": "2026-04-23",
+      "indicators": "国内销售收入 / 国际销售收入 / 原料药及制剂产品收入 / 胰岛素制剂销量",
+      "dataset_checksum": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+      "ticker": "603087.SH",
+      "document_title": "2025年年度报告",
+      "candidates": [
+        {
+          "id": "603087.SH/2025-12-31/insulin_domestic_sales/annual",
+          "period": "2025-12-31",
+          "topic": "insulin",
+          "ticker": "603087.SH",
+          "metric": "insulin_domestic_sales",
+          "label": "国内销售收入",
+          "unit": "元",
+          "period_kind": "annual",
+          "scope": "公司主营业务分地区销售",
+          "value": 3505973062.68,
+          "page": 31,
+          "excerpt": "国内-销售收入 3,505,973,062.68 676,190,660.33 80.71",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+          "published": "2026-04-23",
+          "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+          "extraction": "rule"
+        },
+        {
+          "id": "603087.SH/2025-12-31/insulin_overseas_sales/annual",
+          "period": "2025-12-31",
+          "topic": "insulin",
+          "ticker": "603087.SH",
+          "metric": "insulin_overseas_sales",
+          "label": "国际销售收入",
+          "unit": "元",
+          "period_kind": "annual",
+          "scope": "排除另列的特许权服务收入",
+          "value": 529266794.43,
+          "page": 31,
+          "excerpt": "国际-销售收入 529,266,794.43 299,978,192.45 43.32",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+          "published": "2026-04-23",
+          "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+          "extraction": "rule"
+        },
+        {
+          "id": "603087.SH/2025-12-31/insulin_product_revenue/annual",
+          "period": "2025-12-31",
+          "topic": "insulin",
+          "ticker": "603087.SH",
+          "metric": "insulin_product_revenue",
+          "label": "原料药及制剂产品收入",
+          "unit": "元",
+          "period_kind": "annual",
+          "scope": "按公司披露的生物制品分部",
+          "value": 3801634792.58,
+          "page": 31,
+          "excerpt": "生物制品( 原料 3,801,634,792.58 817,891,679.21 78.49 41.14",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+          "published": "2026-04-23",
+          "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+          "extraction": "rule"
+        },
+        {
+          "id": "603087.SH/2025-12-31/insulin_units_sold/annual",
+          "period": "2025-12-31",
+          "topic": "insulin",
+          "ticker": "603087.SH",
+          "metric": "insulin_units_sold",
+          "label": "胰岛素制剂销量",
+          "unit": "支",
+          "period_kind": "annual",
+          "scope": "公司产销表，不将剂量单位和支数混用",
+          "value": 97630500.0,
+          "page": 32,
+          "excerpt": "胰岛素制剂 万支 8,788.76 9,763.05 683.66",
+          "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+          "published": "2026-04-23",
+          "pdf_sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+          "extraction": "rule"
+        }
+      ],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T17:58:11+00:00",
+      "receipt_sha256": "9b718c0eee946c10f0085d397ad1fe9e3b1dddf6b344a34bfad34c8cf5270af8",
+      "source_versions": [
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+          "sha256": "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b",
+          "bytes": 1603593
+        }
+      ],
+      "approval": {
+        "task_id": "86d13eda84b317c701c1f609",
+        "receipt_sha256": "9b718c0eee946c10f0085d397ad1fe9e3b1dddf6b344a34bfad34c8cf5270af8",
+        "reviewed_at": "2026-11-27T17:58:11+00:00",
+        "reviewed_by": "local-reviewer",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF",
+        "source_sha256": [
+          "2a4a3d6354c5262e011593d011f8dd2c0d9162cc05bcf06b20a2f93983cfa03b"
+        ]
+      },
+      "write_targets": [
+        "v2/update-center/operating-metrics.json"
+      ]
+    },
+    "beb06c070f361891368e694d": {
+      "title": "603087.SH · 2026年第三季度报告 · 经营指标待人工取值",
+      "url": "https://pdf.dfcfw.com/pdf/H2_AN202610271831032896_1.pdf",
+      "period": "2026-09-30",
+      "published": "2026-10-28",
+      "indicators": "经营披露 · 定义与页码待核",
+      "ticker": "603087.SH",
+      "document_title": "2026年第三季度报告",
+      "candidates": [],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "open"
+    },
+    "bef6eba391eed778de2d381f": {
+      "title": "603939.SH · 2026年第三季度报告 · 经营指标",
+      "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+      "period": "2026-09-30",
+      "published": "2026-10-30",
+      "indicators": "关闭门店 / 期末直营门店 / 期末加盟门店 / 新开门店",
+      "dataset_checksum": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+      "ticker": "603939.SH",
+      "document_title": "2026年第三季度报告",
+      "candidates": [
+        {
+          "id": "603939.SH/2026-09-30/closed_stores/quarter",
+          "period": "2026-09-30",
+          "topic": "pharmacy",
+          "ticker": "603939.SH",
+          "metric": "closed_stores",
+          "label": "关闭门店",
+          "unit": "家",
+          "period_kind": "quarter",
+          "scope": "公司披露的关闭门店",
+          "value": 60.0,
+          "page": 7,
+          "excerpt": "年第三季度， 公司新开门店 158 家， 关闭门店 60 家",
+          "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+          "published": "2026-10-30",
+          "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+          "extraction": "rule"
+        },
+        {
+          "id": "603939.SH/2026-09-30/direct_stores/point",
+          "period": "2026-09-30",
+          "topic": "pharmacy",
+          "ticker": "603939.SH",
+          "metric": "direct_stores",
+          "label": "期末直营门店",
+          "unit": "家",
+          "period_kind": "point",
+          "scope": "公司披露的期末直营药房",
+          "value": 10761.0,
+          "page": 7,
+          "excerpt": "门店总数 15,452 家（ 其中， 直营门店 10,761 家",
+          "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+          "published": "2026-10-30",
+          "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+          "extraction": "rule"
+        },
+        {
+          "id": "603939.SH/2026-09-30/franchise_stores/point",
+          "period": "2026-09-30",
+          "topic": "pharmacy",
+          "ticker": "603939.SH",
+          "metric": "franchise_stores",
+          "label": "期末加盟门店",
+          "unit": "家",
+          "period_kind": "point",
+          "scope": "公司披露的期末加盟网络",
+          "value": 4691.0,
+          "page": 7,
+          "excerpt": "直营门店 10,761 家， 加盟店 4,691 家",
+          "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+          "published": "2026-10-30",
+          "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+          "extraction": "rule"
+        },
+        {
+          "id": "603939.SH/2026-09-30/open_stores/quarter",
+          "period": "2026-09-30",
+          "topic": "pharmacy",
+          "ticker": "603939.SH",
+          "metric": "open_stores",
+          "label": "新开门店",
+          "unit": "家",
+          "period_kind": "quarter",
+          "scope": "公司披露的自建新开，加盟和并购另列",
+          "value": 158.0,
+          "page": 7,
+          "excerpt": "年第三季度， 公司新开门店 158 家",
+          "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+          "published": "2026-10-30",
+          "pdf_sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+          "extraction": "rule"
+        }
+      ],
+      "review_type": "operating",
+      "dataset_id": "operating.metrics",
+      "topic": "pharmacy",
+      "first_seen": "2026-11-27T17:56:42+00:00",
+      "status": "resolved",
+      "reviewed_at": "2026-11-27T17:58:12+00:00",
+      "receipt_sha256": "7e12ca1927afd09aa45abb6e2f4e25d995b1fe5698b126e294f084d3dfbc3eed",
+      "source_versions": [
+        {
+          "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+          "sha256": "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e",
+          "bytes": 225647
+        }
+      ],
+      "approval": {
+        "task_id": "bef6eba391eed778de2d381f",
+        "receipt_sha256": "7e12ca1927afd09aa45abb6e2f4e25d995b1fe5698b126e294f084d3dfbc3eed",
+        "reviewed_at": "2026-11-27T17:58:12+00:00",
+        "reviewed_by": "local-reviewer",
+        "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
+        "source_sha256": [
+          "dbf8a5644e27f26070e3993e1fe6003e44903ff95a98f47f536d439d0478329e"
+        ]
+      },
+      "write_targets": [
+        "v2/update-center/operating-metrics.json"
+      ]
     }
   }
 }

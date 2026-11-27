@@ -37,6 +37,13 @@ def approved_receipt(r,url):
     expected=r["candidate"]
     http=HTTP()
     try:
+        if r["dataset_id"]=="operating.metrics":
+            from updaters.operating_metrics import extract
+            original=expected["records"][0]
+            body=http.get(url,limit=24_000_000)
+            if sha256(body).hexdigest()!=original["pdf_sha256"]:
+                raise ValueError("Operating PDF original changed")
+            return expected["period"]
         if r.get("receipt_version")==2 and "approved_revision" not in expected and "id" in expected:
             originals=[item for item in r["files"] if item["url"]==url]
             if not originals:

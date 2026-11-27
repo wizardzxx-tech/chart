@@ -1,0 +1,241 @@
+{
+  "metrics": {
+    "direct_stores": [
+      "pharmacy",
+      "期末直营门店",
+      "家",
+      "point",
+      "公司披露的期末直营药房"
+    ],
+    "franchise_stores": [
+      "pharmacy",
+      "期末加盟门店",
+      "家",
+      "point",
+      "公司披露的期末加盟网络"
+    ],
+    "open_stores": [
+      "pharmacy",
+      "新开门店",
+      "家",
+      "quarter",
+      "公司披露的自建新开，加盟和并购另列"
+    ],
+    "closed_stores": [
+      "pharmacy",
+      "关闭门店",
+      "家",
+      "quarter",
+      "公司披露的关闭门店"
+    ],
+    "o2o_revenue": [
+      "pharmacy",
+      "O2O 收入",
+      "元",
+      "reported",
+      "注明销售额或净收入、含税口径及是否包含 B2C"
+    ],
+    "retail_revenue": [
+      "pharmacy",
+      "零售业务收入",
+      "元",
+      "reported",
+      "公司分业务营业收入"
+    ],
+    "franchise_revenue": [
+      "pharmacy",
+      "加盟及分销收入",
+      "元",
+      "reported",
+      "公司分业务营业收入"
+    ],
+    "plasma_collection": [
+      "blood-products",
+      "采浆量",
+      "吨",
+      "reported",
+      "公司合并范围实际采集量"
+    ],
+    "plasma_active_stations": [
+      "blood-products",
+      "在营浆站",
+      "家",
+      "point",
+      "已投入采浆的站点"
+    ],
+    "plasma_all_stations": [
+      "blood-products",
+      "浆站总数",
+      "家",
+      "point",
+      "按公司披露含获批筹建站点"
+    ],
+    "albumin_revenue": [
+      "blood-products",
+      "白蛋白收入",
+      "元",
+      "reported",
+      "说明国产、进口代理是否合并"
+    ],
+    "ivig_revenue": [
+      "blood-products",
+      "静丙收入",
+      "元",
+      "reported",
+      "标明静注及产品范围"
+    ],
+    "other_blood_revenue": [
+      "blood-products",
+      "其他血制品收入",
+      "元",
+      "reported",
+      "标明直接披露或分类余额"
+    ],
+    "eye_hospitals": [
+      "ophthalmology",
+      "境内医院数",
+      "家",
+      "point",
+      "境内上市公司合并医院网络"
+    ],
+    "eye_visits": [
+      "ophthalmology",
+      "门诊量",
+      "人次",
+      "reported",
+      "公司披露的集团门诊量，留存境内外范围"
+    ],
+    "eye_surgeries": [
+      "ophthalmology",
+      "手术量",
+      "例",
+      "reported",
+      "公司披露的集团手术量，留存境内外范围"
+    ],
+    "eye_segment_revenue": [
+      "ophthalmology",
+      "眼科分业务收入",
+      "元",
+      "reported",
+      "按原报表屈光、白内障、视光等分类"
+    ],
+    "insulin_product_revenue": [
+      "insulin",
+      "原料药及制剂产品收入",
+      "元",
+      "reported",
+      "按公司披露的生物制品分部"
+    ],
+    "insulin_units_sold": [
+      "insulin",
+      "胰岛素制剂销量",
+      "支",
+      "reported",
+      "公司产销表，不将剂量单位和支数混用"
+    ],
+    "insulin_domestic_sales": [
+      "insulin",
+      "国内销售收入",
+      "元",
+      "reported",
+      "公司主营业务分地区销售"
+    ],
+    "insulin_overseas_sales": [
+      "insulin",
+      "国际销售收入",
+      "元",
+      "reported",
+      "排除另列的特许权服务收入"
+    ],
+    "ivd_installed": [
+      "ivd",
+      "装机量",
+      "台",
+      "reported",
+      "注明期间新增或期末累计及自营和经销范围"
+    ],
+    "ivd_active": [
+      "ivd",
+      "活跃装机量",
+      "台",
+      "point",
+      "注明活跃统计标准及型号"
+    ],
+    "ivd_reagent_revenue": [
+      "ivd",
+      "试剂收入",
+      "元",
+      "reported",
+      "注明产品线及校准品、耗材是否在内"
+    ],
+    "ivd_domestic_revenue": [
+      "ivd",
+      "国内收入",
+      "元",
+      "reported",
+      "业务分部和地理范围"
+    ],
+    "ivd_overseas_revenue": [
+      "ivd",
+      "境外收入",
+      "元",
+      "reported",
+      "业务分部和地理范围"
+    ]
+  },
+  "issuers": {
+    "603939.SH": {
+      "direct_stores": "门店总数 [\\d,]+ 家[（(] ?其中[，,] 直营门店 ([\\d,]+) 家",
+      "franchise_stores": "直营门店 [\\d,]+ 家[，,] 加盟店 ([\\d,]+) 家",
+      "open_stores": "年第三季度[，,] 公司新开门店 ([\\d,]+) 家",
+      "closed_stores": "年第三季度[，,] 公司新开门店 [\\d,]+ 家[，,] 关闭门店 ([\\d,]+) 家"
+    },
+    "600161.SH": {
+      "plasma_collection": "血浆采集 ([\\d,]+(?:\\.\\d+)?) 吨",
+      "plasma_active_stations": "在营单采血浆站数量达 ([\\d,]+) 家",
+      "plasma_all_stations": "(?:单采血浆站|站)总数达 ([\\d,]+) 家[，,] 其中在营"
+    },
+    "300015.SZ": {
+      "eye_hospitals": "公司境内医院 ([\\d,]+) 家[，,] 门诊部",
+      "eye_visits": "公司实现门诊量 ([\\d,.]+) 万人次[，,] 同比",
+      "eye_surgeries": "万人次[，,] 同比增长 [\\d.]+%[；;] 手术量 ([\\d,.]+) 万例"
+    },
+    "603087.SH": {
+      "insulin_product_revenue": "生物制品\\s*\\( ?原料\\s+([\\d,.]+)\\s+[\\d,.]+\\s+[\\d.]+\\s+[\\d.]+",
+      "insulin_units_sold": "胰岛素制剂 万支 [\\d,.]+ ([\\d,.]+) [\\d,.]+",
+      "insulin_domestic_sales": "国内-销售收入 ([\\d,.]+) [\\d,.]+ [\\d.]+",
+      "insulin_overseas_sales": "国际-销售收入 ([\\d,.]+) [\\d,.]+ [\\d.]+"
+    }
+  },
+  "unit_scale": {
+    "eye_visits": 10000,
+    "eye_surgeries": 10000,
+    "insulin_units_sold": 10000
+  },
+  "seeds": [
+    [
+      "603939.SH",
+      "2026年第三季度报告",
+      "2026-10-30",
+      "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF"
+    ],
+    [
+      "600161.SH",
+      "2025年年度报告",
+      "2026-03-28",
+      "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042495.PDF"
+    ],
+    [
+      "300015.SZ",
+      "2026年半年度报告",
+      "2026-08-28",
+      "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF"
+    ],
+    [
+      "603087.SH",
+      "2025年年度报告",
+      "2026-04-23",
+      "https://static.cninfo.com.cn/finalpage/2026-04-23/1225149018.PDF"
+    ]
+  ]
+}

@@ -93,7 +93,7 @@ function renderCenter(root, datasets) {
       if(item.coverage&&item.subtasks?.length){
         const c=item.coverage;
         const more=node('details');
-        more.append(node('summary',`配置 ${c.configured} · 实查 ${c.checked} · 成功 ${c.successful} · 最新 ${c.latest}`));
+        more.append(node('summary',`配置 ${c.configured} · 实查 ${c.checked} · 成功 ${c.successful} · 有实际数据 ${c.actual_data??c.latest} · 最新 ${c.latest}`));
         const list=node('ul');
         const labels={records:'取得数据',unchanged:'暂无新增',no_new:'暂无新增',unpublished:'尚未发布',
           failed:'失败',uncovered:'未覆盖',pending_revision:'修订待审'};
@@ -174,3 +174,89 @@ if (center || document.body.dataset.updateTopic) {
 }
 
 if (document.body.dataset.updateTopic) import('./research-updates.js');
+
+function evidenceTable(headers,values){
+  const scroller=node('div','','update-scroll'), table=node('table');
+  const head=table.createTHead().insertRow();
+  for(const label of headers){const title=node('th',label);title.scope='col';head.append(title);}
+  const body=table.createTBody();
+  for(const row of values){
+    const line=body.insertRow();
+    for(const value of row){
+      const cell=line.insertCell();
+      if(value instanceof Node)cell.append(value);else cell.textContent=value??'—';
+    }
+  }
+  scroller.append(table);
+  return scroller;
+}
+
+async function evidenceData(file) {
+  const r=await fetch(new URL(file,centerURL));
+  if(!r.ok)throw new Error('资料暂不可读');
+  return r.json();
+}
+
+async function financeEvidence() {
+  const root=document.querySelector('[data-field-coverage]');
+  if(!root)return;
+  const {fields,companies}=await evidenceData('financial-coverage.json');
+  root.append(node('h2','公司财务字段覆盖'));
+  const company=node('select');company.setAttribute('aria-label','字段覆盖公司');
+  const period=node('select');period.setAttribute('aria-label','字段覆盖报告期');
+  for(const [ticker,data] of Object.entries(companies))company.add(new Option(data.name+' · '+ticker,ticker));
+  if(companies['603939.SH'])company.value='603939.SH';
+  const body=node('div');root.append(company,period,body);
+  function records(){
+    const values=companies[company.value].records;
+    period.replaceChildren(...values.map((row,i)=>new Option(row.period,i)));
+    if(values.length)period.value=String(values.length-1);
+    render();
+  }
+  function render(){
+    body.replaceChildren();
+    const row=companies[company.value].records[Number(period.value)];
+    if(!row){body.append(node('p','暂无可核对的财务字段。'));return;}
+    const modes={quarterly_cn:'A 股财政报告期',quarterly_us:'SEC 报告期',native_verified_history:'历史披露原生报告期'};
+    body.append(node('p',`${row.period} · ${modes[row.mode]} · ${row.currency} · 公告日 ${row.announced||'待补'} · ${row.fields.length}/${row.eligible.length} 个有值字段`));
+    const accounting={ar:'balance',ap:'balance',inventory:'balance',revenue:'income',cost:'income',net_profit:'income',selling:'income',sga:'income',rd:'income',admin:'income',finance:'income'};
+    body.append(evidenceTable(['财务字段','覆盖','原件或申报码'],Object.entries(fields).map(([field,label])=>{
+      const page=row.pages[accounting[field]];
+      const evidence=node('span',row.tags[field]||'');
+      if(row.source)evidence.append(' ',link(page?'PDF 第 '+page+' 页':'财报原件',row.source+(page?'#page='+page:'')));
+      else if(row.locator)evidence.append(link('公告入口',row.locator));
+      return [label,row.fields.includes(field)?'有值':row.eligible.includes(field)?'缺失':'不适用',evidence];
+    })));
+  }
+  company.addEventListener('change',records);period.addEventListener('change',render);
+  records();
+}
+
+async function operatingEvidence() {
+  const root=document.querySelector('[data-operating-review]');
+  if(!root)return;
+  const data=await evidenceData('operating-review.json');
+  root.append(node('h2','特色经营指标审核'));
+  const defs=node('details');defs.append(node('summary','指标定义与单位'));
+  defs.append(evidenceTable(['专题','指标','单位','期间要求','业务范围'],Object.values(data.definitions)));
+  root.append(defs);
+  const select=node('select');select.setAttribute('aria-label','经营指标公告');
+  const body=node('div');
+  for(const doc of data.documents)select.add(new Option(doc.title,doc.id));
+  root.append(select,body);
+  const num=x=>x==null?'—':new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2}).format(x);
+  function render(){
+    body.replaceChildren();
+    const doc=data.documents.find(x=>x.id===select.value);
+    if(!doc){body.append(node('p','暂无待核对公告。'));return;}
+    body.append(node('p',doc.period+' · '+(doc.status==='resolved'?'已审核':'待审')+' · '+doc.id),link('原始公告',doc.url));
+    body.append(evidenceTable(['指标','旧值','提取值','单位','同比 %','原文证据'],doc.candidates.map(r=>{
+      const proof=node('span',r.excerpt);
+      proof.append(' ',link('PDF 第 '+r.page+' 页',r.source+'#page='+r.page));
+      return [r.label,num(r.before),num(r.after),r.unit,num(r.yoy_pct),proof];
+    })));
+  }
+  select.addEventListener('change',render);render();
+}
+financeEvidence().catch(console.warn);
+operatingEvidence().catch(console.warn);

@@ -72,7 +72,7 @@ SEC_TAGS={
  "inventory": ("InventoryNet",),
  "operating_cash_flow": ("NetCashProvidedByUsedInOperatingActivities",),
  "capex": ("PaymentsToAcquirePropertyPlantAndEquipment",),
- "selling": ("SellingGeneralAndAdministrativeExpense",),
+ "selling": ("SellingAndMarketingExpense",), "sga": ("SellingGeneralAndAdministrativeExpense",),
  "admin": (), "rd": ("ResearchAndDevelopmentExpense",), "finance": ("InterestExpense",),
 }
 
@@ -85,7 +85,7 @@ def sec(company,http,start,end):
         raise ValueError(f"SEC identity mismatch for {ticker}")
     tax=resp["facts"].get("us-gaap",{})
     periods=defaultdict(dict)
-    sources={}
+    tags_used=defaultdict(dict)
     for field, tags in SEC_TAGS.items():
         for tag in tags:
             for item in tax.get(tag,{}).get("units",{}).get("USD",[]):
@@ -101,8 +101,7 @@ def sec(company,http,start,end):
                 info=periods[end_day].get(field)
                 if info is None or item["filed"] > info["filed"]:
                     periods[end_day][field]=item
-                if tag in SEC_TAGS["revenue"] and end_day not in sources:
-                    sources[end_day]=item["accn"]
+                    tags_used[end_day][field]=tag
     rows=[]
     for period,fields in sorted(periods.items()):
         if "revenue" not in fields or "cost" not in fields:
@@ -112,9 +111,23 @@ def sec(company,http,start,end):
           currency="USD",source=f'https://www.sec.gov/Archives/edgar/data/{int(company["cik"])}/{accn.replace("-","")}/{accn}-index.htm',
           basis="consolidated fiscal YTD and period-end balances",
           filing={"announced":max(x["filed"] for x in fields.values()),"accounting":"US GAAP",
-                  "fiscal_year_end":"12-31","accessions":{k:entry["accn"] for k,entry in fields.items()}},
+                  "fiscal_year_end":"12-31","accessions":{k:entry["accn"] for k,entry in fields.items()},
+                  "tags":tags_used[period]},
           **{k:fields[k]["val"] if k in fields else None for k in SEC_TAGS}))
     return [r for r in quarterly(rows) if r["period"]>=start]
+
+
+def migrate_legacy_sga(row):
+    """Correct records produced when the sole SEC selling tag was combined SG&A."""
+    if row["market"]!="US" or "sga" in row:
+        return row
+    values={**row,"sga":row["selling"],"selling":None}
+    for name in ("quarter","ttm"):
+        prior=row[name]
+        expenses=prior["expenses"]
+        values[name]={**prior,"sga":prior["selling"],"selling":None,
+                     "expenses":{**expenses,"sga":expenses["selling"],"selling":None}}
+    return values
 
 
 def due_period(end, market):
