@@ -147,6 +147,14 @@ def check_one(spec, state, http, args, tasks, now):
                     notice={**notice,"revision":True,"supersedes":resolved["receipt_sha256"]}
             tasks.setdefault(key, {**notice, "dataset_id": name, "topic": spec["topic"],
                                    "first_seen": now, "status": "open"})
+        if spec.get("adapter")=="operating_metrics":
+            published=read_json(ROOT/spec["local_data_path"],{"records":[]})
+            if any(notice.get("candidates") for notice in found):
+                state["last_extracted"]=now
+            if published["records"]:
+                latest=max(published["records"],key=lambda row:row["period"])
+                state.update(latest_data_period=latest["period"],source=latest["source"],
+                             last_success=published.get("updated_at"),chart_applied_at=published.get("updated_at"))
         count = sum(task["dataset_id"] == name and task["status"] == "open" for task in tasks.values())
         if count:
             return "Pending review", f"{count} 份来源文件待审核。", output, archive
@@ -290,12 +298,16 @@ def main():
         selected.extend(row for row in specs if row["dataset_id"] not in names
                         and row.get("adapter") in ("finance","filings","cms_values")
                         and known.get(row["dataset_id"],{}).get("coverage",{}).get("failed"))
-    trade = [row for row in selected if row.get("adapter")=="trade_values"]
+    def uses_comtrade(row):
+        return row.get("adapter")=="trade_values" or row.get("upstream")=="standard"
+
+    trade = [row for row in selected if uses_comtrade(row)]
     if trade:
-        # These datasets share the provider's request limit. Give unfilled
-        # series and those with the oldest last success a chance to run first.
-        positions=(i for i,row in enumerate(selected) if row.get("adapter")=="trade_values")
-        priority=sorted(trade,key=lambda item: known.get(item["dataset_id"],{}).get("last_success") or "")
+        # Read the batched national HS6 series before partner-level queries
+        # consume the provider quota. Rotate the remaining feeds by freshness.
+        positions=(i for i,row in enumerate(selected) if uses_comtrade(row))
+        priority=sorted(trade,key=lambda item: (item.get("upstream")!="standard",
+                  known.get(item["dataset_id"],{}).get("last_success") or ""))
         for i,row in zip(positions,priority):
             selected[i]=row
     for spec in selected:
