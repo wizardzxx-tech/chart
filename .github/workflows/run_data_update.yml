@@ -116,6 +116,8 @@ jobs:
       - name: Commit validated updates and audit receipts
         if: inputs.apply && steps.check.outputs.ran == 'true'
         run: |
+          cp "$RUNNER_TEMP/chart-site/v2/update-center/financial-coverage.json" v2/update-center/
+          cp "$RUNNER_TEMP/chart-site/v2/update-center/operating-review.json" v2/update-center/
           git add -- v2 logs
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
