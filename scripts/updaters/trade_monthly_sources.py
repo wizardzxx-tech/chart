@@ -1,8 +1,10 @@
 """Track separately identified monthly customs source series."""
+from collections import defaultdict
 from datetime import date,timedelta
 from decimal import Decimal
 from hashlib import sha256
 import json
+from pathlib import Path
 import re
 from urllib.parse import urlencode
 from urllib.robotparser import RobotFileParser
@@ -17,6 +19,7 @@ from updaters.trade_values import period_start,products_for
 
 BASE="https://comtradeapi.un.org/public/v1"
 QUOTES="https://www.gtradedata.com"
+ROOT=Path(__file__).resolve().parents[2]
 UNITS={"千克":"kg","公斤":"kg","台":"台","个":"个","套":"套","件":"件","只":"只","支":"支"}
 
 
@@ -178,8 +181,10 @@ def collect_standard(spec,http,start,end):
 def archive_rows(body,code,url):
     soup=BeautifulSoup(body,"html.parser")
     heading=soup.select_one("h1")
-    if not heading or not heading.get_text(strip=True).startswith(code+" "):
+    label=heading.get_text(" ",strip=True) if heading else ""
+    if not label.startswith(code+" "):
         raise ValueError("归类通税号与请求不符")
+    product_label=label[len(code):].strip()
     title=next((h for h in soup.select("h2") if h.get_text(strip=True)=="近 12 个月进出口趋势"),None)
     if not title:
         raise ValueError("公开历史月表不可用")
@@ -201,8 +206,9 @@ def archive_rows(body,code,url):
                 raise ValueError("不能确认公开月表的统计期或金额")
             number=Decimal(money[1].replace(",",""))*{"万":10000,"亿":100000000,None:10000}[money[2]]
             stamp=date(int(match[1]),int(match[2]),1).isoformat()
-            parsed.append(record(code,flow,stamp,url,"hs-reference-archive",float(number),None,None,
-                                 "公开表四舍五入展示；无申报数量",None,sha256(body).hexdigest()))
+            item=record(code,flow,stamp,url,"hs-reference-archive",float(number),None,None,
+                        "公开表四舍五入展示；无申报数量",None,sha256(body).hexdigest())
+            parsed.append({**item,"product_label":product_label})
     if not parsed or len({r["id"] for r in parsed})!=len(parsed):
         raise ValueError("历史金额记录缺失或重复")
     return parsed
@@ -212,6 +218,14 @@ def collect_archive(spec,http,start,end):
     base="https://hsguilei.com"
     robot=RobotFileParser()
     robot.parse(http.get(base+"/robots.txt").decode("utf-8").splitlines())
+    topic=spec["topic"]
+    feed={"api":"api","medical-devices":"devices","vaccines":"vax"}[topic]
+    annual=ROOT/"v2"/topic/"public-data"/f"{feed}.trade-values.json"
+    comparable={}
+    if annual.exists():
+        for row in json.loads(annual.read_text())["records"]:
+            if len(row["code"])==8 and row.get("amount") is not None:
+                comparable[row["code"],row["period"][:4],row["flow"]]=row["amount"]
     rows,checks,mapping=[],[],{}
     for code in spec["products"]:
         if spec.get("review_unit") not in (None,code):
@@ -221,6 +235,13 @@ def collect_archive(spec,http,start,end):
             if not robot.can_fetch(http.session.headers["User-Agent"],url):
                 raise SourceUnavailable("Provider robots instructions disallow this report")
             found=archive_rows(http.get(url),code,url)
+            parts=defaultdict(float)
+            for row in found:
+                parts[row["period"][:4],row["flow"]]+=row["amount"]
+            for (year,flow),amount in parts.items():
+                cap=comparable.get((code[:8],year,flow))
+                if cap is not None and amount>cap+max(10000,cap*.01):
+                    raise ValueError(f"{year} {flow} 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值")
             selected=[x for x in found if start<=x["period"]<=end]
             last=max((x["period"] for x in selected),default=None)
             checks.append(unit(code,"HS10 public history",last or end,"records" if selected else "no_new",

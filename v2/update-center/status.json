@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:43:42+00:00",
+  "generated_at": "2026-11-27T19:02:01+00:00",
   "datasets": [
     {
       "dataset_id": "pharmacy.stores",
@@ -15054,6 +15054,8 @@
       "data_url": "../api/public-data/api.trade-hs6.json",
       "latest_data_period": "2024-12-01",
       "last_checked": "2026-11-27T18:43:42+00:00",
+      "last_success": "2026-11-27T18:43:42+00:00",
+      "last_source_success": "2026-11-27T18:43:42+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -15070,6 +15072,9 @@
       ],
       "status": "Partial success",
       "detail": "新增或经核验修订 32 条。 成功 3/5，失败 0，未覆盖 2，修订待审 0。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:43:42+00:00",
+      "last_extracted": "2026-11-27T18:43:42+00:00",
       "quality_notes": [
         "293721/202412/M: 全国合计原表查无该编码与方向",
         "294150/202412/M: 全国合计原表查无该编码与方向"
@@ -15135,12 +15140,7 @@
         "actual_data": 1,
         "latest": 1
       },
-      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=293499%2C293621%2C293622%2C293623%2C293624%2C293625%2C293627%2C293628%2C293629%2C293690%2C300190%2C293721%2C293722%2C293723%2C294110%2C294150%2C294190&partnerCode=0&flowCode=X%2CM&maxRecords=500",
-      "last_source_success": "2026-11-27T18:43:42+00:00",
-      "last_extracted": "2026-11-27T18:43:42+00:00",
-      "last_success": "2026-11-27T18:43:42+00:00",
-      "chart_applied_at": "2026-11-27T18:43:42+00:00",
-      "eligible_cloud_check": true
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=293499%2C293621%2C293622%2C293623%2C293624%2C293625%2C293627%2C293628%2C293629%2C293690%2C300190%2C293721%2C293722%2C293723%2C294110%2C294150%2C294190&partnerCode=0&flowCode=X%2CM&maxRecords=500"
     },
     {
       "dataset_id": "devices.trade-summary",
@@ -15294,6 +15294,8 @@
       "data_url": "../medical-devices/public-data/devices.trade-hs6.json",
       "latest_data_period": "2024-12-01",
       "last_checked": "2026-11-27T18:43:42+00:00",
+      "last_success": "2026-11-27T18:43:42+00:00",
+      "last_source_success": "2026-11-27T18:43:42+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -15310,6 +15312,9 @@
       ],
       "status": "Updated",
       "detail": "新增或经核验修订 14 条。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:43:42+00:00",
+      "last_extracted": "2026-11-27T18:43:42+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -15354,12 +15359,7 @@
         "actual_data": 1,
         "latest": 1
       },
-      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=902212%2C901813%2C901812%2C382219%2C382213%2C902750%2C902789&partnerCode=0&flowCode=X%2CM&maxRecords=500",
-      "last_source_success": "2026-11-27T18:43:42+00:00",
-      "last_extracted": "2026-11-27T18:43:42+00:00",
-      "last_success": "2026-11-27T18:43:42+00:00",
-      "chart_applied_at": "2026-11-27T18:43:42+00:00",
-      "eligible_cloud_check": true
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=902212%2C901813%2C901812%2C382219%2C382213%2C902750%2C902789&partnerCode=0&flowCode=X%2CM&maxRecords=500"
     },
     {
       "dataset_id": "vax.trade-summary",
@@ -15443,6 +15443,8 @@
       "data_url": "../vaccines/public-data/vax.trade-hs6.json",
       "latest_data_period": "2024-12-01",
       "last_checked": "2026-11-27T18:43:42+00:00",
+      "last_success": "2026-11-27T18:43:42+00:00",
+      "last_source_success": "2026-11-27T18:43:42+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -15459,6 +15461,9 @@
       ],
       "status": "Updated",
       "detail": "新增或经核验修订 2 条。",
+      "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T18:43:42+00:00",
+      "last_extracted": "2026-11-27T18:43:42+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -15503,17 +15508,12 @@
         "actual_data": 1,
         "latest": 1
       },
-      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=300241&partnerCode=0&flowCode=X%2CM&maxRecords=500",
-      "last_source_success": "2026-11-27T18:43:42+00:00",
-      "last_extracted": "2026-11-27T18:43:42+00:00",
-      "last_success": "2026-11-27T18:43:42+00:00",
-      "chart_applied_at": "2026-11-27T18:43:42+00:00",
-      "eligible_cloud_check": true
+      "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202412&cmdCode=300241&partnerCode=0&flowCode=X%2CM&maxRecords=500"
     },
     {
       "dataset_id": "devices.trade-reference-history",
       "topic": "medical-devices",
-      "label": "CT、MRI 与彩超整机月度金额对照",
+      "label": "医疗器械 HS10 月度金额对照",
       "source_name": "HS归类通 · 公开HS10金额月表",
       "source_url": "https://hsguilei.com/",
       "data_frequency": "monthly",
@@ -15526,9 +15526,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-reference-history.json",
       "latest_data_period": "2026-09-01",
-      "last_checked": "2026-11-27T18:43:42+00:00",
-      "last_success": "2026-11-27T18:03:15+00:00",
-      "last_source_success": "2026-11-27T18:43:42+00:00",
+      "last_checked": "2026-11-27T19:02:01+00:00",
+      "last_success": "2026-11-27T19:02:01+00:00",
+      "last_source_success": "2026-11-27T19:02:01+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -15541,46 +15541,415 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-09-01"
+        },
+        {
+          "time": "2026-11-27T19:02:01+00:00",
+          "status": "Partial success",
+          "detail": "新增或经核验修订 120 条。 成功 5/11，失败 3，未覆盖 0，修订待审 3。",
+          "period": "2026-09-01"
         }
       ],
-      "status": "No new data",
-      "detail": "已核对来源与已发布记录。",
+      "status": "Partial success",
+      "detail": "新增或经核验修订 120 条。 成功 5/11，失败 3，未覆盖 0，修订待审 3。",
       "eligible_cloud_check": true,
-      "chart_applied_at": "2026-11-27T18:03:15+00:00",
-      "last_extracted": "2026-11-27T18:43:42+00:00",
-      "quality_notes": [],
+      "chart_applied_at": "2026-11-27T19:02:01+00:00",
+      "last_extracted": "2026-11-27T19:02:01+00:00",
+      "quality_notes": [
+        "9022120000: 来源值有变，保留上次通过校验的数据",
+        "9018131000: 来源值有变，保留上次通过校验的数据",
+        "9018121000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "9018129110: 来源值有变，保留上次通过校验的数据",
+        "3822130000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "9027501000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+      ],
       "subtasks": [
         {
           "id": "9022120000",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "unchanged",
+          "status": "pending_revision",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T18:43:42+00:00"
+          "last_ok": "2026-11-27T19:02:01+00:00",
+          "detail": "来源值有变，保留上次通过校验的数据"
         },
         {
           "id": "9018131000",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "unchanged",
+          "status": "pending_revision",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T18:43:42+00:00"
+          "last_ok": "2026-11-27T19:02:01+00:00",
+          "detail": "来源值有变，保留上次通过校验的数据"
+        },
+        {
+          "id": "9018121000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
         },
         {
           "id": "9018129110",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "unchanged",
+          "status": "pending_revision",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T18:43:42+00:00"
+          "last_ok": "2026-11-27T19:02:01+00:00",
+          "detail": "来源值有变，保留上次通过校验的数据"
+        },
+        {
+          "id": "9018129190",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "3822190090",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "3822130000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "9027501000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "9027899090",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "9021901100",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "9018390000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
         }
       ],
+      "coverage": {
+        "configured": 11,
+        "checked": 11,
+        "successful": 5,
+        "previously_verified": 0,
+        "failed": 3,
+        "uncovered": 0,
+        "pending_revision": 3,
+        "no_new": 0,
+        "actual_data": 5,
+        "latest": 5
+      },
+      "source": "https://hsguilei.com/hs/3822190090"
+    },
+    {
+      "dataset_id": "api.trade-reference-history",
+      "topic": "api",
+      "label": "原料药 HS10 月度金额对照",
+      "source_name": "HS归类通 · 公开HS10金额月表",
+      "source_url": "https://hsguilei.com/",
+      "data_frequency": "monthly",
+      "check_frequency": "monthly",
+      "automation_level": "fully_automated",
+      "review_required": false,
+      "section": "customs-trade",
+      "topic_label": "原料药",
+      "monitoring_enabled": true,
+      "chart_binding": true,
+      "data_url": "../api/public-data/api.trade-reference-history.json",
+      "latest_data_period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/2934996000",
+      "status": "Partial success",
+      "recent_log": [
+        {
+          "time": "2026-11-27T19:02:01+00:00",
+          "status": "Partial success",
+          "detail": "新增或经核验修订 240 条。 成功 10/15，失败 5，未覆盖 0，修订待审 0。",
+          "period": "2026-09-01"
+        }
+      ],
+      "quality_notes": [
+        "2934997000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "2936230000: 2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "2936270000: 2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "2936901000: 2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "2937221000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+      ],
+      "last_source_success": "2026-11-27T19:02:01+00:00",
+      "subtasks": [
+        {
+          "id": "2934997000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "2934996000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936210000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936220000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936230000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "2936240000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936250000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936270000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "2936280000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936290000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2936901000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "3001901000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2937221000",
+          "kind": "HS10 public history",
+          "period": "2026-11-27",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
+        },
+        {
+          "id": "2937210000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "2941500000",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        }
+      ],
+      "last_extracted": "2026-11-27T19:02:01+00:00",
+      "last_success": "2026-11-27T19:02:01+00:00",
+      "chart_applied_at": "2026-11-27T19:02:01+00:00",
+      "coverage": {
+        "configured": 15,
+        "checked": 15,
+        "successful": 10,
+        "previously_verified": 0,
+        "failed": 5,
+        "uncovered": 0,
+        "pending_revision": 0,
+        "no_new": 0,
+        "actual_data": 10,
+        "latest": 10
+      },
+      "detail": "新增或经核验修订 240 条。 成功 10/15，失败 5，未覆盖 0，修订待审 0。",
+      "last_checked": "2026-11-27T19:02:01+00:00"
+    },
+    {
+      "dataset_id": "vax.trade-reference-history",
+      "topic": "vaccines",
+      "label": "人用疫苗 HS10 月度金额对照",
+      "source_name": "HS归类通 · 公开HS10金额月表",
+      "source_url": "https://hsguilei.com/",
+      "data_frequency": "monthly",
+      "check_frequency": "monthly",
+      "automation_level": "fully_automated",
+      "review_required": false,
+      "section": "customs-trade",
+      "topic_label": "疫苗",
+      "monitoring_enabled": true,
+      "chart_binding": true,
+      "data_url": "../vaccines/public-data/vax.trade-reference-history.json",
+      "latest_data_period": "2026-09-01",
+      "source": "https://hsguilei.com/hs/3002410011",
+      "status": "Updated",
+      "recent_log": [
+        {
+          "time": "2026-11-27T19:02:01+00:00",
+          "status": "Updated",
+          "detail": "新增或经核验修订 72 条。",
+          "period": "2026-09-01"
+        }
+      ],
+      "quality_notes": [],
+      "last_source_success": "2026-11-27T19:02:01+00:00",
+      "subtasks": [
+        {
+          "id": "3002410011",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "3002410019",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        },
+        {
+          "id": "3002410090",
+          "kind": "HS10 public history",
+          "period": "2026-09-01",
+          "status": "records",
+          "attempted": true,
+          "count": 24,
+          "latest_period": "2026-09-01",
+          "last_ok": "2026-11-27T19:02:01+00:00"
+        }
+      ],
+      "last_extracted": "2026-11-27T19:02:01+00:00",
+      "last_success": "2026-11-27T19:02:01+00:00",
+      "chart_applied_at": "2026-11-27T19:02:01+00:00",
       "coverage": {
         "configured": 3,
         "checked": 3,
@@ -15589,11 +15958,12 @@
         "failed": 0,
         "uncovered": 0,
         "pending_revision": 0,
-        "no_new": 3,
+        "no_new": 0,
         "actual_data": 3,
         "latest": 3
       },
-      "source": "https://hsguilei.com/hs/9018129110"
+      "detail": "新增或经核验修订 72 条。",
+      "last_checked": "2026-11-27T19:02:01+00:00"
     },
     {
       "dataset_id": "operating.metrics",
@@ -15611,6 +15981,7 @@
       "chart_binding": false,
       "latest_data_period": "2026-09-30",
       "last_checked": "2026-11-27T18:43:42+00:00",
+      "last_success": "2026-11-27T17:58:12+00:00",
       "last_source_success": "2026-11-27T18:43:42+00:00",
       "recent_log": [
         {
@@ -15629,6 +16000,8 @@
       "status": "Pending review",
       "detail": "3 份来源文件待审核。",
       "eligible_cloud_check": true,
+      "chart_applied_at": "2026-11-27T17:58:12+00:00",
+      "last_extracted": "2026-11-27T18:43:42+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -15683,10 +16056,7 @@
         "actual_data": 0,
         "latest": 0
       },
-      "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF",
-      "last_extracted": "2026-11-27T18:43:42+00:00",
-      "last_success": "2026-11-27T17:58:12+00:00",
-      "chart_applied_at": "2026-11-27T17:58:12+00:00"
+      "source": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20261029/8235bb965e3f4a1fae3dd17837c9b401.PDF"
     }
   ]
 }

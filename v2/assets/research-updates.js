@@ -198,7 +198,9 @@ async function monthlyTrade(topic,feed) {
     picker.replaceChildren(...codes.map(code=>{
       const product=products.find(p=>p.code===code);
       const notes={'9022120000':'CT','9018131000':'成套 MRI','9018129110':'彩超整机','902212':'CT','382219':'其他诊断或实验室试剂','382213':'血型鉴定试剂'};
-      return new Option((product?.label||notes[code]||'')+' · '+code,code);
+      const publicLabel=feeds[vintage.value].find(r=>r.product===code&&r.product_label)?.product_label;
+      const label=product?.label||notes[code]||publicLabel;
+      return new Option(label?label+' · '+code:code,code);
     }));
     if(codes.includes(previous))picker.value=previous;
     else if(vintage.value==='original'){

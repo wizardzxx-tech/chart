@@ -22,7 +22,9 @@ cms=[r["item"]["period"] for r in rows("biosimilars/public-data/cms.partb-values
      if r.get("period_meta",{}).get("kind")=="cumulative"]
 monthly={}
 fresh_trade={}
+reference_trade={}
 priority={"api":"30019010","medical-devices":"90221200","vaccines":"30024100"}
+reference={"api":"3001901000","medical-devices":"3822190090","vaccines":"3002410090"}
 for topic,feed in {"api":"api","medical-devices":"devices","vaccines":"vax"}.items():
     values=rows(f"{topic}/public-data/{feed}.trade-monthly.json")
     if values:
@@ -42,6 +44,10 @@ for topic,feed in {"api":"api","medical-devices":"devices","vaccines":"vax"}.ite
             if r["product"]==priority[topic] and r["flow"]=="X"]
     if picked:
         fresh_trade[topic]={k:picked[-1][k] for k in ("period","product","flow","amount","qty","unit","asp")}
+    series=[r for r in rows(f"{topic}/public-data/{feed}.trade-reference-history.json")
+            if r["product"]==reference[topic] and r["flow"]=="X"]
+    if series:
+        reference_trade[topic]={k:series[-1][k] for k in ("period","product","amount")}
 agency=rows("vaccines/public-data/vax.agency-coverage.json")
 known=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
 item=next((r["item"] for r in rows("biosimilars/public-data/cms.partb-values.json")
@@ -52,7 +58,8 @@ approved_op=rows("update-center/operating-metrics.json")
 data={"commit":known,"hashes":hashes,
       "finance":{**{k:finance[-1][k] for k in ("ticker","period")},
                  "quarter_revenue":finance[-1]["quarter"]["revenue"]} if finance else None,
-      "cms":max(cms,default=None),"cms_value":item,"cms_full_year":cms_full,"monthly":monthly,"fresh_trade":fresh_trade,
+      "cms":max(cms,default=None),"cms_value":item,"cms_full_year":cms_full,"monthly":monthly,
+      "fresh_trade":fresh_trade,"reference_trade":reference_trade,
       "operating":next((r for r in reversed(approved_op) if r["metric"]=="plasma_collection"),None),
       "agency":{"period":agency[-1]["period"],"total":agency[-1]["registered_agencies"]} if agency else None}
 output.write_text(json.dumps(data,indent=2)+"\n")

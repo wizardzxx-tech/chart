@@ -1947,7 +1947,7 @@ datasets:
 
 - dataset_id: devices.trade-reference-history
   topic: medical-devices
-  label: CT、MRI 与彩超整机月度金额对照
+  label: 医疗器械 HS10 月度金额对照
   source_name: HS归类通 · 公开HS10金额月表
   source_url: https://hsguilei.com/
   source_format: HTML
@@ -1966,9 +1966,71 @@ datasets:
   view: records
   incremental_start: '2025-01-01'
   upstream: public_history
-  products: ['9022120000', '9018131000', '9018129110']
+  products: ['9022120000', '9018131000', '9018121000', '9018129110', '9018129190', '3822190090', '3822130000', '9027501000', '9027899090', '9021901100', '9018390000']
   contract:
-    comparison_metadata: [version]
+    optional_fields: [product_label]
+    comparison_metadata: [version, product_label]
+    refresh_metadata: [product_label]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: api.trade-reference-history
+  topic: api
+  label: 原料药 HS10 月度金额对照
+  source_name: HS归类通 · 公开HS10金额月表
+  source_url: https://hsguilei.com/
+  source_format: HTML
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/api/public-data/api.trade-reference-history.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 逐期核对明确标注的HS10、美元金额及方向，保留公开表精度
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2025-01-01'
+  upstream: public_history
+  products: ['2934997000', '2934996000', '2936210000', '2936220000', '2936230000', '2936240000', '2936250000', '2936270000', '2936280000', '2936290000', '2936901000', '3001901000', '2937221000', '2937210000', '2941500000']
+  contract:
+    comparison_metadata: [version, product_label]
+    refresh_metadata: [product_label]
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+
+- dataset_id: vax.trade-reference-history
+  topic: vaccines
+  label: 人用疫苗 HS10 月度金额对照
+  source_name: HS归类通 · 公开HS10金额月表
+  source_url: https://hsguilei.com/
+  source_format: HTML
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/vaccines/public-data/vax.trade-reference-history.json
+  updater_script: scripts/updaters/trade_monthly_sources.py
+  adapter: trade_monthly_sources
+  automation_level: fully_automated
+  chart_binding: true
+  validation_rules:
+  - 逐期核对明确标注的HS10、美元金额及方向，保留公开表精度
+  review_required: false
+  section: customs-trade
+  view: records
+  incremental_start: '2025-01-01'
+  upstream: public_history
+  products: ['3002410011', '3002410019', '3002410090']
+  contract:
+    comparison_metadata: [version, product_label]
+    refresh_metadata: [product_label]
     min:
       amount: 0
       qty: 0

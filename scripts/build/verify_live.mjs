@@ -117,6 +117,18 @@ try {
       assert((await panel.textContent()).includes(expected.unit==='kg'?'千克':expected.unit||'待核实'),'Displayed quantity unit differs');
       return expected.period;
     },true);
+    await check(topic+' HS10 历史对照数值',async()=>{
+      const expected=manifest.reference_trade?.[topic];
+      if(!expected)return {skip:'No HS10 source observation for the required reference code'};
+      await load(topic+'/');
+      const panel=page.locator('[data-monthly-trade]');
+      await panel.getByRole('combobox',{name:'月度数据来源'}).selectOption('history');
+      await panel.getByRole('combobox',{name:'月度商品'}).selectOption(expected.product);
+      const cells=await panel.locator('tbody tr').first().locator('td').allTextContents();
+      assert(cells.slice(0,4).join('|')===[expected.period.slice(0,7),printed(expected.amount),'—','—'].join('|'),
+        'Independently reported HS10 amount differs or an unsupported quantity or ASP rendered');
+      return expected.period;
+    },true);
   }
   await check('经营指标核准值',async()=>{
     if(!manifest.operating)return {skip:'No reviewed operating value in this production snapshot'};
