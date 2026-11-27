@@ -600,6 +600,9 @@
       "name": "益丰药房",
       "market": "SH",
       "disclosure_url": "https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=603939",
+      "statement_sources": {
+        "2026-09-30": "https://pdf.dfcfw.com/pdf/H2_AN202610291831172123_1.pdf"
+      },
       "topics": [
         "pharmacy"
       ]

@@ -140,9 +140,13 @@ async function start() {
     const supplemental=await readData('public-data/'+feed+'.json').catch(()=>null);
     for(const row of supplemental?.records||[]){
       const product=products.find(p=>p.code===row.product);
-      if(!product||product.series.some(x=>x.year===row.year&&x.flow===row.flow))continue;
+      if(!product)continue;
+      const existing=product.series.findIndex(x=>x.year===row.year&&x.flow===row.flow);
+      if(existing>=0&&!row.approved_revision)continue;
       const {source,...rest}=row;
-      product.series.push({...rest,source:'UN Comtrade'});
+      const point={...rest,source:'UN Comtrade'};
+      if(existing>=0) product.series[existing]=point;
+      else product.series.push(point);
       product.series.sort((a,b)=>a.year-b.year||a.flow.localeCompare(b.flow));
     }
   }

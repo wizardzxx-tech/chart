@@ -16,6 +16,8 @@ import yaml
 from build.audit import generate, verify_inventory
 from updaters.http import HTTP, SourceUnavailable
 from research.chart_binding import applies
+from research.checks import GOOD, PROBLEM, summarize
+from validators.data import material
 from validators.data import validate_notices, validate_records
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,7 +81,8 @@ def base_status(spec, previous):
     if spec.get("view") == "records":
         entry["data_url"] = "../" + spec["local_data_path"].removeprefix("v2/")
     entry |= {key: previous[key] for key in ("latest_data_period", "last_checked", "last_success",
-              "last_source_success", "recent_log", "status", "detail", "eligible_cloud_check", "partial_source_period", "chart_applied_at", "last_extracted") if key in previous}
+              "last_source_success", "recent_log", "status", "detail", "eligible_cloud_check", "partial_source_period", "chart_applied_at", "last_extracted", "quality_notes",
+              "subtasks", "coverage") if key in previous}
     entry.setdefault("latest_data_period", spec["latest_data_period"])
     entry["source"] = previous.get("source", spec["source_url"])
     entry.setdefault("status", "Manual update required" if not spec["updater_script"] else None)
@@ -96,10 +99,19 @@ def check_one(spec, state, http, args, tasks, now):
     adapter = import_module(f"updaters.{spec['adapter']}")
     start = args.start or spec.get("incremental_start", "2018-01-01")
     end = args.end or TODAY
-    response = adapter.collect(spec, http, start, end)
-    state["last_source_success"] = now
-    if response.get("warnings"):
-        state["quality_notes"] = response["warnings"]
+    state["quality_notes"] = []
+    prior_checks = {item["id"]:item for item in state.get("subtasks",[])}
+    response = adapter.collect({**spec,"previous_checks":prior_checks,
+                                "backfill":bool(args.start or args.end)}, http, start, end)
+    if not response.get("checks") or any(x["status"] in GOOD for x in response["checks"]):
+        state["last_source_success"] = now
+    if "checks" in response:
+        state["subtasks"] = response["checks"]
+        for task in state["subtasks"]:
+            last_ok = now if task["status"] in GOOD and task["attempted"] else prior_checks.get(task["id"],{}).get("last_ok")
+            if last_ok:
+                task["last_ok"] = last_ok
+    state["quality_notes"] = response.get("warnings", [])
     if spec["review_required"]:
         found = response["notices"]
         validate_notices(found)
@@ -125,7 +137,41 @@ def check_one(spec, state, http, args, tasks, now):
 
     path = ROOT / spec["local_data_path"]
     old = read_json(path, {"records": [], "source_files": []})
-    combined, changed, archive = validate_records(spec, response["records"], old["records"], end)
+    candidates = response["records"]
+    if "checks" in response:
+        existing = {row["id"]:row for row in old["records"]}
+        shortlisted = []
+        check_rows = {item["id"]:item for item in state["subtasks"]}
+        by_unit = {}
+        for row in candidates:
+            by_unit.setdefault(response.get("record_units",{}).get(row["id"],row["id"]),[]).append(row)
+        for identifier, rows in by_unit.items():
+            task = check_rows.get(identifier)
+            accepted = []
+            for row in rows:
+                published = existing.get(row["id"])
+                if published is not None and material(row,spec) != material(published,spec):
+                    stamp = sha256(dump_json(material(row,spec))).hexdigest()
+                    key = sha256((name+"/"+row["id"]+"/"+stamp).encode()).hexdigest()[:24]
+                    tasks.setdefault(key, {"title":f'{name} · {row["id"]} 历史修订',
+                        "dataset_id":name,"topic":spec["topic"],"url":row["source"],"period":row["period"],
+                        "first_seen":now,"status":"open","revision":True,"row_id":row["id"],
+                        "candidate_sha256":stamp,"unit_id":identifier})
+                    if task:
+                        task.update(status="pending_revision",detail="来源值有变，保留上次通过校验的数据")
+                else:
+                    accepted.append(row)
+            try:
+                validate_records(spec,accepted,[existing[r["id"]] for r in accepted if r["id"] in existing],end)
+            except (ValueError, KeyError, TypeError, IndexError) as error:
+                if task:
+                    task.update(status="failed",detail=str(error)[:250])
+                continue
+            if task and task["status"]=="records" and all(r["id"] in existing for r in accepted):
+                task["status"]="unchanged"
+            shortlisted.extend(accepted)
+        candidates=shortlisted
+    combined, changed, archive = validate_records(spec, candidates, old["records"], end)
     if not combined:
         return "No new data", "所选期间未发现新记录。", output, archive
     latest = max(combined, key=lambda row: row["period"])
@@ -169,6 +215,7 @@ def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("--schedule", choices=["all", *sorted(SCHEDULES)], default="all")
     parser.add_argument("--dataset", help="One ID or comma-separated dataset IDs")
+    parser.add_argument("--retry-partial",action="store_true",help="Retry recently failed company data checks")
     parser.add_argument("--topic")
     parser.add_argument("--start", type=lambda text: date.fromisoformat(text).isoformat())
     parser.add_argument("--end", type=lambda text: date.fromisoformat(text).isoformat())
@@ -191,7 +238,13 @@ def main():
     baseline_review = dump_json(tasks)
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     report_items = []
-    for spec in [] if args.index_only else select(specs, args):
+    selected=[] if args.index_only else select(specs,args)
+    if args.retry_partial and not args.index_only:
+        names={r["dataset_id"] for r in selected}
+        selected.extend(row for row in specs if row["dataset_id"] not in names
+                        and row.get("adapter") in ("finance","filings","cms_values")
+                        and known.get(row["dataset_id"],{}).get("coverage",{}).get("failed"))
+    for spec in selected:
         name = spec["dataset_id"]
         state = states[name]
         http = HTTP()
@@ -204,12 +257,23 @@ def main():
             status, detail = "Validation failed", str(error)[:300]
         finally:
             http.session.close()
+        checks = state.get("subtasks",[])
+        if checks:
+            state["coverage"] = coverage = summarize(checks)
+            if any(item["status"] in PROBLEM for item in checks):
+                state["quality_notes"] = [*state.get("quality_notes",[]), *[
+                    f'{item["id"]}: {item.get("detail",item["status"])}'
+                    for item in checks if item["status"] in PROBLEM]]
+                if status in ("Updated","No new data","Pending review"):
+                    status = "Partial success" if coverage["successful"] else "Source unavailable"
+                    detail = f'{detail} 成功 {coverage["successful"]}/{coverage["configured"]}，失败 {coverage["failed"]}，未覆盖 {coverage["uncovered"]}，修订待审 {coverage["pending_revision"]}。'
         state |= {"status": status, "detail": detail, "last_checked": now}
-        if os.environ.get("GITHUB_ACTIONS") == "true" and status in ("Updated", "No new data", "Pending review"):
+        if os.environ.get("GITHUB_ACTIONS") == "true" and status in ("Updated", "No new data", "Pending review", "Partial success"):
             state["eligible_cloud_check"] = True
         event = {"dataset_id": name, "time": now, "status": status, "detail": detail,
                  "period": state["latest_data_period"], "source_files": http.evidence,
-                 "quality_notes":state.get("quality_notes", [])}
+                 "quality_notes":state.get("quality_notes", []), "subtasks":checks,
+                 "coverage":state.get("coverage",{})}
         if archive:
             event["revisions"] = archive
         max_age = spec.get("max_age_days")

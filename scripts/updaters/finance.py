@@ -1,10 +1,12 @@
 """Fetch standardized A-share filing fields and compatible SEC XBRL facts."""
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
+from datetime import date, timedelta
 import json
 from pathlib import Path
 
-from research.financial_periods import extended, quarterly
+from research.financial_periods import extended, index, quarter_end, quarterly
+from research.checks import unit
 from updaters.http import HTTP, SourceUnavailable
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,6 +25,7 @@ TABLES = {
 def a_share(company, http, start, end):
     ticker=company["ticker"]
     merged=defaultdict(dict)
+    dates=defaultdict(dict)
     for report, columns in TABLES.items():
         params={"reportName":report,"columns":",".join(("SECUCODE","REPORT_DATE","NOTICE_DATE",*columns)),
                 "filter":f'(SECUCODE="{ticker}")', "pageSize":100, "sortColumns":"REPORT_DATE",
@@ -39,6 +42,8 @@ def a_share(company, http, start, end):
                 raise ValueError("CN statement issuer/period mismatch")
             seen.add(period)
             merged[period].update({field:row[field] for field in columns})
+            if row.get("NOTICE_DATE"):
+                dates[period][report] = row["NOTICE_DATE"][:10]
     results=[]
     for period, record in sorted(merged.items()):
         if not all(k in record for table in TABLES.values() for k in table):
@@ -47,6 +52,9 @@ def a_share(company, http, start, end):
         ap=extended(*(record[k] for k in ("ACCOUNTS_PAYABLE","NOTE_PAYABLE","NOTE_ACCOUNTS_PAYABLE")))
         results.append(dict(id=f"{ticker}/{period}",period=period,ticker=ticker,name=company["name"],
           market=company["market"],currency="CNY",source=company["disclosure_url"],
+          filing={"announced":max(dates[period].values(),default=None),"statement_dates":dates[period],
+                  "accounting":"中国企业会计准则","fiscal_year_end":"12-31",
+                  "document_url":company.get("statement_sources",{}).get(period), "topics":company.get("topics",[])},
           basis="consolidated fiscal YTD and period-end balances",
           revenue=record["OPERATE_INCOME"],cost=record["OPERATE_COST"],net_profit=record["PARENT_NETPROFIT"],
           ar=ar,ap=ap,inventory=record["INVENTORY"],operating_cash_flow=record["NETCASH_OPERATE"],
@@ -103,29 +111,60 @@ def sec(company,http,start,end):
         rows.append(dict(id=f"{ticker}/{period}",period=period,ticker=ticker,name=company["name"],market="US",
           currency="USD",source=f'https://www.sec.gov/Archives/edgar/data/{int(company["cik"])}/{accn.replace("-","")}/{accn}-index.htm',
           basis="consolidated fiscal YTD and period-end balances",
+          filing={"announced":max(x["filed"] for x in fields.values()),"accounting":"US GAAP",
+                  "fiscal_year_end":"12-31","accessions":{k:entry["accn"] for k,entry in fields.items()}},
           **{k:fields[k]["val"] if k in fields else None for k in SEC_TAGS}))
     return [r for r in quarterly(rows) if r["period"]>=start]
 
 
+def due_period(end, market):
+    day = date.fromisoformat(end)
+    current = index(day)
+    for q in (current,current-1,current-2):
+        stamp = quarter_end(q)
+        # Reporting availability is observed separately from deadline coverage.
+        lag = 120 if q%4==3 else 62 if q%4==1 else 45 if market=="US" else 31
+        if stamp + timedelta(days=lag) <= day:
+            return stamp.isoformat()
+    raise ValueError("Unable to determine the latest due quarter")
+
+
 def collect(spec,http,start,end):
     registry=json.loads((ROOT/"config/company_registry.json").read_text())["companies"]
-    selected=[item for item in registry if item["ticker"] in spec["financial_sample"]]
+    selected=[item for item in registry if item["market"] in ("SH","SZ","BJ") or item["ticker"] in spec["financial_sample"]]
+    if spec.get("review_unit"):
+        selected=[item for item in selected if item["ticker"]==spec["review_unit"]]
     results=[]
-    problems=[]
+    checks=[]
+    units={}
+    lower=start if spec.get("backfill") else max(start,spec.get("incremental_start","2024-01-01"))
     def one(company):
         client=HTTP()
+        identifier=company["ticker"]
+        expected=due_period(end,company["market"])
         try:
             collector=sec if company.get("cik") and company["market"]=="US" else a_share
-            return collector(company,client,max(start,spec.get("incremental_start","2024-01-01")),end),client.evidence,None
-        except (ValueError,SourceUnavailable,KeyError,TypeError) as error:
-            return [],client.evidence,f"{company['ticker']}: {type(error).__name__}"
+            rows=collector(company,client,lower,end)
+            recent=max((row["period"] for row in rows),default=None)
+            finding="records" if recent else "uncovered"
+            if recent and recent < expected:
+                finding="uncovered"
+            missing=next(([f for f in ("revenue","cost","ar","inventory","ap","operating_cash_flow","capex")
+                            if row[f] is None] for row in reversed(rows)),[])
+            note="未提供结构化适用报表" if not recent else ("最近有数据的财期低于披露宽限期目标" if recent<expected else None)
+            if missing:
+                note=(note+"；" if note else "")+"缺项 "+", ".join(missing)
+            quality=unit(identifier,"company",expected,finding,latest=expected if recent and recent>=expected else recent,
+                        detail=note,count=len(rows))
+            if recent:
+                quality["observed_period"]=recent
+            return rows,client.evidence,quality
+        except (ValueError,SourceUnavailable,KeyError,TypeError,IndexError) as error:
+            return [],client.evidence,unit(identifier,"company",expected,"failed",detail=error)
         finally:
             client.session.close()
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        for rows, files, failure in pool.map(one,selected):
-            results.extend(rows)
-            http.evidence.extend(files)
-            if failure: problems.append(failure)
-    if not results and problems:
-        raise SourceUnavailable("; ".join(problems))
-    return {"records":results,"warnings":problems}
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for rows, files, check in pool.map(one,selected):
+            results.extend(rows); http.evidence.extend(files); checks.append(check)
+            units.update({row["id"]:check["id"] for row in rows})
+    return {"records":results,"checks":checks,"record_units":units}

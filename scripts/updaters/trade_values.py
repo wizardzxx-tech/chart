@@ -1,10 +1,13 @@
 """Collect and validate actual annual and monthly Comtrade quantities and values."""
 from collections import defaultdict
+from datetime import date,timedelta
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 from urllib.parse import urlencode
 
+from research.checks import unit
 from research.trade_units import metric, quantity_quality
 from updaters.comtrade import periods
 from updaters.http import SourceUnavailable
@@ -13,9 +16,9 @@ ROOT=Path(__file__).resolve().parents[2]
 PREVIEW="https://comtradeapi.un.org/public/v1/previewTariffline/C/{frequency}/HS"
 
 
-def normalize(payload, period, code, flow, basis):
+def normalize(payload, period, code, flow, basis, cap=500):
     rows=payload["data"]
-    if payload.get("error") or payload["count"]!=len(rows) or len(rows)>=500:
+    if payload.get("error") or payload["count"]!=len(rows) or len(rows)>=cap:
         raise ValueError("UN Comtrade preview is truncated or failed")
     if not rows:
         return None
@@ -73,55 +76,101 @@ def products_for(topic):
 
 
 def collect(spec,http,start,end):
-    topic=spec["topic"]
     frequency=spec.get("upstream_frequency","A")
-    start=max(start,spec.get("incremental_start","2024-01-01"))
+    if not spec.get("backfill"):
+        start=max(start,spec["incremental_start"])
+    if frequency=="M" and not spec.get("backfill"):
+        end=(date.fromisoformat(end).replace(day=1)-timedelta(days=1)).isoformat()
     wanted=periods(start,end,frequency)
-    rows=[]
-    errors=[]
-    available=spec.get("availability_source")
-    if available and wanted:
-        payload=json.loads(http.get(available,params={"reporterCode":156,"period":",".join(wanted)}))
+    eligible={}
+    for offset in range(0,len(wanted),12):
+        payload=json.loads(http.get(spec["availability_source"],
+            params={"reporterCode":156,"period":",".join(wanted[offset:offset+12])}))
         if payload.get("error") or payload["count"]!=len(payload["data"]):
             raise ValueError("Cannot verify availability for the requested scope")
-        eligible={str(row["period"]):row for row in payload["data"] if row.get("isOriginalClassification")}
-        wanted=[p for p in wanted if p in eligible]
-    else:
-        eligible={}
-    for product in products_for(topic):
-        if product["code"] not in spec["products"]:
+        for row in payload["data"]:
+            if row.get("isOriginalClassification") and row["freqCode"]==frequency:
+                if row["reporterCode"]!=156 or str(row["period"]) not in wanted or row["totalRecords"]<1:
+                    raise ValueError("Availability catalog has an inconsistent scope")
+                eligible[str(row["period"])]=row
+    previous=spec.get("previous_checks",{})
+    published=sorted(eligible)
+    if frequency=="M" and not spec.get("backfill"):
+        # Revisit failed windows and changed release versions independently.
+        changed={key.split("/")[-2] for key,check in previous.items()
+                 if check["status"] in ("failed","pending_revision") or (
+                     key.split("/")[-2] in eligible and check.get("version") and
+                     check["version"]!=eligible[key.split("/")[-2]].get("lastReleased"))}
+        published=sorted(set(published[-3:])|changed.intersection(eligible))
+    checks=[]
+    rows=[]
+    units={}
+    exhausted=False
+    subscription=os.environ.get("COMTRADE_API_KEY")
+    for product in products_for(spec["topic"]):
+        code=product["code"]
+        if spec.get("products") and code not in spec["products"]:
             continue
-        for period in wanted:
-            year=period[:4]
-            original=product.get("history",{}).get(year,product["code"])
-            if len(original)!=8:
+        for flow in spec.get("flows",["X","M"]):
+            check_id=f"{code}/{frequency}/{flow}"
+            if not code.isdigit() or len(code) not in (6,8):
+                checks.append(unit(check_id,"HS / flow",end,"uncovered",attempted=False,
+                                   detail="缺少可单独查询且匹配本品类的申报编码"))
                 continue
-            for flow in spec.get("flows",["X","M"]):
+            if wanted and wanted[-1] not in eligible and not spec.get("review_unit"):
+                last=wanted[-1]
+                date=period_start(last)
+                checks.append(unit(f"{code}/{last}/{flow}","HS / flow",date,"unpublished",
+                                   detail="官方可用性目录尚无该期中国原始 HS 数据"))
+            for period in published:
+                identifier=f"{code}/{period}/{flow}"
+                if spec.get("review_unit") not in (None,identifier):
+                    continue
+                stamp=period_start(period)
+                original=product.get("history",{}).get(period[:4],code)
+                api="previewTariffline" if len(original)==8 else "preview"
                 params={"reporterCode":156,"period":period,"cmdCode":original,"flowCode":flow,"maxRecords":500}
-                url=PREVIEW.format(frequency=frequency)+"?"+urlencode(params)
+                url=PREVIEW.replace("previewTariffline",api).format(frequency=frequency)+"?"+urlencode(params)
+                info=eligible[period]
+                if exhausted:
+                    checks.append(unit(identifier,"HS / flow",stamp,"failed",attempted=False,detail="本次 Comtrade 配额已用尽，延后重试"))
+                    continue
+                limit=500
+                request_url=url
+                headers=None
+                if subscription:
+                    limit=2500
+                    request_url=(url.replace("/public/v1/previewTariffline/","/data/v1/getTariffline/")
+                                    .replace("/public/v1/preview/","/data/v1/get/")
+                                    .replace("maxRecords=500",f"maxRecords={limit}"))
+                    headers={"Ocp-Apim-Subscription-Key":subscription}
                 try:
-                    body=http.get(url)
-                    result=normalize(json.loads(body),period,original,flow,product["basis"])
-                except (ValueError, SourceUnavailable) as error:
-                    errors.append(f"{original}/{period}/{flow}: {error}")
-                    continue
-                if not result:
-                    continue
-                source_info=eligible.get(period,{})
-                if frequency=="A":
-                    stamp=year+"-01-01"
-                else:
-                    stamp=f"{year}-{period[4:6]}-01"
-                rows.append({"id":f"{original}/{period}/{flow}", "period":stamp,
-                      "year":int(year),"flow":flow,"code":original,"product":product["code"],
-                      "url":url,"source":url,"unit":"kg" if product["basis"]=="kg" else "number",
-                      "basis":"annual tariff-line" if frequency=="A" else "monthly tariff-line",
-                      "method":"UN Comtrade 官方公开预览","amount":result["world"][0],
-                      "qty":result["world"][1],
-                      "provenance":{"sha256":sha256(body).hexdigest(),"revision":source_info.get("lastReleased"),
-                                    "checksum":source_info.get("datasetChecksum")}, **result})
-    if not rows and errors:
-        raise SourceUnavailable("; ".join(errors)[:300])
-    # The API puts request timing and formatting in the JSON envelope.
-    # Record its hash in HTTP receipts while comparing substantive statistics.
-    return {"records":rows,"warnings":errors}
+                    body=http.get(request_url,headers=headers)
+                    result=normalize(json.loads(body),period,original,flow,product["basis"],limit)
+                    if result is None:
+                        checks.append(unit(identifier,"HS / flow",stamp,"uncovered",detail="官方已发布该期，但查询无此编码记录"))
+                        continue
+                    if frequency=="M":
+                        result.pop("partners")
+                    rows.append({"id":f"{original}/{period}/{flow}","period":stamp,
+                        "year":int(period[:4]),"flow":flow,"code":original,"product":code,"url":url,"source":url,
+                        "unit":"kg" if product["basis"]=="kg" else "number",
+                        "basis":"annual tariff-line" if frequency=="A" else "monthly original HS",
+                        "method":"UN Comtrade 官方公开预览","amount":result["world"][0],"qty":result["world"][1],
+                        "provenance":{"sha256":sha256(body).hexdigest(),"revision":info.get("lastReleased"),
+                                      "checksum":info.get("datasetChecksum")},**result})
+                    units[rows[-1]["id"]]=identifier
+                    checks.append(unit(identifier,"HS / flow",stamp,"records",latest=stamp,count=1))
+                    checks[-1].update(version=info.get("lastReleased"),source=url)
+                except (ValueError, SourceUnavailable, KeyError, TypeError) as error:
+                    exhausted=str(error).startswith("HTTP 429")
+                    checks.append(unit(identifier,"HS / flow",stamp,"failed",detail=error))
+                    checks[-1]["source"]=url
+    if frequency=="M" and published and wanted and wanted[-1]!=published[-1]:
+        checks.append(unit("latest-release","report",period_start(wanted[-1]),"uncovered",
+            latest=period_start(published[-1]),detail="官方月度目录尚未覆盖最近应查月份；可展示较早已取得的月份"))
+    return {"records":rows,"checks":checks,"record_units":units}
+
+
+def period_start(value):
+    return f"{value[:4]}-{value[4:] or '01'}-01"

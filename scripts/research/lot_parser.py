@@ -24,26 +24,31 @@ def interval(title):
 
 
 def parse_tables(soup):
-    tables = []
+    found=[]
+    seen_header=False
     for table in soup.find_all("table"):
-        rows = [[cell.get_text(" ", strip=True) for cell in tr.find_all(["th","td"],recursive=False)]
-                for tr in table.find_all("tr")]
-        if rows and {"产品名称", "批号", "证书编号"} <= set(rows[0]):
-            tables.append(rows[1:])
-    if not tables:
-        raise ValueError("No recognizable batch-release table")
-    found = []
-    for rows in tables:
-        for row in rows:
+        rows=[[cell.get_text(" ",strip=True) for cell in tr.find_all(["th","td"],recursive=False)]
+              for tr in table.find_all("tr") if tr.find_parent("table") is table]
+        header_at=next((i for i,row in enumerate(rows) if {"产品名称","批号","证书编号"}<=set(row)),None)
+        if header_at is None:
+            continue
+        seen_header=True
+        columns=rows[header_at]
+        manufacturer_at=next((i for i,name in enumerate(columns)
+                              if name in ("生产企业","生产企业名称","生产单位")),None)
+        for row in rows[header_at+1:]:
             if not row:
                 continue
-            if len(row) not in (8, 13) or not row[0].isdigit():
+            if len(row) not in (8,13) or not row[0].isdigit():
                 raise ValueError("A batch-release table changed layout")
-            if len(row) == 8:
-                _,product,batch,expiry,mah,certificate,outcome,issuer = row
+            if len(row)==8:
+                _,product,batch,expiry,mah,certificate,outcome,issuer=row
                 issued=receipt=""
             else:
-                _,product,_,batch,_,expiry,mah,receipt,certificate,_,issued,outcome,issuer = row
+                _,product,_,batch,_,expiry,mah,receipt,certificate,_,issued,outcome,issuer=row
             found.append(dict(product=product,batch=batch,expiry=expiry,mah=mah,certificate=certificate,
-                              outcome=outcome,issuer=issuer,issued=issued,receipt=receipt))
+                   outcome=outcome,issuer=issuer,issued=issued,receipt=receipt,
+                   manufacturer=row[manufacturer_at] if manufacturer_at is not None else ""))
+    if not seen_header:
+        raise ValueError("No recognizable batch-release table")
     return found

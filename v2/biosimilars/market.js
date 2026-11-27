@@ -141,7 +141,7 @@ function renderShare(){
   const text=dataset==='annual'?'传统 Medicare Part B · 年度原表':
     `传统 Medicare Part B · ${esc(research.quarterlyAudit.note)} ${external(research.quarterlyAudit.link,'CMS 更新入口')}`;
   note('market-metric-note',text);
-  note('market-source',external(cms.sources[dataset].file,'CMS 原始 CSV'));
+  note('market-source',external(cms.quarterPeriods[selected]?.file || cms.sources[dataset].file,'CMS 原始 CSV'));
   if (!available){
     note('market-summary','');
     note('market-chart-note','此分子在该口径暂无可展示的已核对数据。');
@@ -350,8 +350,10 @@ function updateRoute(){
     for(const row of supplement?.records||[]){
       const key=row.kind.startsWith('asp-')?'price':row.kind;
       if(!['price','annual','quarterly'].includes(key))continue;
-      if(!medicare[key].some(item=>item.code===row.item.code&&item.period===row.item.period))
-        medicare[key].push(row.item);
+      const at=medicare[key].findIndex(item=>item.code===row.item.code&&item.period===row.item.period);
+      if(at<0) medicare[key].push(row.item);
+      else if(row.approved_revision) medicare[key][at]=row.item;
+      if(row.period_meta) medicare.quarterPeriods[row.item.period]={...row.period_meta,file:row.source};
     }
     cms=medicare;
     refs=references;

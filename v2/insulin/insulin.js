@@ -534,11 +534,13 @@ try {
     return response.json();
   }));
   const partdUpdate = await fetch("public-data/cms.partd-values.json").then(r=>r.ok?r.json():null).catch(()=>null);
-  const current = new Set(tracker.partd.map(r=>[r[0],r[2],r[3]].join("/")));
+  const current = new Map(tracker.partd.map((r,i)=>[[r[0],r[2],r[3]].join("/"),i]));
   for (const row of partdUpdate?.records||[]) {
-    if (current.has(row.id)) continue;
-    tracker.partd.push([row.year,row.molecule,row.brand,row.generic,row.spending,row.claims,row.beneficiaries,row.doses]);
-    current.add(row.id);
+    const index=current.get(row.id);
+    if (index!==undefined&&!row.approved_revision) continue;
+    const value=[row.year,row.molecule,row.brand,row.generic,row.spending,row.claims,row.beneficiaries,row.doses];
+    if(index!==undefined) tracker.partd[index]=value;
+    else {current.set(row.id,tracker.partd.length);tracker.partd.push(value);}
   }
   tracker.partd.sort((a,b)=>Number(b[0])-Number(a[0]));
   data.products.push(...tracker.registrations);

@@ -30,10 +30,16 @@ def indexed(rows, *, allow_identical=False):
     return keys
 
 
+def material(row, spec):
+    metadata = set(spec.get("contract",{}).get("comparison_metadata",[])) | {"approved_revision"}
+    return {key:value for key,value in row.items() if key not in metadata}
+
+
 def validate_records(spec, rows, previous, end):
     rows = list(indexed(rows, allow_identical=True).values())
     existing = indexed(previous)
-    schemas = {tuple(sorted(row)) for row in (*previous, *rows)}
+    optional = set(spec.get("contract",{}).get("optional_fields",[])) | {"approved_revision"}
+    schemas = {tuple(sorted(set(row)-optional)) for row in (*previous, *rows)}
     require(len(schemas) <= 1, "Record schema changed")
     require(len(rows) <= spec.get("max_rows_per_check", 10000), "Unusual record count")
     changed = []
@@ -58,10 +64,14 @@ def validate_records(spec, rows, previous, end):
         old = existing.get(item["id"])
         if old == item:
             continue
-        if old is not None and metadata_fields:
-            values = {k:v for k,v in item.items() if k not in metadata_fields}
-            prior_values = {k:v for k,v in old.items() if k not in metadata_fields}
+        if old is not None and (metadata_fields or "approved_revision" in old):
+            values = material(item,spec)
+            prior_values = material(old,spec)
             if values == prior_values:
+                refreshed=set(rules.get("refresh_metadata",[]))
+                if old.get("approved_revision") is None and any(old.get(k)!=item.get(k) for k in refreshed):
+                    changed.append(item)
+                    existing[item["id"]]=item
                 continue
         if old is not None:
             # A dataset-specific adapter must supply the actual official correction link.

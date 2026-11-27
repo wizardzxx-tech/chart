@@ -6,6 +6,8 @@ permissions: {}
 jobs:
   update:
     uses: ./.github/workflows/run_data_update.yml
+    secrets:
+      COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
     with:
       schedule: weekly
       apply: true

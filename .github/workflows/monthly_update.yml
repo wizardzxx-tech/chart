@@ -7,6 +7,8 @@ permissions: {}
 jobs:
   update:
     uses: ./.github/workflows/run_data_update.yml
+    secrets:
+      COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
     with:
       schedule: monthly
       month_end_only: ${{ github.event.schedule == '47 23 28-30 * *' }}

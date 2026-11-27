@@ -26,3 +26,5 @@
 .update-provenance a,.update-center-panel>a,.update-topic-status a{color:#126157}
 
 .update-coverage{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem 1rem;max-width:38rem;margin:1rem 0}.update-coverage dd{margin:0;font-weight:650}.research-line{margin:1rem 0}.research-line figcaption{font-weight:650}
+
+.update-pill[data-status="Partial success"] { color: #684200; background: #fff2ce; }

@@ -17,7 +17,7 @@ class HTTP:
         self.cache = {}
         self.evidence = []
 
-    def get(self, url, *, params=None, missing=None, limit=12_000_000):
+    def get(self, url, *, params=None, missing=None, limit=12_000_000, headers=None):
         key = (url, str(params))
         if key in self.cache:
             return self.cache[key]
@@ -25,7 +25,7 @@ class HTTP:
             raise ValueError("Official sources must use HTTPS")
         for attempt in range(3):
             try:
-                with self.session.get(url, params=params, timeout=(6, 12), stream=True) as response:
+                with self.session.get(url, params=params, timeout=(6, 12), stream=True, headers=headers) as response:
                     if response.status_code == missing:
                         break
                     if response.status_code in (401, 403, 404, 412):
@@ -48,7 +48,8 @@ class HTTP:
                     return self.cache[key]
             except requests.RequestException as error:
                 if attempt == 2:
-                    raise SourceUnavailable(f"{type(error).__name__} · {urlsplit(url).hostname}") from None
+                    reason=f"HTTP {error.response.status_code}" if error.response is not None else type(error).__name__
+                    raise SourceUnavailable(f"{reason} · {urlsplit(url).hostname}") from None
                 retry = error.response.headers.get("Retry-After", "") if error.response is not None else ""
                 time.sleep(min(20, int(retry)) if retry.isdigit() else 2 ** attempt)
         return None

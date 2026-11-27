@@ -106,9 +106,10 @@ async function finance(topic) {
   const registry={pharmacy:['603939.SH','603233.SH'],'blood-products':['600161.SH'],vaccines:['300122.SZ'],
     ophthalmology:['300015.SZ'],insulin:['603087.SH','LLY.US']};
   const allowed=registry[topic]; if(!allowed)return;
-  const rows=payload.records.filter(r=>allowed.includes(r.ticker));
+  const rows=payload.records.filter(r=>r.filing?.topics?.includes(topic)||allowed.includes(r.ticker));
   if(!rows.length)return;
   const section=panel(parent,'标准财务报表与周转天数');
+  section.dataset.researchFinance=topic;
   const menu=elem('select');menu.setAttribute('aria-label','公司');
   for(const ticker of [...new Set(rows.map(r=>r.ticker))]){
     const opt=elem('option',rows.find(r=>r.ticker===ticker).name+' · '+ticker);opt.value=ticker;menu.append(opt);
@@ -131,7 +132,7 @@ async function finance(topic) {
     const multiplier=unit==='%'?100:unit==='天'?1:1e-6;
     chart(body,fields[field],series.map(r=>[r.period.slice(0,7),r[mode.value]?.[field]==null?null:r[mode.value][field]*multiplier]),unit);
     const latest=series.at(-1);
-    body.append(source(latest.source));
+    body.append(elem('p',`最新报告期 ${latest.period}`),source(latest.filing?.document_url||latest.source));
   };
   for(const control of [menu,metric,mode])control.addEventListener('change',render);
   render();
@@ -160,3 +161,81 @@ async function regulatory() {
   }
 }
 if(topic==='biosimilars')regulatory().catch(console.warn);
+
+async function monthlyTrade(topic,feed) {
+  const parent=document.getElementById('customs-trade');
+  if(!parent)return;
+  const [data,master]=await Promise.all([get(topic+'/public-data/'+feed+'.trade-monthly.json'),
+    get(topic+'/customs-trade.json')]);
+  if(!master)return;
+  const products=master.products||((await Promise.all(master.parts.map(name=>get(topic+'/'+name)))).flat());
+  const section=panel(parent,'UN Comtrade 月度进出口');
+  section.dataset.monthlyTrade=topic;
+  section.append(elem('p','数量来自原始申报口径，单位金额为美元/申报单位。缺失月份留空；同比、年内累计及三个月滚动额仅在同编码、同单位的各月齐备时计算。'));
+  const picker=elem('select');picker.setAttribute('aria-label','月度商品');
+  const flow=elem('select');flow.setAttribute('aria-label','月度贸易方向');
+  const view=elem('select');view.setAttribute('aria-label','月度指标');
+  const records=data?.records||[];
+  const fields={amount:'月度金额（美元）',qty:'月度数量',asp:'单位金额',growth:'金额同比（%）',ytd:'年内累计金额（美元）',rolling:'滚动三个月金额（美元）'};
+  for(const [key,label] of Object.entries(fields)) view.add(new Option(label,key));
+  for(const [key,label] of [['X','出口'],['M','进口']]) flow.add(new Option(label,key));
+  for(const p of products)picker.add(new Option(p.label,p.code));
+  const initial=records.find(r=>r.flow==='X');
+  if(initial)picker.value=initial.product;
+  const output=elem('div');section.append(picker,flow,view,output);
+  const monthIndex=day=>12*Number(day.slice(0,4))+Number(day.slice(5,7))-1;
+  const monthLabel=n=>Math.floor(n/12)+'-'+String(n%12+1).padStart(2,'0');
+  const render=()=>{
+    output.replaceChildren();
+    const selected=records.filter(r=>r.product===picker.value&&r.flow===flow.value);
+    if(!selected.length){output.append(elem('p','该品类和方向尚无已核对的月度记录。'));return;}
+    const byMonth=new Map(selected.map(r=>[monthIndex(r.period),r]));
+    const end=Math.max(...byMonth.keys()), start=Math.min(...byMonth.keys());
+    const compatible=(a,b)=>a&&b&&a.code===b.code&&a.unit===b.unit;
+    const sum=(idx,len,row)=>{
+      const values=Array.from({length:len},(_,i)=>byMonth.get(idx-i));
+      return values.every(v=>compatible(row,v))?values.reduce((a,r)=>a+r.amount,0):null;
+    };
+    const points=Array.from({length:end-start+1},(_,i)=>{
+      const idx=start+i,row=byMonth.get(idx),base=byMonth.get(idx-12);
+      const derived=row?{...row,growth:compatible(row,base)&&base.amount>0?(row.amount/base.amount-1)*100:null,
+        ytd:sum(idx,(idx%12)+1,row),rolling:sum(idx,3,row)}:null;
+      return [monthLabel(idx),derived];
+    });
+    output.append(elem('p',`已核对至 ${monthLabel(end)} · 数量单位 ${selected.at(-1).unit==='kg'?'千克':'申报计数'}`));
+    chart(output,fields[view.value],points.map(([m,row])=>[m,row?.[view.value]]),'');
+    table(output,['月份','金额（美元）','数量','单位金额','金额同比%','年内累计金额','滚动三个月金额','数量口径','来源'],
+      points.slice(-36).reverse().map(([m,d])=>[m,...['amount','qty','asp','growth','ytd','rolling'].map(k=>format(d?.[k])),
+        d?.world?.[2]||'—',d?source(d.source):'—']));
+  };
+  for(const select of [picker,flow,view])select.addEventListener('change',render);
+  render();
+}
+const tradeFeeds={api:'api','medical-devices':'devices',vaccines:'vax'};
+if(topic in tradeFeeds) monthlyTrade(topic,tradeFeeds[topic]).catch(console.warn);
+
+async function agencyCoverage() {
+  const parent=document.getElementById('lot-release');
+  if(!parent)return;
+  const data=await get('vaccines/public-data/vax.agency-coverage.json');
+  if(!data?.records?.length)return;
+  const section=panel(parent,'全国公示 · 分机构覆盖');
+  section.dataset.agencyCoverage='';
+  const dates=[...new Set(data.records.map(r=>r.period))].sort().reverse();
+  const picker=elem('select');picker.setAttribute('aria-label','批签发覆盖周');
+  for(const date of dates)picker.add(new Option(date+' 截止周',date));
+  section.append(picker);
+  const result=elem('div');section.append(result);
+  const render=()=>{
+    result.replaceChildren();
+    const rows=data.records.filter(r=>r.period===picker.value);
+    const latest=rows[0];
+    result.append(elem('p',`${latest.verified_agencies}/${latest.registered_agencies} 家机构已核对完整周公告。各机构可能采用不同签发区间，暂无公告的机构记为覆盖待确认。`));
+    table(result,['签发机构','所选周覆盖','公告数','目录最新周','官方入口'],rows.map(r=>[
+      r.agency,r.status==='records'?'已核对完整周':r.status==='failed'?'原表读取失败':'待核对',
+      r.reports.length,r.registry_latest||'—',source(r.source)]));
+    result.append(source(latest.authorization_source,'机构及授权调整公告'));
+  };
+  picker.addEventListener('change',render);render();
+}
+if(['vaccines','blood-products'].includes(topic))agencyCoverage().catch(console.warn);

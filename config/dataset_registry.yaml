@@ -1355,6 +1355,9 @@ datasets:
   - AMGN.US
   - LLY.US
   contract:
+    optional_fields: [filing]
+    comparison_metadata: [filing]
+    refresh_metadata: [filing]
     min:
       revenue: 0
       cost: 0
@@ -1380,9 +1383,6 @@ datasets:
   view: records
   chart_binding: true
   incremental_start: '2025-01-01'
-  products:
-  - '90221200'
-  - '90181310'
   flows:
   - X
   - M
@@ -1418,9 +1418,6 @@ datasets:
   view: records
   chart_binding: true
   incremental_start: '2025-01-01'
-  products:
-  - '29349970'
-  - '29362800'
   flows:
   - X
   - M
@@ -1456,12 +1453,118 @@ datasets:
   view: records
   chart_binding: true
   incremental_start: '2025-01-01'
-  products:
-  - '30024100'
   flows:
   - X
   - M
   availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  contract:
+    comparison_metadata:
+    - provenance
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+    allowed:
+      unit:
+      - kg
+      - number
+- dataset_id: devices.trade-monthly
+  topic: medical-devices
+  label: 器械 Comtrade 实际月度量价
+  source_name: 器械 Comtrade 实际月度量价
+  source_url: https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS
+  source_format: JSON
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/medical-devices/public-data/devices.trade-monthly.json
+  updater_script: scripts/updaters/trade_values.py
+  adapter: trade_values
+  automation_level: fully_automated
+  validation_rules:
+  - 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值
+  review_required: false
+  section: customs-trade
+  view: records
+  chart_binding: true
+  incremental_start: '2024-01-01'
+  upstream_frequency: M
+  flows:
+  - X
+  - M
+  availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/M/HS
+  contract:
+    comparison_metadata:
+    - provenance
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+    allowed:
+      unit:
+      - kg
+      - number
+- dataset_id: api.trade-monthly
+  topic: api
+  label: 原料药 Comtrade 实际月度量价
+  source_name: 原料药 Comtrade 实际月度量价
+  source_url: https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS
+  source_format: JSON
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/api/public-data/api.trade-monthly.json
+  updater_script: scripts/updaters/trade_values.py
+  adapter: trade_values
+  automation_level: fully_automated
+  validation_rules:
+  - 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值
+  review_required: false
+  section: customs-trade
+  view: records
+  chart_binding: true
+  incremental_start: '2024-01-01'
+  upstream_frequency: M
+  flows:
+  - X
+  - M
+  availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/M/HS
+  contract:
+    comparison_metadata:
+    - provenance
+    min:
+      amount: 0
+      qty: 0
+      asp: 0
+    allowed:
+      unit:
+      - kg
+      - number
+- dataset_id: vax.trade-monthly
+  topic: vaccines
+  label: 人用疫苗 Comtrade 实际月度量价
+  source_name: 人用疫苗 Comtrade 实际月度量价
+  source_url: https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS
+  source_format: JSON
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/vaccines/public-data/vax.trade-monthly.json
+  updater_script: scripts/updaters/trade_values.py
+  adapter: trade_values
+  automation_level: fully_automated
+  validation_rules:
+  - 逐条编码与贸易方向、来源报告期、500 条预览完整性、贸易伙伴和全球额核对、99.5% 数量覆盖阈值
+  review_required: false
+  section: customs-trade
+  view: records
+  chart_binding: true
+  incremental_start: '2024-01-01'
+  upstream_frequency: M
+  flows:
+  - X
+  - M
+  availability_source: https://comtradeapi.un.org/public/v1/getDATariffline/C/M/HS
   contract:
     comparison_metadata:
     - provenance
@@ -1491,14 +1594,17 @@ datasets:
   review_required: false
   section: view-market
   view: records
-  incremental_start: '2025-01-01'
   chart_binding: true
+  incremental_start: '2020-01-01'
+  contract:
+    optional_fields: [period_meta]
+    comparison_metadata: [source, period_meta]
 - dataset_id: cms.partd-values
   topic: insulin
   label: CMS Part D 胰岛素实际开支
   source_name: CMS Part D 胰岛素实际开支
-  source_url: https://raw.githubusercontent.com/Savannahwilcox/drug-pricing-analysis/main/data/raw/DSD_PTD_RY26_P04_V10_DY24_BGM.csv
-  source_format: CMS 原表镜像 CSV
+  source_url: https://data.cms.gov/data.json
+  source_format: CMS 官方目录及 CSV
   data_frequency: irregular
   check_frequency: monthly
   latest_data_period: —
@@ -1513,9 +1619,11 @@ datasets:
   view: records
   part_d: true
   chart_binding: true
+  incremental_start: '2020-01-01'
   alternate_sources:
   - https://catalog.data.gov/dataset/medicare-part-d-spending-by-drug-2024-01-01
   contract:
+    comparison_metadata: [source]
     min:
       spending: 0
       claims: 0
@@ -1581,3 +1689,26 @@ datasets:
       - reference
       - biosimilar
       - unverified
+
+- dataset_id: vax.agency-coverage
+  topic: vaccines
+  label: 全国批签发机构公示覆盖
+  source_name: 中检院全国机构公示目录及逐周原表
+  source_url: https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs
+  source_format: HTML
+  data_frequency: weekly
+  check_frequency: daily
+  latest_data_period: —
+  local_data_path: v2/vaccines/public-data/vax.agency-coverage.json
+  updater_script: scripts/updaters/lot_coverage.py
+  adapter: lot_coverage
+  automation_level: fully_automated
+  validation_rules:
+  - 机构目录、公告覆盖区间、签发证书去重和产品分类。公示缺失保持未知。
+  review_required: false
+  section: lot-release
+  incremental_start: '2026-11-08'
+  view: records
+  contract:
+    comparison_metadata: [registry_latest, status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed]
+    refresh_metadata: [status, reports, missing_fields, verified_agencies, registered_agencies, scope_observed]

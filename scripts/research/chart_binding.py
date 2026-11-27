@@ -10,6 +10,8 @@ def applies(spec, changed):
     if adapter=="finance":
         return bool(changed)
     if adapter=="trade_values":
+        if spec.get("upstream_frequency")=="M":
+            return bool(changed)
         from updaters.trade_values import products_for
         existing={(p["code"],r["year"],r["flow"]) for p in products_for(spec["topic"]) for r in p["series"]}
         return any((r["product"],r["year"],r["flow"]) not in existing for r in changed)

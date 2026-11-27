@@ -8,9 +8,12 @@ from hashlib import sha256
 from importlib import import_module
 import io
 from pathlib import Path
+import os
+from getpass import getuser
 
-from data_update import ROOT, REVIEW, STATE, dump_json, read_json, save
+from data_update import ROOT, REVIEW, STATE, TODAY, dump_json, load_registry, read_json, save
 from updaters.http import HTTP
+from validators.data import material, validate_records
 
 PROCESSORS = {"insurance.monthly": "nhsa", "blood.lot-release": "lot", "vax.lot-release": "lot"}
 
@@ -19,14 +22,16 @@ def utc():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-def evidence(cache, http):
+def evidence(cache, http, *, offline=False):
     checked = {}
 
     def read(url):
         cache.mkdir(parents=True, exist_ok=True)
         name = sha256(url.encode()).hexdigest()
         link = cache / f"{name}.json"
-        if link.exists():
+        if offline:
+            if not link.exists():
+                raise ValueError("No archived response for the offline replay")
             stored = read_json(link, {})
             body = (cache / stored["sha256"]).read_bytes()
             if stored["url"] != url or sha256(body).hexdigest() != stored["sha256"]:
@@ -49,13 +54,49 @@ def target(task):
     return ROOT / "v2" / task["topic"] / "center-updates.json", "reports"
 
 
-def prepare(task_id, task, cache):
+def review_spec(task):
+    return next(x for x in load_registry() if x["dataset_id"]==task["dataset_id"])
+
+
+def prepare_structured(task_id,task):
+    spec=review_spec(task)
+    destination=ROOT/spec["local_data_path"]
+    adapter=import_module("updaters."+spec["adapter"])
+    http=HTTP()
+    start=spec.get("incremental_start","2018-01-01")
+    end=TODAY
+    if spec["adapter"]=="trade_values":
+        start=end=task["period"]
+    try:
+        result=adapter.collect({**spec,"review_unit":task["unit_id"],"backfill":True},http,start,end)
+        candidate=next((item for item in result["records"] if item["id"]==task["row_id"]),None)
+        if not candidate or sha256(dump_json(material(candidate,spec))).hexdigest()!=task["candidate_sha256"]:
+            raise ValueError("The live candidate changed or is unavailable. Check the newest version of this review.")
+        validate_records(spec,[candidate],[],TODAY)
+        old=next((x for x in read_json(destination,{"records":[]})["records"]
+                  if x["id"]==task["row_id"]),None)
+        if not old:
+            raise ValueError("No published original to revise")
+        return {"receipt_version":2,"task_id":task_id,"dataset_id":task["dataset_id"],
+                "source":candidate["source"],"files":http.evidence,
+                "write_targets":[str(destination.relative_to(ROOT))],"old":old,"candidate":candidate,
+                "diff":{k:{"before":old.get(k),"after":v} for k,v in material(candidate,spec).items() if old.get(k)!=v},
+                "validation":{"passed":True,"adapter":spec["adapter"]}}
+    finally:
+        http.session.close()
+
+
+def prepare(task_id, task, cache, *, offline=False):
+    if task.get("row_id"):
+        if offline:
+            raise ValueError("Structured review must recollect the official source")
+        return prepare_structured(task_id,task)
     name = PROCESSORS.get(task["dataset_id"])
     if not name:
         raise ValueError("This task has no validated research-data writer")
     adapter = import_module(f"research.{name}")
     http = HTTP()
-    read, checked = evidence(cache, http)
+    read, checked = evidence(cache, http, offline=offline)
     destination, section = target(task)
     data = read_json(destination, {})
     history = data.get(section, [])
@@ -73,7 +114,9 @@ def prepare(task_id, task, cache):
         value = adapter.candidate(task,read,previous)
     finally:
         http.session.close()
-    return {"task_id": task_id,"dataset_id":task["dataset_id"], "source":task["url"],
+    return {"receipt_version":2,"task_id": task_id,"dataset_id":task["dataset_id"], "source":task["url"],
+            "write_targets":[str(destination.relative_to(ROOT)), *(
+                ["v2/medical-insurance/data.csv"] if name=="nhsa" else [])],
             "files":list(checked.values()), "old":old,"comparison_base":previous,
             "candidate":value,"diff":{k:{"before":(old or {}).get(k),"after":v}
                                      for k,v in value.items() if (old or {}).get(k)!=v},
@@ -101,24 +144,43 @@ def append_nhsa_csv(value):
 
 
 def apply(receipt, task):
-    path, field = target(task)
+    structured=bool(task.get("row_id"))
+    if structured:
+        spec=review_spec(task)
+        path,field=ROOT/spec["local_data_path"],"records"
+    else:
+        path,field=target(task)
     old_data = read_json(path,{})
     data = deepcopy(old_data)
-    value = receipt["candidate"]
-    prev = next((x for x in data.get(field,[]) if x["period"]==value["period"]),None)
+    value = deepcopy(receipt["candidate"])
+    key="id" if structured else "period"
+    prev = next((x for x in data.get(field,[]) if x[key]==value[key]),None)
     if prev != receipt["old"]:
         raise ValueError("Published data changed after the review receipt was prepared")
-    data[field] = sorted([v for v in data.get(field,[]) if v["period"] != value["period"]]+[value],key=lambda x:x["period"])
+    timestamp = utc()
+    digest = sha256(dump_json(receipt)).hexdigest()
+    approval={"task_id":receipt["task_id"],"receipt_sha256":digest,
+              "reviewed_at":timestamp,"reviewed_by":os.environ.get("GITHUB_ACTOR") or getuser(),
+              "source":receipt["source"],"source_sha256":[x["sha256"] for x in receipt["files"]]}
+    if structured:
+        value["approved_revision"]=approval
+        remaining=[v for v in data[field] if v[key]!=value[key]]
+        data[field],_,_=validate_records(spec,[value],remaining,TODAY)
+        data.update(updated_at=timestamp,source_files=receipt["files"])
+    else:
+        data[field] = sorted([v for v in data.get(field,[]) if v[key] != value[key]]+[value],key=lambda x:x["period"])
     updates = []
     if receipt["dataset_id"] == "insurance.monthly":
         updates.append(append_nhsa_csv(value))
 
     state = read_json(STATE, {})
-    timestamp = utc()
     for row in state["datasets"]:
         if row["dataset_id"] != task["dataset_id"]:
             continue
-        if receipt["dataset_id"] == "insurance.monthly":
+        if structured:
+            row["latest_data_period"] = data[field][-1]["period"]
+            row["source"] = data[field][-1]["source"]
+        elif receipt["dataset_id"] == "insurance.monthly":
             row["latest_data_period"] = data[field][-1]["period"]
             row["source"] = data[field][-1]["source"]
         else:
@@ -126,7 +188,7 @@ def apply(receipt, task):
             # independently verified official-center period separately.
             row["partial_source_period"] = data[field][-1]["period"]
         row.update(last_checked=timestamp,last_success=timestamp,last_extracted=timestamp,chart_applied_at=timestamp,status="Updated",
-                   detail="审核通过，已写入研究图表。" if receipt["dataset_id"]=="insurance.monthly" else
+                   detail="审核通过，已写入研究图表。" if structured or receipt["dataset_id"]=="insurance.monthly" else
                    "审核通过，已更新中检院单机构视图。")
         row["recent_log"] = [*row.get("recent_log",[]),{"time":timestamp,"status":"Updated",
             "detail":row["detail"],"period":value["period"]}][-12:]
@@ -135,10 +197,9 @@ def apply(receipt, task):
     identifier = receipt["task_id"]
     if tasks["tasks"][identifier]["status"] != "open":
         raise ValueError("This exact review task has already been resolved")
-    digest = sha256(dump_json(receipt)).hexdigest()
-    audit = {"receipt_sha256":digest, "reviewed_at":timestamp, **receipt}
+    audit = {**approval, **receipt}
     tasks["tasks"][identifier].update(status="resolved",reviewed_at=timestamp,receipt_sha256=digest,
-                             source_versions=receipt["files"])
+                             source_versions=receipt["files"],approval=approval,write_targets=receipt["write_targets"])
     # Generate and validate the complete transaction before writing any files.
     for output, contents in updates:
         import os
@@ -159,6 +220,7 @@ def main():
     parser.add_argument("--cache",type=Path,default=ROOT/".review-work/raw")
     parser.add_argument("--output",type=Path,default=None)
     parser.add_argument("--approve-sha256",help="Exact receipt checksum after reviewing the proposed changes")
+    parser.add_argument("--offline",action="store_true",help="Replay an archived source without approving")
     parser.add_argument("--report",type=Path,help="Write a publication-run report after approval")
     args=parser.parse_args()
     tasks = read_json(REVIEW,{})["tasks"]
@@ -174,7 +236,9 @@ def main():
         if args.report:
             save(args.report,{"time":utc(),"results":[]})
         return
-    receipt=prepare(args.task_id,task,args.cache)
+    if args.offline and args.approve_sha256:
+        parser.error("Approval requires a fresh official file")
+    receipt=prepare(args.task_id,task,args.cache,offline=args.offline)
     output = args.output or ROOT/".review-work"/f"{args.task_id}.json"
     save(output,receipt)
     digest=sha256(dump_json(receipt)).hexdigest()

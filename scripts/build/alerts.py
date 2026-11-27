@@ -30,9 +30,13 @@ for incident in incidents:
     key = sha256(incident["dataset"].encode()).hexdigest()[:16]
     marker = f"<!-- chart-data-{key} -->"
     title = f"数据更新 · {incident['dataset']}"
+    previous = next((issue for issue in issues if marker in (issue["body"] or "")), None)
+    if incident["status"] == "Recovered":
+        if previous:
+            api("PATCH", f"/{previous['number']}", {"state": "closed", "state_reason": "completed"})
+        continue
     detail = incident["detail"].replace("<", "&lt;").replace(">", "&gt;")
     body = f"{marker}\n\n**{incident['status']}**\n\n{detail}\n\n[更新中心](https://wizardzxx-tech.github.io/chart/v2/update-center/)\n"
-    previous = next((issue for issue in issues if marker in (issue["body"] or "")), None)
     if not previous:
         api("POST", value={"title": title, "body": body})
     elif previous["body"] != body:

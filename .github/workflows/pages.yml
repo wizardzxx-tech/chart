@@ -1,16 +1,18 @@
 name: Validate and publish healthcare database
 on:
   push:
-    branches: [main, codex/data-update-system, codex/phase-2]
+    branches: [main, codex/data-update-system, codex/phase-2, codex/phase-2-1]
   workflow_dispatch:
 permissions: {}
 jobs:
   build:
     uses: ./.github/workflows/run_data_update.yml
+    secrets:
+      COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
     with:
       schedule: all
-      replay_research: ${{ github.ref_name == 'codex/phase-2' }}
-      datasets: ${{ github.ref_name == 'codex/phase-2' && 'financials.standard,devices.trade-values,vax.trade-values,cms.partd-values,nih.clinical-trials,fda.research-actions' || '' }}
+      replay_research: ${{ startsWith(github.ref_name, 'codex/phase-2') }}
+      datasets: ${{ github.ref_name == 'codex/phase-2' && 'financials.standard,devices.trade-values,vax.trade-values,cms.partd-values,nih.clinical-trials,fda.research-actions' || github.ref_name == 'codex/phase-2-1' && 'financials.standard,filings.exchange-notices,cms.partb-values,cms.partd-values,api.trade-monthly,devices.trade-monthly,vax.trade-monthly,vax.agency-coverage' || '' }}
       apply: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       contents: write

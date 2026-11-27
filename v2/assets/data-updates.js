@@ -1,5 +1,5 @@
 const localized = {
-  'Updated':'已更新', 'No new data':'暂无新数据', 'Pending review':'待审核',
+  'Updated':'已更新', 'Partial success':'部分成功', 'No new data':'暂无新数据', 'Pending review':'待审核',
   'Source unavailable':'来源暂不可用', 'Validation failed':'校验失败',
   'Manual update required':'需人工更新'
 };
@@ -86,6 +86,29 @@ function renderCenter(root, datasets) {
       tag.dataset.status = item.status || 'initial'; tag.title = item.status || '';
       cell.append(tag);
       if (item.detail) cell.append(node('span', item.detail, 'update-sub'));
+      if(item.coverage&&item.subtasks?.length){
+        const c=item.coverage;
+        const more=node('details');
+        more.append(node('summary',`配置 ${c.configured} · 实查 ${c.checked} · 成功 ${c.successful} · 最新 ${c.latest}`));
+        const list=node('ul');
+        const labels={records:'取得数据',unchanged:'暂无新增',no_new:'暂无新增',unpublished:'尚未发布',
+          failed:'失败',uncovered:'未覆盖',pending_revision:'修订待审'};
+        const priority={'failed':0,'pending_revision':1,'uncovered':2};
+        const units=[...item.subtasks].sort((a,b)=>(priority[a.status]??3)-(priority[b.status]??3));
+        for(const task of units){
+          const entry=node('li',`${task.id} · ${labels[task.status]||task.status}`+
+            (task.observed_period||task.latest_period?` · 已取得 ${task.observed_period||task.latest_period}`:'')+
+            (task.detail?` · ${task.detail}`:''));
+          if(task.source)entry.append(' ',link('原始出处',task.source));
+          list.append(entry);
+        }
+        more.append(node('p',`暂无新增 ${c.no_new} · 失败 ${c.failed} · 未覆盖 ${c.uncovered} · 修订待审 ${c.pending_revision}`),list);
+        cell.append(more);
+      } else if(item.quality_notes?.length) {
+        const more=node('details');more.append(node('summary','检查提示'));
+        const list=node('ul');for(const warning of item.quality_notes)list.append(node('li',warning));
+        more.append(list);cell.append(more);
+      }
       const history = tr.insertCell();
       if (item.recent_log.length) {
         const details = node('details'); details.append(node('summary', `最近 ${item.recent_log.length} 次`));
