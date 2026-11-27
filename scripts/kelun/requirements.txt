@@ -1,4 +1,0 @@
-pandas==2.2.3
-requests==2.32.5
-exchange-calendars==4.13.3
-akshare==1.20.39
