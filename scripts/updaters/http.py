@@ -25,7 +25,10 @@ class HTTP:
             raise ValueError("Official sources must use HTTPS")
         for attempt in range(3):
             try:
-                with self.session.get(url, params=params, timeout=(6, 12), stream=True, headers=headers) as response:
+                with self.session.get(url, params=params, timeout=(6, 12), stream=True,
+                                      headers=headers, allow_redirects=headers is None) as response:
+                    if headers and response.is_redirect:
+                        raise SourceUnavailable(f"Redirect in authenticated request · {urlsplit(url).hostname}")
                     if response.status_code == missing:
                         break
                     if response.status_code in (401, 403, 404, 412):

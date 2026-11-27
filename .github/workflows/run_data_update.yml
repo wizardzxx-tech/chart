@@ -138,7 +138,7 @@ jobs:
     needs: update
     if: inputs.apply && needs.update.outputs.ran == 'true' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       pages: write
       id-token: write
@@ -151,9 +151,11 @@ jobs:
       - name: Publish verified snapshot
         id: pages
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1020000
   verify:
     needs: deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: read
