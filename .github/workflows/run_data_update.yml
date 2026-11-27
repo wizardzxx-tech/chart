@@ -160,9 +160,10 @@ jobs:
         id: pages
         uses: actions/deploy-pages@v4
         with:
-          timeout: 1020000
+          timeout: 600000
   verify:
-    needs: deploy
+    needs: [update, deploy]
+    if: ${{ !cancelled() && needs.update.result == 'success' && needs.update.outputs.ran == 'true' && inputs.apply && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
