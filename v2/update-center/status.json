@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T08:22:50+00:00",
+  "generated_at": "2026-11-27T08:28:45+00:00",
   "datasets": [
     {
       "dataset_id": "pharmacy.stores",
@@ -206,9 +206,9 @@
       "monitoring_enabled": true,
       "chart_binding": true,
       "latest_data_period": "2026-11-08",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:59:09+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -248,6 +248,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2026-11-08"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2026-11-08"
@@ -352,9 +358,9 @@
       "monitoring_enabled": true,
       "chart_binding": true,
       "latest_data_period": "2026-11-08",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:59:09+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -394,6 +400,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2026-11-08"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2026-11-08"
@@ -441,8 +453,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -470,6 +482,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -666,8 +684,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -698,6 +716,12 @@
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
         }
       ],
       "status": "No new data",
@@ -720,9 +744,9 @@
       "monitoring_enabled": true,
       "chart_binding": true,
       "latest_data_period": "2026-10",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:59:08+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -756,6 +780,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2026-10"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2026-10"
@@ -878,7 +908,7 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2026-03",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -906,6 +936,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "Source unavailable",
+          "detail": "HTTP 412 · www.nhc.gov.cn",
+          "period": "2026-03"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "Source unavailable",
           "detail": "HTTP 412 · www.nhc.gov.cn",
           "period": "2026-03"
@@ -949,8 +985,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -978,6 +1014,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -1041,8 +1083,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1070,6 +1112,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -1095,8 +1143,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2026-09（以品种为准）",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1124,6 +1172,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2026-09（以品种为准）"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2026-09（以品种为准）"
@@ -1378,9 +1432,9 @@
       "chart_binding": false,
       "data_url": "../biosimilars/public-data/fda.drugsfda.json",
       "latest_data_period": "2026-10-16",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1411,13 +1465,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-10-16"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-16"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514",
-      "last_extracted": "2026-11-27T08:22:50+00:00"
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514"
     },
     {
       "dataset_id": "fda.insulins",
@@ -1435,9 +1495,9 @@
       "chart_binding": false,
       "data_url": "../insulin/public-data/fda.insulins.json",
       "latest_data_period": "2026-10-23",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1468,13 +1528,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-10-23"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-23"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761326",
-      "last_extracted": "2026-11-27T08:22:50+00:00"
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761326"
     },
     {
       "dataset_id": "nih.clinical-trials",
@@ -1492,9 +1558,9 @@
       "chart_binding": false,
       "data_url": "../biosimilars/public-data/nih.clinical-trials.json",
       "latest_data_period": "2025-05-25",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1531,12 +1597,18 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2025-05-25"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2025-05-25"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "last_extracted": "2026-11-27T08:22:50+00:00",
+      "last_extracted": "2026-11-27T08:28:45+00:00",
       "source": "https://clinicaltrials.gov/study/NCT04967508"
     },
     {
@@ -1555,9 +1627,9 @@
       "chart_binding": false,
       "data_url": "../biosimilars/public-data/cms.catalog.json",
       "latest_data_period": "2026-07",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1588,13 +1660,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-07"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-07"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "source": "https://catalog.data.gov/dataset/medicare-quarterly-part-b-spending-by-drug-2026-01-01",
-      "last_extracted": "2026-11-27T08:22:50+00:00"
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://catalog.data.gov/dataset/medicare-quarterly-part-b-spending-by-drug-2026-01-01"
     },
     {
       "dataset_id": "insulin.nmpa-notices",
@@ -1611,7 +1689,7 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1639,6 +1717,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "Source unavailable",
+          "detail": "HTTP 412 · www.nmpa.gov.cn",
+          "period": "—"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "Source unavailable",
           "detail": "HTTP 412 · www.nmpa.gov.cn",
           "period": "—"
@@ -1663,8 +1747,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1692,6 +1776,12 @@
         },
         {
           "time": "2026-11-27T08:22:50+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "—"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "—"
@@ -1717,8 +1807,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T05:53:01+00:00",
@@ -1755,6 +1845,12 @@
           "status": "Pending review",
           "detail": "25 份来源文件待审核。",
           "period": "—"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "Pending review",
+          "detail": "25 份来源文件待审核。",
+          "period": "—"
         }
       ],
       "status": "Pending review",
@@ -1778,9 +1874,9 @@
       "chart_binding": true,
       "data_url": "../pharmacy/public-data/financials.standard.json",
       "latest_data_period": "2026-09-30",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -1793,14 +1889,20 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-09-30"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-09-30"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
+      "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T07:54:37+00:00",
-      "last_extracted": "2026-11-27T08:22:50+00:00",
-      "source": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300015",
-      "eligible_cloud_check": true
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://www.cninfo.com.cn/new/disclosure/stock?stockCode=300015"
     },
     {
       "dataset_id": "devices.trade-values",
@@ -1818,9 +1920,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-values.json",
       "latest_data_period": "2025-01-01",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -1833,12 +1935,19 @@
           "status": "Validation failed",
           "detail": "Historical value changed for 90221200/2025/X; official correction required",
           "period": "2025-01-01"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2025-01-01"
         }
       ],
-      "status": "Validation failed",
-      "detail": "Historical value changed for 90221200/2025/X; official correction required",
-      "last_extracted": "2026-11-27T07:54:37+00:00",
-      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS?reporterCode=156&period=2025&cmdCode=90181310&flowCode=M&maxRecords=500"
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS?reporterCode=156&period=2025&cmdCode=90181310&flowCode=M&maxRecords=500",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "api.trade-values",
@@ -1856,9 +1965,9 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-values.json",
       "latest_data_period": "2025-01-01",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -1871,13 +1980,20 @@
           "status": "Validation failed",
           "detail": "Historical value changed for 29349970/2025/X; official correction required",
           "period": "2025-01-01"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2025-01-01"
         }
       ],
-      "status": "Validation failed",
-      "detail": "Historical value changed for 29349970/2025/X; official correction required",
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
       "chart_applied_at": "2026-11-27T07:54:37+00:00",
-      "last_extracted": "2026-11-27T07:54:37+00:00",
-      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS?reporterCode=156&period=2025&cmdCode=29349970&flowCode=M&maxRecords=500"
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS?reporterCode=156&period=2025&cmdCode=29349970&flowCode=M&maxRecords=500",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "vax.trade-values",
@@ -1895,9 +2011,9 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-values.json",
       "latest_data_period": "2025-01-01",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -1910,12 +2026,19 @@
           "status": "Validation failed",
           "detail": "Historical value changed for 30024100/2025/X; official correction required",
           "period": "2025-01-01"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2025-01-01"
         }
       ],
-      "status": "Validation failed",
-      "detail": "Historical value changed for 30024100/2025/X; official correction required",
-      "last_extracted": "2026-11-27T07:54:37+00:00",
-      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS?reporterCode=156&period=2025&cmdCode=30024100&flowCode=M&maxRecords=500"
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/A/HS?reporterCode=156&period=2025&cmdCode=30024100&flowCode=M&maxRecords=500",
+      "eligible_cloud_check": true
     },
     {
       "dataset_id": "cms.partb-values",
@@ -1933,9 +2056,9 @@
       "chart_binding": true,
       "data_url": "../biosimilars/public-data/cms.partb-values.json",
       "latest_data_period": "2026-10-01",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -1948,13 +2071,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-10-01"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
-      "last_extracted": "2026-11-27T08:22:50+00:00",
-      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
-      "eligible_cloud_check": true
+      "eligible_cloud_check": true,
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip"
     },
     {
       "dataset_id": "cms.partd-values",
@@ -1972,9 +2101,9 @@
       "chart_binding": true,
       "data_url": "../insulin/public-data/cms.partd-values.json",
       "latest_data_period": "2024-01-01",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -1987,13 +2116,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2024-01-01"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2024-01-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
-      "last_extracted": "2026-11-27T08:22:50+00:00",
-      "source": "https://raw.githubusercontent.com/Savannahwilcox/drug-pricing-analysis/main/data/raw/DSD_PTD_RY26_P04_V10_DY24_BGM.csv",
-      "eligible_cloud_check": true
+      "eligible_cloud_check": true,
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://raw.githubusercontent.com/Savannahwilcox/drug-pricing-analysis/main/data/raw/DSD_PTD_RY26_P04_V10_DY24_BGM.csv"
     },
     {
       "dataset_id": "nih.trial-discovery",
@@ -2010,8 +2145,8 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "—",
-      "last_checked": "2026-11-27T08:22:50+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -2024,12 +2159,18 @@
           "status": "Pending review",
           "detail": "1 份来源文件待审核。",
           "period": "—"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "Pending review",
+          "detail": "1 份来源文件待审核。",
+          "period": "—"
         }
       ],
       "status": "Pending review",
       "detail": "1 份来源文件待审核。",
-      "source": "https://clinicaltrials.gov/api/v2",
-      "eligible_cloud_check": true
+      "eligible_cloud_check": true,
+      "source": "https://clinicaltrials.gov/api/v2"
     },
     {
       "dataset_id": "fda.research-actions",
@@ -2047,9 +2188,9 @@
       "chart_binding": false,
       "data_url": "../biosimilars/public-data/fda.research-actions.json",
       "latest_data_period": "2026-11-20",
-      "last_checked": "2026-11-27T08:22:50+00:00",
+      "last_checked": "2026-11-27T08:28:45+00:00",
       "last_success": "2026-11-27T08:09:23+00:00",
-      "last_source_success": "2026-11-27T08:22:50+00:00",
+      "last_source_success": "2026-11-27T08:28:45+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T07:54:37+00:00",
@@ -2074,13 +2215,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-11-20"
+        },
+        {
+          "time": "2026-11-27T08:28:45+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-11-20"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
-      "last_extracted": "2026-11-27T08:22:50+00:00",
-      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761198",
-      "eligible_cloud_check": true
+      "eligible_cloud_check": true,
+      "last_extracted": "2026-11-27T08:28:45+00:00",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761198"
     }
   ]
 }
