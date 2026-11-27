@@ -8,6 +8,7 @@ jobs:
     uses: ./.github/workflows/run_data_update.yml
     with:
       schedule: daily
+      apply: true
     permissions:
       contents: write
       issues: write

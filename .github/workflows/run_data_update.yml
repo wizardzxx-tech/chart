@@ -1,0 +1,129 @@
+name: Validate data and deploy Pages
+on:
+  workflow_call:
+    inputs:
+      schedule:
+        type: string
+        required: true
+      apply:
+        type: boolean
+        default: false
+      month_end_only:
+        type: boolean
+        default: false
+      topic:
+        type: string
+      datasets:
+        type: string
+      start:
+        type: string
+      end:
+        type: string
+permissions: {}
+concurrency:
+  group: chart-write-and-pages-${{ inputs.apply && 'production' || github.ref }}
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    outputs:
+      ran: ${{ steps.check.outputs.ran }}
+      incidents: ${{ steps.check.outputs.incidents }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.apply && 'refs/heads/main' || github.sha }}
+          persist-credentials: ${{ inputs.apply }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-updates.txt
+      - run: pip install -r requirements-updates.txt
+      - name: Validate pipeline
+        run: python -m unittest discover -s scripts/validators -p 'test_*.py'
+      - name: Run data checks
+        id: check
+        env:
+          SCHEDULE: ${{ inputs.schedule }}
+          TOPIC: ${{ inputs.topic }}
+          DATASETS: ${{ inputs.datasets }}
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+          APPLY: ${{ inputs.apply }}
+          MONTH_END_ONLY: ${{ inputs.month_end_only }}
+        run: |
+          if [[ "$MONTH_END_ONLY" == true ]] && [[ "$(TZ=Asia/Shanghai date +%m)" == "$(TZ=Asia/Shanghai date -d tomorrow +%m)" ]]; then
+            echo 'Not a month-end day.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          args=(--schedule "$SCHEDULE" --report "$RUNNER_TEMP/chart-report.json")
+          if [[ -n "$DATASETS" ]]; then
+            args+=(--dataset "$DATASETS")
+          elif [[ -n "$TOPIC" && "$TOPIC" != all ]]; then
+            args+=(--topic "$TOPIC")
+          fi
+          if [[ -n "$START" ]]; then args+=(--start "$START"); fi
+          if [[ -n "$END" ]]; then args+=(--end "$END"); fi
+          if [[ "$APPLY" != true ]]; then args+=(--dry-run); fi
+          python scripts/data_update.py "${args[@]}"
+          python scripts/build/run_summary.py "$RUNNER_TEMP/chart-report.json"
+      - name: Prepare the site artifact
+        if: steps.check.outputs.ran == 'true'
+        run: python scripts/build/site.py "$RUNNER_TEMP/chart-site"
+      - name: Commit validated updates and audit receipts
+        if: inputs.apply && steps.check.outputs.ran == 'true'
+        run: |
+          git add -- v2 logs
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh and audit healthcare data'
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        if: steps.check.outputs.ran == 'true'
+        with:
+          name: data-check-report
+          path: ${{ runner.temp }}/chart-report.json
+          retention-days: 14
+      - uses: actions/upload-pages-artifact@v3
+        if: inputs.apply && steps.check.outputs.ran == 'true'
+        with:
+          path: ${{ runner.temp }}/chart-site
+  deploy:
+    needs: update
+    if: inputs.apply && needs.update.outputs.ran == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - name: Check Pages configuration
+        uses: actions/configure-pages@v5
+      - name: Publish verified snapshot
+        id: pages
+        uses: actions/deploy-pages@v4
+  notify:
+    needs: update
+    if: inputs.apply && needs.update.outputs.ran == 'true' && needs.update.outputs.incidents != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Consolidate source incidents
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INCIDENTS: ${{ needs.update.outputs.incidents }}
+        run: python3 scripts/build/alerts.py

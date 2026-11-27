@@ -1,0 +1,24 @@
+{
+  "dataset_id": "nih.clinical-trials",
+  "updated_at": "2026-11-27T05:53:01+00:00",
+  "source_files": [
+    {
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT05679258",
+      "sha256": "b1bbbfbaccc71cc72c0ec2164bd8c696d319967800ec59e11d747b8baa96d932",
+      "bytes": 14118,
+      "etag": "\"0/0.34.1/mwvycwaw\""
+    }
+  ],
+  "records": [
+    {
+      "id": "NCT05679258/2024-06-28",
+      "period": "2024-06-28",
+      "nct": "NCT05679258",
+      "title": "A Study to Compare the PK , Safety, Tolerability, and Immunogenicity of HLX15 With Daratumumab in Male Subjects",
+      "status": "COMPLETED",
+      "results_posted": null,
+      "source": "https://clinicaltrials.gov/study/NCT05679258",
+      "basis": "NCT registry posting"
+    }
+  ]
+}

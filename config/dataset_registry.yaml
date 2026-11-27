@@ -1,0 +1,1331 @@
+# 现有专题资料、数据文件与云端更新合同。
+version: 1
+datasets:
+- dataset_id: pharmacy.stores
+  topic: pharmacy
+  label: 上市公司门店数
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/pharmacy/company-stores.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 总数与直营/加盟及开关店核对；估算季度单独标记
+  review_required: true
+  section: company-stores
+  related_paths:
+  - v2/pharmacy/company-stores.csv
+  historical_scripts:
+  - pharmacy_company_series_20261111/collect.py
+  - pharmacy_company_series_20261111/normalize.py
+  - pharmacy_expansion/build_stores.py
+- dataset_id: pharmacy.national
+  topic: pharmacy
+  label: 中国药店总数
+  source_name: 上市公司年报转引中康资讯／国家药监局
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/HTML
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/pharmacy/china-pharmacy-stores.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 官方与中康独立；净增减反推、插值及实际披露区分
+  review_required: true
+  section: china-pharmacy-stores
+  related_paths:
+  - v2/pharmacy/index.html
+  historical_scripts:
+  - pharmacy_store_series_20261110
+  - pharmacy_expansion/build_stores.py
+- dataset_id: pharmacy.retail-sales
+  topic: pharmacy
+  label: 全国零售药品销售额
+  source_name: 商务部／中康资讯转引
+  source_url: https://scyxs.mofcom.gov.cn/
+  source_format: PDF/HTML
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/pharmacy/industry-retail-sales.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 零售渠道、有无电商与统计范围分开
+  review_required: true
+  section: pharmacy-industry-sales
+  related_paths:
+  - v2/pharmacy/index.html
+  historical_scripts:
+  - pharmacy_store_series_20261110
+- dataset_id: pharmacy.efficiency
+  topic: pharmacy
+  label: 单店效率、加盟率和扩张质量
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/pharmacy/retail-research.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 直营店分母口径与披露或估算分开，覆盖率标记样本公司
+  review_required: true
+  section: pharmacy-store-efficiency
+  related_paths:
+  - v2/pharmacy/store-efficiency.csv
+  - v2/pharmacy/unit-economics.csv
+  - v2/pharmacy/direct-store-share.csv
+  - v2/pharmacy/retail-peers.json
+  historical_scripts:
+  - pharmacy_efficiency/collect.py
+  - pharmacy_efficiency/derive.py
+- dataset_id: pharmacy.segments
+  topic: pharmacy
+  label: 零售／分销收入及毛利率
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/pharmacy/retail-research.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 交叉分部不能加总；同口径匹配收入与成本
+  review_required: true
+  section: pharmacy-revenue-mix
+  related_paths:
+  - v2/pharmacy/retail-segments.csv
+  historical_scripts:
+  - pharmacy_efficiency/segments.py
+- dataset_id: pharmacy.ccc
+  topic: pharmacy
+  label: A 股营运资金与财报输入
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/pharmacy/working-capital.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 五季加权、TTM收入及成本、票据合并重述、CCC等式与单季勾稽
+  review_required: true
+  section: working-capital
+  related_paths:
+  - v2/pharmacy/working-capital.csv
+  - v2/pharmacy/working-capital-inputs.csv
+  historical_scripts:
+  - working_capital_20261112/collect_statements.py
+  - ccc_audit_20261113/recompute.py
+- dataset_id: pharmacy.equity
+  topic: pharmacy
+  label: 股权激励与考核
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2028（目标）
+  local_data_path: v2/pharmacy/equity-incentives.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报告期、公告终稿、合并口径和不可辨认的缺项人工核对
+  review_required: true
+  section: equity-incentives
+  historical_scripts:
+  - pharmacy_incentives_20261111/collect.py
+  - pharmacy_incentives_20261111/outcomes.py
+  - pharmacy_expansion/build_equity.py
+- dataset_id: blood.national
+  topic: blood-products
+  label: 中国采浆与单采浆站
+  source_name: 公司招股书/年报转引与主管部门数据
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/blood-products/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 浆站总数与在营数区分
+  review_required: true
+  section: national-plasma
+  related_paths:
+  - v2/blood-products/national-plasma.csv
+  historical_scripts:
+  - blood_products_20261111/build_data.py
+  - blood_products_20261111/supplement.py
+- dataset_id: blood.company
+  topic: blood-products
+  label: 公司采浆、分品种收入及吨浆指标
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/blood-products/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 上年同范围采浆量与当年血制品收入、毛利；金额元与吨
+  review_required: true
+  section: blood-company-trend
+  related_paths:
+  - v2/blood-products/company-plasma.csv
+  historical_scripts:
+  - blood_products_20261111/collect.py
+  - blood_products_20261111/money.py
+- dataset_id: blood.albumin
+  topic: blood-products
+  label: 白蛋白批次结构和行业口径对照
+  source_name: 中检院／上药监／行业统计
+  source_url: https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs
+  source_format: HTML/XLS/PDF
+  data_frequency: monthly
+  check_frequency: manual
+  latest_data_period: '2026-11-08'
+  local_data_path: v2/blood-products/blood-research-data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 统计机构覆盖、进口国产依据及重复证书
+  review_required: true
+  section: albumin-market
+  related_paths:
+  - v2/blood-products/albumin-manufacturers.csv
+  - v2/blood-products/albumin-market.csv
+  historical_scripts:
+  - blood_products_20261111/research/build_albumin.py
+  - blood_products_20261111/research/check_shanghai.py
+- dataset_id: blood.lot-release
+  topic: blood-products
+  label: 血制品批签发
+  source_name: 中检院公告与全国汇总
+  source_url: https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html
+  source_format: HTML/公告
+  data_frequency: weekly
+  check_frequency: daily
+  latest_data_period: '2026-11-08'
+  local_data_path: v2/blood-products/lot-release.json
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 仅检查中检院公告；汇总前须核查跨机构覆盖、证书去重及发布口径
+  review_required: true
+  section: lot-release
+  related_paths:
+  - v2/blood-products/lot-release-summary.zip
+  - v2/blood-products/product-lot-trends.csv
+  historical_scripts:
+  - blood_lot_release/build_data.py
+  - vaccine_lot_release/collect.py
+  adapter: notices
+  title_pattern: 批签发信息公示表
+  review_since: '2026-11-08'
+  alternate_sources:
+  - https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs
+- dataset_id: blood.events
+  topic: blood-products
+  label: 浆站事件、并购与产品升级
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: '2026'
+  local_data_path: v2/blood-products/station-events.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报告期、公告终稿、合并口径和不可辨认的缺项人工核对
+  review_required: true
+  section: station-events
+  related_paths:
+  - v2/blood-products/plasma-transactions.csv
+  - v2/blood-products/product-upgrades.csv
+  - v2/blood-products/data.json
+  - v2/blood-products/blood-research-data.json
+  historical_scripts:
+  - blood_products_20261111/filing_snippets.py
+  - blood_products_20261111/supplement.py
+- dataset_id: blood.recombinant
+  topic: blood-products
+  label: 重组人白蛋白产品及商业指标
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: '2026'
+  local_data_path: v2/blood-products/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报告期、公告终稿、合并口径和不可辨认的缺项人工核对
+  review_required: true
+  section: recombinant-albumin
+  historical_scripts:
+  - blood_products_20261111/build_data.py
+- dataset_id: blood.ccc
+  topic: blood-products
+  label: A 股营运资金与财报输入
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/blood-products/working-capital.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 五季加权、TTM收入及成本、票据合并重述、CCC等式与单季勾稽
+  review_required: true
+  section: working-capital
+  related_paths:
+  - v2/blood-products/working-capital.csv
+  - v2/blood-products/working-capital-inputs.csv
+  historical_scripts:
+  - working_capital_20261112/collect_statements.py
+  - ccc_audit_20261113/recompute.py
+- dataset_id: blood.equity
+  topic: blood-products
+  label: 股权激励与考核
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026（含目标）
+  local_data_path: v2/blood-products/equity-incentives.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报告期、公告终稿、合并口径和不可辨认的缺项人工核对
+  review_required: true
+  section: equity-incentives
+  historical_scripts:
+  - blood_incentives_20261111/collect.py
+  - blood_incentives_20261111/data.py
+- dataset_id: vax.lot-release
+  topic: vaccines
+  label: 全国疫苗批签发
+  source_name: 中检院公告与全国汇总
+  source_url: https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/index.html
+  source_format: HTML/公告
+  data_frequency: weekly
+  check_frequency: daily
+  latest_data_period: '2026-11-08'
+  local_data_path: v2/vaccines/lot-release.json
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 日常仅发现中检院公告；跨机构、批签发周与剂数的口径需要核实
+  review_required: true
+  section: lot-release
+  related_paths:
+  - v2/vaccines/lot-release-summary.csv
+  - v2/vaccines/lot-release-summary.zip
+  historical_scripts:
+  - vaccine_lot_release/collect.py
+  - vaccine_lot_release/aggregate.py
+  - vaccine_lot_release/legacy_collect.py
+  adapter: notices
+  title_pattern: 批签发信息公示表
+  review_since: '2026-11-08'
+  alternate_sources:
+  - https://bio.nidc.org.cn/pqf/search.do?formAction=pqfGs
+- dataset_id: vax.doses
+  topic: vaccines
+  label: 公司披露的批签发剂数
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026H1
+  local_data_path: v2/vaccines/release-doses.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 批次不得换算为剂数；样本公司单独保留
+  review_required: true
+  section: lot-doses
+  historical_scripts:
+  - vaccine_lot_release/aggregate.py
+- dataset_id: vax.trade
+  topic: vaccines
+  label: 海关进出口、伙伴与量价
+  source_name: 联合国 Comtrade／中国海关总署
+  source_url: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  source_format: API JSON/人工导出
+  data_frequency: annual
+  check_frequency: monthly
+  latest_data_period: '2025'
+  local_data_path: v2/vaccines/customs-trade.json
+  updater_script: scripts/updaters/comtrade.py
+  automation_level: rule_based
+  validation_rules:
+  - HS版本与贸易方向、分母单位、估算标记、伙伴与全球合计核对；现有脚本依赖数据分片，验证配额、授权及跨编码连续性后启用
+  review_required: true
+  section: customs-trade
+  related_paths:
+  - v2/vaccines/customs-trade.csv
+  historical_scripts:
+  - customs_trade/fetch.py
+  - customs_trade/prepare.py
+  feasibility: 规则提取待迁移
+  alternate_sources:
+  - https://stats.customs.gov.cn/
+  adapter: comtrade
+  review_since: '2025-12-31'
+  upstream_frequency: A
+- dataset_id: vax.ccc
+  topic: vaccines
+  label: A 股营运资金与财报输入
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/vaccines/working-capital.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 五季加权、TTM收入及成本、票据合并重述、CCC等式与单季勾稽
+  review_required: true
+  section: working-capital
+  related_paths:
+  - v2/vaccines/working-capital.csv
+  - v2/vaccines/working-capital-inputs.csv
+  historical_scripts:
+  - vaccines_20261112/build_quarters.py
+  - vaccines_20261112/build_overseas.py
+  - ccc_audit_20261113/recompute.py
+- dataset_id: vax.overseas-ccc
+  topic: vaccines
+  label: 港美股营运资金与财报输入
+  source_name: 港交所／SEC 公司定期报告
+  source_url: https://www.hkexnews.hk/
+  source_format: PDF/HTML
+  data_frequency: semiannual
+  check_frequency: manual
+  latest_data_period: 2026H1
+  local_data_path: v2/vaccines/overseas.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 不同半年度／年报口径独立核对
+  review_required: true
+  section: overseas-capital
+  related_paths:
+  - v2/vaccines/overseas-inputs.csv
+  - v2/vaccines/overseas-working-capital.csv
+  historical_scripts:
+  - vaccines_20261112/build_quarters.py
+  - vaccines_20261112/build_overseas.py
+  - ccc_audit_20261113/recompute.py
+- dataset_id: vax.equity
+  topic: vaccines
+  label: 股权激励与境外公开目标
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2028（目标）
+  local_data_path: v2/vaccines/equity-incentives.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 区分目标、已达成、撤销及未到考核期
+  review_required: true
+  section: equity-incentives
+  related_paths:
+  - v2/vaccines/overseas.json
+  historical_scripts:
+  - vaccines_20261112/build_incentives.py
+  - vaccines_20261112/build_overseas.py
+- dataset_id: eye.industry
+  topic: ophthalmology
+  label: 眼科机构、诊疗与手术量
+  source_name: 卫健委／公司招股书转引
+  source_url: https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml
+  source_format: 年鉴/PDF/HTML
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: 2025（以分项为准）
+  local_data_path: v2/ophthalmology/industry-series.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 医院数、手术单位和预测行不得混作实际
+  review_required: true
+  section: industry
+  related_paths:
+  - v2/ophthalmology/industry.csv
+  historical_scripts:
+  - ophthalmology_20261113/build_industry.py
+- dataset_id: eye.network
+  topic: ophthalmology
+  label: 医院、诊所与视光机构网络
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026H1
+  local_data_path: v2/ophthalmology/company-network.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 合并机构与品牌网络不可混用
+  review_required: true
+  section: company-network
+  related_paths:
+  - v2/ophthalmology/company-network.csv
+  historical_scripts:
+  - ophthalmology_20261113/build_network.py
+- dataset_id: eye.operations
+  topic: ophthalmology
+  label: 分业务收入毛利、门诊手术及经营指标
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026H1
+  local_data_path: v2/ophthalmology/company-operations.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 披露财年、单期／累计、单位及公司分部口径
+  review_required: true
+  section: company-business
+  related_paths:
+  - v2/ophthalmology/company-activity.csv
+  - v2/ophthalmology/company-segments.csv
+  historical_scripts:
+  - ophthalmology_20261113/extract_numbers.py
+- dataset_id: eye.ccc
+  topic: ophthalmology
+  label: A 股营运资金与财报输入
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/ophthalmology/working-capital.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 五季加权、TTM收入及成本、票据合并重述、CCC等式与单季勾稽
+  review_required: true
+  section: working-capital
+  related_paths:
+  - v2/ophthalmology/working-capital.csv
+  - v2/ophthalmology/working-capital-inputs.csv
+  historical_scripts:
+  - ophthalmology_20261113/build_capital.py
+  - ophthalmology_20261113/build_hk.py
+  - ccc_audit_20261113/recompute.py
+- dataset_id: eye.overseas-ccc
+  topic: ophthalmology
+  label: 港美股营运资金与财报输入
+  source_name: 港交所／SEC 公司定期报告
+  source_url: https://www.hkexnews.hk/
+  source_format: PDF/HTML
+  data_frequency: semiannual
+  check_frequency: manual
+  latest_data_period: 2026H1
+  local_data_path: v2/ophthalmology/overseas.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 不同半年度／年报口径独立核对
+  review_required: true
+  section: overseas-capital
+  related_paths:
+  - v2/ophthalmology/overseas-inputs.csv
+  - v2/ophthalmology/overseas-working-capital.csv
+  historical_scripts:
+  - ophthalmology_20261113/build_capital.py
+  - ophthalmology_20261113/build_hk.py
+  - ccc_audit_20261113/recompute.py
+- dataset_id: eye.equity
+  topic: ophthalmology
+  label: 股权激励与考核
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2028（目标）
+  local_data_path: v2/ophthalmology/equity-incentives.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报告期、公告终稿、合并口径和不可辨认的缺项人工核对
+  review_required: true
+  section: equity-incentives
+  historical_scripts:
+  - ophthalmology_20261113/build_equity.py
+- dataset_id: insurance.fund
+  topic: medical-insurance
+  label: 基本医保基金与参保
+  source_name: 国家医保局
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/公告
+  data_frequency: annual
+  check_frequency: weekly
+  latest_data_period: '2025'
+  local_data_path: v2/medical-insurance/trends.json
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 原报告的收入、支出与参保；长表与正式公报可能修订
+  review_required: true
+  section: fund
+  related_paths:
+  - v2/medical-insurance/data.csv
+  historical_scripts:
+  - medical-insurance/build_data.py
+  adapter: notices
+  title_pattern: 全国医疗保障事业发展统计公报
+  review_since: '2025-12-31'
+- dataset_id: insurance.monthly
+  topic: medical-insurance
+  label: 基本医保统筹及生育保险累计指标
+  source_name: 国家医保局
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/公告
+  data_frequency: monthly
+  check_frequency: weekly
+  latest_data_period: 2026-09
+  local_data_path: v2/medical-insurance/data.csv
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 新期为图片，先审核；区分统筹/个人账户、权责发生制和累计期
+  review_required: true
+  section: pooled
+  related_paths:
+  - v2/medical-insurance/index.html
+  historical_scripts:
+  - medical-insurance/build_data.py
+  adapter: notices
+  title_pattern: ^(?:202[6-9]|20[3-9]\d)年[0-9-]+月基本医疗保险统筹基金和生育保险主要指标
+  review_since: '2026-09-30'
+- dataset_id: insurance.channels
+  topic: medical-insurance
+  label: 医疗机构与药店费用
+  source_name: 国家医保局正式公报与统计长表
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/PDF
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/medical-insurance/trends.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 分项与合计勾稽；留存修订依据
+  review_required: true
+  section: channels
+  related_paths:
+  - v2/medical-insurance/data.csv
+  - v2/medical-insurance/index.html
+  historical_scripts:
+  - medical-insurance/build_data.py
+- dataset_id: insurance.inpatient
+  topic: medical-insurance
+  label: 分等级次均住院费用
+  source_name: 国家医保局正式公报与统计长表
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/PDF
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/medical-insurance/trends.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 分项与合计勾稽；留存修订依据
+  review_required: true
+  section: inpatient
+  related_paths:
+  - v2/medical-insurance/data.csv
+  - v2/medical-insurance/index.html
+  historical_scripts:
+  - medical-insurance/build_data.py
+- dataset_id: insurance.drg
+  topic: medical-insurance
+  label: DRG/DIP覆盖率
+  source_name: 国家医保局正式公报与统计长表
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/PDF
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/medical-insurance/trends.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 分项与合计勾稽；留存修订依据
+  review_required: true
+  section: drg-dip
+  related_paths:
+  - v2/medical-insurance/data.csv
+  - v2/medical-insurance/index.html
+  historical_scripts:
+  - medical-insurance/build_data.py
+- dataset_id: insurance.procurement
+  topic: medical-insurance
+  label: 省平台药品网采
+  source_name: 国家医保局正式公报与统计长表
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/PDF
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/medical-insurance/trends.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 分项与合计勾稽；留存修订依据
+  review_required: true
+  section: procurement
+  related_paths:
+  - v2/medical-insurance/data.csv
+  - v2/medical-insurance/index.html
+  historical_scripts:
+  - medical-insurance/build_data.py
+- dataset_id: insurance.resources
+  topic: medical-insurance
+  label: 卫生资源与卫生总费用长表
+  source_name: 国家医保局正式公报与统计长表
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: HTML/PDF
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/medical-insurance/trends.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 分项与合计勾稽；留存修订依据
+  review_required: true
+  section: resources
+  related_paths:
+  - v2/medical-insurance/data.csv
+  - v2/medical-insurance/index.html
+  historical_scripts:
+  - medical-insurance/build_data.py
+- dataset_id: services.activity
+  topic: medical-services
+  label: 全国诊疗量、出院量和床位使用率
+  source_name: 国家卫健委
+  source_url: https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml
+  source_format: HTML/公告
+  data_frequency: monthly + annual
+  check_frequency: weekly
+  latest_data_period: 2026-03
+  local_data_path: v2/medical-services/activity.json
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 已保留历史解析器；有访问限制或口径变化则入待审核；区分单月、累计、全年
+  review_required: true
+  section: service-charts
+  related_paths:
+  - v2/medical-services/service-activity.csv
+  historical_scripts:
+  - medical-services/build_data.py
+  adapter: notices
+  title_pattern: ^\s*\d{4}年[\d—–-]+月全国医疗服务情况
+  review_since: '2026-03-31'
+- dataset_id: services.resources
+  topic: medical-services
+  label: 医院、床位和卫生总费用
+  source_name: 国家卫健委／国家医保局长表
+  source_url: https://www.nhc.gov.cn/mohwsbwstjxxzx/s2906/new_list.shtml
+  source_format: PDF/HTML
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2025'
+  local_data_path: v2/medical-services/health-resources.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 卫健委与医保局医院数不一致单独注记
+  review_required: true
+  section: resources
+  related_paths:
+  - v2/medical-services/index.html
+  historical_scripts:
+  - medical-services/build_data.py
+- dataset_id: api.trade
+  topic: api
+  label: 海关进出口、伙伴与量价
+  source_name: 联合国 Comtrade／中国海关总署
+  source_url: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  source_format: API JSON/人工导出
+  data_frequency: annual
+  check_frequency: monthly
+  latest_data_period: '2025'
+  local_data_path: v2/api/customs-trade.json
+  updater_script: scripts/updaters/comtrade.py
+  automation_level: rule_based
+  validation_rules:
+  - HS版本与贸易方向、分母单位、估算标记、伙伴与全球合计核对；现有脚本依赖数据分片，验证配额、授权及跨编码连续性后启用
+  review_required: true
+  section: customs-trade
+  related_paths:
+  - v2/api/customs-trade.csv
+  - v2/api/customs-trade-1.json
+  - v2/api/customs-trade-2.json
+  - v2/api/customs-trade-3.json
+  historical_scripts:
+  - customs_trade/fetch.py
+  - customs_trade/collect_tariffline.py
+  - customs_trade/prepare.py
+  feasibility: 规则提取待迁移
+  alternate_sources:
+  - https://stats.customs.gov.cn/
+  adapter: comtrade
+  review_since: '2025-12-31'
+  upstream_frequency: A
+- dataset_id: api.focus
+  topic: api
+  label: 重点原料药量价及国内公司映射
+  source_name: 中国医保商会／上市公司定期报告
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/HTML
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2026-09
+  local_data_path: v2/api/research.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 相关生产商与产品需证据；会刊累计口径不能直接同比
+  review_required: true
+  section: api-research
+  historical_scripts:
+  - api_research/build.py
+  - api_research/collect.py
+- dataset_id: api.registry
+  topic: api
+  label: 原料药海外注册及分子映射
+  source_name: FDA / EDQM 等注册与企业公开资料
+  source_url: https://www.fda.gov/drugs/drug-master-files-dmfs
+  source_format: 检索/HTML
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: '2026'
+  local_data_path: v2/api/research.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - DMF与批件及供应资格区分；映射人工确认
+  review_required: true
+  section: registry-sources
+  historical_scripts:
+  - api_research/companies.py
+  - api_research/collect_standard.py
+- dataset_id: devices.trade
+  topic: medical-devices
+  label: 海关进出口、伙伴与量价
+  source_name: 联合国 Comtrade／中国海关总署
+  source_url: https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS
+  source_format: API JSON/人工导出
+  data_frequency: annual
+  check_frequency: monthly
+  latest_data_period: '2025'
+  local_data_path: v2/medical-devices/customs-trade.json
+  updater_script: scripts/updaters/comtrade.py
+  automation_level: rule_based
+  validation_rules:
+  - HS版本与贸易方向、分母单位、估算标记、伙伴与全球合计核对；现有脚本依赖数据分片，验证配额、授权及跨编码连续性后启用
+  review_required: true
+  section: customs-trade
+  related_paths:
+  - v2/medical-devices/customs-trade.csv
+  - v2/medical-devices/customs-trade-1.json
+  - v2/medical-devices/customs-trade-2.json
+  - v2/medical-devices/customs-trade-3.json
+  - v2/medical-devices/customs-trade-4.json
+  - v2/medical-devices/customs-trade-5.json
+  - v2/medical-devices/customs-trade-6.json
+  historical_scripts:
+  - customs_trade/fetch.py
+  - customs_trade/history_hs.py
+  - customs_trade/prepare.py
+  feasibility: 规则提取待迁移
+  alternate_sources:
+  - https://stats.customs.gov.cn/
+  adapter: comtrade
+  review_since: '2025-12-31'
+  upstream_frequency: A
+- dataset_id: devices.recent
+  topic: medical-devices
+  label: 2026 医疗器械月度与累计海关数据
+  source_name: UN Comtrade 发布可用性／中国海关总署
+  source_url: https://comtradeapi.un.org/public/v1/getDa/C/M/HS
+  source_format: API/人工导出/报告
+  data_frequency: monthly
+  check_frequency: monthly
+  latest_data_period: 2026-09（以品种为准）
+  local_data_path: v2/medical-devices/customs-trade.json
+  updater_script: scripts/updaters/comtrade.py
+  automation_level: rule_based
+  validation_rules:
+  - 同比冲突、整机与零件及累计和真实单月分别核查
+  review_required: true
+  section: customs-trade
+  related_paths:
+  - v2/medical-devices/customs-trade-recent.csv
+  historical_scripts:
+  - customs_trade/supplement.py
+  - customs_trade/qa_coverage.py
+  adapter: comtrade
+  alternate_sources:
+  - https://stats.customs.gov.cn/
+  review_since: '2026-09-30'
+  upstream_frequency: M
+- dataset_id: devices.attribution
+  topic: medical-devices
+  label: 制造商归属、生产基地与省级数据
+  source_name: 海关总署统计服务／制造商公告
+  source_url: https://stats.customs.gov.cn/
+  source_format: 人工申请/HTML/PDF
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2025（归属案例）
+  local_data_path: v2/medical-devices/imaging-exports.csv
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 企业注册地、货源地、口岸区分；已确认、估算、未分配
+  review_required: true
+  section: imaging-exports
+  related_paths:
+  - v2/medical-devices/manufacturer-sites.csv
+  - v2/medical-devices/imaging-customs-request.txt
+  - v2/medical-devices/index.html
+  historical_scripts:
+  - customs_trade/import_registered_provinces.py
+  - customs_trade/import_customs.py
+- dataset_id: biosimilars.approvals
+  topic: biosimilars
+  label: 中美欧精选获批和撤回
+  source_name: FDA Purple Book／EMA／NMPA
+  source_url: https://purplebooksearch.fda.gov/index.cfm?event=downloads
+  source_format: CSV/API/公告
+  data_frequency: monthly
+  check_frequency: manual
+  latest_data_period: 2026-11（核查）
+  local_data_path: v2/biosimilars/index.html
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - BLA、产品和状态去重；跨区不同批准状态保留
+  review_required: true
+  section: view-approvals
+  historical_scripts:
+  - biosimilars_refresh/update_page.py
+  alternate_sources:
+  - https://www.ema.europa.eu/en/medicines
+  - https://www.nmpa.gov.cn/xxgk/ggtg/ypggtg/index.html
+- dataset_id: biosimilars.patents
+  topic: biosimilars
+  label: 参照药、专利与独占期
+  source_name: FDA Purple Book／专利与公司法律披露
+  source_url: https://purplebooksearch.fda.gov/index.cfm?event=downloads
+  source_format: CSV/专利文件
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2026-11（核查）
+  local_data_path: v2/biosimilars/index.html
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 区分专利、独占、和解与上市；留存法域
+  review_required: true
+  section: view-cliff
+  related_paths:
+  - v2/biosimilars/data/market-research.json
+  historical_scripts:
+  - biosimilars_refresh/make_evidence.py
+- dataset_id: biosimilars.pipeline
+  topic: biosimilars
+  label: 人工核实的全球研发管线
+  source_name: ClinicalTrials.gov／监管及公司公开材料
+  source_url: https://clinicaltrials.gov/api/v2
+  source_format: API/公告
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2026-11（核查）
+  local_data_path: v2/biosimilars/index.html
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 实验状态、适应症、注册进度与权属独立核对
+  review_required: true
+  section: view-pipeline
+  historical_scripts:
+  - biosimilars_refresh/update_page.py
+- dataset_id: biosimilars.uptake
+  topic: biosimilars
+  label: CMS Part B 年度、季度、支付上限
+  source_name: CMS 开放数据及 Medicare ASP
+  source_url: https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/
+  source_format: CSV/ZIP
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q4（支付）
+  local_data_path: v2/biosimilars/data/medicare.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 参考剂量及 HCPCS、报告期、ASP 支付限额与费用分别对照
+  review_required: true
+  section: view-market
+  historical_scripts:
+  - scripts/biosimilars/download_medicare.py
+  - scripts/biosimilars/build_medicare.py
+  feasibility: 既有可重建脚本，文件与历史修订需验证
+- dataset_id: biosimilars.market
+  topic: biosimilars
+  label: 市场份额、价格、品牌收入及法国市场
+  source_name: CMS／ASPE／法国公开医保／公司报告
+  source_url: https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/
+  source_format: CSV/PDF/HTML
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026-11（核查）
+  local_data_path: v2/biosimilars/data/market-research.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - WAC、支付限额、费用和实际成交价区分；市场份额分母可溯
+  review_required: true
+  section: view-market
+  related_paths:
+  - v2/biosimilars/data/market-references.json
+  - v2/biosimilars/index.html
+  historical_scripts:
+  - scripts/biosimilars/build_market_research.py
+  - scripts/biosimilars/build_benchmark.py
+  - scripts/biosimilars/build_france.py
+- dataset_id: biosimilars.cxo
+  topic: biosimilars
+  label: CXO合同、交易款与机会情景
+  source_name: 公司公告／监管文件
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/HTML
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2026-11-23（核查）
+  local_data_path: v2/biosimilars/data/service-contracts.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 明确区分已确认合同/交易和情景假设
+  review_required: true
+  section: view-cxo
+  related_paths:
+  - v2/biosimilars/index.html
+  historical_scripts:
+  - biosimilars_cxo/build.py
+  - biosimilars_cxo/scan_ema.py
+- dataset_id: insulin.vbp
+  topic: insulin
+  label: 集采量价、分量和续约
+  source_name: 国家及省级医保局、联采平台
+  source_url: https://www.nhsa.gov.cn/col/col7/index.html
+  source_format: PDF/表格/公告
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2024（全国接续）
+  local_data_path: v2/insulin/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报价、约定量、剂型和采购单位不可混用
+  review_required: true
+  section: vbp-tracker
+  related_paths:
+  - v2/insulin/tracker.json
+  historical_scripts:
+  - insulin_tracker/vbp.py
+- dataset_id: insulin.products
+  topic: insulin
+  label: 胰岛素注册、权属与管线
+  source_name: NMPA／FDA／EMA／企业披露
+  source_url: https://www.nmpa.gov.cn/xxgk/ggtg/ypggtg/index.html
+  source_format: API/公告
+  data_frequency: irregular
+  check_frequency: manual
+  latest_data_period: 2026-11（核查）
+  local_data_path: v2/insulin/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 地区、注册状态及产品持证区别；产权公告人工核对
+  review_required: true
+  section: pipeline
+  related_paths:
+  - v2/insulin/tracker.json
+  historical_scripts:
+  - insulin_tracker/products.py
+  - insulin_tracker/business.py
+- dataset_id: insulin.partd
+  topic: insulin
+  label: 美国 Medicare Part D 开支与用药
+  source_name: CMS Medicare Part D 开放数据
+  source_url: https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/
+  source_format: CSV
+  data_frequency: annual
+  check_frequency: manual
+  latest_data_period: '2024'
+  local_data_path: v2/insulin/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 年度用量、赔付频次、金额及药品映射
+  review_required: true
+  section: partd
+  related_paths:
+  - v2/insulin/tracker.json
+  historical_scripts:
+  - insulin_tracker/partd.py
+- dataset_id: insulin.operating
+  topic: insulin
+  label: 公司经营、分部和营运资金
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2026Q3
+  local_data_path: v2/insulin/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 公司历年率和单位、财报扩展口径、首尾及TTM分母
+  review_required: true
+  section: working-capital
+  related_paths:
+  - v2/insulin/tracker.json
+  historical_scripts:
+  - insulin_tracker/business.py
+  - insulin_20261120/history/build_financials.py
+- dataset_id: insulin.equity
+  topic: insulin
+  label: 股权激励与考核
+  source_name: 上市公司定期报告／巨潮资讯
+  source_url: https://www.cninfo.com.cn/
+  source_format: PDF/公告
+  data_frequency: quarterly
+  check_frequency: manual
+  latest_data_period: 2028（目标）
+  local_data_path: v2/insulin/data.json
+  updater_script: null
+  automation_level: manual_or_ai_review
+  validation_rules:
+  - 报告期、公告终稿、合并口径和不可辨认的缺项人工核对
+  review_required: true
+  section: equity-incentives
+  related_paths:
+  - v2/insulin/equity-incentives.csv
+  historical_scripts:
+  - insulin_20261120/history/build_equity.py
+  - insulin_20261120/history/collect_events.py
+- dataset_id: fda.drugsfda
+  topic: biosimilars
+  label: FDA Drugs@FDA 批准日期追踪
+  source_name: FDA openFDA Drugs@FDA
+  source_url: https://api.fda.gov/drug/drugsfda.json
+  source_format: API JSON
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: v2/biosimilars/public-data/fda.drugsfda.json
+  updater_script: scripts/updaters/fda.py
+  automation_level: fully_automated
+  validation_rules:
+  - 对照 FDA 申请号与提交号；仅批准行动，非新分子首次批准。
+  review_required: false
+  section: view-approvals
+  adapter: fda
+  view: records
+  products:
+  - ustekinumab
+  - denosumab
+  - aflibercept
+  - pembrolizumab
+  - adalimumab
+  - bevacizumab
+- dataset_id: fda.insulins
+  topic: insulin
+  label: FDA 胰岛素批准行动
+  source_name: FDA openFDA Drugs@FDA
+  source_url: https://api.fda.gov/drug/drugsfda.json
+  source_format: API JSON
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: v2/insulin/public-data/fda.insulins.json
+  updater_script: scripts/updaters/fda.py
+  automation_level: fully_automated
+  validation_rules:
+  - FDA 申请号、行动类型及编号，记录新批件与补充批准；不覆盖既有全球注册。
+  review_required: false
+  section: pipeline
+  adapter: fda
+  view: records
+  products:
+  - insulin glargine
+  - insulin aspart
+  - insulin lispro
+  - insulin degludec
+  - insulin icodec
+- dataset_id: nih.clinical-trials
+  topic: biosimilars
+  label: 美国 NCT 登记试验更新
+  source_name: ClinicalTrials.gov
+  source_url: https://clinicaltrials.gov/api/v2
+  source_format: API JSON
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: v2/biosimilars/public-data/nih.clinical-trials.json
+  updater_script: scripts/updaters/trials.py
+  automation_level: fully_automated
+  validation_rules:
+  - 仅跟踪 NCT 登记、状态和首次公布的结果日期；试验状态不等同于公司管线结论。
+  review_required: false
+  section: view-pipeline
+  adapter: trials
+  view: records
+  trial_ids:
+  - NCT05679258
+- dataset_id: cms.catalog
+  topic: biosimilars
+  label: CMS Part B 文件发布清单
+  source_name: CMS / Data.gov 官方目录
+  source_url: https://catalog.data.gov/
+  source_format: HTML/CSV 清单
+  data_frequency: quarterly
+  check_frequency: monthly
+  latest_data_period: —
+  local_data_path: v2/biosimilars/public-data/cms.catalog.json
+  updater_script: scripts/updaters/cms.py
+  automation_level: fully_automated
+  validation_rules:
+  - 只更新官方数据发布清单；年度、季度和支付限额金额不混用。
+  review_required: false
+  section: view-market
+  adapter: cms
+  view: records
+  catalog_title: Medicare Quarterly Part B Spending by Drug
+  max_age_days: 230
+- dataset_id: insulin.nmpa-notices
+  topic: insulin
+  label: 药监局注册公告检查
+  source_name: 国家药监局
+  source_url: https://www.nmpa.gov.cn/xxgk/ggtg/ypggtg/index.html
+  source_format: HTML/公告
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: null
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 公告链接进入待审核；无结构化胰岛素产品匹配证据时不更新。
+  review_required: true
+  section: pipeline
+  historical_scripts:
+  - insulin_tracker/products.py
+  adapter: notices
+  title_pattern: 药品批准证明文件|药品注册|胰岛素
+  review_since: '2026-11-01'
+- dataset_id: pharmacy.policy-notices
+  topic: pharmacy
+  label: 医保政策原文检查
+  source_name: 国家医保局
+  source_url: https://www.nhsa.gov.cn/col/col104/index.html
+  source_format: HTML/公告
+  data_frequency: irregular
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: null
+  updater_script: scripts/updaters/notices.py
+  automation_level: rule_based
+  validation_rules:
+  - 仅发现新政策文档，匹配指标后审核。
+  review_required: true
+  section: working-capital
+  historical_scripts:
+  - pharmacy_efficiency/collect.py
+  adapter: notices
+  title_pattern: 药店|零售药|定点医药|医保基金
+  review_since: '2026-11-01'
+- dataset_id: filings.exchange-notices
+  topic: pharmacy
+  label: 上市公司定期报告发现
+  source_name: 上市公司公告／东方财富转引
+  source_url: https://np-anotice-stock.eastmoney.com/api/security/ann
+  source_format: JSON 公告索引
+  data_frequency: quarterly
+  check_frequency: weekly
+  latest_data_period: —
+  local_data_path: null
+  updater_script: scripts/updaters/filings.py
+  automation_level: rule_based
+  validation_rules:
+  - 样本公司最新公告发现。按原始公告日期与原文复核；历史采集脚本另覆盖完整上市公司样本。
+  review_required: true
+  section: company-stores
+  historical_scripts:
+  - working_capital_20261112/collect_statements.py
+  adapter: filings
+  title_pattern: 季度报告|半年度报告|年度报告
+  review_since: '2026-11-01'
+  company_codes:
+  - '603939'
+  - '603233'
+  - '603883'
+  - '600161'
+  - '002007'
+  - '300122'
+  - '300015'
+  - '603259'
+  - 002294
+  - '600276'
+  - '603392'
+  - '300760'
+  alternate_sources:
+  - https://www.cninfo.com.cn/
+  - https://www.sse.com.cn/disclosure/

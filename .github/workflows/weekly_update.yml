@@ -1,0 +1,16 @@
+name: Weekly data update
+on:
+  schedule:
+    - cron: '37 23 * * 0' # Monday 07:37 Asia/Shanghai
+permissions: {}
+jobs:
+  update:
+    uses: ./.github/workflows/run_data_update.yml
+    with:
+      schedule: weekly
+      apply: true
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+      id-token: write

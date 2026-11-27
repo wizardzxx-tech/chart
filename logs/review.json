@@ -1,0 +1,64 @@
+{
+  "tasks": {
+    "06fddf3940d2767e27d1e318": {
+      "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月16日至2026年11月22日)",
+      "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611231746182297600.html",
+      "published": "2026-11-23",
+      "period": "2026-11-22",
+      "indicators": "血制品批签发",
+      "revision": false,
+      "dataset_id": "blood.lot-release",
+      "topic": "blood-products",
+      "first_seen": "2026-11-27T05:53:01+00:00",
+      "status": "open"
+    },
+    "1de18f8a3458c7cc89392dc3": {
+      "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月9日至2026年11月15日)",
+      "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+      "published": "2026-11-17",
+      "period": "2026-11-15",
+      "indicators": "血制品批签发",
+      "revision": false,
+      "dataset_id": "blood.lot-release",
+      "topic": "blood-products",
+      "first_seen": "2026-11-27T05:53:01+00:00",
+      "status": "open"
+    },
+    "c6208c541548c08171d87a7b": {
+      "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月16日至2026年11月22日)",
+      "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611231746182297600.html",
+      "published": "2026-11-23",
+      "period": "2026-11-22",
+      "indicators": "全国疫苗批签发",
+      "revision": false,
+      "dataset_id": "vax.lot-release",
+      "topic": "vaccines",
+      "first_seen": "2026-11-27T05:53:01+00:00",
+      "status": "open"
+    },
+    "a2faf16b4746f13361570b94": {
+      "title": "中检院生物制品批签发信息公示表(签发日期:2026年11月9日至2026年11月15日)",
+      "url": "https://www.nidc.org.cn/xxgk/ggtzh/jwgk/shwzhppfgg/202611171327242289260.html",
+      "published": "2026-11-17",
+      "period": "2026-11-15",
+      "indicators": "全国疫苗批签发",
+      "revision": false,
+      "dataset_id": "vax.lot-release",
+      "topic": "vaccines",
+      "first_seen": "2026-11-27T05:53:01+00:00",
+      "status": "open"
+    },
+    "7105e282b02fe52f5c3e8ea2": {
+      "title": "2026年1-10月基本医疗保险统筹基金和生育保险主要指标",
+      "url": "https://www.nhsa.gov.cn/art/2026/11/24/art_7_23509.html",
+      "published": "2026-11-24",
+      "period": "2026-10-31",
+      "indicators": "基本医保统筹及生育保险累计指标",
+      "revision": false,
+      "dataset_id": "insurance.monthly",
+      "topic": "medical-insurance",
+      "first_seen": "2026-11-27T05:53:01+00:00",
+      "status": "open"
+    }
+  }
+}

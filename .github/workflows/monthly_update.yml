@@ -1,0 +1,18 @@
+name: Monthly data update
+on:
+  schedule:
+    - cron: '47 23 14,22,27 * *' # 07:47 on the 15th, 23rd, 28th in Shanghai
+    - cron: '47 23 28-30 * *' # Additional last-day check, gated by the local calendar
+permissions: {}
+jobs:
+  update:
+    uses: ./.github/workflows/run_data_update.yml
+    with:
+      schedule: monthly
+      month_end_only: ${{ github.event.schedule == '47 23 28-30 * *' }}
+      apply: true
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+      id-token: write

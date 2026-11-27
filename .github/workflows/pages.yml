@@ -1,0 +1,17 @@
+name: Validate and publish healthcare database
+on:
+  push:
+    branches: [main, codex/data-update-system]
+  workflow_dispatch:
+permissions: {}
+jobs:
+  build:
+    uses: ./.github/workflows/run_data_update.yml
+    with:
+      schedule: all
+      apply: ${{ github.ref == 'refs/heads/main' }}
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+      id-token: write

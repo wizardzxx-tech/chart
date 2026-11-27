@@ -1,0 +1,49 @@
+name: Manual data update
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Topic (ignored when dataset IDs are supplied)'
+        type: choice
+        options:
+          - all
+          - pharmacy
+          - blood-products
+          - vaccines
+          - ophthalmology
+          - medical-insurance
+          - medical-services
+          - api
+          - medical-devices
+          - biosimilars
+          - insulin
+        default: all
+      datasets:
+        description: 'Optional registry IDs, separated by commas'
+        type: string
+      start:
+        description: 'Optional backfill start (YYYY-MM-DD)'
+        type: string
+      end:
+        description: 'Optional backfill end (YYYY-MM-DD)'
+        type: string
+      dry_run:
+        description: 'Check without saving or deploying'
+        type: boolean
+        default: true
+permissions: {}
+jobs:
+  update:
+    uses: ./.github/workflows/run_data_update.yml
+    with:
+      schedule: manual
+      topic: ${{ inputs.topic }}
+      datasets: ${{ inputs.datasets }}
+      start: ${{ inputs.start }}
+      end: ${{ inputs.end }}
+      apply: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    permissions:
+      contents: write
+      issues: write
+      pages: write
+      id-token: write

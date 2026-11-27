@@ -1,0 +1,222 @@
+"""Run data checks, refresh accepted snapshots, and maintain the site update index."""
+from argparse import ArgumentParser
+from collections import Counter
+from datetime import date, datetime, timezone
+from hashlib import sha256
+from importlib import import_module
+import json
+import os
+from pathlib import Path
+import re
+from tempfile import NamedTemporaryFile
+from zoneinfo import ZoneInfo
+
+import yaml
+
+from build.audit import generate, verify_inventory
+from updaters.http import HTTP, SourceUnavailable
+from validators.data import validate_notices, validate_records
+
+ROOT = Path(__file__).resolve().parents[1]
+REGISTRY = ROOT / "config/dataset_registry.yaml"
+SITE = ROOT / "v2/update-center"
+STATE = SITE / "status.json"
+REVIEW = ROOT / "logs/review.json"
+TODAY = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+LEVELS = {"fully_automated", "rule_based", "manual_or_ai_review"}
+SCHEDULES = {"daily", "weekly", "monthly", "manual"}
+FIELDS = "dataset_id topic source_name source_url source_format data_frequency check_frequency latest_data_period local_data_path updater_script automation_level validation_rules review_required".split()
+LABELS = {"pharmacy": "零售药房", "blood-products": "血制品", "vaccines": "疫苗",
+          "ophthalmology": "眼科医院", "medical-insurance": "医保基金", "medical-services": "医疗服务量",
+          "api": "原料药", "medical-devices": "医疗器械", "biosimilars": "生物类似药", "insulin": "胰岛素"}
+
+
+def read_json(path, fallback):
+    return json.loads(path.read_bytes()) if path.exists() else fallback
+
+
+def dump_json(value):
+    return (json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode()
+
+
+def save(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with NamedTemporaryFile(dir=path.parent, delete=False) as file:
+        file.write(dump_json(value))
+    os.replace(file.name, path)
+
+
+def load_registry():
+    registry = yaml.safe_load(REGISTRY.read_text())
+    if registry["version"] != 1:
+        raise ValueError("Unsupported registry version")
+    seen = set()
+    for row in registry["datasets"]:
+        key = row.get("dataset_id", "")
+        if not set(FIELDS) <= row.keys() or key in seen or not re.fullmatch(r"[a-z0-9.-]+", key):
+            raise ValueError(f"Invalid dataset registry entry: {key}")
+        seen.add(key)
+        if row["check_frequency"] not in SCHEDULES or row["automation_level"] not in LEVELS:
+            raise ValueError(f"{key} needs a valid level and frequency")
+        script = row["updater_script"]
+        if script and script != f"scripts/updaters/{row['adapter']}.py":
+            raise ValueError(f"{key} must name a source adapter")
+        if not script and row["check_frequency"] != "manual":
+            raise ValueError(f"{key} has a schedule but no executable adapter")
+        if row.get("view") == "records" and (row["review_required"]
+                or row["local_data_path"] != f"v2/{row['topic']}/public-data/{key}.json"):
+            raise ValueError(f"{key} has an unsafe publication path or review policy")
+    return registry["datasets"]
+
+
+def base_status(spec, previous):
+    entry = {key: spec[key] for key in ("dataset_id", "topic", "label", "source_name", "source_url", "data_frequency",
+                                       "check_frequency", "automation_level", "review_required", "section")}
+    entry["topic_label"] = LABELS.get(spec["topic"], spec["topic"])
+    if spec.get("view") == "records":
+        entry["data_url"] = "../" + spec["local_data_path"].removeprefix("v2/")
+    entry |= {key: previous[key] for key in ("latest_data_period", "last_checked", "last_success",
+              "last_source_success", "recent_log", "status", "detail", "eligible_cloud_check") if key in previous}
+    entry.setdefault("latest_data_period", spec["latest_data_period"])
+    entry["source"] = previous.get("source", spec["source_url"])
+    entry.setdefault("status", "Manual update required" if not spec["updater_script"] else None)
+    entry.setdefault("recent_log", [])
+    return entry
+
+
+def check_one(spec, state, http, args, tasks, now):
+    name = spec["dataset_id"]
+    output = None
+    archive = []
+    if not spec["updater_script"]:
+        return "Manual update required", "现有数据依赖人工复核或补录。", output, archive
+    adapter = import_module(f"updaters.{spec['adapter']}")
+    start = args.start or spec.get("incremental_start", "2018-01-01")
+    end = args.end or TODAY
+    response = adapter.collect(spec, http, start, end)
+    state["last_source_success"] = now
+    if spec["review_required"]:
+        found = response["notices"]
+        validate_notices(found)
+        for notice in found:
+            key = sha256(f"{name}/{notice['url']}".encode()).hexdigest()[:24]
+            tasks.setdefault(key, {**notice, "dataset_id": name, "topic": spec["topic"],
+                                   "first_seen": now, "status": "open"})
+        count = sum(task["dataset_id"] == name and task["status"] == "open" for task in tasks.values())
+        if count:
+            return "Pending review", f"{count} 份来源文件待审核。", output, archive
+        return "No new data", "已检查官方目录。", output, archive
+
+    path = ROOT / spec["local_data_path"]
+    old = read_json(path, {"records": [], "source_files": []})
+    combined, changed, archive = validate_records(spec, response["records"], old["records"], end)
+    if not combined:
+        return "No new data", "所选期间未发现新记录。", output, archive
+    latest = max(combined, key=lambda row: row["period"])
+    state["source"] = latest["source"]
+    state["latest_data_period"] = latest.get("edition", latest["period"])
+    if changed:
+        before = {(x["url"], x["sha256"]) for x in old["source_files"]}
+        after = {(x["url"], x["sha256"]) for x in http.evidence}
+        if before and before == after:
+            raise ValueError("Source fingerprints unchanged while normalized records changed")
+        output = (path, {"dataset_id": name, "updated_at": now, "source_files": http.evidence,
+                         "records": combined})
+        state["last_success"] = now
+        return "Updated", f"新增或经核验修订 {len(changed)} 条。", output, archive
+    return "No new data", "已核对来源与已发布记录。", output, archive
+
+
+def select(specs, args):
+    if args.dataset and args.topic:
+        raise ValueError("Select a topic or dataset")
+    if args.dataset:
+        requested = set(args.dataset.split(","))
+        selected = [r for r in specs if r["dataset_id"] in requested]
+        if {r["dataset_id"] for r in selected} != requested:
+            raise ValueError("Unknown dataset ID")
+        return selected
+    if args.topic:
+        selected = [r for r in specs if r["topic"] == args.topic]
+        if not selected:
+            raise ValueError("Unknown topic")
+        return selected
+    if args.schedule in ("all", "manual"):
+        return specs if args.schedule == "manual" else [r for r in specs if r["updater_script"]]
+    return [r for r in specs if r["check_frequency"] == args.schedule]
+
+
+def main():
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--schedule", choices=["all", *sorted(SCHEDULES)], default="all")
+    parser.add_argument("--dataset", help="One ID or comma-separated dataset IDs")
+    parser.add_argument("--topic")
+    parser.add_argument("--start", type=lambda text: date.fromisoformat(text).isoformat())
+    parser.add_argument("--end", type=lambda text: date.fromisoformat(text).isoformat())
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--audit", action="store_true", help="Regenerate the source feasibility matrix")
+    parser.add_argument("--index-only", action="store_true", help="Build the registry index without checking sources")
+    parser.add_argument("--report", type=Path, help="Write a machine-readable summary, including for dry runs")
+    args = parser.parse_args()
+    if args.start and args.start > (args.end or TODAY) or args.end and args.end > TODAY:
+        parser.error("Use a valid historical period range")
+    specs = load_registry()
+    verify_inventory(ROOT, specs)
+    if args.audit:
+        generate(ROOT, specs)
+        return
+    previous = read_json(STATE, {"datasets": []})
+    known = {row["dataset_id"]: row for row in previous["datasets"]}
+    states = {r["dataset_id"]: base_status(r, known.get(r["dataset_id"], {})) for r in specs}
+    tasks = read_json(REVIEW, {"tasks": {}})["tasks"]
+    baseline_review = dump_json(tasks)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    report_items = []
+    for spec in [] if args.index_only else select(specs, args):
+        name = spec["dataset_id"]
+        state = states[name]
+        http = HTTP()
+        output, archive = None, []
+        try:
+            status, detail, output, archive = check_one(spec, state, http, args, tasks, now)
+        except SourceUnavailable as error:
+            status, detail = "Source unavailable", str(error)
+        except (ValueError, KeyError, TypeError, IndexError) as error:
+            status, detail = "Validation failed", str(error)[:300]
+        finally:
+            http.session.close()
+        state |= {"status": status, "detail": detail, "last_checked": now}
+        if os.environ.get("GITHUB_ACTIONS") == "true" and status in ("Updated", "No new data", "Pending review"):
+            state["eligible_cloud_check"] = True
+        event = {"dataset_id": name, "time": now, "status": status, "detail": detail,
+                 "period": state["latest_data_period"], "source_files": http.evidence}
+        if archive:
+            event["revisions"] = archive
+        max_age = spec.get("max_age_days")
+        if max_age and status in ("Updated", "No new data"):
+            period = state["latest_data_period"]
+            if re.fullmatch(r"\d{4}-\d{2}", period):
+                period += "-01"
+            if re.fullmatch(r"\d{4}-\d{2}-\d{2}", period):
+                event["stale"] = (date.fromisoformat(TODAY) - date.fromisoformat(period)).days > max_age
+        if not args.dry_run and output:
+            save(*output)
+        state["recent_log"] = [*state["recent_log"], {k: event[k] for k in ("time", "status", "detail", "period")}][-12:]
+        report_items.append(event)
+        print(f"{name:30} {status:24} {detail}", flush=True)
+    report = {"time": now, "dry_run": args.dry_run, "results": report_items,
+              "counts": dict(Counter(row["status"] for row in report_items))}
+    if not args.dry_run:
+        save(STATE, {"generated_at": now, "datasets": list(states.values())})
+        if dump_json(tasks) != baseline_review:
+            save(REVIEW, {"tasks": tasks})
+        if report_items:
+            monthly = ROOT / "logs" / f"checks-{now[:7]}.jsonl"
+            with monthly.open("a", encoding="utf-8") as file:
+                file.writelines(json.dumps(event, ensure_ascii=False) + "\n" for event in report_items)
+    if args.report:
+        save(args.report, report)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,26 @@
+.update-center-panel,.update-topic-status{margin:2rem 0;color:#15333b}
+.update-center-panel h1,.update-center-panel h2{margin:0 0 .4rem}
+.update-center-panel p{font-size:1rem}
+.update-controls{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.25rem 0 .6rem}
+.update-controls label{display:grid;gap:.25rem;font-size:.9rem}
+.update-controls select,.update-controls input{font:inherit;padding:.52rem .62rem;border:1px solid #b9ceca;border-radius:.35rem;background:#fff;color:#15333b}
+.update-count,.update-sub{color:#4f6469}
+.update-scroll{overflow-x:auto}
+.update-scroll table{border-collapse:collapse;width:100%;min-width:58rem;font-size:.9rem;background:#fff}
+.update-scroll caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.update-scroll thead th{background:#e9f1ee;font-weight:650;white-space:nowrap}
+.update-scroll th,.update-scroll td{text-align:left;vertical-align:top;padding:.62rem;border-bottom:1px solid #dce7e3}
+.update-scroll tbody th{min-width:12rem;font-weight:600}
+.update-scroll tbody a{display:block;color:#126157}
+.update-scroll tbody th a~a{font-size:.84rem;font-weight:400}
+.update-sub{display:block;font-size:.83rem;margin:.2rem 0}
+.update-pill{display:inline-block;padding:.18rem .36rem;border-radius:.2rem;background:#e9eeee;font-weight:650}
+.update-pill[data-status="Updated"]{background:#d8ede2;color:#166142}
+.update-pill[data-status="Pending review"]{background:#faedcf;color:#794e09}
+.update-pill[data-status="Source unavailable"],.update-pill[data-status="Validation failed"]{background:#f4e2e0;color:#8d312c}
+.update-scroll details{min-width:6rem}
+.update-scroll summary{cursor:pointer;color:#126157}
+.update-scroll ul{padding-left:1.15rem;min-width:13rem;margin:.35rem 0 0}
+.update-provenance{margin:.7rem 0;padding:.5rem .75rem;background:#f2f7f5;border-left:2px solid #88b6ab;color:#365257}
+.update-provenance p{margin:.2rem 0;font-size:.875rem;line-height:1.5}
+.update-provenance a,.update-center-panel>a,.update-topic-status a{color:#126157}
