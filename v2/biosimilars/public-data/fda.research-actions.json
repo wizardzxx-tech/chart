@@ -1,78 +1,78 @@
 {
   "dataset_id": "fda.research-actions",
-  "updated_at": "2026-11-27T08:09:23+00:00",
+  "updated_at": "2026-11-28T12:43:17+00:00",
   "source_files": [
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22ADALIMUMAB%22+OR+products.active_ingredients.name.exact%3A%22AFLIBERCEPT%22+OR+products.active_ingredients.name.exact%3A%22AFLIBERCEPT+8+MG%22+OR+products.active_ingredients.name.exact%3A%22BELIMUMAB%22+OR+products.active_ingredients.name.exact%3A%22BENRALIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22BEVACIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22CANAKINUMAB%22+OR+products.active_ingredients.name.exact%3A%22CERTOLIZUMAB+PEGOL%22&limit=100&skip=0",
-      "sha256": "ad75f591c2c81c19f369e7ad194c4d2ff84caeccb88081a2ab5d5ae29352bcde",
+      "sha256": "314ce0300e26d78fdbed1e9e6ac6d380bee2697e745122e1962a784ab50ca4fd",
       "bytes": 203917,
-      "etag": "W/\"31c8d-KbCWG/wZlnGm+izNTtCh4mDW66g\""
+      "etag": "W/\"31c8d-9fbIBY5W8JspnIbJ8qHQMfWIwHM\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22CETUXIMAB%22+OR+products.active_ingredients.name.exact%3A%22DARATUMUMAB%22+OR+products.active_ingredients.name.exact%3A%22DENOSUMAB%22+OR+products.active_ingredients.name.exact%3A%22DULAGLUTIDE%22+OR+products.active_ingredients.name.exact%3A%22DUPILUMAB%22+OR+products.active_ingredients.name.exact%3A%22DURVALUMAB%22+OR+products.active_ingredients.name.exact%3A%22ECULIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22EMICIZUMAB%22&limit=100&skip=0",
-      "sha256": "260b38468240cb7dc28fdab21bb18f7020691e439857e49c448d76ef5033b666",
-      "bytes": 210558,
-      "etag": "W/\"3367e-FgDD4x2bJB9m2Gvns7UO10CXUzQ\""
+      "sha256": "bd8a6b63a9a836ad8a60f5dc011d8ae0f76c1ffe10c9f3a535010c47e5a47ef1",
+      "bytes": 209113,
+      "etag": "W/\"330d9-oFmROo5UQEF0OF1U/Di3N7VzVLQ\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22ENOXAPARIN+SODIUM%22+OR+products.active_ingredients.name.exact%3A%22EPOETIN+ALFA%22+OR+products.active_ingredients.name.exact%3A%22EPOETIN+ZETA%22+OR+products.active_ingredients.name.exact%3A%22ETANERCEPT%22+OR+products.active_ingredients.name.exact%3A%22EVOLOCUMAB%22+OR+products.active_ingredients.name.exact%3A%22FILGRASTIM%22+OR+products.active_ingredients.name.exact%3A%22FOLLITROPIN+ALFA%22+OR+products.active_ingredients.name.exact%3A%22GOLIMUMAB%22&limit=100&skip=0",
-      "sha256": "fb7d86f748c5de3820de75f26a2ae0520eb86c9ed3887cb01433863bddd049b1",
-      "bytes": 305663,
-      "etag": "W/\"4a9ff-h8W2Ok6aGhDGzkEAh1aqwrfGe0Y\""
+      "sha256": "4bb29f4390cc2b66fba4c6b5df5e966623764c44d933bcdc909ded2f6861859d",
+      "bytes": 306671,
+      "etag": "W/\"4adef-kIEMZ7oH7mUr9CDbjAOnD8Vqg5E\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22GUSELKUMAB%22+OR+products.active_ingredients.name.exact%3A%22HUMAN+INSULIN%22+OR+products.active_ingredients.name.exact%3A%22INFLIXIMAB%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+ASPART%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+DEGLUDEC%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+DETEMIR%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+GLARGINE%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+GLULISINE%22&limit=100&skip=0",
-      "sha256": "e48c10e396f9071b7e2fe633aa2f0a263a0eca7f27319c2d0d06c7ced35f19e0",
+      "sha256": "ad204a4e90fc3680ebb2a8ab6382f6a5f90a5b9c1e643af4b191dea7476d73f3",
       "bytes": 143253,
-      "etag": "W/\"22f95-5AC7VFr/NwfPBcc0jvdZUnAEeb4\""
+      "etag": "W/\"22f95-/tUjCz5RcnielysrK34tOs6O2xU\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22INSULIN+HUMAN+RDNA%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+ICODEC%22+OR+products.active_ingredients.name.exact%3A%22INSULIN+LISPRO%22+OR+products.active_ingredients.name.exact%3A%22IPILIMUMAB%22+OR+products.active_ingredients.name.exact%3A%22IXEKIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22MEPOLIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22NATALIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22NECITUMUMAB%22&limit=100&skip=0",
-      "sha256": "b96a76ec089dbbfc8aac266d3bf97a9cad74d93f2430e6474e06480f67e1b3eb",
+      "sha256": "2b4588ffe3885c23c5619f7aa4079bbc942436f80de993a5d49edcf2ee3ded2c",
       "bytes": 117982,
-      "etag": "W/\"1ccde-5MPrilSUr10zanguEuXBfRJn6yM\""
+      "etag": "W/\"1ccde-6NY4Zucf08Sm6nms0uQ84vroqUo\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22NIVOLUMAB%22+OR+products.active_ingredients.name.exact%3A%22OCRELIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22OFATUMUMAB%22+OR+products.active_ingredients.name.exact%3A%22OMALIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22PEGFILGRASTIM%22+OR+products.active_ingredients.name.exact%3A%22PEMBROLIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22PERTUZUMAB%22+OR+products.active_ingredients.name.exact%3A%22PERTUZUMAB+AND+TRASTUZUMAB%22&limit=100&skip=0",
-      "sha256": "189022fbc97499b28a0ebcdec3d831ce1b67081407f0e19608f879d6f78d8614",
+      "sha256": "09cb926fb59ea4390ef804697cbeafd3000a239254cb0d8e9861f3073e6ae3a0",
       "bytes": 327825,
-      "etag": "W/\"50091-HQGLNqNPmNUZbe4uoS4l4yH2pko\""
+      "etag": "W/\"50091-Kq/XELcmgdvWR6Vd/GUEcJcGjq0\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22RANIBIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22RISANKIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22RITUXIMAB%22+OR+products.active_ingredients.name.exact%3A%22SECUKINUMAB%22+OR+products.active_ingredients.name.exact%3A%22SOMATROPIN%22+OR+products.active_ingredients.name.exact%3A%22TERIPARATIDE%22+OR+products.active_ingredients.name.exact%3A%22TOCILIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22TRASTUZUMAB%22&limit=100&skip=0",
-      "sha256": "97d3eb68da2a744ed6e721d4007ee9fe4ae1135c73f2743d8b66b25d82b03a64",
+      "sha256": "c639a43f144c9c7114ed72e0fe7604de8e12ea8cb7b6ff806b5f5793d273a1bb",
       "bytes": 467933,
-      "etag": "W/\"723dd-Q0Br1UVRJBV1t4CuXFFBN+VuFCo\""
+      "etag": "W/\"723dd-izVPGu1fz2gzgs0+y+SGsuNDibM\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name.exact%3A%22TRASTUZUMAB+DERUXTECAN%22+OR+products.active_ingredients.name.exact%3A%22USTEKINUMAB%22+OR+products.active_ingredients.name.exact%3A%22VEDOLIZUMAB%22+OR+products.active_ingredients.name.exact%3A%22VYSRIBLI%22&limit=100&skip=0",
-      "sha256": "47eb79114571dad629f3828416a5c46e2104d652d38e55126267ff5b38b21461",
+      "sha256": "e4e8e98ddfb014c25d3c245e5662d0f0b4a099b7a4b84990d89122c01bb4dd34",
       "bytes": 72768,
-      "etag": "W/\"11c40-D6EXGRdCnmX2AuSbTgmMjhwJ4Ck\""
+      "etag": "W/\"11c40-yPgAY8Ozc071fcrYg7QVpg5D0Qc\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number%3A%28BLA125544+OR+BLA125545+OR+BLA125553+OR+BLA761024+OR+BLA761027+OR+BLA761028+OR+BLA761039+OR+BLA761042+OR+BLA761045+OR+BLA761058+OR+BLA761059+OR+BLA761066+OR+BLA761071+OR+BLA761072+OR+BLA761073+OR+BLA761074+OR+BLA761075+OR+BLA761080+OR+BLA761081+OR+BLA761082+OR+BLA761084+OR+BLA761086+OR+BLA761088+OR+BLA761091+OR+BLA761099%29&limit=100&skip=0",
-      "sha256": "40fbbb13aa6ec364c85979334883446b82554d5d6cf498cf94e668a43fa5a457",
-      "bytes": 197963,
-      "etag": "W/\"3054b-MoPaUYk75Cv8it0C35a2PiKBaYA\""
+      "sha256": "ea6104b36d287b281029401251b3392dee54ff2fccbd2ed211270d3a0064a908",
+      "bytes": 198567,
+      "etag": "W/\"307a7-4Qe1O3lrvNz/JAy781QPTa5sXRw\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number%3A%28BLA761100+OR+BLA761103+OR+BLA761111+OR+BLA761118+OR+BLA761126+OR+BLA761140+OR+BLA761147+OR+BLA761154+OR+BLA761165+OR+BLA761173+OR+BLA761175+OR+BLA761187+OR+BLA761188+OR+BLA761198+OR+BLA761201+OR+BLA761202+OR+BLA761212+OR+BLA761215+OR+BLA761216+OR+BLA761219+OR+BLA761231+OR+BLA761255+OR+BLA761268+OR+BLA761274+OR+BLA761275%29&limit=100&skip=0",
-      "sha256": "2b1ac9eded9a9cf65a9f83dc6bb93a23c5610fe7db05ac6638500109b304daf9",
-      "bytes": 146559,
-      "etag": "W/\"23c7f-zNVjnFBFy+NO+fWmBsqS8RDz+UM\""
+      "sha256": "f26772eee2a4c9327ecece5465fad6b56d66c8da95de977af64072cd80e93b83",
+      "bytes": 146199,
+      "etag": "W/\"23b17-qu1AWnLJcNtlsppWF7LcMB2NZ5g\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number%3A%28BLA761285+OR+BLA761298+OR+BLA761299+OR+BLA761322+OR+BLA761325+OR+BLA761333+OR+BLA761338+OR+BLA761340+OR+BLA761343+OR+BLA761346+OR+BLA761350+OR+BLA761354+OR+BLA761362+OR+BLA761364+OR+BLA761373+OR+BLA761376+OR+BLA761377+OR+BLA761378+OR+BLA761379+OR+BLA761382+OR+BLA761392+OR+BLA761398+OR+BLA761399+OR+BLA761404+OR+BLA761406%29&limit=100&skip=0",
-      "sha256": "00a878a836be3d7bb550a22c2e467dc25d8043bb1dac4a47e8f0ff73785c0543",
-      "bytes": 156482,
-      "etag": "W/\"26342-XTi3ba2+5sPOA7QovWutEoOBbJ8\""
+      "sha256": "c228ebfb0e2789c3c9b1b4908a5ee6dcf362bbf7f50a94dbe88aab1c65aa7a33",
+      "bytes": 156987,
+      "etag": "W/\"2653b-mSRmCWCi3yk9lzQZ7HnQwjgUp/o\""
     },
     {
       "url": "https://api.fda.gov/drug/drugsfda.json?search=application_number%3A%28BLA761412+OR+BLA761419+OR+BLA761420+OR+BLA761424+OR+BLA761436+OR+BLA761439+OR+BLA761444+OR+BLA761450+OR+BLA761452+OR+BLA761456+OR+BLA761457+OR+BLA761473+OR+BLA761480+OR+BLA761497%29&limit=100&skip=0",
-      "sha256": "d4744d58cb7b3b9ca15d7494033d20c69ae4be2bc92e5b80f7ca692a2050b601",
+      "sha256": "61f869c3a68d82a2f01eba3e189bba1cf6ccdd825ac7822e2b1136d53a693d82",
       "bytes": 52126,
-      "etag": "W/\"cb9e-SrN14KdLROs5JYHyDYk6HtyO5HQ\""
+      "etag": "W/\"cb9e-gmWxcayh5JGSix3gT1ShZQN7NVI\""
     }
   ],
   "records": [
@@ -15554,6 +15554,30 @@
       "category": "biosimilar",
       "reference_source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761198",
       "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761198",
+      "basis": "FDA approved submission action"
+    },
+    {
+      "id": "BLA761338/SUPPL/11/2026-11-23",
+      "period": "2026-11-23",
+      "application": "BLA761338",
+      "molecule": "ustekinumab",
+      "brand": "Steqeyma",
+      "action_kind": "supplement",
+      "category": "biosimilar",
+      "reference_source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761338",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761338",
+      "basis": "FDA approved submission action"
+    },
+    {
+      "id": "BLA761202/SUPPL/14/2026-11-24",
+      "period": "2026-11-24",
+      "application": "BLA761202",
+      "molecule": "ranibizumab",
+      "brand": "Byooviz",
+      "action_kind": "supplement",
+      "category": "biosimilar",
+      "reference_source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761202",
+      "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761202",
       "basis": "FDA approved submission action"
     }
   ]
