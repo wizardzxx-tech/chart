@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T04:48:05+00:00",
+  "generated_at": "2026-11-28T04:58:02+00:00",
   "datasets": [
     {
       "dataset_id": "pharmacy.stores",
@@ -503,15 +503,9 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T18:43:42+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T08:17:38+00:00",
-          "status": "No new data",
-          "detail": "已检查官方目录。",
-          "period": "2025"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -577,10 +571,16 @@
           "status": "Source unavailable",
           "detail": "ReadTimeout · comtradeapi.un.org",
           "period": "2025"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
         }
       ],
-      "status": "Source unavailable",
-      "detail": "ReadTimeout · comtradeapi.un.org",
+      "status": "No new data",
+      "detail": "已检查官方目录。",
       "eligible_cloud_check": true,
       "quality_notes": [],
       "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS"
@@ -1177,15 +1177,9 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T18:43:42+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T08:17:38+00:00",
-          "status": "No new data",
-          "detail": "已检查官方目录。",
-          "period": "2025"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -1251,10 +1245,16 @@
           "status": "Source unavailable",
           "detail": "ReadTimeout · comtradeapi.un.org",
           "period": "2025"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
         }
       ],
-      "status": "Source unavailable",
-      "detail": "ReadTimeout · comtradeapi.un.org",
+      "status": "No new data",
+      "detail": "已检查官方目录。",
       "eligible_cloud_check": true,
       "quality_notes": [],
       "source": "https://comtradeapi.un.org/public/v1/getDATariffline/C/A/HS"
@@ -1312,15 +1312,9 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2025",
-      "last_checked": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T08:17:38+00:00",
-          "status": "No new data",
-          "detail": "已检查官方目录。",
-          "period": "2025"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -1383,6 +1377,12 @@
         },
         {
           "time": "2026-11-27T19:03:17+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2025"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2025"
@@ -1409,15 +1409,9 @@
       "monitoring_enabled": true,
       "chart_binding": false,
       "latest_data_period": "2026-09（以品种为准）",
-      "last_checked": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T08:17:38+00:00",
-          "status": "No new data",
-          "detail": "已检查官方目录。",
-          "period": "2026-09（以品种为准）"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -1480,6 +1474,12 @@
         },
         {
           "time": "2026-11-27T19:03:17+00:00",
+          "status": "No new data",
+          "detail": "已检查官方目录。",
+          "period": "2026-09（以品种为准）"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
           "status": "No new data",
           "detail": "已检查官方目录。",
           "period": "2026-09（以品种为准）"
@@ -2035,16 +2035,10 @@
       "chart_binding": false,
       "data_url": "../biosimilars/public-data/cms.catalog.json",
       "latest_data_period": "2026-07",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T05:53:01+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T08:17:38+00:00",
-          "status": "No new data",
-          "detail": "已核对来源与已发布记录。",
-          "period": "2026-07"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -2110,12 +2104,18 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-07"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-07"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "source": "https://catalog.data.gov/dataset/medicare-quarterly-part-b-spending-by-drug-2026-01-01"
     },
@@ -4380,16 +4380,10 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-values.json",
       "latest_data_period": "2025-01-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T12:45:31+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T07:54:37+00:00",
-          "status": "Updated",
-          "detail": "新增或经核验修订 4 条。",
-          "period": "2025-01-01"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "Validation failed",
@@ -4455,12 +4449,18 @@
           "status": "Partial success",
           "detail": "已核对来源与已发布记录。 成功 32/64，失败 3，未覆盖 0，修订待审 0。",
           "period": "2025-01-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "已核对来源与已发布记录。 成功 32/64，失败 3，未覆盖 0，修订待审 0。",
+          "period": "2025-01-01"
         }
       ],
       "status": "Partial success",
       "detail": "已核对来源与已发布记录。 成功 32/64，失败 3，未覆盖 0，修订待审 0。",
       "eligible_cloud_check": true,
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "90181291/2025/X: Conflicting rows at the customs partner grain",
         "38221900/2025/X: Conflicting rows at the customs partner grain",
@@ -4475,7 +4475,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90221200/2025/X",
@@ -4499,7 +4499,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90221200/2025/M",
@@ -4523,7 +4523,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310/2025/X",
@@ -4547,7 +4547,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310/2025/M",
@@ -4571,7 +4571,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210/2025/X",
@@ -4595,7 +4595,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210/2025/M",
@@ -4619,7 +4619,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181291/2025/X",
@@ -4639,7 +4639,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181291/2025/M",
@@ -4663,7 +4663,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221900/2025/X",
@@ -4683,7 +4683,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221900/2025/M",
@@ -4707,7 +4707,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221300/2025/X",
@@ -4731,7 +4731,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221300/2025/M",
@@ -4755,7 +4755,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010/2025/X",
@@ -4779,7 +4779,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010/2025/M",
@@ -4803,7 +4803,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90278990/2025/X",
@@ -4823,7 +4823,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90278990/2025/M",
@@ -4847,7 +4847,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90219011/2025/X",
@@ -4871,7 +4871,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90219011/2025/M",
@@ -4895,7 +4895,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90213900/2025/X",
@@ -4919,7 +4919,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90213900/2025/M",
@@ -4943,7 +4943,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90183900/2025/X",
@@ -4967,7 +4967,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90183900/2025/M",
@@ -4991,7 +4991,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901813/2025/X",
@@ -5015,7 +5015,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901813/2025/M",
@@ -5039,7 +5039,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901812/2025/X",
@@ -5063,7 +5063,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901812/2025/M",
@@ -5087,7 +5087,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902750/2025/X",
@@ -5111,7 +5111,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902750/2025/M",
@@ -5135,7 +5135,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902789/2025/X",
@@ -5159,7 +5159,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902789/2025/M",
@@ -5183,7 +5183,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902190/2025/X",
@@ -5207,7 +5207,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902190/2025/M",
@@ -5254,16 +5254,10 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-values.json",
       "latest_data_period": "2025-01-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T12:45:31+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T07:54:37+00:00",
-          "status": "Updated",
-          "detail": "新增或经核验修订 4 条。",
-          "period": "2025-01-01"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "Validation failed",
@@ -5329,13 +5323,19 @@
           "status": "Partial success",
           "detail": "已核对来源与已发布记录。 成功 36/82，失败 0，未覆盖 10，修订待审 0。",
           "period": "2025-01-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "已核对来源与已发布记录。 成功 36/82，失败 0，未覆盖 10，修订待审 0。",
+          "period": "2025-01-01"
         }
       ],
       "status": "Partial success",
       "detail": "已核对来源与已发布记录。 成功 36/82，失败 0，未覆盖 10，修订待审 0。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T12:45:31+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "29339900/A/X: 缺少可单独查询且匹配本品类的申报编码",
         "29339900/A/M: 缺少可单独查询且匹配本品类的申报编码",
@@ -5357,7 +5357,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349970/2025/X",
@@ -5381,7 +5381,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349970/2025/M",
@@ -5405,7 +5405,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960/2025/X",
@@ -5429,7 +5429,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960/2025/M",
@@ -5453,7 +5453,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294110/2025/X",
@@ -5477,7 +5477,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294110/2025/M",
@@ -5501,7 +5501,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/2025/X",
@@ -5525,7 +5525,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/2025/M",
@@ -5585,7 +5585,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200/2025/X",
@@ -5609,7 +5609,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200/2025/M",
@@ -5633,7 +5633,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300/2025/X",
@@ -5657,7 +5657,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300/2025/M",
@@ -5681,7 +5681,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/2025/X",
@@ -5705,7 +5705,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/2025/M",
@@ -5729,7 +5729,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/2025/X",
@@ -5753,7 +5753,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/2025/M",
@@ -5777,7 +5777,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362700/2025/X",
@@ -5801,7 +5801,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362700/2025/M",
@@ -5825,7 +5825,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362800/2025/X",
@@ -5849,7 +5849,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362800/2025/M",
@@ -5873,7 +5873,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "30019010/2025/X",
@@ -5897,7 +5897,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "30019010/2025/M",
@@ -5921,7 +5921,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372210/2025/X",
@@ -5945,7 +5945,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372210/2025/M",
@@ -5969,7 +5969,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372100/2025/X",
@@ -5993,7 +5993,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372100/2025/M",
@@ -6017,7 +6017,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "293723/2025/X",
@@ -6041,7 +6041,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "293723/2025/M",
@@ -6065,7 +6065,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362100/2025/X",
@@ -6089,7 +6089,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362100/2025/M",
@@ -6113,7 +6113,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29369010/2025/X",
@@ -6137,7 +6137,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29369010/2025/M",
@@ -6161,7 +6161,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362900/2025/X",
@@ -6185,7 +6185,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362900/2025/M",
@@ -6209,7 +6209,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29415000/2025/X",
@@ -6233,7 +6233,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29415000/2025/M",
@@ -6334,16 +6334,10 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-values.json",
       "latest_data_period": "2025-01-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T07:54:37+00:00",
-          "status": "Updated",
-          "detail": "新增或经核验修订 2 条。",
-          "period": "2025-01-01"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "Validation failed",
@@ -6409,12 +6403,18 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2025-01-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2025-01-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -6425,7 +6425,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "30024100/2025/X",
@@ -6449,7 +6449,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "30024100/2025/M",
@@ -6496,9 +6496,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-monthly.json",
       "latest_data_period": "2024-12-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
-      "last_success": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
+      "last_success": "2026-11-28T04:58:02+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T12:45:31+00:00",
@@ -6541,13 +6541,19 @@
           "status": "Partial success",
           "detail": "新增或经核验修订 28 条。 成功 60/321，失败 50，未覆盖 1，修订待审 0。",
           "period": "2024-12-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "新增或经核验修订 26 条。 成功 58/353，失败 56，未覆盖 1，修订待审 0。",
+          "period": "2024-12-01"
         }
       ],
       "status": "Partial success",
-      "detail": "新增或经核验修订 28 条。 成功 60/321，失败 50，未覆盖 1，修订待审 0。",
+      "detail": "新增或经核验修订 26 条。 成功 58/353，失败 56，未覆盖 1，修订待审 0。",
       "eligible_cloud_check": true,
-      "chart_applied_at": "2026-11-27T19:03:17+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "chart_applied_at": "2026-11-28T04:58:02+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "90221200/202405/X: Conflicting rows at the customs partner grain",
         "90181210/202409/X: Conflicting rows at the customs partner grain",
@@ -6560,6 +6566,7 @@
         "90181291/202406/X: Conflicting rows at the customs partner grain",
         "90181291/202405/X: Conflicting rows at the customs partner grain",
         "90181291/202404/X: Conflicting rows at the customs partner grain",
+        "90181291/202403/X: Conflicting rows at the customs partner grain",
         "38221900/202412/X: Conflicting rows at the customs partner grain",
         "38221900/202411/X: Conflicting rows at the customs partner grain",
         "38221900/202410/X: Conflicting rows at the customs partner grain",
@@ -6569,8 +6576,10 @@
         "38221900/202406/X: Conflicting rows at the customs partner grain",
         "38221900/202405/X: Conflicting rows at the customs partner grain",
         "38221900/202404/X: Conflicting rows at the customs partner grain",
+        "38221900/202403/X: Conflicting rows at the customs partner grain",
         "38221900/202406/M: Conflicting rows at the customs partner grain",
         "38221900/202405/M: Conflicting rows at the customs partner grain",
+        "38221300/202403/X: Conflicting rows at the customs partner grain",
         "90278990/202412/X: Conflicting rows at the customs partner grain",
         "90278990/202411/X: Conflicting rows at the customs partner grain",
         "90278990/202410/X: Conflicting rows at the customs partner grain",
@@ -6580,6 +6589,7 @@
         "90278990/202406/X: Conflicting rows at the customs partner grain",
         "90278990/202405/X: Conflicting rows at the customs partner grain",
         "90278990/202404/X: Conflicting rows at the customs partner grain",
+        "90278990/202403/X: Conflicting rows at the customs partner grain",
         "90219011/202412/X: Conflicting rows at the customs partner grain",
         "90219011/202411/X: Conflicting rows at the customs partner grain",
         "90219011/202409/X: Conflicting rows at the customs partner grain",
@@ -6590,6 +6600,7 @@
         "90213900/202410/X: Conflicting rows at the customs partner grain",
         "90213900/202407/X: Conflicting rows at the customs partner grain",
         "90213900/202405/X: Conflicting rows at the customs partner grain",
+        "90213900/202403/X: Conflicting rows at the customs partner grain",
         "90183900/202412/X: Conflicting rows at the customs partner grain",
         "90183900/202411/X: Conflicting rows at the customs partner grain",
         "90183900/202410/X: Conflicting rows at the customs partner grain",
@@ -6599,6 +6610,7 @@
         "90183900/202406/X: Conflicting rows at the customs partner grain",
         "90183900/202405/X: Conflicting rows at the customs partner grain",
         "90183900/202404/X: Conflicting rows at the customs partner grain",
+        "90183900/202403/X: Conflicting rows at the customs partner grain",
         "latest-release: 最近应查月份的官方数据尚未核实；保留较早已取得的月份"
       ],
       "subtasks": [
@@ -6610,7 +6622,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90221200/202412/X",
@@ -6724,14 +6736,28 @@
           "id": "90221200/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90221200/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90221200&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90221200/202610/M",
@@ -6741,7 +6767,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90221200/202412/M",
@@ -6859,14 +6885,28 @@
           "id": "90221200/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90221200&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90221200/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90221200&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310/202610/X",
@@ -6876,7 +6916,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310/202412/X",
@@ -6994,14 +7034,28 @@
           "id": "90181310/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90181310/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90181310&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310/202610/M",
@@ -7011,7 +7065,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310/202412/M",
@@ -7129,14 +7183,28 @@
           "id": "90181310/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181310&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90181310/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90181310&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210/202610/X",
@@ -7146,7 +7214,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210/202412/X",
@@ -7260,14 +7328,28 @@
           "id": "90181210/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90181210/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90181210&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210/202610/M",
@@ -7277,7 +7359,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210/202412/M",
@@ -7395,14 +7477,28 @@
           "id": "90181210/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181210&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90181210/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90181210&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181291/202610/X",
@@ -7412,7 +7508,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181291/202412/X",
@@ -7505,6 +7601,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181291&flowCode=X&maxRecords=500"
         },
         {
+          "id": "90181291/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90181291&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "90181291/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -7512,7 +7618,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181291/202412/M",
@@ -7630,14 +7736,28 @@
           "id": "90181291/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90181291&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90181291/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90181291&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221900/202610/X",
@@ -7647,7 +7767,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221900/202412/X",
@@ -7740,6 +7860,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221900&flowCode=X&maxRecords=500"
         },
         {
+          "id": "38221900/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=38221900&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "38221900/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -7747,7 +7877,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221900/202412/M",
@@ -7857,14 +7987,28 @@
           "id": "38221900/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221900&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "38221900/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=38221900&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221300/202610/X",
@@ -7874,7 +8018,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221300/202412/X",
@@ -7992,14 +8136,25 @@
           "id": "38221300/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "38221300/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=38221300&flowCode=X&maxRecords=500"
         },
         {
           "id": "38221300/202610/M",
@@ -8009,7 +8164,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221300/202412/M",
@@ -8127,14 +8282,28 @@
           "id": "38221300/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=38221300&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "38221300/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=38221300&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010/202610/X",
@@ -8144,7 +8313,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010/202412/X",
@@ -8262,14 +8431,28 @@
           "id": "90275010/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90275010/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90275010&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010/202610/M",
@@ -8279,7 +8462,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010/202412/M",
@@ -8397,14 +8580,28 @@
           "id": "90275010/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90275010&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90275010/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90275010&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90278990/202610/X",
@@ -8414,7 +8611,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90278990/202412/X",
@@ -8507,6 +8704,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90278990&flowCode=X&maxRecords=500"
         },
         {
+          "id": "90278990/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90278990&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "90278990/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -8514,7 +8721,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90278990/202412/M",
@@ -8632,14 +8839,28 @@
           "id": "90278990/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90278990&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90278990/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90278990&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90219011/202610/X",
@@ -8649,7 +8870,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90219011/202412/X",
@@ -8739,14 +8960,28 @@
           "id": "90219011/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90219011/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90219011&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90219011/202610/M",
@@ -8756,7 +8991,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90219011/202412/M",
@@ -8874,14 +9109,28 @@
           "id": "90219011/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90219011&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90219011/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90219011&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90213900/202610/X",
@@ -8891,7 +9140,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90213900/202412/X",
@@ -8997,14 +9246,25 @@
           "id": "90213900/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90213900/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90213900&flowCode=X&maxRecords=500"
         },
         {
           "id": "90213900/202610/M",
@@ -9014,7 +9274,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90213900/202412/M",
@@ -9132,14 +9392,28 @@
           "id": "90213900/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90213900&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90213900/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90213900&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90183900/202610/X",
@@ -9149,7 +9423,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90183900/202412/X",
@@ -9242,6 +9516,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90183900&flowCode=X&maxRecords=500"
         },
         {
+          "id": "90183900/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90183900&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "90183900/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -9249,7 +9533,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90183900/202412/M",
@@ -9367,14 +9651,28 @@
           "id": "90183900/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202404&cmdCode=90183900&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "90183900/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202403&cmdCode=90183900&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901813/202610/X",
@@ -9384,7 +9682,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901813/202412/X",
@@ -9502,14 +9800,28 @@
           "id": "901813/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "901813/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=901813&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901813/202610/M",
@@ -9519,7 +9831,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901813/202412/M",
@@ -9637,14 +9949,28 @@
           "id": "901813/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901813&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "901813/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=901813&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901812/202610/X",
@@ -9654,7 +9980,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901812/202412/X",
@@ -9772,14 +10098,28 @@
           "id": "901812/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "901812/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=901812&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901812/202610/M",
@@ -9789,7 +10129,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "901812/202412/M",
@@ -9907,14 +10247,28 @@
           "id": "901812/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=901812&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "901812/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=901812&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902750/202610/X",
@@ -9924,7 +10278,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902750/202412/X",
@@ -10042,14 +10396,28 @@
           "id": "902750/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "902750/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=902750&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902750/202610/M",
@@ -10059,7 +10427,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902750/202412/M",
@@ -10177,14 +10545,28 @@
           "id": "902750/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902750&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "902750/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=902750&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902789/202610/X",
@@ -10194,7 +10576,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902789/202412/X",
@@ -10312,14 +10694,28 @@
           "id": "902789/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "902789/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=902789&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902789/202610/M",
@@ -10329,7 +10725,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902789/202412/M",
@@ -10447,14 +10843,28 @@
           "id": "902789/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902789&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "902789/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=902789&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902190/202610/X",
@@ -10464,7 +10874,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902190/202412/X",
@@ -10582,14 +10992,28 @@
           "id": "902190/202404/X",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=X&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "902190/202403/X",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=902190&flowCode=X&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902190/202610/M",
@@ -10599,7 +11023,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "902190/202412/M",
@@ -10717,14 +11141,28 @@
           "id": "902190/202404/M",
           "kind": "HS / flow",
           "period": "2024-04-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-04-01",
           "version": "2025-06-12T14:41:10.24",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202404&cmdCode=902190&flowCode=M&maxRecords=500",
           "dataset_checksum": -1813940835,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "902190/202403/M",
+          "kind": "HS / flow",
+          "period": "2024-03-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-03-01",
+          "version": "2025-06-12T10:08:46.4533333",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202403&cmdCode=902190&flowCode=M&maxRecords=500",
+          "dataset_checksum": 1447892459,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "latest-release",
@@ -10738,16 +11176,16 @@
         }
       ],
       "coverage": {
-        "configured": 321,
-        "checked": 111,
-        "successful": 60,
-        "previously_verified": 210,
-        "failed": 50,
+        "configured": 353,
+        "checked": 115,
+        "successful": 58,
+        "previously_verified": 238,
+        "failed": 56,
         "uncovered": 1,
         "pending_revision": 0,
-        "no_new": 242,
-        "actual_data": 238,
-        "latest": 238
+        "no_new": 270,
+        "actual_data": 264,
+        "latest": 264
       },
       "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=38221300&flowCode=M&maxRecords=500"
     },
@@ -10767,9 +11205,9 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-monthly.json",
       "latest_data_period": "2024-12-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
-      "last_success": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
+      "last_success": "2026-11-28T04:58:02+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T12:45:31+00:00",
@@ -10812,105 +11250,114 @@
           "status": "Partial success",
           "detail": "新增或经核验修订 10 条。 成功 46/299，失败 100，未覆盖 14，修订待审 0。",
           "period": "2024-12-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "新增或经核验修订 30 条。 成功 66/335，失败 106，未覆盖 14，修订待审 0。",
+          "period": "2024-12-01"
         }
       ],
       "status": "Partial success",
-      "detail": "新增或经核验修订 10 条。 成功 46/299，失败 100，未覆盖 14，修订待审 0。",
+      "detail": "新增或经核验修订 30 条。 成功 66/335，失败 106，未覆盖 14，修订待审 0。",
       "eligible_cloud_check": true,
-      "chart_applied_at": "2026-11-27T19:03:17+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "chart_applied_at": "2026-11-28T04:58:02+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "29349970/202412/M: 官方已发布该期，但查询无此编码记录",
         "29349970/202409/M: 官方已发布该期，但查询无此编码记录",
         "29349970/202408/M: 官方已发布该期，但查询无此编码记录",
-        "294190/202407/X: HTTP 403 · comtradeapi.un.org",
-        "294190/202407/M: HTTP 403 · comtradeapi.un.org",
-        "294190/202406/M: HTTP 403 · comtradeapi.un.org",
         "29339900/M/X: 缺少可单独查询且匹配本品类的申报编码",
         "29339900/M/M: 缺少可单独查询且匹配本品类的申报编码",
         "—/M/X: 缺少可单独查询且匹配本品类的申报编码",
         "—/M/M: 缺少可单独查询且匹配本品类的申报编码",
-        "29362200/202407/X: HTTP 403 · comtradeapi.un.org",
-        "29362200/202406/M: HTTP 403 · comtradeapi.un.org",
-        "29362300/202406/X: HTTP 403 · comtradeapi.un.org",
-        "29362300/202411/M: HTTP 403 · comtradeapi.un.org",
+        "29362300/202411/M: Conflicting rows at the customs partner grain",
         "29362300/202410/M: Conflicting rows at the customs partner grain",
-        "29362300/202406/M: HTTP 403 · comtradeapi.un.org",
-        "29362400/202407/X: HTTP 403 · comtradeapi.un.org",
-        "29362400/202406/X: HTTP 403 · comtradeapi.un.org",
-        "29362400/202412/M: HTTP 403 · comtradeapi.un.org",
-        "29362400/202411/M: HTTP 403 · comtradeapi.un.org",
-        "29362400/202410/M: HTTP 403 · comtradeapi.un.org",
-        "29362400/202409/M: HTTP 403 · comtradeapi.un.org",
-        "29362400/202407/M: HTTP 403 · comtradeapi.un.org",
-        "29362400/202406/M: HTTP 403 · comtradeapi.un.org",
-        "29362500/202407/X: HTTP 403 · comtradeapi.un.org",
-        "29362500/202406/X: HTTP 403 · comtradeapi.un.org",
-        "29362500/202412/M: HTTP 403 · comtradeapi.un.org",
-        "29362500/202409/M: HTTP 403 · comtradeapi.un.org",
-        "29362500/202407/M: HTTP 403 · comtradeapi.un.org",
-        "29362500/202406/M: HTTP 403 · comtradeapi.un.org",
-        "29362700/202408/X: HTTP 403 · comtradeapi.un.org",
-        "29362700/202407/X: HTTP 403 · comtradeapi.un.org",
+        "29362400/202412/M: Conflicting rows at the customs partner grain",
+        "29362400/202411/M: Conflicting rows at the customs partner grain",
+        "29362400/202410/M: Conflicting rows at the customs partner grain",
+        "29362400/202409/M: Conflicting rows at the customs partner grain",
+        "29362500/202412/M: Conflicting rows at the customs partner grain",
+        "29362500/202409/M: Conflicting rows at the customs partner grain",
+        "29362500/202405/M: Conflicting rows at the customs partner grain",
+        "29362700/202408/X: Conflicting rows at the customs partner grain",
+        "29362700/202407/X: Conflicting rows at the customs partner grain",
         "29362700/202406/X: HTTP 403 · comtradeapi.un.org",
-        "29362700/202412/M: HTTP 403 · comtradeapi.un.org",
-        "29362700/202411/M: HTTP 403 · comtradeapi.un.org",
-        "29362700/202410/M: HTTP 403 · comtradeapi.un.org",
+        "29362700/202405/X: HTTP 403 · comtradeapi.un.org",
+        "29362700/202412/M: Conflicting rows at the customs partner grain",
+        "29362700/202411/M: Conflicting rows at the customs partner grain",
+        "29362700/202410/M: Conflicting rows at the customs partner grain",
         "29362700/202409/M: HTTP 403 · comtradeapi.un.org",
         "29362700/202408/M: HTTP 403 · comtradeapi.un.org",
         "29362700/202407/M: HTTP 403 · comtradeapi.un.org",
         "29362700/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29362700/202405/M: HTTP 403 · comtradeapi.un.org",
         "29362800/202407/X: HTTP 403 · comtradeapi.un.org",
         "29362800/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29362800/202405/X: HTTP 403 · comtradeapi.un.org",
         "29362800/202412/M: HTTP 403 · comtradeapi.un.org",
         "29362800/202411/M: HTTP 403 · comtradeapi.un.org",
         "29362800/202410/M: HTTP 403 · comtradeapi.un.org",
         "29362800/202409/M: HTTP 403 · comtradeapi.un.org",
         "29362800/202407/M: HTTP 403 · comtradeapi.un.org",
         "29362800/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29362800/202405/M: HTTP 403 · comtradeapi.un.org",
         "30019010/202407/X: HTTP 403 · comtradeapi.un.org",
         "30019010/202406/X: HTTP 403 · comtradeapi.un.org",
+        "30019010/202405/X: HTTP 403 · comtradeapi.un.org",
         "30019010/202407/M: HTTP 403 · comtradeapi.un.org",
         "30019010/202406/M: HTTP 403 · comtradeapi.un.org",
+        "30019010/202405/M: HTTP 403 · comtradeapi.un.org",
         "29372210/202407/X: HTTP 403 · comtradeapi.un.org",
         "29372210/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29372210/202405/X: HTTP 403 · comtradeapi.un.org",
         "29372210/202411/M: HTTP 403 · comtradeapi.un.org",
         "29372210/202410/M: HTTP 403 · comtradeapi.un.org",
         "29372210/202408/M: HTTP 403 · comtradeapi.un.org",
         "29372210/202407/M: HTTP 403 · comtradeapi.un.org",
         "29372210/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29372210/202405/M: HTTP 403 · comtradeapi.un.org",
         "29372100/202408/X: HTTP 403 · comtradeapi.un.org",
         "29372100/202407/X: HTTP 403 · comtradeapi.un.org",
         "29372100/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29372100/202405/X: HTTP 403 · comtradeapi.un.org",
         "29372100/202412/M: HTTP 403 · comtradeapi.un.org",
         "29372100/202407/M: HTTP 403 · comtradeapi.un.org",
         "29372100/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29372100/202405/M: HTTP 403 · comtradeapi.un.org",
         "293723/202407/X: HTTP 403 · comtradeapi.un.org",
         "293723/202406/X: HTTP 403 · comtradeapi.un.org",
+        "293723/202405/X: HTTP 403 · comtradeapi.un.org",
         "293723/202411/M: HTTP 403 · comtradeapi.un.org",
         "293723/202410/M: HTTP 403 · comtradeapi.un.org",
         "293723/202408/M: HTTP 403 · comtradeapi.un.org",
         "293723/202407/M: HTTP 403 · comtradeapi.un.org",
         "293723/202406/M: HTTP 403 · comtradeapi.un.org",
+        "293723/202405/M: HTTP 403 · comtradeapi.un.org",
         "29362100/202408/X: HTTP 403 · comtradeapi.un.org",
         "29362100/202407/X: HTTP 403 · comtradeapi.un.org",
         "29362100/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29362100/202405/X: HTTP 403 · comtradeapi.un.org",
         "29362100/202408/M: HTTP 403 · comtradeapi.un.org",
         "29362100/202407/M: HTTP 403 · comtradeapi.un.org",
         "29362100/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29362100/202405/M: HTTP 403 · comtradeapi.un.org",
         "29369010/202408/X: HTTP 403 · comtradeapi.un.org",
         "29369010/202407/X: HTTP 403 · comtradeapi.un.org",
         "29369010/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29369010/202405/X: HTTP 403 · comtradeapi.un.org",
         "29369010/202412/M: HTTP 403 · comtradeapi.un.org",
         "29369010/202409/M: HTTP 403 · comtradeapi.un.org",
         "29369010/202408/M: HTTP 403 · comtradeapi.un.org",
         "29369010/202407/M: HTTP 403 · comtradeapi.un.org",
         "29369010/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29369010/202405/M: HTTP 403 · comtradeapi.un.org",
         "29362900/202412/X: HTTP 403 · comtradeapi.un.org",
         "29362900/202410/X: HTTP 403 · comtradeapi.un.org",
         "29362900/202408/X: HTTP 403 · comtradeapi.un.org",
         "29362900/202407/X: HTTP 403 · comtradeapi.un.org",
         "29362900/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29362900/202405/X: HTTP 403 · comtradeapi.un.org",
         "29362900/202412/M: HTTP 403 · comtradeapi.un.org",
         "29362900/202411/M: HTTP 403 · comtradeapi.un.org",
         "29362900/202410/M: HTTP 403 · comtradeapi.un.org",
@@ -10918,15 +11365,18 @@
         "29362900/202408/M: HTTP 403 · comtradeapi.un.org",
         "29362900/202407/M: HTTP 403 · comtradeapi.un.org",
         "29362900/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29362900/202405/M: HTTP 403 · comtradeapi.un.org",
         "29415000/202408/X: HTTP 403 · comtradeapi.un.org",
         "29415000/202407/X: HTTP 403 · comtradeapi.un.org",
         "29415000/202406/X: HTTP 403 · comtradeapi.un.org",
+        "29415000/202405/X: HTTP 403 · comtradeapi.un.org",
         "29415000/202412/M: HTTP 403 · comtradeapi.un.org",
         "29415000/202410/M: HTTP 403 · comtradeapi.un.org",
         "29415000/202409/M: HTTP 403 · comtradeapi.un.org",
         "29415000/202408/M: HTTP 403 · comtradeapi.un.org",
         "29415000/202407/M: HTTP 403 · comtradeapi.un.org",
         "29415000/202406/M: HTTP 403 · comtradeapi.un.org",
+        "29415000/202405/M: HTTP 403 · comtradeapi.un.org",
         "map-heparin/M/X: 缺少可单独查询且匹配本品类的申报编码",
         "map-heparin/M/M: 缺少可单独查询且匹配本品类的申报编码",
         "map-penicillin/M/X: 缺少可单独查询且匹配本品类的申报编码",
@@ -10944,7 +11394,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349970/202412/X",
@@ -11034,14 +11484,28 @@
           "id": "29349970/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29349970&flowCode=X&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "29349970/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29349970&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349970/202610/M",
@@ -11051,7 +11515,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349970/202412/M",
@@ -11126,14 +11590,28 @@
           "id": "29349970/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29349970&flowCode=M&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "29349970/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29349970&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960/202610/X",
@@ -11143,7 +11621,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960/202412/X",
@@ -11233,14 +11711,28 @@
           "id": "29349960/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29349960&flowCode=X&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "29349960/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29349960&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960/202610/M",
@@ -11250,7 +11742,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960/202412/M",
@@ -11340,14 +11832,28 @@
           "id": "29349960/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29349960&flowCode=M&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "29349960/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29349960&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294110/202610/X",
@@ -11357,7 +11863,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294110/202412/X",
@@ -11447,14 +11953,28 @@
           "id": "294110/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=294110&flowCode=X&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "294110/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=294110&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294110/202610/M",
@@ -11464,7 +11984,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294110/202412/M",
@@ -11554,14 +12074,28 @@
           "id": "294110/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=294110&flowCode=M&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "294110/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=294110&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/202610/X",
@@ -11571,7 +12105,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/202412/X",
@@ -11647,24 +12181,41 @@
           "id": "294190/202407/X",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202407&cmdCode=294190&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202407&cmdCode=294190&flowCode=X&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=294190&flowCode=X&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "294190/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=294190&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/202610/M",
@@ -11674,7 +12225,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/202412/M",
@@ -11750,21 +12301,40 @@
           "id": "294190/202407/M",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202407&cmdCode=294190&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202407&cmdCode=294190&flowCode=M&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "294190/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=294190&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=294190&flowCode=M&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "294190/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=294190&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29339900/M/X",
@@ -11810,7 +12380,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200/202412/X",
@@ -11886,24 +12456,41 @@
           "id": "29362200/202407/X",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362200&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362200&flowCode=X&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-06-01",
           "version": "2025-06-15T13:17:50.92",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362200&flowCode=X&maxRecords=500",
           "dataset_checksum": 953712472,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
+        },
+        {
+          "id": "29362200/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362200&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200/202610/M",
@@ -11913,7 +12500,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200/202412/M",
@@ -12003,11 +12590,27 @@
           "id": "29362200/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362200&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362200&flowCode=M&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362200/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362200&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300/202610/X",
@@ -12017,7 +12620,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300/202412/X",
@@ -12093,24 +12696,41 @@
           "id": "29362300/202407/X",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-07-01",
           "version": "2025-06-12T12:03:53.3",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362300&flowCode=X&maxRecords=500",
           "dataset_checksum": 2116331431,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
         },
         {
           "id": "29362300/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362300&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362300&flowCode=X&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362300/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362300&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300/202610/M",
@@ -12120,7 +12740,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300/202412/M",
@@ -12143,7 +12763,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=29362300&flowCode=M&maxRecords=500"
         },
         {
@@ -12188,24 +12808,41 @@
           "id": "29362300/202407/M",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "records",
-          "attempted": true,
+          "status": "unchanged",
+          "attempted": false,
           "count": 1,
           "latest_period": "2024-07-01",
           "version": "2025-06-12T12:03:53.3",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362300&flowCode=M&maxRecords=500",
           "dataset_checksum": 2116331431,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-27T19:03:17+00:00",
+          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
         },
         {
           "id": "29362300/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362300&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362300&flowCode=M&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362300/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362300&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/202610/X",
@@ -12215,7 +12852,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/202412/X",
@@ -12291,21 +12928,40 @@
           "id": "29362400/202407/X",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362400&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362400&flowCode=X&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362400&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362400&flowCode=X&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362400/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362400&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/202610/M",
@@ -12315,7 +12971,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/202412/M",
@@ -12324,7 +12980,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=29362400&flowCode=M&maxRecords=500"
         },
         {
@@ -12334,7 +12990,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=29362400&flowCode=M&maxRecords=500"
         },
         {
@@ -12344,7 +13000,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=29362400&flowCode=M&maxRecords=500"
         },
         {
@@ -12354,7 +13010,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=29362400&flowCode=M&maxRecords=500"
         },
         {
@@ -12375,21 +13031,40 @@
           "id": "29362400/202407/M",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362400&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362400&flowCode=M&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362400&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362400&flowCode=M&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362400/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362400&flowCode=M&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/202610/X",
@@ -12399,7 +13074,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/202412/X",
@@ -12475,21 +13150,40 @@
           "id": "29362500/202407/X",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362500&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362500&flowCode=X&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/202406/X",
           "kind": "HS / flow",
           "period": "2024-06-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362500&flowCode=X&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362500&flowCode=X&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362500/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-05-01",
+          "version": "2025-06-12T11:20:47.83",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362500&flowCode=X&maxRecords=500",
+          "dataset_checksum": 765538920,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/202610/M",
@@ -12499,7 +13193,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/202412/M",
@@ -12508,7 +13202,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=29362500&flowCode=M&maxRecords=500"
         },
         {
@@ -12546,7 +13240,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=29362500&flowCode=M&maxRecords=500"
         },
         {
@@ -12567,21 +13261,37 @@
           "id": "29362500/202407/M",
           "kind": "HS / flow",
           "period": "2024-07-01",
-          "status": "failed",
+          "status": "records",
           "attempted": true,
-          "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362500&flowCode=M&maxRecords=500"
+          "count": 1,
+          "latest_period": "2024-07-01",
+          "version": "2025-06-12T12:03:53.3",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362500&flowCode=M&maxRecords=500",
+          "dataset_checksum": 2116331431,
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500/202406/M",
           "kind": "HS / flow",
           "period": "2024-06-01",
+          "status": "records",
+          "attempted": true,
+          "count": 1,
+          "latest_period": "2024-06-01",
+          "version": "2025-06-15T13:17:50.92",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362500&flowCode=M&maxRecords=500",
+          "dataset_checksum": 953712472,
+          "last_ok": "2026-11-28T04:58:02+00:00"
+        },
+        {
+          "id": "29362500/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362500&flowCode=M&maxRecords=500"
+          "detail": "Conflicting rows at the customs partner grain",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362500&flowCode=M&maxRecords=500"
         },
         {
           "id": "29362700/202610/X",
@@ -12591,7 +13301,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362700/202412/X",
@@ -12656,7 +13366,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202408&cmdCode=29362700&flowCode=X&maxRecords=500"
         },
         {
@@ -12666,7 +13376,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202407&cmdCode=29362700&flowCode=X&maxRecords=500"
         },
         {
@@ -12680,6 +13390,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362700&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29362700/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362700&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29362700/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -12687,7 +13407,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362700/202412/M",
@@ -12696,7 +13416,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=29362700&flowCode=M&maxRecords=500"
         },
         {
@@ -12706,7 +13426,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=29362700&flowCode=M&maxRecords=500"
         },
         {
@@ -12716,7 +13436,7 @@
           "status": "failed",
           "attempted": true,
           "count": 0,
-          "detail": "HTTP 403 · comtradeapi.un.org",
+          "detail": "Conflicting rows at the customs partner grain",
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=29362700&flowCode=M&maxRecords=500"
         },
         {
@@ -12760,6 +13480,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362700&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29362700/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362700&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29362800/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -12767,7 +13497,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362800/202412/X",
@@ -12860,6 +13590,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362800&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29362800/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362800&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29362800/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -12867,7 +13607,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362800/202412/M",
@@ -12944,6 +13684,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362800&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29362800/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362800&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "30019010/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -12951,7 +13701,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "30019010/202412/X",
@@ -13044,6 +13794,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=30019010&flowCode=X&maxRecords=500"
         },
         {
+          "id": "30019010/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=30019010&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "30019010/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13051,7 +13811,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "30019010/202412/M",
@@ -13144,6 +13904,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=30019010&flowCode=M&maxRecords=500"
         },
         {
+          "id": "30019010/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=30019010&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29372210/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13151,7 +13921,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372210/202412/X",
@@ -13244,6 +14014,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29372210&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29372210/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29372210&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29372210/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13251,7 +14031,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372210/202412/M",
@@ -13332,6 +14112,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29372210&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29372210/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29372210&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29372100/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13339,7 +14129,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372100/202412/X",
@@ -13428,6 +14218,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29372100&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29372100/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29372100&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29372100/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13435,7 +14235,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372100/202412/M",
@@ -13524,6 +14324,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29372100&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29372100/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29372100&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "293723/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13531,7 +14341,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "293723/202412/X",
@@ -13624,6 +14434,16 @@
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=293723&flowCode=X&maxRecords=500"
         },
         {
+          "id": "293723/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=293723&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "293723/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13631,7 +14451,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "293723/202412/M",
@@ -13712,6 +14532,16 @@
           "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202406&cmdCode=293723&flowCode=M&maxRecords=500"
         },
         {
+          "id": "293723/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=156&period=202405&cmdCode=293723&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29362100/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13719,7 +14549,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362100/202412/X",
@@ -13808,6 +14638,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362100&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29362100/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362100&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29362100/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13815,7 +14655,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362100/202412/M",
@@ -13904,6 +14744,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362100&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29362100/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362100&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29369010/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -13911,7 +14761,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29369010/202412/X",
@@ -14000,6 +14850,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29369010&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29369010/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29369010&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29369010/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -14007,7 +14867,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29369010/202412/M",
@@ -14088,6 +14948,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29369010&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29369010/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29369010&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29362900/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -14095,7 +14965,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362900/202412/X",
@@ -14176,6 +15046,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362900&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29362900/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362900&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29362900/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -14183,7 +15063,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362900/202412/M",
@@ -14256,6 +15136,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29362900&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29362900/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29362900&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "29415000/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -14263,7 +15153,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29415000/202412/X",
@@ -14352,6 +15242,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29415000&flowCode=X&maxRecords=500"
         },
         {
+          "id": "29415000/202405/X",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29415000&flowCode=X&maxRecords=500"
+        },
+        {
           "id": "29415000/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
@@ -14359,7 +15259,7 @@
           "attempted": true,
           "count": 0,
           "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29415000/202412/M",
@@ -14436,6 +15336,16 @@
           "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202406&cmdCode=29415000&flowCode=M&maxRecords=500"
         },
         {
+          "id": "29415000/202405/M",
+          "kind": "HS / flow",
+          "period": "2024-05-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org",
+          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202405&cmdCode=29415000&flowCode=M&maxRecords=500"
+        },
+        {
           "id": "map-heparin/M/X",
           "kind": "HS / flow",
           "period": "2026-10-31",
@@ -14501,16 +15411,16 @@
         }
       ],
       "coverage": {
-        "configured": 299,
-        "checked": 150,
-        "successful": 46,
-        "previously_verified": 139,
-        "failed": 100,
+        "configured": 335,
+        "checked": 176,
+        "successful": 66,
+        "previously_verified": 149,
+        "failed": 106,
         "uncovered": 14,
         "pending_revision": 0,
-        "no_new": 175,
-        "actual_data": 149,
-        "latest": 149
+        "no_new": 185,
+        "actual_data": 179,
+        "latest": 179
       },
       "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=29349960&flowCode=M&maxRecords=500"
     },
@@ -14530,7 +15440,7 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-monthly.json",
       "latest_data_period": "2024-12-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T19:03:17+00:00",
       "last_source_success": "2026-11-27T19:03:17+00:00",
       "recent_log": [
@@ -14575,169 +15485,86 @@
           "status": "Partial success",
           "detail": "新增或经核验修订 2 条。 成功 4/11，失败 0，未覆盖 1，修订待审 0。",
           "period": "2024-12-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Source unavailable",
+          "detail": "已核对来源与已发布记录。 成功 0/5，失败 3，未覆盖 2，修订待审 0。",
+          "period": "2024-12-01"
         }
       ],
-      "status": "Partial success",
-      "detail": "新增或经核验修订 2 条。 成功 4/11，失败 0，未覆盖 1，修订待审 0。",
+      "status": "Source unavailable",
+      "detail": "已核对来源与已发布记录。 成功 0/5，失败 3，未覆盖 2，修订待审 0。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T19:03:17+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
-        "latest-release: 最近应查月份的官方数据尚未核实；保留较早已取得的月份"
+        "availability/202401–202412: HTTP 403 · comtradeapi.un.org",
+        "availability/202501–202512: HTTP 403 · comtradeapi.un.org",
+        "availability/202601–202610: HTTP 403 · comtradeapi.un.org",
+        "30024100/202610/X: 官方可用性查询失败，本编码与方向的最新期无法确认",
+        "30024100/202610/M: 官方可用性查询失败，本编码与方向的最新期无法确认"
       ],
       "subtasks": [
+        {
+          "id": "availability/202401–202412",
+          "kind": "catalog",
+          "period": "2024-12-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org"
+        },
+        {
+          "id": "availability/202501–202512",
+          "kind": "catalog",
+          "period": "2025-12-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org"
+        },
+        {
+          "id": "availability/202601–202610",
+          "kind": "catalog",
+          "period": "2026-10-01",
+          "status": "failed",
+          "attempted": true,
+          "count": 0,
+          "detail": "HTTP 403 · comtradeapi.un.org"
+        },
         {
           "id": "30024100/202610/X",
           "kind": "HS / flow",
           "period": "2026-10-01",
-          "status": "unpublished",
-          "attempted": true,
+          "status": "uncovered",
+          "attempted": false,
           "count": 0,
-          "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
-        },
-        {
-          "id": "30024100/202412/X",
-          "kind": "HS / flow",
-          "period": "2024-12-01",
-          "status": "unchanged",
-          "attempted": false,
-          "count": 1,
-          "latest_period": "2024-12-01",
-          "version": "2025-06-12T21:25:46.38",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=30024100&flowCode=X&maxRecords=500",
-          "dataset_checksum": -381612924,
-          "last_ok": "2026-11-27T18:43:42+00:00",
-          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
-        },
-        {
-          "id": "30024100/202411/X",
-          "kind": "HS / flow",
-          "period": "2024-11-01",
-          "status": "unchanged",
-          "attempted": false,
-          "count": 1,
-          "latest_period": "2024-11-01",
-          "version": "2025-06-12T16:26:04.03",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=30024100&flowCode=X&maxRecords=500",
-          "dataset_checksum": -182024821,
-          "last_ok": "2026-11-27T18:43:42+00:00",
-          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
-        },
-        {
-          "id": "30024100/202410/X",
-          "kind": "HS / flow",
-          "period": "2024-10-01",
-          "status": "unchanged",
-          "attempted": false,
-          "count": 1,
-          "latest_period": "2024-10-01",
-          "version": "2025-06-12T13:49:45.2566667",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=30024100&flowCode=X&maxRecords=500",
-          "dataset_checksum": 697603917,
-          "last_ok": "2026-11-27T18:43:42+00:00",
-          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
-        },
-        {
-          "id": "30024100/202409/X",
-          "kind": "HS / flow",
-          "period": "2024-09-01",
-          "status": "records",
-          "attempted": true,
-          "count": 1,
-          "latest_period": "2024-09-01",
-          "version": "2025-06-15T15:52:20.5033333",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=30024100&flowCode=X&maxRecords=500",
-          "dataset_checksum": 1337750831,
+          "detail": "官方可用性查询失败，本编码与方向的最新期无法确认",
           "last_ok": "2026-11-27T19:03:17+00:00"
         },
         {
           "id": "30024100/202610/M",
           "kind": "HS / flow",
           "period": "2026-10-01",
-          "status": "unpublished",
-          "attempted": true,
-          "count": 0,
-          "detail": "官方可用性目录尚无该期中国原始 HS 数据",
-          "last_ok": "2026-11-27T19:03:17+00:00"
-        },
-        {
-          "id": "30024100/202412/M",
-          "kind": "HS / flow",
-          "period": "2024-12-01",
-          "status": "unchanged",
-          "attempted": false,
-          "count": 1,
-          "latest_period": "2024-12-01",
-          "version": "2025-06-12T21:25:46.38",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=30024100&flowCode=M&maxRecords=500",
-          "dataset_checksum": -381612924,
-          "last_ok": "2026-11-27T18:43:42+00:00",
-          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
-        },
-        {
-          "id": "30024100/202411/M",
-          "kind": "HS / flow",
-          "period": "2024-11-01",
-          "status": "unchanged",
-          "attempted": false,
-          "count": 1,
-          "latest_period": "2024-11-01",
-          "version": "2025-06-12T16:26:04.03",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202411&cmdCode=30024100&flowCode=M&maxRecords=500",
-          "dataset_checksum": -182024821,
-          "last_ok": "2026-11-27T18:43:42+00:00",
-          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
-        },
-        {
-          "id": "30024100/202410/M",
-          "kind": "HS / flow",
-          "period": "2024-10-01",
-          "status": "unchanged",
-          "attempted": false,
-          "count": 1,
-          "latest_period": "2024-10-01",
-          "version": "2025-06-12T13:49:45.2566667",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202410&cmdCode=30024100&flowCode=M&maxRecords=500",
-          "dataset_checksum": 697603917,
-          "last_ok": "2026-11-27T18:43:42+00:00",
-          "detail": "官方版本与校验值未变，沿用上次通过校验的记录"
-        },
-        {
-          "id": "30024100/202409/M",
-          "kind": "HS / flow",
-          "period": "2024-09-01",
-          "status": "records",
-          "attempted": true,
-          "count": 1,
-          "latest_period": "2024-09-01",
-          "version": "2025-06-15T15:52:20.5033333",
-          "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202409&cmdCode=30024100&flowCode=M&maxRecords=500",
-          "dataset_checksum": 1337750831,
-          "last_ok": "2026-11-27T19:03:17+00:00"
-        },
-        {
-          "id": "latest-release",
-          "kind": "report",
-          "period": "2026-10-01",
           "status": "uncovered",
-          "attempted": true,
+          "attempted": false,
           "count": 0,
-          "latest_period": "2024-12-01",
-          "detail": "最近应查月份的官方数据尚未核实；保留较早已取得的月份"
+          "detail": "官方可用性查询失败，本编码与方向的最新期无法确认",
+          "last_ok": "2026-11-27T19:03:17+00:00"
         }
       ],
       "coverage": {
-        "configured": 11,
-        "checked": 5,
-        "successful": 4,
-        "previously_verified": 6,
-        "failed": 0,
-        "uncovered": 1,
+        "configured": 5,
+        "checked": 3,
+        "successful": 0,
+        "previously_verified": 0,
+        "failed": 3,
+        "uncovered": 2,
         "pending_revision": 0,
-        "no_new": 8,
-        "actual_data": 8,
-        "latest": 8
+        "no_new": 0,
+        "actual_data": 0,
+        "latest": 0
       },
       "source": "https://comtradeapi.un.org/public/v1/previewTariffline/C/M/HS?reporterCode=156&period=202412&cmdCode=30024100&flowCode=M&maxRecords=500"
     },
@@ -14757,16 +15584,10 @@
       "chart_binding": true,
       "data_url": "../biosimilars/public-data/cms.partb-values.json",
       "latest_data_period": "2026-10-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:03:15+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T07:54:37+00:00",
-          "status": "Updated",
-          "detail": "新增或经核验修订 246 条。",
-          "period": "2026-10-01"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -14832,13 +15653,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-10-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T12:45:31+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -14852,7 +15679,7 @@
           "source": "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv",
           "version": "2026-06-25",
           "sha256": "986deefa094dca8f4e50abde43263910eeb667de305366f397f7af04d8a8734e",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "quarterly",
@@ -14865,7 +15692,7 @@
           "source": "https://data.cms.gov/sites/default/files/2026-11/qddptb_r2604_p06_v10_dqt2602_261118.csv",
           "version": "2026-11-19",
           "sha256": "ff93d87bd6d6cad981f0092761c6e7a8d7705ba887187c22840663f0a5206afe",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "asp-2025Q4",
@@ -14878,7 +15705,7 @@
           "source": "https://www.cms.gov/files/zip/october-2025-asp-pricing-final-file.zip",
           "version": "2026-09-08",
           "sha256": "c2a2ed4f0de34bd5d3dec890408626a52b54f99a208cdf65e5392e28f4f16c97",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "asp-2026Q1",
@@ -14891,7 +15718,7 @@
           "source": "https://www.cms.gov/files/zip/january-2026-medicare-part-b-payment-limit-files.zip",
           "version": "2026-09-15",
           "sha256": "aed57f4e71e53117b4e2c75aa63ffb1542f9e73da3cf0d1dda1216a0808a2aff",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "asp-2026Q2",
@@ -14904,7 +15731,7 @@
           "source": "https://www.cms.gov/files/zip/april-2026-medicare-part-b-payment-limit-files-final-file.zip",
           "version": "2026-09-15",
           "sha256": "fffcdab8446743d29a1a0c7fd51b43bd0279774a17f3f5cbbdadb8911b52e856",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "asp-2026Q3",
@@ -14917,7 +15744,7 @@
           "source": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
           "version": "2026-09-15",
           "sha256": "738beb1108697798faaa2ea166ca0bfc05a2adf80ce0b3abf49c91edce3eba6d",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "asp-2026Q4",
@@ -14930,7 +15757,7 @@
           "source": "https://www.cms.gov/files/zip/october-2026-medicare-part-b-payment-limit-files-final.zip",
           "version": "2026-09-17",
           "sha256": "a9b7afa80aae96c43cf84bf0b18648f1974429de2913e2e29d8342747174c417",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
@@ -14963,16 +15790,10 @@
       "chart_binding": true,
       "data_url": "../insulin/public-data/cms.partd-values.json",
       "latest_data_period": "2024-01-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T07:54:37+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
-        {
-          "time": "2026-11-27T07:54:37+00:00",
-          "status": "Updated",
-          "detail": "新增或经核验修订 325 条。",
-          "period": "2024-01-01"
-        },
         {
           "time": "2026-11-27T08:22:50+00:00",
           "status": "No new data",
@@ -15038,12 +15859,18 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2024-01-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2024-01-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -15057,7 +15884,7 @@
           "source": "https://data.cms.gov/sites/default/files/2026-06/98218f98-166c-4723-8438-c344a4ef96a6/DSD_PTD_RY26_P04_V10_DY24_BGM.csv",
           "version": "2026-06-25",
           "sha256": "5dcc9d7bd7d7f88d9f6b24485c06d961ed6d70f9aa6deffa50dd47a6854c2a55",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
@@ -15786,9 +16613,9 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-summary.json",
       "latest_data_period": "2026-10-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:03:15+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -15807,13 +16634,19 @@
           "status": "Partial success",
           "detail": "已核对来源与已发布记录。 成功 15/17，失败 0，未覆盖 2，修订待审 0。",
           "period": "2026-10-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "已核对来源与已发布记录。 成功 15/17，失败 0，未覆盖 2，修订待审 0。",
+          "period": "2026-10-01"
         }
       ],
       "status": "Partial success",
       "detail": "已核对来源与已发布记录。 成功 15/17，失败 0，未覆盖 2，修订待审 0。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T18:03:15+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "29369010/M: 未披露该方向的独立全国月报",
         "29415000/M: 未披露该方向的独立全国月报"
@@ -15827,7 +16660,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29349960",
@@ -15837,7 +16670,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362100",
@@ -15847,7 +16680,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362200",
@@ -15857,7 +16690,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362300",
@@ -15867,7 +16700,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362400",
@@ -15877,7 +16710,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362500",
@@ -15887,7 +16720,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362700",
@@ -15897,7 +16730,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362800",
@@ -15907,7 +16740,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29362900",
@@ -15917,7 +16750,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29369010",
@@ -15927,7 +16760,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29369010/M",
@@ -15946,7 +16779,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372210",
@@ -15956,7 +16789,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29372100",
@@ -15966,7 +16799,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29415000",
@@ -15976,7 +16809,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "29415000/M",
@@ -16018,9 +16851,9 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-hs6.json",
       "latest_data_period": "2024-12-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:43:42+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -16039,13 +16872,19 @@
           "status": "Partial success",
           "detail": "已核对来源与已发布记录。 成功 3/5，失败 0，未覆盖 2，修订待审 0。",
           "period": "2024-12-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "已核对来源与已发布记录。 成功 3/5，失败 0，未覆盖 2，修订待审 0。",
+          "period": "2024-12-01"
         }
       ],
       "status": "Partial success",
       "detail": "已核对来源与已发布记录。 成功 3/5，失败 0，未覆盖 2，修订待审 0。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T18:43:42+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "293721/202412/M: 全国合计原表查无该编码与方向",
         "294150/202412/M: 全国合计原表查无该编码与方向"
@@ -16059,7 +16898,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2024-12-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "directory/202512",
@@ -16068,7 +16907,7 @@
           "status": "unpublished",
           "attempted": true,
           "count": 0,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "hs6/202412",
@@ -16078,7 +16917,7 @@
           "attempted": true,
           "count": 32,
           "latest_period": "2024-12-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "293721/202412/M",
@@ -16129,9 +16968,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-summary.json",
       "latest_data_period": "2026-10-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:03:15+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -16150,13 +16989,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-10-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T18:03:15+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -16167,7 +17012,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181310",
@@ -16177,7 +17022,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181210",
@@ -16187,7 +17032,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90181291",
@@ -16197,7 +17042,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221900",
@@ -16207,7 +17052,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "38221300",
@@ -16217,7 +17062,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90275010",
@@ -16227,7 +17072,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "90278990",
@@ -16237,7 +17082,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
@@ -16270,9 +17115,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-hs6.json",
       "latest_data_period": "2024-12-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:43:42+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -16291,13 +17136,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2024-12-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2024-12-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T18:43:42+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -16308,7 +17159,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2024-12-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "directory/202512",
@@ -16317,7 +17168,7 @@
           "status": "unpublished",
           "attempted": true,
           "count": 0,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "hs6/202412",
@@ -16327,7 +17178,7 @@
           "attempted": true,
           "count": 14,
           "latest_period": "2024-12-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
@@ -16360,9 +17211,9 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-summary.json",
       "latest_data_period": "2026-10-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:03:15+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -16381,13 +17232,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2026-10-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-10-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T18:03:15+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -16398,7 +17255,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2026-10-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
@@ -16431,9 +17288,9 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-hs6.json",
       "latest_data_period": "2024-12-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T18:43:42+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -16452,13 +17309,19 @@
           "status": "No new data",
           "detail": "已核对来源与已发布记录。",
           "period": "2024-12-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2024-12-01"
         }
       ],
       "status": "No new data",
       "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T18:43:42+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [],
       "subtasks": [
         {
@@ -16469,7 +17332,7 @@
           "attempted": true,
           "count": 1,
           "latest_period": "2024-12-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "directory/202512",
@@ -16478,7 +17341,7 @@
           "status": "unpublished",
           "attempted": true,
           "count": 0,
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "hs6/202412",
@@ -16488,7 +17351,7 @@
           "attempted": true,
           "count": 2,
           "latest_period": "2024-12-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
@@ -16521,9 +17384,9 @@
       "chart_binding": true,
       "data_url": "../medical-devices/public-data/devices.trade-reference-history.json",
       "latest_data_period": "2026-09-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T19:03:17+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T18:03:15+00:00",
@@ -16548,13 +17411,19 @@
           "status": "Partial success",
           "detail": "新增或经核验修订 144 条。 成功 6/11，失败 0，未覆盖 0，修订待审 5。",
           "period": "2026-09-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "已核对来源与已发布记录。 成功 6/11，失败 0，未覆盖 0，修订待审 5。",
+          "period": "2026-09-01"
         }
       ],
       "status": "Partial success",
-      "detail": "新增或经核验修订 144 条。 成功 6/11，失败 0，未覆盖 0，修订待审 5。",
+      "detail": "已核对来源与已发布记录。 成功 6/11，失败 0，未覆盖 0，修订待审 5。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T19:03:17+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "9018129190: 来源值有变，保留上次通过校验的数据",
         "3822190090: 来源值有变，保留上次通过校验的数据",
@@ -16571,7 +17440,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "9018131000",
@@ -16581,17 +17450,17 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "9018121000",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "records",
+          "status": "unchanged",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "9018129110",
@@ -16601,7 +17470,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "9018129190",
@@ -16611,7 +17480,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00",
+          "last_ok": "2026-11-28T04:58:02+00:00",
           "detail": "来源值有变，保留上次通过校验的数据"
         },
         {
@@ -16622,28 +17491,28 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00",
+          "last_ok": "2026-11-28T04:58:02+00:00",
           "detail": "来源值有变，保留上次通过校验的数据"
         },
         {
           "id": "3822130000",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "records",
+          "status": "unchanged",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "9027501000",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "records",
+          "status": "unchanged",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "9027899090",
@@ -16653,7 +17522,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00",
+          "last_ok": "2026-11-28T04:58:02+00:00",
           "detail": "来源值有变，保留上次通过校验的数据"
         },
         {
@@ -16664,7 +17533,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00",
+          "last_ok": "2026-11-28T04:58:02+00:00",
           "detail": "来源值有变，保留上次通过校验的数据"
         },
         {
@@ -16675,7 +17544,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00",
+          "last_ok": "2026-11-28T04:58:02+00:00",
           "detail": "来源值有变，保留上次通过校验的数据"
         }
       ],
@@ -16687,7 +17556,7 @@
         "failed": 0,
         "uncovered": 0,
         "pending_revision": 5,
-        "no_new": 3,
+        "no_new": 6,
         "actual_data": 6,
         "latest": 6
       },
@@ -16709,9 +17578,9 @@
       "chart_binding": true,
       "data_url": "../api/public-data/api.trade-reference-history.json",
       "latest_data_period": "2026-09-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T19:02:01+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T19:02:01+00:00",
@@ -16724,16 +17593,23 @@
           "status": "Partial success",
           "detail": "已核对来源与已发布记录。 成功 10/15，失败 5，未覆盖 0，修订待审 0。",
           "period": "2026-09-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "Partial success",
+          "detail": "已核对来源与已发布记录。 成功 9/15，失败 5，未覆盖 0，修订待审 1。",
+          "period": "2026-09-01"
         }
       ],
       "status": "Partial success",
-      "detail": "已核对来源与已发布记录。 成功 10/15，失败 5，未覆盖 0，修订待审 0。",
+      "detail": "已核对来源与已发布记录。 成功 9/15，失败 5，未覆盖 0，修订待审 1。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T19:02:01+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
+      "last_extracted": "2026-11-28T04:58:02+00:00",
       "quality_notes": [
         "2934997000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
         "2936230000: 2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
+        "2936240000: 来源值有变，保留上次通过校验的数据",
         "2936270000: 2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
         "2936901000: 2025 M 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值",
         "2937221000: 2025 X 已展示的 HS10 月份金额合计超过已核对的 HS8 全年值"
@@ -16756,7 +17632,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2936210000",
@@ -16766,7 +17642,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2936220000",
@@ -16776,7 +17652,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2936230000",
@@ -16791,11 +17667,12 @@
           "id": "2936240000",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "unchanged",
+          "status": "pending_revision",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00",
+          "detail": "来源值有变，保留上次通过校验的数据"
         },
         {
           "id": "2936250000",
@@ -16805,7 +17682,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2936270000",
@@ -16824,7 +17701,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2936290000",
@@ -16834,7 +17711,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2936901000",
@@ -16853,7 +17730,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2937221000",
@@ -16872,7 +17749,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "2941500000",
@@ -16882,20 +17759,20 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
         "configured": 15,
         "checked": 15,
-        "successful": 10,
+        "successful": 9,
         "previously_verified": 0,
         "failed": 5,
         "uncovered": 0,
-        "pending_revision": 0,
-        "no_new": 10,
-        "actual_data": 10,
-        "latest": 10
+        "pending_revision": 1,
+        "no_new": 9,
+        "actual_data": 9,
+        "latest": 9
       },
       "source": "https://hsguilei.com/hs/2934996000"
     },
@@ -16915,9 +17792,9 @@
       "chart_binding": true,
       "data_url": "../vaccines/public-data/vax.trade-reference-history.json",
       "latest_data_period": "2026-09-01",
-      "last_checked": "2026-11-27T19:03:17+00:00",
+      "last_checked": "2026-11-28T04:58:02+00:00",
       "last_success": "2026-11-27T19:02:01+00:00",
-      "last_source_success": "2026-11-27T19:03:17+00:00",
+      "last_source_success": "2026-11-28T04:58:02+00:00",
       "recent_log": [
         {
           "time": "2026-11-27T19:02:01+00:00",
@@ -16930,16 +17807,20 @@
           "status": "Partial success",
           "detail": "已核对来源与已发布记录。 成功 2/3，失败 0，未覆盖 0，修订待审 1。",
           "period": "2026-09-01"
+        },
+        {
+          "time": "2026-11-28T04:58:02+00:00",
+          "status": "No new data",
+          "detail": "已核对来源与已发布记录。",
+          "period": "2026-09-01"
         }
       ],
-      "status": "Partial success",
-      "detail": "已核对来源与已发布记录。 成功 2/3，失败 0，未覆盖 0，修订待审 1。",
+      "status": "No new data",
+      "detail": "已核对来源与已发布记录。",
       "eligible_cloud_check": true,
       "chart_applied_at": "2026-11-27T19:02:01+00:00",
-      "last_extracted": "2026-11-27T19:03:17+00:00",
-      "quality_notes": [
-        "3002410090: 来源值有变，保留上次通过校验的数据"
-      ],
+      "last_extracted": "2026-11-28T04:58:02+00:00",
+      "quality_notes": [],
       "subtasks": [
         {
           "id": "3002410011",
@@ -16949,7 +17830,7 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "3002410019",
@@ -16959,31 +17840,30 @@
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         },
         {
           "id": "3002410090",
           "kind": "HS10 public history",
           "period": "2026-09-01",
-          "status": "pending_revision",
+          "status": "unchanged",
           "attempted": true,
           "count": 24,
           "latest_period": "2026-09-01",
-          "last_ok": "2026-11-27T19:03:17+00:00",
-          "detail": "来源值有变，保留上次通过校验的数据"
+          "last_ok": "2026-11-28T04:58:02+00:00"
         }
       ],
       "coverage": {
         "configured": 3,
         "checked": 3,
-        "successful": 2,
+        "successful": 3,
         "previously_verified": 0,
         "failed": 0,
         "uncovered": 0,
-        "pending_revision": 1,
-        "no_new": 2,
-        "actual_data": 2,
-        "latest": 2
+        "pending_revision": 0,
+        "no_new": 3,
+        "actual_data": 3,
+        "latest": 3
       },
       "source": "https://hsguilei.com/hs/3002410011"
     },
